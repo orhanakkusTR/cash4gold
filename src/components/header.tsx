@@ -66,8 +66,8 @@ export function Header() {
           scrolled ? "shadow-md shadow-ink-950/8" : "shadow-sm shadow-ink-950/[0.04]",
         )}
       >
-        <div className="container-page flex h-18 items-center justify-between lg:h-20">
-          <Link href="/" className="flex items-center" aria-label="Cash for Gold VA home">
+        <div className="mx-auto flex h-18 w-full max-w-[88rem] items-center justify-between px-5 lg:h-20">
+          <Link href="/" className="-ml-1 flex items-center" aria-label="Cash for Gold VA home">
             <Image
               src="/brand/c4g-logo.png"
               alt="Cash for Gold VA"
@@ -90,7 +90,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "group flex items-center gap-1 rounded-full px-4 py-2.5 text-[0.95rem] font-medium transition-colors",
+                    "group flex items-center gap-1 rounded-full px-4 py-2.5 text-[0.95rem] font-semibold transition-colors",
                     openMenu === item.label ? "text-gold-700" : "text-foreground/80 hover:text-gold-700",
                   )}
                 >

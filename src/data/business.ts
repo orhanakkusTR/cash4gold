@@ -172,6 +172,8 @@ export const CATEGORIES: Category[] = [
     intro:
       "We buy fine and designer jewelry of every kind, from signed pieces by Tiffany, Cartier, and Van Cleef & Arpels to estate collections and broken scrap gold. Each item is valued for its precious metal, its stones, and its maker, so you get full worth, not just melt value.",
     keywords: ["sell jewelry near me", "jewelry buyer northern virginia", "sell designer jewelry", "sell estate jewelry"],
+    longDescription:
+      "When you sell jewelry in Northern Virginia, the piece in your hand is often worth far more than its gold weight alone, and that is exactly what we account for. We buy designer, estate, antique, and scrap jewelry across our four local stores, evaluating each piece on three things: its precious metal at the live spot price, any diamonds or gemstones, and the value of the maker or period. A signed Cartier or Tiffany piece, an inherited collection, or a drawer of broken chains each gets a careful, in-person appraisal from a trained buyer, with the offer explained out loud and tested in front of you. There is never any obligation to sell and never a fee to find out what your jewelry is worth. Whether you are downsizing, settling an estate, or simply clearing out unworn pieces, you get a fair, transparent, market-based offer and instant cash the same day. Bring a single ring or an entire jewelry box to any of our Annandale, Manassas, Chantilly, or Vienna/McLean locations.",
     subcategories: [
       {
         slug: "sell-your-scrap-gold-jewelry",
@@ -182,6 +184,8 @@ export const CATEGORIES: Category[] = [
           "Don't throw away broken or mismatched gold. Scrap gold jewelry, tangled chains, single earrings, bent rings, clasps, and even dental gold, still holds real value based on its weight and karat purity. We test everything in front of you and pay the live spot price.",
         items: ["Broken & tangled chains", "Single or mismatched earrings", "Bent or damaged rings", "Clasps & charms", "Dental gold", "Class rings"],
         keywords: ["sell scrap gold", "scrap gold buyer", "sell broken gold jewelry", "cash for scrap gold"],
+        longDescription:
+          "Scrap gold is the easiest jewelry to undervalue and one of the most common things people throw away or sit on for years. It should not be. Broken chains, single earrings, bent or outdated rings, clasps, charms, class rings, and even dental gold all carry real value based on two numbers: their weight in grams and their karat purity. When you sell scrap gold to us, we sort it by karat, test each piece in front of you to confirm purity, and weigh it on a calibrated scale, then pay against the live gold spot price with no melting fees hidden in the math. There is no minimum, no need to clean or repair anything, and no obligation to sell once you see the offer. Tangled lots, mismatched pieces, and damaged jewelry are all welcome and valued the same transparent way. If you want a realistic number before you visit, our gold calculator applies the same formula we use. Bring your scrap gold to any of our four Northern Virginia stores for a free appraisal and instant cash.",
         cardImage: "/products/jewelry/chains.jpg",
         gallery: [
           { name: "Broken & Tangled Chains", image: "/products/jewelry/chains.jpg", note: "Any karat, paid by weight" },
@@ -199,6 +203,8 @@ export const CATEGORIES: Category[] = [
           "Estate jewelry, inherited or pre-owned fine pieces, often carries value far beyond its metal. Our trained buyers evaluate the gold or platinum, the diamonds and gemstones, and the craftsmanship to make you a fair, no-pressure offer on single pieces or entire collections.",
         items: ["Inherited fine jewelry", "Diamond & gemstone pieces", "Gold & platinum settings", "Designer & signed pieces", "Full estate collections"],
         keywords: ["sell estate jewelry", "estate jewelry buyer", "sell inherited jewelry", "where to sell estate jewelry"],
+        longDescription:
+          "Estate jewelry, inherited or pre-owned fine pieces, frequently holds value well beyond its metal, and selling it well means having every layer recognized. Our trained buyers appraise the gold or platinum at the live spot price, grade any diamonds and gemstones separately, and account for designer signatures and craftsmanship that the resale market rewards. Whether you are settling a loved one's estate, parting with pieces you no longer wear, or selling a full collection, you get an honest, no-pressure offer on single items or the whole lot. We encourage you to bring any original boxes, receipts, or certificates, since provenance can meaningfully raise the value. Nothing is tested out of your sight, and there is never a fee or obligation to sell. Selling estate jewelry locally also means you keep your pieces until you accept the offer, with instant cash the same visit, rather than mailing irreplaceable items away. Visit any of our Annandale, Manassas, Chantilly, or Vienna/McLean locations for a careful, respectful appraisal.",
         cardImage: "/products/jewelry/ring.jpg",
         gallery: [
           { name: "Gold Rings", image: "/products/jewelry/ring.jpg", note: "Fine & designer rings" },
@@ -217,6 +223,8 @@ export const CATEGORIES: Category[] = [
           "Antique and vintage jewelry, Victorian, Edwardian, Art Deco, and Retro pieces, is appraised for its period, craftsmanship, materials, and maker. We recognize the collectible premium these pieces command, not just their gold weight.",
         items: ["Victorian & Edwardian pieces", "Art Deco & Retro jewelry", "Antique engagement rings", "Vintage brooches & lockets", "Cameos & filigree"],
         keywords: ["sell antique jewelry", "antique jewelry buyer", "vintage jewelry buyer", "sell victorian jewelry"],
+        longDescription:
+          "Antique and vintage jewelry asks for an experienced eye, because its worth lives as much in period, maker, and craftsmanship as in its gold or stones. We appraise Victorian, Edwardian, Art Deco, and Retro pieces, antique engagement rings, brooches, lockets, cameos, and filigree on their full merits, recognizing the collectible premium genuine period pieces command rather than treating them as scrap. Before you sell antique jewelry, do not clean, polish, or repair it, since original condition and patina often matter to value. Bring any documentation you have, and let our buyer evaluate the era, materials, and signatures in front of you. Every offer is transparent and carries no obligation, and you keep the piece until you decide. If an item turns out to be worth more through specialized channels than its metal alone, we will tell you. For a fair, knowledgeable appraisal of vintage and antique pieces, visit any of our four Northern Virginia locations and walk out with instant cash if you choose to sell.",
         cardImage: "/products/jewelry/victorian.jpg",
         gallery: [
           { name: "Victorian & Mourning", image: "/products/jewelry/victorian.jpg", note: "1837-1901 era pieces" },
@@ -237,6 +245,8 @@ export const CATEGORIES: Category[] = [
     intro:
       "We buy all four precious metals, gold, silver, platinum, and palladium, in every form: jewelry, bullion, bars, rounds, scrap, and industrial. Every item is tested for purity and weighed in front of you, then paid against the current market spot price.",
     keywords: ["sell precious metals", "gold buyer near me", "sell bullion northern virginia", "precious metals buyer"],
+    longDescription:
+      "When you sell precious metals, the only number that should matter is the live market price, and that is the foundation of every offer we make. We buy gold, silver, platinum, and palladium in every form, jewelry, bars, rounds, bullion, scrap, coins, and industrial, testing each item for purity and weighing it on a calibrated scale right in front of you. Your payout is then calculated against the current spot price for that metal, with the math shown openly and no lowball gimmicks. There is no minimum quantity, no fee to get an appraisal, and no obligation to sell. Because we operate four storefronts across Northern Virginia rather than a mail-in service, you keep your metal until you accept the offer and walk out with cash the same day. Whether you are selling a single gold ring, a box of sterling flatware, or a stack of bullion bars, you get a fast, transparent, market-based offer. Bring your gold, silver, platinum, or palladium to any of our Annandale, Manassas, Chantilly, or Vienna/McLean locations, or estimate it first with our calculator.",
     subcategories: [
       {
         slug: "sell-gold",
@@ -247,6 +257,8 @@ export const CATEGORIES: Category[] = [
           "We buy gold in every form, 10K to 24K jewelry, scrap and broken pieces, dental gold, bars, and bullion. Every item is tested in front of you and paid against the live gold spot price, with no lowball gimmicks.",
         items: ["Gold jewelry (10K–24K)", "Scrap & broken gold", "Gold bullion & bars", "Dental gold", "Gold coins", "Class rings & chains"],
         keywords: ["sell gold near me", "cash for gold", "sell gold jewelry", "gold buyer northern virginia"],
+        longDescription:
+          "Gold is what we are known for, and selling yours should be simple, fast, and completely transparent. We buy gold in every form, 10K to 24K jewelry, scrap and broken pieces, dental gold, bullion bars, and coins, and we value all of it the same honest way: the live gold spot price, converted to a per-gram figure, multiplied by your item's karat purity and weight. Each piece is tested and weighed in front of you, and the offer is explained out loud before you decide. There is no obligation, no fee, and no pressure, only a fair, market-based number and instant cash if you accept. Knowing your karat and weight helps, and our gold calculator gives you a realistic range before you ever walk in. As a local business with four Northern Virginia storefronts, we let you keep your gold until you agree to the price, unlike mail-in buyers who quote you only after your gold is gone. For cash for gold you can trust, visit our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
         gallery: [
           { name: "PAMP Suisse Bar", image: "/products/gold/pamp.jpg", note: ".9999 fine" },
           { name: "Credit Suisse Bar", image: "/products/gold/creditsuisse.jpg", note: ".9999 fine" },
@@ -265,6 +277,8 @@ export const CATEGORIES: Category[] = [
           "From sterling flatware and jewelry to silver bullion, rounds, and pre-1965 US coins, we pay fair, transparent prices based on weight, purity, and the current silver spot price.",
         items: ["Sterling silver jewelry", "Silver bullion & bars", "Silver rounds", "Silverware & flatware", "Pre-1965 US coins"],
         keywords: ["sell silver near me", "silver buyer", "sell sterling silver", "cash for silver"],
+        longDescription:
+          "Silver adds up faster than most people expect, and we make selling it straightforward. We buy sterling silver jewelry and flatware, silver bullion bars and rounds, and pre-1965 US 90% silver coins, paying a fair, transparent price based on weight, purity, and the live silver spot price. Sterling is stamped .925, and we test and weigh every item in front of you so you can see exactly how the offer is reached. There is no minimum, no appraisal fee, and no obligation to sell, whether you bring a single tea set, a drawer of flatware, or a box of bullion and junk silver. Because silver trades at a lower price per ounce than gold, quantity matters, and we welcome large lots as readily as single pieces. As a local buyer with four Northern Virginia stores, we pay instant cash the same visit and let you keep your silver until you accept. Bring your sterling, bullion, or coins to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, no-pressure appraisal.",
         gallery: [
           { name: "1 oz Silver Bar", image: "/products/silver/bar1oz.jpg", note: "Any mint or brand" },
           { name: "5 oz Silver Bar", image: "/products/silver/bar5oz.jpg", note: "Any mint or brand" },
@@ -282,6 +296,8 @@ export const CATEGORIES: Category[] = [
           "Platinum is rarer and denser than gold, and we pay accordingly. Bring platinum jewelry, wedding bands, bars, and bullion, we verify the purity and weigh it in front of you for a fair, market-based offer.",
         items: ["Platinum jewelry", "Platinum wedding bands", "Platinum bullion & bars", "Platinum settings", "Industrial platinum"],
         keywords: ["sell platinum", "platinum buyer near me", "sell platinum jewelry", "cash for platinum"],
+        longDescription:
+          "Platinum is rarer and denser than gold, and a fair buyer pays accordingly. We purchase platinum jewelry, wedding bands, settings, bars, bullion, and coins, verifying the purity, commonly stamped 950 or .9995, and weighing each piece in front of you before making a market-based offer. Because platinum is so dense, even a modest band can carry meaningful value, and your payout is calculated against the live platinum spot price with the math shown openly. There is no fee to find out what your platinum is worth and no obligation to sell once you see the number. Many people do not realize a white-metal ring is platinum rather than white gold, and the difference matters; we identify it correctly so you are paid for what you actually have. As a local business with four Northern Virginia storefronts, we pay instant cash the same day and let you keep your items until you accept. Bring your platinum to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, transparent appraisal.",
         gallery: [
           { group: "Platinum Coins", name: "American Platinum Eagle", image: "/products/platinum/eagle.jpg", note: "US Mint · .9995" },
           { group: "Platinum Coins", name: "Canadian Platinum Maple Leaf", image: "/products/platinum/maple.jpg", note: "RCM · .9995" },
@@ -301,6 +317,8 @@ export const CATEGORIES: Category[] = [
           "Palladium has become one of the most valuable precious metals. We buy palladium bullion, bars, coins, and jewelry, paying a transparent price based on weight, purity, and the live palladium market.",
         items: ["Palladium bullion & bars", "Palladium coins", "Palladium jewelry", "Industrial palladium"],
         keywords: ["sell palladium", "palladium buyer", "cash for palladium", "where to sell palladium"],
+        longDescription:
+          "Palladium has quietly become one of the most valuable precious metals, and many sellers do not realize how much theirs is worth. We buy palladium bullion, bars, rounds, coins such as the American and Canadian Palladium Eagle and Maple Leaf, and the occasional piece of palladium jewelry, paying a transparent price based on weight, purity, and the live palladium market. Every item is verified and weighed in front of you, and the offer is explained before you decide, with no fee and no obligation. Palladium is often confused with platinum or white gold, so correct identification matters, and our buyers test to be sure you are paid for the right metal. Because palladium prices can move sharply, we base offers on the current spot price the day you visit. As a local buyer with four Northern Virginia stores, we pay instant cash and let you keep your metal until you accept the offer. Bring your palladium to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
         gallery: [
           { group: "Palladium Coins", name: "American Palladium Eagle", image: "/products/palladium/eagle.jpg", note: "US Mint · .9995" },
           { group: "Palladium Coins", name: "Canadian Palladium Maple Leaf", image: "/products/palladium/maple.jpg", note: "RCM · .9995" },
@@ -321,6 +339,8 @@ export const CATEGORIES: Category[] = [
     intro:
       "Our GIA-trained buyers evaluate diamonds and precious gemstones on their true merits. Loose or mounted, certified or not, you get an honest, no-pressure offer based on a careful, in-person grading.",
     keywords: ["sell diamonds near me", "diamond buyer northern virginia", "sell gemstones", "sell loose diamonds"],
+    longDescription:
+      "Selling diamonds and gemstones rewards a careful, knowledgeable appraisal, and that is exactly what our GIA-trained buyers provide. We evaluate diamonds and colored gemstones on their true merits, loose or mounted, certified or not, grading each stone in person on cut, color, clarity, and carat before making an honest, no-pressure offer. A grading report helps and can support a stronger number, but you do not need one to sell; we assess the stone either way and explain how we reach the value. Any precious metal in the setting is appraised on top of the stone, so a diamond ring is valued for both its diamond and its gold or platinum. There is never a fee to learn what your stone is worth and never an obligation to sell. Selling locally means your diamond stays in your hands until you accept the offer, with instant cash the same visit, rather than shipping a valuable stone away on faith. Bring loose diamonds, engagement rings, or estate gemstone jewelry to any of our four Northern Virginia locations for a fair, expert grading.",
     subcategories: [
       {
         slug: "sell-diamonds",
@@ -331,6 +351,8 @@ export const CATEGORIES: Category[] = [
           "Our GIA-trained buyers evaluate loose and mounted diamonds on the 4 Cs, cut, color, clarity, and carat. Certified or not, you get a fair, no-pressure offer on the spot, whether it's a single stone, an engagement ring, or a full piece of diamond jewelry.",
         items: ["Loose diamonds", "Certified diamonds (GIA/EGL)", "Engagement & wedding rings", "Diamond jewelry", "Estate diamonds"],
         keywords: ["sell diamonds near me", "diamond buyer", "sell engagement ring", "sell diamond jewelry"],
+        longDescription:
+          "A diamond's value comes down to the 4 Cs, cut, color, clarity, and carat, and our GIA-trained buyers grade each stone on all four, in person and in front of you. We buy loose diamonds, certified stones, engagement and wedding rings, diamond earrings, tennis bracelets, and estate diamond jewelry, certified or not. If you have a GIA or EGL report, bring it, since independent grading removes uncertainty and supports a stronger, faster offer, but an uncertified stone is welcome and fully appraised too. The diamond and the setting are valued separately, so any gold or platinum and any designer worth is added on top of the stone itself. Every offer is transparent and carries no fee or obligation, and you keep the piece until you accept. We recommend selling in person rather than mailing a valuable diamond away, so you stay in control and get instant cash the same visit. For a fair, knowledgeable diamond appraisal, visit our Annandale, Manassas, Chantilly, or Vienna/McLean location.",
         gallery: [
           { name: "Loose Diamonds", image: "/products/diamonds/loose.jpg", note: "Any cut, color or clarity" },
           { name: "Engagement Rings", image: "/products/diamonds/ring.jpg", note: "Solitaires & halos" },
@@ -352,6 +374,8 @@ export const CATEGORIES: Category[] = [
     intro:
       "We buy collectible and bullion coins of every kind, US gold and silver, Morgan and Peace dollars, foreign gold, graded slabs, and entire inherited collections. Numismatic value is recognized here, not just melt weight.",
     keywords: ["sell coins near me", "coin buyer northern virginia", "sell coin collection", "numismatic coin buyer"],
+    longDescription:
+      "Selling coins is different from selling scrap metal, because a coin can be worth its precious-metal content, a numismatic premium for rarity and condition, or both, and a good buyer pays whichever is higher. We buy US and foreign gold and silver coins, Morgan and Peace dollars, American Eagles, pre-1933 US gold, graded slabs, and entire inherited collections, evaluating each for melt value at the live spot price and for collectible worth based on date, mint mark, and grade. Bring coins exactly as they are; do not clean them, since cleaning can erase numismatic value, and leave graded coins in their holders. Every appraisal is free and carries no obligation, and bullion offers are tied openly to the current market. Whether you have a single Gold Eagle, a bag of junk silver, or a collection built over decades, you get a careful, honest evaluation and instant cash the same day. Bring your coins or full collection to any of our four Northern Virginia locations for a free, expert appraisal.",
     subcategories: [
       {
         slug: "sell-gold-coins",
@@ -362,6 +386,8 @@ export const CATEGORIES: Category[] = [
           "We buy gold coins of all kinds, American Gold Eagles and Buffalos, Krugerrands, Maple Leafs, pre-1933 US gold, and foreign gold coins. Bullion or numismatic, we pay a fair price based on gold content and collectible premium.",
         items: ["American Gold Eagles & Buffalos", "Krugerrands & Maple Leafs", "Pre-1933 US gold coins", "Foreign gold coins", "Graded gold slabs"],
         keywords: ["sell gold coins", "gold coin buyer", "sell gold eagles", "where to sell gold coins"],
+        longDescription:
+          "Gold coins are among the easiest items to sell at a fair price, because the popular ones are standardized, recognized, and quick to verify. We buy American Gold Eagles and Buffalos, South African Krugerrands, Canadian Maple Leafs, British Britannias, pre-1933 US gold, and foreign gold coins, valuing each on its gold content at the live spot price plus any collectible premium. Standard bullion coins are paid close to their melt value because they resell easily, while proof, graded, or key-date coins can be worth more, so mention or bring any certificates and original packaging. Every coin is verified and the offer explained in front of you, with no fee and no obligation to sell. You can estimate the metal value of a one-ounce coin in our gold calculator before you visit. As a local buyer with four Northern Virginia storefronts, we pay instant cash the same day and let you keep your coins until you accept. Bring your gold coins to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
         gallery: [
           { name: "American Gold Eagle", image: "/products/gold/eagle.jpg", note: "US Mint · 22K" },
           { name: "American Gold Buffalo", image: "/products/gold/buffalo.jpg", note: "US Mint · .9999" },
@@ -385,6 +411,8 @@ export const CATEGORIES: Category[] = [
           "From Morgan and Peace dollars to American Silver Eagles and pre-1965 90% silver coins, we buy silver coins by the piece or the bag, paying for both their silver content and any numismatic value.",
         items: ["Morgan & Peace dollars", "American Silver Eagles", "Pre-1965 US silver (90%)", "Silver half dollars & quarters", "Junk silver bags"],
         keywords: ["sell silver coins", "silver coin buyer", "sell morgan dollars", "sell silver eagles"],
+        longDescription:
+          "Silver coins range from modern bullion to 19th-century classics, and we buy across the whole spectrum, by the single coin or the full bag. American Silver Eagles, Morgan and Peace dollars, pre-1965 US 90% silver, half dollars, quarters, and foreign silver are all valued for their silver content at the live spot price and for any numismatic premium their date, mint mark, or condition carries. Junk silver bags are weighed and paid on their silver content, while key dates and better-grade pieces are evaluated individually so collectible value is not overlooked. Do not clean your coins before selling, since cleaning can reduce numismatic worth, and leave any graded coins in their holders. Every appraisal is free, transparent, and without obligation. Because silver is priced per ounce well below gold, quantity matters, and we welcome large lots as readily as a single dollar. Bring your silver coins to any of our four Northern Virginia locations for a fair evaluation and instant cash the same visit.",
         gallery: [
           { name: "American Silver Eagle", image: "/products/silver/ase.jpg", note: "US Mint · .999" },
           { name: "Canadian Maple Leaf", image: "/products/silver/maple.jpg", note: "RCM · .9999" },
@@ -408,6 +436,8 @@ export const CATEGORIES: Category[] = [
           "Collectible coins are worth far more than their metal when rarity and condition align. We evaluate key dates, mint marks, and graded slabs (PCGS/NGC) to pay a fair numismatic price for individual coins or whole collections.",
         items: ["Key-date US coins", "PCGS / NGC graded slabs", "Proof & mint sets", "Error & variety coins", "Complete collections"],
         keywords: ["sell collectible coins", "numismatic coin buyer", "sell graded coins", "sell coin collection"],
+        longDescription:
+          "Collectible coins can be worth many times their metal value when rarity and condition align, and capturing that premium takes a numismatic eye rather than a scale. We evaluate key-date US coins, mint-mark varieties, proof and mint sets, error coins, and PCGS or NGC graded slabs, pricing each on the factors collectors actually pay for: date, mintage, grade, and demand. Leave graded coins sealed in their holders and do not clean raw coins, since cleaning can sharply reduce numismatic value. Whether you have a single key date, a binder built over decades, or an inherited collection you are unsure about, we appraise it carefully and explain how each piece is valued, with no fee and no obligation to sell. If a coin is worth more than its melt, we pay for that, not just the metal. Inherited collections are welcome in full. Bring your collectible or graded coins to any of our four Northern Virginia locations for an honest numismatic appraisal and instant cash if you choose to sell.",
         gallery: [
           { name: "Morgan & Peace Dollars", image: "/products/coins/morgan.jpg", note: "Key dates & CC mint marks" },
           { name: "Graded / Slabbed Coins", image: "/products/coins/slab.jpg", note: "PCGS & NGC certified" },
@@ -425,6 +455,8 @@ export const CATEGORIES: Category[] = [
           "Antique coins, ancient, colonial, and early world issues, require an expert eye. We appraise their age, origin, metal, and condition to make you an honest offer on pieces that often carry significant historical value.",
         items: ["Ancient & medieval coins", "Colonial & early US coins", "Early world & foreign coins", "Historic commemoratives"],
         keywords: ["sell antique coins", "antique coin buyer", "sell old coins", "where to sell ancient coins"],
+        longDescription:
+          "Antique coins, ancient Greek, Roman, and Byzantine issues, colonial and early US coppers and silver, gold sovereigns, and early world coinage, demand an experienced eye, and we appraise them on age, origin, metal, rarity, and condition rather than weight alone. These pieces often carry historical and collector value well beyond their gold or silver, and an offer based only on melt would shortchange you. Bring your old coins exactly as they are; cleaning an antique coin can destroy much of its value, so leave the patina and any holders intact, and include any provenance or attribution you have. Every appraisal is free, carries no obligation, and is explained in plain terms so you understand what you have. Whether it is a single inherited piece or a box of old foreign and early American coins, our buyers take the time to identify and value each correctly. For a knowledgeable appraisal of antique and historic coins, visit any of our four Northern Virginia locations and walk out with instant cash if you decide to sell.",
         gallery: [
           { name: "Pre-1933 US Gold", image: "/products/coins/pre33.jpg", note: "Liberty & Saint-Gaudens" },
           { name: "Gold Sovereigns & Crowns", image: "/products/coins/sovereign.jpg", note: "Victorian-era European gold" },
