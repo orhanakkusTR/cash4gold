@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What's It Worth? — Instant Gold &amp; Silver Estimate | Cash for Gold VA</title>
+<meta name="description" content="Estimate what your gold, silver, or platinum could be worth based on today's live market price. Free, instant, no obligation. Final price set in store after a free appraisal." />
+<style>
+  /* ===================================================================
+     Cash for Gold VA — Standalone Payout Estimator (embeddable widget)
+     Single file, no dependencies. Port to a React component later.
+     Brand: dark slate + gold accent. WCAG-minded contrast.
+     =================================================================== */
+  :root {
+    --bg:#0f1115; --panel:#171a21; --panel-2:#1f232c; --line:#2a2f3a;
+    --ink:#f3f4f6; --muted:#9aa3b2; --gold:#d4af37; --gold-soft:#e8c766;
+    --good:#34d399; --warn:#fbbf24; --radius:16px;
+    --shadow:0 10px 40px rgba(0,0,0,.45);
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink); font-family:var(--font);
+    -webkit-font-smoothing:antialiased; line-height:1.5;
+  }
+  .wrap { max-width:760px; margin:0 auto; padding:24px 18px 56px; }
+  .brandbar { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+  .brandbar .dot { width:30px; height:30px; border-radius:8px;
+    background:linear-gradient(135deg,var(--gold),var(--gold-soft)); flex:0 0 auto; }
+  .brandbar b { font-size:15px; letter-spacing:.2px; }
+  .brandbar .live { margin-left:auto; font-size:12.5px; color:var(--muted);
+    display:flex; align-items:center; gap:7px; }
+  .pulse { width:8px; height:8px; border-radius:50%; background:var(--good);
+    box-shadow:0 0 0 0 rgba(52,211,153,.6); animation:p 2s infinite; }
+  @keyframes p { 0%{box-shadow:0 0 0 0 rgba(52,211,153,.55)} 70%{box-shadow:0 0 0 7px rgba(52,211,153,0)} 100%{box-shadow:0 0 0 0 rgba(52,211,153,0)} }
+
+  h1 { font-size:clamp(24px,5vw,33px); line-height:1.15; margin:.1em 0 .25em; }
+  h1 .accent { color:var(--gold); }
+  .sub { color:var(--muted); font-size:15.5px; margin:0 0 22px; max-width:54ch; }
+
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px; box-shadow:var(--shadow); }
+  .grid { display:grid; gap:14px; }
+  @media(min-width:560px){ .grid.cols-2 { grid-template-columns:1fr 1fr; } }
+
+  label { display:block; font-size:13px; color:var(--muted); margin:0 0 6px; font-weight:600;
+    letter-spacing:.2px; }
+  .field { margin-bottom:4px; }
+  select, input[type=number] {
+    width:100%; background:var(--panel-2); color:var(--ink); border:1px solid var(--line);
+    border-radius:10px; padding:12px 13px; font-size:16px; font-family:inherit; appearance:none;
+  }
+  select:focus, input:focus { outline:2px solid var(--gold); outline-offset:1px; border-color:var(--gold); }
+  .selectwrap { position:relative; }
+  .selectwrap::after { content:"▾"; position:absolute; right:13px; top:50%; transform:translateY(-50%);
+    color:var(--muted); pointer-events:none; font-size:13px; }
+
+  /* metal pills */
+  .pills { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:4px; }
+  .pill { flex:1 1 auto; min-width:84px; text-align:center; cursor:pointer; user-select:none;
+    background:var(--panel-2); border:1px solid var(--line); border-radius:11px; padding:11px 8px;
+    font-size:14.5px; font-weight:600; transition:.15s; }
+  .pill[aria-pressed=true] { border-color:var(--gold); background:rgba(212,175,55,.12); color:var(--gold-soft); }
+  .pill:focus-visible { outline:2px solid var(--gold); outline-offset:1px; }
+
+  .unitrow { display:flex; gap:0; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  .unitrow button { flex:1; background:var(--panel-2); color:var(--muted); border:0; padding:11px 6px;
+    font-size:13.5px; font-weight:600; cursor:pointer; font-family:inherit; }
+  .unitrow button[aria-pressed=true] { background:rgba(212,175,55,.16); color:var(--gold-soft); }
+
+  /* result */
+  .result { margin-top:18px; background:linear-gradient(160deg,#1b1f27,#14171d);
+    border:1px solid var(--line); border-radius:var(--radius); padding:22px; text-align:center; }
+  .result .tag { font-size:12.5px; letter-spacing:.6px; text-transform:uppercase; color:var(--muted); }
+  .range { font-size:clamp(30px,8vw,46px); font-weight:800; letter-spacing:-.5px; margin:6px 0 2px;
+    color:var(--gold); }
+  .range small { color:var(--muted); font-weight:600; font-size:.42em; }
+  .melt { color:var(--muted); font-size:13.5px; margin-top:4px; }
+  .est-note { color:var(--warn); font-size:12.5px; margin-top:10px; font-weight:600; }
+  .placeholder { color:var(--muted); font-size:15px; padding:8px 0; }
+
+  /* disclaimer */
+  .legal { margin-top:14px; background:rgba(251,191,36,.06); border:1px solid rgba(251,191,36,.25);
+    border-radius:12px; padding:13px 15px; font-size:12.8px; color:#d9c79a; line-height:1.55; }
+  .legal b { color:var(--warn); }
+
+  /* CTA */
+  .cta { margin-top:18px; }
+  .cta h3 { margin:0 0 4px; font-size:18px; }
+  .cta p { margin:0 0 14px; color:var(--muted); font-size:14.5px; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; width:100%;
+    background:linear-gradient(135deg,var(--gold),var(--gold-soft)); color:#161616; font-weight:800;
+    border:0; border-radius:12px; padding:15px 18px; font-size:16px; text-decoration:none; cursor:pointer;
+    font-family:inherit; }
+  .btn.secondary { background:transparent; color:var(--gold-soft); border:1px solid var(--gold); }
+  .btn:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+  .locname { font-weight:700; color:var(--ink); }
+  .trust { display:flex; gap:16px; flex-wrap:wrap; margin-top:18px; color:var(--muted); font-size:13px; }
+  .trust span { display:flex; align-items:center; gap:6px; }
+  .foot { margin-top:26px; color:#6b7280; font-size:11.5px; line-height:1.6; }
+  .err { color:#f87171; font-size:12.5px; margin-top:8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brandbar">
+    <div class="dot" aria-hidden="true"></div>
+    <b>Cash for Gold VA</b>
+    <span class="live"><span class="pulse" aria-hidden="true"></span><span id="liveLabel">Loading live prices…</span></span>
+  </div>
+
+  <h1>What's it worth? <span class="accent">Get an instant estimate.</span></h1>
+  <p class="sub">
+    Enter your item and we'll estimate a cash range based on <b>today's live market price</b>.
+    Free, instant, and no obligation — your final offer is set in store after a free, no-pressure appraisal.
+  </p>
+
+  <div class="card">
+    <!-- METAL -->
+    <div class="field">
+      <label id="metalLbl">What are you selling?</label>
+      <div class="pills" role="group" aria-labelledby="metalLbl">
+        <button class="pill" data-metal="gold"     aria-pressed="true">🟡 Gold</button>
+        <button class="pill" data-metal="silver"   aria-pressed="false">⚪ Silver</button>
+        <button class="pill" data-metal="platinum" aria-pressed="false">⬜ Platinum</button>
+      </div>
+    </div>
+
+    <div class="grid cols-2" style="margin-top:14px;">
+      <!-- PURITY -->
+      <div class="field">
+        <label for="purity" id="purityLbl">Purity</label>
+        <div class="selectwrap">
+          <select id="purity" aria-describedby="purityHint"></select>
+        </div>
+      </div>
+
+      <!-- WEIGHT -->
+      <div class="field">
+        <label for="weight">Weight</label>
+        <input id="weight" type="number" min="0" step="0.1" inputmode="decimal" placeholder="e.g. 12.5" />
+      </div>
+    </div>
+
+    <!-- UNIT -->
+    <div class="field" style="margin-top:10px;">
+      <label>Weight unit</label>
+      <div class="unitrow" role="group" aria-label="Weight unit">
+        <button data-unit="g"   aria-pressed="true">Grams</button>
+        <button data-unit="dwt" aria-pressed="false">Pennyweight</button>
+        <button data-unit="ozt" aria-pressed="false">Troy oz</button>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result" id="result" aria-live="polite">
+      <div class="placeholder">Enter a weight above to see your estimated range.</div>
+    </div>
+    <div class="err" id="err" hidden></div>
+
+    <!-- LEGAL DISCLAIMER (always visible) -->
+    <div class="legal">
+      <b>This is an estimate, not an offer.</b> It is calculated from the live market metal price minus
+      standard refining and processing, and is <b>not a binding quote</b>. Your actual price is determined
+      <b>in store</b> after our experts test and weigh each item — value can be higher (e.g. designer,
+      collectible, or numismatic pieces) or lower. To sell, Virginia law requires you to be 18+, present
+      valid ID, and be the rightful owner of the items.
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="card cta" style="margin-top:18px;">
+    <h3>Get your real offer — free &amp; on the spot</h3>
+    <p>Pick your nearest location for an exact, no-obligation appraisal. Walk out with cash the same day.</p>
+    <div class="field">
+      <div class="selectwrap">
+        <select id="loc" aria-label="Choose a location"></select>
+      </div>
+    </div>
+    <div class="grid cols-2" style="margin-top:12px;">
+      <a class="btn" id="callBtn" href="#">📞 <span>Call <span class="locname" id="callName">location</span></span></a>
+      <a class="btn secondary" id="mapBtn" href="#" target="_blank" rel="noopener">📍 Directions</a>
+    </div>
+    <div class="trust">
+      <span>⭐ 4.9 / 342 Google reviews</span>
+      <span>✅ Tested in front of you</span>
+      <span>💵 Instant cash</span>
+    </div>
+  </div>
+
+  <p class="foot" id="foot"></p>
+
+</div>
+
+<script>
+/* =====================================================================
+   CONFIG — business-editable. These are the only values legal/ops tune.
+   ===================================================================== */
+
+// Estimated payout band as a fraction of melt value (LOW–HIGH).
+// Deliberately a RANGE, never a single number, to stay non-binding and
+// honest (VCPA §59.1-200 / FTC Act §5). Tune to real store economics.
+const PAYOUT = {
+  gold:     { low: 0.78, high: 0.92 },
+  silver:   { low: 0.65, high: 0.85 },
+  platinum: { low: 0.70, high: 0.85 },
+};
+
+// Purity options per metal. value = fraction of pure metal by weight.
+const PURITY = {
+  gold: [
+    { label: "10K (.417)", value: 0.4167 },
+    { label: "14K (.583)", value: 0.5833 },
+    { label: "18K (.750)", value: 0.7500 },
+    { label: "22K (.917)", value: 0.9167 },
+    { label: "24K / fine (.999)", value: 0.999 },
+  ],
+  silver: [
+    { label: "Sterling .925", value: 0.925 },
+    { label: "Coin .900", value: 0.900 },
+    { label: "Fine .999", value: 0.999 },
+  ],
+  platinum: [
+    { label: "Platinum .950", value: 0.950 },
+    { label: "Platinum .900", value: 0.900 },
+  ],
+};
+
+// Live-price API (free, keyless). Falls back to reference prices on failure.
+const API = { gold:"XAU", silver:"XAG", platinum:"XPT" };
+const FALLBACK = { gold: 4180, silver: 66, platinum: 1730 }; // USD / troy oz reference (update periodically)
+
+// Unit -> grams
+const GRAMS = { g: 1, dwt: 1.55517, ozt: 31.1035 };
+const TROY_OZ_G = 31.1035;
+
+// NAP — keep in sync with src/data/business.ts (single source of truth).
+const LOCATIONS = [
+  { slug:"annandale", name:"Annandale", phone:"(571) 290-8020", href:"+15712908020", map:"https://maps.google.com/?q=7262+Columbia+Pike+Annandale+VA" },
+  { slug:"manassas",  name:"Manassas",  phone:"(571) 359-0146", href:"+15713590146", map:"https://maps.google.com/?q=9013+Centreville+Rd+Manassas+VA" },
+  { slug:"chantilly", name:"Chantilly", phone:"(571) 224-5279", href:"+15712245279", map:"https://maps.google.com/?q=14025+Lee+Jackson+Memorial+Hwy+Chantilly+VA" },
+  { slug:"vienna",    name:"Vienna / McLean", phone:"(703) 889-0532", href:"+17038890532", map:"https://maps.google.com/?q=8453+Tyco+Rd+Vienna+VA" },
+];
+
+/* =====================================================================
+   STATE + LOGIC
+   ===================================================================== */
+const state = { metal:"gold", unit:"g", spot:{...FALLBACK}, live:false };
+
+const $ = (s)=>document.querySelector(s);
+const fmt = (n)=> n.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0});
+
+async function loadPrices(){
+  try {
+    const metals = Object.keys(API);
+    const res = await Promise.all(metals.map(m =>
+      fetch(`https://api.gold-api.com/price/${API[m]}`).then(r=>{ if(!r.ok) throw 0; return r.json(); })
+    ));
+    metals.forEach((m,i)=>{ if(res[i] && res[i].price>0) state.spot[m]=res[i].price; });
+    state.live = true;
+    $("#liveLabel").textContent = `Live gold ${fmt(state.spot.gold)}/oz`;
+  } catch {
+    state.live = false;
+    $("#liveLabel").textContent = `Reference price (live feed offline)`;
+  }
+  calc();
+}
+
+function fillPurity(){
+  const sel = $("#purity");
+  sel.innerHTML = PURITY[state.metal].map(o=>`<option value="${o.value}">${o.label}</option>`).join("");
+  // default to a common purity (14K for gold, sterling for silver)
+  if(state.metal==="gold") sel.value = 0.5833;
+}
+
+function calc(){
+  const err = $("#err"); err.hidden = true;
+  const w = parseFloat($("#weight").value);
+  const purity = parseFloat($("#purity").value);
+  const result = $("#result");
+
+  if(!w || w<=0){
+    result.innerHTML = `<div class="placeholder">Enter a weight above to see your estimated range.</div>`;
+    return;
+  }
+  if(w > 100000){ err.hidden=false; err.textContent="Please enter a realistic weight."; return; }
+
+  const grams = w * GRAMS[state.unit];
+  const pricePerGram = state.spot[state.metal] / TROY_OZ_G;
+  const melt = pricePerGram * grams * purity;           // pure-metal (melt) value
+  const band = PAYOUT[state.metal];
+  const low  = melt * band.low;
+  const high = melt * band.high;
+
+  result.innerHTML = `
+    <div class="tag">Estimated cash range</div>
+    <div class="range">${fmt(low)} <small>–</small> ${fmt(high)}</div>
+    <div class="melt">Based on ~${fmt(melt)} melt value · ${state.live ? "live" : "reference"} ${state.metal} price ${fmt(state.spot[state.metal])}/oz</div>
+    <div class="est-note">⚠ Estimate only — not a binding offer. Final price set in store after testing.</div>
+  `;
+}
+
+/* =====================================================================
+   UI WIRING
+   ===================================================================== */
+// metal pills
+document.querySelectorAll(".pill").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".pill").forEach(b=>b.setAttribute("aria-pressed", b===btn));
+    state.metal = btn.dataset.metal;
+    fillPurity(); calc();
+  });
+});
+// unit toggle
+document.querySelectorAll(".unitrow button").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".unitrow button").forEach(b=>b.setAttribute("aria-pressed", b===btn));
+    state.unit = btn.dataset.unit; calc();
+  });
+});
+$("#weight").addEventListener("input", calc);
+$("#purity").addEventListener("change", calc);
+
+// locations
+const locSel = $("#loc");
+locSel.innerHTML = LOCATIONS.map(l=>`<option value="${l.slug}">${l.name} — ${l.phone}</option>`).join("");
+function syncLoc(){
+  const l = LOCATIONS.find(x=>x.slug===locSel.value);
+  $("#callBtn").href = `tel:${l.href}`;
+  $("#callName").textContent = l.name;
+  $("#mapBtn").href = l.map;
+}
+locSel.addEventListener("change", syncLoc);
+
+// footer / methodology transparency (E-E-A-T + FTC substantiation)
+$("#foot").innerHTML =
+  "How we estimate: pure-metal weight × today's market spot price, less standard refining and processing. " +
+  "Estimates are illustrative and do not account for designer, collectible, numismatic, or gemstone value, " +
+  "which can raise your offer. Not financial advice. Cash for Gold VA is a licensed precious-metals dealer; " +
+  "all purchases follow Virginia Code §54.1-4100 et seq. (valid ID required, sellers must be 18+ and the rightful owner).";
+
+// init
+fillPurity(); syncLoc(); loadPrices();
+</script>
+</body>
+</html>

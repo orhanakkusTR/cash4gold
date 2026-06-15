@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Banner Görsel Önizleme — Cash for Gold VA</title>
+<style>
+  :root{--bg:#0f1115;--panel:#171a21;--line:#2a2f3a;--ink:#f3f4f6;--muted:#9aa3b2;--gold:#d4af37;--gold-soft:#e8c766;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;}
+  .wrap{max-width:1200px;margin:0 auto;padding:28px 18px 60px;}
+  h1{font-size:26px;margin:0 0 4px;} h1 .a{color:var(--gold);}
+  .lede{color:var(--muted);font-size:14.5px;margin:0 0 26px;max-width:70ch;}
+  h2{font-size:18px;margin:34px 0 14px;border-left:3px solid var(--gold);padding-left:10px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:.15s;display:flex;flex-direction:column;}
+  .card:hover{border-color:var(--gold);transform:translateY(-2px);}
+  .card .thumb{aspect-ratio:4/3;width:100%;object-fit:cover;background:#1f232c;display:block;}
+  .card .meta{padding:9px 11px;font-size:12.5px;color:var(--muted);line-height:1.35;}
+  .card.star .meta::before{content:"⭐ ";}
+  .badge{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#161616;background:linear-gradient(135deg,var(--gold),var(--gold-soft));border-radius:5px;padding:2px 7px;margin-bottom:6px;}
+  .vid{position:relative;}
+  .vid .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .vid .play span{width:46px;height:46px;border-radius:50%;background:rgba(0,0,0,.55);border:2px solid var(--gold-soft);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:18px;}
+  .vid .thumb{background:linear-gradient(135deg,#1a1d24,#23262f);display:flex;align-items:center;justify-content:center;color:#3a3f4a;font-size:34px;}
+  .note{margin-top:8px;color:#6b7280;font-size:12px;}
+  .foot{margin-top:40px;color:#6b7280;font-size:12px;line-height:1.6;border-top:1px solid var(--line);padding-top:16px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Banner görsel & video <span class="a">önizleme</span></h1>
+  <p class="lede">Seçtiğim adayların hepsi burada. ⭐ = banner için en uygun. Bir karta tıklayınca Pexels sayfası yeni sekmede açılır; oradan <b>Free Download</b> ile yüksek çözünürlüğü indirirsiniz. Videolar Pexels'te oynatılır (önizleme buraya gömülemez, tıklayın).</p>
+  <div id="app"></div>
+  <p class="foot">Kaynak: Pexels — ticari kullanım ücretsiz, atıf zorunlu değil. Önizleme görselleri Pexels CDN'inden çekilmektedir. Banner için indirirken en yüksek çözünürlüğü (Original / 4K) seçin.</p>
+</div>
+
+<script>
+const photo = (id)=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=600`;
+const pUrl  = (id)=>`https://www.pexels.com/photo/${id}/`;
+const vUrl  = (id)=>`https://www.pexels.com/video/${id}/`;
+
+const DATA = [
+  { h:"🌟 Main Banner (genel / altın — koyu, sinematik)", items:[
+    {type:"video", id:36338911, star:true, t:"Lüks altın takı showcase — banner'a en uygun"},
+    {type:"video", id:8516369, t:"Altın glitter / parıltı (koyu zemin)"},
+    {type:"video", id:7234803, t:"Metalik altın yüzey (abstract, overlay için)"},
+    {type:"photo", id:7314466, star:true, t:"Yakın çekim altın kolye/bileklik"},
+    {type:"photo", id:4735892, t:"Beyaz zeminde altın kolyeler"},
+  ]},
+  { h:"🟡 Gold", items:[
+    {type:"photo", id:28933801, star:true, t:"Sergi standında altın bileklik (premium)"},
+    {type:"photo", id:8706563, t:"Altın aksesuar tutan kişi"},
+    {type:"photo", id:7314460, t:"Altın + gümüş vitrin"},
+  ]},
+  { h:"⚪ Silver", items:[
+    {type:"photo", id:9430463, star:true, t:"Mermer üstü gümüş takı (makro)"},
+    {type:"photo", id:6263064, t:"Gümüş zincir parlatan kuyumcu (uzmanlık)"},
+    {type:"photo", id:5497303, t:"Antika gümüş takı detay"},
+  ]},
+  { h:"💎 Diamonds", items:[
+    {type:"photo", id:31087451, star:true, t:"Kömür zemin elmas yüzük makro (koyu)"},
+    {type:"photo", id:32988751, t:"Mavi kadife stand üstü elmas yüzük"},
+    {type:"photo", id:2849742, t:"Bokeh zeminli pırlanta yüzük"},
+    {type:"video", id:8971886, star:true, t:"Tek lüks elmas, parıltı detay"},
+    {type:"video", id:5327642, t:"Elinde elmas tutan kişi"},
+  ]},
+  { h:"💍 Jewelry (designer / estate)", items:[
+    {type:"photo", id:29043373, star:true, t:"Siyah standlarda altın takı vitrini (mağaza)"},
+    {type:"photo", id:5301351, t:"Mücevher kutusunda makro aksesuar"},
+    {type:"photo", id:14587263, t:"Taşlı yüzük koleksiyonu"},
+    {type:"video", id:8844354, t:"Dönen sergide küpe detay"},
+    {type:"video", id:8855209, t:"Altın kolyelere dokunan kadın"},
+  ]},
+  { h:"🪙 Coins", items:[
+    {type:"photo", id:8442324, star:true, t:"Siyah zeminde altın sikkeler (dramatik)"},
+    {type:"photo", id:8442429, t:"Altın bullion sikke makro"},
+    {type:"photo", id:106152, t:"Altın sikke yığını"},
+    {type:"video", id:7082895, t:"Dönen altın sikke"},
+  ]},
+];
+
+const app = document.getElementById("app");
+DATA.forEach(sec=>{
+  const h2 = document.createElement("h2"); h2.textContent = sec.h; app.appendChild(h2);
+  const grid = document.createElement("div"); grid.className="grid";
+  sec.items.forEach(it=>{
+    const a = document.createElement("a");
+    a.className = "card" + (it.star?" star":"");
+    a.target = "_blank"; a.rel = "noopener";
+    if(it.type==="photo"){
+      a.href = pUrl(it.id);
+      a.innerHTML = `<img class="thumb" loading="lazy" src="${photo(it.id)}" alt="${it.t}">
+        <div class="meta"><span class="badge">Foto</span><br>${it.t}</div>`;
+    } else {
+      a.href = vUrl(it.id);
+      a.innerHTML = `<div class="thumb vid"><div style="aspect-ratio:4/3;width:100%;display:flex;align-items:center;justify-content:center;">🎬</div>
+        <div class="play"><span>▶</span></div></div>
+        <div class="meta"><span class="badge">Video</span><br>${it.t}</div>`;
+    }
+    grid.appendChild(a);
+  });
+  app.appendChild(grid);
+});
+</script>
+</body>
+</html>

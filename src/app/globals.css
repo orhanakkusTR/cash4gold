@@ -1,0 +1,298 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =========================================================================
+   Cash for Gold VA, design tokens (Tailwind v4 @theme)
+   Premium charcoal + gold palette. Centralized; no magic hex in JSX.
+   ========================================================================= */
+
+@theme {
+  /* Ink / charcoal surfaces */
+  --color-ink-950: #0a0807;
+  --color-ink-900: #141009;
+  --color-ink-850: #1c1710;
+  --color-ink-800: #26201733;
+  --color-ink: #14100b;
+
+  /* Surfaces, white + barely-there warm tint (no cream). White+gold theme. */
+  --color-cream-50: #ffffff;
+  --color-cream-100: #fcfbf9;
+  --color-cream-200: #f7f4ec;
+
+  /* Gold scale, calibrated to the logo's bright warm gold (#eec143).
+     Mid tones (300–600) brightened for fills/buttons; dark tones (700–900)
+     kept deep for legible text/borders on white. */
+  --color-gold-50: #fdf7e6;
+  --color-gold-100: #faecc4;
+  --color-gold-200: #f3d889;
+  --color-gold-300: #edc555;
+  --color-gold-400: #e9bd3c;
+  --color-gold-500: #e0b02f;
+  --color-gold-600: #c2941d;
+  --color-gold-700: #856316;
+  --color-gold-800: #5a4313;
+  --color-gold-900: #3b2c0e;
+
+  /* Semantic */
+  --color-background: #ffffff;
+  --color-foreground: #17140d;
+  --color-muted: #6a675f;
+  --color-hairline: #efece4;
+
+  /* Fonts (wired in layout.tsx via next/font) */
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-gold: 0 10px 40px -12px rgba(163, 120, 31, 0.35);
+  --shadow-card: 0 4px 24px -8px rgba(20, 16, 11, 0.12);
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Animations */
+  --animate-shimmer: shimmer 3s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pxticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ------------------------------------------------------------------------ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Reusable utilities ------------------------------------------------------ */
+
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 80rem; /* 1280px */
+  padding-inline: 1.25rem;
+}
+
+/* Gold gradient text */
+@utility text-gold-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-gold-600),
+    var(--color-gold-300),
+    var(--color-gold-500)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Shimmering gold (for accents on dark) */
+@utility text-gold-shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--color-gold-500) 20%,
+    var(--color-gold-100) 40%,
+    var(--color-gold-100) 50%,
+    var(--color-gold-500) 70%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+/* US-dollar green → white shimmer (for the word "cash" on dark sections) */
+@utility text-cash-shimmer {
+  background: linear-gradient(
+    100deg,
+    #3f9d5b 18%,
+    #7fd39a 38%,
+    #ffffff 50%,
+    #7fd39a 62%,
+    #3f9d5b 82%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+/* Shimmering gold tuned for LIGHT/white backgrounds — richer, darker tones so
+   it stays legible while a brighter highlight sweeps across. */
+@utility text-gold-shimmer-light {
+  background: linear-gradient(
+    110deg,
+    var(--color-gold-700) 18%,
+    var(--color-gold-500) 36%,
+    var(--color-gold-300) 50%,
+    var(--color-gold-500) 64%,
+    var(--color-gold-700) 82%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 5.5s linear infinite;
+}
+
+/* Diamond / prismatic shimmer — icy blue → lavender → pink, iridescent.
+   Tones chosen to stay legible on a white background (no pure white). */
+@utility text-diamond-shimmer {
+  background: linear-gradient(
+    110deg,
+    #7fa8e8 8%,
+    #9d8cf0 26%,
+    #d49ae6 42%,
+    #f0a3d4 50%,
+    #d49ae6 58%,
+    #9d8cf0 74%,
+    #7fa8e8 92%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+/* Diamond / silver shimmer — polished platinum tones with a bright white
+   highlight sweeping across. Stays legible on white (darkest stop ~steel). */
+@utility text-silver-shimmer {
+  background: linear-gradient(
+    110deg,
+    #5b6675 14%,
+    #9aa6b6 30%,
+    #c8d2de 42%,
+    #eef3f8 50%,
+    #c8d2de 58%,
+    #9aa6b6 70%,
+    #5b6675 86%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4.5s linear infinite;
+}
+
+/* Thin gold hairline divider */
+@utility rule-gold {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-400),
+    transparent
+  );
+}
+
+@theme inline {
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear
+;
+  @keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes spin-around {
+  0% {
+    transform: translateZ(0) rotate(0);
+    }
+  15%, 35% {
+    transform: translateZ(0) rotate(90deg);
+    }
+  65%, 85% {
+    transform: translateZ(0) rotate(270deg);
+    }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+    }
+  }
+  --animate-meteor: meteor 5s linear infinite;
+  @keyframes meteor {
+  0% {
+    transform: rotate(var(--angle)) translateX(0);
+    opacity: 1;
+    }
+  70% {
+    opacity: 1;
+    }
+  100% {
+    transform: rotate(var(--angle)) translateX(-500px);
+    opacity: 0;
+    }
+  }
+  --animate-aurora: aurora 8s ease-in-out infinite alternate;
+  @keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+    transform: rotate(-5deg) scale(0.9);
+    }
+  25% {
+    background-position: 50% 100%;
+    transform: rotate(5deg) scale(1.1);
+    }
+  50% {
+    background-position: 100% 50%;
+    transform: rotate(-3deg) scale(0.95);
+    }
+  75% {
+    background-position: 50% 0%;
+    transform: rotate(3deg) scale(1.05);
+    }
+  100% {
+    background-position: 0% 50%;
+    transform: rotate(-5deg) scale(0.9);
+    }
+  }}

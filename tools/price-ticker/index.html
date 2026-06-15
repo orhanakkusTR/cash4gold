@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Live Metal Prices — Cash for Gold VA</title>
+<meta name="description" content="Today's live gold, silver, platinum and palladium spot prices, updated continuously. Cash for Gold VA pays based on the live market." />
+<style>
+  /* ===================================================================
+     Cash for Gold VA — Live Spot Price Ticker (embeddable header strip)
+     Single file, no dependencies. The #cfg-ticker block + its <script>
+     are the embeddable unit; everything below it is demo chrome.
+     =================================================================== */
+  :root {
+    --bg:#0f1115; --panel:#171a21; --line:#2a2f3a; --ink:#f3f4f6; --muted:#9aa3b2;
+    --gold:#d4af37; --gold-soft:#e8c766; --up:#34d399; --down:#f87171;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); -webkit-font-smoothing:antialiased; }
+
+  /* ---------- TICKER (the embeddable part) ---------- */
+  #cfg-ticker {
+    background:linear-gradient(90deg,#12141a,#171a21,#12141a);
+    border-bottom:1px solid var(--line);
+    font-family:var(--font);
+    color:var(--ink);
+    overflow:hidden;
+    position:relative;
+  }
+  .cfg-tk-inner { display:flex; align-items:center; gap:14px; padding:0 14px; height:46px; }
+  .cfg-tk-badge {
+    flex:0 0 auto; display:flex; align-items:center; gap:7px; font-size:12.5px; font-weight:700;
+    color:var(--gold-soft); letter-spacing:.3px; white-space:nowrap;
+  }
+  .cfg-tk-badge .pulse { width:8px; height:8px; border-radius:50%; background:var(--up);
+    box-shadow:0 0 0 0 rgba(52,211,153,.6); animation:p 2s infinite; }
+  @keyframes p { 0%{box-shadow:0 0 0 0 rgba(52,211,153,.55)} 70%{box-shadow:0 0 0 7px rgba(52,211,153,0)} 100%{box-shadow:0 0 0 0 rgba(52,211,153,0)} }
+
+  /* scrolling track of quotes */
+  .cfg-tk-viewport { flex:1 1 auto; overflow:hidden; mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent); }
+  .cfg-tk-track { display:flex; align-items:center; gap:30px; width:max-content; will-change:transform; animation:scroll 34s linear infinite; }
+  #cfg-ticker:hover .cfg-tk-track { animation-play-state:paused; }
+  @keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @media (prefers-reduced-motion: reduce){ .cfg-tk-track { animation:none; } }
+
+  .cfg-q { display:flex; align-items:center; gap:9px; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .cfg-q .nm { color:var(--muted); font-size:13px; font-weight:600; }
+  .cfg-q .px { font-size:14.5px; font-weight:800; }
+  .cfg-q .chg { font-size:12px; font-weight:700; display:inline-flex; align-items:center; gap:3px; }
+  .cfg-q .chg.up { color:var(--up); } .cfg-q .chg.down { color:var(--down); } .cfg-q .chg.flat { color:var(--muted); }
+  .cfg-q .unit { color:#6b7280; font-size:11px; }
+
+  /* right-side controls */
+  .cfg-tk-ctrls { flex:0 0 auto; display:flex; align-items:center; gap:8px; }
+  .cfg-tk-ctrls .uTog { display:flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .cfg-tk-ctrls .uTog button { background:#1f232c; color:var(--muted); border:0; font-family:inherit;
+    font-size:11.5px; font-weight:700; padding:6px 9px; cursor:pointer; }
+  .cfg-tk-ctrls .uTog button[aria-pressed=true] { background:rgba(212,175,55,.18); color:var(--gold-soft); }
+  .cfg-tk-ctrls .ago { font-size:11px; color:#6b7280; white-space:nowrap; }
+  @media (max-width:620px){ .cfg-tk-ctrls .ago { display:none; } .cfg-tk-badge span.t { display:none; } }
+
+  /* ---------- demo chrome (not part of the embed) ---------- */
+  .demo { max-width:760px; margin:0 auto; padding:40px 18px 60px; }
+  .demo h1 { font-size:clamp(22px,5vw,30px); margin:0 0 8px; }
+  .demo h1 .a { color:var(--gold); }
+  .demo p { color:var(--muted); font-size:15px; max-width:60ch; }
+  .demo .note { margin-top:22px; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 20px; font-size:14px; color:#c9cfda; }
+  .demo .note b { color:var(--ink); }
+  .demo code { background:#1f232c; border:1px solid var(--line); border-radius:6px; padding:1px 6px; font-size:13px; color:var(--gold-soft); }
+  .legalstrip { text-align:center; font-size:11.5px; color:#6b7280; padding:10px 14px; border-bottom:1px solid var(--line); background:#0c0e12; }
+</style>
+</head>
+<body>
+
+<!-- ================= EMBEDDABLE TICKER START ================= -->
+<div id="cfg-ticker" role="region" aria-label="Live precious metal prices">
+  <div class="cfg-tk-inner">
+    <div class="cfg-tk-badge"><span class="pulse" aria-hidden="true"></span><span class="t">LIVE&nbsp;PRICES</span></div>
+    <div class="cfg-tk-viewport"><div class="cfg-tk-track" id="cfgTrack" aria-live="off"></div></div>
+    <div class="cfg-tk-ctrls">
+      <div class="uTog" role="group" aria-label="Price unit">
+        <button data-unit="ozt" aria-pressed="true">oz</button>
+        <button data-unit="g"   aria-pressed="false">gram</button>
+      </div>
+      <span class="ago" id="cfgAgo">—</span>
+    </div>
+  </div>
+</div>
+<!-- subtle legal clarity: spot ≠ payout -->
+<div class="legalstrip">Live market <b style="color:var(--gold-soft)">spot</b> prices, for reference only — your offer is based on item purity, weight &amp; condition, set in store.</div>
+<!-- ================= EMBEDDABLE TICKER END ================= -->
+
+<script>
+/* =====================================================================
+   Live Spot Ticker — config + logic (embeddable, self-contained)
+   ===================================================================== */
+const CFG = {
+  metals: [
+    { key:"gold",      sym:"XAU", nm:"Gold",      fallback:4180 },
+    { key:"silver",    sym:"XAG", nm:"Silver",    fallback:66   },
+    { key:"platinum",  sym:"XPT", nm:"Platinum",  fallback:1730 },
+    { key:"palladium", sym:"XPD", nm:"Palladium", fallback:1310 },
+  ],
+  refreshMs: 60000,        // re-poll every 60s
+  endpoint: (sym)=>`https://api.gold-api.com/price/${sym}`,
+};
+const TROY_OZ_G = 31.1035;
+
+const tkState = { unit:"ozt", prices:{}, prev:{}, live:false, updatedAt:null };
+const $ = (s)=>document.querySelector(s);
+const money = (n)=> n.toLocaleString("en-US",{style:"currency",currency:"USD",
+  minimumFractionDigits:2, maximumFractionDigits:2});
+
+async function tkFetch(){
+  try {
+    const res = await Promise.all(CFG.metals.map(m =>
+      fetch(CFG.endpoint(m.sym)).then(r=>{ if(!r.ok) throw 0; return r.json(); })
+    ));
+    CFG.metals.forEach((m,i)=>{
+      const px = res[i] && res[i].price;
+      if(px>0){ tkState.prev[m.key] = tkState.prices[m.key]; tkState.prices[m.key] = px; }
+    });
+    tkState.live = true;
+  } catch {
+    if(!Object.keys(tkState.prices).length){
+      CFG.metals.forEach(m=> tkState.prices[m.key] = m.fallback);
+    }
+    tkState.live = false;
+  }
+  tkState.updatedAt = Date.now();
+  render();
+}
+
+function quoteHTML(m){
+  let px = tkState.prices[m.key];
+  if(px==null) return "";
+  const prev = tkState.prev[m.key];
+  const perGram = tkState.unit === "g";
+  const shown = perGram ? px / TROY_OZ_G : px;
+
+  let chg = `<span class="chg flat">●</span>`;
+  if(prev!=null && prev!==px){
+    const up = px > prev;
+    const diff = Math.abs(px - prev);
+    const pct = (diff / prev * 100);
+    chg = `<span class="chg ${up?'up':'down'}">${up?'▲':'▼'} ${pct.toFixed(2)}%</span>`;
+  }
+  return `<span class="cfg-q">
+      <span class="nm">${m.nm}</span>
+      <span class="px">${money(shown)}</span>
+      <span class="unit">/${perGram?'g':'oz'}</span>
+      ${chg}
+    </span>`;
+}
+
+function render(){
+  // duplicate the set once so the marquee loops seamlessly (-50% keyframe)
+  const one = CFG.metals.map(quoteHTML).join("");
+  $("#cfgTrack").innerHTML = one + one;
+  renderAgo();
+}
+
+function renderAgo(){
+  if(!tkState.updatedAt) return;
+  const s = Math.round((Date.now()-tkState.updatedAt)/1000);
+  const txt = tkState.live
+    ? (s<5 ? "updated just now" : `updated ${s}s ago`)
+    : "reference (feed offline)";
+  $("#cfgAgo").textContent = txt;
+}
+
+// unit toggle
+document.querySelectorAll('#cfg-ticker .uTog button').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    document.querySelectorAll('#cfg-ticker .uTog button').forEach(x=>x.setAttribute('aria-pressed', x===b));
+    tkState.unit = b.dataset.unit; render();
+  });
+});
+
+// init + timers  (Date.now used only for relative "ago" display)
+tkFetch();
+setInterval(tkFetch, CFG.refreshMs);
+setInterval(renderAgo, 1000);
+</script>
+
+<!-- ===== demo chrome below (delete when embedding) ===== -->
+<div class="demo">
+  <h1>Live spot price <span class="a">ticker</span></h1>
+  <p>The strip at the top of this page updates continuously from the live market and is designed to sit at
+     the very top of every page on the site — a constant signal that our offers track real-time prices.</p>
+
+  <div class="note">
+    <b>How it works</b><br>
+    • Pulls live Gold / Silver / Platinum / Palladium spot from the same price engine as the estimator.<br>
+    • Re-polls every 60 seconds; <code>▲ / ▼</code> shows the move since the last poll.<br>
+    • Toggle <code>oz / gram</code> on the right.<br>
+    • Hover to pause the scroll. Respects reduced-motion settings.<br>
+    • If the live feed drops, it falls back to reference prices and says so — never shows a stale price as “live”.<br><br>
+    <b>To embed:</b> copy the block between the <code>EMBEDDABLE TICKER START/END</code> comments (plus its
+    <code>&lt;script&gt;</code>) into the site header. In the Next.js build this becomes a
+    <code>&lt;LivePriceTicker /&gt;</code> client component.
+  </div>
+</div>
+
+</body>
+</html>
