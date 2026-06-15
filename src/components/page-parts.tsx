@@ -44,11 +44,11 @@ export function PageHero({
               <span className="h-px w-6 bg-gold-400" /> {eyebrow}
             </span>
           )}
-          <h1 className="max-w-3xl font-display text-4xl font-semibold leading-[1.1] text-cream-50 sm:text-5xl">
+          <h1 className="max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.1] text-cream-50 sm:text-5xl">
             {title}
           </h1>
           {description && (
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-cream-100/75">{description}</p>
+            <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-cream-100/75">{description}</p>
           )}
         </Reveal>
       </div>
@@ -59,7 +59,7 @@ export function PageHero({
 /** Gold CTA band used at the bottom of inner pages. */
 export function CtaBand({
   title = "Ready to turn your valuables into cash?",
-  description = "Walk into any Northern Virginia location or request a free quote online, no appointment, no obligation.",
+  description = "Walk into any Northern Virginia location or request a free quote online, no appointment, no obligation.",
 }: {
   title?: string;
   description?: string;
@@ -78,10 +78,10 @@ export function CtaBand({
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-gold-300">
               <span className="h-px w-6 bg-gold-400" /> Free appraisal
             </span>
-            <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl">
+            <h2 className="mx-auto mt-4 max-w-2xl text-balance font-display text-3xl font-semibold leading-tight text-cream-50 sm:text-4xl">
               {title}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-cream-100/70">{description}</p>
+            <p className="mx-auto mt-4 max-w-xl text-pretty text-cream-100/70">{description}</p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a href={`tel:${PRIMARY_PHONE_HREF}`}
                 className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-8 font-semibold text-ink-950 shadow-[var(--shadow-gold)] transition-transform hover:-translate-y-0.5">
