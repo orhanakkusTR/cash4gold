@@ -90,8 +90,8 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "group flex items-center gap-1 rounded-full px-4 py-2.5 text-[0.95rem] font-semibold transition-colors",
-                    openMenu === item.label ? "text-gold-700" : "text-foreground/80 hover:text-gold-700",
+                    "group flex items-center gap-1 rounded-full px-4 py-2.5 text-[0.95rem] font-bold transition-colors",
+                    openMenu === item.label ? "text-gold-700" : "text-foreground hover:text-gold-700",
                   )}
                 >
                   {item.label}
