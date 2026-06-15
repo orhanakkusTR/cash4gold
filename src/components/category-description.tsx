@@ -5,13 +5,28 @@ import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Bolds the first verbatim occurrence of each target keyword in the copy. Search
- * phrases that don't appear in the text are skipped (we never inject them), and
- * longer phrases are matched first so they win over overlapping shorter ones.
+ * Important phrases bolded across every description in addition to each page's
+ * own keyword: the local-SEO signals (Northern Virginia + the four cities) and
+ * the trust/value terms (spot price, free appraisal, instant cash). Metal-specific
+ * spot-price variants are listed first so they win over the bare "spot price".
+ */
+const EMPHASIS_TERMS = [
+  "Northern Virginia",
+  "gold spot price", "silver spot price", "platinum spot price", "palladium spot price",
+  "live spot price", "current spot price", "spot price",
+  "free appraisal", "instant cash", "no obligation",
+  "Annandale", "Manassas", "Chantilly", "Vienna/McLean",
+];
+
+/**
+ * Bolds the first verbatim occurrence of each target phrase in the copy. Phrases
+ * that don't appear in the text are skipped (we never inject them), and longer
+ * phrases are matched first so they win over overlapping shorter ones.
  */
 function emphasizeKeywords(text: string, keywords: string[] = []) {
   const ranges: { start: number; end: number }[] = [];
-  for (const kw of [...keywords].sort((a, b) => b.length - a.length)) {
+  const phrases = [...new Set([...keywords, ...EMPHASIS_TERMS])];
+  for (const kw of phrases.sort((a, b) => b.length - a.length)) {
     const idx = text.toLowerCase().indexOf(kw.toLowerCase());
     if (idx === -1) continue;
     const end = idx + kw.length;

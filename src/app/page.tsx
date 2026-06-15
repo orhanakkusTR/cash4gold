@@ -36,12 +36,12 @@ export default function Home() {
       <TrustStats />
 
       {/* What we buy, bento */}
-      <section className="bg-cream-100 py-20 sm:py-28">
+      <section className="bg-cream-100 py-16 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="What We Buy"
             title="We pay top dollar for precious things"
-            description="From a single gold ring to an entire estate collection, bring it in for a free, no-obligation appraisal."
+            description={<>From a single gold ring to an entire estate collection, bring it in for a free, <span className="whitespace-nowrap">no-obligation appraisal</span>.</>}
           />
           <div className="mt-14">
             <WhatWeBuyBento />
@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* How it works, the visit process, before the deeper valuation cinematic */}
-      <section className="py-20 sm:py-28">
+      <section className="py-16 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="How It Works"
@@ -87,7 +87,7 @@ export default function Home() {
       <CashBanner />
 
       {/* Reviews, branded testimonials with a Google rating anchor */}
-      <section className="bg-cream-100 py-20 sm:py-28">
+      <section className="bg-cream-100 py-16 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="Reviews"
@@ -107,7 +107,7 @@ export default function Home() {
       <OwnerVideo />
 
       {/* Locations, local-SEO anchor with real storefront photos */}
-      <section className="py-20 sm:py-28">
+      <section className="py-16 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="Visit Us"
@@ -154,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* Quote CTA */}
-      <section id="quote" className="scroll-mt-24 bg-cream-100 py-20 sm:py-28">
+      <section id="quote" className="scroll-mt-24 bg-cream-100 py-16 sm:py-24">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <Reveal direction="right">
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-600">
@@ -183,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="container-page py-20 sm:py-28">
+      <section className="container-page py-16 sm:py-24">
         <SectionHeading eyebrow="FAQ" title="Common questions" />
         <div className="mx-auto mt-12 max-w-3xl divide-y divide-hairline">
           {FAQS.map((f, i) => (

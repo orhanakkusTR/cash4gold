@@ -10,7 +10,7 @@ export function SectionHeading({
 }: {
   eyebrow?: string;
   title: React.ReactNode;
-  description?: string;
+  description?: React.ReactNode;
   align?: "center" | "left";
   dark?: boolean;
 }) {

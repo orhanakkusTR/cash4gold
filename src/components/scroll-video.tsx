@@ -211,7 +211,7 @@ export function ScrollVideo({
   // ---- reduced motion: static, no pinning, all steps expanded ----
   if (reduce) {
     return (
-      <section className={cn("py-20 sm:py-28", className)} style={{ backgroundColor: VIDEO_BG }}>
+      <section className={cn("py-16 sm:py-24", className)} style={{ backgroundColor: VIDEO_BG }}>
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <div>
             {header}
@@ -229,7 +229,7 @@ export function ScrollVideo({
       className={cn("relative", className)}
       style={{ height: `${scrollLengthVh}vh`, backgroundColor: VIDEO_BG }}
     >
-      <div className="sticky top-0 flex min-h-screen items-center py-16">
+      <div className="sticky top-0 flex min-h-screen items-center py-12 lg:items-start lg:pt-[14vh]">
         <div className="container-page grid w-full items-center gap-12 lg:grid-cols-2">
           {/* left: steps */}
           <div>
