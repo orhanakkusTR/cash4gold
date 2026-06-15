@@ -10,7 +10,7 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Our Locations, Gold Buyers Across Northern Virginia",
-  description: "Four Cash for Gold VA locations: Annandale, Manassas, Chantilly, and Vienna/McLean. Find addresses, hours, and phone numbers. Free appraisals, instant cash.",
+  description: "Four Cash for Gold VA locations: Annandale, Manassas, Chantilly, and Vienna/McLean. Find addresses, hours, and phone numbers. Free appraisals, instant payout.",
   alternates: { canonical: "/locations" },
 };
 
@@ -25,7 +25,7 @@ export default function LocationsPage() {
         eyebrow="Visit Us · 4 NoVA Locations"
         crumbs={[{ name: "Home", href: "/" }, { name: "Locations", href: "/locations" }]}
         title={<>Four locations across <span className="text-gold-shimmer">Northern Virginia</span></>}
-        description="There's a Cash for Gold VA near you. Walk in during business hours, no appointment needed, for a free appraisal and instant cash."
+        description="There's a Cash for Gold VA near you. Walk in during business hours, no appointment needed, for a free appraisal and instant payout."
       />
 
       <section className="container-page space-y-10 py-16 md:py-20">

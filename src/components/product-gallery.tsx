@@ -4,7 +4,7 @@ import type { GalleryItem } from "@/data/business";
 
 /**
  * Illustrative "what we buy" product showcase (jmbullion-style tiles, but for
- * buying — image + name + note, never prices). Groups by `item.group` when set.
+ * buying - image + name + note, never prices). Groups by `item.group` when set.
  */
 function Tile({ p, i, cover }: { p: GalleryItem; i: number; cover?: boolean }) {
   return (

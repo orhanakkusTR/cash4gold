@@ -149,7 +149,7 @@ body {
   animation: var(--animate-shimmer);
 }
 
-/* Shimmering gold tuned for LIGHT/white backgrounds — richer, darker tones so
+/* Shimmering gold tuned for LIGHT/white backgrounds - richer, darker tones so
    it stays legible while a brighter highlight sweeps across. */
 @utility text-gold-shimmer-light {
   background: linear-gradient(
@@ -167,7 +167,7 @@ body {
   animation: shimmer 5.5s linear infinite;
 }
 
-/* Diamond / prismatic shimmer — icy blue → lavender → pink, iridescent.
+/* Diamond / prismatic shimmer - icy blue → lavender → pink, iridescent.
    Tones chosen to stay legible on a white background (no pure white). */
 @utility text-diamond-shimmer {
   background: linear-gradient(
@@ -187,7 +187,7 @@ body {
   animation: shimmer 5s linear infinite;
 }
 
-/* Diamond / silver shimmer — polished platinum tones with a bright white
+/* Diamond / silver shimmer - polished platinum tones with a bright white
    highlight sweeping across. Stays legible on white (darkest stop ~steel). */
 @utility text-silver-shimmer {
   background: linear-gradient(

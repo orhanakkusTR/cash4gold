@@ -6,7 +6,7 @@ const VALUE_PROPS: { icon: LucideIcon; title: string; desc: string }[] = [
   { icon: Gem, title: "Metal, stones & maker", desc: "Valued beyond melt, for the diamonds, gemstones, and brand, not just the gold." },
   { icon: BadgeCheck, title: "Designers recognized", desc: "Tiffany, Cartier, Van Cleef and other signed pieces identified and paid for." },
   { icon: Microscope, title: "Tested in front of you", desc: "Acid, electronic, and loupe testing, fully transparent, with a clear explanation." },
-  { icon: Banknote, title: "Instant cash", desc: "Walk out the same day, no appointment, no obligation to accept." },
+  { icon: Banknote, title: "Instant payout", desc: "Walk out the same day, no appointment, no obligation to accept." },
 ];
 
 /** Compact trust strip shown under the Jewelry category hero. */

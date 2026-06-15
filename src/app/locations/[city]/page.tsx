@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const title = `${loc.city}, VA, Sell Gold, Diamonds & Coins for Cash`;
   return {
     title,
-    description: `Cash for Gold VA in ${loc.city}: sell gold, silver, diamonds, jewelry & coins for instant cash. ${loc.street}. Call ${loc.phone}. ${SITE.rating.value}★ rated.`,
+    description: `Cash for Gold VA in ${loc.city}: sell gold, silver, diamonds, jewelry & coins for instant payout. ${loc.street}. Call ${loc.phone}. ${SITE.rating.value}★ rated.`,
     alternates: { canonical: `/locations/${loc.slug}` },
   };
 }
@@ -53,7 +53,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           { name: loc.city, href: `/locations/${loc.slug}` },
         ]}
         title={<>Cash for Gold VA in <span className="text-gold-shimmer">{loc.city}</span></>}
-        description={`Your local buyer of gold, silver, diamonds, jewelry, and collectible coins in ${loc.city}, VA. Free appraisals and instant cash, serving ${loc.neighborhoods.slice(0, 3).join(", ")} and beyond.`}
+        description={`Your local buyer of gold, silver, diamonds, jewelry, and collectible coins in ${loc.city}, VA. Free appraisals and instant payout, serving ${loc.neighborhoods.slice(0, 3).join(", ")} and beyond.`}
       />
 
       {/* Storefront photo + store info */}
@@ -182,7 +182,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         </div>
       </section>
 
-      <CtaBand title={`Visit our ${loc.city} location today`} description={`Stop by ${loc.street} or call ${loc.phone} for a free, no-obligation appraisal and instant cash.`} />
+      <CtaBand title={`Visit our ${loc.city} location today`} description={`Stop by ${loc.street} or call ${loc.phone} for a free, no-obligation appraisal and instant payout.`} />
     </>
   );
 }

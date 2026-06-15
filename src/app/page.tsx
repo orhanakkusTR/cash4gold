@@ -76,10 +76,10 @@ export default function Home() {
         count={145}
         scrollLengthVh={260}
         steps={[
-          { title: "Live Spot Price", desc: "We start from the real-time market price of gold, silver, or platinum — never an outdated rate." },
+          { title: "Live Spot Price", desc: "We start from the real-time market price of gold, silver, or platinum, never an outdated rate." },
           { title: "Purity Test", desc: "Non-destructive acid or XRF testing confirms the exact karat, in front of you." },
           { title: "Precise Weighing", desc: "Your item is weighed on a state-certified, calibrated scale to the gram." },
-          { title: "Instant Cash Offer", desc: "Spot price × purity × weight — a transparent figure, paid in cash the same day." },
+          { title: "Instant Payout Offer", desc: "Spot price × purity × weight: a transparent figure, paid in cash the same day." },
         ]}
       />
 
@@ -112,7 +112,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Visit Us"
             title="Four locations across Northern Virginia"
-            description="Walk in during business hours, no appointment needed, for a free appraisal and instant cash."
+            description="Walk in during business hours, no appointment needed, for a free appraisal and instant payout."
           />
           <div className="mt-14 grid gap-6 lg:grid-cols-2">
             {LOCATIONS.map((l, i) => (

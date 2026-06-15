@@ -7,7 +7,7 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "What We Buy, Gold, Silver, Diamonds, Jewelry & Coins",
-  description: "We buy gold, silver, diamonds, designer jewelry, and collectible coins for instant cash across Northern Virginia. Free appraisals at 4 locations.",
+  description: "We buy gold, silver, diamonds, designer jewelry, and collectible coins for instant payout across Northern Virginia. Free appraisals at 4 locations.",
   alternates: { canonical: "/what-we-buy" },
 };
 
@@ -19,7 +19,7 @@ export default function WhatWeBuyPage() {
         eyebrow="What We Buy"
         crumbs={[{ name: "Home", href: "/" }, { name: "What We Buy", href: "/what-we-buy" }]}
         title={<>We pay top dollar for your <span className="text-gold-shimmer">valuables</span></>}
-        description="From a single gold ring to an entire estate collection, here's everything we buy, all appraised for free, with instant cash offers."
+        description="From a single gold ring to an entire estate collection, here's everything we buy, all appraised for free, with instant payout offers."
       />
       <section className="container-page py-20">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">

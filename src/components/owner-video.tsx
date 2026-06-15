@@ -27,7 +27,7 @@ export function OwnerVideo() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "VideoObject",
-            name: "See us in action — Cash for Gold VA",
+            name: "See us in action: Cash for Gold VA",
             description:
               "A behind-the-counter look at how Cash for Gold VA tests, values, and pays cash for gold, silver, diamonds, and jewelry at our Northern Virginia stores.",
             thumbnailUrl: `${SITE.domain}${POSTER}`,
@@ -58,7 +58,7 @@ export function OwnerVideo() {
               <iframe
                 className="absolute inset-0 h-full w-full"
                 src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&rel=0`}
-                title="See us in action — Cash for Gold VA"
+                title="See us in action: Cash for Gold VA"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />

@@ -16,7 +16,7 @@ import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 export const metadata: Metadata = {
   title: "How It Works, Sell Gold from Home or In Store",
   description:
-    "How selling gold works at Cash for Gold VA. Request a free, insured appraisal kit by FedEx or USPS, ship it prepaid, and get a fast certified offer, or walk into any of 4 Northern Virginia stores for instant cash. No obligation.",
+    "How selling gold works at Cash for Gold VA. Request a free, insured appraisal kit by FedEx or USPS, ship it prepaid, and get a fast certified offer, or walk into any of 4 Northern Virginia stores for instant payout. No obligation.",
   alternates: { canonical: "/how-it-works" },
 };
 
@@ -51,7 +51,7 @@ const STEPS = [
 const PILLARS: { icon: typeof Award; title: string; points: string[] }[] = [
   { icon: Award, title: "Expertise", points: ["Trained buyers for gold, diamonds, watches & coins", "Offers based on the live precious-metal market", "Acid, electronic & XRF testing"] },
   { icon: ShieldCheck, title: "Safety", points: ["Every shipment fully insured", "Tracked, prepaid FedEx & USPS", "Free returns if you decline"] },
-  { icon: Zap, title: "Efficiency", points: ["Fast appraisal turnaround", "Payment rushed on acceptance", "Or instant cash, same day, in store"] },
+  { icon: Zap, title: "Efficiency", points: ["Fast appraisal turnaround", "Payment rushed on acceptance", "Or instant payout, same day, in store"] },
 ];
 
 const BUYS = [
@@ -62,7 +62,7 @@ const BUYS = [
 const FAQS = [
   { q: "Is the appraisal kit really free?", a: "Yes. The kit, the shipping to you, and the insured return shipping are all free, with zero obligation. If you don't love the offer, we send everything back at no cost." },
   { q: "Are my items insured in transit?", a: "Yes. Every shipment is fully tracked and insured from the moment it leaves your hands until it reaches us." },
-  { q: "Do I have to ship, or can I come in?", a: "Either works. Prefer in person? Walk into any of our four Northern Virginia stores, Annandale, Manassas, Chantilly, or Vienna/McLean, for a free appraisal and instant cash, no appointment needed." },
+  { q: "Do I have to ship, or can I come in?", a: "Either works. Prefer in person? Walk into any of our four Northern Virginia stores, Annandale, Manassas, Chantilly, or Vienna/McLean, for a free appraisal and instant payout, no appointment needed." },
   { q: "How are my items valued?", a: "We test purity and weigh your items using professional equipment, then base the offer on the current market price plus any designer or collectible premium, with a clear explanation." },
   { q: "How fast do I get paid?", a: "Once you accept, payment is rushed to you. In store, you walk out with cash the same visit." },
   { q: "What if I don't like the offer?", a: "No problem. There's no obligation. We return your items free of charge, fully insured." },
@@ -149,7 +149,7 @@ export default function HowItWorksPage() {
             No driving around for quotes, no pressure, no guesswork. Register, ship your items free and
             fully insured, and our certified experts appraise everything and send you a fair offer. Accept
             and get paid fast, or we return your items free of charge. Prefer to keep it local? Walk into
-            any of our stores and skip straight to instant cash.
+            any of our stores and skip straight to instant payout.
           </p>
           <div className="mt-7 grid gap-3 sm:grid-cols-2">
             {["Free, insured shipping", "Certified expert appraisal", "Fast payment on acceptance", "Free returns, no obligation"].map((p) => (
@@ -257,7 +257,7 @@ export default function HowItWorksPage() {
       {/* Locations */}
       <section className="bg-cream-100 py-20">
         <div className="container-page">
-          <SectionHeading eyebrow="Near you" title="Prefer to visit in person?" description="Walk into any of our four Northern Virginia stores for a free appraisal and instant cash." />
+          <SectionHeading eyebrow="Near you" title="Prefer to visit in person?" description="Walk into any of our four Northern Virginia stores for a free appraisal and instant payout." />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {LOCATIONS.map((l, i) => (
               <Reveal key={l.slug} delay={i * 0.08}>

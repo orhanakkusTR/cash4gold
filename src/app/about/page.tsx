@@ -7,7 +7,7 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "About Us, Northern Virginia's Trusted Gold Buyer",
-  description: "Cash for Gold VA is a family-run precious-metals buyer serving Northern Virginia with honest appraisals and instant cash since 2010. Learn about our story and values.",
+  description: "Cash for Gold VA is a family-run precious-metals buyer serving Northern Virginia with honest appraisals and instant payout since 2010. Learn about our story and values.",
   alternates: { canonical: "/about" },
 };
 
@@ -28,7 +28,7 @@ export default function AboutPage() {
             <Prose>
               <p>
                 For over a decade, Cash for Gold VA has helped thousands of Northern Virginia
-                neighbors turn gold, silver, diamonds, jewelry, and coins into instant cash.
+                neighbors turn gold, silver, diamonds, jewelry, and coins into instant payout.
                 What started as a single storefront has grown into four trusted locations across
                 Annandale, Manassas, Chantilly, and Vienna/McLean.
               </p>

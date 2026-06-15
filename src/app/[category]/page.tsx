@@ -43,14 +43,14 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const title = `Buy & Sell ${cat.name} in Northern Virginia`;
   return {
     title,
-    description: `${cat.short} Buy and sell at 4 Northern Virginia locations with free appraisals and instant cash. ${SITE.rating.value}★ rated.`,
+    description: `${cat.short} Buy and sell at 4 Northern Virginia locations with free appraisals and instant payout. ${SITE.rating.value}★ rated.`,
     alternates: { canonical: `/${cat.slug}` },
     openGraph: { title, description: cat.short, images: [cat.image] },
   };
 }
 
 const catFaqs = (cat: { name: string }) => [
-  { q: `How do I buy or sell ${cat.name.toLowerCase()} near me?`, a: `Visit any of our four Northern Virginia locations, Annandale, Manassas, Chantilly, or Vienna/McLean. We both buy and sell, appraise on the spot, and pay instant cash, no appointment needed.` },
+  { q: `How do I buy or sell ${cat.name.toLowerCase()} near me?`, a: `Visit any of our four Northern Virginia locations, Annandale, Manassas, Chantilly, or Vienna/McLean. We both buy and sell, appraise on the spot, and pay instant payout, no appointment needed.` },
   { q: `How are my items valued?`, a: `Our trained buyers test and evaluate everything in front of you using professional equipment, and base offers on current market prices with a clear explanation.` },
   { q: `Do I need an appointment?`, a: `No, just walk in during business hours. To sell, bring your items and a valid photo ID.` },
 ];

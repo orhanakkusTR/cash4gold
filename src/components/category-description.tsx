@@ -7,14 +7,14 @@ import { cn } from "@/lib/utils";
 /**
  * Important phrases bolded across every description in addition to each page's
  * own keyword: the local-SEO signals (Northern Virginia + the four cities) and
- * the trust/value terms (spot price, free appraisal, instant cash). Metal-specific
+ * the trust/value terms (spot price, free appraisal, instant payout). Metal-specific
  * spot-price variants are listed first so they win over the bare "spot price".
  */
 const EMPHASIS_TERMS = [
   "Northern Virginia",
   "gold spot price", "silver spot price", "platinum spot price", "palladium spot price",
   "live spot price", "current spot price", "spot price",
-  "free appraisal", "instant cash", "no obligation",
+  "free appraisal", "instant payout", "no obligation",
   "Annandale", "Manassas", "Chantilly", "Vienna/McLean",
 ];
 

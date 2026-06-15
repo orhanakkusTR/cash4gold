@@ -17,7 +17,7 @@ const fadeUp = {
   }),
 };
 
-const TRUST = ["4 Northern VA locations", "No appointment needed", "Instant cash, same day"];
+const TRUST = ["4 Northern VA locations", "No appointment needed", "Instant payout, same day"];
 
 function GoogleG({ className }: { className?: string }) {
   return (
@@ -36,7 +36,7 @@ export function Hero() {
       {/* Background playlist: logo reveal, store tour, in-store service, looped */}
       <div aria-hidden className="absolute inset-0">
         <HeroVideoPlaylist />
-        {/* Cinematic dark grade (lighter — lets the footage show through) */}
+        {/* Cinematic dark grade (lighter - lets the footage show through) */}
         <div className="absolute inset-0 bg-ink-950/38" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/15 to-ink-950/55" />
         <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_40%,transparent,rgba(10,8,7,0.42))]" />
@@ -58,23 +58,23 @@ export function Hero() {
             {SITE.rating.count} Google reviews
           </motion.div>
 
-          {/* Animated headline — flows in on first load, two clean lines */}
+          {/* Animated headline - flows in on first load, two clean lines */}
           <h1
-            aria-label="Turn Gold, Silver and Diamonds Into Instant Cash"
+            aria-label="Turn Gold, Silver and Diamonds Into Instant Payout"
             className="mx-auto mt-7 max-w-3xl font-display text-[2.7rem] font-bold leading-[1.05] tracking-[-0.025em] text-cream-50 sm:text-5xl md:text-[3.6rem] [text-shadow:0_2px_28px_rgba(0,0,0,0.55)]"
           >
             <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.2} duration={0.7} className="block">
               Turn Gold, Silver &amp; Diamonds
             </TextAnimate>
             <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.85} duration={0.6} className="block">
-              Into Instant Cash
+              Into Instant Payout
             </TextAnimate>
           </h1>
 
           <motion.p custom={1.3} variants={fadeUp} initial="hidden" animate="show"
             className="mx-auto mt-6 max-w-2xl text-balance text-lg leading-relaxed text-cream-100/80 [text-shadow:0_1px_14px_rgba(0,0,0,0.5)]">
             Northern Virginia&apos;s most trusted buyer of gold, silver, diamonds, jewelry and coins.
-            Free appraisals, fair offers, and instant cash across four locations.
+            Free appraisals, fair offers, and instant payout across four locations.
           </motion.p>
 
           <motion.div custom={1.45} variants={fadeUp} initial="hidden" animate="show"

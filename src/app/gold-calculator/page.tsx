@@ -11,12 +11,12 @@ const PATH = "/gold-calculator";
 export const metadata: Metadata = {
   title: "What's My Gold Worth? Instant Value Estimator",
   description:
-    "Find out what your gold, silver, or platinum could be worth based on today's live market price. Free, instant, no obligation — final price set in store after a free appraisal.",
+    "Find out what your gold, silver, or platinum could be worth based on today's live market price. Free, instant, no obligation. Final price set in store after a free appraisal.",
   alternates: { canonical: PATH },
 };
 
 const FAQS = [
-  { q: "How accurate is the estimate?", a: "It's a realistic range based on the live market spot price and your item's metal, purity, and weight, minus standard refining and processing. It's a guide, not a binding quote — your exact offer is determined in store after testing." },
+  { q: "How accurate is the estimate?", a: "It's a realistic range based on the live market spot price and your item's metal, purity, and weight, minus standard refining and processing. It's a guide, not a binding quote. Your exact offer is determined in store after testing." },
   { q: "How do you calculate it?", a: "We take the pure-metal weight (weight × purity), multiply by today's live spot price per gram, then apply our payout range for that metal. Designer, collectible, or numismatic value can raise the offer beyond melt." },
   { q: "Is this a binding offer?", a: "No. The estimator is for guidance only. Your real, no-obligation offer is made in person after our experts test and weigh each item." },
   { q: "What do I need to sell?", a: "A valid government-issued photo ID. Under Virginia law you must be 18+ and the rightful owner of the items." },
@@ -32,7 +32,7 @@ export default function WhatIsItWorthPage() {
         eyebrow="Free Instant Estimate"
         crumbs={[{ name: "Home", href: "/" }, { name: "What's It Worth?", href: PATH }]}
         title={<>What&apos;s it worth? <span className="text-gold-shimmer">Get an instant estimate.</span></>}
-        description="Enter your item and we'll estimate a cash range based on today's live market price. Free, instant, and no obligation — your final offer is set in store after a free, no-pressure appraisal."
+        description="Enter your item and we'll estimate a cash range based on today's live market price. Free, instant, and no obligation. Your final offer is set in store after a free, no-pressure appraisal."
       />
 
       {/* Estimator + supporting copy */}
@@ -44,7 +44,7 @@ export default function WhatIsItWorthPage() {
           </h2>
           <p className="mt-4 text-muted">
             No pressure and no guesswork. Our estimator uses the same live price engine as our in-store
-            appraisals, so you get a realistic range in seconds — then come in for your exact, no-obligation offer.
+            appraisals, so you get a realistic range in seconds, then come in for your exact, no-obligation offer.
           </p>
           <ul className="mt-8 space-y-5">
             {[
@@ -110,7 +110,7 @@ export default function WhatIsItWorthPage() {
         </div>
       </section>
 
-      <CtaBand title="Ready for your exact offer?" description="Bring your items to any of our four Northern Virginia locations for a free, no-obligation appraisal and instant cash." />
+      <CtaBand title="Ready for your exact offer?" description="Bring your items to any of our four Northern Virginia locations for a free, no-obligation appraisal and instant payout." />
     </>
   );
 }

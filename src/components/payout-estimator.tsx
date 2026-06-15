@@ -196,7 +196,7 @@ export function PayoutEstimator() {
                 Based on ~{fmt(result.melt)} melt value · {live ? "live" : "reference"} {metal} price {fmt2(spot[metal])}/oz
               </p>
               <p className="mt-2 inline-flex items-center gap-1.5 text-[12px] font-semibold text-amber-400">
-                <TriangleAlert className="h-3.5 w-3.5" /> Estimate only — not a binding offer. Final price set in store.
+                <TriangleAlert className="h-3.5 w-3.5" /> Estimate only, not a binding offer. Final price set in store.
               </p>
             </>
           )}
@@ -206,18 +206,18 @@ export function PayoutEstimator() {
         <div className="mt-4 rounded-xl border border-amber-400/30 bg-amber-50/60 p-4 text-[12.5px] leading-relaxed text-amber-900/90">
           <b className="text-amber-700">This is an estimate, not an offer.</b> It is calculated from the live market metal
           price minus standard refining and processing, and is not a binding quote. Your actual price is determined in
-          store after our experts test and weigh each item — value can be higher (designer, collectible, or numismatic
+          store after our experts test and weigh each item; value can be higher (designer, collectible, or numismatic
           pieces) or lower. To sell, Virginia law requires you to be 18+, present valid ID, and be the rightful owner.
         </div>
       </div>
 
       {/* CTA card */}
       <div className="rounded-3xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)] sm:p-8">
-        <h3 className="font-display text-xl font-semibold text-foreground">Get your real offer — free &amp; on the spot</h3>
+        <h3 className="font-display text-xl font-semibold text-foreground">Get your real offer, free &amp; on the spot</h3>
         <p className="mt-1 text-sm text-muted">Pick your nearest location for an exact, no-obligation appraisal. Walk out with cash the same day.</p>
         <select value={locSlug} onChange={(e) => setLocSlug(e.target.value)} className={cn(fieldCls, "mt-4")} aria-label="Choose a location">
           {LOCATIONS.map((l) => (
-            <option key={l.slug} value={l.slug}>{l.city} — {l.phone}</option>
+            <option key={l.slug} value={l.slug}>{l.city} · {l.phone}</option>
           ))}
         </select>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -231,7 +231,7 @@ export function PayoutEstimator() {
         <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
           <span className="inline-flex items-center gap-1.5"><Star className="h-4 w-4 fill-gold-400 text-gold-400" /> 4.9 / 342 reviews</span>
           <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-gold-500" /> Tested in front of you</span>
-          <span className="inline-flex items-center gap-1.5"><Banknote className="h-4 w-4 text-gold-500" /> Instant cash</span>
+          <span className="inline-flex items-center gap-1.5"><Banknote className="h-4 w-4 text-gold-500" /> Instant payout</span>
         </div>
       </div>
     </div>

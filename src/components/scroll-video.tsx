@@ -24,7 +24,7 @@ const VIDEO_BG = "#ffffff";
  * by frame in sync.
  *
  * The clip is pre-rendered to a JPG frame sequence (see tools/ in the repo) and
- * painted onto a <canvas> — smoother and more reliable than <video> seeking,
+ * painted onto a <canvas> - smoother and more reliable than <video> seeking,
  * especially on mobile Safari.
  *
  * Frames: `${basePath}/frame_001.jpg … frame_${count}.jpg` (3-digit pad).
@@ -176,7 +176,7 @@ export function ScrollVideo({
   const ready = loaded > 0;
   const loadPct = Math.round((loaded / count) * 100);
 
-  // The video panel (right column) — shared between motion + reduced-motion.
+  // The video panel (right column) - shared between motion + reduced-motion.
   const panel = (
     <div className="relative mx-auto aspect-square w-full max-w-lg">
       {reduce ? (

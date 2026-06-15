@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Sell gold, silver, diamonds, fine jewelry & collectible coins for instant cash. 4 Northern Virginia locations. Free appraisals, fair spot-price offers, 4.9★ rated.",
+    "Sell gold, silver, diamonds, fine jewelry & collectible coins for instant payout. 4 Northern Virginia locations. Free appraisals, fair spot-price offers, 4.9★ rated.",
   keywords: [
     "cash for gold",
     "sell gold northern virginia",
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE.domain,
     siteName: SITE.name,
-    title: `${SITE.name} | Instant Cash for Gold, Diamonds & Coins`,
+    title: `${SITE.name} | Instant Payout for Gold, Diamonds & Coins`,
     description:
-      "Northern Virginia's trusted buyer of gold, silver, diamonds, jewelry & coins. Instant cash, free appraisals, 4 locations.",
+      "Northern Virginia's trusted buyer of gold, silver, diamonds, jewelry & coins. Instant payout, free appraisals, 4 locations.",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} | Instant Cash for Gold & Valuables`,
-    description: "Sell gold, silver, diamonds & collectible coins for instant cash across Northern Virginia.",
+    title: `${SITE.name} | Instant Payout for Gold & Valuables`,
+    description: "Sell gold, silver, diamonds & collectible coins for instant payout across Northern Virginia.",
   },
   robots: { index: true, follow: true },
 };
