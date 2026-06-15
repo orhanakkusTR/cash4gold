@@ -38,13 +38,13 @@ const STEPS = [
     n: 2,
     title: "Ship it free, get a certified offer",
     desc: "Seal your items in the kit and drop it off, every shipment is tracked and insured. Our experts appraise everything with the latest technology and send you a clear, fair offer, fast.",
-    image: "/photos/process-appraisal.jpg",
+    image: "/photos/step-appraisal.jpg",
   },
   {
     n: 3,
     title: "Accept and get paid",
     desc: "Love the offer? We rush your payment. Not for you? We return everything free of charge, fully insured. There's never any obligation to sell.",
-    image: "/photos/process-payment.jpg",
+    image: "/photos/step-payment.jpg",
   },
 ];
 
@@ -161,7 +161,7 @@ export default function HowItWorksPage() {
         </Reveal>
         <Reveal direction="left" delay={0.1}>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-hairline shadow-[var(--shadow-card)]">
-            <Image src="/photos/process-appraisal.jpg" alt="Expert appraising gold at Cash for Gold VA" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
+            <Image src="/photos/step-appraisal.jpg" alt="Expert appraising gold at Cash for Gold VA" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
           </div>
         </Reveal>
       </section>
