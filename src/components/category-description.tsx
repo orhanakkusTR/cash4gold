@@ -5,18 +5,45 @@ import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
+ * Bolds the first verbatim occurrence of each target keyword in the copy. Search
+ * phrases that don't appear in the text are skipped (we never inject them), and
+ * longer phrases are matched first so they win over overlapping shorter ones.
+ */
+function emphasizeKeywords(text: string, keywords: string[] = []) {
+  const ranges: { start: number; end: number }[] = [];
+  for (const kw of [...keywords].sort((a, b) => b.length - a.length)) {
+    const idx = text.toLowerCase().indexOf(kw.toLowerCase());
+    if (idx === -1) continue;
+    const end = idx + kw.length;
+    if (ranges.some((r) => idx < r.end && end > r.start)) continue; // skip overlaps
+    ranges.push({ start: idx, end });
+  }
+  if (!ranges.length) return text;
+  ranges.sort((a, b) => a.start - b.start);
+  const nodes: React.ReactNode[] = [];
+  let cursor = 0;
+  ranges.forEach((r, i) => {
+    if (r.start > cursor) nodes.push(text.slice(cursor, r.start));
+    nodes.push(<strong key={i} className="font-semibold text-foreground">{text.slice(r.start, r.end)}</strong>);
+    cursor = r.end;
+  });
+  if (cursor < text.length) nodes.push(text.slice(cursor));
+  return nodes;
+}
+
+/**
  * Expandable category description (jmbullion-style "Read more"). Collapsed it
  * clamps to a few lines with a fade; expanded it shows the full ~1000-char copy.
  * The fade matches the cream-100 section background it sits in.
  */
-export function CategoryDescription({ title, text }: { title: string; text: string }) {
+export function CategoryDescription({ title, text, keywords }: { title: string; text: string; keywords?: string[] }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="mx-auto max-w-3xl">
       <h2 className="font-display text-2xl font-semibold text-foreground sm:text-3xl">{title}</h2>
       <div className="relative mt-4">
         <div className={cn("text-base leading-relaxed text-muted transition-[max-height] duration-500", open ? "max-h-[60rem]" : "max-h-[6.5rem] overflow-hidden")}>
-          <p>{text}</p>
+          <p>{emphasizeKeywords(text, keywords)}</p>
         </div>
         {!open && (
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-cream-100 to-transparent" />

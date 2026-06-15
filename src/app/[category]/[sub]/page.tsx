@@ -151,7 +151,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
       {/* Category description (expandable) */}
       <section className="bg-cream-100 py-16">
         <div className="container-page">
-          <CategoryDescription title={`Buying & Selling ${s.name}`} text={s.longDescription ?? placeholderDescription(s.name)} />
+          <CategoryDescription title={`Buying & Selling ${s.name}`} text={s.longDescription ?? placeholderDescription(s.name)} keywords={s.keywords} />
         </div>
       </section>
 
