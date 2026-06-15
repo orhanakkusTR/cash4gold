@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, Star } from "lucide-react";
-import { SITE, CATEGORIES, LOCATIONS } from "@/data/business";
+import { SITE, CATEGORIES, LOCATIONS, SHOW_CALCULATOR } from "@/data/business";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -90,7 +90,7 @@ export function Footer() {
       <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-cream-100/50 sm:flex-row">
         <p>© {2026} {SITE.legalName}. All rights reserved.</p>
         <div className="flex gap-5">
-          <Link href="/gold-calculator" className="hover:text-gold-200">What&apos;s It Worth?</Link>
+          {SHOW_CALCULATOR && <Link href="/gold-calculator" className="hover:text-gold-200">What&apos;s It Worth?</Link>}
           <Link href="/blog" className="hover:text-gold-200">Blog</Link>
           <Link href="/privacy" className="hover:text-gold-200">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-gold-200">Terms</Link>

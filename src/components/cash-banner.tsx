@@ -5,7 +5,7 @@ import { Phone, ArrowRight } from "lucide-react";
 import { useReducedMotion } from "motion/react";
 import { Reveal } from "@/components/reveal";
 import { buttonClass } from "@/components/ui/button";
-import { PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
+import { PRIMARY_PHONE, PRIMARY_PHONE_HREF, SHOW_CALCULATOR } from "@/data/business";
 
 /** Cinematic mid-page banner: a gold coin morphs into a stack of cash. */
 export function CashBanner() {
@@ -48,10 +48,10 @@ export function CashBanner() {
               </span>
             </a>
             <Link
-              href="/gold-calculator"
+              href={SHOW_CALCULATOR ? "/gold-calculator" : "/what-we-buy"}
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full border-2 border-cream-50/25 px-8 text-base font-semibold text-cream-50 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-gold-400 hover:text-gold-200"
             >
-              What&apos;s It Worth? <ArrowRight className="h-4 w-4" />
+              {SHOW_CALCULATOR ? "What's It Worth?" : "What We Buy"} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </Reveal>

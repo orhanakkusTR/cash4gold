@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE, CATEGORIES, ALL_SUBCATEGORIES, LOCATIONS } from "@/data/business";
+import { SITE, CATEGORIES, ALL_SUBCATEGORIES, LOCATIONS, SHOW_CALCULATOR } from "@/data/business";
 import { POSTS } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date("2026-06-12");
 
   const staticPages = [
-    "", "/what-we-buy", "/gold-calculator", "/locations", "/how-it-works", "/about",
+    "", "/what-we-buy", ...(SHOW_CALCULATOR ? ["/gold-calculator"] : []), "/locations", "/how-it-works", "/about",
     "/contact-us-cash-for-gold-locations", "/blog",
   ].map((p) => ({
     url: `${base}${p}`,

@@ -7,7 +7,7 @@ import { Phone, Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
 import { buttonClass } from "@/components/ui/button";
-import { CATEGORIES, LOCATIONS } from "@/data/business";
+import { CATEGORIES, LOCATIONS, SHOW_CALCULATOR } from "@/data/business";
 import { ScrollProgress } from "@/components/scroll";
 
 type NavItem = { label: string; href: string; children?: { label: string; href: string }[] };
@@ -139,12 +139,14 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="/gold-calculator"
-              className="hidden items-center gap-1.5 whitespace-nowrap rounded-full border border-gold-500/50 px-4 py-2.5 text-sm font-semibold text-gold-700 transition-colors hover:bg-gold-50 lg:inline-flex"
-            >
-              What&apos;s It Worth?
-            </Link>
+            {SHOW_CALCULATOR && (
+              <Link
+                href="/gold-calculator"
+                className="hidden items-center gap-1.5 whitespace-nowrap rounded-full border border-gold-500/50 px-4 py-2.5 text-sm font-semibold text-gold-700 transition-colors hover:bg-gold-50 lg:inline-flex"
+              >
+                What&apos;s It Worth?
+              </Link>
+            )}
             <a href={`tel:${HEADER_PHONE.phoneHref}`} className={buttonClass("silver", "md", "hidden sm:inline-flex")}>
               <span className="relative z-10 inline-flex items-center gap-2 whitespace-nowrap">
                 <span className="relative flex h-2 w-2">
@@ -206,13 +208,15 @@ export function Header() {
                   </div>
                 ))}
               </nav>
-              <Link
-                href="/gold-calculator"
-                onClick={() => setOpen(false)}
-                className="mt-6 flex w-full items-center justify-center rounded-full border-2 border-gold-500/50 px-5 py-3 font-semibold text-gold-700"
-              >
-                What&apos;s It Worth?
-              </Link>
+              {SHOW_CALCULATOR && (
+                <Link
+                  href="/gold-calculator"
+                  onClick={() => setOpen(false)}
+                  className="mt-6 flex w-full items-center justify-center rounded-full border-2 border-gold-500/50 px-5 py-3 font-semibold text-gold-700"
+                >
+                  What&apos;s It Worth?
+                </Link>
+              )}
               <a href={`tel:${HEADER_PHONE.phoneHref}`} className={buttonClass("gold", "lg", "mt-3 w-full")}>
                 <span className="relative z-10 inline-flex items-center gap-2 whitespace-nowrap">
                   <Phone className="h-5 w-5" /> Call {HEADER_PHONE.phone}

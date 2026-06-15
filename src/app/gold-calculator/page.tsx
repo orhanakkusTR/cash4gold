@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { Gauge, ScrollText, ShieldCheck } from "lucide-react";
+import { SHOW_CALCULATOR } from "@/data/business";
 import { PayoutEstimator } from "@/components/payout-estimator";
 import { PageHero, CtaBand, Prose } from "@/components/page-parts";
 import { SectionHeading } from "@/components/section-heading";
@@ -23,6 +25,9 @@ const FAQS = [
 ];
 
 export default function WhatIsItWorthPage() {
+  // Hidden for launch via feature flag, keeps the page code intact.
+  if (!SHOW_CALCULATOR) redirect("/");
+
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "What's It Worth?", url: PATH }]} />

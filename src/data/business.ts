@@ -8,6 +8,14 @@
 // Watches & electronics are intentionally excluded (owner no longer buys them).
 // =============================================================================
 
+// -----------------------------------------------------------------------------
+// FEATURE FLAGS, toggle features without deleting code.
+// SHOW_CALCULATOR: the /gold-calculator instant estimator. Hidden for launch.
+// Flip to true to restore the page, its nav/footer/banner links, and sitemap
+// entry. While false, the route redirects home so existing blog links don't 404.
+// -----------------------------------------------------------------------------
+export const SHOW_CALCULATOR = false;
+
 export const SITE = {
   name: "Cash for Gold VA",
   legalName: "Cash for Gold VA",
