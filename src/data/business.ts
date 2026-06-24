@@ -4,8 +4,8 @@
 // Keeping NAP identical everywhere is critical for local SEO.
 //
 // CATEGORY / URL STRUCTURE mirrors the original cashforgoldva.com taxonomy:
-//   /jewelry, /precious-metals, /precious-stones, /coins  + their sub-pages.
-// Watches & electronics are intentionally excluded (owner no longer buys them).
+//   /jewelry, /precious-metals, /precious-stones, /coins, /watches + sub-pages.
+// Electronics are intentionally excluded (owner no longer buys them).
 // =============================================================================
 
 // -----------------------------------------------------------------------------
@@ -241,6 +241,26 @@ export const CATEGORIES: Category[] = [
           { name: "Antique Jewelry Boxes", image: "/products/jewelry/box.jpg", note: "Whole collections welcome" },
         ],
       },
+      {
+        slug: "sell-designer-jewelry",
+        name: "Name Brand Jewelry",
+        action: "Sell Designer Jewelry",
+        short: "Tiffany, Cartier & David Yurman valued for the brand, not just the metal.",
+        intro:
+          "Designer jewelry holds value well beyond its metal, and most buyers only pay you for the gold. We evaluate name brand pieces for what they actually are, with the brand, craftsmanship, and collector demand included. The evaluation is free, done on camera, in a secure environment.",
+        items: ["Tiffany & Co.", "Cartier & Bulgari", "David Yurman", "Van Cleef & Arpels", "Other recognized brands", "Signed & hallmarked pieces"],
+        keywords: ["sell designer jewelry", "sell tiffany jewelry", "sell cartier jewelry", "sell david yurman"],
+        longDescription:
+          "Designer jewelry is one of the most commonly undervalued things people sell, because the typical buyer weighs it like scrap and ignores the name on the piece. We do not. A signed Tiffany & Co., Cartier, David Yurman, Bulgari, or Van Cleef & Arpels piece carries worth in its brand, design, and craftsmanship on top of its gold or platinum and any diamonds or gemstones, and we evaluate all of it. Our buyers verify the maker's marks and hallmarks, assess the metal at the live spot price, grade the stones separately, and then add the brand premium that the resale market genuinely pays, with the whole calculation explained in front of you, on camera, in a secure setting. There is no fee to find out what your designer jewelry is worth and no obligation to sell once you see the number. Original boxes, pouches, and receipts help and can raise the offer, so bring whatever you kept. Because we buy locally across four Northern Virginia stores, your piece stays with you until you accept, with payment before you leave. Bring your Tiffany, Cartier, or other signed jewelry to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, knowledgeable appraisal.",
+        gallery: [
+          { name: "Tiffany & Co.", image: "/products/jewelry/tiffany.jpg", note: "Signed sterling & gold" },
+          { name: "Cartier", image: "/products/jewelry/cartier.jpg", note: "Love, Trinity & more" },
+          { name: "David Yurman", image: "/products/jewelry/yurman.jpg", note: "Cable & gemstone pieces" },
+          { name: "Van Cleef & Arpels", image: "/products/jewelry/vca.jpg", note: "Alhambra & signed" },
+          { name: "Bulgari", image: "/products/jewelry/bulgari.jpg", note: "B.zero1, Serpenti & more" },
+          { name: "Other Signed Brands", image: "/products/jewelry/signed.jpg", note: "Recognized makers" },
+        ],
+      },
     ],
   },
   {
@@ -262,7 +282,7 @@ export const CATEGORIES: Category[] = [
         action: "Sell Gold",
         short: "10K–24K jewelry, scrap, bullion & coins paid by live spot price.",
         intro:
-          "We buy gold in every form, 10K to 24K jewelry, scrap and broken pieces, dental gold, bars, and bullion. Every item is tested in front of you and paid against the live gold spot price, with no lowball gimmicks.",
+          "We buy gold in every form, 10K to 24K jewelry, scrap and broken pieces, dental gold, bars, and bullion. Every item is tested in front of you and paid against the live gold spot price, with no lowball gimmicks. On recognized gold bullion bars and rounds we pay 90% of spot.",
         items: ["Gold jewelry (10K–24K)", "Scrap & broken gold", "Gold bullion & bars", "Dental gold", "Gold coins", "Class rings & chains"],
         keywords: ["sell gold near me", "cash for gold", "sell gold jewelry", "gold buyer northern virginia"],
         longDescription:
@@ -282,7 +302,7 @@ export const CATEGORIES: Category[] = [
         action: "Sell Silver",
         short: "Sterling, flatware, bars, rounds & pre-1965 coins at competitive rates.",
         intro:
-          "From sterling flatware and jewelry to silver bullion, rounds, and pre-1965 US coins, we pay fair, transparent prices based on weight, purity, and the current silver spot price.",
+          "From sterling flatware and jewelry to silver bullion, rounds, and pre-1965 US coins, we pay fair, transparent prices based on weight, purity, and the current silver spot price. On .999 silver bullion bars and rounds we pay 85% of spot.",
         items: ["Sterling silver jewelry", "Silver bullion & bars", "Silver rounds", "Silverware & flatware", "Pre-1965 US coins"],
         keywords: ["sell silver near me", "silver buyer", "sell sterling silver", "cash for silver"],
         longDescription:
@@ -335,6 +355,61 @@ export const CATEGORIES: Category[] = [
           { group: "Palladium Bars", name: "Palladium Rounds", image: "/products/palladium/round.jpg", note: ".999 fine" },
         ],
       },
+      {
+        slug: "sell-sterling-silver-sets",
+        name: "Sterling Silver Sets",
+        action: "Sell Sterling Silver",
+        short: "Flatware, tea sets & serving pieces, weighed and paid on real silver content.",
+        intro:
+          "That silver set in your cabinet is worth real money, and we will prove it. Sterling silver flatware, tea sets, and serving pieces are priced by weight and silver content, and with silver where it is today, you may be sitting on more than you think. We weigh everything in front of you, on camera, in a secure setting.",
+        items: ["Sterling flatware sets", "Tea & coffee services", "Candlesticks & trays", "Serving pieces & hollowware", "Marked .925 or sterling", "Weighted & hollow pieces accepted"],
+        keywords: ["sell sterling silver flatware", "sell silver tea set", "silverware buyer near me", "sell sterling silver set"],
+        longDescription:
+          "Inherited silverware you never use, or a flatware set that has sat in the cabinet for years, is one of the most overlooked things people own, and sterling silver is priced by weight and silver content rather than sentiment. We buy sterling flatware sets, serving pieces, tea and coffee services, candlesticks, trays, and hollowware, all marked .925 or sterling, weighing every piece on a calibrated scale in front of you and paying against the live silver spot price. Some pieces are weighted or hollow, with non-silver material adding heft, and we account for that honestly so you are paid for the silver you actually have and never misled. There is no minimum, no need to polish anything, and no obligation to sell once you see the number. Because silver trades well below gold per ounce, a full set adds up faster than people expect, and large lots are welcome as readily as a single tray. As a local buyer with four Northern Virginia storefronts, we pay before you leave and let you keep your set until you accept. Bring your sterling flatware or tea service to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, transparent appraisal.",
+        gallery: [
+          { name: "Sterling Flatware Sets", image: "/products/silver/flatware.jpg", note: "Forks, spoons & knives" },
+          { name: "Tea & Coffee Services", image: "/products/silver/teaset.jpg", note: ".925 & sterling" },
+          { name: "Candlesticks", image: "/products/silver/candlesticks.jpg", note: "Weighted pieces accepted" },
+          { name: "Trays & Serving Pieces", image: "/products/silver/tray.jpg", note: "Hollowware welcome" },
+          { name: "Serving Sets", image: "/products/silver/serving.jpg", note: "Marked sterling" },
+        ],
+      },
+      {
+        slug: "sell-dental-gold",
+        name: "Dental Gold",
+        action: "Sell Dental Gold",
+        short: "Gold crowns, bridges & fillings tested for real gold content and paid by weight.",
+        intro:
+          "That old crown in your drawer is worth more than you think. Gold dental crowns, bridges, and fillings are made from real gold alloys and carry real value. Most people throw them away without knowing. Bring them in, we test them for gold content, weigh them, and pay you on the spot, on camera, in a secure setting.",
+        items: ["Gold crowns & caps", "Gold bridges", "Gold fillings", "Inlays & onlays", "Mixed dental alloy scrap", "Attached to tooth is fine"],
+        keywords: ["sell dental gold", "dental gold buyer", "sell gold crown", "cash for dental gold"],
+        longDescription:
+          "Gold dental work is one of the most commonly discarded sources of real value, because few people realize a crown or bridge is made from a genuine gold alloy worth money. We test dental gold for its actual gold content with an XRF analyzer, weigh it on a calibrated scale, and pay against the live gold spot price, all in front of you and explained out loud. Crowns, caps, bridges, fillings, inlays, onlays, and mixed dental scrap are all welcome, and you do not need to remove any attached tooth material first, since we account for it when we calculate the offer. Dental alloys vary in purity, so composition affects the payout, and we show you exactly how we reach the number rather than quoting a vague flat rate. There is no minimum, no fee to find out what you have, and no obligation to sell. Because we buy locally across four Northern Virginia stores, you keep your items until you accept and walk out paid the same visit. Bring your dental gold to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, transparent test and appraisal.",
+        gallery: [
+          { name: "Gold Crowns & Caps", image: "/products/gold/crown.jpg", note: "Tested for gold content" },
+          { name: "Gold Bridges", image: "/products/gold/bridge.jpg", note: "Paid by weight & purity" },
+          { name: "Gold Fillings", image: "/products/gold/filling.jpg", note: "Inlays & onlays too" },
+          { name: "Mixed Dental Scrap", image: "/products/gold/dentalscrap.jpg", note: "Any condition" },
+        ],
+      },
+      {
+        slug: "sell-gold-filled-plated",
+        name: "Gold Filled / Plated",
+        action: "Check Gold Filled or Plated",
+        short: "Know the difference, gold filled has real value, plated usually does not.",
+        intro:
+          "Not everything that looks like gold is the same. Gold filled items have a real layer of gold bonded to a base metal and do carry value. Gold plated items have only a microscopic coating, usually too thin to buy. Not sure what you have? Bring it in. We test it for free, on camera, and tell you exactly what it is.",
+        items: ["Gold filled marked GF", "Marked 1/20 14K or 1/10 10K", "Gold filled chains & cases", "Plated items: usually cannot buy", "Free identification either way"],
+        keywords: ["sell gold filled jewelry", "gold filled vs plated", "is gold plated worth money", "sell gold filled"],
+        longDescription:
+          "Gold filled and gold plated are easy to confuse, and the difference decides whether an item is worth selling. Gold filled pieces have a real, legally specified layer of gold mechanically bonded to a base metal, often marked GF, 1/20 14K, or 1/10 10K, and that layer carries enough gold to be worth evaluating case by case. Gold plated items, by contrast, have only a microscopically thin electroplated coating, typically far too little gold to purchase, which is why most buyers, including us, generally cannot pay for them. Rather than leave you guessing, we test your items for free, on camera, in a secure setting, identify exactly what you have, and explain honestly what we can or cannot offer and why. When gold filled material is present in enough quantity, we assess it on its gold content and weight and make a fair offer; when an item is only plated, we tell you plainly so you do not waste a trip elsewhere. There is never a fee or any obligation. Bring anything marked GF or anything you are unsure about to our Annandale, Manassas, Chantilly, or Vienna/McLean location and we will tell you what it really is.",
+        gallery: [
+          { name: "Gold Filled Marked GF", image: "/products/gold/gf-mark.jpg", note: "Evaluated case by case" },
+          { name: "1/20 14K & 1/10 10K", image: "/products/gold/gf-ratio.jpg", note: "Real gold layer" },
+          { name: "Gold Filled Chains", image: "/products/gold/gf-chain.jpg", note: "Bring for testing" },
+          { name: "Plated vs Filled", image: "/products/gold/plated.jpg", note: "Free identification" },
+        ],
+      },
     ],
   },
   {
@@ -343,31 +418,31 @@ export const CATEGORIES: Category[] = [
     nav: "Diamonds",
     icon: "Gem",
     image: "/categories/diamonds.jpg",
-    short: "Diamonds & gemstones, loose or set, certified or not, graded fairly.",
+    short: "Certified diamonds 1.5ct and above, GIA, IGI, AGS or HRD graded, paid at serious prices.",
     intro:
-      "Our GIA-trained buyers evaluate diamonds and precious gemstones on their true merits. Loose or mounted, certified or not, you get an honest, no-pressure offer based on a careful, in-person grading.",
-    keywords: ["sell diamonds near me", "diamond buyer northern virginia", "sell gemstones", "sell loose diamonds"],
+      "We buy certified diamonds that meet our standards, and we pay serious prices for them. If you have a loose diamond of 1.5 carats or above with a GIA, IGI, AGS, HRD, or equivalent internationally recognized certificate, bring it in for a fair, no-pressure evaluation. Not sure whether your stone qualifies? Call us first and we will tell you in 60 seconds.",
+    keywords: ["sell certified diamonds", "diamond buyer northern virginia", "sell GIA diamond", "sell loose diamonds"],
     longDescription:
-      "Selling diamonds and gemstones rewards a careful, knowledgeable appraisal, and that is exactly what our GIA-trained buyers provide. We evaluate diamonds and colored gemstones on their true merits, loose or mounted, certified or not, grading each stone in person on cut, color, clarity, and carat before making an honest, no-pressure offer. A grading report helps and can support a stronger number, but you do not need one to sell; we assess the stone either way and explain how we reach the value. Any precious metal in the setting is appraised on top of the stone, so a diamond ring is valued for both its diamond and its gold or platinum. There is never a fee to learn what your stone is worth and never an obligation to sell. Selling locally means your diamond stays in your hands until you accept the offer, with instant payout the same visit, rather than shipping a valuable stone away on faith. Bring loose diamonds, engagement rings, or estate gemstone jewelry to any of our four Northern Virginia locations for a fair, expert grading from a diamond buyer Northern Virginia sellers rely on.",
+      "Selling a diamond rewards a careful, knowledgeable appraisal, and we focus on the stones where we can pay you the most: loose certified diamonds of 1.5 carats and above. If your diamond carries a GIA, IGI, AGS, HRD, or equivalent internationally recognized grading report, our buyers evaluate it on the 4Cs exactly as the certificate states, cut, color, clarity, and carat, then cross-reference current market pricing to make a serious, transparent offer. The certificate removes the guesswork, which is how we pay competitively rather than the lowball numbers common on uncertified stones. To be clear about what we buy, we do not purchase diamonds under 1.5 carats, uncertified stones, lab-grown diamonds, or stones with certificates from unrecognized labs. If you are unsure whether your diamond qualifies, call us before you visit and we will tell you in about a minute. Every evaluation is free, explained in plain terms, and carries no obligation, and selling locally means your diamond stays with you until you accept, with payment before you leave rather than mailing a valuable stone away. Bring your certified diamond to any of our four Northern Virginia locations for a fair, expert offer.",
     subcategories: [
       {
         slug: "sell-diamonds",
         name: "Diamonds",
         action: "Sell Diamonds",
-        short: "Loose & set, certified or not, graded on the 4 Cs.",
+        short: "Certified loose diamonds 1.5ct and above, GIA, IGI, AGS or HRD, graded on the 4Cs.",
         intro:
-          "Our GIA-trained buyers evaluate loose and mounted diamonds on the 4 Cs, cut, color, clarity, and carat. Certified or not, you get a fair, no-pressure offer on the spot, whether it's a single stone, an engagement ring, or a full piece of diamond jewelry.",
-        items: ["Loose diamonds", "Certified diamonds (GIA/EGL)", "Engagement & wedding rings", "Diamond jewelry", "Estate diamonds"],
-        keywords: ["sell diamonds near me", "diamond buyer", "sell engagement ring", "sell diamond jewelry"],
+          "We buy loose certified diamonds of 1.5 carats and above, graded by GIA, IGI, AGS, HRD, or an equivalent internationally recognized lab. We evaluate the stone on the 4Cs as the certificate states, cross-reference the current market, and make a serious offer. We do not buy diamonds under 1.5 carats, uncertified stones, or lab-grown diamonds. Not sure if yours qualifies? Call us and we will tell you in 60 seconds.",
+        items: ["Loose certified diamonds 1.5ct+", "GIA, IGI, AGS or HRD graded", "Round, princess & oval cuts", "Emerald, cushion & fancy cuts", "Bring the original certificate"],
+        keywords: ["sell certified diamonds", "sell GIA diamond", "diamond buyer northern virginia", "sell loose diamonds"],
         longDescription:
-          "A diamond's value comes down to the 4 Cs, cut, color, clarity, and carat, and our GIA-trained buyers grade each stone on all four, in person and in front of you. We buy loose diamonds, certified stones, engagement and wedding rings, diamond earrings, tennis bracelets, and estate diamond jewelry, certified or not. If you have a GIA or EGL report, bring it, since independent grading removes uncertainty and supports a stronger, faster offer, but an uncertified stone is welcome and fully appraised too. The diamond and the setting are valued separately, so any gold or platinum and any designer worth is added on top of the stone itself. Every offer is transparent and carries no fee or obligation, and you keep the piece until you accept. We recommend selling in person rather than mailing a valuable diamond away, so you stay in control and get instant payout the same visit. For a fair, knowledgeable diamond appraisal from a diamond buyer you can trust, visit our Annandale, Manassas, Chantilly, or Vienna/McLean location.",
+          "A diamond's value comes down to the 4Cs, cut, color, clarity, and carat, and the cleanest way for us to pay you a serious price is to start from an independent grading report. We buy loose certified diamonds of 1.5 carats and above graded by GIA, IGI, AGS, HRD, or an equivalent internationally recognized lab, evaluating the stone exactly as the certificate states and cross-referencing current market pricing before we make an offer. The certificate is what lets us pay competitively instead of the cautious, lower numbers uncertified stones force. So there is no wasted trip, here is what we do not buy: diamonds under 1.5 carats, uncertified stones, lab-grown diamonds, and stones with certificates from labs we do not recognize. If you are unsure whether your diamond meets these standards, call us before you come in and we will tell you in about a minute. Every evaluation is free, explained in plain terms, and carries no obligation, and because we buy in person across four Northern Virginia stores, your diamond stays with you until you accept, with payment before you leave. Bring your certified diamond and its report to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a fair, expert offer.",
         gallery: [
-          { name: "Loose Diamonds", image: "/products/diamonds/loose.jpg", note: "Any cut, color or clarity" },
-          { name: "Engagement Rings", image: "/products/diamonds/ring.jpg", note: "Solitaires & halos" },
-          { name: "Diamond Earrings", image: "/products/diamonds/earrings.jpg", note: "Studs & drops" },
-          { name: "Tennis Bracelets", image: "/products/diamonds/bracelet.jpg", note: "Lines & bangles" },
-          { name: "Diamond Necklaces", image: "/products/diamonds/necklace.jpg", note: "Pendants & tennis" },
-          { name: "Certified & Graded", image: "/products/diamonds/certified.jpg", note: "GIA, EGL & uncertified" },
+          { name: "Round Brilliant", image: "/products/diamonds/round.jpg", note: "Certified 1.5ct & above" },
+          { name: "Princess Cut", image: "/products/diamonds/princess.jpg", note: "Certified 1.5ct & above" },
+          { name: "Oval Cut", image: "/products/diamonds/oval.jpg", note: "Certified 1.5ct & above" },
+          { name: "Emerald Cut", image: "/products/diamonds/emerald.jpg", note: "Certified 1.5ct & above" },
+          { name: "Cushion & Fancy Cuts", image: "/products/diamonds/cushion.jpg", note: "Certified 1.5ct & above" },
+          { name: "GIA, IGI, AGS & HRD", image: "/products/diamonds/certified.jpg", note: "Recognized labs only" },
         ],
       },
     ],
@@ -389,9 +464,9 @@ export const CATEGORIES: Category[] = [
         slug: "sell-gold-coins",
         name: "Gold Coins",
         action: "Sell Gold Coins",
-        short: "US & foreign gold coins, Eagles, Krugerrands & graded slabs.",
+        short: "90% of spot for standard bullion coins, plus numismatic premium on rare dates.",
         intro:
-          "We buy gold coins of all kinds, American Gold Eagles and Buffalos, Krugerrands, Maple Leafs, pre-1933 US gold, and foreign gold coins. Bullion or numismatic, we pay a fair price based on gold content and collectible premium.",
+          "We pay 90% of the live gold spot price for standard bullion gold coins, American Gold Eagles and Buffalos, Krugerrands, Maple Leafs, and more, and we show you exactly how we got there. Have a rare or key-date coin? We know numismatics too, and collector demand can push your offer above melt value.",
         items: ["American Gold Eagles & Buffalos", "Krugerrands & Maple Leafs", "Pre-1933 US gold coins", "Foreign gold coins", "Graded gold slabs"],
         keywords: ["sell gold coins", "gold coin buyer", "sell gold eagles", "where to sell gold coins"],
         longDescription:
@@ -476,6 +551,61 @@ export const CATEGORIES: Category[] = [
       },
     ],
   },
+  {
+    slug: "watches",
+    name: "Watches",
+    nav: "Watches",
+    icon: "Watch",
+    image: "/categories/watches.jpg",
+    short: "Rolex, Omega, Cartier & other luxury watches, researched and paid at real market value.",
+    intro:
+      "Luxury watches are not like gold, you cannot just weigh them. We know the watch market and research current secondary-market prices before we make an offer on your Rolex, Omega, Cartier, or other fine timepiece. The evaluation is free, done on camera, with no pressure.",
+    keywords: ["sell luxury watch near me", "watch buyer northern virginia", "sell my rolex", "where to sell a watch"],
+    longDescription:
+      "Selling a luxury watch is nothing like selling scrap metal, because its value has almost nothing to do with weight and everything to do with the market. A Rolex, Omega, Cartier, Breitling, Patek Philippe, or Audemars Piguet is worth what collectors and dealers are paying for that exact brand, model, and reference today, adjusted for condition, service history, and whether you still have the original box and papers. We do this every day, so we research the current secondary-market price before we make an offer rather than guessing or lowballing. Every watch is examined and discussed in front of you, on camera, in a secure environment, and the offer is explained in plain terms with no fee and no obligation to sell. Box, papers, and service records all add value, so bring whatever you have. Because we buy locally across four Northern Virginia storefronts, your watch stays with you until you accept, and you walk out paid the same visit rather than mailing a valuable timepiece away on faith. Bring your Rolex or other fine watch to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, knowledgeable appraisal.",
+    subcategories: [
+      {
+        slug: "sell-rolex",
+        name: "Rolex",
+        action: "Sell My Rolex",
+        short: "Submariner, Datejust, Daytona & every reference, priced at real market value.",
+        intro:
+          "We buy Rolex watches of every model and reference, Submariner, Datejust, Daytona, GMT-Master, Day-Date, and more. We research the current market for your exact reference before we make an offer, on camera, with no pressure. Box and papers increase the value.",
+        items: ["Submariner & Sea-Dweller", "Datejust & Day-Date", "Daytona & GMT-Master", "Oyster Perpetual & Explorer", "Vintage & discontinued references", "Box, papers & service records"],
+        keywords: ["sell my rolex", "rolex buyer near me", "sell rolex watch", "where to sell a rolex"],
+        longDescription:
+          "Rolex holds its value better than almost any watch on the market, and a fair offer starts with knowing exactly what you have. We buy every Rolex model and reference, the Submariner, Datejust, Daytona, GMT-Master, Day-Date, Oyster Perpetual, Explorer, and vintage or discontinued pieces, and we price each one on its specific reference number, condition, and current secondary-market demand rather than a flat melt figure. The Daytona and steel sports models in particular can command strong premiums, so correct identification matters and we take the time to get it right in front of you. Original box, papers, and service records all raise the offer, so bring whatever you kept. Every evaluation is free, done on camera in a secure setting, and explained out loud with no obligation to sell. Because we are a local buyer with four Northern Virginia storefronts, your Rolex stays in your hands until you accept, and you are paid the same visit rather than shipping it off and waiting. To sell your Rolex to a buyer who knows the market, visit our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
+        gallery: [
+          { name: "Submariner", image: "/products/watches/submariner.jpg", note: "All references & dial variants" },
+          { name: "Datejust", image: "/products/watches/datejust.jpg", note: "Steel, two-tone & gold" },
+          { name: "Daytona", image: "/products/watches/daytona.jpg", note: "Steel & precious metal" },
+          { name: "GMT-Master II", image: "/products/watches/gmt.jpg", note: "Pepsi, Batman & more" },
+          { name: "Day-Date President", image: "/products/watches/daydate.jpg", note: "18K gold & platinum" },
+          { name: "Oyster Perpetual", image: "/products/watches/oyster.jpg", note: "Classic & discontinued" },
+        ],
+      },
+      {
+        slug: "sell-luxury-watches",
+        name: "Luxury Watches",
+        action: "Sell Luxury Watches",
+        short: "Omega, Cartier, Patek, AP, Breitling & TAG Heuer, researched before we offer.",
+        intro:
+          "Beyond Rolex, we buy Omega, Cartier, Patek Philippe, Audemars Piguet, Breitling, TAG Heuer, and other recognized luxury brands. We research the current secondary-market price for your exact model before we make an offer, on camera, with no pressure.",
+        items: ["Omega Speedmaster & Seamaster", "Cartier Tank & Santos", "Patek Philippe & Audemars Piguet", "Breitling & TAG Heuer", "Box, papers & service records", "Vintage & discontinued models"],
+        keywords: ["sell luxury watch", "sell omega watch", "sell cartier watch", "watch buyer northern virginia"],
+        longDescription:
+          "A luxury watch from Omega, Cartier, Patek Philippe, Audemars Piguet, Breitling, or TAG Heuer carries value that a scale can never capture, and selling it well means having someone who actually follows the market. We evaluate each watch on its brand, model, reference, condition, and service history, then check current secondary-market prices before making an offer, so the number reflects what your piece is genuinely worth today. An Omega Speedmaster, a Cartier Tank, or a Patek complication each trade on their own demand, and we price them individually rather than lumping everything together. Original box, papers, and service records add real value, so bring whatever you have kept over the years. Every appraisal is free, done on camera in a secure environment, and explained clearly with no pressure and no obligation. As a local buyer with four Northern Virginia storefronts, we let you keep your watch until you accept the offer and pay you the same visit, rather than asking you to mail a valuable timepiece away. Bring your Omega, Cartier, or other fine watch to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, expert appraisal.",
+        gallery: [
+          { name: "Omega Speedmaster", image: "/products/watches/speedmaster.jpg", note: "Moonwatch & variants" },
+          { name: "Omega Seamaster", image: "/products/watches/seamaster.jpg", note: "Diver & Aqua Terra" },
+          { name: "Cartier Tank & Santos", image: "/products/watches/cartier.jpg", note: "Steel & gold" },
+          { name: "Patek Philippe", image: "/products/watches/patek.jpg", note: "Calatrava, Nautilus & more" },
+          { name: "Audemars Piguet", image: "/products/watches/ap.jpg", note: "Royal Oak & references" },
+          { name: "Breitling & TAG Heuer", image: "/products/watches/breitling.jpg", note: "Sport & chronograph" },
+        ],
+      },
+    ],
+  },
 ];
 
 export const VALUE_PROPS = [
@@ -486,10 +616,12 @@ export const VALUE_PROPS = [
 ] as const;
 
 export const PROCESS_STEPS = [
-  { n: 1, title: "Bring Your Items", desc: "Stop by any of our four Northern Virginia locations, no appointment needed." },
-  { n: 2, title: "Free Appraisal", desc: "We test and evaluate your items in front of you using professional equipment." },
-  { n: 3, title: "Transparent Offer", desc: "Get a fair, market-based price with a clear explanation, zero obligation." },
-  { n: 4, title: "Instant Payout", desc: "Accept the offer and walk out with cash in hand the same day." },
+  { n: 1, title: "Bring In What You Have", desc: "No need to sort, clean, or research anything. Bring your jewelry, coins, watches, and flatware, even the pieces you are unsure about. We have seen it all." },
+  { n: 2, title: "We Sort & Group It", desc: "We go through every item with you, one by one. Gold grouped by karat, coins by type, watches evaluated on their own. Nothing left guessed at." },
+  { n: 3, title: "Tested on the Spot", desc: "Each piece goes through our XRF analyzer, the same technology refineries use, to find its exact metal content. You watch every test, on camera." },
+  { n: 4, title: "We Calculate Your Offer", desc: "Every item goes into our system and is priced against the live spot price for gold, silver, platinum, or palladium. You see every line and number." },
+  { n: 5, title: "You Review & Sign", desc: "We print a full itemized receipt with every item and price listed. You review it and you sign. No surprises." },
+  { n: 6, title: "You Get Paid", desc: "We pay you by check on the spot, drawn on a local bank so you can cash it the same day. No waiting, no checks in the mail." },
 ] as const;
 
 export type Testimonial = { name: string; location: string; rating: number; text: string };

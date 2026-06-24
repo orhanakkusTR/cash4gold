@@ -13,8 +13,8 @@ import { ScrollProgress } from "@/components/scroll";
 type NavItem = { label: string; href: string; children?: { label: string; href: string }[] };
 
 // Nav category order by search intent (high → low), per Semrush US data:
-// Metals (cash for gold / sell gold - dominant volume + CPC) → Jewelry → Diamonds → Coins.
-const CATEGORY_NAV_ORDER = ["precious-metals", "jewelry", "precious-stones", "coins"];
+// Metals (cash for gold / sell gold - dominant volume + CPC) → Jewelry → Diamonds → Coins → Watches.
+const CATEGORY_NAV_ORDER = ["precious-metals", "jewelry", "precious-stones", "coins", "watches"];
 const orderedCategories = CATEGORY_NAV_ORDER
   .map((slug) => CATEGORIES.find((c) => c.slug === slug))
   .filter((c): c is (typeof CATEGORIES)[number] => Boolean(c));

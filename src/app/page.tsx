@@ -5,7 +5,7 @@ import { Hero } from "@/components/hero";
 import { Reveal } from "@/components/reveal";
 import { TrustStats } from "@/components/trust-stats";
 import { SectionHeading } from "@/components/section-heading";
-import { WhatWeBuyBento } from "@/components/what-we-buy-bento";
+import { WhatWeBuyGrid } from "@/components/what-we-buy-grid";
 import { ProcessBeam } from "@/components/process-beam";
 import { CashBanner } from "@/components/cash-banner";
 import { ScrollVideo } from "@/components/scroll-video";
@@ -35,17 +35,20 @@ export default function Home() {
       {/* Trust stats */}
       <TrustStats />
 
-      {/* What we buy, bento */}
+      {/* What we buy, full-bleed circular marquee */}
       <section className="bg-cream-100 py-16 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="What We Buy"
-            title="We pay top dollar for precious things"
+            title="Items you can sell"
             description={<>From a single gold ring to an entire estate collection, bring it in for a free, <span className="whitespace-nowrap">no-obligation appraisal</span>.</>}
           />
-          <div className="mt-14">
-            <WhatWeBuyBento />
-          </div>
+        </div>
+        {/* Marquee breaks out to full viewport width */}
+        <div className="mt-14">
+          <WhatWeBuyGrid />
+        </div>
+        <div className="container-page">
           <div className="mt-8 text-center">
             <ButtonLink href="/what-we-buy" variant="outline" size="lg">
               See everything we buy <ArrowRight className="h-4 w-4" />
@@ -59,8 +62,8 @@ export default function Home() {
         <div className="container-page">
           <SectionHeading
             eyebrow="How It Works"
-            title="Cash in hand in four simple steps"
-            description="The whole process usually takes less than 15 minutes from walk-in to walk-out."
+            title="No appointment. No waiting. No guessing. Just get paid."
+            description="Walk in, watch every item get tested on camera, and leave paid the same visit. No charge if you walk away."
           />
           <div className="mt-16">
             <ProcessBeam />

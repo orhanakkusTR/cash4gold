@@ -1,18 +1,22 @@
 "use client";
 
-import { Store, Microscope, Handshake, Banknote, ChevronRight, type LucideIcon } from "lucide-react";
+import { PackageOpen, LayoutGrid, Microscope, Calculator, ClipboardCheck, Banknote, ChevronRight, type LucideIcon } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { PROCESS_STEPS } from "@/data/business";
 
 // One icon per step (PROCESS_STEPS is order-stable in business.ts).
-const ICONS: LucideIcon[] = [Store, Microscope, Handshake, Banknote];
+const ICONS: LucideIcon[] = [PackageOpen, LayoutGrid, Microscope, Calculator, ClipboardCheck, Banknote];
+
+// Cards wrap to 3 per row on desktop; hide the connector at each row end.
+const PER_ROW_LG = 3;
 
 export function ProcessBeam() {
   return (
-    <ol className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <ol className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {PROCESS_STEPS.map((step, i) => {
-        const Icon = ICONS[i] ?? Store;
+        const Icon = ICONS[i] ?? PackageOpen;
         const last = i === PROCESS_STEPS.length - 1;
+        const rowEnd = (i + 1) % PER_ROW_LG === 0;
         return (
           <Reveal as="li" key={step.n} delay={i * 0.1} className="group relative">
             <div className="relative h-full overflow-hidden rounded-2xl border border-ink-900/8 bg-cream-50 p-7 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[var(--shadow-gold)]">
@@ -36,8 +40,8 @@ export function ProcessBeam() {
               <p className="relative mt-2 text-sm leading-relaxed text-muted">{step.desc}</p>
             </div>
 
-            {/* connector between cards (single-row desktop only) */}
-            {!last && (
+            {/* connector between cards in the same desktop row */}
+            {!last && !rowEnd && (
               <span
                 aria-hidden
                 className="absolute -right-7 top-1/2 z-10 hidden -translate-y-1/2 lg:grid lg:h-8 lg:w-8 lg:place-items-center lg:rounded-full lg:border lg:border-gold-200 lg:bg-cream-50 lg:text-gold-500 lg:shadow-sm"

@@ -17,7 +17,7 @@ const fadeUp = {
   }),
 };
 
-const TRUST = ["4 Northern VA locations", "No appointment needed", "Instant payout, same day"];
+const TRUST = ["Northern Virginia's #1 gold buyer", "15 years in business", "Paid before you leave"];
 
 function GoogleG({ className }: { className?: string }) {
   return (
@@ -60,21 +60,21 @@ export function Hero() {
 
           {/* Animated headline - flows in on first load, two clean lines */}
           <h1
-            aria-label="Turn Gold, Silver and Diamonds Into Instant Payout"
+            aria-label="Gold, Silver, Diamonds and More. You Get Paid Before You Leave."
             className="mx-auto mt-7 max-w-3xl font-display text-[2.7rem] font-bold leading-[1.05] tracking-[-0.025em] text-cream-50 sm:text-5xl md:text-[3.6rem] [text-shadow:0_2px_28px_rgba(0,0,0,0.55)]"
           >
             <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.2} duration={0.7} className="block">
-              Turn Gold, Silver &amp; Diamonds
+              Gold, Silver, Diamonds &amp; More
             </TextAnimate>
-            <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.85} duration={0.6} className="block">
-              Into Instant Payout
+            <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.85} duration={0.6} className="block text-gold-300">
+              You Get Paid Before You Leave
             </TextAnimate>
           </h1>
 
           <motion.p custom={1.3} variants={fadeUp} initial="hidden" animate="show"
             className="mx-auto mt-6 max-w-2xl text-balance text-lg leading-relaxed text-cream-100/80 [text-shadow:0_1px_14px_rgba(0,0,0,0.5)]">
-            Northern Virginia&apos;s most trusted buyer of gold, silver, diamonds, jewelry and coins.
-            Free appraisals, fair offers, and instant payout across four locations.
+            Visit any of our four Northern Virginia locations, no appointment needed. We test
+            everything on camera, explain every number, and pay you on the spot.
           </motion.p>
 
           <motion.div custom={1.45} variants={fadeUp} initial="hidden" animate="show"
