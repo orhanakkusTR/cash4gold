@@ -1,13 +1,16 @@
 import type { MetadataRoute } from "next";
+import { SITE } from "@/data/business";
 
-// PRE-LAUNCH LOCKDOWN: the site is not ready to be indexed yet, so we disallow
-// all crawling for every user agent. At launch, restore the allow rules and the
-// sitemap reference (see git history / the previous version of this file).
+// Production: allow crawling of everything except API routes, and point crawlers
+// at the sitemap. Canonicals/sitemap use SITE.domain (cashforgoldva.com).
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      disallow: "/",
+      allow: "/",
+      disallow: ["/api/"],
     },
+    sitemap: `${SITE.domain}/sitemap.xml`,
+    host: SITE.domain,
   };
 }
