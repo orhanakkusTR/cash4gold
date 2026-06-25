@@ -61,12 +61,12 @@ export function Hero() {
           {/* Animated headline - flows in on first load, two clean lines */}
           <h1
             aria-label="Gold, Silver, Diamonds and More. You Get Paid Before You Leave."
-            className="mx-auto mt-7 max-w-3xl font-display text-[2.7rem] font-bold leading-[1.05] tracking-[-0.025em] text-cream-50 sm:text-5xl md:text-[3.6rem] [text-shadow:0_2px_28px_rgba(0,0,0,0.55)]"
+            className="mx-auto mt-7 max-w-5xl font-display text-[2.7rem] font-bold leading-[1.05] tracking-[-0.025em] text-cream-50 sm:text-5xl md:text-[3.6rem] [text-shadow:0_2px_28px_rgba(0,0,0,0.55)]"
           >
-            <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.2} duration={0.7} className="block">
+            <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.2} duration={0.7} className="block md:whitespace-nowrap">
               Gold, Silver, Diamonds &amp; More
             </TextAnimate>
-            <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.85} duration={0.6} className="block text-gold-300">
+            <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.85} duration={0.6} className="block text-gold-300 md:whitespace-nowrap">
               You Get Paid Before You Leave
             </TextAnimate>
           </h1>
