@@ -25,8 +25,8 @@ const STATS: Stat[] = [
 export function TrustStats() {
   return (
     <section className="bg-white">
-      <div className="container-page py-12 sm:py-16">
-        <div className="relative overflow-hidden rounded-[1.75rem] border border-hairline bg-gradient-to-br from-white via-white to-gold-50/50 shadow-[var(--shadow-card)]">
+      <div className="mx-auto w-full max-w-[100rem] px-5 py-6 sm:py-8">
+        <div className="relative overflow-hidden rounded-3xl border border-hairline bg-gradient-to-br from-white via-white to-gold-50/50 shadow-[var(--shadow-card)]">
           {/* faint gold glow, top-left */}
           <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-gold-200/30 blur-3xl" />
 
@@ -36,7 +36,7 @@ export function TrustStats() {
                 key={s.label}
                 delay={i * 0.08}
                 className={cn(
-                  "flex flex-col items-center gap-3 px-5 py-9 text-center sm:px-6",
+                  "flex flex-col items-center gap-2.5 px-5 py-6 text-center sm:px-6 sm:py-7",
                   "border-hairline",
                   // last odd item spans full width on the 2-col mobile grid
                   i === STATS.length - 1 && "col-span-2 sm:col-span-1",
@@ -45,7 +45,7 @@ export function TrustStats() {
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-50 text-gold-600 ring-1 ring-gold-200/70">
                   <s.Icon className="h-6 w-6" />
                 </span>
-                <div className="flex items-baseline justify-center font-display text-4xl font-semibold leading-none sm:text-[2.75rem]">
+                <div className="flex items-baseline justify-center whitespace-nowrap font-display text-2xl font-semibold leading-none sm:text-3xl">
                   {s.value !== undefined ? (
                     <>
                       <NumberTicker value={s.value} decimalPlaces={s.decimals ?? 0} className="text-gold-gradient" />

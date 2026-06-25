@@ -6,6 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { TrustStats } from "@/components/trust-stats";
 import { SectionHeading } from "@/components/section-heading";
 import { WhatWeBuyGrid } from "@/components/what-we-buy-grid";
+import { SellGrid } from "@/components/sell-grid";
 import { ProcessBeam } from "@/components/process-beam";
 import { CashBanner } from "@/components/cash-banner";
 import { ScrollVideo } from "@/components/scroll-video";
@@ -34,8 +35,53 @@ export default function Home() {
       {/* Trust stats */}
       <TrustStats />
 
+      {/* How it works, the visit process, before the deeper valuation cinematic */}
+      <section className="bg-cream-100 pt-8 pb-16 sm:pt-10 sm:pb-24">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="How It Works"
+            title={<>No appointment. No waiting.<br className="hidden sm:block" /> <span className="font-extrabold">No guessing. Just get paid.</span></>}
+            description={<>No pressure. No surprises.{" "}
+              <span className="relative inline-block whitespace-nowrap font-semibold text-foreground">
+                No charge if you walk away.
+                <svg
+                  aria-hidden
+                  viewBox="0 0 300 14"
+                  preserveAspectRatio="none"
+                  className="pointer-events-none absolute -bottom-1.5 left-0 h-3 w-full overflow-visible text-gold-500"
+                >
+                  <path
+                    d="M3 8 C 60 3, 110 12, 160 7 S 250 3, 297 8"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span></>}
+          />
+          <div className="mt-16">
+            <ProcessBeam />
+          </div>
+        </div>
+      </section>
+
+      {/* What can you sell, compact catalog grid */}
+      <section className="pt-8 pb-16 sm:pt-10 sm:pb-24">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="What Can You Sell?"
+            title={<span className="text-2xl font-extrabold sm:whitespace-nowrap sm:text-3xl md:text-[2.2rem]">If it&apos;s gold, silver, or precious, we buy it</span>}
+            description="Browse the most common items we buy."
+          />
+          <div className="mt-14">
+            <SellGrid />
+          </div>
+        </div>
+      </section>
+
       {/* What we buy, large square photo blocks */}
-      <section className="bg-cream-100 py-16 sm:py-24">
+      <section className="bg-cream-100 pt-8 pb-16 sm:pt-10 sm:pb-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="What We Buy"
@@ -53,21 +99,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How it works, the visit process, before the deeper valuation cinematic */}
-      <section className="py-16 sm:py-24">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="How It Works"
-            title="No appointment. No waiting. No guessing. Just get paid."
-            description="Walk in, watch every item get tested on camera, and leave paid the same visit. No charge if you walk away."
-          />
-          <div className="mt-16">
-            <ProcessBeam />
-          </div>
-        </div>
-      </section>
-
-      {/* Scroll-scrubbed cinematic, embedded in a contained anatomy section */}
+      {/* Scroll-scrubbed cinematic, embedded in a contained anatomy section.
+          Hidden for now — re-enable when needed.
       <ScrollVideo
         eyebrow="The Anatomy of a Fair Offer"
         title={<>Every gram, <span className="text-silver-shimmer">honestly valued</span></>}
@@ -80,7 +113,7 @@ export default function Home() {
           { title: "Precise Weighing", desc: "Your item is weighed on a state-certified, calibrated scale to the gram." },
           { title: "Instant Payout Offer", desc: "Spot price × purity × weight: a transparent figure, paid in cash the same day." },
         ]}
-      />
+      /> */}
 
       {/* Cinematic gold → cash banner */}
       <CashBanner />

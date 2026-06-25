@@ -29,9 +29,8 @@ const NAV: NavItem[] = [
   { label: "Contact", href: "/contact-us-cash-for-gold-locations" },
   {
     label: "More",
-    href: "/how-it-works",
+    href: "/about",
     children: [
-      { label: "How It Works", href: "/how-it-works" },
       { label: "About", href: "/about" },
       { label: "Blog", href: "/blog" },
     ],

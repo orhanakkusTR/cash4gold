@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Star, ArrowRight, ArrowUpRight } from "lucide-react";
+import { Phone, Star, ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { motion } from "motion/react";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { buttonClass } from "@/components/ui/button";
@@ -27,6 +27,47 @@ function GoogleG({ className }: { className?: string }) {
       <path fill="#FBBC05" d="M5.27 14.29a7.2 7.2 0 0 1 0-4.58v-3.1H1.27a12 12 0 0 0 0 10.78l4-3.1z" />
       <path fill="#EA4335" d="M12 4.77c1.77 0 3.35.61 4.6 1.8l3.43-3.42C17.95 1.19 15.23 0 12 0A12 12 0 0 0 1.27 6.61l4 3.1C6.22 6.86 8.87 4.77 12 4.77z" />
     </svg>
+  );
+}
+
+function TrustSeal({ className }: { className?: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.6, rotate: -25 }}
+      animate={{ opacity: 1, scale: 1, rotate: -12 }}
+      transition={{ duration: 0.8, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+      className={className}
+    >
+      <motion.div
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        className="relative h-28 w-28 rounded-full border border-gold-400/40 bg-ink-950/35 backdrop-blur-md shadow-[0_8px_40px_rgba(212,169,66,0.25)]"
+      >
+        {/* rotating curved text ring */}
+        <motion.svg
+          viewBox="0 0 100 100"
+          className="absolute inset-0 h-full w-full text-gold-300"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+        >
+          <defs>
+            <path id="sealCircle" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" />
+          </defs>
+          <text className="fill-current font-display text-[10.5px] font-semibold uppercase tracking-[0.18em]">
+            <textPath href="#sealCircle" startOffset="0%">
+              100% Trust Guarantee · Honest Offers ·
+            </textPath>
+          </text>
+        </motion.svg>
+
+        {/* center mark */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+          <ShieldCheck className="h-6 w-6 text-gold-300" strokeWidth={1.75} />
+          <span className="mt-0.5 font-display text-xl font-extrabold leading-none text-cream-50">100%</span>
+          <span className="text-[0.55rem] font-semibold uppercase tracking-[0.2em] text-cream-100/70">Trust</span>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
@@ -66,15 +107,16 @@ export function Hero() {
             <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.2} duration={0.7} className="block md:whitespace-nowrap">
               Gold, Silver, Diamonds &amp; More
             </TextAnimate>
-            <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.85} duration={0.6} className="block text-gold-300 md:whitespace-nowrap">
+            <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.85} duration={0.6} className="block font-extrabold text-gold-300 md:whitespace-nowrap">
               You Get Paid Before You Leave
             </TextAnimate>
           </h1>
 
           <motion.p custom={1.3} variants={fadeUp} initial="hidden" animate="show"
             className="mx-auto mt-6 max-w-2xl text-balance text-lg leading-relaxed text-cream-100/80 [text-shadow:0_1px_14px_rgba(0,0,0,0.5)]">
-            Visit any of our four Northern Virginia locations, no appointment needed. We test
-            everything on camera, explain every number, and pay you on the spot.
+            Visit any of our 4 Northern Virginia locations. No appointment needed.
+            <br />
+            Walk in, get your offer, get paid on the spot.
           </motion.p>
 
           <motion.div custom={1.45} variants={fadeUp} initial="hidden" animate="show"
@@ -106,8 +148,21 @@ export function Hero() {
           </motion.div>
         </div>
 
+        {/* Find a location CTA */}
+        <div className="relative mt-12 flex justify-center">
+          <motion.div custom={1.7} variants={fadeUp} initial="hidden" animate="show">
+            <a
+              href="/locations"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-full border-2 border-cream-50/25 px-8 text-base font-semibold text-cream-50 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-gold-400 hover:bg-white/5 hover:text-gold-200"
+            >
+              📍 Find a Location
+            </a>
+          </motion.div>
+          <TrustSeal className="absolute right-0 top-1/2 hidden -translate-y-1/2 sm:block lg:right-4 xl:right-12" />
+        </div>
+
         {/* Category quick-links */}
-        <motion.div custom={1.75} variants={fadeUp} initial="hidden" animate="show" className="mt-14">
+        <motion.div custom={1.85} variants={fadeUp} initial="hidden" animate="show" className="mt-8">
           <div className="mx-auto mb-6 flex max-w-xs items-center gap-3">
             <span className="h-px flex-1 bg-gradient-to-r from-transparent to-gold-400/40" />
             <span className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-cream-100/55">What We Buy</span>

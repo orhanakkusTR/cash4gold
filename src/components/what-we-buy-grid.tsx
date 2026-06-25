@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 // Curated "items you can sell" showcase: real product photos cropped into large
@@ -26,39 +25,31 @@ function BuyTile({ item }: { item: BuyItem }) {
   return (
     <Link
       href={item.href}
-      className="group relative block aspect-square overflow-hidden rounded-2xl bg-ink-900 shadow-[var(--shadow-card)] ring-1 ring-hairline transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow-gold)] hover:ring-2 hover:ring-gold-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-300 hover:shadow-[var(--shadow-gold)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 sm:p-7"
     >
-      {/* Full-bleed real product photo, zooms gently on hover */}
-      <Image
-        src={item.image}
-        alt={item.title}
-        fill
-        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-        className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
-      />
-
-      {/* Dark scrim from the bottom so overlaid text stays WCAG AA legible */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/55 to-transparent" />
-
-      {/* Gold arrow affordance, fades and slides in on hover */}
+      {/* top hairline accent that grows on hover */}
       <span
         aria-hidden
-        className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gold-400 text-ink-950 opacity-0 shadow-[var(--shadow-gold)] transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 -translate-y-2"
-      >
-        <ArrowUpRight className="h-5 w-5" strokeWidth={2.5} />
-      </span>
+        className="absolute inset-x-0 top-0 h-[3px] w-0 bg-gradient-to-r from-gold-300 via-gold-500 to-gold-300 transition-all duration-500 group-hover:w-full"
+      />
 
-      {/* Title + description over the scrim */}
-      <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-        <h3 className="font-display text-2xl font-bold leading-tight text-cream-50 sm:text-3xl">
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="font-display text-xl font-extrabold leading-tight text-foreground sm:text-2xl">
           {item.title}
         </h3>
         <span
           aria-hidden
-          className="mt-2.5 block h-px w-10 bg-gold-400/60 transition-all duration-500 group-hover:w-20 group-hover:bg-gold-400"
-        />
-        <p className="mt-2.5 text-sm leading-relaxed text-cream-100/80">{item.desc}</p>
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-50 text-gold-600 ring-1 ring-gold-200/70 transition-all duration-300 group-hover:bg-gold-500 group-hover:text-ink-950"
+        >
+          <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
+        </span>
       </div>
+
+      <span
+        aria-hidden
+        className="mt-4 block h-px w-10 bg-gold-400/50 transition-all duration-500 group-hover:w-20 group-hover:bg-gold-400"
+      />
+      <p className="mt-4 text-sm leading-relaxed text-muted">{item.desc}</p>
     </Link>
   );
 }

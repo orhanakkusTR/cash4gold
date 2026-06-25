@@ -36,7 +36,7 @@ export function ProcessBeam() {
                 <Icon className="h-7 w-7" strokeWidth={1.75} />
               </div>
 
-              <h3 className="relative mt-6 font-display text-xl font-semibold text-foreground">{step.title}</h3>
+              <h3 className="relative mt-6 font-display text-xl font-extrabold text-foreground">{step.title}</h3>
               <p className="relative mt-2 text-sm leading-relaxed text-muted">{step.desc}</p>
             </div>
 

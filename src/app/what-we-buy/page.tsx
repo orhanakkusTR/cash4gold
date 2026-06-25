@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { CATEGORIES } from "@/data/business";
 import { PageHero, CtaBand } from "@/components/page-parts";
+import { SellGrid } from "@/components/sell-grid";
+import { SectionHeading } from "@/components/section-heading";
 import { Reveal } from "@/components/reveal";
 import { CategoryCard } from "@/components/cards";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
@@ -22,12 +24,24 @@ export default function WhatWeBuyPage() {
         description="From a single gold ring to an entire estate collection, here's everything we buy, all appraised for free, with instant payout offers."
       />
       <section className="container-page py-20">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-          {CATEGORIES.map((c, i) => (
-            <Reveal key={c.slug} delay={(i % 2) * 0.1}>
-              <CategoryCard href={`/${c.slug}`} title={c.name} short={c.short} image={c.image} />
-            </Reveal>
-          ))}
+        <SellGrid />
+      </section>
+
+      {/* Category hubs, internal links for SEO + navigation */}
+      <section className="bg-cream-100 py-20">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Browse by Category"
+            title="Explore what we buy in detail"
+            description="Dive into any category to learn how we appraise it, what we look for, and how much you can expect."
+          />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+            {CATEGORIES.map((c, i) => (
+              <Reveal key={c.slug} delay={(i % 2) * 0.1}>
+                <CategoryCard href={`/${c.slug}`} title={c.name} short={c.short} image={c.image} />
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
       <CtaBand />

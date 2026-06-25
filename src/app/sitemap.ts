@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date("2026-06-12");
 
   const staticPages = [
-    "", "/what-we-buy", ...(SHOW_CALCULATOR ? ["/gold-calculator"] : []), "/locations", "/how-it-works", "/about",
+    "", "/what-we-buy", ...(SHOW_CALCULATOR ? ["/gold-calculator"] : []), "/locations", "/about",
     "/contact-us-cash-for-gold-locations", "/blog",
   ].map((p) => ({
     url: `${base}${p}`,
