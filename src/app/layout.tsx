@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE } from "@/data/business";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { LocationsFab } from "@/components/locations-fab";
 import { LivePriceTicker } from "@/components/live-price-ticker";
 import { OrganizationJsonLd } from "@/components/json-ld";
 
@@ -77,6 +78,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <LocationsFab />
       </body>
     </html>
   );
