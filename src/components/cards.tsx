@@ -30,17 +30,18 @@ export function CategoryCard({
   title,
   short,
   image,
+  phone,
+  phoneHref,
 }: {
   href: string;
   title: string;
   short: string;
   image: string;
+  phone?: string;
+  phoneHref?: string;
 }) {
   return (
-    <Link
-      href={href}
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-hairline bg-white shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-400/40 hover:shadow-[var(--shadow-gold)]"
-    >
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-hairline bg-white shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-400/40 hover:shadow-[var(--shadow-gold)]">
       <div className="relative aspect-[5/4] overflow-hidden bg-ink-900">
         <Image
           src={image}
@@ -50,15 +51,26 @@ export function CategoryCard({
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-950/30 to-transparent" />
+        {phoneHref && (
+          <a
+            href={`tel:${phoneHref}`}
+            aria-label={`Call ${phone ?? "us"} about ${title}`}
+            className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-gold-500 text-ink-950 shadow-[var(--shadow-gold)] ring-1 ring-white/40 transition-all duration-300 hover:scale-110 hover:bg-gold-400"
+          >
+            <Phone className="h-4 w-4" strokeWidth={2.5} />
+          </a>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center justify-between">
-          <h3 className="font-display text-xl font-semibold text-foreground">{title}</h3>
+          <h3 className="font-display text-xl font-extrabold text-foreground">{title}</h3>
           <ArrowUpRight className="h-5 w-5 text-gold-500 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </div>
         <p className="mt-2 text-sm leading-relaxed text-muted">{short}</p>
       </div>
-    </Link>
+      {/* Full-card click target, sits below the phone button (z-20) */}
+      <Link href={href} aria-label={title} className="absolute inset-0 z-10" />
+    </div>
   );
 }
 

@@ -85,7 +85,7 @@ export default function Home() {
         <div className="container-page">
           <SectionHeading
             eyebrow="What We Buy"
-            title="Items you can sell"
+            title={<span className="font-extrabold">Items you can sell</span>}
             description={<>From a single gold ring to an entire estate collection, bring it in for a free, <span className="whitespace-nowrap">no-obligation appraisal</span>.</>}
           />
           <div className="mt-14">
@@ -107,7 +107,7 @@ export default function Home() {
         <div className="container-page">
           <SectionHeading
             eyebrow="Reviews"
-            title="Trusted by thousands of neighbors"
+            title={<span className="font-extrabold">Trusted by thousands of neighbors</span>}
             description="Real reviews from real customers across Northern Virginia, rated 4.9 out of 5 on Google."
           />
           <Reveal className="mt-12">

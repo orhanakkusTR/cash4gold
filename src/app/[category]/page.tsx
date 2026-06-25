@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, MapPin, Phone, Navigation } from "lucide-react";
-import { CATEGORIES, LOCATIONS, getCategory, SITE } from "@/data/business";
+import { CATEGORIES, LOCATIONS, getCategory, SITE, PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { SectionHeading } from "@/components/section-heading";
 import { Reveal } from "@/components/reveal";
@@ -11,6 +11,7 @@ import { CategoryDescription } from "@/components/category-description";
 import { JewelryValueProps, JewelryHowWeValue } from "@/components/jewelry-trust";
 import { placeholderDescription, metalTone } from "@/lib/utils";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { LinkifyCities } from "@/components/linkify-cities";
 import { POSTS, getPost, coverImage } from "@/data/blog";
 import { BlogArticle } from "@/components/blog-article";
 
@@ -87,28 +88,33 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       {/* Subcategories */}
       <section className="container-page py-20">
         <SectionHeading
-          eyebrow={cat.name}
+          eyebrow={`Sell ${cat.name}`}
           title={`What we buy in ${cat.name.toLowerCase()}`}
         />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {cat.subcategories.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 0.08}>
-              <Link
-                href={`/${cat.slug}/${s.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-hairline bg-white shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-400/40 hover:shadow-[var(--shadow-gold)]"
-              >
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-hairline bg-white shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-400/40 hover:shadow-[var(--shadow-gold)]">
                 <div className="relative aspect-square overflow-hidden bg-ink-900">
                   <Image src={s.cardImage ?? cat.image} alt={s.name} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950/40 to-transparent" />
+                  <a
+                    href={`tel:${PRIMARY_PHONE_HREF}`}
+                    aria-label={`Call ${PRIMARY_PHONE} about ${s.name}`}
+                    className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-gold-500 text-ink-950 shadow-[var(--shadow-gold)] ring-1 ring-white/40 transition-all duration-300 hover:scale-110 hover:bg-gold-400"
+                  >
+                    <Phone className="h-4 w-4" strokeWidth={2.5} />
+                  </a>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center justify-between">
-                    <h3 className="font-display text-xl font-semibold text-foreground">{s.name}</h3>
+                    <h3 className="font-display text-xl font-extrabold text-foreground">{s.name}</h3>
                     <ArrowUpRight className="h-5 w-5 text-gold-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{s.short}</p>
                 </div>
-              </Link>
+                <Link href={`/${cat.slug}/${s.slug}`} aria-label={s.name} className="absolute inset-0 z-10" />
+              </div>
             </Reveal>
           ))}
 
@@ -195,7 +201,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                     {f.q}
                     <span className="text-gold-500 transition-transform group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-3 text-muted">{f.a}</p>
+                  <p className="mt-3 text-muted"><LinkifyCities text={f.a} /></p>
                 </details>
               </Reveal>
             ))}

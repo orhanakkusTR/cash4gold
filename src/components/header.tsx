@@ -23,7 +23,7 @@ const NAV: NavItem[] = [
   ...orderedCategories.map((c) => ({
     label: c.nav,
     href: `/${c.slug}`,
-    children: c.subcategories.map((s) => ({ label: s.name, href: `/${c.slug}/${s.slug}` })),
+    children: c.subcategories.map((s) => ({ label: `Sell ${s.name}`, href: `/${c.slug}/${s.slug}` })),
   })),
   { label: "Locations", href: "/locations", children: LOCATIONS.map((l) => ({ label: l.city, href: `/locations/${l.slug}` })) },
   { label: "Contact", href: "/contact-us-cash-for-gold-locations" },

@@ -618,7 +618,7 @@ export const CATEGORIES: Category[] = [
     name: "Watches",
     nav: "Watches",
     icon: "Watch",
-    image: "/categories/watches.jpg",
+    image: "/categories/watches-rolex.webp",
     short: "Rolex, Omega, Cartier & other luxury watches, researched and paid at real market value.",
     intro:
       "Luxury watches are not like gold, you cannot just weigh them. We know the watch market and research current secondary-market prices before we make an offer on your Rolex, Omega, Cartier, or other fine timepiece. The evaluation is free, done on camera, with no pressure.",

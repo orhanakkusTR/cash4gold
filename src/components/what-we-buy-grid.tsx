@@ -23,34 +23,44 @@ const ITEMS: BuyItem[] = [
 
 function BuyTile({ item }: { item: BuyItem }) {
   return (
-    <Link
-      href={item.href}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-300 hover:shadow-[var(--shadow-gold)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 sm:p-7"
-    >
-      {/* top hairline accent that grows on hover */}
+    <div className="group relative">
+      {/* Round "Sell" badge, partially overhanging the top-left corner */}
       <span
         aria-hidden
-        className="absolute inset-x-0 top-0 h-[3px] w-0 bg-gradient-to-r from-gold-300 via-gold-500 to-gold-300 transition-all duration-500 group-hover:w-full"
-      />
+        className="absolute -left-2 -top-2 z-20 flex h-12 w-12 -rotate-6 items-center justify-center rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-[0.72rem] font-extrabold uppercase tracking-wide text-ink-950 shadow-[var(--shadow-gold)] ring-2 ring-white transition-transform duration-300 group-hover:rotate-0"
+      >
+        Sell
+      </span>
 
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="font-display text-xl font-extrabold leading-tight text-foreground sm:text-2xl">
-          {item.title}
-        </h3>
+      <Link
+        href={item.href}
+        className="relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-300 hover:shadow-[var(--shadow-gold)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 sm:p-7"
+      >
+        {/* top hairline accent that grows on hover */}
         <span
           aria-hidden
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-50 text-gold-600 ring-1 ring-gold-200/70 transition-all duration-300 group-hover:bg-gold-500 group-hover:text-ink-950"
-        >
-          <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
-        </span>
-      </div>
+          className="absolute inset-x-0 top-0 h-[3px] w-0 bg-gradient-to-r from-gold-300 via-gold-500 to-gold-300 transition-all duration-500 group-hover:w-full"
+        />
 
-      <span
-        aria-hidden
-        className="mt-4 block h-px w-10 bg-gold-400/50 transition-all duration-500 group-hover:w-20 group-hover:bg-gold-400"
-      />
-      <p className="mt-4 text-sm leading-relaxed text-muted">{item.desc}</p>
-    </Link>
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="pl-9 font-display text-xl font-extrabold leading-tight text-foreground sm:text-2xl">
+            {item.title}
+          </h3>
+          <span
+            aria-hidden
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-50 text-gold-600 ring-1 ring-gold-200/70 transition-all duration-300 group-hover:bg-gold-500 group-hover:text-ink-950"
+          >
+            <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} />
+          </span>
+        </div>
+
+        <span
+          aria-hidden
+          className="mt-4 block h-px w-10 bg-gold-400/50 transition-all duration-500 group-hover:w-20 group-hover:bg-gold-400"
+        />
+        <p className="mt-4 text-sm leading-relaxed text-muted">{item.desc}</p>
+      </Link>
+    </div>
   );
 }
 

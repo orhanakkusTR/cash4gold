@@ -67,7 +67,7 @@ export function CtaBand({
   title = "Ready to turn your valuables into cash?",
   description = "Walk into any Northern Virginia location or request a free quote online anytime, and you only sell if you love the offer.",
 }: {
-  title?: string;
+  title?: React.ReactNode;
   description?: string;
 }) {
   return (

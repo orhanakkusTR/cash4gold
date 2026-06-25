@@ -59,7 +59,7 @@ export function JewelryHowWeValue({ itemLabel = "jewelry" }: { itemLabel?: strin
               >
                 {String(step.n).padStart(2, "0")}
               </span>
-              <h3 className="relative font-display text-lg font-semibold text-foreground">{step.title}</h3>
+              <h3 className="relative font-display text-lg font-extrabold text-foreground">{step.title}</h3>
               <p className="relative mt-2 text-sm leading-relaxed text-muted">{step.desc}</p>
             </div>
           </Reveal>

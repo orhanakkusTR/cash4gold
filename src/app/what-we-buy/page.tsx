@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CATEGORIES } from "@/data/business";
+import { CATEGORIES, PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { SellGrid } from "@/components/sell-grid";
 import { SectionHeading } from "@/components/section-heading";
@@ -32,13 +32,13 @@ export default function WhatWeBuyPage() {
         <div className="container-page">
           <SectionHeading
             eyebrow="Browse by Category"
-            title="Explore what we buy in detail"
+            title={<span className="font-extrabold">Explore what we buy in detail</span>}
             description="Dive into any category to learn how we appraise it, what we look for, and how much you can expect."
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {CATEGORIES.map((c, i) => (
-              <Reveal key={c.slug} delay={(i % 2) * 0.1}>
-                <CategoryCard href={`/${c.slug}`} title={c.name} short={c.short} image={c.image} />
+              <Reveal key={c.slug} delay={(i % 3) * 0.1}>
+                <CategoryCard href={`/${c.slug}`} title={`Sell ${c.name}`} short={c.short} image={c.image} phone={PRIMARY_PHONE} phoneHref={PRIMARY_PHONE_HREF} />
               </Reveal>
             ))}
           </div>

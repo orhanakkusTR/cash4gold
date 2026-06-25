@@ -178,7 +178,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIES.map((c, i) => (
             <Reveal key={c.slug} delay={(i % 3) * 0.1}>
-              <CategoryCard href={`/${c.slug}`} title={c.name} short={c.short} image={c.image} />
+              <CategoryCard href={`/${c.slug}`} title={`Sell ${c.name}`} short={c.short} image={c.image} />
             </Reveal>
           ))}
         </div>

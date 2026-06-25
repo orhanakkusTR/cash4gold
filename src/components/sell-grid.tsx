@@ -75,7 +75,7 @@ function SellCard({ item }: { item: SellItem }) {
       <div className="flex items-center justify-between gap-2 px-1 pb-1">
         <div>
           <h3 className={`font-display text-base font-extrabold ${item.comingSoon ? "text-muted" : "text-foreground"}`}>
-            {item.title}
+            {item.title.startsWith("Sell") ? item.title : `Sell ${item.title}`}
           </h3>
           <p className="mt-0.5 text-sm text-muted">{item.desc}</p>
         </div>

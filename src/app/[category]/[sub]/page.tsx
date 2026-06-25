@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { Check, MapPin, ArrowRight, ArrowUpRight, Phone, Navigation } from "lucide-react";
 import { ALL_SUBCATEGORIES, LOCATIONS, getCategory, getSubcategory, SITE, PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
 import { getBrief } from "@/data/category-briefs";
+import { BrushUnderline } from "@/components/brush-underline";
+import { LinkifyCities } from "@/components/linkify-cities";
 import { placeholderDescription, metalTone } from "@/lib/utils";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { SectionHeading } from "@/components/section-heading";
@@ -213,7 +215,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
 
       {/* Locations */}
       <section className="container-page py-12 sm:py-16">
-        <SectionHeading eyebrow="Near you" title={`Sell your ${s.name.toLowerCase()} at a location near you`} description="Four convenient Northern Virginia locations, ready to make you an offer today." />
+        <SectionHeading eyebrow="Near you" title={<><BrushUnderline>Sell your {s.name.toLowerCase()}</BrushUnderline> at a location near you</>} description="Four convenient Northern Virginia locations, ready to make you an offer today." />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {LOCATIONS.map((l, i) => (
             <Reveal key={l.slug} delay={i * 0.08}>
@@ -231,7 +233,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
       {/* FAQ */}
       <section className="bg-cream-100 py-12 sm:py-16">
         <div className="container-page">
-          <SectionHeading eyebrow="FAQ" title={`${s.name}: common questions`} />
+          <SectionHeading eyebrow="FAQ" title={<><span className="font-extrabold">Sell {s.name}:</span> common questions</>} />
           <div className="mx-auto mt-10 max-w-3xl divide-y divide-hairline">
             {faqs.map((f, i) => (
               <Reveal key={f.q} delay={i * 0.05}>
@@ -240,7 +242,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
                     {f.q}
                     <span className="text-gold-500 transition-transform group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-3 text-muted">{f.a}</p>
+                  <p className="mt-3 text-muted"><LinkifyCities text={f.a} /></p>
                 </details>
               </Reveal>
             ))}
@@ -262,7 +264,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
         </section>
       )}
 
-      <CtaBand title={`Ready to sell your ${s.name.toLowerCase()}?`} />
+      <CtaBand title={<>Ready to <span className="font-extrabold">sell your {s.name.toLowerCase()}?</span></>} />
     </>
   );
 }

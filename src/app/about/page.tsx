@@ -97,7 +97,7 @@ export default function AboutPage() {
         <div className="container-page">
           <SectionHeading
             eyebrow="Satisfaction Guaranteed"
-            title="Why Choose Us"
+            title={<span className="font-extrabold">Why Choose Us</span>}
           />
           <div className="mx-auto mt-14 grid max-w-5xl gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {WHY.map((v, i) => (
@@ -141,7 +141,7 @@ export default function AboutPage() {
       {/* Locations */}
       <section className="bg-cream-100 py-16 sm:py-20">
         <div className="container-page">
-          <SectionHeading eyebrow="Visit Us" title="Four locations across Northern Virginia" description="Walk in during business hours, no appointment needed, for a free appraisal and instant payout." />
+          <SectionHeading eyebrow="Visit Us" title={<>Four locations across <span className="font-extrabold">Northern Virginia</span></>} description="Walk in during business hours, no appointment needed, for a free appraisal and instant payout." />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {LOCATIONS.map((l, i) => (
               <Reveal key={l.slug} delay={i * 0.08}>
