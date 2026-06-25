@@ -224,7 +224,7 @@ export function PayoutEstimator() {
           <a href={`tel:${loc.phoneHref}`} className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 px-5 py-3.5 font-semibold text-ink-950 transition-transform hover:-translate-y-0.5">
             <Phone className="h-4 w-4" /> Call {loc.city}
           </a>
-          <a href={loc.mapUrl} target="_blank" rel="noopener" className="inline-flex items-center justify-center gap-2 rounded-xl border border-gold-500/50 px-5 py-3.5 font-semibold text-gold-700 transition-colors hover:bg-gold-50">
+          <a href={loc.mapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-gold-500/50 px-5 py-3.5 font-semibold text-gold-700 transition-colors hover:bg-gold-50">
             <MapPin className="h-4 w-4" /> Directions
           </a>
         </div>

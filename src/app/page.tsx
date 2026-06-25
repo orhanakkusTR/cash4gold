@@ -10,7 +10,6 @@ import { SellGrid } from "@/components/sell-grid";
 import { CredentialsStrip } from "@/components/credentials-strip";
 import { ProcessBeam } from "@/components/process-beam";
 import { CashBanner } from "@/components/cash-banner";
-import { ScrollVideo } from "@/components/scroll-video";
 import { GoogleRatingSummary } from "@/components/google-rating";
 import { TestimonialsMarquee } from "@/components/testimonials-marquee";
 import { OpenStatus } from "@/components/open-status";
@@ -99,22 +98,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Scroll-scrubbed cinematic, embedded in a contained anatomy section.
-          Hidden for now — re-enable when needed.
-      <ScrollVideo
-        eyebrow="The Anatomy of a Fair Offer"
-        title={<>Every gram, <span className="text-silver-shimmer">honestly valued</span></>}
-        basePath="/scroll"
-        count={145}
-        scrollLengthVh={260}
-        steps={[
-          { title: "Live Spot Price", desc: "We start from the real-time market price of gold, silver, or platinum, never an outdated rate." },
-          { title: "Purity Test", desc: "Non-destructive acid or XRF testing confirms the exact karat, in front of you." },
-          { title: "Precise Weighing", desc: "Your item is weighed on a state-certified, calibrated scale to the gram." },
-          { title: "Instant Payout Offer", desc: "Spot price × purity × weight: a transparent figure, paid in cash the same day." },
-        ]}
-      /> */}
 
       {/* Cinematic gold → cash banner */}
       <CashBanner />

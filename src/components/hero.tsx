@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Phone, Star, ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { motion } from "motion/react";
 import { TextAnimate } from "@/components/ui/text-animate";
@@ -151,12 +152,12 @@ export function Hero() {
         {/* Find a location CTA */}
         <div className="relative mt-12 flex justify-center">
           <motion.div custom={1.7} variants={fadeUp} initial="hidden" animate="show">
-            <a
+            <Link
               href="/locations"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full border-2 border-cream-50/25 px-8 text-base font-semibold text-cream-50 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-gold-400 hover:bg-white/5 hover:text-gold-200"
             >
               📍 Find a Location
-            </a>
+            </Link>
           </motion.div>
           <TrustSeal className="absolute right-0 top-1/2 hidden -translate-y-1/2 sm:block lg:right-4 xl:right-12" />
         </div>

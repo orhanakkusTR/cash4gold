@@ -45,6 +45,10 @@ export function OpenStatus({
       const [ch, cm] = today.close.split(":").map(Number);
       open = cur >= oh * 60 + om && cur < ch * 60 + cm;
     }
+    // Intentional: open/closed depends on the visitor's local clock, so it must
+    // be computed client-side after mount (SSR can't know it). Pre-mount fallback
+    // below keeps the markup stable, avoiding hydration mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStatus({ open, today });
   }, [hours]);
 
