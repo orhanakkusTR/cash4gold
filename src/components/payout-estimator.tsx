@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Phone, MapPin, TriangleAlert, Star, Check, Banknote } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { LOCATIONS } from "@/data/business";
+import { LOCATIONS, SITE } from "@/data/business";
 
 // Payout band as a fraction of melt value (LOW–HIGH). A range, never a single
 // number, to stay non-binding and honest. Tune to real store economics.
@@ -229,7 +229,7 @@ export function PayoutEstimator() {
           </a>
         </div>
         <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
-          <span className="inline-flex items-center gap-1.5"><Star className="h-4 w-4 fill-gold-400 text-gold-400" /> 4.9 / 342 reviews</span>
+          <span className="inline-flex items-center gap-1.5"><Star className="h-4 w-4 fill-gold-400 text-gold-400" /> {SITE.rating.value} / {SITE.rating.count}+ reviews</span>
           <span className="inline-flex items-center gap-1.5"><Check className="h-4 w-4 text-gold-500" /> Tested in front of you</span>
           <span className="inline-flex items-center gap-1.5"><Banknote className="h-4 w-4 text-gold-500" /> Instant payout</span>
         </div>

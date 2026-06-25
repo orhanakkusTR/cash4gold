@@ -9,7 +9,6 @@ import { WhatWeBuyGrid } from "@/components/what-we-buy-grid";
 import { ProcessBeam } from "@/components/process-beam";
 import { CashBanner } from "@/components/cash-banner";
 import { ScrollVideo } from "@/components/scroll-video";
-import { OwnerVideo } from "@/components/owner-video";
 import { GoogleRatingSummary } from "@/components/google-rating";
 import { TestimonialsMarquee } from "@/components/testimonials-marquee";
 import { OpenStatus } from "@/components/open-status";
@@ -35,7 +34,7 @@ export default function Home() {
       {/* Trust stats */}
       <TrustStats />
 
-      {/* What we buy, full-bleed circular marquee */}
+      {/* What we buy, large square photo blocks */}
       <section className="bg-cream-100 py-16 sm:py-24">
         <div className="container-page">
           <SectionHeading
@@ -43,13 +42,10 @@ export default function Home() {
             title="Items you can sell"
             description={<>From a single gold ring to an entire estate collection, bring it in for a free, <span className="whitespace-nowrap">no-obligation appraisal</span>.</>}
           />
-        </div>
-        {/* Marquee breaks out to full viewport width */}
-        <div className="mt-14">
-          <WhatWeBuyGrid />
-        </div>
-        <div className="container-page">
-          <div className="mt-8 text-center">
+          <div className="mt-14">
+            <WhatWeBuyGrid />
+          </div>
+          <div className="mt-10 text-center">
             <ButtonLink href="/what-we-buy" variant="outline" size="lg">
               See everything we buy <ArrowRight className="h-4 w-4" />
             </ButtonLink>
@@ -105,9 +101,6 @@ export default function Home() {
           <TestimonialsMarquee />
         </Reveal>
       </section>
-
-      {/* Owner / team video, lite YouTube embed for trust + E-E-A-T */}
-      <OwnerVideo />
 
       {/* Locations, local-SEO anchor with real storefront photos */}
       <section className="py-16 sm:py-24">

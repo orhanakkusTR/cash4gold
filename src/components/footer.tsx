@@ -36,7 +36,7 @@ export function Footer() {
               ))}
             </span>
             <span className="text-cream-100/80">
-              {SITE.rating.value} · {SITE.rating.count} reviews
+              {SITE.rating.value} · {SITE.rating.count}+ reviews
             </span>
           </div>
           <div className="mt-5 flex gap-3">

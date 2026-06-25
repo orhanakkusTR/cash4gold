@@ -23,7 +23,7 @@ export const SITE = {
   tagline: "Northern Virginia's trusted gold, silver & diamond buyer, instant payout, fair prices.",
   domain: "https://cashforgoldva.com",
   email: "info@cashforgoldva.com",
-  rating: { value: 4.9, count: 342 },
+  rating: { value: 4.9, count: 500 },
   priceRange: "$$",
   // Elfsight Google Reviews widget id (renders live Google reviews client-side)
   elfsightReviewsAppId: "elfsight-app-c6841a77-1f47-4a9f-9259-0109f0f6fbdd",

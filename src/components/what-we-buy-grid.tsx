@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Marquee } from "@/components/ui/marquee";
+import { ArrowUpRight } from "lucide-react";
 
-// Curated "items you can sell" showcase: real product photos cropped to circles,
-// flowing side by side in a single full-width marquee. Each image is matched to
-// the category it represents. Edit freely; each item links to the page that sells it.
-// Several photos (watches, designer, diamonds, coins) are the owner's own brand
-// images pulled from the original cashforgoldva.com site.
+// Curated "items you can sell" showcase: real product photos cropped into large
+// square photo tiles arranged in a responsive bento-style grid. Each tile is a
+// full-bleed image with a bottom gradient scrim carrying the title and a short
+// description, plus a refined gold hover treatment. Edit freely; each item links
+// to the page that sells it. Several photos (watches, designer, diamonds, coins)
+// are the owner's own brand images pulled from the original cashforgoldva.com site.
 type BuyItem = { title: string; desc: string; image: string; href: string };
 
 const ITEMS: BuyItem[] = [
@@ -21,50 +22,53 @@ const ITEMS: BuyItem[] = [
   { title: "Estate & Antique", desc: "Inherited & vintage pieces", image: "/products/jewelry/box.jpg", href: "/jewelry/sell-your-estate-jewelry" },
 ];
 
-function BuyCircle({ item }: { item: BuyItem }) {
+function BuyTile({ item }: { item: BuyItem }) {
   return (
-    <Link href={item.href} className="group flex w-56 shrink-0 flex-col items-center text-center sm:w-64 lg:w-72">
-      {/* Circular real-photo crop with animated double gold ring */}
-      <div className="relative w-full">
-        <span
-          aria-hidden
-          className="pointer-events-none absolute -inset-1.5 rounded-full border border-gold-300/0 transition-all duration-500 group-hover:-inset-3 group-hover:border-gold-300/60"
-        />
-        <div className="relative aspect-square overflow-hidden rounded-full bg-ink-900 shadow-[var(--shadow-card)] ring-1 ring-hairline transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[var(--shadow-gold)] group-hover:ring-2 group-hover:ring-gold-400/70">
-          <Image
-            src={item.image}
-            alt={item.title}
-            fill
-            sizes="288px"
-            className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.1]"
-          />
-          <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-inset ring-white/10" />
-        </div>
-      </div>
+    <Link
+      href={item.href}
+      className="group relative block aspect-square overflow-hidden rounded-2xl bg-ink-900 shadow-[var(--shadow-card)] ring-1 ring-hairline transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow-gold)] hover:ring-2 hover:ring-gold-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400"
+    >
+      {/* Full-bleed real product photo, zooms gently on hover */}
+      <Image
+        src={item.image}
+        alt={item.title}
+        fill
+        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
+      />
 
-      <h3 className="mt-6 font-display text-xl font-semibold text-foreground transition-colors duration-300 group-hover:text-gold-700 sm:text-2xl">
-        {item.title}
-      </h3>
+      {/* Dark scrim from the bottom so overlaid text stays WCAG AA legible */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/55 to-transparent" />
+
+      {/* Gold arrow affordance, fades and slides in on hover */}
       <span
         aria-hidden
-        className="mt-2 block h-px w-8 bg-gold-400/40 transition-all duration-500 group-hover:w-16 group-hover:bg-gold-500"
-      />
-      <p className="mt-2.5 max-w-[15rem] text-sm leading-relaxed text-muted">{item.desc}</p>
+        className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gold-400 text-ink-950 opacity-0 shadow-[var(--shadow-gold)] transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 -translate-y-2"
+      >
+        <ArrowUpRight className="h-5 w-5" strokeWidth={2.5} />
+      </span>
+
+      {/* Title + description over the scrim */}
+      <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+        <h3 className="font-display text-2xl font-bold leading-tight text-cream-50 sm:text-3xl">
+          {item.title}
+        </h3>
+        <span
+          aria-hidden
+          className="mt-2.5 block h-px w-10 bg-gold-400/60 transition-all duration-500 group-hover:w-20 group-hover:bg-gold-400"
+        />
+        <p className="mt-2.5 text-sm leading-relaxed text-cream-100/80">{item.desc}</p>
+      </div>
     </Link>
   );
 }
 
 export function WhatWeBuyGrid() {
   return (
-    <div className="relative">
-      <Marquee pauseOnHover repeat={3} className="[--duration:60s] [--gap:3.5rem] py-6">
-        {ITEMS.map((item) => (
-          <BuyCircle key={item.title} item={item} />
-        ))}
-      </Marquee>
-      {/* Edge fades, match the cream What We Buy section background */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-cream-100 to-transparent sm:w-32" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-cream-100 to-transparent sm:w-32" />
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+      {ITEMS.map((item) => (
+        <BuyTile key={item.title} item={item} />
+      ))}
     </div>
   );
 }

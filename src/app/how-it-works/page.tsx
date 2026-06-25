@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const TRUST = [
   "Free shipping both ways",
   "Fully insured shipments",
-  `${SITE.rating.value}★ · ${SITE.rating.count} Google reviews`,
+  `${SITE.rating.value}★ · ${SITE.rating.count}+ Google reviews`,
   "No obligation to sell",
 ];
 

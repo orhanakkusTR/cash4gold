@@ -55,7 +55,7 @@ export function Hero() {
             </span>
             <span className="font-semibold text-cream-50">{SITE.rating.value}</span>
             <span className="text-cream-100/50">·</span>
-            {SITE.rating.count} Google reviews
+            {SITE.rating.count}+ Google reviews
           </motion.div>
 
           {/* Animated headline - flows in on first load, two clean lines */}
