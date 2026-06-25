@@ -17,7 +17,7 @@ A from-scratch rebuild of **cashforgoldva.com** — a local precious-metals buyi
 | Chantilly | (571) 224-5279 | 14025 Lee Jackson Memorial Hwy, Chantilly, VA |
 | Vienna/McLean | (703) 889-0532 | 8453 Tyco Rd, Vienna, VA |
 
-**Social proof:** Google 4.9★ / 342 reviews. Value props: Best Value, Accept Many Items, Instant Payment, Professional yet Simple.
+**Social proof:** Google 4.9★ / 500+ reviews. Value props: Best Value, Accept Many Items, Instant Payment, Professional yet Simple.
 
 ## Tech stack
 
