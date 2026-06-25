@@ -1,0 +1,30 @@
+# DigitalOcean App Platform spec for cashforgoldva.com
+# Optional: the dashboard "Create App → from GitHub" flow auto-detects Next.js
+# and produces the same thing. This file documents the setup and lets you
+# recreate the app from spec. Set RESEND_API_KEY as an encrypted secret.
+name: cash4gold
+region: nyc
+services:
+  - name: web
+    github:
+      repo: orhanakkusTR/cash4gold
+      branch: main
+      deploy_on_push: true
+    build_command: npm run build
+    run_command: npm start
+    environment_slug: node-js
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    instance_count: 1
+    http_port: 8080
+    routes:
+      - path: /
+    envs:
+      - key: RESEND_API_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: LEAD_INBOX
+        scope: RUN_TIME
+        value: info@cashforgoldva.com
+      - key: LEAD_FROM
+        scope: RUN_TIME
+        value: Cash for Gold VA <onboarding@resend.dev>
