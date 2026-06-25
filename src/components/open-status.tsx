@@ -15,8 +15,8 @@ type Status = { open: boolean; today: Hours };
 // Color sets per surface: "dark" = on light/white backgrounds, "light" = over
 // dark photos/overlays.
 const TONES = {
-  dark: { open: "text-green-700", closed: "text-muted", muted: "text-muted", sep: "text-foreground/30", idle: "bg-foreground/25" },
-  light: { open: "text-green-300", closed: "text-cream-100/75", muted: "text-cream-100/70", sep: "text-cream-100/40", idle: "bg-cream-100/40" },
+  dark: { open: "text-green-700", closed: "text-red-600", muted: "text-muted", sep: "text-foreground/30", idle: "bg-foreground/25" },
+  light: { open: "text-green-300", closed: "text-red-400", muted: "text-cream-100/70", sep: "text-cream-100/40", idle: "bg-cream-100/40" },
 } as const;
 
 /**
@@ -63,7 +63,7 @@ export function OpenStatus({
     <span className={cn("inline-flex items-center gap-1.5 text-sm font-medium", className)} suppressHydrationWarning>
       <span className="relative flex h-2 w-2">
         {open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500/60" />}
-        <span className={cn("relative inline-flex h-2 w-2 rounded-full", open ? "bg-green-500" : "bg-foreground/30")} />
+        <span className={cn("relative inline-flex h-2 w-2 rounded-full", open ? "bg-green-500" : "bg-red-500")} />
       </span>
       <span className={open ? c.open : c.closed}>{open ? "Open now" : "Closed"}</span>
       <span className={c.sep}>·</span>

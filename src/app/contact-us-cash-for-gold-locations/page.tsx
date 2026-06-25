@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { LOCATIONS } from "@/data/business";
-import { formatHours } from "@/lib/utils";
+import { groupHours } from "@/lib/utils";
 import { PageHero } from "@/components/page-parts";
 import { Reveal } from "@/components/reveal";
 import { QuoteForm } from "@/components/quote-form";
+import { CredentialsStrip } from "@/components/credentials-strip";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 const CONTACT_PATH = "/contact-us-cash-for-gold-locations";
@@ -28,19 +29,31 @@ export default function ContactPage() {
 
       <section className="container-page grid gap-12 py-20 lg:grid-cols-[1fr_1.1fr]">
         <Reveal direction="right">
-          <h2 className="font-display text-2xl font-semibold text-foreground">Our locations</h2>
+          <h2 className="font-display text-2xl font-extrabold text-foreground">Our locations</h2>
           <div className="mt-6 space-y-5">
             {LOCATIONS.map((l) => (
               <div key={l.slug} className="rounded-2xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)]">
-                <h3 className="font-display text-lg font-semibold text-foreground">{l.city}</h3>
-                <p className="mt-2 flex items-start gap-2 text-sm text-muted">
+                <h3 className="font-display text-lg font-extrabold text-foreground">{l.city}</h3>
+                <a
+                  href={l.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 flex items-start gap-2 text-sm text-muted transition-colors hover:text-gold-700"
+                >
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
                   {l.street}, {l.city}, {l.region} {l.postalCode}
-                </p>
-                <p className="mt-1.5 flex items-center gap-2 text-sm text-muted">
-                  <Clock className="h-4 w-4 shrink-0 text-gold-500" />
-                  Mon–Fri {formatHours("10:00", "18:00")} · Sat {formatHours("10:00", "17:00")}
-                </p>
+                </a>
+                <div className="mt-1.5 flex items-start gap-2 text-sm text-muted">
+                  <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
+                  <div className="space-y-0.5">
+                    {groupHours(l.hours).map((g) => (
+                      <div key={g.label} className="flex justify-between gap-4">
+                        <span className="font-medium text-foreground/70">{g.label}</span>
+                        <span>{g.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 <a href={`tel:${l.phoneHref}`} className="mt-3 inline-flex items-center gap-2 font-semibold text-gold-700 hover:text-gold-600">
                   <Phone className="h-4 w-4" /> {l.phone}
                 </a>
@@ -50,11 +63,18 @@ export default function ContactPage() {
         </Reveal>
 
         <Reveal direction="left" delay={0.1}>
-          <h2 className="font-display text-2xl font-semibold text-foreground">Request a quote</h2>
+          <h2 className="font-display text-2xl font-extrabold text-foreground">Request a quote</h2>
           <p className="mt-2 text-muted">Tell us what you have, we&apos;ll reply with a no-obligation estimate.</p>
           <div className="mt-6">
             <QuoteForm />
           </div>
+        </Reveal>
+      </section>
+
+      {/* Accreditations, above the footer */}
+      <section className="container-page pb-16">
+        <Reveal>
+          <CredentialsStrip />
         </Reveal>
       </section>
     </>

@@ -78,9 +78,9 @@ export function Hero() {
       <div aria-hidden className="absolute inset-0">
         <HeroVideoPlaylist />
         {/* Cinematic dark grade (lighter - lets the footage show through) */}
-        <div className="absolute inset-0 bg-ink-950/38" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/15 to-ink-950/55" />
-        <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_40%,transparent,rgba(10,8,7,0.42))]" />
+        <div className="absolute inset-0 bg-ink-950/12" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-ink-950/25" />
+        <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_40%,transparent,rgba(10,8,7,0.20))]" />
         {/* subtle warm gold glow */}
         <div className="absolute left-1/2 top-[42%] h-[34rem] w-[44rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(212,169,66,0.12),transparent_62%)] blur-2xl" />
       </div>

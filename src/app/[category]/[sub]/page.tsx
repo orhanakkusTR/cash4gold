@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Check, MapPin, ArrowRight, ArrowUpRight } from "lucide-react";
-import { ALL_SUBCATEGORIES, LOCATIONS, getCategory, getSubcategory, SITE } from "@/data/business";
+import { Check, MapPin, ArrowRight, ArrowUpRight, Phone, Navigation } from "lucide-react";
+import { ALL_SUBCATEGORIES, LOCATIONS, getCategory, getSubcategory, SITE, PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
+import { getBrief } from "@/data/category-briefs";
 import { placeholderDescription, metalTone } from "@/lib/utils";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { SectionHeading } from "@/components/section-heading";
@@ -35,17 +36,17 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const cat = getCategory(category);
   const s = getSubcategory(category, sub);
   if (!cat || !s) return {};
-  const title = `Buy & Sell ${s.name} in Northern Virginia`;
+  const title = `We Buy ${s.name} in Northern Virginia`;
   return {
     title,
-    description: `Looking to buy or sell ${s.name.toLowerCase()}? ${s.short} Free appraisals, instant payout, and a fair price at 4 Northern Virginia locations, ${SITE.rating.value}★ rated.`,
+    description: `Looking to sell your ${s.name.toLowerCase()}? ${s.short} Free appraisals, instant payout, and a fair price at 4 Northern Virginia locations, ${SITE.rating.value}★ rated.`,
     alternates: { canonical: `/${cat.slug}/${s.slug}` },
     openGraph: { title, description: s.short, images: [cat.image] },
   };
 }
 
 const subFaqs = (name: string) => [
-  { q: `Where can I buy or sell ${name.toLowerCase()} near me?`, a: `At any of our four Northern Virginia locations, Annandale, Manassas, Chantilly, and Vienna/McLean. We both buy and sell, appraise on the spot, and pay instant payout, no appointment required.` },
+  { q: `Where can I sell my ${name.toLowerCase()} near me?`, a: `At any of our four Northern Virginia locations, Annandale, Manassas, Chantilly, and Vienna/McLean. We buy, appraise on the spot, and pay instant payout, no appointment required.` },
   { q: `How is my ${name.toLowerCase()} valued?`, a: `We test and evaluate everything in front of you using professional equipment, basing offers on current market prices with a clear, no-pressure explanation.` },
   { q: `What do I need to bring to sell?`, a: `Just your items and a valid government-issued photo ID.` },
 ];
@@ -60,6 +61,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
   const siblings = cat.subcategories.filter((x) => x.slug !== s.slug);
   const isJewelry = cat.slug === "jewelry";
   const tone = metalTone(s.name);
+  const brief = getBrief(`${cat.slug}/${s.slug}`);
 
   return (
     <>
@@ -77,23 +79,43 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
           { name: cat.name, href: `/${cat.slug}` },
           { name: s.name, href: `/${cat.slug}/${s.slug}` },
         ]}
-        title={<>Buy &amp; Sell <span className={tone.shimmer}>{s.name}</span></>}
-        description={s.intro}
+        title={<>We Buy <span className={tone.shimmer}>{s.name}</span></>}
+        headline={brief?.headline}
+        description={brief ? undefined : s.intro}
         glowClass={tone.glow}
       />
 
+      {/* Business brief: description lead-in */}
+      {brief && (
+        <section className="container-page pt-12 pb-6 sm:pt-14 sm:pb-8">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl border border-hairline bg-gradient-to-br from-white to-cream-100/60 px-7 py-10 shadow-[var(--shadow-card)] sm:px-12 sm:py-14">
+              <span aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-gold-300 via-gold-500 to-gold-300" />
+              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-600">
+                <span className="h-px w-6 bg-gold-400" /> Why sell to us
+              </span>
+              <div className="mt-5 space-y-5 text-lg leading-relaxed text-foreground/80 sm:text-xl">
+                {brief.description.split("\n\n").map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </section>
+      )}
+
       {isJewelry && <JewelryValueProps />}
 
-      {/* Types we buy and sell, illustrative gallery (or fallback items+image) */}
+      {/* Types we buy, illustrative gallery (or fallback items+image) */}
       {s.gallery ? (
-        <section className="container-page py-20">
+        <section className="container-page py-12 sm:py-16">
           <SectionHeading
-            eyebrow="What we buy & sell"
-            title={`The ${s.name.toLowerCase()} we buy and sell`}
-            description={`Coins, bullion bars and more, here are the kinds of ${s.name.toLowerCase()} we deal in every day. Whether you are buying or selling, stop by for a fair, transparent price.`}
+            eyebrow="What we buy"
+            title={`The ${s.name.toLowerCase()} we buy`}
+            description={brief?.whatWeBuy ?? `Coins, bullion bars and more, here are the kinds of ${s.name.toLowerCase()} we buy every day. Stop by for a fair, transparent price and instant payout.`}
           />
           <div className="mt-12">
-            <ProductGallery items={s.gallery} cover={cat.slug === "precious-stones" || cat.slug === "jewelry" || s.slug === "sell-collectible-coins" || s.slug === "sell-antique-coins"} />
+            <ProductGallery items={s.gallery} cover={cat.slug === "precious-stones" || cat.slug === "jewelry" || cat.slug === "watches" || s.slug === "sell-collectible-coins" || s.slug === "sell-antique-coins" || s.slug === "sell-sterling-silver-sets" || s.slug === "sell-dental-gold" || s.slug === "sell-gold-filled-plated"} />
           </div>
           {RELATED[s.slug] && (
             <div className="mt-14">
@@ -122,12 +144,13 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
           )}
         </section>
       ) : (
-        <section className="container-page grid gap-12 py-20 lg:grid-cols-2 lg:items-center">
+        <section className="container-page grid gap-12 py-12 sm:py-16 lg:grid-cols-2 lg:items-center">
           <Reveal direction="right">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-600">We buy &amp; sell</span>
-            <h2 className="mt-2 font-display text-3xl font-semibold text-foreground sm:text-4xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-600">We buy</span>
+            <h2 className="mt-2 font-display text-3xl font-extrabold text-foreground sm:text-4xl">
               All types of {s.name.toLowerCase()}
             </h2>
+            {brief?.whatWeBuy && <p className="mt-4 text-lg leading-relaxed text-muted">{brief.whatWeBuy}</p>}
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {s.items.map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-foreground/90">
@@ -136,28 +159,61 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
                 </li>
               ))}
             </ul>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={`tel:${PRIMARY_PHONE_HREF}`}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-950 shadow-[var(--shadow-gold)] transition-all hover:-translate-y-0.5 hover:bg-gold-400"
+              >
+                <Phone className="h-4 w-4" strokeWidth={2.5} /> Call {PRIMARY_PHONE}
+              </a>
+              <a
+                href={(LOCATIONS.find((l) => l.slug === "chantilly") ?? LOCATIONS[0]).mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gold-500/50 px-6 py-3 text-sm font-semibold text-gold-700 transition-all hover:-translate-y-0.5 hover:bg-gold-50"
+              >
+                <Navigation className="h-4 w-4" /> Get Directions
+              </a>
+            </div>
           </Reveal>
           <Reveal direction="left" delay={0.1}>
             <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-ink-900 shadow-[var(--shadow-card)]">
-              <Image src={s.cardImage ?? cat.image} alt={`Buy and sell ${s.name.toLowerCase()}`} fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
+              <Image src={s.cardImage ?? cat.image} alt={`We buy ${s.name.toLowerCase()}`} fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/30 to-transparent" />
             </div>
           </Reveal>
         </section>
       )}
 
+      {/* Pricing methodology from the business brief */}
+      {brief?.pricing && (
+        <section className="bg-cream-100 py-12 sm:py-16">
+          <div className="container-page">
+            <Reveal className="mx-auto max-w-3xl rounded-3xl border border-hairline bg-white p-8 shadow-[var(--shadow-card)] sm:p-10">
+              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-600">
+                <span className="h-px w-6 bg-gold-400" /> How we price it
+              </span>
+              <h2 className="mt-3 font-display text-2xl font-semibold text-foreground sm:text-3xl">
+                Our pricing methodology
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-muted">{brief.pricing}</p>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
       {isJewelry && <JewelryHowWeValue itemLabel={s.name.toLowerCase()} />}
 
       {/* Category description (expandable) */}
-      <section className="bg-cream-100 py-16">
+      <section className="bg-cream-100 py-12 sm:py-14">
         <div className="container-page">
-          <CategoryDescription title={`Buying & Selling ${s.name}`} text={s.longDescription ?? placeholderDescription(s.name)} keywords={s.keywords} />
+          <CategoryDescription title={`Buying ${s.name}`} text={s.longDescription ?? placeholderDescription(s.name)} keywords={s.keywords} />
         </div>
       </section>
 
       {/* Locations */}
-      <section className="container-page py-20">
-        <SectionHeading eyebrow="Near you" title={`Buy or sell ${s.name.toLowerCase()} at a location near you`} description="Four convenient Northern Virginia locations, ready to make you an offer today." />
+      <section className="container-page py-12 sm:py-16">
+        <SectionHeading eyebrow="Near you" title={`Sell your ${s.name.toLowerCase()} at a location near you`} description="Four convenient Northern Virginia locations, ready to make you an offer today." />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {LOCATIONS.map((l, i) => (
             <Reveal key={l.slug} delay={i * 0.08}>
@@ -173,7 +229,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
       </section>
 
       {/* FAQ */}
-      <section className="bg-cream-100 py-20">
+      <section className="bg-cream-100 py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading eyebrow="FAQ" title={`${s.name}: common questions`} />
           <div className="mx-auto mt-10 max-w-3xl divide-y divide-hairline">
@@ -194,7 +250,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
 
       {/* Siblings */}
       {siblings.length > 0 && (
-        <section className="container-page py-16">
+        <section className="container-page py-10 sm:py-12">
           <h2 className="font-display text-xl font-semibold text-foreground">More in {cat.name}</h2>
           <div className="mt-5 flex flex-wrap gap-2.5">
             {siblings.map((x) => (
@@ -206,7 +262,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
         </section>
       )}
 
-      <CtaBand title={`Ready to buy or sell ${s.name.toLowerCase()}?`} />
+      <CtaBand title={`Ready to sell your ${s.name.toLowerCase()}?`} />
     </>
   );
 }

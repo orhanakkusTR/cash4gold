@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight, MapPin, Phone, Navigation } from "lucide-react";
 import { CATEGORIES, LOCATIONS, getCategory, SITE } from "@/data/business";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { SectionHeading } from "@/components/section-heading";
@@ -40,17 +40,17 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     }
     return {};
   }
-  const title = `Buy & Sell ${cat.name} in Northern Virginia`;
+  const title = `We Buy ${cat.name} in Northern Virginia`;
   return {
     title,
-    description: `${cat.short} Buy and sell at 4 Northern Virginia locations with free appraisals and instant payout. ${SITE.rating.value}★ rated.`,
+    description: `${cat.short} We buy at 4 Northern Virginia locations with free appraisals and instant payout. ${SITE.rating.value}★ rated.`,
     alternates: { canonical: `/${cat.slug}` },
     openGraph: { title, description: cat.short, images: [cat.image] },
   };
 }
 
 const catFaqs = (cat: { name: string }) => [
-  { q: `How do I buy or sell ${cat.name.toLowerCase()} near me?`, a: `Visit any of our four Northern Virginia locations, Annandale, Manassas, Chantilly, or Vienna/McLean. We both buy and sell, appraise on the spot, and pay instant payout, no appointment needed.` },
+  { q: `How do I sell my ${cat.name.toLowerCase()} near me?`, a: `Visit any of our four Northern Virginia locations, Annandale, Manassas, Chantilly, or Vienna/McLean. We buy, appraise on the spot, and pay instant payout, no appointment needed.` },
   { q: `How are my items valued?`, a: `Our trained buyers test and evaluate everything in front of you using professional equipment, and base offers on current market prices with a clear explanation.` },
   { q: `Do I need an appointment?`, a: `No, just walk in during business hours. To sell, bring your items and a valid photo ID.` },
 ];
@@ -77,7 +77,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       <PageHero
         eyebrow="What We Buy"
         crumbs={[{ name: "Home", href: "/" }, { name: cat.name, href: `/${cat.slug}` }]}
-        title={<>Buy &amp; Sell <span className={tone.shimmer}>{cat.name}</span></>}
+        title={<>We Buy <span className={tone.shimmer}>{cat.name}</span></>}
         description={cat.intro}
         glowClass={tone.glow}
       />
@@ -88,7 +88,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       <section className="container-page py-20">
         <SectionHeading
           eyebrow={cat.name}
-          title={`What we buy & sell in ${cat.name.toLowerCase()}`}
+          title={`What we buy in ${cat.name.toLowerCase()}`}
         />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {cat.subcategories.map((s, i) => (
@@ -97,7 +97,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 href={`/${cat.slug}/${s.slug}`}
                 className="group flex h-full flex-col overflow-hidden rounded-3xl border border-hairline bg-white shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-400/40 hover:shadow-[var(--shadow-gold)]"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">
+                <div className="relative aspect-square overflow-hidden bg-ink-900">
                   <Image src={s.cardImage ?? cat.image} alt={s.name} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950/40 to-transparent" />
                 </div>
@@ -111,13 +111,56 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               </Link>
             </Reveal>
           ))}
+
+          {/* A store card inviting customers to the Chantilly store */}
+          {(cat.slug === "watches" || cat.slug === "precious-stones" || cat.slug === "coins") && (() => {
+            const ch = LOCATIONS.find((l) => l.slug === "chantilly");
+            if (!ch) return null;
+            return (
+              <Reveal delay={(cat.subcategories.length % 3) * 0.08}>
+                <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-hairline bg-white shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-400/40 hover:shadow-[var(--shadow-gold)]">
+                  <Link href={`/locations/${ch.slug}`} className="relative block aspect-square overflow-hidden bg-ink-900">
+                    <Image src={ch.image} alt={`Cash for Gold VA storefront in ${ch.city}, VA`} fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/20 to-transparent" />
+                    <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-gold-500 px-3 py-1 text-xs font-semibold text-ink-950 shadow-[var(--shadow-gold)]">
+                      <MapPin className="h-3.5 w-3.5" /> Visit Us
+                    </span>
+                    <div className="absolute inset-x-0 bottom-0 p-5">
+                      <h3 className="font-display text-2xl font-semibold text-cream-50">{ch.city} Store</h3>
+                      <p className="mt-1 text-sm text-cream-100/80">{ch.street}, {ch.city}, {ch.region}</p>
+                    </div>
+                  </Link>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-display text-xl font-semibold text-foreground">Bring your {cat.name.toLowerCase()} in</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">Free, no-obligation appraisal on the spot.</p>
+                    <div className="mt-4 flex flex-col gap-2.5 sm:flex-row">
+                      <a
+                        href={`tel:${ch.phoneHref}`}
+                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gold-500 px-4 py-2.5 text-sm font-semibold text-ink-950 shadow-[var(--shadow-gold)] transition-all hover:-translate-y-0.5 hover:bg-gold-400"
+                      >
+                        <Phone className="h-4 w-4" strokeWidth={2.5} /> {ch.phone}
+                      </a>
+                      <a
+                        href={ch.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-gold-500/50 px-4 py-2.5 text-sm font-semibold text-gold-700 transition-all hover:-translate-y-0.5 hover:bg-gold-50"
+                      >
+                        <Navigation className="h-4 w-4" /> Get Directions
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })()}
         </div>
       </section>
 
       {/* Category description (expandable) */}
       <section className="bg-cream-100 py-16">
         <div className="container-page">
-          <CategoryDescription title={`Buying & Selling ${cat.name}`} text={cat.longDescription ?? placeholderDescription(cat.name)} keywords={cat.keywords} />
+          <CategoryDescription title={`Buying ${cat.name}`} text={cat.longDescription ?? placeholderDescription(cat.name)} keywords={cat.keywords} />
         </div>
       </section>
 
@@ -172,7 +215,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         </div>
       </section>
 
-      <CtaBand title={`Ready to buy or sell ${cat.name.toLowerCase()}?`} />
+      <CtaBand title={`Ready to sell your ${cat.name.toLowerCase()}?`} />
     </>
   );
 }

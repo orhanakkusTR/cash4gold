@@ -7,6 +7,7 @@ import { TrustStats } from "@/components/trust-stats";
 import { SectionHeading } from "@/components/section-heading";
 import { WhatWeBuyGrid } from "@/components/what-we-buy-grid";
 import { SellGrid } from "@/components/sell-grid";
+import { CredentialsStrip } from "@/components/credentials-strip";
 import { ProcessBeam } from "@/components/process-beam";
 import { CashBanner } from "@/components/cash-banner";
 import { ScrollVideo } from "@/components/scroll-video";
@@ -119,7 +120,7 @@ export default function Home() {
       <CashBanner />
 
       {/* Reviews, branded testimonials with a Google rating anchor */}
-      <section className="bg-cream-100 py-16 sm:py-24">
+      <section className="bg-cream-100 pt-8 pb-16 sm:pt-10 sm:pb-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="Reviews"
@@ -136,7 +137,7 @@ export default function Home() {
       </section>
 
       {/* Locations, local-SEO anchor with real storefront photos */}
-      <section className="py-16 sm:py-24">
+      <section className="pt-8 pb-16 sm:pt-10 sm:pb-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="Visit Us"
@@ -204,6 +205,11 @@ export default function Home() {
                 </a>
               ))}
             </div>
+            <div className="mt-6">
+              <ButtonLink href="/locations" variant="outline" size="lg">
+                <MapPin className="h-4 w-4" /> See all our locations <ArrowRight className="h-4 w-4" />
+              </ButtonLink>
+            </div>
           </Reveal>
           <Reveal direction="left" delay={0.1}>
             <QuoteForm />
@@ -211,8 +217,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Accreditations */}
+      <section className="container-page py-14 sm:py-16">
+        <Reveal>
+          <CredentialsStrip />
+        </Reveal>
+      </section>
+
       {/* FAQ */}
-      <section className="container-page py-16 sm:py-24">
+      <section className="container-page pb-16 pt-4 sm:pb-24">
         <SectionHeading eyebrow="FAQ" title="Common questions" />
         <div className="mx-auto mt-12 max-w-3xl divide-y divide-hairline">
           {FAQS.map((f, i) => (

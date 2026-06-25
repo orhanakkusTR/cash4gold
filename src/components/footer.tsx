@@ -60,6 +60,16 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/precious-metals/sell-sterling-silver-sets" className="transition-colors hover:text-gold-200">
+                Sterling Silver
+              </Link>
+            </li>
+            <li>
+              <Link href="/jewelry/sell-your-scrap-gold-jewelry" className="transition-colors hover:text-gold-200">
+                Scrap Gold
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -72,10 +82,15 @@ export function Footer() {
                 <Link href={`/locations/${l.slug}`} className="font-semibold text-cream-50 transition-colors hover:text-gold-200">
                   {l.city}
                 </Link>
-                <p className="mt-1 flex items-start gap-1.5 text-cream-100/60">
+                <a
+                  href={l.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 flex items-start gap-1.5 text-cream-100/60 transition-colors hover:text-gold-200"
+                >
                   <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold-400" />
                   {l.street}, {l.city}, {l.region} {l.postalCode}
-                </p>
+                </a>
                 <a href={`tel:${l.phoneHref}`} className="mt-1 flex items-center gap-1.5 text-cream-100/80 transition-colors hover:text-gold-200">
                   <Phone className="h-3.5 w-3.5 text-gold-400" />
                   {l.phone}
@@ -89,7 +104,7 @@ export function Footer() {
       <div className="rule-gold opacity-30" />
       <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-cream-100/50 sm:flex-row">
         <p>© {2026} {SITE.legalName}. All rights reserved.</p>
-        <div className="flex gap-5">
+        <div className="flex flex-wrap justify-center gap-5">
           {SHOW_CALCULATOR && <Link href="/gold-calculator" className="hover:text-gold-200">What&apos;s It Worth?</Link>}
           <Link href="/blog" className="hover:text-gold-200">Blog</Link>
           <Link href="/privacy" className="hover:text-gold-200">Privacy Policy</Link>
@@ -98,18 +113,15 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Site maker */}
+      {/* Rolex trademark disclaimer */}
       <div className="border-t border-cream-100/10 py-6">
-        <div className="container-page flex justify-center">
-          <Image
-            src="/brand/orvedo-logo.svg"
-            alt="Orvedo"
-            width={1069}
-            height={220}
-            className="h-6 w-auto"
-          />
+        <div className="container-page">
+          <p className="text-[0.7rem] leading-relaxed text-cream-100/35">
+            Copyright CASH FOR GOLD. All rights reserved. CASH FOR GOLD is not affiliated with Rolex S.A., Rolex USA, or any of its subsidiaries. CASH FOR GOLD is an independent watch dealer and is not sponsored by, associated with and/or affiliated with Rolex, S.A. CASH FOR GOLD buys Rolex watches and provides its own warranties on the watches it sells. Rolex, www.rolex.com, is under no obligation to warranty-service watches bought by CASH FOR GOLD. Rolex Datejust, Rolex Day Date President, Submariner, Presidential, Explorer, Sea Dweller, Super President, GMT Master, GMT, YachtMaster, Prince, Milgaus, MasterPiece, Air King, Cosmograph Daytona, and PearlMaster are all registered trademarks of the Rolex Corporation (Rolex USA, Rolex S.A.) To buy a new Rolex watch, please visit rolex.com for a list of authorized Rolex dealers near you.
+          </p>
         </div>
       </div>
+
     </footer>
   );
 }

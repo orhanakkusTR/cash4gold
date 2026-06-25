@@ -47,6 +47,29 @@ export function readingTime(text: string): number {
   return Math.max(1, Math.round(words / 200));
 }
 
+const DAY_ABBR: Record<string, string> = {
+  Monday: "Mon", Tuesday: "Tue", Wednesday: "Wed", Thursday: "Thu",
+  Friday: "Fri", Saturday: "Sat", Sunday: "Sun",
+};
+
+/** Collapse a weekly hours array into compact lines, grouping consecutive
+ *  days that share the same hours (e.g. "Mon–Tue", "10AM – 6PM"). */
+export function groupHours(hours: { day: string; open: string; close: string | null }[]) {
+  const groups: { days: string[]; value: string }[] = [];
+  for (const h of hours) {
+    const value = formatHours(h.open, h.close);
+    const last = groups[groups.length - 1];
+    if (last && last.value === value) last.days.push(h.day);
+    else groups.push({ days: [h.day], value });
+  }
+  return groups.map((g) => ({
+    label: g.days.length === 1
+      ? DAY_ABBR[g.days[0]]
+      : `${DAY_ABBR[g.days[0]]}–${DAY_ABBR[g.days[g.days.length - 1]]}`,
+    value: g.value,
+  }));
+}
+
 export function formatHours(open: string, close: string | null): string {
   if (!close) return "Closed";
   const to12 = (t: string) => {

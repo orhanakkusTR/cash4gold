@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { Phone } from "lucide-react";
 import { Reveal } from "@/components/reveal";
+import { PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
 import type { GalleryItem } from "@/data/business";
 
 /**
@@ -23,9 +25,18 @@ function Tile({ p, i, cover }: { p: GalleryItem; i: number; cover?: boolean }) {
             }
           />
         </div>
-        <div className="px-1 pt-3">
-          <h3 className="font-display text-sm font-bold leading-snug text-foreground">{p.name}</h3>
-          {p.note && <p className="mt-0.5 text-xs text-muted">{p.note}</p>}
+        <div className="flex items-center justify-between gap-2 px-1 pt-3">
+          <div>
+            <h3 className="font-display text-sm font-bold leading-snug text-foreground">{p.name}</h3>
+            {p.note && <p className="mt-0.5 text-xs text-muted">{p.note}</p>}
+          </div>
+          <a
+            href={`tel:${PRIMARY_PHONE_HREF}`}
+            aria-label={`Call ${PRIMARY_PHONE} about ${p.name}`}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-50 text-gold-600 ring-1 ring-gold-200/70 transition-all duration-300 hover:bg-gold-500 hover:text-ink-950"
+          >
+            <Phone className="h-4 w-4" strokeWidth={2.25} />
+          </a>
         </div>
       </div>
     </Reveal>
@@ -43,7 +54,7 @@ export function ProductGallery({ items, cover }: { items: GalleryItem[]; cover?:
 
   if (!grouped) {
     return (
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-3">
         {items.map((p, i) => <Tile key={p.name} p={p} i={i} cover={cover} />)}
       </div>
     );
@@ -57,7 +68,7 @@ export function ProductGallery({ items, cover }: { items: GalleryItem[]; cover?:
             <h3 className="font-display text-lg font-semibold text-foreground">{g}</h3>
             <span className="h-px flex-1 bg-gradient-to-r from-gold-400/40 to-transparent" />
           </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-3">
             {items.filter((p) => (p.group ?? "") === g).map((p, i) => <Tile key={p.name} p={p} i={i} cover={cover} />)}
           </div>
         </div>

@@ -88,7 +88,16 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
                 <div>
                   <dt className="text-sm font-semibold text-foreground">Address</dt>
-                  <dd className="text-muted">{loc.street}, {loc.city}, {loc.region} {loc.postalCode}</dd>
+                  <dd>
+                    <a
+                      href={loc.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted transition-colors hover:text-gold-700"
+                    >
+                      {loc.street}, {loc.city}, {loc.region} {loc.postalCode}
+                    </a>
+                  </dd>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -107,7 +116,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
                       <tbody>
                         {loc.hours.map((h) => (
                           <tr key={h.day}>
-                            <td className="pr-6 text-foreground/80">{h.day}</td>
+                            <td className="pr-6 font-extrabold text-foreground">{h.day}</td>
                             <td>{formatHours(h.open || "10:00", h.close)}</td>
                           </tr>
                         ))}
@@ -165,10 +174,10 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
 
       {/* Services offered here */}
       <section className="container-page py-20">
-        <SectionHeading eyebrow="What we buy & sell" title={`Buy or sell anything precious in ${loc.city}`} />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionHeading eyebrow="What we buy" title={`We buy anything precious in ${loc.city}`} />
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIES.map((c, i) => (
-            <Reveal key={c.slug} delay={(i % 4) * 0.1}>
+            <Reveal key={c.slug} delay={(i % 3) * 0.1}>
               <CategoryCard href={`/${c.slug}`} title={c.name} short={c.short} image={c.image} />
             </Reveal>
           ))}

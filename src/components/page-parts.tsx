@@ -7,12 +7,15 @@ import { PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
 export function PageHero({
   eyebrow,
   title,
+  headline,
   description,
   crumbs,
   glowClass = "bg-gold-500/12",
 }: {
   eyebrow?: string;
   title: React.ReactNode;
+  /** Optional punchy line shown directly below the H1 (business brief headline). */
+  headline?: string;
   description?: string;
   crumbs: { name: string; href: string }[];
   /** Tailwind bg color for the ambient hero glow, e.g. metalTone(...).glow. */
@@ -47,6 +50,9 @@ export function PageHero({
           <h1 className="max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.1] text-cream-50 sm:text-5xl">
             {title}
           </h1>
+          {headline && (
+            <p className="mt-4 max-w-3xl text-balance font-display text-xl font-semibold leading-snug text-gold-200 sm:text-2xl">{headline}</p>
+          )}
           {description && (
             <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-cream-100/75">{description}</p>
           )}

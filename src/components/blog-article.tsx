@@ -54,7 +54,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
       />
 
       <article className="container-page py-14">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-4xl lg:max-w-5xl">
           {/* Cover image */}
           <div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-3xl border border-hairline shadow-[var(--shadow-card)]">
             <Image
