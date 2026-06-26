@@ -47,13 +47,13 @@ export const metadata: Metadata = {
     title: `${SITE.name} | Instant Payout for Gold, Diamonds & Coins`,
     description:
       "Northern Virginia's trusted buyer of gold, silver, diamonds, jewelry & coins. Instant payout, free appraisals, 4 locations.",
-    images: [{ url: "/hero/hero-bg-v2.webp", width: 1881, height: 836, alt: SITE.name }],
+    images: [{ url: "/og/og-image.jpg", width: 1200, height: 504, alt: SITE.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} | Instant Payout for Gold & Valuables`,
     description: "Sell gold, silver, diamonds & collectible coins for instant payout across Northern Virginia.",
-    images: ["/hero/hero-bg-v2.webp"],
+    images: ["/og/og-image.jpg"],
   },
   robots: { index: true, follow: true },
 };
