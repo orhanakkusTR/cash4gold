@@ -4,10 +4,29 @@ import { useEffect, useState } from "react";
 import { cn, formatHours } from "@/lib/utils";
 import type { Hours } from "@/data/business";
 
-// Our hours array is ordered Mon..Sun (index 0 = Monday).
-// JS Date.getDay() is Sun=0..Sat=6, so shift by +6 mod 7.
-function todayIndex(d: Date) {
-  return (d.getDay() + 6) % 7;
+// The stores are all in Northern Virginia → Eastern Time. Open/closed must be
+// judged against the STORE's clock, not the visitor's (a visitor abroad would
+// otherwise see a wrong status). Read the current wall-clock in America/New_York.
+const STORE_TZ = "America/New_York";
+const WEEKDAY_INDEX: Record<string, number> = {
+  Mon: 0, Tue: 1, Wed: 2, Thu: 3, Fri: 4, Sat: 5, Sun: 6,
+};
+
+// Returns { dayIndex (Mon=0..Sun=6), minutes (since midnight) } in store time.
+function storeNow(d: Date) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: STORE_TZ,
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(d);
+  const get = (t: string) => parts.find((p) => p.type === t)?.value ?? "";
+  const dayIndex = WEEKDAY_INDEX[get("weekday")] ?? 0;
+  // hourCycle h23 can emit "24" at midnight; normalize to 0.
+  const hour = Number(get("hour")) % 24;
+  const minute = Number(get("minute"));
+  return { dayIndex, minutes: hour * 60 + minute };
 }
 
 type Status = { open: boolean; today: Hours };
@@ -36,18 +55,17 @@ export function OpenStatus({
   const c = TONES[tone];
 
   useEffect(() => {
-    const now = new Date();
-    const today = hours[todayIndex(now)];
+    const { dayIndex, minutes: cur } = storeNow(new Date());
+    const today = hours[dayIndex];
     let open = false;
     if (today?.open && today.close) {
-      const cur = now.getHours() * 60 + now.getMinutes();
       const [oh, om] = today.open.split(":").map(Number);
       const [ch, cm] = today.close.split(":").map(Number);
       open = cur >= oh * 60 + om && cur < ch * 60 + cm;
     }
-    // Intentional: open/closed depends on the visitor's local clock, so it must
-    // be computed client-side after mount (SSR can't know it). Pre-mount fallback
-    // below keeps the markup stable, avoiding hydration mismatch.
+    // Intentional: open/closed depends on the current Eastern-Time wall clock, so
+    // it must be computed client-side after mount (SSR can't know it). Pre-mount
+    // fallback below keeps the markup stable, avoiding hydration mismatch.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setStatus({ open, today });
   }, [hours]);

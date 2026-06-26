@@ -123,7 +123,7 @@ export default function Home() {
         <div className="container-page">
           <SectionHeading
             eyebrow="Visit Us"
-            title="Four locations across Northern Virginia"
+            title={<>Four locations across <span className="font-extrabold">Northern Virginia</span></>}
             description="Walk in during business hours, no appointment needed, for a free appraisal and instant payout."
           />
           <div className="mt-14 grid gap-6 lg:grid-cols-2">
@@ -170,7 +170,7 @@ export default function Home() {
         <div className="container-page">
           <SectionHeading
             eyebrow="Free Quote"
-            title={<>Find out what your valuables are <span className="text-gold-gradient">worth today</span></>}
+            title={<>Find out what your valuables are <span className="font-extrabold text-gold-gradient">worth today</span></>}
             description="Call your nearest location for an instant, no-obligation quote, or walk in, no appointment needed."
           />
           <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
