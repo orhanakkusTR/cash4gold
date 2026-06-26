@@ -35,7 +35,7 @@ export function CashBanner() {
           <h2 className="mt-4 font-display text-3xl font-bold leading-[1.08] tracking-tight text-cream-50 sm:text-4xl md:text-[2.9rem]">
             Walk in with gold.
             <br />
-            Walk out with <span className="text-cash-shimmer">cash.</span>
+            Walk out <span className="text-cash-shimmer">paid.</span>
           </h2>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-cream-100/75">
             Free appraisal, a fair spot-price offer, and instant payment, the same day you visit.
