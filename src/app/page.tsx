@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowRight, ArrowUpRight, MapPin, Phone } from "lucide-react";
 import { Hero } from "@/components/hero";
 import { Reveal } from "@/components/reveal";
 import { TrustStats } from "@/components/trust-stats";
@@ -13,7 +13,6 @@ import { CashBanner } from "@/components/cash-banner";
 import { GoogleRatingSummary } from "@/components/google-rating";
 import { TestimonialsMarquee } from "@/components/testimonials-marquee";
 import { OpenStatus } from "@/components/open-status";
-import { QuoteForm } from "@/components/quote-form";
 import { CtaBand } from "@/components/page-parts";
 import { FaqJsonLd } from "@/components/json-ld";
 import { ButtonLink } from "@/components/ui/button";
@@ -166,37 +165,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quote CTA */}
+      {/* Quote CTA — call a location for a free quote */}
       <section id="quote" className="scroll-mt-24 bg-cream-100 py-16 sm:py-24">
-        <div className="container-page grid items-center gap-12 lg:grid-cols-2">
-          <Reveal direction="right">
-            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-600">
-              <span className="h-px w-6 bg-gold-400" /> Free Quote
-            </span>
-            <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-[2.75rem]">
-              Find out what your valuables are <span className="text-gold-gradient">worth today</span>
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-muted">
-              Tell us what you have and we&apos;ll get back to you with a no-obligation quote.
-              Prefer to talk now? Call your nearest location for an instant answer.
-            </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {LOCATIONS.map((l) => (
-                <a key={l.slug} href={`tel:${l.phoneHref}`} className="rounded-xl border border-hairline bg-white px-4 py-3 transition-colors hover:border-gold-400">
-                  <span className="block text-sm font-semibold text-foreground">{l.city}</span>
-                  <span className="text-sm text-gold-700">{l.phone}</span>
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Free Quote"
+            title={<>Find out what your valuables are <span className="text-gold-gradient">worth today</span></>}
+            description="Call your nearest location for an instant, no-obligation quote, or walk in, no appointment needed."
+          />
+          <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {LOCATIONS.map((l, i) => (
+              <Reveal key={l.slug} delay={i * 0.08}>
+                <a
+                  href={`tel:${l.phoneHref}`}
+                  className="group flex h-full flex-col items-center gap-2 rounded-2xl border border-hairline bg-white p-5 text-center shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-[var(--shadow-gold)]"
+                >
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-50 text-gold-600 ring-1 ring-gold-200/70 transition-colors group-hover:bg-gold-500 group-hover:text-ink-950">
+                    <Phone className="h-5 w-5" strokeWidth={2.25} />
+                  </span>
+                  <span className="font-display text-base font-extrabold text-foreground">{l.city}</span>
+                  <span className="text-sm font-semibold text-gold-700">{l.phone}</span>
                 </a>
-              ))}
-            </div>
-            <div className="mt-6">
-              <ButtonLink href="/locations" variant="outline" size="lg">
-                <MapPin className="h-4 w-4" /> See all our locations <ArrowRight className="h-4 w-4" />
-              </ButtonLink>
-            </div>
-          </Reveal>
-          <Reveal direction="left" delay={0.1}>
-            <QuoteForm />
-          </Reveal>
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <ButtonLink href="/locations" variant="outline" size="lg">
+              <MapPin className="h-4 w-4" /> See all our locations <ArrowRight className="h-4 w-4" />
+            </ButtonLink>
+          </div>
         </div>
       </section>
 
