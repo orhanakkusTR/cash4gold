@@ -56,7 +56,14 @@ export default function LocationsPage() {
                 {/* Details */}
                 <div className="flex flex-col justify-center gap-5 p-7 sm:p-9">
                   <div>
-                    <h2 className="font-display text-2xl font-extrabold text-foreground sm:text-3xl">{l.city}</h2>
+                    <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+                      <Link
+                        href={`/locations/${l.slug}`}
+                        className="text-foreground transition-colors hover:text-gold-700"
+                      >
+                        {l.city}
+                      </Link>
+                    </h2>
                     <OpenStatus hours={l.hours} className="mt-2" />
                   </div>
 
