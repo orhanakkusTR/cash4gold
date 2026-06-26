@@ -688,17 +688,18 @@ export const PROCESS_STEPS = [
   { n: 6, title: "You Get Paid", desc: "We pay you by check on the spot, drawn on a local bank so you can cash it the same day. No waiting, no checks in the mail." },
 ] as const;
 
-export type Testimonial = { name: string; location: string; rating: number; text: string };
+export type ReviewSource = "google" | "yelp" | "facebook";
+export type Testimonial = { name: string; location: string; rating: number; text: string; source: ReviewSource };
 
 export const TESTIMONIALS: Testimonial[] = [
-  { name: "Maria S.", location: "Annandale, VA", rating: 5, text: "Got way more for my old gold jewelry than the mall place offered. They tested everything in front of me and explained the price. Cash in hand in 15 minutes." },
-  { name: "James R.", location: "Vienna, VA", rating: 5, text: "Sold a gold bracelet and some diamond earrings I inherited. Fair offer, no pressure, and they knew exactly what they were looking at. Highly recommend over the online buyers." },
-  { name: "Priya K.", location: "Chantilly, VA", rating: 5, text: "Professional and honest. Brought in a mix of silver coins and broken jewelry and left happy. Will definitely come back." },
-  { name: "Daniel M.", location: "Manassas, VA", rating: 5, text: "Quick, easy, and transparent. They paid spot price on my gold and silver coins. Great local business." },
-  { name: "Aisha T.", location: "McLean, VA", rating: 5, text: "I shopped around three places before coming here, best offer by far on my diamond ring. Friendly and not pushy at all." },
-  { name: "Robert L.", location: "Fairfax, VA", rating: 5, text: "Brought in my late father's coin collection. They took the time to go through every piece and paid more than I expected." },
-  { name: "Elena V.", location: "Centreville, VA", rating: 5, text: "Sold a few gold chains and an old class ring. Clean store, professional staff, and instant payout. Couldn't be easier." },
-  { name: "Marcus B.", location: "Herndon, VA", rating: 5, text: "Honest appraisal and fair pricing on my silver bullion. They explained the spot price and how they calculated the offer." },
+  { name: "Maria S.", location: "Annandale, VA", rating: 5, source: "google", text: "Got way more for my old gold jewelry than the mall place offered. They tested everything in front of me and explained the price. Cash in hand in 15 minutes." },
+  { name: "James R.", location: "Vienna, VA", rating: 5, source: "yelp", text: "Sold a gold bracelet and some diamond earrings I inherited. Fair offer, no pressure, and they knew exactly what they were looking at. Highly recommend over the online buyers." },
+  { name: "Priya K.", location: "Chantilly, VA", rating: 5, source: "google", text: "Professional and honest. Brought in a mix of silver coins and broken jewelry and left happy. Will definitely come back." },
+  { name: "Daniel M.", location: "Manassas, VA", rating: 5, source: "facebook", text: "Quick, easy, and transparent. They paid spot price on my gold and silver coins. Great local business." },
+  { name: "Aisha T.", location: "McLean, VA", rating: 5, source: "google", text: "I shopped around three places before coming here, best offer by far on my diamond ring. Friendly and not pushy at all." },
+  { name: "Robert L.", location: "Fairfax, VA", rating: 5, source: "yelp", text: "Brought in my late father's coin collection. They took the time to go through every piece and paid more than I expected." },
+  { name: "Elena V.", location: "Centreville, VA", rating: 5, source: "google", text: "Sold a few gold chains and an old class ring. Clean store, professional staff, and instant payout. Couldn't be easier." },
+  { name: "Marcus B.", location: "Herndon, VA", rating: 5, source: "facebook", text: "Honest appraisal and fair pricing on my silver bullion. They explained the spot price and how they calculated the offer." },
 ];
 
 // Helpers --------------------------------------------------------------------

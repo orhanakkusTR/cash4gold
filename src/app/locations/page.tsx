@@ -14,9 +14,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/locations" },
 };
 
-const directionsUrl = (street: string, city: string, region: string, postal: string) =>
-  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${street}, ${city}, ${region} ${postal}`)}`;
-
 export default function LocationsPage() {
   return (
     <>
@@ -91,7 +88,7 @@ export default function LocationsPage() {
                       <Phone className="h-4 w-4" /> {l.phone}
                     </a>
                     <a
-                      href={directionsUrl(l.street, l.city, l.region, l.postalCode)}
+                      href={l.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 rounded-full border border-gold-500/50 px-5 py-3 text-sm font-semibold text-gold-700 transition-colors hover:bg-gold-50"

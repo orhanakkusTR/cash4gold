@@ -28,9 +28,6 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   };
 }
 
-const directionsUrl = (street: string, city: string, region: string, postal: string) =>
-  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${street}, ${city}, ${region} ${postal}`)}`;
-
 export default async function LocationPage({ params }: { params: Promise<{ city: string }> }) {
   const { city } = await params;
   const loc = getLocation(city);
@@ -131,7 +128,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
                 <Phone className="h-5 w-5" /> Call {loc.city}
               </a>
               <a
-                href={directionsUrl(loc.street, loc.city, loc.region, loc.postalCode)}
+                href={loc.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex flex-1 items-center justify-center gap-2 rounded-full border border-gold-500/50 px-6 py-3.5 font-semibold text-gold-700 transition-colors hover:bg-gold-50"
@@ -149,7 +146,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           <div className="h-[22rem] overflow-hidden rounded-3xl border border-ink-900/8 shadow-[var(--shadow-card)]">
             <iframe
               title={`Map of Cash for Gold VA ${loc.city}`}
-              src={`https://www.google.com/maps?q=${encodeURIComponent(`${loc.street}, ${loc.city}, ${loc.region} ${loc.postalCode}`)}&output=embed`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(`${loc.name}, ${loc.street}, ${loc.city}, ${loc.region} ${loc.postalCode}`)}&output=embed`}
               className="h-full w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

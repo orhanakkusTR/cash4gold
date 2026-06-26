@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
+import { ReviewSourceLogo } from "@/components/review-source-logo";
 import { TESTIMONIALS, type Testimonial } from "@/data/business";
 
 function ReviewCard({ t }: { t: Testimonial }) {
@@ -11,9 +12,14 @@ function ReviewCard({ t }: { t: Testimonial }) {
         ))}
       </div>
       <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-foreground/90">“{t.text}”</blockquote>
-      <figcaption className="mt-4 border-t border-hairline pt-3">
-        <span className="font-semibold text-foreground">{t.name}</span>
-        <span className="block text-xs text-muted">{t.location}</span>
+      <figcaption className="mt-4 flex items-center gap-3 border-t border-hairline pt-3">
+        <ReviewSourceLogo source={t.source} className="h-7 w-7 shrink-0" />
+        <span className="min-w-0">
+          <span className="block font-semibold text-foreground">{t.name}</span>
+          <span className="block text-xs text-muted">
+            {t.location} · via {t.source === "google" ? "Google" : t.source === "yelp" ? "Yelp" : "Facebook"}
+          </span>
+        </span>
       </figcaption>
     </figure>
   );

@@ -206,7 +206,7 @@ export default function Home() {
 
       {/* FAQ */}
       <section className="container-page pb-16 pt-4 sm:pb-24">
-        <SectionHeading eyebrow="FAQ" title="Common questions" />
+        <SectionHeading eyebrow="FAQ" title={<span className="font-extrabold">Common questions</span>} />
         <div className="mx-auto mt-12 max-w-3xl divide-y divide-hairline">
           {FAQS.map((f, i) => (
             <Reveal key={f.q} delay={i * 0.05}>
