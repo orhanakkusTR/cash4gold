@@ -31,6 +31,7 @@ export const SITE = {
     facebook: "https://facebook.com/cashforgoldva",
     youtube: "https://youtube.com/@cashforgoldva",
     google: "https://g.page/cashforgoldva",
+    yelp: "https://www.yelp.com/search?find_desc=Cash+for+Gold+VA",
   },
 } as const;
 

@@ -27,7 +27,7 @@ function BuyTile({ item }: { item: BuyItem }) {
       {/* Round "Sell" badge, partially overhanging the top-left corner */}
       <span
         aria-hidden
-        className="absolute -left-2 -top-2 z-20 flex h-12 w-12 -rotate-6 items-center justify-center rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-[0.72rem] font-extrabold uppercase tracking-wide text-ink-950 shadow-[var(--shadow-gold)] ring-2 ring-white transition-transform duration-300 group-hover:rotate-0"
+        className="absolute -left-2 -top-2 z-20 flex h-12 w-12 -rotate-6 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600 text-[0.72rem] font-extrabold uppercase tracking-wide text-white shadow-[0_8px_20px_-6px_rgba(220,38,38,0.6)] ring-2 ring-white transition-transform duration-300 group-hover:rotate-0"
       >
         Sell
       </span>

@@ -12,7 +12,7 @@ import { JewelryValueProps, JewelryHowWeValue } from "@/components/jewelry-trust
 import { placeholderDescription, metalTone } from "@/lib/utils";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { LinkifyCities } from "@/components/linkify-cities";
-import { POSTS, getPost, coverImage } from "@/data/blog";
+import { POSTS, getPost } from "@/data/blog";
 import { BlogArticle } from "@/components/blog-article";
 
 // This single top-level dynamic segment serves BOTH categories and the legacy
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
         title: post.title,
         description: post.excerpt,
         alternates: { canonical: `/${post.slug}` },
-        openGraph: { title: post.title, description: post.excerpt, type: "article", images: [coverImage(post)] },
+        openGraph: { title: post.title, description: post.excerpt, type: "article", images: ["/og/og-image.jpg"] },
       };
     }
     return {};
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     title,
     description: `${cat.short} We buy at 4 Northern Virginia locations with free appraisals and instant payout. ${SITE.rating.value}★ rated.`,
     alternates: { canonical: `/${cat.slug}` },
-    openGraph: { title, description: cat.short, images: [cat.image] },
+    openGraph: { title, description: cat.short, images: ["/og/og-image.jpg"] },
   };
 }
 

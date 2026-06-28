@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, Star } from "lucide-react";
 import { SITE, CATEGORIES, LOCATIONS, SHOW_CALCULATOR } from "@/data/business";
+import { GoogleG } from "@/components/google-rating";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -11,10 +12,10 @@ function FacebookIcon({ className }: { className?: string }) {
   );
 }
 
-function YoutubeIcon({ className }: { className?: string }) {
+function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-      <path d="M23.5 6.5a3 3 0 0 0-2.1-2.12C19.5 3.86 12 3.86 12 3.86s-7.5 0-9.4.52A3 3 0 0 0 .5 6.5C0 8.4 0 12 0 12s0 3.6.5 5.5a3 3 0 0 0 2.1 2.12c1.9.52 9.4.52 9.4.52s7.5 0 9.4-.52a3 3 0 0 0 2.1-2.12C24 15.6 24 12 24 12s0-3.6-.5-5.5ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z" />
+      <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
     </svg>
   );
 }
@@ -29,23 +30,33 @@ export function Footer() {
             <Image src="/brand/c4g-logo.png" alt="Cash for Gold VA" width={1993} height={395} className="h-16 w-auto" />
           </Link>
           <p className="mt-4 text-sm leading-relaxed">{SITE.tagline}</p>
-          <div className="mt-4 flex items-center gap-1.5 text-sm">
-            <span className="flex">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
-              ))}
+          <a
+            href={(LOCATIONS.find((l) => l.slug === "chantilly") ?? LOCATIONS[0]).mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${SITE.rating.value} stars from ${SITE.rating.count}+ Google reviews`}
+            className="mt-4 inline-flex items-center gap-3 rounded-2xl bg-cream-50 px-4 py-2.5 shadow-sm transition-transform hover:-translate-y-0.5"
+          >
+            <GoogleG className="h-7 w-7 shrink-0" />
+            <span className="text-left">
+              <span className="flex items-center gap-1.5">
+                <span className="font-display text-lg font-bold leading-none text-ink-900">{SITE.rating.value}</span>
+                <span className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-3.5 w-3.5 fill-gold-400 text-gold-400" />
+                  ))}
+                </span>
+              </span>
+              <span className="mt-0.5 block text-xs text-ink-900/60">{SITE.rating.count}+ Google reviews</span>
             </span>
-            <span className="text-cream-100/80">
-              {SITE.rating.value} · {SITE.rating.count}+ reviews
-            </span>
-          </div>
+          </a>
           <div className="mt-5 flex gap-3">
-            <a href={SITE.social.facebook} aria-label="Facebook" className="rounded-full bg-cream-50/5 p-2.5 transition-colors hover:bg-gold-500/15 hover:text-gold-300">
+            <span aria-label="Instagram" className="rounded-full bg-cream-50/5 p-2.5 text-cream-100/70">
+              <InstagramIcon className="h-4 w-4" />
+            </span>
+            <span aria-label="Facebook" className="rounded-full bg-cream-50/5 p-2.5 text-cream-100/70">
               <FacebookIcon className="h-4 w-4" />
-            </a>
-            <a href={SITE.social.youtube} aria-label="YouTube" className="rounded-full bg-cream-50/5 p-2.5 transition-colors hover:bg-gold-500/15 hover:text-gold-300">
-              <YoutubeIcon className="h-4 w-4" />
-            </a>
+            </span>
           </div>
         </div>
 
@@ -78,7 +89,7 @@ export function Footer() {
           <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-gold-300">Our Locations</h3>
           <ul className="mt-4 grid gap-5 sm:grid-cols-2">
             {LOCATIONS.map((l) => (
-              <li key={l.slug} className="text-sm">
+              <li key={l.slug} className="rounded-xl border border-cream-50/10 p-4 text-sm transition-colors hover:border-cream-50/20">
                 <Link href={`/locations/${l.slug}`} className="font-semibold text-cream-50 transition-colors hover:text-gold-200">
                   {l.city}
                 </Link>
@@ -110,15 +121,6 @@ export function Footer() {
           <Link href="/privacy" className="hover:text-gold-200">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-gold-200">Terms</Link>
           <Link href="/contact-us-cash-for-gold-locations" className="hover:text-gold-200">Contact</Link>
-        </div>
-      </div>
-
-      {/* Rolex trademark disclaimer */}
-      <div className="border-t border-cream-100/10 py-6">
-        <div className="container-page">
-          <p className="text-[0.7rem] leading-relaxed text-cream-100/35">
-            Copyright CASH FOR GOLD. All rights reserved. CASH FOR GOLD is not affiliated with Rolex S.A., Rolex USA, or any of its subsidiaries. CASH FOR GOLD is an independent watch dealer and is not sponsored by, associated with and/or affiliated with Rolex, S.A. CASH FOR GOLD buys Rolex watches and provides its own warranties on the watches it sells. Rolex, www.rolex.com, is under no obligation to warranty-service watches bought by CASH FOR GOLD. Rolex Datejust, Rolex Day Date President, Submariner, Presidential, Explorer, Sea Dweller, Super President, GMT Master, GMT, YachtMaster, Prince, Milgaus, MasterPiece, Air King, Cosmograph Daytona, and PearlMaster are all registered trademarks of the Rolex Corporation (Rolex USA, Rolex S.A.) To buy a new Rolex watch, please visit rolex.com for a list of authorized Rolex dealers near you.
-          </p>
         </div>
       </div>
 

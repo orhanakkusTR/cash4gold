@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     title,
     description: `Looking to sell your ${s.name.toLowerCase()}? ${s.short} Free appraisals, instant payout, and a fair price at 4 Northern Virginia locations, ${SITE.rating.value}★ rated.`,
     alternates: { canonical: `/${cat.slug}/${s.slug}` },
-    openGraph: { title, description: s.short, images: [cat.image] },
+    openGraph: { title, description: s.short, images: ["/og/og-image.jpg"] },
   };
 }
 

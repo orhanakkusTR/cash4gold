@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: `${SITE.name} | Instant Payout for Gold, Diamonds & Coins`,
     description:
       "Northern Virginia's trusted buyer of gold, silver, diamonds, jewelry & coins. Instant payout, free appraisals, 4 locations.",
-    images: [{ url: "/og/og-image.jpg", width: 1200, height: 504, alt: SITE.name }],
+    images: [{ url: "/og/og-image.jpg", width: 1200, height: 630, alt: SITE.name }],
   },
   twitter: {
     card: "summary_large_image",
