@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Check, MapPin, ArrowRight, ArrowUpRight, Phone, Navigation } from "lucide-react";
+import { Check, MapPin, ArrowRight, ArrowUpRight, Phone, Navigation, AlertTriangle } from "lucide-react";
 import { ALL_SUBCATEGORIES, LOCATIONS, getCategory, getSubcategory, SITE, PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
 import { getBrief } from "@/data/category-briefs";
 import { BrushUnderline } from "@/components/brush-underline";
@@ -86,6 +86,46 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
         description={brief ? undefined : s.intro}
         glowClass={tone.glow}
       />
+
+      {/* Page-specific notice: we don't buy individual gold-filled/plated items */}
+      {cat.slug === "precious-metals" && s.slug === "sell-gold-filled-plated" && (
+        <section className="container-page pt-12 pb-2 sm:pt-14">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl border border-red-200 bg-red-50/70 px-6 py-7 shadow-[var(--shadow-card)] sm:px-9 sm:py-8">
+              <span aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-red-300 via-red-500 to-red-300" />
+              <div className="flex flex-col gap-4 sm:flex-row sm:gap-5">
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600">
+                  <AlertTriangle className="h-6 w-6" />
+                </span>
+                <div className="space-y-3 text-[15px] leading-relaxed text-red-950/80 sm:text-base">
+                  <p className="text-lg font-extrabold tracking-tight text-red-700 sm:text-xl">Notice</p>
+                  <p>
+                    We are not currently purchasing individual Gold Filled or Gold Plated items
+                    through our standard buying process.
+                  </p>
+                  <p>
+                    If you have a bulk quantity of <strong className="font-semibold text-red-900">5 lbs or more</strong>,
+                    we&apos;d be happy to review your material. Please contact us directly at{" "}
+                    <a
+                      href={`tel:${PRIMARY_PHONE_HREF}`}
+                      className="font-semibold text-red-700 underline decoration-red-300 underline-offset-2 transition-colors hover:text-red-800"
+                    >
+                      +1 {PRIMARY_PHONE}
+                    </a>{" "}
+                    to discuss your inventory.
+                  </p>
+                  <p>
+                    <strong className="font-semibold text-red-900">Please note:</strong> Payment is not made
+                    immediately. All materials must first be refined and evaluated, and payment will be issued
+                    based on the confirmed precious metal content.
+                  </p>
+                  <p className="text-red-950/70">Thank you for your understanding.</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </section>
+      )}
 
       {/* Business brief: description lead-in */}
       {brief && (
