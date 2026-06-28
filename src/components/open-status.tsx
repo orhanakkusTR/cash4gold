@@ -46,10 +46,12 @@ export function OpenStatus({
   hours,
   className,
   tone = "dark",
+  compact = false,
 }: {
   hours: Hours[];
   className?: string;
   tone?: keyof typeof TONES;
+  compact?: boolean;
 }) {
   const [status, setStatus] = useState<Status | null>(null);
   const c = TONES[tone];
@@ -81,12 +83,25 @@ export function OpenStatus({
   }
 
   const { open, today } = status;
+  const dot = (
+    <span className="relative flex h-2 w-2">
+      <span className={cn("absolute inline-flex h-full w-full animate-ping rounded-full", open ? "bg-green-500/60" : "bg-red-500/50")} />
+      <span className={cn("relative inline-flex h-2 w-2 rounded-full", open ? "bg-green-500" : "bg-red-500")} />
+    </span>
+  );
+
+  if (compact) {
+    return (
+      <span className={cn("inline-flex items-center gap-1.5 text-xs font-semibold", className)} suppressHydrationWarning>
+        {dot}
+        <span className={open ? c.open : c.closed}>{open ? "Now Open" : "Now Closed"}</span>
+      </span>
+    );
+  }
+
   return (
     <span className={cn("inline-flex items-center gap-1.5 text-sm font-medium", className)} suppressHydrationWarning>
-      <span className="relative flex h-2 w-2">
-        {open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500/60" />}
-        <span className={cn("relative inline-flex h-2 w-2 rounded-full", open ? "bg-green-500" : "bg-red-500")} />
-      </span>
+      {dot}
       <span className={open ? c.open : c.closed}>{open ? "Open now" : "Closed"}</span>
       <span className={c.sep}>·</span>
       <span className={c.muted}>

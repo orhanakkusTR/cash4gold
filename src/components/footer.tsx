@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Phone, MapPin, Star } from "lucide-react";
 import { SITE, CATEGORIES, LOCATIONS, SHOW_CALCULATOR } from "@/data/business";
 import { GoogleG } from "@/components/google-rating";
+import { OpenStatus } from "@/components/open-status";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -90,9 +91,12 @@ export function Footer() {
           <ul className="mt-4 grid gap-5 sm:grid-cols-2">
             {LOCATIONS.map((l) => (
               <li key={l.slug} className="rounded-xl border border-cream-50/10 p-4 text-sm transition-colors hover:border-cream-50/20">
-                <Link href={`/locations/${l.slug}`} className="font-semibold text-cream-50 transition-colors hover:text-gold-200">
-                  {l.city}
-                </Link>
+                <div className="flex items-center justify-between gap-2">
+                  <Link href={`/locations/${l.slug}`} className="font-semibold text-cream-50 transition-colors hover:text-gold-200">
+                    {l.city}
+                  </Link>
+                  <OpenStatus hours={l.hours} tone="light" compact />
+                </div>
                 <a
                   href={l.mapUrl}
                   target="_blank"
