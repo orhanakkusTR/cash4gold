@@ -28,10 +28,9 @@ const NAV: NavItem[] = [
   { label: "Locations", href: "/locations", children: LOCATIONS.map((l) => ({ label: l.city, href: `/locations/${l.slug}` })) },
   { label: "Contact", href: "/contact-us-cash-for-gold-locations" },
   {
-    label: "More",
+    label: "About",
     href: "/about",
     children: [
-      { label: "About", href: "/about" },
       { label: "Blog", href: "/blog" },
     ],
   },
@@ -88,7 +87,6 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  aria-label={item.label === "More" ? "More — About and Blog" : undefined}
                   className={cn(
                     "group flex items-center gap-1 rounded-full px-4 py-2.5 text-[0.95rem] font-bold transition-colors",
                     openMenu === item.label ? "text-gold-700" : "text-foreground hover:text-gold-700",
@@ -194,7 +192,6 @@ export function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      aria-label={item.label === "More" ? "More — About and Blog" : undefined}
                       className="block py-3 text-base font-semibold text-foreground"
                     >
                       {item.label}

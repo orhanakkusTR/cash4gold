@@ -12,7 +12,7 @@ export function Footer() {
         {/* Brand */}
         <div>
           <Link href="/" className="flex items-center">
-            <Image src="/brand/c4g-logo.png" alt="Cash for Gold VA" width={1993} height={395} className="h-16 w-auto" />
+            <Image src="/brand/c4g-logo.png" alt="Cash for Gold VA" width={1993} height={395} className="h-auto w-64 max-w-full" />
           </Link>
           <p className="mt-4 text-sm leading-relaxed">{SITE.tagline}</p>
           <a
