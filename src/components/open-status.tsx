@@ -92,7 +92,7 @@ export function OpenStatus({
 
   if (compact) {
     return (
-      <span className={cn("inline-flex items-center gap-1.5 text-xs font-semibold", className)} suppressHydrationWarning>
+      <span className={cn("inline-flex items-center gap-1.5 text-xs font-extrabold", className)} suppressHydrationWarning>
         {dot}
         <span className={open ? c.open : c.closed}>{open ? "Now Open" : "Now Closed"}</span>
       </span>

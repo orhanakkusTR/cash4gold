@@ -61,13 +61,18 @@ export default function LocationsPage() {
                         {l.city}
                       </Link>
                     </h2>
-                    <OpenStatus hours={l.hours} className="mt-2" />
+                    <OpenStatus hours={l.hours} className="mt-2" compact />
                   </div>
 
-                  <p className="flex items-start gap-2.5 text-muted">
+                  <a
+                    href={l.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-2.5 text-muted transition-colors hover:text-gold-700"
+                  >
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
                     {l.street}, {l.city}, {l.region} {l.postalCode}
-                  </p>
+                  </a>
 
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-foreground/50">Also serving</p>
