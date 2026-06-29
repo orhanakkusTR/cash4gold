@@ -3,6 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Don't advertise the framework.
   poweredByHeader: false,
+  // Inline the page's CSS into the HTML <head> so the stylesheet isn't a
+  // render-blocking request (improves FCP/LCP on slow connections).
+  experimental: {
+    inlineCss: true,
+  },
   images: {
     // Our own trusted brand SVG (logo) is served via next/image.
     dangerouslyAllowSVG: true,
