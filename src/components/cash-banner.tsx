@@ -36,30 +36,38 @@ export function CashBanner() {
 
   const showVideo = !reduce && inView;
 
-  // iOS Safari won't autoplay a <video> that JS inserts after load unless we
-  // (a) set the muted *property* (the React attr alone is unreliable) and
-  // (b) explicitly call play(). Low Power Mode still blocks it — nothing we
-  // can do there; the poster stays visible as the fallback.
+  // iOS Safari is much more reliable when the <video> is in the DOM from the
+  // start (poster shown, no source = no download). Once it scrolls into view we
+  // attach the <source>, load(), and explicitly play() with the muted *property*
+  // set (the React attr alone is unreliable). Low Power Mode still blocks
+  // autoplay — nothing we can do; the poster stays as the fallback.
   useEffect(() => {
     const v = videoRef.current;
     if (!showVideo || !v) return;
     v.muted = true;
+    v.load();
     const p = v.play();
     if (p) p.catch(() => {});
   }, [showVideo]);
 
   return (
     <section ref={sectionRef} className="relative isolate overflow-hidden bg-ink-950">
-      {/* Background video */}
+      {/* Background video. The element is always in the DOM (poster visible, no
+          <source> = no download) so iOS will autoplay reliably once we attach
+          the source on scroll. */}
       <div aria-hidden className="absolute inset-0">
-        {!showVideo ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src="/videos/gold-to-cash-poster.jpg" alt="" className="h-full w-full object-cover" />
-        ) : (
-          <video ref={videoRef} className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" poster="/videos/gold-to-cash-poster.jpg">
-            <source src="/videos/gold-to-cash.mp4" type="video/mp4" />
-          </video>
-        )}
+        <video
+          ref={videoRef}
+          className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster="/videos/gold-to-cash-poster.jpg"
+        >
+          {showVideo && <source src="/videos/gold-to-cash.mp4" type="video/mp4" />}
+        </video>
         {/* Left-weighted scrim so copy stays readable while the coin/cash shows on the right */}
         <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/80 to-ink-950/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink-950/60 via-transparent to-ink-950/40" />
