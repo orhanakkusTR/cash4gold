@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 // carry a "NEW" tag; the final card is a disabled "coming soon" placeholder.
 //
 // IMAGES: drop square images into /public/sell/ and set `image` on each item
-// (e.g. image: "/sell/gold-jewelry.jpg"). While `image` is unset we render the
+// (e.g. image: "/sell/gold-jewelry.webp"). While `image` is unset we render the
 // `emoji` placeholder so the grid still looks right.
 type SellItem = {
   title: string;

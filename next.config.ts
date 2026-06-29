@@ -5,8 +5,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   // Inline the page's CSS into the HTML <head> so the stylesheet isn't a
   // render-blocking request (improves FCP/LCP on slow connections).
+  // Production only — in dev it interferes with the CSS chunk serving.
   experimental: {
-    inlineCss: true,
+    inlineCss: process.env.NODE_ENV === "production",
   },
   images: {
     // Our own trusted brand SVG (logo) is served via next/image.
@@ -19,6 +20,10 @@ const nextConfig: NextConfig = {
   // a per-request nonce for Next's hydration scripts and could break the Google
   // Maps embed — left as a future, carefully-tested step).
   async headers() {
+    // Production only. In particular, sending HSTS from localhost poisons the
+    // browser into forcing https://localhost (which the HTTP dev server can't
+    // serve), breaking local development.
+    if (process.env.NODE_ENV !== "production") return [];
     return [
       {
         source: "/:path*",

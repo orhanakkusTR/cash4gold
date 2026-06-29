@@ -12,6 +12,7 @@ import { PRIMARY_PHONE, PRIMARY_PHONE_HREF, SHOW_CALCULATOR } from "@/data/busin
 export function CashBanner() {
   const reduce = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   // The background video is ~4.8MB. It sits below the fold, so don't fetch it
   // on first load (kills mobile LCP). Only mount the <video> once the banner
   // is about to enter the viewport; show the lightweight poster until then.
@@ -35,6 +36,18 @@ export function CashBanner() {
 
   const showVideo = !reduce && inView;
 
+  // iOS Safari won't autoplay a <video> that JS inserts after load unless we
+  // (a) set the muted *property* (the React attr alone is unreliable) and
+  // (b) explicitly call play(). Low Power Mode still blocks it — nothing we
+  // can do there; the poster stays visible as the fallback.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!showVideo || !v) return;
+    v.muted = true;
+    const p = v.play();
+    if (p) p.catch(() => {});
+  }, [showVideo]);
+
   return (
     <section ref={sectionRef} className="relative isolate overflow-hidden bg-ink-950">
       {/* Background video */}
@@ -43,7 +56,7 @@ export function CashBanner() {
           // eslint-disable-next-line @next/next/no-img-element
           <img src="/videos/gold-to-cash-poster.jpg" alt="" className="h-full w-full object-cover" />
         ) : (
-          <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="none" poster="/videos/gold-to-cash-poster.jpg">
+          <video ref={videoRef} className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" poster="/videos/gold-to-cash-poster.jpg">
             <source src="/videos/gold-to-cash.mp4" type="video/mp4" />
           </video>
         )}
