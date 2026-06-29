@@ -102,7 +102,7 @@ export function OpenStatus({
   return (
     <span className={cn("inline-flex items-center gap-1.5 text-sm font-medium", className)} suppressHydrationWarning>
       {dot}
-      <span className={open ? c.open : c.closed}>{open ? "Open now" : "Closed"}</span>
+      <span className={cn("font-extrabold", open ? c.open : c.closed)}>{open ? "Now Open" : "Now Closed"}</span>
       <span className={c.sep}>·</span>
       <span className={c.muted}>
         {today?.close ? `Today ${formatHours(today.open, today.close)}` : "Closed today"}

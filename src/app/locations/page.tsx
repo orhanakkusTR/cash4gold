@@ -61,7 +61,7 @@ export default function LocationsPage() {
                         {l.city}
                       </Link>
                     </h2>
-                    <OpenStatus hours={l.hours} className="mt-2" compact />
+                    <OpenStatus hours={l.hours} className="mt-2" />
                   </div>
 
                   <a
