@@ -72,6 +72,11 @@ export default function RootLayout({
       lang="en"
       className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
+      <head>
+        {/* Warm up the live-price API connection early (saves ~300ms on the ticker). */}
+        <link rel="preconnect" href="https://api.gold-api.com" />
+        <link rel="dns-prefetch" href="https://api.gold-api.com" />
+      </head>
       <body className="min-h-full flex flex-col bg-cream-50 text-foreground">
         <OrganizationJsonLd />
         <LivePriceTicker />

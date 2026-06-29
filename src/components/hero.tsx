@@ -4,19 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Phone, Star, ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { motion } from "motion/react";
-import { TextAnimate } from "@/components/ui/text-animate";
 import { buttonClass } from "@/components/ui/button";
 import { HeroVideoPlaylist } from "@/components/hero-video";
 import { SITE, PRIMARY_PHONE, PRIMARY_PHONE_HREF, CATEGORIES } from "@/data/business";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 22 },
-  show: (delay: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] as const },
-  }),
-};
 
 const TRUST = ["Northern Virginia's #1 gold buyer", "15 years in business", "Paid before you leave"];
 
@@ -89,8 +79,8 @@ export function Hero() {
       <div className="container-page relative">
         <div className="mx-auto max-w-4xl text-center">
           {/* Rating badge */}
-          <motion.div custom={0.1} variants={fadeUp} initial="hidden" animate="show"
-            className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-sm font-medium text-cream-100/90 shadow-sm backdrop-blur-md">
+          <div style={{ animationDelay: "0.05s" }}
+            className="hero-rise mx-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-sm font-medium text-cream-100/90 shadow-sm backdrop-blur-md">
             <GoogleG className="h-4 w-4" />
             <span className="flex">
               {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-gold-400 text-gold-400" />)}
@@ -98,30 +88,27 @@ export function Hero() {
             <span className="font-semibold text-cream-50">{SITE.rating.value}</span>
             <span className="text-cream-100/50">·</span>
             {SITE.rating.count}+ Google reviews
-          </motion.div>
+          </div>
 
-          {/* Animated headline - flows in on first load, two clean lines */}
-          <h1
-            aria-label="Gold, Silver, Diamonds and More. You Get Paid Before You Leave."
-            className="mx-auto mt-7 max-w-5xl font-display text-[2.7rem] font-bold leading-[1.05] tracking-[-0.025em] text-cream-50 sm:text-5xl md:text-[3.6rem] [text-shadow:0_2px_28px_rgba(0,0,0,0.55)]"
-          >
-            <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.2} duration={0.7} className="block md:whitespace-nowrap">
+          {/* Headline - CSS fade-up so it paints immediately (good for LCP) */}
+          <h1 className="mx-auto mt-7 max-w-5xl font-display text-[2.7rem] font-bold leading-[1.05] tracking-[-0.025em] text-cream-50 sm:text-5xl md:text-[3.6rem] [text-shadow:0_2px_28px_rgba(0,0,0,0.55)]">
+            <span className="hero-rise block md:whitespace-nowrap" style={{ animationDelay: "0.1s" }}>
               Gold, Silver, Diamonds &amp; More
-            </TextAnimate>
-            <TextAnimate as="span" accessible={false} by="word" animation="blurInUp" startOnView={false} delay={0.85} duration={0.6} className="block font-extrabold text-gold-300 md:whitespace-nowrap">
+            </span>
+            <span className="hero-rise block font-extrabold text-gold-300 md:whitespace-nowrap" style={{ animationDelay: "0.18s" }}>
               You Get Paid Before You Leave
-            </TextAnimate>
+            </span>
           </h1>
 
-          <motion.p custom={1.3} variants={fadeUp} initial="hidden" animate="show"
-            className="mx-auto mt-6 max-w-2xl text-balance text-lg leading-relaxed text-cream-100/80 [text-shadow:0_1px_14px_rgba(0,0,0,0.5)]">
+          <p style={{ animationDelay: "0.26s" }}
+            className="hero-rise mx-auto mt-6 max-w-2xl text-balance text-lg leading-relaxed text-cream-100/80 [text-shadow:0_1px_14px_rgba(0,0,0,0.5)]">
             Visit any of our 4 Northern Virginia locations. No appointment needed.
             <br />
             Walk in, get your offer, get paid on the spot.
-          </motion.p>
+          </p>
 
-          <motion.div custom={1.45} variants={fadeUp} initial="hidden" animate="show"
-            className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div style={{ animationDelay: "0.34s" }}
+            className="hero-rise mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a href={`tel:${PRIMARY_PHONE_HREF}`} className={buttonClass("gold", "lg")}>
               <span className="relative z-10 inline-flex items-center gap-2">
                 <Phone className="h-5 w-5" /> Call {PRIMARY_PHONE}
@@ -133,11 +120,11 @@ export function Hero() {
             >
               Get a Free Quote <ArrowRight className="h-4 w-4" />
             </a>
-          </motion.div>
+          </div>
 
           {/* Trust line with dot separators */}
-          <motion.div custom={1.6} variants={fadeUp} initial="hidden" animate="show"
-            className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-cream-100/70">
+          <div style={{ animationDelay: "0.42s" }}
+            className="hero-rise mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-cream-100/70">
             {TRUST.map((t, i) => (
               <span key={t} className="inline-flex items-center gap-4">
                 {i > 0 && <span aria-hidden className="hidden h-1 w-1 rounded-full bg-gold-400/70 sm:inline-block" />}
@@ -146,24 +133,24 @@ export function Hero() {
                 </span>
               </span>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Find a location CTA */}
         <div className="relative mt-12 flex justify-center">
-          <motion.div custom={1.7} variants={fadeUp} initial="hidden" animate="show">
+          <div className="hero-rise" style={{ animationDelay: "0.5s" }}>
             <Link
               href="/locations"
               className="inline-flex h-14 items-center justify-center gap-2 rounded-full border-2 border-cream-50/25 px-8 text-base font-semibold text-cream-50 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-gold-400 hover:bg-white/5 hover:text-gold-200"
             >
               📍 Find a Location
             </Link>
-          </motion.div>
+          </div>
           <TrustSeal className="absolute right-0 top-1/2 hidden -translate-y-1/2 sm:block lg:right-4 xl:right-12" />
         </div>
 
         {/* Category quick-links */}
-        <motion.div custom={1.85} variants={fadeUp} initial="hidden" animate="show" className="mt-8">
+        <div className="hero-rise mt-8" style={{ animationDelay: "0.58s" }}>
           <div className="mx-auto mb-6 flex max-w-xs items-center gap-3">
             <span className="h-px flex-1 bg-gradient-to-r from-transparent to-gold-400/40" />
             <span className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-cream-100/55">What We Buy</span>
@@ -184,7 +171,7 @@ export function Hero() {
               </a>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

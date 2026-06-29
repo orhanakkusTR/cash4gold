@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
 import { useReducedMotion } from "motion/react";
@@ -10,11 +11,35 @@ import { PRIMARY_PHONE, PRIMARY_PHONE_HREF, SHOW_CALCULATOR } from "@/data/busin
 /** Cinematic mid-page banner: a gold coin morphs into a stack of cash. */
 export function CashBanner() {
   const reduce = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+  // The background video is ~4.8MB. It sits below the fold, so don't fetch it
+  // on first load (kills mobile LCP). Only mount the <video> once the banner
+  // is about to enter the viewport; show the lightweight poster until then.
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || reduce) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [reduce]);
+
+  const showVideo = !reduce && inView;
+
   return (
-    <section className="relative isolate overflow-hidden bg-ink-950">
+    <section ref={sectionRef} className="relative isolate overflow-hidden bg-ink-950">
       {/* Background video */}
       <div aria-hidden className="absolute inset-0">
-        {reduce ? (
+        {!showVideo ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src="/videos/gold-to-cash-poster.jpg" alt="" className="h-full w-full object-cover" />
         ) : (
