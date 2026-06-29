@@ -46,7 +46,7 @@ function Thumb({ item }: { item: SellItem }) {
           alt={item.title}
           fill
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+          className={`object-cover transition-transform duration-500 group-hover:scale-[1.04] ${item.comingSoon ? "opacity-60" : ""}`}
         />
       ) : (
         <span aria-hidden className="flex h-full w-full items-center justify-center text-5xl">
@@ -62,7 +62,7 @@ function SellCard({ item }: { item: SellItem }) {
     <div
       className={
         item.comingSoon
-          ? "relative flex flex-col gap-3 rounded-2xl border border-dashed border-hairline bg-cream-50/40 p-3 opacity-70"
+          ? "relative flex flex-col gap-3 rounded-2xl border border-dashed border-hairline bg-cream-50/40 p-3"
           : "group relative flex flex-col gap-3 rounded-2xl border border-hairline bg-white p-3 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:border-gold-300 hover:shadow-[var(--shadow-gold)]"
       }
     >

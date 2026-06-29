@@ -88,6 +88,7 @@ export function Header() {
               >
                 <Link
                   href={item.href}
+                  aria-label={item.label === "More" ? "More — About and Blog" : undefined}
                   className={cn(
                     "group flex items-center gap-1 rounded-full px-4 py-2.5 text-[0.95rem] font-bold transition-colors",
                     openMenu === item.label ? "text-gold-700" : "text-foreground hover:text-gold-700",
@@ -190,7 +191,12 @@ export function Header() {
               <nav className="mt-6 flex flex-col gap-1">
                 {NAV.map((item) => (
                   <div key={item.href} className="border-b border-hairline py-1">
-                    <Link href={item.href} onClick={() => setOpen(false)} className="block py-3 text-base font-semibold text-foreground">
+                    <Link
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      aria-label={item.label === "More" ? "More — About and Blog" : undefined}
+                      className="block py-3 text-base font-semibold text-foreground"
+                    >
                       {item.label}
                     </Link>
                     {item.children && (
