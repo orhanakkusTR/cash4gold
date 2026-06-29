@@ -74,6 +74,7 @@ export function Header() {
               className="h-9 w-auto lg:h-10"
               sizes="220px"
               priority
+              fetchPriority="high"
             />
           </Link>
 
