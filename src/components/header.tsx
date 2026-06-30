@@ -65,7 +65,12 @@ export function Header() {
         )}
       >
         <div className="mx-auto flex h-18 w-full max-w-[88rem] items-center justify-between px-5 lg:h-20">
-          <Link href="/" className="-ml-1 flex items-center" aria-label="Cash for Gold VA home">
+          <Link
+            href="/"
+            className="-ml-1 flex items-center"
+            aria-label="Cash for Gold VA home"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <Image
               src="/brand/c4g-logo.png"
               alt="Cash for Gold VA"
