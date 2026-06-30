@@ -12,7 +12,7 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 const CONTACT_PATH = "/contact-us-cash-for-gold-locations";
 
 export const metadata: Metadata = {
-  title: "Contact Us, Cash for Gold Locations in Northern Virginia",
+  title: "Contact Us, Cash for Gold in Northern Virginia",
   description: "Visit or call Cash for Gold VA for a free, no-obligation appraisal on your gold, diamonds, jewelry, and coins. Four Northern Virginia locations, no appointment needed.",
   alternates: { canonical: CONTACT_PATH },
 };

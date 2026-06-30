@@ -7,7 +7,7 @@ export function HeroVideoPlaylist() {
   return (
     <Image
       src="/hero/hero-bg-v2.webp"
-      alt=""
+      alt="Gold jewelry, coins and bullion appraised for cash at Cash for Gold VA in Northern Virginia"
       fill
       priority
       fetchPriority="high"

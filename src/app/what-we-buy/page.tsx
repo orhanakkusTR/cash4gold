@@ -8,7 +8,7 @@ import { CategoryCard } from "@/components/cards";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
-  title: "What We Buy, Gold, Silver, Diamonds, Jewelry & Coins",
+  title: "What We Buy: Gold, Silver, Diamonds & Coins",
   description: "We buy gold, silver, diamonds, designer jewelry, and collectible coins for instant payout across Northern Virginia. Free appraisals at 4 locations.",
   alternates: { canonical: "/what-we-buy" },
 };

@@ -164,7 +164,7 @@ export function Hero() {
                 className="group flex items-center gap-3 rounded-full border border-white/12 bg-white/[0.06] py-1.5 pl-1.5 pr-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-400/50 hover:bg-white/10"
               >
                 <span className="relative h-9 w-9 overflow-hidden rounded-full ring-1 ring-inset ring-white/20 transition-all duration-300 group-hover:ring-gold-400/60">
-                  <Image src={c.image} alt="" fill sizes="36px" className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <Image src={c.image} alt={`Sell ${c.name} in Northern Virginia`} fill sizes="36px" className="object-cover transition-transform duration-500 group-hover:scale-110" />
                 </span>
                 <span className="text-sm font-semibold text-cream-100/85 transition-colors group-hover:text-cream-50">{c.name}</span>
                 <ArrowUpRight className="h-3.5 w-3.5 -translate-x-0.5 text-cream-100/30 transition-all duration-300 group-hover:translate-x-0 group-hover:text-gold-300" />

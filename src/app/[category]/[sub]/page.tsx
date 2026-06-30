@@ -40,7 +40,10 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   if (!cat || !s) return {};
   const title = `We Buy ${s.name} in Northern Virginia`;
   return {
-    title,
+    // `absolute` drops the " | Cash for Gold VA" suffix: long item names (e.g.
+    // "Austrian Platinum Philharmonic") otherwise push the title past 70 chars,
+    // and the brand suffix was being truncated in SERPs anyway.
+    title: { absolute: title },
     description: `Looking to sell your ${s.name.toLowerCase()}? ${s.short} Free appraisals, instant payout, and a fair price at 4 Northern Virginia locations, ${SITE.rating.value}★ rated.`,
     alternates: { canonical: `/${cat.slug}/${s.slug}` },
     openGraph: { title, description: s.short, images: ["/og/og-image.jpg"] },
@@ -172,7 +175,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
                     className="group flex items-center gap-4 rounded-2xl border border-hairline bg-white p-3 pr-5 shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:border-gold-400/40 hover:shadow-[var(--shadow-gold)]"
                   >
                     <span className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-gradient-to-b from-cream-100 to-white">
-                      <Image src={r.image} alt="" fill sizes="64px" className="object-cover" />
+                      <Image src={r.image} alt={r.label} fill sizes="64px" className="object-cover" />
                     </span>
                     <span className="flex-1">
                       <span className="block font-display text-base font-semibold text-foreground">{r.label}</span>

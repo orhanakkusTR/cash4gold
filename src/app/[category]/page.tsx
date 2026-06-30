@@ -33,7 +33,9 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     const post = getPost(category);
     if (post) {
       return {
-        title: post.title,
+        // `absolute` drops the " | Cash for Gold VA" suffix so blog titles stay
+        // under ~70 chars (the suffix was being truncated in SERPs anyway).
+        title: { absolute: post.title },
         description: post.excerpt,
         alternates: { canonical: `/${post.slug}` },
         openGraph: { title: post.title, description: post.excerpt, type: "article", images: ["/og/og-image.jpg"] },
