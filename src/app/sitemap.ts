@@ -4,35 +4,39 @@ import { POSTS } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.domain;
-  const now = new Date("2026-06-12");
+  // Last significant site-wide content revision. Kept as a STABLE date on
+  // purpose: stamping every page with the build time on each deploy makes
+  // Google distrust (and ignore) lastmod. Bump this when pages get a real
+  // content update. Blog posts use their own publish dates below.
+  const lastUpdated = new Date("2026-06-30");
 
   const staticPages = [
     "", "/what-we-buy", ...(SHOW_CALCULATOR ? ["/gold-calculator"] : []), "/locations", "/about",
     "/contact-us-cash-for-gold-locations", "/blog",
   ].map((p) => ({
     url: `${base}${p}`,
-    lastModified: now,
+    lastModified: lastUpdated,
     changeFrequency: "weekly" as const,
     priority: p === "" ? 1 : 0.8,
   }));
 
   const categoryPages = CATEGORIES.map((c) => ({
     url: `${base}/${c.slug}`,
-    lastModified: now,
+    lastModified: lastUpdated,
     changeFrequency: "weekly" as const,
     priority: 0.9,
   }));
 
   const subcategoryPages = ALL_SUBCATEGORIES.map(({ category, sub }) => ({
     url: `${base}/${category.slug}/${sub.slug}`,
-    lastModified: now,
+    lastModified: lastUpdated,
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
 
   const locationPages = LOCATIONS.map((l) => ({
     url: `${base}/locations/${l.slug}`,
-    lastModified: now,
+    lastModified: lastUpdated,
     changeFrequency: "weekly" as const,
     priority: 0.85,
   }));

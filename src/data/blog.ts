@@ -4,7 +4,7 @@
 // page falls back to a name-templated placeholder so the design is reviewable.
 //
 // IMPORTANT: `slug` is a ROOT-LEVEL path (no /blog/ prefix) to match the legacy
-// permalinks exactly, e.g. /create-an-article-about-gold-price-today. These are
+// permalinks exactly, e.g. /gold-price-today. These are
 // served by the single top-level dynamic route (src/app/[category]/page.tsx),
 // which dispatches to the blog article when the slug is not a category.
 
@@ -23,7 +23,7 @@ export const BLOG_AUTHOR = "Cash for Gold VA";
 // Newest first. Dates and titles match the legacy blog exactly.
 export const POSTS: BlogPost[] = [
   {
-    slug: "create-an-article-about-gold-price-today",
+    slug: "gold-price-today",
     title: "Gold Price Today: How to Read It and What It Means When You Sell",
     date: "2026-02-26",
     category: "Gold Prices",
@@ -90,7 +90,7 @@ That transparency is why we hold a 4.9-star rating across hundreds of Google rev
 - **Annandale**: 7262 Columbia Pike
 - **Manassas**: 9013 Centreville Rd
 - **Chantilly**: 14025 Lee Jackson Memorial Hwy
-- **Vienna / McLean**: 8453 Tyco Rd
+- **Vienna / McLean**: 8453 Tyco Rd #C
 
 ## Frequently asked questions
 
@@ -148,7 +148,7 @@ Wherever you sell in Northern Virginia, look for these signs:
 Cash for Gold VA has four Northern Virginia stores, so one is usually close by:
 
 - **Annandale**: 7262 Columbia Pike (closest to Falls Church, Bailey's Crossroads, and Springfield)
-- **Vienna / McLean**: 8453 Tyco Rd (closest to Tysons, McLean, and Oakton)
+- **Vienna / McLean**: 8453 Tyco Rd #C (closest to Tysons, McLean, and Oakton)
 - **Chantilly**: 14025 Lee Jackson Memorial Hwy (closest to Centreville, Fairfax, and Herndon)
 - **Manassas**: 9013 Centreville Rd (closest to Gainesville, Bristow, and Prince William County)
 
@@ -227,7 +227,7 @@ They carry more risk because they lack a permanent location and accountability. 
 Ready to sell with confidence? [Visit any location](/contact-us-cash-for-gold-locations) or [estimate your gold now](/gold-calculator).`,
   },
   {
-    slug: "understanding-the-role-of-bullion-banks-2",
+    slug: "how-bullion-banks-influence-gold-prices",
     title: "How Bullion Banks Influence Gold Prices (and Your Payout)",
     date: "2025-12-02",
     category: "Precious Metals",
@@ -534,7 +534,7 @@ The visit is quick and open. You hand over your items and a photo ID, the buyer 
 Cash for Gold VA has four Northern Virginia stores, so one is usually nearby:
 
 - **Annandale**: 7262 Columbia Pike
-- **Vienna / McLean**: 8453 Tyco Rd
+- **Vienna / McLean**: 8453 Tyco Rd #C
 - **Chantilly**: 14025 Lee Jackson Memorial Hwy
 - **Manassas**: 9013 Centreville Rd
 
@@ -554,7 +554,7 @@ Yes. If you accept the offer, you are paid in cash before you leave.
 Find the location closest to you and [get a free, no-obligation appraisal](/contact-us-cash-for-gold-locations), or [estimate your gold first](/gold-calculator).`,
   },
   {
-    slug: "14002-2",
+    slug: "cash-for-gold-loudoun-county-va",
     title: "Cash for Gold in Loudoun County, VA: A Local Seller's Guide",
     date: "2025-06-08",
     category: "Locations",
@@ -613,7 +613,7 @@ Yes. Our [calculator](/gold-calculator) gives a realistic range from the live pr
 Find out what your gold is worth in Loudoun County. [Estimate it now](/gold-calculator) or [visit our Chantilly store](/contact-us-cash-for-gold-locations) for a free appraisal.`,
   },
   {
-    slug: "14001-2",
+    slug: "sell-gold-alexandria-va",
     title: "Top Places to Sell Gold in Alexandria, VA",
     date: "2025-06-08",
     category: "Locations",
@@ -699,7 +699,7 @@ You can estimate your own pieces before you leave the house using our [gold valu
 Cash for Gold VA operates four Northern Virginia locations. The two nearest to Falls Church are:
 
 - **Annandale**: 7262 Columbia Pike, a short drive south on Route 50 or the Beltway.
-- **Vienna / McLean**: 8453 Tyco Rd, just west toward Tysons.
+- **Vienna / McLean**: 8453 Tyco Rd #C, just west toward Tysons.
 
 Both offer free, no-obligation appraisals, instant payout, and the same transparent, live-price method. We buy gold, silver, platinum, diamonds, designer jewelry, luxury watches, and coins.
 
@@ -913,7 +913,7 @@ You review the offer and decide. There is no obligation and no fee. If you accep
 
 ## Why the process is built this way
 
-Each step exists to make the offer accurate and transparent: sorting and testing establish what you have, weighing establishes how much, and the live price establishes what it is worth today. A buyer who skips steps, or hides them from view, is a buyer to avoid. For help choosing where to sell, see [how to choose a trustworthy buyer](/finding-the-best-cash-for-gold-options). Wondering whether selling makes sense for you at all? See [is cash for gold worth it](/13974-2).
+Each step exists to make the offer accurate and transparent: sorting and testing establish what you have, weighing establishes how much, and the live price establishes what it is worth today. A buyer who skips steps, or hides them from view, is a buyer to avoid. For help choosing where to sell, see [how to choose a trustworthy buyer](/finding-the-best-cash-for-gold-options). Wondering whether selling makes sense for you at all? See [is cash for gold worth it](/is-cash-for-gold-worth-it).
 
 ## Frequently asked questions
 
@@ -964,7 +964,7 @@ Sell to a buyer who tests and verifies the coin in front of you, ties the offer 
 
 ## Where to sell near you
 
-Cash for Gold VA buys American Gold Eagles and other bullion coins at all four Northern Virginia locations: Annandale (7262 Columbia Pike), Manassas (9013 Centreville Rd), Chantilly (14025 Lee Jackson Memorial Hwy), and Vienna/McLean (8453 Tyco Rd). Every store offers free, no-obligation appraisals and instant payout.
+Cash for Gold VA buys American Gold Eagles and other bullion coins at all four Northern Virginia locations: Annandale (7262 Columbia Pike), Manassas (9013 Centreville Rd), Chantilly (14025 Lee Jackson Memorial Hwy), and Vienna/McLean (8453 Tyco Rd #C). Every store offers free, no-obligation appraisals and instant payout.
 
 ## Frequently asked questions
 
@@ -1340,7 +1340,7 @@ Yes. Bring the full collection for a free appraisal. Each piece is evaluated for
 Have an estate collection to sell? [Visit any location](/contact-us-cash-for-gold-locations) for a free appraisal, or [estimate the gold first](/gold-calculator).`,
   },
   {
-    slug: "we-pay-90-for-gold-c",
+    slug: "we-pay-90-percent-for-gold-coins",
     title: "We Pay Up to 90% for Gold Coins: How the Math Works",
     date: "2025-06-06",
     category: "Coins",
@@ -1389,7 +1389,7 @@ Yes. Where a coin carries a collectible premium above its metal value, that is a
 Want to know what your gold coins are worth? [Estimate them now](/gold-calculator) or [visit any location](/contact-us-cash-for-gold-locations) for a free, no-obligation appraisal.`,
   },
   {
-    slug: "13974-2",
+    slug: "is-cash-for-gold-worth-it",
     title: "Is Cash for Gold Worth It? When Selling Makes Sense",
     date: "2025-06-06",
     category: "Guides",
@@ -1516,22 +1516,22 @@ export const getPost = (slug: string) => POSTS.find((p) => p.slug === slug);
 // (storefront photos for location posts, product/category shots for the rest).
 // All images are local landscape JPGs that render well full-bleed.
 const BLOG_COVERS: Record<string, string> = {
-  "create-an-article-about-gold-price-today": "/categories/gold-bars.jpg",
+  "gold-price-today": "/categories/gold-bars.jpg",
   "cash-for-gold-falls-church-va": "/photos/storefront-annandale.jpg",
   "cash-for-gold-nova-falls-church-va": "/photos/storefront-vienna.jpg",
-  "14001-2": "/products/jewelry/goldlot.jpg",
-  "14002-2": "/photos/storefront-chantilly.jpg",
+  "sell-gold-alexandria-va": "/products/jewelry/goldlot.jpg",
+  "cash-for-gold-loudoun-county-va": "/photos/storefront-chantilly.jpg",
   "top-places-to-sell-gold-in-centreville": "/photos/storefront-manassas.jpg",
   "how-to-sell-used-gold-in-chantilly-va": "/photos/storefront-chantilly.jpg",
   "cash-for-gold-close-to-me": "/photos/storefront-annandale.jpg",
   "top-places-to-sell-coins-in-fairfax": "/products/coins/collection.jpg",
   "we-buy-1-oz-american-gold-eagle-coins": "/products/gold/eagle.jpg",
-  "we-pay-90-for-gold-c": "/products/gold/krugerrand.jpg",
+  "we-pay-90-percent-for-gold-coins": "/products/gold/krugerrand.jpg",
   "list-of-top-20-name-brand-in-gold-jewelry": "/products/jewelry/necklace.jpg",
   "we-buy-estate-gold-jewelry": "/products/jewelry/estate-collection.jpg",
   "selling-gold-jewelry": "/products/jewelry/chains.jpg",
   "we-buy-diamonds-more-than-1-carat-with-gia": "/products/diamonds/certified.jpg",
-  "understanding-the-role-of-bullion-banks-2": "/products/gold/bar10oz.jpg",
+  "how-bullion-banks-influence-gold-prices": "/products/gold/bar10oz.jpg",
   "understanding-the-role-of-bullion-banks": "/categories/precious-metals.jpg",
   "current-trends-in-gold-prices-today": "/categories/gold-coins.jpg",
   "exploring-the-allure-of-chantilly-gold": "/products/gold/sovereign.jpg",
@@ -1540,7 +1540,7 @@ const BLOG_COVERS: Record<string, string> = {
   "maximizing-your-profit-with-cash-for-gold": "/products/gold/bar1oz.jpg",
   "maximizing-your-cash-for-gold-experience": "/photos/storefront-vienna.jpg",
   "understanding-the-cash-for-gold-process": "/photos/storefront-chantilly.jpg",
-  "13974-2": "/products/jewelry/mismatched.jpg",
+  "is-cash-for-gold-worth-it": "/products/jewelry/mismatched.jpg",
   "understanding-cash-for-gold-services-reviews": "/photos/storefront-manassas.jpg",
 };
 

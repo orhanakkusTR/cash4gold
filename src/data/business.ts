@@ -146,7 +146,7 @@ export const LOCATIONS: Location[] = [
     name: "Cash for Gold VA, Vienna / McLean",
     phone: "(703) 889-0532",
     phoneHref: "+17038890532",
-    street: "8453 Tyco Rd # C",
+    street: "8453 Tyco Rd #C",
     region: "VA",
     postalCode: "22182",
     geo: { lat: 38.9187, lng: -77.2311 },
