@@ -163,6 +163,16 @@ export function Header() {
                 <span className="md:hidden">Call</span>
               </span>
             </a>
+            {/* Mobile-only quick-call to Chantilly, sits left of the hamburger */}
+            <a
+              href={`tel:${HEADER_PHONE.phoneHref}`}
+              aria-label={`Call ${HEADER_PHONE.phone}`}
+              className="relative flex h-11 w-11 items-center justify-center rounded-full bg-gold-500 text-ink-950 shadow-[var(--shadow-gold)] ring-1 ring-white/40 transition-colors hover:bg-gold-400 sm:hidden"
+            >
+              {/* subtle gold pulse behind the icon */}
+              <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-gold-400/40 [animation-duration:2.5s]" />
+              <Phone className="relative h-5 w-5" strokeWidth={2.5} />
+            </a>
             <button
               onClick={() => setOpen(true)}
               className="rounded-full p-2.5 text-foreground transition-colors hover:bg-gold-50 lg:hidden"

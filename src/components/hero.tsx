@@ -141,9 +141,31 @@ export function Hero() {
           <div className="hero-rise" style={{ animationDelay: "0.5s" }}>
             <Link
               href="/locations"
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-full border-2 border-cream-50/25 px-8 text-base font-semibold text-cream-50 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-gold-400 hover:bg-white/5 hover:text-gold-200"
+              className="group relative inline-flex h-14 w-56 items-center justify-center gap-2 rounded-full text-base font-semibold text-cream-50 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-white/5 hover:text-gold-200"
             >
-              📍 Find a Location
+              {/* Outline drawn as an SVG with a real gap at the top-center, so the
+                  border line is literally interrupted by the "+4 Locations" label
+                  and continues on both sides. */}
+              <svg
+                viewBox="0 0 288 56"
+                fill="none"
+                preserveAspectRatio="none"
+                aria-hidden
+                className="pointer-events-none absolute inset-0 h-full w-full"
+              >
+                <path
+                  d="M206 1 L260 1 A27 27 0 0 1 260 55 L28 55 A27 27 0 0 1 28 1 L82 1"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  vectorEffect="non-scaling-stroke"
+                  className="stroke-[#ffffff40] transition-colors duration-300 group-hover:stroke-[#e9bd3c]"
+                />
+              </svg>
+              <span className="relative inline-flex items-center gap-2">📍 Find a Location</span>
+              {/* the label that fills the gap in the outline */}
+              <span className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-cream-50/75">
+                +4 Locations
+              </span>
             </Link>
           </div>
           <TrustSeal className="absolute right-0 top-1/2 hidden -translate-y-1/2 sm:block lg:right-4 xl:right-12" />
