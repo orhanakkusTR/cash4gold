@@ -10,7 +10,8 @@
 
 export type BlogPost = {
   slug: string; // root-level, no leading slash
-  title: string; // preserved verbatim from the legacy site
+  title: string; // preserved verbatim from the legacy site; also the page H1
+  seoTitle?: string; // distinct <title> for SERPs (≤70 chars, differs from H1)
   date: string; // ISO publish date (legacy date kept)
   category: string; // topical tag for display/filtering
   excerpt: string; // lead/summary
@@ -25,6 +26,7 @@ export const POSTS: BlogPost[] = [
   {
     slug: "gold-price-today",
     title: "Gold Price Today: How to Read It and What It Means When You Sell",
+    seoTitle: "Gold Price Today: What Your Gold Is Worth | Cash for Gold VA",
     date: "2026-02-26",
     category: "Gold Prices",
     excerpt:
@@ -111,6 +113,7 @@ Want to know what your specific pieces are worth at today's price? [Run the numb
   {
     slug: "cash-for-gold-nova-falls-church-va",
     title: "Cash for Gold in Northern Virginia: A Regional Seller's Guide",
+    seoTitle: "Cash for Gold in Northern Virginia | Where to Sell for Cash",
     date: "2025-12-02",
     category: "Locations",
     excerpt:
@@ -149,7 +152,7 @@ Cash for Gold VA has four Northern Virginia stores, so one is usually close by:
 
 - **Annandale**: 7262 Columbia Pike (closest to Falls Church, Bailey's Crossroads, and Springfield)
 - **Vienna / McLean**: 8453 Tyco Rd #C (closest to Tysons, McLean, and Oakton)
-- **Chantilly**: 14025 Lee Jackson Memorial Hwy (closest to Centreville, Fairfax, and Herndon)
+- **Chantilly**: 14025 Lee Jackson Memorial Hwy (closest to Centreville, Fairfax, Herndon, and [Loudoun County](/cash-for-gold-loudoun-county-va))
 - **Manassas**: 9013 Centreville Rd (closest to Gainesville, Bristow, and Prince William County)
 
 Every location buys gold, silver, platinum, diamonds, designer jewelry, luxury watches, and coins, with free appraisals and instant payout.
@@ -174,6 +177,7 @@ Find your closest store and [get a free, no-obligation appraisal](/contact-us-ca
   {
     slug: "finding-the-best-cash-for-gold-options",
     title: "How to Choose a Trustworthy Cash for Gold Buyer",
+    seoTitle: "How to Choose a Cash for Gold Buyer | Cash for Gold VA",
     date: "2025-12-02",
     category: "Guides",
     excerpt:
@@ -229,6 +233,7 @@ Ready to sell with confidence? [Visit any location](/contact-us-cash-for-gold-lo
   {
     slug: "how-bullion-banks-influence-gold-prices",
     title: "How Bullion Banks Influence Gold Prices (and Your Payout)",
+    seoTitle: "How Bullion Banks Influence the Gold Price You Are Paid",
     date: "2025-12-02",
     category: "Precious Metals",
     excerpt:
@@ -275,6 +280,7 @@ Want to see the live price in action? [Estimate your gold now](/gold-calculator)
   {
     slug: "exploring-the-allure-of-chantilly-gold",
     title: "The Enduring Allure of Gold (and Selling It in Chantilly)",
+    seoTitle: "Why Gold Holds Its Value, and Selling It in Chantilly, VA",
     date: "2025-12-02",
     category: "Gold",
     excerpt:
@@ -322,6 +328,7 @@ Ready to turn that allure into cash? [Estimate your gold](/gold-calculator) or [
   {
     slug: "maximizing-your-profit-with-cash-for-gold",
     title: "How to Maximize Your Payout When Selling Gold",
+    seoTitle: "Get the Most Cash When Selling Gold | Cash for Gold VA",
     date: "2025-07-25",
     category: "Guides",
     excerpt:
@@ -347,7 +354,7 @@ Check clasps and inner bands, and sort by karat if you can. Knowing your weight 
 This is where real money hides. Do not sell these by weight:
 
 - **Designer or signed pieces**, which carry a brand premium.
-- **Items with genuine gemstones**, appraised separately from the gold.
+- **Items with genuine gemstones**, appraised separately from the gold — including [GIA-certified diamonds over a carat](/we-buy-diamonds-more-than-1-carat-with-gia).
 - **Antique and estate pieces**, where age and craftsmanship add value.
 - **Recognized bullion coins**, which carry a premium over melt.
 
@@ -381,6 +388,7 @@ Ready to maximize your payout? [Estimate your gold](/gold-calculator) or [visit 
   {
     slug: "we-buy-diamonds-more-than-1-carat-with-gia",
     title: "We Buy Diamonds Over 1 Carat with GIA Certification",
+    seoTitle: "Sell GIA-Certified Diamonds Over 1 Carat | Cash for Gold VA",
     date: "2025-07-25",
     category: "Diamonds",
     excerpt:
@@ -442,6 +450,7 @@ Selling a diamond over one carat? [Visit any location](/contact-us-cash-for-gold
   {
     slug: "understanding-the-role-of-bullion-banks",
     title: "What Is a Bullion Bank? The Backbone of the Gold Market",
+    seoTitle: "What Is a Bullion Bank and Why It Matters for Sellers",
     date: "2025-06-08",
     category: "Precious Metals",
     excerpt:
@@ -492,6 +501,7 @@ Curious what your gold is worth at today's market price? [Estimate it here](/gol
   {
     slug: "cash-for-gold-close-to-me",
     title: "Cash for Gold Close to Me: How to Find a Trusted Buyer Nearby",
+    seoTitle: "Cash for Gold Close to Me | Find a Trusted Local Buyer",
     date: "2025-06-08",
     category: "Guides",
     excerpt:
@@ -556,6 +566,7 @@ Find the location closest to you and [get a free, no-obligation appraisal](/cont
   {
     slug: "cash-for-gold-loudoun-county-va",
     title: "Cash for Gold in Loudoun County, VA: A Local Seller's Guide",
+    seoTitle: "Cash for Gold in Loudoun County, VA | Sell for Top Cash",
     date: "2025-06-08",
     category: "Locations",
     excerpt:
@@ -615,6 +626,7 @@ Find out what your gold is worth in Loudoun County. [Estimate it now](/gold-calc
   {
     slug: "sell-gold-alexandria-va",
     title: "Top Places to Sell Gold in Alexandria, VA",
+    seoTitle: "Sell Gold in Alexandria, VA | Best Prices Near You",
     date: "2025-06-08",
     category: "Locations",
     excerpt:
@@ -666,13 +678,14 @@ Curious what your gold is worth in Alexandria? [Run our calculator](/gold-calcul
   {
     slug: "cash-for-gold-falls-church-va",
     title: "Cash for Gold in Falls Church, VA: Where to Sell and What to Expect",
+    seoTitle: "Cash for Gold in Falls Church, VA | Sell Gold for Cash",
     date: "2025-06-08",
     category: "Locations",
     excerpt:
       "Looking to sell gold in Falls Church, VA? Here is how local appraisals work, what affects your payout, and the two Cash for Gold VA stores closest to Falls Church for a free, same-day offer.",
     body: `If you live in Falls Church and have gold sitting in a drawer, you have more options than the national mail-in services advertising online. Selling locally means you watch your gold get tested and weighed, hear the offer explained out loud, and walk out with cash the same day. This guide covers how that works in Falls Church, what drives your payout, and where to go.
 
-We have appraised gold for Falls Church residents for years, and the pattern is always the same: people are surprised both by how simple the process is and by how much a small pile of broken chains can be worth at today's prices.
+We have appraised gold for Falls Church residents for years, and the pattern is always the same: people are surprised both by how simple [the process](/understanding-the-cash-for-gold-process) is and by how much a small pile of broken chains can be worth at today's prices.
 
 ## Why sell gold in Falls Church locally
 
@@ -731,6 +744,7 @@ Ready to find out what your gold is worth in Falls Church? [Get an instant estim
   {
     slug: "top-places-to-sell-gold-in-centreville",
     title: "Top Places to Sell Gold in Centreville, VA",
+    seoTitle: "Sell Gold in Centreville, VA | Best Local Buyers",
     date: "2025-06-08",
     category: "Locations",
     excerpt:
@@ -784,6 +798,7 @@ Ready to see what your gold is worth in Centreville? [Estimate it now](/gold-cal
   {
     slug: "current-trends-in-gold-prices-today",
     title: "What's Driving Gold Prices: Current Trends Explained",
+    seoTitle: "Current Gold Price Trends and What They Mean for Sellers",
     date: "2025-06-07",
     category: "Gold Prices",
     excerpt:
@@ -833,6 +848,7 @@ Curious what today's prices mean for your gold? [Estimate it now](/gold-calculat
   {
     slug: "finding-the-best-cash-for-gold-offers",
     title: "How to Get the Best Cash for Gold Offer",
+    seoTitle: "How to Get the Best Cash for Gold Offer | Cash for Gold VA",
     date: "2025-06-07",
     category: "Guides",
     excerpt:
@@ -883,6 +899,7 @@ Ready to see your number? [Estimate your gold](/gold-calculator) or [visit any l
   {
     slug: "understanding-the-cash-for-gold-process",
     title: "The Cash for Gold Process, Step by Step",
+    seoTitle: "How Cash for Gold Works, Step by Step | Cash for Gold VA",
     date: "2025-06-07",
     category: "Guides",
     excerpt:
@@ -931,6 +948,7 @@ Ready to start? [Estimate your gold](/gold-calculator) or [visit any location](/
   {
     slug: "we-buy-1-oz-american-gold-eagle-coins",
     title: "We Buy 1 oz American Gold Eagle Coins: How They Are Valued",
+    seoTitle: "Sell 1 oz American Gold Eagle Coins | Cash for Gold VA",
     date: "2025-06-07",
     category: "Coins",
     excerpt:
@@ -985,6 +1003,7 @@ Ready to sell your Gold Eagles? [Estimate the value](/gold-calculator) or [visit
   {
     slug: "maximizing-your-cash-for-gold-experience",
     title: "What to Expect: A Smooth, Stress-Free Cash for Gold Sale",
+    seoTitle: "What to Expect at a Cash for Gold Sale | Cash for Gold VA",
     date: "2025-06-07",
     category: "Guides",
     excerpt:
@@ -1044,6 +1063,7 @@ Ready for an easy sale? [Estimate your gold first](/gold-calculator) or [visit a
   {
     slug: "top-places-to-sell-coins-in-fairfax",
     title: "Top Places to Sell Coins in Fairfax, VA",
+    seoTitle: "Sell Coins in Fairfax, VA | Bullion and Collectible Buyers",
     date: "2025-06-07",
     category: "Coins",
     excerpt:
@@ -1100,6 +1120,7 @@ Have coins to sell in Fairfax? [Visit our Chantilly store](/contact-us-cash-for-
   {
     slug: "list-of-top-20-name-brand-in-gold-jewelry",
     title: "Top 20 Name Brands in Gold Jewelry (and Why They Sell for More)",
+    seoTitle: "Top 20 Designer Gold Jewelry Brands That Sell for More",
     date: "2025-06-06",
     category: "Jewelry",
     excerpt:
@@ -1172,6 +1193,7 @@ Have a designer piece to sell? [Visit any location](/contact-us-cash-for-gold-lo
   {
     slug: "how-to-sell-used-gold-in-chantilly-va",
     title: "How to Sell Used Gold in Chantilly, VA: A Step-by-Step Guide",
+    seoTitle: "How to Sell Used Gold in Chantilly, VA | Cash for Gold VA",
     date: "2025-06-06",
     category: "Locations",
     excerpt:
@@ -1233,6 +1255,7 @@ Ready to turn used gold into cash in Chantilly? [Estimate your items](/gold-calc
   {
     slug: "understanding-cash-for-gold-services-reviews",
     title: "Using Reviews to Find a Trustworthy Cash for Gold Buyer",
+    seoTitle: "How to Read Cash for Gold Reviews Before You Sell",
     date: "2025-06-06",
     category: "Guides",
     excerpt:
@@ -1293,6 +1316,7 @@ Ready to sell to a buyer you can trust? [Visit any location](/contact-us-cash-fo
   {
     slug: "we-buy-estate-gold-jewelry",
     title: "We Buy Estate Gold Jewelry: How Inherited Pieces Are Valued",
+    seoTitle: "Sell Estate and Inherited Gold Jewelry | Cash for Gold VA",
     date: "2025-06-06",
     category: "Jewelry",
     excerpt:
@@ -1342,6 +1366,7 @@ Have an estate collection to sell? [Visit any location](/contact-us-cash-for-gol
   {
     slug: "we-pay-90-percent-for-gold-coins",
     title: "We Pay Up to 90% for Gold Coins: How the Math Works",
+    seoTitle: "We Pay Up to 90% for Gold Coins | Cash for Gold VA",
     date: "2025-06-06",
     category: "Coins",
     excerpt:
@@ -1391,6 +1416,7 @@ Want to know what your gold coins are worth? [Estimate them now](/gold-calculato
   {
     slug: "is-cash-for-gold-worth-it",
     title: "Is Cash for Gold Worth It? When Selling Makes Sense",
+    seoTitle: "Is Cash for Gold Worth It? | Cash for Gold VA",
     date: "2025-06-06",
     category: "Guides",
     excerpt:
@@ -1451,6 +1477,7 @@ Wondering what your gold is worth? [Estimate it now](/gold-calculator) or [visit
   {
     slug: "selling-gold-jewelry",
     title: "How to Sell Gold Jewelry: A Simple Guide to a Fair Price",
+    seoTitle: "How to Sell Gold Jewelry for a Fair Price | Cash for Gold VA",
     date: "2026-01-15",
     category: "Jewelry",
     excerpt:

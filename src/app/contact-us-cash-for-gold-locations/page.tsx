@@ -97,8 +97,76 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Helpful guidance — what to bring, what to expect, areas served */}
+      <section className="bg-cream-100 py-16 sm:py-20">
+        <div className="container-page">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
+            <Reveal>
+              <div>
+                <h2 className="font-display text-2xl font-extrabold text-foreground">How to reach us</h2>
+                <p className="mt-4 text-muted">
+                  Call the store nearest you using the numbers on the cards above, or simply walk in
+                  during business hours, no appointment is ever required. A quick phone call is the
+                  fastest way to confirm whether we buy a specific item or to get a ballpark on what
+                  it may be worth before you make the trip. Every store is staffed by trained,
+                  in-house buyers who appraise gold, silver, platinum, diamonds, fine jewelry, luxury
+                  watches, and coins on the spot.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.08}>
+              <div>
+                <h2 className="font-display text-2xl font-extrabold text-foreground">What to bring</h2>
+                <ul className="mt-4 space-y-2.5 text-muted">
+                  <li className="flex items-start gap-2.5">
+                    <MapPin className="mt-1 h-4 w-4 shrink-0 text-gold-500" />
+                    A valid government-issued photo ID (required for any purchase).
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <MapPin className="mt-1 h-4 w-4 shrink-0 text-gold-500" />
+                    The items you would like to sell, broken or tangled pieces are welcome.
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <MapPin className="mt-1 h-4 w-4 shrink-0 text-gold-500" />
+                    Any paperwork you have, GIA or IGI diamond reports, original boxes, or
+                    receipts, since documentation can increase a designer or certified item&apos;s value.
+                  </li>
+                </ul>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.04}>
+              <div>
+                <h2 className="font-display text-2xl font-extrabold text-foreground">What to expect</h2>
+                <p className="mt-4 text-muted">
+                  Your appraisal is free, friendly, and carries no obligation. We test and weigh every
+                  item in front of you, explain how we reach each number, and base offers on current
+                  market spot prices, never a lowball flat rate. If you accept, you are paid in cash
+                  immediately. If you would rather think it over, that is completely fine, there is
+                  never any pressure to sell.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.12}>
+              <div>
+                <h2 className="font-display text-2xl font-extrabold text-foreground">Areas we serve</h2>
+                <p className="mt-4 text-muted">
+                  Our four stores in Annandale, Manassas, Chantilly, and Vienna/McLean welcome sellers
+                  from across Northern Virginia, including Fairfax, Centreville, Falls Church,
+                  Arlington, Alexandria, Burke, Springfield, Reston, Herndon, and the surrounding
+                  Fairfax, Prince William, and Loudoun County communities. Wherever you are in the
+                  region, there is a Cash for Gold VA location nearby.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* Accreditations, above the footer */}
-      <section className="container-page pb-16">
+      <section className="container-page py-16">
         <Reveal>
           <CredentialsStrip />
         </Reveal>

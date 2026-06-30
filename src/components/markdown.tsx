@@ -1,5 +1,15 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { SHOW_CALCULATOR } from "@/data/business";
+
+// While the /gold-calculator estimator is hidden behind the launch flag, the
+// route 307-redirects to "/". Blog bodies link to it heavily, so rewrite those
+// in-body links to a live, relevant page — that way no internal link points at
+// a redirect. Restores automatically when SHOW_CALCULATOR is re-enabled.
+function resolveHref(href?: string): string | undefined {
+  if (!SHOW_CALCULATOR && href === "/gold-calculator") return "/what-we-buy";
+  return href;
+}
 
 /**
  * Renders a markdown string with the site's prose styling (white + gold).
@@ -23,7 +33,16 @@ export function Markdown({ children }: { children: string }) {
         [&_table]:mt-6 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:border-hairline [&_th]:bg-cream-100 [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_td]:border [&_td]:border-hairline [&_td]:px-3 [&_td]:py-2
       "
     >
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          a: ({ href, children, ...props }) => (
+            <a href={resolveHref(href)} {...props}>{children}</a>
+          ),
+        }}
+      >
+        {children}
+      </ReactMarkdown>
     </div>
   );
 }

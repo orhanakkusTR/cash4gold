@@ -68,8 +68,12 @@ export function CategoryCard({
         </div>
         <p className="mt-2 text-sm leading-relaxed text-muted">{short}</p>
       </div>
-      {/* Full-card click target, sits below the phone button (z-20) */}
-      <Link href={href} aria-label={title} className="absolute inset-0 z-10" />
+      {/* Full-card click target, sits below the phone button (z-20). The sr-only
+          text gives the link real anchor text (crawlable + screen-reader name)
+          without affecting the visual design. */}
+      <Link href={href} className="absolute inset-0 z-10">
+        <span className="sr-only">{title} in Northern Virginia</span>
+      </Link>
     </div>
   );
 }

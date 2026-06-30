@@ -33,9 +33,10 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     const post = getPost(category);
     if (post) {
       return {
-        // `absolute` drops the " | Cash for Gold VA" suffix so blog titles stay
-        // under ~70 chars (the suffix was being truncated in SERPs anyway).
-        title: { absolute: post.title },
+        // `absolute` drops the global " | Cash for Gold VA" suffix. We use a
+        // dedicated `seoTitle` (distinct from the H1 `post.title`, ≤70 chars) so
+        // the <title> is not a duplicate of the H1 and is not truncated in SERPs.
+        title: { absolute: post.seoTitle ?? post.title },
         description: post.excerpt,
         alternates: { canonical: `/${post.slug}` },
         openGraph: { title: post.title, description: post.excerpt, type: "article", images: ["/og/og-image.jpg"] },
@@ -115,7 +116,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                   </div>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{s.short}</p>
                 </div>
-                <Link href={`/${cat.slug}/${s.slug}`} aria-label={s.name} className="absolute inset-0 z-10" />
+                <Link href={`/${cat.slug}/${s.slug}`} className="absolute inset-0 z-10">
+                  <span className="sr-only">Sell {s.name} in Northern Virginia</span>
+                </Link>
               </div>
             </Reveal>
           ))}
