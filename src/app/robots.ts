@@ -11,6 +11,8 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ["/api/", "/admin-adam"],
     },
     sitemap: `${SITE.domain}/sitemap.xml`,
-    host: SITE.domain,
+    // NOTE: no `Host:` directive — it's a legacy Yandex-only field that Google
+    // doesn't support and flags as an "unsupported directive" warning in Search
+    // Console. Canonical host is enforced via the www→apex redirect instead.
   };
 }

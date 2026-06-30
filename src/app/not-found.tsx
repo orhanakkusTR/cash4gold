@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button";
 import { CATEGORIES } from "@/data/business";
+import { NotFoundRedirect } from "@/components/not-found-redirect";
 
 export default function NotFound() {
   return (
@@ -14,6 +15,7 @@ export default function NotFound() {
         <div className="mt-8">
           <ButtonLink href="/" size="lg">Back to home</ButtonLink>
         </div>
+        <NotFoundRedirect seconds={11} />
         <div className="mt-10 flex flex-wrap justify-center gap-2.5">
           {CATEGORIES.map((c) => (
             <Link key={c.slug} href={`/${c.slug}`} className="rounded-full border border-cream-50/15 px-4 py-2 text-sm text-cream-100/80 transition-colors hover:border-gold-400/50 hover:text-gold-200">
