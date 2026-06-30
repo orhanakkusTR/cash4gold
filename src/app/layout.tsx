@@ -7,6 +7,8 @@ import { Footer } from "@/components/footer";
 import { LocationsFab } from "@/components/locations-fab";
 import { LivePriceTicker } from "@/components/live-price-ticker";
 import { OrganizationJsonLd } from "@/components/json-ld";
+import { Analytics } from "@/components/analytics";
+import { ChromeGate } from "@/components/chrome-gate";
 
 // Typography refreshed to match omegaboyler.com.tr: Manrope (display) + Inter (body).
 const display = Manrope({
@@ -79,11 +81,16 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-cream-50 text-foreground">
         <OrganizationJsonLd />
-        <LivePriceTicker />
-        <Header />
+        <Analytics />
+        <ChromeGate>
+          <LivePriceTicker />
+          <Header />
+        </ChromeGate>
         <main className="flex-1">{children}</main>
-        <Footer />
-        <LocationsFab />
+        <ChromeGate>
+          <Footer />
+          <LocationsFab />
+        </ChromeGate>
       </body>
     </html>
   );
