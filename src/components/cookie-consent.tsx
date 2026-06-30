@@ -39,8 +39,9 @@ function applyConsent(value: "granted" | "denied") {
   });
 }
 
-// "hidden" until mounted (so SSR renders nothing → no hydration mismatch),
-// then "banner" on first visit or "button" once a choice is stored.
+// "hidden" until mounted (so SSR renders nothing → no hydration mismatch).
+// First visit → "banner". After a choice: "hidden" if accepted (nothing shown),
+// "button" if declined (a small re-open bubble so they can change their mind).
 type View = "hidden" | "banner" | "button";
 
 export function CookieConsent() {
@@ -54,9 +55,8 @@ export function CookieConsent() {
     } catch {
       /* storage blocked — show the banner */
     }
-    const hasChoice = saved === "granted" || saved === "denied";
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setView(hasChoice ? "button" : "banner");
+    setView(saved === "granted" ? "hidden" : saved === "denied" ? "button" : "banner");
   }, []);
 
   function choose(value: "granted" | "denied") {
@@ -66,7 +66,8 @@ export function CookieConsent() {
       /* ignore */
     }
     applyConsent(value);
-    setView("button");
+    // Accepted → hide everything. Declined → keep a re-open bubble.
+    setView(value === "granted" ? "hidden" : "button");
   }
 
   if (view === "hidden") return null;
@@ -82,9 +83,9 @@ export function CookieConsent() {
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={() => setView("banner")}
             aria-label="Cookie settings"
-            className="fixed bottom-5 left-5 z-[60] flex h-11 w-11 items-center justify-center rounded-full border border-cream-50/15 bg-ink-950/80 text-gold-300 shadow-lg shadow-ink-950/30 backdrop-blur-sm transition-colors hover:border-gold-400/60 hover:text-gold-200 md:bottom-6 md:left-6"
+            className="fixed bottom-4 left-4 z-[60] flex h-9 w-9 items-center justify-center rounded-full border border-cream-50/15 bg-ink-950/80 text-gold-300 shadow-lg shadow-ink-950/30 backdrop-blur-sm transition-colors hover:border-gold-400/60 hover:text-gold-200"
           >
-            <Cookie className="h-5 w-5" />
+            <Cookie className="h-4 w-4" />
           </motion.button>
         )}
       </AnimatePresence>
