@@ -164,6 +164,9 @@ const nextConfig: NextConfig = {
       // GSC). The merged-away slug 301s to the post that absorbed its content.
       { source: "/how-bullion-banks-influence-gold-prices", destination: "/understanding-the-role-of-bullion-banks", permanent: true },
       { source: "/current-trends-in-gold-prices-today", destination: "/gold-price-today", permanent: true },
+      { source: "/finding-the-best-cash-for-gold-offers", destination: "/maximizing-your-profit-with-cash-for-gold", permanent: true },
+      { source: "/understanding-cash-for-gold-services-reviews", destination: "/finding-the-best-cash-for-gold-options", permanent: true },
+      { source: "/maximizing-your-cash-for-gold-experience", destination: "/understanding-the-cash-for-gold-process", permanent: true },
     ];
   },
 };
