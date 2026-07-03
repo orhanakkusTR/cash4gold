@@ -142,6 +142,18 @@ const nextConfig: NextConfig = {
       { source: "/we-buy-gold-watches", destination: "/watches", permanent: true },
       { source: "/watches/sell-rolex-watch", destination: "/watches/sell-rolex", permanent: true },
       { source: "/watches/sell-rolex-watch/sell-rolex-we-buy-gold-watches-norther-va", destination: "/watches/sell-rolex", permanent: true },
+
+      // Legacy WordPress pages surfaced by GSC's "Not found (404)" report
+      // (2026-07). The old site served content under a `/home/` prefix. Only
+      // the genuine content pages are redirected here; the report's remaining
+      // items (spam .mp4 hashes, /player, /wp-content, /wp-*.php, wildcards)
+      // are intentionally left to 404.
+      { source: "/home/sell-my-gold-and-silver-bullion-bank-chantilly-va-2", destination: "/locations/chantilly", permanent: true },
+      { source: "/home/sell-my-gold-and-silver-bullion-bank-chantilly-va-2/feed", destination: "/locations/chantilly", permanent: true },
+      // GSC truncates the slug at "…-gold-c"; wildcard covers the full slug
+      // (…coins / …cash / etc.).
+      { source: "/we-pay-90-for-gold-:slug", destination: "/precious-metals/sell-gold", permanent: true },
+      { source: "/home", destination: "/", permanent: true },
     ];
   },
 };
