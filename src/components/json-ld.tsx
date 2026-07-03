@@ -1,4 +1,4 @@
-import { SITE, LOCATIONS, type Location } from "@/data/business";
+import { SITE, type Location } from "@/data/business";
 
 function JsonLd({ data }: { data: object }) {
   return (
@@ -50,28 +50,32 @@ function localBusiness(loc: Location) {
   };
 }
 
-/** Site-wide Organization + all locations. Rendered once in root layout. */
+/**
+ * Site-wide Organization. Rendered once in root layout on every page.
+ *
+ * Note: we deliberately do NOT spread the individual location (JewelryStore)
+ * nodes here. Each location's business schema — including its aggregateRating —
+ * lives on its own page via <LocationJsonLd>. Emitting the same
+ * `@id` (…/locations/<slug>#business) both here and on the location page made
+ * Google merge the two nodes into one carrying two aggregateRatings, which
+ * triggered the "review has multiple aggregate ratings" rich-result error.
+ */
 export function OrganizationJsonLd() {
   return (
     <JsonLd
       data={{
         "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": `${SITE.domain}#org`,
-            name: SITE.name,
-            url: SITE.domain,
-            logo: `${SITE.domain}/brand/logo.png`,
-            sameAs: Object.values(SITE.social),
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: SITE.rating.value,
-              reviewCount: SITE.rating.count,
-            },
-          },
-          ...LOCATIONS.map(localBusiness),
-        ],
+        "@type": "Organization",
+        "@id": `${SITE.domain}#org`,
+        name: SITE.name,
+        url: SITE.domain,
+        logo: `${SITE.domain}/brand/logo.png`,
+        sameAs: Object.values(SITE.social),
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: SITE.rating.value,
+          reviewCount: SITE.rating.count,
+        },
       }}
     />
   );
