@@ -163,7 +163,7 @@ Wherever you sell in Northern Virginia, look for these signs:
 
 Cash for Gold VA has four Northern Virginia stores, so one is usually close by:
 
-- **Annandale**: 7262 Columbia Pike (closest to Falls Church, Bailey's Crossroads, and Springfield)
+- **Annandale**: 7262 Columbia Pike (closest to [Falls Church](/cash-for-gold-falls-church-va), Bailey's Crossroads, and Springfield)
 - **Vienna / McLean**: 8453 Tyco Rd #C (closest to Tysons, McLean, and Oakton)
 - **Chantilly**: 14025 Lee Jackson Memorial Hwy (closest to Centreville, Fairfax, Herndon, and [Loudoun County](/cash-for-gold-loudoun-county-va))
 - **Manassas**: 9013 Centreville Rd (closest to Gainesville, Bristow, and Prince William County)
@@ -604,9 +604,20 @@ A lighter 18k piece can easily outvalue a heavier 10k one. To estimate your own 
 
 If you hold recognized bullion coins like the American Gold Eagle, or designer and antique jewelry, those are often worth more than their melt value. Coins carry a premium over spot, and brand or gemstone value can add significantly to a piece. Do not sell those by weight alone. Bring them in for a full appraisal.
 
+## What Loudoun County sellers bring in
+
+Loudoun is one of the most affluent counties in the country, and that shows in what comes across our counter. Alongside everyday scrap gold, we regularly buy:
+
+- **Designer and signed jewelry** — Tiffany, Cartier, David Yurman and similar brands, which carry a premium over their metal weight.
+- **Luxury watches** — Rolex, Omega, and other Swiss brands, valued on brand, model, and condition, not melt.
+- **Estate and inherited collections** from Leesburg and Middleburg families, often a mix of gold, coins, and gemstones best appraised piece by piece.
+- **Investment bullion** — Gold Eagles, bars, and rounds picked up during the region's strong precious-metals interest.
+
+If you are downsizing, settling an estate, or simply cashing in pieces you no longer wear, bringing the whole lot lets us find the value a weight-only buyer would miss.
+
 ## The nearest store to Loudoun County
 
-The Cash for Gold VA location closest to Loudoun County is our **Chantilly** store at 14025 Lee Jackson Memorial Hwy, an easy drive south from Sterling, Ashburn, and the Route 50 corridor. We also have stores in Vienna/McLean, Annandale, and Manassas. Every location offers free, no-obligation appraisals, instant payout, and the same transparent method, and we buy gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
+The Cash for Gold VA location closest to Loudoun County is our **Chantilly** store at 14025 Lee Jackson Memorial Hwy (Route 50), just over the county line. It is a straightforward drive for most of Loudoun: roughly 15 to 20 minutes from Ashburn and South Riding, 20 to 25 from Sterling and Leesburg via the Dulles Greenway or Route 7, and an easy hop from the Route 50 corridor through Aldie and Arcola. If Vienna/McLean, Annandale, or Manassas is more convenient, all four stores use the same transparent method. Every location offers free, no-obligation appraisals, instant payout, and buys gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
 
 ## Frequently asked questions
 
@@ -621,6 +632,9 @@ No. Walk-ins are welcome and appraisals are always free, whether or not you choo
 
 **Can I estimate my gold before visiting?**
 Yes. Our [calculator](/gold-calculator) gives a realistic range from the live price so you know roughly what to expect.
+
+**Do you buy more than scrap gold?**
+Yes. Along with gold, silver, and platinum, we buy designer jewelry, luxury watches, diamonds, and bullion coins — items common in Loudoun estates that are often worth well above their metal value.
 
 Find out what your gold is worth in Loudoun County. [Estimate it now](/gold-calculator) or [visit our Chantilly store](/contact-us-cash-for-gold-locations) for a free appraisal.`,
   },
@@ -690,7 +704,7 @@ We have appraised gold for Falls Church residents for years, and the pattern is 
 
 ## Why sell gold in Falls Church locally
 
-Falls Church sits in the heart of Northern Virginia, minutes from several established storefront buyers. Selling in person has real advantages over mailing your gold away:
+Falls Church sits in the heart of [Northern Virginia](/cash-for-gold-nova-falls-church-va), minutes from several established storefront buyers. Selling in person has real advantages over mailing your gold away:
 
 - **You keep control of your items** until you accept an offer. Nothing leaves your sight.
 - **You get paid on the spot**, in cash, the same visit.
@@ -891,6 +905,22 @@ A 1 oz American Gold Eagle contains exactly one troy ounce of pure gold, though 
 - **Bullion premium.** A modest amount above melt that reflects the coin's minting, recognition, and demand. Because Eagles are so liquid, this premium is usually small and predictable.
 
 Unlike rare collectible coins, a standard bullion Eagle is valued mainly on its gold content plus that premium, not on numismatic rarity. You can estimate the melt portion at any time with our [gold value calculator](/gold-calculator) by entering one troy ounce of pure gold.
+
+**A quick example.** If gold is trading at $2,400 per troy ounce, the melt value of a 1 oz Eagle is about $2,400, and a typical bullion premium adds a modest amount on top. Because the coin is so liquid, a fair same-day offer tracks that melt figure closely and moves with the live market minute to minute — you should never see a deep discount to melt on a standard Eagle.
+
+## The coin's specs, and how authenticity is verified
+
+Part of what makes the Gold Eagle so easy to sell is that its specifications are fixed and public, so a fake is easy to catch. A genuine 1 oz Gold Eagle is:
+
+- **22 karat (91.67% gold)**, alloyed with silver and copper — which is why it weighs about 33.9 grams in total while still containing a full troy ounce (31.1 g) of pure gold.
+- **32.7 mm in diameter and 2.87 mm thick**, with a reeded edge.
+- Struck with the classic **Augustus Saint-Gaudens Liberty** design on the front and an eagle motif on the back that varies by year.
+
+A trustworthy buyer confirms these in front of you: precise weight on a calibrated scale, exact dimensions, and often an electronic conductivity test. Because the specs are so exact, an off-weight or off-size coin is spotted immediately — one more reason Eagles sell quickly and at a fair price.
+
+## Fractional Eagles and related coins
+
+Gold Eagles also come in **1/2 oz, 1/4 oz, and 1/10 oz** sizes. Each is valued the same way — its gold content at the live spot price plus a premium — though the premium as a percentage is usually higher on the smaller coins. We also buy the 24-karat **American Gold Buffalo**, **Krugerrands**, **Canadian Maple Leafs**, and other recognized bullion coins on the same transparent, live-price basis.
 
 ## What can add or subtract value
 
