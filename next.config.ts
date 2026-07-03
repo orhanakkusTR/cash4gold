@@ -158,6 +158,12 @@ const nextConfig: NextConfig = {
       // (The other "discovered, not indexed" junk — /13974-2, /14001-2,
       // /14002-2, /create-an-article-about-gold-price-today — stays 404.)
       { source: "/understanding-the-role-of-bullion-banks-2", destination: "/understanding-the-role-of-bullion-banks", permanent: true },
+
+      // Blog consolidation (2026-07) — near-duplicate posts merged into a
+      // stronger canonical to end cannibalization ("Crawled, not indexed" in
+      // GSC). The merged-away slug 301s to the post that absorbed its content.
+      { source: "/how-bullion-banks-influence-gold-prices", destination: "/understanding-the-role-of-bullion-banks", permanent: true },
+      { source: "/current-trends-in-gold-prices-today", destination: "/gold-price-today", permanent: true },
     ];
   },
 };
