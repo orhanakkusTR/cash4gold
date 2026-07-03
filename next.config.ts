@@ -154,6 +154,10 @@ const nextConfig: NextConfig = {
       // (…coins / …cash / etc.).
       { source: "/we-pay-90-for-gold-:slug", destination: "/precious-metals/sell-gold", permanent: true },
       { source: "/home", destination: "/", permanent: true },
+      // Old duplicate ("-2") of the live blog post — consolidate to canonical.
+      // (The other "discovered, not indexed" junk — /13974-2, /14001-2,
+      // /14002-2, /create-an-article-about-gold-price-today — stays 404.)
+      { source: "/understanding-the-role-of-bullion-banks-2", destination: "/understanding-the-role-of-bullion-banks", permanent: true },
     ];
   },
 };
