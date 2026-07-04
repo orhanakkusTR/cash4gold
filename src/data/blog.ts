@@ -412,6 +412,14 @@ The Gemological Institute of America is the most respected diamond grading autho
 
 If your diamond is over one carat and GIA certified, bring the report. It directly supports a higher, faster offer.
 
+## GIA versus other grading labs
+
+Not all certificates carry the same weight. GIA is the strictest and most consistent grading lab, which is why its reports support the strongest offers. Reports from some other labs — certain EGL grades, for example — are often graded more loosely, meaning a stone may not be quite the color or clarity the paper claims. A knowledgeable buyer accounts for this, so if your stone has a non-GIA report, expect it to be re-evaluated in person rather than taken at face value. That does not automatically mean a lower offer; it means the grade is confirmed independently.
+
+## Natural versus lab-grown diamonds
+
+This distinction now matters enormously to your payout. **Natural diamonds** hold meaningful resale value. **Lab-grown diamonds**, though physically and chemically similar, have fallen dramatically in price as production has scaled, and they resell for only a small fraction of their original retail cost. A GIA report states plainly whether a stone is natural or laboratory-grown, which is one more reason certification helps: it settles the single biggest value question up front. If you are not sure which you have, an in-person test can confirm it before any offer is made.
+
 ## The 4 Cs and your payout
 
 A diamond's value is driven by the four characteristics a GIA report grades:
@@ -1102,6 +1110,17 @@ If your piece is signed by one of these, set it aside for an individual appraisa
 
 For unsigned or broken gold, you can estimate the metal value with our [gold value calculator](/gold-calculator). For designer pieces, bring them in for a full appraisal.
 
+## Spotting a genuine piece from a fake
+
+Popular houses are widely counterfeited, so authentication is part of a fair appraisal. Genuine designer jewelry almost always shows:
+
+- **A crisp, correctly spelled maker's mark** — counterfeits often have shallow, uneven, or misspelled stamps.
+- **A matching metal hallmark** (750 for 18k, 585 for 14k) alongside the brand signature.
+- **Serial or model numbers** on many Cartier, Van Cleef, and Tiffany pieces, which can be verified.
+- **Weight and finish consistent with the house's standards** — authentic pieces feel substantial and are precisely finished.
+
+A buyer who knows these brands checks all of this in front of you. Bringing original boxes, receipts, or service papers makes authentication faster and supports a higher offer.
+
 ## Where to sell designer gold jewelry
 
 Cash for Gold VA buys designer and luxury jewelry at all four Northern Virginia locations: Annandale, Manassas, Chantilly, and Vienna/McLean. Every store offers free, no-obligation appraisals and instant payout, and we evaluate brand and gemstone value, not just metal weight.
@@ -1204,6 +1223,18 @@ An inherited piece can hold value in several layers at once:
 
 A buyer who only weighs the gold will miss most of this. Estate pieces deserve a full, layered appraisal.
 
+## Recognizing valuable eras and styles
+
+Age is one of the layers that can lift an estate piece above its metal value, and certain periods are especially sought after:
+
+- **Victorian (1837–1901)** — intricate, romantic designs, often in high-karat gold, sometimes with seed pearls or mourning motifs.
+- **Edwardian (1901–1915)** — delicate, lacy platinum-and-gold work set with diamonds.
+- **Art Deco (1920s–1930s)** — bold geometry and strong colored-stone contrasts; among the most collectible of all.
+- **Retro (1940s)** — large, sculptural rose- and yellow-gold pieces.
+- **Mid-century and signed modernist** work, which can carry both designer and period value.
+
+You do not need to identify the era yourself — that is our job — but knowing these pieces are not "just old gold" helps explain why an estate appraisal is worth doing properly.
+
 ## How to sell an estate collection
 
 1. **Keep everything together** at first, even pieces that look worn or broken. Let the appraisal sort value, not your guesswork.
@@ -1217,6 +1248,10 @@ For the plain gold portion of a collection, you can get a quick estimate with ou
 ## Why sell to a local storefront
 
 Estate collections are exactly the kind of items you do not want to mail away. A local buyer lets you keep the pieces until you accept an offer, asks questions in person, and pays the same day. Cash for Gold VA buys estate gold jewelry, gemstones, designer pieces, and coins at all four Northern Virginia locations, with free, no-obligation appraisals and instant payout.
+
+## Settling an estate fairly
+
+When a collection is being divided among family, a documented, transparent appraisal matters even more. We are happy to value each piece individually and itemize the offer, so heirs can see exactly what each item is worth before deciding what to sell and what to keep. There is never any obligation to sell the whole collection — many families sell the pieces no one will wear and keep the ones with sentimental value.
 
 ## Frequently asked questions
 
@@ -1263,6 +1298,19 @@ A worked example: a 1 oz gold coin at a $2,400 spot price has roughly $2,400 in 
 - **Coin type and recognition.** Widely traded bullion coins command the highest percentages.
 - **Condition and authenticity.** Coins are tested and verified; damaged or questionable pieces may be valued closer to pure melt.
 - **Collectible premium.** Proof, graded, or key-date coins can be worth more than melt. Bring any certificates.
+
+## Which coins pay closest to their full value
+
+As a rough guide, the more recognized and liquid the coin, the higher the share of melt you can expect:
+
+| Coin type | Recognition | Typical payout basis |
+|---|---|---|
+| American Gold Eagle, Maple Leaf, Krugerrand | Instantly recognized worldwide | Very high share of melt, plus premium |
+| Generic gold bars and rounds | Recognized, must verify | High share of melt |
+| Pre-1933 U.S. gold ($5 / $10 / $20) | Metal plus collectible value | Higher of melt or numismatic |
+| Scrap and broken gold jewelry | Must be refined | Lower share (refining cost) |
+
+The one mistake to avoid is selling a coin that has collectible value for melt alone. A pre-1933 Double Eagle or a proof coin can be worth well above its gold content, so always have coins that might be rare appraised as coins, not weighed as metal.
 
 ## Our promise on transparency
 
