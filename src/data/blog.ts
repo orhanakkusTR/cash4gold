@@ -159,6 +159,18 @@ Wherever you sell in Northern Virginia, look for these signs:
 4. **No pressure and no fee** to get an appraisal.
 5. **Verifiable reviews** from real local customers.
 
+## More than gold: what NoVA sellers bring in
+
+Northern Virginia's affluence means the region's sellers bring far more than scrap chains, and a good buyer values all of it on the same transparent basis:
+
+- **Silver** — flatware, coins, bars, and sterling sets, valued on the live silver price.
+- **Platinum and palladium** — often found in wedding bands and settings, valued on their own live markets.
+- **Diamonds and colored stones** — especially [GIA-certified diamonds over a carat](/we-buy-diamonds-more-than-1-carat-with-gia), appraised separately from the metal.
+- **Luxury watches** — Rolex, Omega, and similar brands, valued on model and condition.
+- **Designer jewelry and coins** — from Cartier and Tiffany pieces to American Gold Eagles and estate collections.
+
+Whatever the item, the principle is the same across the region: a fair offer starts from the live market and is explained to you in the open.
+
 ## Find your nearest location
 
 Cash for Gold VA has four Northern Virginia stores, so one is usually close by:
@@ -706,6 +718,10 @@ Knowing your karat helps you sanity-check any offer. The common stamps are 10k (
 
 Much of the gold sold in Alexandria is inherited. If your pieces are designer-signed, antique, or set with certified diamonds, do not sell them by metal weight alone. Brand and gemstone value can far exceed the melt value, and a good buyer will recognize and pay for that premium. Bring those pieces in for a full appraisal rather than estimating them yourself.
 
+## Selling gold across Alexandria's neighborhoods
+
+Alexandria is an unusually good source of quality gold, and it shows in what we see from different parts of the city. **Old Town's** historic homes turn up genuine antique and estate jewelry — Victorian and Art Deco pieces that are often worth well beyond their metal. **Del Ray, Rosemont, and the West End** bring a steady stream of everyday karat gold, class rings, and inherited pieces, while the **Eisenhower and Carlyle** corridors lean toward modern designer jewelry and watches. Wherever in Alexandria you are, our Annandale store is a straight shot west on Little River Turnpike (Route 236) or a quick hop around the Beltway — usually 15 minutes or less.
+
 ## Where to sell near Alexandria
 
 The Cash for Gold VA location most convenient to Alexandria is our **Annandale** store at 7262 Columbia Pike, a short drive west. We also have stores in Vienna/McLean, Chantilly, and Manassas. Every location offers free appraisals, instant payout, and the same transparent, live-price method, and we buy gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
@@ -723,6 +739,9 @@ Yes. Broken chains, single earrings, and dental gold all have value based on the
 
 **Is the appraisal really free?**
 Yes. Appraisals are always free and carry no obligation to sell.
+
+**Do you buy antique and estate jewelry from Old Town homes?**
+Yes, and those pieces deserve special attention. Antique, Victorian, and Art Deco jewelry — common in Alexandria estates — often carries value well beyond its gold weight, so we appraise it piece by piece rather than by scrap weight.
 
 Curious what your gold is worth in Alexandria? [Run our calculator](/gold-calculator) or [stop by for a free appraisal](/contact-us-cash-for-gold-locations).`,
   },
@@ -757,6 +776,10 @@ Two quick truths that save Falls Church sellers from disappointment:
 2. **Gemstones and brand can add value.** Designer pieces and certified diamonds are often worth more than their metal alone, so do not sell those purely by weight.
 
 You can estimate your own pieces before you leave the house using our [gold value calculator](/gold-calculator), which runs the live price through that exact formula.
+
+## Selling gold around the "Little City" and beyond
+
+The City of Falls Church — the "Little City" — and the surrounding communities of Seven Corners, Bailey's Crossroads, Pimmit Hills, and Idylwood sit right between two of our stores, so you are never more than a short drive from a fair, same-day offer. The gold we see from this area is a real mix: inherited pieces from long-established Falls Church families, everyday karat jewelry, and designer items from the neighborhoods near Tysons. Our Annandale store is a straight run south on Route 50 or the Beltway, and Vienna/McLean is a quick trip west — both usually under 15 minutes from central Falls Church.
 
 ## The two stores closest to Falls Church
 
@@ -1196,9 +1219,13 @@ At a reputable buyer, the appraisal happens in front of you:
 
 Not everything should be sold by weight. Designer-signed jewelry, antique pieces, and items with certified diamonds are often worth far more than their melt value. Coins can carry a premium too. Flag these for a full appraisal rather than estimating them as scrap.
 
+## What used gold actually adds up to
+
+Used gold is easy to underestimate because the pieces feel small. A worked example puts it in perspective: at a $2,400 spot price, a 14k gold chain weighing 15 grams holds roughly $675 in pure-gold value, and a handful of broken 10k and 14k odds and ends can quickly reach several hundred dollars more. None of it is doing anything in a drawer — and at today's prices, "used" rarely means "worthless."
+
 ## Where to sell used gold in Chantilly
 
-Our **Chantilly** store sits at 14025 Lee Jackson Memorial Hwy, convenient from Centreville, Fairfax, and Herndon. We offer free, no-obligation appraisals, instant payout, and the same transparent, live-price method at all four of our Northern Virginia locations. We buy used gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
+Our **Chantilly** store sits at 14025 Lee Jackson Memorial Hwy (Route 50), with easy parking and no appointment needed, convenient from Centreville, South Riding, Fair Oaks, Fairfax, and Herndon. We offer free, no-obligation appraisals, instant payout, and the same transparent, live-price method at all four of our Northern Virginia locations. We buy used gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
 
 ## Frequently asked questions
 
