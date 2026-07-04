@@ -555,6 +555,17 @@ Before you drive to the closest pin on the map, check that the buyer:
 4. **Charges nothing** for an appraisal and applies no pressure to sell.
 5. **Has genuine reviews** from local customers. Ours average 4.9 stars.
 
+## Reading the "near me" search results
+
+The map you get from a "cash for gold near me" search mixes very different businesses, and they are not interchangeable:
+
+- **Dedicated gold buyers** focus on precious metals and usually pay the most for scrap and jewelry.
+- **Pawn shops** offer loans as well as buying; their outright-buy prices are often lower.
+- **Jewelers** may buy, but many only take pieces they can resell, not scrap.
+- **Traveling "we buy gold" events** in hotels or pop-ups have no lasting local accountability — the riskiest option.
+
+Sort the results by genuine review volume and recency rather than proximity alone. A dedicated buyer fifteen minutes away with hundreds of real reviews beats a pop-up around the corner every time.
+
 ## What your gold is worth
 
 A fair offer comes from three numbers: the live spot price, your item's karat purity, and its weight. The buyer converts the per-ounce spot price to a per-gram figure (divide by 31.1), multiplies by your karat fraction, and multiplies by the weight, minus a small refining margin. Knowing your karat and weight, and getting a rough estimate from our [gold value calculator](/gold-calculator), lets you recognize a fair number instantly.
@@ -573,6 +584,8 @@ Cash for Gold VA has four Northern Virginia stores, so one is usually nearby:
 - **Manassas**: 9013 Centreville Rd
 
 Each offers free appraisals, instant payout, and the same transparent method. We buy gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
+
+Between these four stores we are a short drive from most of Northern Virginia — Fairfax, Falls Church, Arlington, Springfield, Centreville, Herndon, Gainesville, and the Loudoun County line included. Whichever is closest, the method and the live-price offer are identical.
 
 ## Frequently asked questions
 
@@ -1353,6 +1366,10 @@ Cash for gold is usually worth it when you have:
 
 In these cases, the gold is doing nothing for you, and at today's strong prices it can be worth more than people expect. Estimate yours with our [gold value calculator](/gold-calculator) to see.
 
+## What a typical payout looks like
+
+To make "worth it" concrete: a single 14k gold chain weighing 20 grams holds roughly $900 in pure-gold value at a $2,400 spot price, before the small refining margin. A drawer of assorted broken 10k–18k pieces can easily add up to several hundred dollars that would otherwise sit unused indefinitely. The exact figure always depends on karat, weight, and the live price on the day — our [gold value calculator](/gold-calculator) turns your specific pieces into a realistic range in seconds.
+
 ## When to pause before selling
 
 Selling may not be the best move, or may need a specialist, when:
@@ -1363,6 +1380,17 @@ Selling may not be the best move, or may need a specialist, when:
 - It is **investment bullion** and you are selling purely on a short-term price dip.
 
 None of these mean "never sell," only "get a full appraisal first" so you understand the true value before deciding.
+
+## Cash for gold versus the alternatives
+
+"Worth it" also depends on how the other options compare. For most unwanted gold, a transparent local buyer is the simplest path to the most cash:
+
+- **Local cash-for-gold storefront** — same-day cash, you watch the testing, offers tied to the live price. Best for scrap, broken, and everyday karat jewelry.
+- **Pawn shop** — convenient, but a pawn loan is not a sale, and outright-buy offers are often lower than a dedicated gold buyer's.
+- **Online mail-in** — you lose control of your gold and are quoted only after it has shipped. Rarely worth the risk for anything valuable.
+- **Auction or consignment** — can beat melt value for genuinely rare designer or antique pieces, but it is slow and takes a commission. Worth it only for the right item.
+
+For ordinary unwanted gold, the local storefront wins on speed, safety, and price. For a rare signed or antique piece, it is worth getting a specialist opinion first.
 
 ## How to make it worth it
 
@@ -1416,6 +1444,16 @@ The karat is the part most people overlook:
 
 Because purity varies this much, a lighter 18k piece can be worth more than a heavier 10k one. Check clasps and inner bands for the stamp before you sell.
 
+## Is it solid gold, or gold-filled or plated?
+
+Only solid karat gold is valued on its full metal content, so it helps to know what you have before you go:
+
+- **Solid gold** is stamped with a karat mark (10k, 14k, 18k, or 585/750). The whole piece is gold alloy.
+- **Gold-filled** ("GF") has a thick bonded layer of gold over a base metal — it carries some value, but far less than solid gold.
+- **Gold-plated** ("GP" or "HGE") has only a microscopic gold layer and is generally not worth selling for its metal.
+
+If you are unsure, bring the piece anyway. A quick test tells us instantly, at no charge. We also buy [gold-filled and gold-plated items](/precious-metals/sell-gold-filled-plated) where there is enough recoverable gold to make it worthwhile.
+
 ## Estimate before you go
 
 Walking in with a rough number in mind is the single best protection against a lowball. Our [gold value calculator](/gold-calculator) uses the live price and the same formula a buyer uses, so you can estimate any piece in minutes and recognize a fair offer instantly.
@@ -1437,6 +1475,17 @@ A fair buyer has a permanent storefront, tests and weighs in front of you, ties 
 ## Where to sell in Northern Virginia
 
 Cash for Gold VA buys gold jewelry at four locations: Annandale, Manassas, Chantilly, and Vienna/McLean. Every store offers free, no-obligation appraisals and instant payout, and we evaluate brand and gemstone value, not just metal weight.
+
+## Mistakes that quietly cost you money
+
+A few habits leave money on the table:
+
+- **Selling everything by weight**, including designer or gem-set pieces that are worth more appraised individually.
+- **Cleaning or repairing** antique items, which can reduce their value.
+- **Throwing out "junk"** — broken chains, bent rings, and single earrings all hold full metal value.
+- **Accepting the first quote** without knowing your number or how it was calculated.
+
+Avoiding these four is most of what separates a fair sale from a disappointing one.
 
 ## Frequently asked questions
 
