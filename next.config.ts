@@ -14,6 +14,12 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Add a 320 breakpoint so the ~272px grid tiles fetch a 320 variant
+    // instead of jumping to 384 (PageSpeed "properly size images").
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 320, 384],
+    // Allow the lower 65 quality we use on photographic thumbnails, alongside
+    // the Next default of 75 (Next 16 requires listing non-default qualities).
+    qualities: [65, 75],
   },
   // Baseline security headers on every response. These are all safe for a
   // static marketing site (no full CSP here on purpose: a strict CSP would need
