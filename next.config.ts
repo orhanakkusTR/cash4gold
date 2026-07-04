@@ -20,6 +20,12 @@ const nextConfig: NextConfig = {
     // Allow the lower 65 quality we use on photographic thumbnails, alongside
     // the Next default of 75 (Next 16 requires listing non-default qualities).
     qualities: [65, 75],
+    // Cache optimized variants for a year. Default (4h) meant PageSpeed /
+    // Googlebot kept hitting an expired cache and paying the on-demand
+    // optimizer's cold-generation cost on our small instance (showed up as a
+    // ~2.8s LCP "resource load duration"). Our image assets are versioned by
+    // filename (e.g. hero-bg-v2), so a long TTL is safe.
+    minimumCacheTTL: 31536000,
   },
   // Baseline security headers on every response. These are all safe for a
   // static marketing site (no full CSP here on purpose: a strict CSP would need
