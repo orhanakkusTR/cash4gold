@@ -282,6 +282,21 @@ That universal value has a very practical upside: gold is easy to appraise and s
 
 If you are ready to sell rather than just appreciate, our step-by-step guide on [how to sell used gold in Chantilly](/how-to-sell-used-gold-in-chantilly-va) walks through the process, and our [gold value calculator](/gold-calculator) gives you a quick estimate at today's price.
 
+## Chantilly and the gold people hold here
+
+Chantilly sits at the edge of the Dulles technology corridor, an area of established neighborhoods, growing families, and a steady stream of estates changing hands. That mix means the gold we see here is unusually varied: heirloom wedding sets and class rings, inherited coin collections, designer jewelry bought during good years, and the ordinary drawer of broken chains almost every household accumulates. When people in Chantilly, Centreville, and along Route 50 decide to sell, it is usually for a practical reason — a move, an estate to settle, a remodel, or simply turning unworn gold into cash while prices are strong.
+
+## The forms gold takes when people sell
+
+Gold's allure shows up in more shapes than most people realize, and each is valued a little differently:
+
+- **Karat jewelry** (10k, 14k, 18k) is valued on its gold content — weight times purity against the live price.
+- **Heirloom and antique pieces** may carry craftsmanship or designer value beyond the metal, so they are appraised individually.
+- **Coins and bullion** are valued on their metal content plus any premium, and recognized coins like the [American Gold Eagle](/we-buy-1-oz-american-gold-eagle-coins) sell especially easily.
+- **Dental gold, scrap, and single earrings** still hold full metal value — nothing gold is too small or too broken to sell.
+
+Whatever form yours takes, the same principle applies: a fair offer starts from the live market and is explained to you in the open.
+
 ## From fascination to fair value
 
 Whether your gold is a treasured heirloom or a drawer of forgotten chains, its value rests on the same qualities that have always made the metal special. When you decide to sell, the goal is simply to capture that value fairly: by knowing your karat and weight, understanding the live price, and choosing a buyer who explains every number.
@@ -793,6 +808,12 @@ A few habits consistently lead to better outcomes:
 3. **Get a baseline estimate first** so you can recognize a fair offer when you see one.
 4. **Compare on transparency, not just the headline percentage.** A buyer who explains the math is usually the one paying fairly.
 
+## Selling gold in Centreville: the local picture
+
+Centreville sits right where Route 28, Route 29, and I-66 meet, which puts several established buyers within a short drive and keeps the local market genuinely competitive. For most Centreville neighborhoods — from Virginia Run and Little Rocky Run to the townhomes near Old Centreville Road — our Chantilly store is only about ten minutes up Route 28 and Route 50. That short distance matters: selling locally means you never lose sight of your gold, you can ask questions face to face, and you walk out the same day with cash rather than waiting on a mailed check.
+
+What do Centreville sellers typically bring? A steady mix of everyday karat jewelry, inherited pieces, gold and silver coins, and the occasional luxury watch or designer item. Because so much of it is inherited or unworn, people are often surprised how much a small pile is worth once it is properly tested and weighed at today's prices.
+
 ## Where to sell near Centreville
 
 The Cash for Gold VA store closest to Centreville is our **Chantilly** location at 14025 Lee Jackson Memorial Hwy, just up Route 50. We also have stores in Manassas, Vienna/McLean, and Annandale. Every location offers free, no-obligation appraisals, instant payout, and the same transparent method, and we buy gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
@@ -976,6 +997,18 @@ Every coin you bring in falls somewhere on this spectrum:
 - **Numismatic value.** Older, rare, or high-grade collectible coins can be worth far more than their metal, driven by scarcity, mint, year, and condition.
 
 A trustworthy buyer evaluates both and pays whichever is higher. A buyer who only quotes melt value on a collectible coin is not the right one.
+
+## Coins we see most often in Fairfax collections
+
+Inherited collections around Fairfax tend to contain the same recognizable pieces, and knowing what you have helps you sell it well:
+
+- **Pre-1965 U.S. silver** — dimes, quarters, and half dollars minted through 1964 are 90% silver ("junk silver"), valued as a group on their silver content.
+- **Morgan and Peace silver dollars** — common dates trade near silver value, but scarce dates and high grades can carry a real collectible premium.
+- **U.S. gold coins** — pre-1933 $5, $10, and $20 Liberty and Saint-Gaudens pieces carry both gold content and, often, numismatic value.
+- **Modern bullion** — American Gold and Silver Eagles, Krugerrands, and Maple Leafs, valued on metal plus a modest premium.
+- **World and commemorative coins**, which range from pure bullion to genuinely collectible depending on mintage and condition.
+
+Condition, or "grade," is the wild card. Two coins of the same date can differ widely in value if one is worn and the other near-mint, which is exactly why a collectible coin should never be sold on melt value alone — and why cleaning a coin, which damages its surface, can quietly erase that premium.
 
 ## How to sell coins without mistakes
 
