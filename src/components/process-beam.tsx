@@ -26,7 +26,7 @@ export function ProcessBeam() {
               {/* ghost step number */}
               <span
                 aria-hidden
-                className="pointer-events-none absolute -top-4 right-1 select-none font-display text-[5.5rem] font-bold leading-none text-gold-100"
+                className="pointer-events-none absolute -top-4 right-1 select-none font-display text-[5.5rem] font-extrabold leading-none text-gold-200/90 [text-shadow:0_1px_2px_rgba(180,140,40,0.18)] transition-colors duration-300 group-hover:text-gold-300/90"
               >
                 {String(step.n).padStart(2, "0")}
               </span>
