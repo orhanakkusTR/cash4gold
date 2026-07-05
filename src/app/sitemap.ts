@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE, CATEGORIES, ALL_SUBCATEGORIES, LOCATIONS, SHOW_CALCULATOR } from "@/data/business";
 import { POSTS } from "@/data/blog";
+import { CITY_LANDINGS } from "@/data/city-landings";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.domain;
@@ -48,5 +49,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...categoryPages, ...subcategoryPages, ...locationPages, ...blogPages];
+  // City landing pages (areas served, e.g. /cash-for-gold-alexandria) — high
+  // local-SEO priority, just under location pages.
+  const cityLandingPages = CITY_LANDINGS.map((c) => ({
+    url: `${base}/${c.slug}`,
+    lastModified: lastUpdated,
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
+  }));
+
+  return [...staticPages, ...categoryPages, ...subcategoryPages, ...locationPages, ...cityLandingPages, ...blogPages];
 }

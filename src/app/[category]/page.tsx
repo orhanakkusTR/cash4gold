@@ -14,6 +14,8 @@ import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { LinkifyCities } from "@/components/linkify-cities";
 import { POSTS, getPost } from "@/data/blog";
 import { BlogArticle } from "@/components/blog-article";
+import { CITY_LANDINGS, getCityLanding } from "@/data/city-landings";
+import { CityLanding } from "@/components/city-landing";
 
 // This single top-level dynamic segment serves BOTH categories and the legacy
 // root-level blog permalinks (e.g. /selling-gold-jewelry). When the slug is not
@@ -22,6 +24,7 @@ import { BlogArticle } from "@/components/blog-article";
 export function generateStaticParams() {
   return [
     ...CATEGORIES.map((c) => ({ category: c.slug })),
+    ...CITY_LANDINGS.map((c) => ({ category: c.slug })),
     ...POSTS.map((p) => ({ category: p.slug })),
   ];
 }
@@ -30,6 +33,15 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const { category } = await params;
   const cat = getCategory(category);
   if (!cat) {
+    const city = getCityLanding(category);
+    if (city) {
+      return {
+        title: { absolute: city.seoTitle },
+        description: city.metaDescription,
+        alternates: { canonical: `/${city.slug}` },
+        openGraph: { title: city.heroTitle, description: city.metaDescription, images: ["/og/og-image.jpg"] },
+      };
+    }
     const post = getPost(category);
     if (post) {
       return {
@@ -63,6 +75,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const { category } = await params;
   const cat = getCategory(category);
   if (!cat) {
+    const city = getCityLanding(category);
+    if (city) return <CityLanding landing={city} />;
     const post = getPost(category);
     if (post) return <BlogArticle post={post} />;
     notFound();

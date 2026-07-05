@@ -687,65 +687,6 @@ Yes. Along with gold, silver, and platinum, we buy designer jewelry, luxury watc
 Find out what your gold is worth in Loudoun County. [Estimate it now](/gold-calculator) or [visit our Chantilly store](/contact-us-cash-for-gold-locations) for a free appraisal.`,
   },
   {
-    slug: "sell-gold-alexandria-va",
-    title: "Top Places to Sell Gold in Alexandria, VA",
-    seoTitle: "Sell Gold in Alexandria, VA | Best Prices Near You",
-    date: "2025-06-08",
-    category: "Locations",
-    excerpt:
-      "Selling gold in Alexandria, VA? Here is what to look for in a buyer, how to avoid lowball offers, and how to get a fair, same-day price for inherited or unwanted jewelry.",
-    body: `Alexandria sellers have plenty of choices when it comes to turning gold into cash, which is good news: competition keeps offers honest. The challenge is sorting the buyers who pay a fair share of the market price from the ones counting on you not knowing what your gold is worth. This guide explains how to choose well and what to expect.
-
-We regularly buy gold from Alexandria-area residents, and the items that come across our counter range from a single inherited ring to drawers full of tangled, broken chains. All of it has value at today's prices, and all of it deserves a transparent appraisal.
-
-## What to look for when selling gold in Alexandria
-
-Not every buyer operates the same way. Before you hand over anything, check for these signs of a fair, professional buyer:
-
-- **A real storefront**, not a hotel-ballroom pop-up or a mall kiosk that disappears next week.
-- **Open testing and weighing**, done in front of you on a calibrated scale.
-- **An offer tied to the live spot price**, expressed as a fair range rather than a single take-it-or-leave-it number.
-- **Free, no-obligation appraisals.** You should never pay to find out what your gold is worth.
-- **Strong, verifiable reviews** from local customers.
-
-## How your payout is calculated
-
-A trustworthy offer is never guesswork. It comes from three numbers: the live spot price of gold, your item's karat purity, and its weight in grams. The buyer converts the per-ounce spot price to a per-gram figure (divide by 31.1), multiplies by the purity fraction for your karat, and multiplies by the weight, then subtracts a small standard refining margin.
-
-Knowing your karat helps you sanity-check any offer. The common stamps are 10k (41.7% gold), 14k (58.3%), and 18k (75%). You can estimate any piece using our [gold value calculator](/gold-calculator) before you decide where to sell.
-
-## A note on inherited and designer pieces
-
-Much of the gold sold in Alexandria is inherited. If your pieces are designer-signed, antique, or set with certified diamonds, do not sell them by metal weight alone. Brand and gemstone value can far exceed the melt value, and a good buyer will recognize and pay for that premium. Bring those pieces in for a full appraisal rather than estimating them yourself.
-
-## Selling gold across Alexandria's neighborhoods
-
-Alexandria is an unusually good source of quality gold, and it shows in what we see from different parts of the city. **Old Town's** historic homes turn up genuine antique and estate jewelry — Victorian and Art Deco pieces that are often worth well beyond their metal. **Del Ray, Rosemont, and the West End** bring a steady stream of everyday karat gold, class rings, and inherited pieces, while the **Eisenhower and Carlyle** corridors lean toward modern designer jewelry and watches. Wherever in Alexandria you are, our Annandale store is a straight shot west on Little River Turnpike (Route 236) or a quick hop around the Beltway — usually 15 minutes or less.
-
-## Where to sell near Alexandria
-
-The Cash for Gold VA location most convenient to Alexandria is our **Annandale** store at 7262 Columbia Pike, a short drive west. We also have stores in Vienna/McLean, Chantilly, and Manassas. Every location offers free appraisals, instant payout, and the same transparent, live-price method, and we buy gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
-
-## Frequently asked questions
-
-**Where can I sell gold in Alexandria, VA?**
-Look for a local storefront that tests in front of you and pays a transparent share of the live price. The closest Cash for Gold VA store is our Annandale location on Columbia Pike.
-
-**How do I avoid getting lowballed?**
-Know your karat and weight, get a rough estimate from our [calculator](/gold-calculator) first, and only sell to a buyer who explains the offer openly and ties it to the live spot price.
-
-**Do you buy broken or scrap gold?**
-Yes. Broken chains, single earrings, and dental gold all have value based on their metal content. Bring it all in.
-
-**Is the appraisal really free?**
-Yes. Appraisals are always free and carry no obligation to sell.
-
-**Do you buy antique and estate jewelry from Old Town homes?**
-Yes, and those pieces deserve special attention. Antique, Victorian, and Art Deco jewelry — common in Alexandria estates — often carries value well beyond its gold weight, so we appraise it piece by piece rather than by scrap weight.
-
-Curious what your gold is worth in Alexandria? [Run our calculator](/gold-calculator) or [stop by for a free appraisal](/contact-us-cash-for-gold-locations).`,
-  },
-  {
     slug: "cash-for-gold-falls-church-va",
     title: "Cash for Gold in Falls Church, VA: Where to Sell and What to Expect",
     seoTitle: "Cash for Gold in Falls Church, VA | Sell Gold for Cash",
@@ -1538,7 +1479,6 @@ const BLOG_COVERS: Record<string, string> = {
   "gold-price-today": "/categories/gold-bars.jpg",
   "cash-for-gold-falls-church-va": "/photos/storefront-annandale.jpg",
   "cash-for-gold-nova-falls-church-va": "/photos/storefront-vienna.jpg",
-  "sell-gold-alexandria-va": "/products/jewelry/goldlot.jpg",
   "cash-for-gold-loudoun-county-va": "/photos/storefront-chantilly.jpg",
   "top-places-to-sell-gold-in-centreville": "/photos/storefront-manassas.jpg",
   "how-to-sell-used-gold-in-chantilly-va": "/photos/storefront-chantilly.jpg",

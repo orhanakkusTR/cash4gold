@@ -66,9 +66,14 @@ export function PageHero({
 export function CtaBand({
   title = "Ready to turn your valuables into cash?",
   description = "Walk into any Northern Virginia location or request a free quote online anytime, and you only sell if you love the offer.",
+  phone = PRIMARY_PHONE,
+  phoneHref = PRIMARY_PHONE_HREF,
 }: {
   title?: React.ReactNode;
   description?: string;
+  /** Override the call button (e.g. a city page's nearest store). Defaults to the primary location. */
+  phone?: string;
+  phoneHref?: string;
 }) {
   return (
     <section className="container-page py-16 sm:py-20">
@@ -89,9 +94,9 @@ export function CtaBand({
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-cream-100/70">{description}</p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href={`tel:${PRIMARY_PHONE_HREF}`}
+              <a href={`tel:${phoneHref}`}
                 className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-8 font-semibold text-ink-950 shadow-[var(--shadow-gold)] transition-transform hover:-translate-y-0.5">
-                <Phone className="h-5 w-5" /> Call {PRIMARY_PHONE}
+                <Phone className="h-5 w-5" /> Call {phone}
               </a>
               <Link href="/contact-us-cash-for-gold-locations"
                 className="group inline-flex h-14 items-center justify-center gap-2 rounded-full border border-cream-50/25 px-8 font-semibold text-cream-50 transition-colors hover:border-gold-400/60 hover:bg-white/5">

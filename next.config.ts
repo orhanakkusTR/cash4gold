@@ -179,6 +179,11 @@ const nextConfig: NextConfig = {
       { source: "/finding-the-best-cash-for-gold-offers", destination: "/maximizing-your-profit-with-cash-for-gold", permanent: true },
       { source: "/understanding-cash-for-gold-services-reviews", destination: "/finding-the-best-cash-for-gold-options", permanent: true },
       { source: "/maximizing-your-cash-for-gold-experience", destination: "/understanding-the-cash-for-gold-process", permanent: true },
+
+      // City landing pages (2026-07): the old Alexandria blog post was upgraded
+      // into a full local landing page at /cash-for-gold-alexandria; its content
+      // was absorbed there, so the blog URL 301s to the landing page.
+      { source: "/sell-gold-alexandria-va", destination: "/cash-for-gold-alexandria", permanent: true },
     ];
   },
 };
