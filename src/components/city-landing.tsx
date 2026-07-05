@@ -33,6 +33,17 @@ import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 
 const paras = (text: string) => text.split("\n\n").filter(Boolean);
 
+// Render inline **bold** markers in body copy as <strong> (Prose styles it dark).
+function withBold(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((seg, i) =>
+    seg.startsWith("**") && seg.endsWith("**") ? (
+      <strong key={i} className="font-semibold text-foreground">{seg.slice(2, -2)}</strong>
+    ) : (
+      seg
+    ),
+  );
+}
+
 const VALUE_PROPS = [
   { icon: BadgeCheck, label: "Best value, tied to the live price" },
   { icon: Banknote, label: "Instant cash, paid the same visit" },
@@ -159,13 +170,13 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
       </section>
 
       {/* 2 · Intro + value props, then TrustStats */}
-      <section className="pt-16 pb-8 sm:pt-20">
+      <section className="pt-12 pb-6 sm:pt-14">
         <div className="container-page">
-          <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+          <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
             <Reveal>
               <Prose>
                 {paras(landing.intro).map((p, i) => (
-                  <p key={i}>{p}</p>
+                  <p key={i}>{withBold(p)}</p>
                 ))}
               </Prose>
             </Reveal>
@@ -183,13 +194,13 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
             </Reveal>
           </div>
         </div>
-        <div className="mt-16">
+        <div className="mt-10">
           <TrustStats />
         </div>
       </section>
 
       {/* 3 · Nearest locations — conversion centerpiece */}
-      <section id="nearest" className="scroll-mt-24 bg-cream-100 py-16 sm:py-20">
+      <section id="nearest" className="scroll-mt-24 bg-cream-100 py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow="Your Closest Stores"
@@ -233,7 +244,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                     <div className="mt-auto grid gap-3 sm:grid-cols-2">
                       <a
                         href={`tel:${primary.store.phoneHref}`}
-                        className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-5 text-sm font-semibold text-ink-950 shadow-[var(--shadow-gold)] transition-transform hover:-translate-y-0.5"
+                        className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-4 text-sm font-semibold text-ink-950 shadow-[var(--shadow-gold)] transition-transform hover:-translate-y-0.5"
                       >
                         <Phone className="h-4 w-4" strokeWidth={2.5} /> {primary.store.phone}
                       </a>
@@ -241,7 +252,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                         href={primary.store.mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex h-12 items-center justify-center gap-2 rounded-full border-2 border-gold-500/50 px-5 text-sm font-semibold text-gold-700 transition-all hover:-translate-y-0.5 hover:bg-gold-50"
+                        className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-gold-500/50 px-4 text-sm font-semibold text-gold-700 transition-all hover:-translate-y-0.5 hover:bg-gold-50"
                       >
                         <Navigation className="h-4 w-4" /> Directions
                       </a>
@@ -269,16 +280,21 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                   </div>
                   <div className="flex flex-1 flex-col gap-3 p-6">
                     <div>
-                      <h3 className="font-display text-xl font-semibold text-foreground">{secondary.store.city}</h3>
+                      <span className="text-xs font-semibold uppercase tracking-wide text-gold-600">Also nearby</span>
+                      <h3 className="mt-1 font-display text-xl font-semibold text-foreground">{secondary.store.city}</h3>
                       <p className="mt-1 text-sm text-muted">
                         {secondary.store.street}, {secondary.store.city}, {secondary.store.region} {secondary.store.postalCode}
                       </p>
+                      <p className="mt-1 text-sm text-muted">Drive: {secondary.drive}.</p>
                     </div>
                     <OpenStatus hours={secondary.store.hours} tone="dark" compact />
+                    <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-gold-50 px-3 py-1 text-xs font-semibold text-gold-700 ring-1 ring-gold-200/70">
+                      <Star className="h-3.5 w-3.5 fill-gold-400 text-gold-400" /> 4.9 · 500+ reviews
+                    </span>
                     <div className="mt-auto flex flex-col gap-2.5 pt-2 sm:flex-row">
                       <a
                         href={`tel:${secondary.store.phoneHref}`}
-                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-gold-500/50 px-4 py-2.5 text-sm font-semibold text-gold-700 transition-all hover:-translate-y-0.5 hover:bg-gold-50"
+                        className="inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-gold-500/50 px-4 py-2.5 text-sm font-semibold text-gold-700 transition-all hover:-translate-y-0.5 hover:bg-gold-50"
                       >
                         <Phone className="h-4 w-4" strokeWidth={2.5} /> {secondary.store.phone}
                       </a>
@@ -286,11 +302,17 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                         href={secondary.store.mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold text-muted transition-colors hover:text-gold-700"
+                        className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-semibold text-muted transition-colors hover:text-gold-700"
                       >
                         Directions <ArrowUpRight className="h-4 w-4" />
                       </a>
                     </div>
+                    <Link
+                      href={`/locations/${secondary.store.slug}`}
+                      className="text-sm font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-800"
+                    >
+                      View the {secondary.store.city} location page
+                    </Link>
                   </div>
                 </div>
               </Reveal>
@@ -300,7 +322,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
       </section>
 
       {/* 4 · Why sell locally */}
-      <section className="py-16 sm:py-20">
+      <section className="py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow="Why Sell Locally"
@@ -309,7 +331,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
           <div className="mx-auto mt-8 max-w-3xl">
             <Prose>
               {paras(landing.whyLocal).map((p, i) => (
-                <p key={i}>{p}</p>
+                <p key={i}>{withBold(p)}</p>
               ))}
             </Prose>
           </div>
@@ -320,7 +342,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-50 text-gold-700 ring-1 ring-gold-200/70">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="font-display text-lg font-semibold text-foreground">{title}</h3>
+                  <h3 className="font-display text-lg font-extrabold text-foreground">{title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{body}</p>
                 </div>
               </Reveal>
@@ -330,7 +352,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
       </section>
 
       {/* 5 · What we buy */}
-      <section className="bg-cream-100 py-16 sm:py-20">
+      <section className="bg-cream-100 py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow="What We Buy"
@@ -349,7 +371,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
       </section>
 
       {/* 6 · Neighborhoods */}
-      <section className="py-14">
+      <section className="py-10 sm:py-12">
         <div className="container-page">
           <SectionHeading
             eyebrow="Neighborhoods We Serve"
@@ -374,7 +396,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
       </section>
 
       {/* 7 · Reviews */}
-      <section className="bg-cream-100 py-16 sm:py-20">
+      <section className="bg-cream-100 py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow="Reviews"
@@ -391,7 +413,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
       </section>
 
       {/* 8 · FAQ */}
-      <section className="py-16 sm:py-20">
+      <section className="py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading eyebrow="FAQ" title={<>Selling gold in <span className="font-extrabold">{landing.city}</span> — answered</>} />
           <div className="mx-auto mt-12 max-w-3xl space-y-3">
@@ -412,7 +434,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
 
       {/* 9 · Related blog — differentiation */}
       {relatedPosts.length > 0 && (
-        <section className="bg-cream-100 py-16 sm:py-20">
+        <section className="bg-cream-100 py-12 sm:py-16">
           <div className="container-page">
             <SectionHeading eyebrow="Learn Before You Sell" title={<span className="font-extrabold">Guides from our buyers</span>} />
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
