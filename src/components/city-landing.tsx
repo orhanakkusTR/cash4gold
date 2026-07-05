@@ -238,7 +238,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                         <Star className="h-3.5 w-3.5 fill-gold-400 text-gold-400" /> 4.9 · 500+ reviews
                       </span>
                       <span className="inline-flex items-center gap-1.5 rounded-full bg-gold-50 px-3 py-1 text-xs font-semibold text-gold-700 ring-1 ring-gold-200/70">
-                        <Banknote className="h-3.5 w-3.5" /> Instant cash payout
+                        <Banknote className="h-3.5 w-3.5" /> Instant payout
                       </span>
                     </div>
                     <div className="mt-auto grid gap-3 sm:grid-cols-2">
