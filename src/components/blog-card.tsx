@@ -18,7 +18,7 @@ export function BlogCard({ post, delay = 0 }: { post: BlogPost; delay?: number }
         href={`/${post.slug}`}
         className="group flex h-full flex-col overflow-hidden rounded-3xl border border-hairline bg-white shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-400/40 hover:shadow-[var(--shadow-gold)]"
       >
-        <div className="relative flex h-40 items-end overflow-hidden p-5">
+        <div className="relative flex aspect-[16/9] items-end overflow-hidden p-5">
           <Image
             src={coverImage(post)}
             alt={post.title}

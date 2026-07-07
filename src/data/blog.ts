@@ -24,6 +24,248 @@ export const BLOG_AUTHOR = "Cash for Gold VA";
 // Newest first. Dates and titles match the legacy blog exactly.
 export const POSTS: BlogPost[] = [
   {
+    slug: "selling-gold-in-northern-virginia",
+    title: "How to Sell Gold in Northern Virginia: A Step-by-Step Local Guide",
+    seoTitle: "Selling Gold in Northern Virginia: What to Know Before You Go",
+    date: "2026-07-07",
+    category: "Locations",
+    excerpt:
+      "Selling gold in Northern Virginia is straightforward once you know how payouts actually work: karat, weight, and the live spot price. This local guide covers what to bring, what Virginia law requires, how to spot a fair buyer, and where to sell across NoVA — from the Beltway to Manassas.",
+    body: `If you have a drawer of broken chains, an old class ring, or inherited jewelry you'll never wear, selling gold in Northern Virginia is one of the easier errands you'll run this month — as long as you understand how the process works before you walk in. This guide covers exactly that: what determines your payout, what to bring, what Virginia law requires, and how to tell a fair offer from a lowball. If you'd rather skip straight to the destination, our [sell gold in Northern Virginia](/cash-for-gold-northern-virginia) hub covers the buying side in detail.
+
+## Why NoVA Is a Good Place to Sell Gold
+
+Not every region treats gold sellers well. Northern Virginia does, for a few practical reasons:
+
+- **Dense with established storefront buyers.** Between the inner Beltway, the Route 50 corridor, and Prince William County, you can get multiple in-person offers in a single afternoon. That honest competition keeps offers closer to the metal's real value than in areas with one buyer per county.
+- **Steady demand.** Gold buyers here resell and refine constantly, so they can afford to pay against the live market rather than sitting on inventory.
+- **You don't have to mail anything.** Mail-in gold services ask you to ship your valuables to a stranger and accept whatever comes back. In NoVA, you can watch your items tested and weighed in front of you and walk out paid the same visit.
+
+Our four stores — Annandale, Chantilly, Manassas, and Vienna/Tysons — blanket the region from inside the Beltway out to Prince William and the Dulles/Tysons corridor, so most of Northern Virginia is within a 20-minute drive of one.
+
+## What Actually Determines Your Payout
+
+Gold pricing isn't mysterious. Three factors set the number, and a trustworthy buyer will show you all three.
+
+### 1. Karat (purity)
+
+Most jewelry isn't pure gold — it's an alloy. The karat stamp tells you how much of the item is actually gold:
+
+| Karat | Gold content | Common uses |
+|---|---|---|
+| 10K | 41.7% | Budget jewelry, class rings |
+| 14K | 58.3% | Most US jewelry |
+| 18K | 75.0% | Fine and designer jewelry |
+| 22K | 91.7% | South Asian and Middle Eastern jewelry |
+| 24K | 99.9% | Bullion, coins, some bars |
+
+Stamps can be worn or wrong, so a serious buyer verifies purity with testing rather than taking the stamp at face value — and does it in front of you.
+
+### 2. Weight
+
+Gold is weighed in grams or troy ounces on a calibrated scale. At our stores, that scale sits on the counter where you can see the readout — not in a back room.
+
+### 3. The live spot price
+
+Gold trades globally around the clock, and the "spot price" is what the market pays right now. Your offer should be calculated against it, openly. As an illustrative example only: if gold were around $2,700 per troy ounce, a 14K item would carry roughly 58.3% of that value per ounce of weight, minus the buyer's margin. The exact numbers change daily — which is why an offer quoted against the live price beats any "flat rate per gram" a buyer printed last month. You can see how we handle this on our [gold buying service page](/precious-metals/sell-gold).
+
+> **Key takeaway:** A fair gold payout is simply karat × weight × live spot price, minus a transparent margin. If a buyer won't test in front of you, show the scale, or reference the live price, the number they quote is a guess designed to favor them.
+
+## How to Prepare: What to Bring
+
+You don't need to polish anything or get a jeweler's appraisal first. Here's what actually helps:
+
+1. **A government-issued photo ID.** Virginia law requires it for every precious-metals purchase, no exceptions, and sellers must be 18 or older. This protects you — it's how the state deters stolen-goods trafficking.
+2. **Everything, including the broken stuff.** Single earrings, kinked chains, dental gold, and mismatched pieces are all worth their metal content. Don't pre-sort what you think is "worthless."
+3. **Any paperwork you have.** Boxes, certificates, or receipts aren't required, but for designer pieces, watches, or certified diamonds they can raise the offer above melt value.
+4. **Sorted by type if you can.** Separating obvious gold from silver-toned pieces speeds things up. If you have flatware or a tea service in the mix, our companion guide to [selling silver and sterling sets](/selling-silver-in-northern-virginia) covers how sterling is valued differently.
+
+If what you're selling came from a family member, take a breath before you go. There's no rush — a good buyer will appraise [estate or inherited gold](/we-buy-estate-gold-jewelry) piece by piece and flag anything worth more intact than melted, so you can sell some items and keep others.
+
+## How to Spot a Fair Buyer (and Avoid a Lowball)
+
+A quick field test you can run in any shop:
+
+- **Transparency:** Testing and weighing happen in front of you, with the spot price referenced openly.
+- **No pressure:** You keep possession of your items until you accept, and "no thanks" ends the conversation politely. Free appraisals should carry zero obligation.
+- **Reputation:** Check recent Google reviews — volume and recency matter more than a perfect score. (Ours stands at 4.9★ across 500+ reviews, and we'd encourage you to read them rather than take our word.)
+- **Compliance:** They ask for your photo ID. A buyer who skips the legally required step is telling you something.
+
+We've written a deeper breakdown on [how to tell a fair buyer from a lowball](/finding-the-best-cash-for-gold-options), plus a checklist of [what to watch out for before you sell](/what-to-watch-out-for-when-selling-gold) — worth five minutes if you're comparing offers.
+
+## Where to Sell Gold in Northern Virginia
+
+Once you're ready, the fastest route is an in-person visit — no appointment needed. Cash for Gold VA runs four stores across the region — Annandale, Chantilly, Manassas, and Vienna/Tysons. Each store's address, hours, and phone are on the store cards just below, and full details are on our [locations page](/locations). No store in your city? You're still close: sellers in [Alexandria](/cash-for-gold-alexandria) usually find Annandale the quickest drive, [Fairfax](/cash-for-gold-fairfax) sits minutes from both Annandale and Chantilly, and the [Tysons corridor](/cash-for-gold-tysons) is served by our Vienna store on Tyco Rd.
+
+Every visit works the same way: free, no-obligation appraisal against the live spot price, items tested and weighed on a calibrated scale in front of you, and you keep your items until you accept. Say yes and it's an instant payout — you walk out with cash the same visit. For the full rundown of what we buy — gold in every karat, silver, platinum, palladium, diamonds, designer jewelry, luxury watches, coins, and electronics — start at our [cash for gold in Northern Virginia](/cash-for-gold-northern-virginia) hub, or just stop by whichever store is closest.`,
+  },
+  {
+    slug: "selling-silver-in-northern-virginia",
+    title: "How to Sell Silver in Northern Virginia: Sterling Sets, Flatware, Coins and Bullion",
+    seoTitle: "Sell Silver in Northern Virginia | Sterling Sets, Coins & Bullion",
+    date: "2026-07-07",
+    category: "Precious Metals",
+    excerpt:
+      "Sterling flatware services, tea sets, jewelry, pre-1965 coins, and .999 bullion all have real melt value — if they're actually solid silver. Learn how to read hallmarks, spot silverplate, understand troy-ounce math, and get a free, transparent appraisal at four Northern Virginia stores with instant payout.",
+    body: `Most households in Northern Virginia have some silver tucked away — a flatware chest from a wedding decades ago, a tea service from a grandparent, a coffee can of old coins. The hard part isn't finding a buyer; it's knowing what you actually have. Solid sterling has real melt value. Silverplate mostly doesn't. This guide walks through the difference, how sterling sets are valued, and what to expect when you [sell silver at Cash for Gold VA](/precious-metals/sell-silver) — free appraisal, tested and weighed in front of you, instant payout.
+
+## The silver we buy
+
+| Category | Typical items | How it's valued |
+|---|---|---|
+| Sterling jewelry | Chains, rings, bracelets, Southwestern and Mexican silver | Tested to confirm .925, then weighed against the live spot price |
+| Sterling sets & hollowware | Flatware services, tea and coffee services, trays, bowls, candlesticks | Per-piece testing, total silver weight — weighted/reinforced pieces adjusted |
+| Silver coins | Pre-1965 US 90% dimes, quarters, halves; silver dollars | By silver content per face value |
+| Bullion | .999 fine bars and rounds | 85% of the live spot price — our published rate |
+
+If it's genuinely silver, we'll make an offer on it — from a single ring at our [sterling silver jewelry counter](/jewelry/sell-silver-jewelry) to a full estate's worth of hollowware.
+
+## Sterling or silverplate? Check before you drive
+
+This is the single most useful thing you can do at home, because it sets your expectations correctly. Sterling silver is a solid alloy that is 92.5% pure silver. Silverplate is a thin layer of silver electroplated over a base metal like nickel or copper — the silver layer is so thin it has essentially no melt value, so plated pieces aren't paid as silver.
+
+### Read the marks
+
+Flip each piece over and look near the base, the back of the handle, or the rim.
+
+| Mark | What it means |
+|---|---|
+| STERLING, STER, 925, .925 | Solid sterling silver (92.5% pure) |
+| Lion passant (walking lion, British hallmark) | Sterling standard — at least 92.5% pure |
+| 800, 835, 900 | Solid silver at lower purity (common on European pieces) |
+| EPNS, EP, EPC | Electroplated — silverplate, not solid |
+| A1, AA, Triple Plate, Quadruple Plate | Grades of plating thickness — still silverplate |
+| Silver Plated, Silver on Copper | Plate, stated outright |
+
+A helpful rule: plating marks describe the coating quality, not silver content. A piece stamped only *A1* or *EPNS* — with no *STERLING*, *925*, or lion passant — should be assumed plate.
+
+### The magnet test and the ice myth, done honestly
+
+Silver is not magnetic. If a piece snaps firmly to a magnet, it isn't solid silver. But the reverse proves nothing: copper, brass, and nickel silver — the usual base metals under plating — aren't magnetic either, so plenty of silverplate passes the magnet test.
+
+The ice trick works on the same logic. Silver has the highest thermal conductivity of any metal, so an ice cube melts noticeably fast on a solid sterling tray. It's a fun demonstration — but plated pieces conduct heat too, so it's not proof. Marks plus professional testing are what actually settle the question, and that testing is exactly what we do in front of you at the counter.
+
+## How sterling flatware and tea sets are valued
+
+Sets are where the real money usually is, and they deserve a proper explanation. When you bring in [sterling silver sets, flatware and tea services](/precious-metals/sell-sterling-silver-sets), here's how the appraisal works:
+
+1. **Every piece is checked individually.** Sets get mixed over generations — a sterling service often has a few plated serving spoons that migrated in, and the reverse happens too. We don't assume; we test.
+2. **The sterling is weighed together on a calibrated scale**, in front of you, and priced against the live silver spot price.
+3. **Weighted and reinforced pieces are adjusted.** This is the honest caveat most sellers don't hear up front.
+
+### The knife and candlestick caveat
+
+Sterling knives almost always have hollow handles filled with cement or resin, with a stainless steel blade — only the thin sterling shell is actually silver. Likewise, candlesticks, compotes, and trophy-style pieces marked *WEIGHTED* or *REINFORCED* are mostly filler by weight, with a silver skin over it. They still have value, but far less than their heft on a bathroom scale suggests. A fair buyer prices the silver, not the cement — and tells you which is which.
+
+### The troy-ounce math
+
+Precious metals trade in troy ounces (31.1 grams), not regular ounces. The melt value of sterling is:
+
+**weight in troy oz × 0.925 × silver spot price**
+
+As an illustration only — spot moves daily — if silver were around $30 per troy ounce, a 60-piece flatware service weighing 70 troy ounces (knives excluded) would contain about 64.75 troy ounces of pure silver, roughly $1,940 in metal value at that price. Offers are then a percentage of that melt value. You can check the live spot price yourself before you visit; we appraise against the same number.
+
+## Why silver is a quantity game
+
+Gold is worth so much per gram that a single ring is a meaningful sale. Silver trades at a small fraction of gold's price, so individual pieces are modest — a lone sterling teaspoon weighs well under a troy ounce. The value comes from volume: a full flatware service, a tea set, a tray, and a drawer of odd serving pieces can together add up to hundreds of troy ounces.
+
+So bring everything, including the pieces you're unsure about. This matters most when you're clearing out [an inherited estate](/we-buy-estate-gold-jewelry) — sorting sterling from plate is exactly what the free appraisal is for, and there's no obligation to sell any of it.
+
+## Pre-1965 coins: the 'junk silver' in your change jar
+
+US dimes, quarters, and half dollars minted in 1964 or earlier are 90% silver. Dealers call them 'junk silver' — junk only in the sense that they carry no collector premium; the silver is very real. Every $1 of face value in circulated 90% coins contains about 0.715 troy ounces of pure silver, so even a modest coffee can adds up. Two details worth knowing: Kennedy half dollars from 1965–1970 are 40% silver (still worth bringing), and 1965-or-later dimes and quarters are copper-nickel with no silver at all. We buy [silver coins](/coins/sell-silver-coins) by their silver content, alongside silver dollars, bars, and rounds.
+
+## What to expect at the appraisal
+
+The process at all four stores is the same, and it's built to be watched:
+
+- **Free, no-obligation, in-person appraisal** against the live silver spot price.
+- **Every piece tested** to confirm .925 (or .999 for bullion) and **weighed on a calibrated scale in front of you**.
+- **Silverplate separated out honestly** — we'll show you the marks and explain why a piece doesn't qualify.
+- **You keep your items until you accept.** Decline, and everything goes back in the box.
+- **Instant payout** — accepted offers are paid cash the same visit.
+- Virginia law requires a government-issued photo ID, and sellers must be 18 or older.
+
+On .999 fine bullion bars and rounds, our rate is published: 85% of spot. No guessing before you come in.
+
+> **Key takeaway:** Sterling is solid 92.5% silver and is bought by weight against the live spot price; silverplate is a thin coating with no melt value. Check the marks at home, expect knives and weighted pieces to count for less than their heft, and remember that with silver, full sets — not single spoons — are where the money is.
+
+## Where to sell silver in Northern Virginia
+
+Cash for Gold VA has been rated 4.9★ across 500+ Google reviews, and you can [sell across Northern Virginia](/cash-for-gold-northern-virginia) at whichever of our four stores — Annandale, Chantilly, Manassas, or Vienna/Tysons — is closest. Each store's address, hours, and phone are on the store cards just below, and full details are on our [locations page](/locations). Bring the whole chest — flatware, hollowware, jewelry, coins, bars — and walk out the same visit with an instant payout for everything you choose to [sell as silver](/precious-metals/sell-silver). And if the same drawer holds gold, our guide to [selling gold in Northern Virginia](/selling-gold-in-northern-virginia) covers that side too.`,
+  },
+  {
+    slug: "what-to-watch-out-for-when-selling-gold",
+    title: "9 Red Flags to Watch Out for Before You Sell Your Gold or Silver",
+    seoTitle: "Selling Gold? 9 Red Flags That Cost Sellers Real Money",
+    date: "2026-07-07",
+    category: "Guides",
+    excerpt:
+      "Most people who get shortchanged selling gold never realize it happened. From back-room appraisals to the pennyweight switch, here are nine red flags every seller should know before handing over jewelry, coins, or silver — plus a five-minute checklist that protects you at any buyer, including ours.",
+    body: `Here's the uncomfortable truth about selling gold: the sellers who get shortchanged almost never know it. There's no alarm, no obvious scam moment — just a smiling buyer, a quick number, and a handshake. The tricks that cost you real money are quiet ones, and they work precisely because most people sell gold only once or twice in their lives.
+
+We buy gold and silver every day at our four Northern Virginia stores, and we'd rather you walk in informed. So here's the insider list — the nine red flags that should make you pause, no matter whose counter you're standing at. Ours included.
+
+## The 9 red flags
+
+### 1. The appraisal happens where you can't see it
+
+If a buyer takes your jewelry "to the back" to test and weigh it, that's the single biggest red flag in this business. Once your items leave your sight, you can't verify what was tested, what was weighed, or whether the piece that comes back is even yours. A legitimate buyer tests and weighs everything in front of you and explains what they're doing. If you're curious what that should look like step by step, we've written up [what a transparent appraisal looks like](/understanding-the-cash-for-gold-process) from start to finish.
+
+### 2. One vague number for the whole pile
+
+"I'll give you $400 for all of it." For what, exactly? A 10K class ring, a 14K bracelet, and an 18K chain have very different gold content — and lumping them together is how weak offers hide. Sterling silver mixed in makes it worse. Insist on an itemized breakdown: each piece's karat, its weight, and the price per gram. If the buyer won't break it down, they're counting on you not to do the math. This matters even more [if you're selling silver](/selling-silver-in-northern-virginia) alongside gold, because silver's per-gram value is far lower and easy to blur into a bulk quote.
+
+### 3. The pennyweight switch
+
+This is the classic. Gold is commonly weighed in grams or in pennyweights (dwt) — and one pennyweight equals about 1.55 grams. A dishonest buyer weighs your gold in pennyweights but quotes a per-gram price, or shuffles the units on the paperwork so the numbers look bigger than they are. The defense is simple: ask which unit they're using, and confirm the weight and the price are in the *same* unit. If the units change mid-conversation, walk.
+
+### 4. The scale is hidden, tilted, or uncertified
+
+In Virginia, commercial scales are supposed to be inspected and certified — look for the inspection seal. A scale you can't see, can't read, or that sits behind the counter facing away from you is a problem. So is a buyer who "eyeballs" weight or rounds down casually. At our counters the scale is calibrated, certified, and turned toward you, because the weight is half the equation and you deserve to watch it happen.
+
+### 5. The hotel ballroom "buying event"
+
+Traveling pop-up buyers rent a hotel conference room, blanket the area with ads, buy aggressively for a weekend, and leave. The pressure is built in: "this offer is only good today," because *they're* only there today. If something goes wrong — a miscount, a dispute, a piece that turns out to be worth far more — there's no storefront to return to. A buyer with a permanent local address has a reputation to protect. A buyer with a rented ballroom doesn't.
+
+### 6. Mail-in kits: you lose possession before you hear a price
+
+Mail-in gold services flip the entire power dynamic. You ship your items sight-unseen, wait, and then receive an offer — after your gold is already in their hands. Declining often means waiting again for return shipping and hoping everything comes back. Some services are legitimate, but structurally you've given up your leverage and your possession before a single number is discussed. In person, you keep your items in hand until the moment you accept. That's not a perk; it should be the baseline.
+
+### 7. No ID, no receipt, no paper trail
+
+Here's a counterintuitive one: a buyer who *doesn't* ask for your ID is the red flag. Virginia law requires precious-metals buyers to record a government-issued photo ID from every seller (18+). A buyer skipping that step is skipping the law — and if they'll cut that corner, imagine the corners you can't see. Legitimate buyers also hand you an itemized receipt. No paperwork means no recourse.
+
+### 8. You only got one offer
+
+Not a scam — just the most expensive mistake on this list. Offers for identical gold can vary dramatically between buyers because everyone's payout percentage against the spot price is different. Getting two or three quotes takes an afternoon and is the single highest-leverage thing you can do. We've put together a guide on [how to compare buyers](/finding-the-best-cash-for-gold-options) properly, and yes — we say that knowing you might compare us. Free, no-obligation appraisals exist for exactly this reason. Use them.
+
+### 9. Scrapping a piece that's worth more than its weight
+
+Melt value is the *floor*, not the ceiling. A signed designer piece, an antique with intact patina, or a collectible coin can be worth well above its gold content — and a scrap-only buyer will happily pay you the floor. Related trap: aggressively polishing an antique before selling can destroy the patina collectors pay for. If you suspect a piece has value beyond weight, say so and ask how it's being priced. Our guide to [getting the most for your gold](/maximizing-your-profit-with-cash-for-gold) covers when weight-based selling makes sense and when it doesn't.
+
+> **Key takeaway:** Every one of these red flags is defeated by the same three demands — test and weigh it in front of me, itemize it by karat and unit, and let me hold my items until I say yes. Any buyer who resists any of those three has told you everything you need to know.
+
+## Your 5-minute pre-sale checklist
+
+- **Sort your items by karat** (check the stamps: 10K, 14K, 18K, 925 for sterling) so nothing gets bulk-quoted.
+- **Weigh them at home** on a kitchen scale in grams — approximate is fine; you just need a sanity check.
+- **Look up the live spot price** the day you sell, so you know the ballpark ceiling.
+- **Set aside anything signed, antique, or collectible** — and don't clean it.
+- **Bring your government photo ID** (required by Virginia law; sellers must be 18+).
+- **Decide your walk-away number** before anyone quotes you.
+
+If you're still weighing the decision itself, we've also covered [whether it's worth selling](/is-cash-for-gold-worth-it) in the first place — sometimes holding is the right call, and a good buyer will tell you that too.
+
+## What the fair version looks like
+
+None of this is meant to scare you off. [Selling gold in Northern Virginia](/selling-gold-in-northern-virginia) is straightforward when the buyer works in the open — and now you know exactly what "in the open" means: items tested and weighed on a calibrated scale in front of you, an offer built from the live spot price with a clear karat-by-karat breakdown, your items staying in your possession until you accept, and instant payout the same visit if you do.
+
+That's how we run every appraisal at Cash for Gold VA — it's a big part of why we hold a 4.9-star Google rating across 500+ reviews as [a transparent buyer in Northern Virginia](/cash-for-gold-northern-virginia). Bring this article with you if you like. We mean that literally.
+
+You'll find all four stores — Annandale, Chantilly, Manassas, and Vienna/Tysons — with addresses, hours, and phone numbers on the store cards just below and on our [locations page](/locations). Appraisals are free and no-obligation — walk in with questions, walk out with answers, and only sell if the number earns it.`,
+  },
+  {
     slug: "gold-price-today",
     title: "Gold Price Today: How to Read It and What It Means When You Sell",
     seoTitle: "Gold Price Today: What Your Gold Is Worth | Cash for Gold VA",
@@ -1346,6 +1588,9 @@ export const getPost = (slug: string) => POSTS.find((p) => p.slug === slug);
 // (storefront photos for location posts, product/category shots for the rest).
 // All images are local landscape JPGs that render well full-bleed.
 const BLOG_COVERS: Record<string, string> = {
+  "selling-gold-in-northern-virginia": "/blog/selling-gold-nova.jpg",
+  "selling-silver-in-northern-virginia": "/blog/selling-silver-nova.jpg",
+  "what-to-watch-out-for-when-selling-gold": "/blog/red-flags-selling-gold.jpg",
   "gold-price-today": "/categories/gold-bars.jpg",
   "cash-for-gold-nova-falls-church-va": "/photos/storefront-vienna.jpg",
   "cash-for-gold-loudoun-county-va": "/photos/storefront-chantilly.jpg",

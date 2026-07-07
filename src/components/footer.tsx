@@ -94,19 +94,25 @@ export function Footer() {
       </div>
 
       {CITY_LANDINGS.length > 0 && (
-        <div className="container-page pb-10">
-          <p className="flex flex-wrap items-center gap-x-2 gap-y-1.5 text-sm leading-relaxed text-cream-100/60">
-            <span className="font-bold text-cream-50">Also serving:</span>
+        <nav aria-label="Areas we serve" className="container-page pb-12 sm:pb-10">
+          {/* Mobile only: a tidy column heading (matches the other footer columns) */}
+          <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-gold-300 sm:hidden">Also Serving</h3>
+          {/* Mobile: clean 2-column list · Desktop (sm+): the original full-width inline
+              row with a bold inline label and gold · separators. One DOM, no duplicate links. */}
+          <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5 text-sm sm:mt-0 sm:flex sm:flex-wrap sm:items-center sm:gap-x-2 sm:gap-y-1.5 sm:leading-relaxed">
+            <li className="hidden sm:block">
+              <span className="font-bold text-cream-50">Also serving:</span>
+            </li>
             {CITY_LANDINGS.map((c, i) => (
-              <span key={c.slug} className="flex items-center gap-x-2">
-                {i > 0 && <span className="text-gold-500/40" aria-hidden="true">·</span>}
-                <Link href={`/${c.slug}`} className="text-cream-100/80 transition-colors hover:text-gold-200">
+              <li key={c.slug} className="sm:flex sm:items-center sm:gap-x-2">
+                {i > 0 && <span aria-hidden="true" className="hidden text-gold-500/40 sm:inline">·</span>}
+                <Link href={`/${c.slug}`} className="inline-block py-0.5 text-cream-100/70 transition-colors hover:text-gold-200 sm:py-0 sm:text-cream-100/80">
                   {c.city}
                 </Link>
-              </span>
+              </li>
             ))}
-          </p>
-        </div>
+          </ul>
+        </nav>
       )}
 
       <div className="rule-gold opacity-30" />

@@ -6,6 +6,7 @@ import { BLOG_AUTHOR, relatedPosts, coverImage } from "@/data/blog";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { Markdown } from "@/components/markdown";
 import { BlogCard } from "@/components/blog-card";
+import { LocationsStrip } from "@/components/locations-strip";
 import { BreadcrumbJsonLd, BlogPostingJsonLd } from "@/components/json-ld";
 import { formatDate, readingTime } from "@/lib/utils";
 
@@ -93,6 +94,9 @@ export function BlogArticle({ post }: { post: BlogPost }) {
           </div>
         </div>
       </article>
+
+      {/* Store cards — every article funnels to the four stores + location pages */}
+      <LocationsStrip />
 
       {/* Related */}
       {related.length > 0 && (
