@@ -958,6 +958,201 @@ export const CITY_LANDINGS: CityLanding[] = [
     closingCta:
       "Point the car south on Route 50 — our Annandale store is 10–12 minutes from the Little City, and your gold is tested, quoted, and paid with an instant payout in a single trip.",
   },
+  {
+    slug: "cash-for-gold-springfield",
+    city: "Springfield",
+    region: "VA",
+    seoTitle: "Sell Gold Near Springfield, VA | Instant Payout",
+    metaDescription:
+      "Selling gold in Springfield, VA? Our nearest store in Annandale is a 15-minute drive — free appraisal against live spot, instant payout. 4.9★, 500+ reviews.",
+    heroTitle: "Cash for Gold in Springfield, VA",
+    heroSubtitle:
+      "We don't have a storefront in Springfield itself, but our Annandale store is about 15 minutes northeast via Braddock and Backlick — your gold is tested in front of you and you walk out paid the same visit.",
+    intro:
+      "Looking for cash for gold in Springfield? Honest answer first: **we don't have a counter in Springfield itself** — our nearest store is in **Annandale, about a 15-minute drive northeast** up Braddock Road and Backlick Road, or a quick hop up I-395 if the Mixing Bowl is behaving. Springfield is one of southeastern Fairfax County's oldest established suburbs, and the gold that comes from here shows it: households that have owned the same house since long before Springfield Mall became **Springfield Town Center** tend to hold **inherited rings, old wedding sets, sterling flatware, and karat gold that's been sitting in a dresser drawer for decades**. Whether it's an estate you're settling or a chain you haven't worn since the nineties, it's all worth a real number.\n\nGetting that number takes one short visit, and every step happens **in front of you, not in a back room**. We test each piece for purity, weigh it on a **calibrated scale you can watch**, and price it against the **live spot price** at that moment — then explain how we got there. The appraisal is **free and carries no obligation**, and your items **stay in your hands until you accept the offer**. Say yes and it's an **instant payout** — paid in cash the same visit. Say no and everything goes home with you, along with a real figure to compare anywhere else. That's the process behind our **4.9★ Google rating across 500+ reviews**.",
+    whyLocalTitle: "Why Springfield sellers do better at a real counter than in a mail-in envelope",
+    whyLocal:
+      "Mail-in gold buyers ask you to seal your jewelry — often the most valuable small things you own — into a prepaid envelope, ship it to a facility you'll never see, and wait for an offer calculated out of your sight. Decline it, and you wait again for your gold to survive the mail a second time. At a real counter, none of that applies: **you watch the karat test, you watch the scale, and your items never leave your possession** until you've agreed to a price.\n\nFor Springfield, the local option barely costs you anything. **Annandale is about 15 minutes up Braddock Road and Backlick Road** — or one exit's worth of I-395 — which is less time than a round trip to the post office, let alone the week a mail-in cycle takes. Anyone who commutes through the Mixing Bowl every day can fold the trip into an errand run. And when you sell, you're **paid before you leave the store** — cash the same visit, not a check that clears in a week or a transfer you have to chase.",
+    neighborhoods: [
+      {
+        name: "North Springfield",
+        note: "The closest part of Springfield to our Annandale counter — Braddock Road connects the two almost directly. These postwar streets hold some of the area's longest-tenured households, and the gold reflects it: mid-century wedding bands, old pocket watches, and coin collections started generations ago, which we appraise for age and collectibility before we ever talk melt weight.",
+      },
+      {
+        name: "West Springfield",
+        note: "The established family neighborhoods off Old Keene Mill and Rolling Road are classic estate-gold territory — parents downsizing, adult children settling a family home, jewelry boxes accumulated over forty years. We test and quote every piece separately, so real karat gold gets sorted from plated keepsakes on the spot instead of guessed at.",
+      },
+      {
+        name: "Saratoga & Rolling Valley",
+        note: "These 1970s-era communities on Springfield's southern side send us the practical middle of the business: everyday 14k chains, retired wedding sets, single earrings, and broken pieces that stopped being wearable years ago. Condition doesn't matter for melt value — a snapped chain pays the same per gram as an intact one.",
+      },
+      {
+        name: "Newington & the Kingstowne edge",
+        note: "The newer townhome communities along the I-95 corridor skew modern: designer jewelry, diamond settings, and the occasional luxury watch bought in a good year. Those are appraised on brand, model, and condition rather than weight alone, since a recognizable maker's mark can push the offer well past what the metal weighs out to.",
+      },
+    ],
+    nearestIntro:
+      "Springfield doesn't have a Cash for Gold VA storefront yet, but two of our stores are a short, familiar drive away — one straight up Braddock and Backlick, one up toward Tysons.",
+    nearest: [
+      { slug: "annandale", drive: "about 15 minutes northeast via Braddock Road and Backlick Road, or a quick hop up I-395" },
+      { slug: "vienna", drive: "about 20 minutes north toward Tysons" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold near Springfield, VA?",
+        a: "There's no Cash for Gold VA store inside Springfield itself. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 15 minutes northeast via Braddock Road and Backlick Road, or a quick run up I-395. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 20 minutes north if that direction suits your day better.",
+      },
+      {
+        q: "How far is the nearest gold buyer from Springfield?",
+        a: "About 15 minutes. Our Annandale counter sits on Columbia Pike, reachable from most of Springfield via Braddock Road and Backlick Road — including West Springfield and North Springfield — or one short stretch of I-395 from the Franconia–Springfield side. It's a faster round trip than mailing your jewelry away, and unlike a mail-in envelope, you're paid the same visit.",
+      },
+      {
+        q: "Do you buy silver, sterling flatware, and coins from Springfield sellers?",
+        a: "Yes — and Springfield's established households bring us a lot of it. We buy sterling silver jewelry, flatware sets, tea services, silver bars and rounds, and pre-1965 US 90% junk silver coins, alongside gold coins and bullion. Sterling sets are tested piece by piece to confirm .925 — silverplate gets separated out honestly — and full flatware services add up quickly by weight on the scale.",
+      },
+      {
+        q: "How is my gold valued?",
+        a: "Three visible steps: we test each piece to confirm its actual purity rather than trusting the stamp, weigh it on a calibrated scale in front of you, and price it against the live spot price at that moment. Then we explain the number before you decide anything. Designer pieces, diamonds, and collectible coins are appraised individually, since brand, stones, or rarity can be worth more than the metal alone. The appraisal is free either way.",
+      },
+      {
+        q: "Do I get paid on the spot?",
+        a: "Yes. If you accept the offer, it's an instant payout — you're paid in cash the same visit, before you leave the Annandale store. There's no check to wait on and no transfer to follow up about. If the number doesn't work for you, your items simply go home with you; the appraisal costs nothing and there's no obligation to sell.",
+      },
+    ],
+    relatedPosts: ["we-buy-estate-gold-jewelry", "is-cash-for-gold-worth-it", "selling-gold-jewelry"],
+    closingCta:
+      "Point the car up Braddock or Backlick — our Annandale store is about 15 minutes from Springfield, and that drawer of old gold can be tested, quoted, and paid in cash in a single visit. Call (571) 290-8020 or just walk in.",
+  },
+  {
+    slug: "cash-for-gold-baileys-crossroads",
+    city: "Bailey's Crossroads",
+    region: "VA",
+    seoTitle: "Sell Gold in Bailey's Crossroads, VA | 22k & 24k Paid",
+    metaDescription:
+      "Sell gold near Bailey's Crossroads, VA — our Annandale store is 7–10 minutes out Columbia Pike. Free appraisal, instant payout. 4.9★ from 500+ reviews.",
+    heroTitle: "Cash for Gold in Bailey's Crossroads, VA",
+    heroSubtitle:
+      "We don't have a storefront in Bailey's Crossroads itself, but our Annandale store is practically next door — about 7–10 minutes straight out Columbia Pike — and you walk out paid the same visit.",
+    intro:
+      "Looking for cash for gold in Bailey's Crossroads? Honest answer first: **we don't have a counter at the crossroads itself**, but you may not find a shorter trip anywhere in Northern Virginia — our **Annandale store sits on the very same road**, about 7–10 minutes west out Columbia Pike (Route 244) from the Route 7 junction. No Beltway, no merges: the pike you already drive runs almost door to door from Skyline or Culmore to our counter at 7262 Columbia Pike.\n\nBailey's Crossroads is one of the most international communities in Northern Virginia, and the gold here reflects it. Alongside everyday 14k American jewelry, families around Skyline and Culmore hold **22k and 24k pieces — wedding sets, bangles, chains, coin pendants — from South Asian, Middle Eastern, Latin American, and East African traditions**, and high-karat gold carries far more gold per gram than a typical 14k piece. That's exactly why the appraisal method matters: we **test every piece for its actual karat and weigh it on a calibrated scale in front of you**, price it against the **live spot price** at that moment, and explain the number. A 22k bangle gets paid as 22k — never rounded down to a flat rate — and your items **stay in your hands until you accept**. If you do, it's an **instant payout, paid in cash the same visit**; if you don't, everything goes home with you and the appraisal cost nothing.",
+    whyLocalTitle: "Why Bailey's Crossroads sellers should skip the mail-in envelope",
+    whyLocal:
+      "Mail-in gold buyers ask you to seal your jewelry into a prepaid envelope, ship it to a facility you'll never see, and wait for an offer decided out of your sight — and for high-karat gold especially, you have no way to confirm they tested your 22k as 22k instead of quietly grading it lower. At a real counter, every step happens where you can watch it: **you see the karat test, you see the scale reading, and your gold never leaves your possession** until you've heard the number and said yes. If the offer falls short, it goes back in your bag and you're back on the pike in two minutes.\n\nFrom Bailey's Crossroads, choosing the counter over the envelope costs you almost nothing. **Annandale is one road away — about 7–10 minutes west on Columbia Pike**, or a quick run over via Leesburg Pike (Route 7) if that's the side of the crossroads you're on. That's shorter than the line at most post offices, and it ends differently: an **instant payout in cash before you leave**, not a check that has to survive the mail twice.",
+    neighborhoods: [
+      {
+        name: "Skyline",
+        note: "The Skyline Towers and Skyline City high-rises hold thousands of households from around the world, and the jewelry that comes from here skews high-karat — 22k wedding sets, bangles, and chains bought abroad or gifted at weddings. Purity is where the money is with these pieces, so we test each one and pay at its true karat against the live spot.",
+      },
+      {
+        name: "Culmore & Glen Forest",
+        note: "The garden apartments along Leesburg Pike are home to longstanding Latin American, East African, and Middle Eastern communities, and we regularly see gold coin pendants, high-karat chains, and religious pieces from these traditions. Small items add up quickly once each is tested and weighed individually — nothing gets lumped into a flat lowball.",
+      },
+      {
+        name: "Lake Barcroft",
+        note: "The lakeside neighborhood just south of the crossroads is older and more established, and it tends to send us the estate side of the business: inherited rings, sterling flatware sets, designer jewelry, and the occasional luxury watch. Pieces with age, maker's marks, or brand value get appraised individually, since they're often worth more than their melt weight.",
+      },
+      {
+        name: "Seven Corners",
+        note: "The shopping crossroads just up Route 7 brings in the everyday mix — broken 14k chains, single earrings, outgrown jewelry, and old class rings pulled from a drawer. Condition doesn't matter for melt value: a snapped chain pays the same per gram as an intact one once it's on the scale.",
+      },
+    ],
+    nearestIntro:
+      "Bailey's Crossroads doesn't have a Cash for Gold VA storefront, but Columbia Pike runs almost straight to our nearest counter — and Route 7 leads to a second option toward Tysons.",
+    nearest: [
+      { slug: "annandale", drive: "about 7–10 minutes west, straight out Columbia Pike (Route 244) — the closest store by far, on the same road as the crossroads" },
+      { slug: "vienna", drive: "about 15 minutes north via Route 7 toward Tysons" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold near Bailey's Crossroads, VA?",
+        a: "There's no Cash for Gold VA store at the crossroads itself, but our Annandale location is about 7–10 minutes west, straight out Columbia Pike: 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15 minutes north via Route 7 if that direction suits you better. Both give the same free, no-obligation appraisal.",
+      },
+      {
+        q: "Do you buy 22k and 24k gold jewelry from Bailey's Crossroads sellers?",
+        a: "Yes — high-karat jewelry is one of the most common things sellers from the Skyline and Culmore area bring us. 22k is about 91.7% pure gold and 24k about 99.9%, far more gold per gram than standard American 14k, so getting the karat right matters enormously. We verify purity with testing rather than trusting the stamp alone, then pay at the tested karat against the live spot price — a 22k bangle is priced as 22k, never quoted at a flat rate.",
+      },
+      {
+        q: "How is my gold valued?",
+        a: "Every offer is built the same way: we test each piece's purity, weigh it on a calibrated scale you can watch, and price it against the live spot price at that moment — so a 22k chain is paid at 22k purity and a 14k band at 14k, by actual weight. Then we explain the number before you decide anything. Your items stay in your hands until you agree, and the appraisal is free whether you sell or not.",
+      },
+      {
+        q: "Do you buy silver, coins, and things besides gold?",
+        a: "Yes. Beyond gold in all karats, we buy sterling silver jewelry, flatware and tea sets, silver bars and rounds, pre-1965 US 90% junk silver coins, platinum and palladium, diamonds and precious stones, fine and designer jewelry, luxury watches, coins from bullion to collectible, and electronics. If you're not sure whether something qualifies, bring it along — the appraisal costs nothing.",
+      },
+      {
+        q: "Do I get paid on the spot?",
+        a: "Yes. If you accept the offer, it's an instant payout — you're paid in cash the same visit, before you leave the store, with no check to wait on and no transfer to chase. If you decline, you simply take your items home. From Bailey's Crossroads, the whole round trip out Columbia Pike and back can fit inside a lunch break.",
+      },
+    ],
+    relatedPosts: ["we-pay-90-percent-for-gold-coins", "we-buy-estate-gold-jewelry", "list-of-top-20-name-brand-in-gold-jewelry"],
+    closingCta:
+      "Point the car west on Columbia Pike — our Annandale store is 7–10 minutes from Bailey's Crossroads, and your gold is tested in front of you, quoted on the live spot, and paid in cash the same visit. Call (571) 290-8020 or just walk in.",
+  },
+  {
+    slug: "cash-for-gold-lincolnia",
+    city: "Lincolnia",
+    region: "VA",
+    seoTitle: "Sell Gold Near Lincolnia, VA | Annandale Is 5 Min Away",
+    metaDescription:
+      "Sell gold near Lincolnia, VA — our Annandale store is 5–8 minutes up Route 236. Free appraisal, instant payout the same visit. 4.9★ from 500+ reviews.",
+    heroTitle: "Cash for Gold in Lincolnia, VA",
+    heroSubtitle:
+      "We don't have a storefront in Lincolnia itself — but you barely need one, because our Annandale store is 5–8 minutes west along Little River Turnpike, practically next door. Bring your gold in and walk out with cash the same visit.",
+    intro:
+      "Looking for cash for gold in Lincolnia? Honest answer first: **we don't have a counter inside Lincolnia** — but Lincolnia is Annandale's next-door neighbor, and our **Annandale store on Columbia Pike is a 5–8 minute drive west**, straight along Little River Turnpike (Route 236) or Lincolnia Road. That makes Lincolnia one of the closest communities to any of our counters — closer than almost anywhere else we serve. And what comes across that counter from Lincolnia has its own character: this is a small, quiet, established corner of Fairfax County, tucked between Annandale and Alexandria, where many homes have been in the same families for decades. That means **inherited and estate jewelry** — old karat gold that's sat in a dresser drawer since the seventies, class rings nobody wears, wedding bands passed down a generation or two.\n\nHere's exactly what happens when you bring it in. The appraisal is **free and carries no obligation**. We test each piece for purity and weigh it on a **calibrated scale in front of you** — not in a back room — then price it against the **live spot price** at that moment and explain the number. Your items **stay in your hands until you accept**. If you say yes, it's an **instant payout**: you're paid in cash the same visit, before you leave. If you say no, everything goes home with you, plus a real number to compare anywhere else.",
+    whyLocalTitle: "Why Lincolnia sellers have almost no reason to mail gold away",
+    whyLocal:
+      "Mail-in gold buyers ask you to seal your jewelry — often the most valuable small things you own — into a prepaid envelope, ship it to a facility you'll never see, and wait days for an offer calculated out of your sight. If you decline, you wait again for your items to ride the mail back. At a real counter, none of that applies: **you watch the testing and the weighing yourself**, you hear how the offer was built against the live spot price, and your gold **never leaves your sight** until you've agreed.\n\nFor most communities, the tradeoff for that transparency is a drive. From Lincolnia, there barely is one. The **Annandale counter is 5–8 minutes west on Route 236** — the same road that runs past your own neighborhood — which is genuinely less time than packaging jewelry and standing in line at the post office. And instead of tracking an envelope for a week, you're **paid before you leave the store**: an instant payout in cash the same visit, not a check that clears whenever it clears.",
+    neighborhoods: [
+      {
+        name: "Lincolnia Heights",
+        note: "The mid-century core of the community, where many houses are still owned by the families who bought them decades ago. That's exactly the profile behind the estate boxes we see from here — old 14k wedding sets, brooches, and pocket watches — and anything with real age or craftsmanship gets appraised on its own merits before melt weight ever enters the conversation.",
+      },
+      {
+        name: "Bren Mar Park",
+        note: "The established brick homes on the Edsall Road side often come to us during a downsizing or after settling a parent's estate. Alongside karat gold, this is where inherited sterling flatware sets and old coin accumulations tend to surface — we test each piece, separate the sterling from the silverplate honestly, and weigh it all in front of you.",
+      },
+      {
+        name: "Wakefield",
+        note: "The family neighborhoods near the park bring in the everyday side of the business: class rings, broken chains, single earrings, and gold that stopped being worn years ago. Condition doesn't matter for melt value — a snapped chain pays the same per gram as an intact one once it's tested at its true karat.",
+      },
+      {
+        name: "Pinecrest",
+        note: "The golf-course community's townhomes skew a little newer than the rest of Lincolnia, and so does its jewelry — modern diamond settings, designer pieces, and the occasional luxury watch. Those get appraised individually on brand, model, and condition, since they're often worth well more than their metal content.",
+      },
+    ],
+    nearestIntro:
+      "Lincolnia doesn't have its own Cash for Gold VA storefront — it doesn't really need one, because our Annandale store sits just up the road, with Vienna/Tysons as a second option to the north.",
+    nearest: [
+      { slug: "annandale", drive: "just 5–8 minutes west along Little River Turnpike (Route 236) or Lincolnia Road — one of the closest stores to any area we serve" },
+      { slug: "vienna", drive: "about 18 minutes north toward Tysons" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold near Lincolnia, VA?",
+        a: "The closest place is our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — a 5–8 minute drive west from Lincolnia via Little River Turnpike (Route 236) or Lincolnia Road. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is about 18 minutes north if that direction suits your day better.",
+      },
+      {
+        q: "How close is the nearest gold buyer to Lincolnia?",
+        a: "Unusually close. Lincolnia sits directly next to Annandale along Route 236, so our Annandale counter is only 5–8 minutes away — closer than for almost any other community we serve without its own storefront. It's a shorter trip than mailing your jewelry away would take just to package and drop off.",
+      },
+      {
+        q: "Do you buy silver, coins, and estate jewelry from Lincolnia sellers?",
+        a: "Yes — estate items are a big part of what Lincolnia brings us. We buy gold in all karats (scrap, jewelry, coins, bullion), sterling silver jewelry and flatware or tea sets, silver bars, rounds, and pre-1965 junk silver coins, plus platinum, palladium, diamonds and precious stones, fine and designer jewelry, luxury watches, and electronics. Bring the whole box as-is — we test and quote each piece separately, so real gold gets separated from plated on the spot.",
+      },
+      {
+        q: "How is my gold valued?",
+        a: "Every offer is built the same way: we test the piece's actual purity, weigh it on a calibrated scale you can watch, and price it against the live spot price at that moment — then explain the number before you decide anything. Older estate pieces with genuine age, maker's marks, or notable craftsmanship are appraised individually rather than quoted as scrap, since they can be worth more than their melt weight. The appraisal is free either way.",
+      },
+      {
+        q: "Do I get paid on the spot?",
+        a: "Yes. If you accept the offer, you get an instant payout — paid in cash the same visit, before you leave the Annandale store. There's no check to wait on and nothing to chase. If you decline, your items simply go home with you; the appraisal costs nothing and carries no obligation.",
+      },
+    ],
+    relatedPosts: ["we-buy-estate-gold-jewelry", "cash-for-gold-close-to-me", "is-cash-for-gold-worth-it"],
+    closingCta:
+      "You're practically already here — our Annandale store is 5–8 minutes from Lincolnia straight up Route 236. Call (571) 290-8020 or just walk in, and that drawer of old gold can be tested, quoted, and paid in cash before you're back home.",
+  },
 ];
 
 export const getCityLanding = (slug: string): CityLanding | undefined =>
