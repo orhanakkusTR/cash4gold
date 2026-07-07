@@ -460,7 +460,7 @@ export function NovaLanding({ landing }: { landing: CityLandingData }) {
               No store in your city yet? These pages show your closest location and drive time, so you still know exactly where to sell.
             </p>
             <div className="mt-5">
-              <CityChips items={cityChips} initial={cityChips.length} />
+              <CityChips items={cityChips} initialMobile={cityChips.length} initialDesktop={cityChips.length} />
             </div>
           </div>
         </section>

@@ -5,6 +5,7 @@ import { MapPin, Phone, Navigation, ArrowRight } from "lucide-react";
 import { LOCATIONS, SITE } from "@/data/business";
 import { CITY_LANDINGS } from "@/data/city-landings";
 import { CityChips } from "@/components/city-chips";
+import { FindStoreButton } from "@/components/find-store-button";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { Reveal } from "@/components/reveal";
 import { OpenStatus } from "@/components/open-status";
@@ -140,6 +141,9 @@ export default function LocationsPage() {
             </p>
             <div className="mt-5">
               <CityChips items={CITY_LANDINGS} />
+            </div>
+            <div className="mt-7">
+              <FindStoreButton />
             </div>
           </div>
         </section>
