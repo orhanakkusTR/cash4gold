@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Navigation, ArrowRight } from "lucide-react";
 import { LOCATIONS, SITE } from "@/data/business";
+import { CITY_LANDINGS } from "@/data/city-landings";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { Reveal } from "@/components/reveal";
 import { OpenStatus } from "@/components/open-status";
@@ -13,6 +14,10 @@ export const metadata: Metadata = {
   description: "Four Cash for Gold VA locations: Annandale, Manassas, Chantilly, and Vienna/McLean. Find addresses, hours, and phone numbers. Free appraisals, instant payout.",
   alternates: { canonical: "/locations" },
 };
+
+// Lookup so an "Also serving" chip that names a city we have a landing page for
+// becomes a link to that page (data-driven — scales as CITY_LANDINGS grows).
+const cityLandingByName = new Map(CITY_LANDINGS.map((c) => [c.city.toLowerCase(), c]));
 
 export default function LocationsPage() {
   return (
@@ -77,11 +82,22 @@ export default function LocationsPage() {
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-foreground/50">Also serving</p>
                     <div className="mt-2 flex flex-wrap gap-1.5">
-                      {l.neighborhoods.map((n) => (
-                        <span key={n} className="rounded-full bg-gold-50 px-3 py-1 text-xs font-medium text-gold-700">
-                          {n}
-                        </span>
-                      ))}
+                      {l.neighborhoods.map((n) => {
+                        const landing = cityLandingByName.get(n.toLowerCase());
+                        return landing ? (
+                          <Link
+                            key={n}
+                            href={`/${landing.slug}`}
+                            className="inline-flex items-center gap-1 rounded-full bg-gold-100 px-3 py-1 text-xs font-semibold text-gold-800 ring-1 ring-gold-500/30 transition-colors hover:bg-gold-200"
+                          >
+                            {n} <ArrowRight className="h-3 w-3" />
+                          </Link>
+                        ) : (
+                          <span key={n} className="rounded-full bg-gold-50 px-3 py-1 text-xs font-medium text-gold-700">
+                            {n}
+                          </span>
+                        );
+                      })}
                     </div>
                   </div>
 
@@ -113,6 +129,28 @@ export default function LocationsPage() {
           );
         })}
       </section>
+
+      {CITY_LANDINGS.length > 0 && (
+        <section className="border-t border-ink-900/8 bg-cream-50/60 py-14 md:py-16">
+          <div className="container-page">
+            <h2 className="font-display text-xl font-extrabold text-foreground sm:text-2xl">Areas we also serve</h2>
+            <p className="mt-2 max-w-2xl text-sm text-muted">
+              No Cash for Gold VA store in your city yet? These pages show your closest location and drive time, so you still know exactly where to sell.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2.5">
+              {CITY_LANDINGS.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/${c.slug}`}
+                  className="rounded-full border border-gold-500/40 px-4 py-2 text-sm font-medium text-gold-700 transition-colors hover:bg-gold-50"
+                >
+                  Cash for gold in {c.city}, {c.region}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <CtaBand
         title="Not sure which store is closest?"

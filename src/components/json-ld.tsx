@@ -162,3 +162,50 @@ export function FaqJsonLd({ faqs }: { faqs: { q: string; a: string }[] }) {
     />
   );
 }
+
+/**
+ * WebPage node for city LANDING pages (/cash-for-gold-<city>) — geo-anchors the
+ * page to its target city and references the site-wide Organization by @id only.
+ * Deliberately NO JewelryStore/LocalBusiness node and NO aggregateRating here:
+ * a store node with a `…/locations/<slug>#business` @id would collide with the
+ * per-location schema and re-trigger the GSC "multiple aggregate ratings" error
+ * (see OrganizationJsonLd). Referencing #org by @id does NOT duplicate its rating.
+ */
+export function CityWebPageJsonLd({
+  slug,
+  city,
+  region,
+  title,
+  description,
+}: {
+  slug: string;
+  city: string;
+  region: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${SITE.domain}/${slug}#webpage`,
+        url: `${SITE.domain}/${slug}`,
+        name: title,
+        description,
+        about: {
+          "@type": "Place",
+          name: `${city}, ${region}`,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: city,
+            addressRegion: region,
+            addressCountry: "US",
+          },
+        },
+        isPartOf: { "@type": "WebSite", url: SITE.domain, name: SITE.name },
+        provider: { "@id": `${SITE.domain}#org` },
+      }}
+    />
+  );
+}

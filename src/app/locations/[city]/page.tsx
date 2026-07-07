@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MapPin, Phone, Clock, ArrowRight, Check, Navigation } from "lucide-react";
 import { LOCATIONS, CATEGORIES, ALL_SUBCATEGORIES, getLocation, SITE } from "@/data/business";
+import { CITY_LANDINGS } from "@/data/city-landings";
 import { formatHours } from "@/lib/utils";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { Reveal } from "@/components/reveal";
@@ -32,6 +33,12 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
   const { city } = await params;
   const loc = getLocation(city);
   if (!loc) notFound();
+
+  // City landing pages that name THIS store as one of their nearest locations —
+  // reciprocal hub-and-spoke internal links (data-derived, scales with new cities).
+  const nearbyCityLandings = CITY_LANDINGS.filter((c) =>
+    c.nearest.some((n) => n.slug === loc.slug),
+  );
 
   return (
     <>
@@ -166,6 +173,19 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
               </span>
             ))}
           </div>
+          {nearbyCityLandings.length > 0 && (
+            <p className="mt-5 text-sm text-muted">
+              Nearby cities we serve from {loc.city}:{" "}
+              {nearbyCityLandings.map((c, i) => (
+                <span key={c.slug}>
+                  {i > 0 && ", "}
+                  <Link href={`/${c.slug}`} className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-800">
+                    Cash for gold in {c.city}
+                  </Link>
+                </span>
+              ))}
+            </p>
+          )}
         </div>
       </section>
 

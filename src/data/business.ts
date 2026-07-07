@@ -122,7 +122,7 @@ export const LOCATIONS: Location[] = [
     geo: { lat: 38.8304, lng: -77.1962 },
     mapUrl: "https://maps.app.goo.gl/rDZpb3hueHhVyUqU8",
     hours: ANNANDALE_HOURS,
-    neighborhoods: ["Falls Church", "Springfield", "Bailey's Crossroads", "Lincolnia"],
+    neighborhoods: ["Alexandria", "Falls Church", "Springfield", "Bailey's Crossroads", "Lincolnia"],
     image: "/photos/storefront-annandale.jpg",
   },
   {

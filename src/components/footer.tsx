@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, Star } from "lucide-react";
 import { SITE, CATEGORIES, LOCATIONS, SHOW_CALCULATOR } from "@/data/business";
+import { CITY_LANDINGS } from "@/data/city-landings";
 import { GoogleG } from "@/components/google-rating";
 import { OpenStatus } from "@/components/open-status";
 
@@ -89,6 +90,19 @@ export function Footer() {
               </li>
             ))}
           </ul>
+          {CITY_LANDINGS.length > 0 && (
+            <p className="mt-4 text-sm text-cream-100/60">
+              Also serving:{" "}
+              {CITY_LANDINGS.map((c, i) => (
+                <span key={c.slug}>
+                  {i > 0 && ", "}
+                  <Link href={`/${c.slug}`} className="text-cream-100/80 transition-colors hover:text-gold-200">
+                    {c.city}
+                  </Link>
+                </span>
+              ))}
+            </p>
+          )}
         </div>
       </div>
 

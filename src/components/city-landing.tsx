@@ -29,15 +29,35 @@ import { OpenStatus } from "@/components/open-status";
 import { CtaBand, Prose } from "@/components/page-parts";
 import { ButtonLink } from "@/components/ui/button";
 import { BlogCard } from "@/components/blog-card";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd, CityWebPageJsonLd } from "@/components/json-ld";
 
 const paras = (text: string) => text.split("\n\n").filter(Boolean);
+
+// Universal FAQ appended to every city page — Virginia requires precious-metals
+// buyers to record a government-issued photo ID for every purchase, so this is a
+// real PAA question AND a YMYL trust/compliance signal. Same wording sitewide is
+// fine (it's a legal fact, not templated local filler).
+const ID_FAQ = {
+  q: "Do I need ID to sell gold in Virginia?",
+  a: "Yes. Virginia law requires precious-metals buyers to record a valid government-issued photo ID for every purchase, so bring your driver's license or passport along with the items you want to sell. You must also be 18 or older.",
+};
 
 // Render inline **bold** markers in body copy as <strong> (Prose styles it dark).
 function withBold(text: string) {
   return text.split(/(\*\*[^*]+\*\*)/g).map((seg, i) =>
     seg.startsWith("**") && seg.endsWith("**") ? (
       <strong key={i} className="font-semibold text-foreground">{seg.slice(2, -2)}</strong>
+    ) : (
+      seg
+    ),
+  );
+}
+
+// Bold every occurrence of `phrase` inside a plain-text heading (case-sensitive whole word)
+function boldPhrase(text: string, phrase: string) {
+  return text.split(new RegExp(`(${phrase})`, "g")).map((seg, i) =>
+    seg === phrase ? (
+      <strong key={i} className="font-extrabold text-foreground">{seg}</strong>
     ) : (
       seg
     ),
@@ -68,6 +88,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
   const primary = stores[0];
   const secondary = stores[1];
   const relatedPosts = landing.relatedPosts.map(getPost).filter(Boolean);
+  const faqs = [...landing.faqs, ID_FAQ];
 
   const crumbs = [
     { name: "Home", href: "/" },
@@ -78,7 +99,14 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
   return (
     <>
       <BreadcrumbJsonLd items={crumbs.map((c) => ({ name: c.name, url: c.href }))} />
-      <FaqJsonLd faqs={landing.faqs} />
+      <FaqJsonLd faqs={faqs} />
+      <CityWebPageJsonLd
+        slug={landing.slug}
+        city={landing.city}
+        region={landing.region}
+        title={landing.seoTitle}
+        description={landing.metaDescription}
+      />
 
       {/* 1 · Hero — bespoke, clones PageHero DNA + a conversion action */}
       <section className="relative overflow-hidden bg-ink-950 pt-40 pb-16 sm:pt-48 sm:pb-20">
@@ -226,10 +254,15 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                   </div>
                   <div className="flex flex-1 flex-col gap-4 p-6 sm:p-8">
                     <div>
-                      <h3 className="font-display text-2xl font-semibold text-foreground">{primary.store.city}</h3>
-                      <p className="mt-1 text-sm text-muted">
+                      <h3 className="font-display text-2xl font-extrabold text-foreground">{primary.store.city}</h3>
+                      <a
+                        href={primary.store.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 inline-block text-sm text-muted underline-offset-2 transition-colors hover:text-gold-700 hover:underline"
+                      >
                         {primary.store.street}, {primary.store.city}, {primary.store.region} {primary.store.postalCode}
-                      </p>
+                      </a>
                       <p className="mt-1 text-sm text-muted">Drive: {primary.drive}.</p>
                     </div>
                     <OpenStatus hours={primary.store.hours} tone="dark" />
@@ -281,10 +314,15 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                   <div className="flex flex-1 flex-col gap-3 p-6">
                     <div>
                       <span className="text-xs font-semibold uppercase tracking-wide text-gold-600">Also nearby</span>
-                      <h3 className="mt-1 font-display text-xl font-semibold text-foreground">{secondary.store.city}</h3>
-                      <p className="mt-1 text-sm text-muted">
+                      <h3 className="mt-1 font-display text-xl font-extrabold text-foreground">{secondary.store.city}</h3>
+                      <a
+                        href={secondary.store.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 inline-block text-sm text-muted underline-offset-2 transition-colors hover:text-gold-700 hover:underline"
+                      >
                         {secondary.store.street}, {secondary.store.city}, {secondary.store.region} {secondary.store.postalCode}
-                      </p>
+                      </a>
                       <p className="mt-1 text-sm text-muted">Drive: {secondary.drive}.</p>
                     </div>
                     <OpenStatus hours={secondary.store.hours} tone="dark" compact />
@@ -321,12 +359,55 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
         </div>
       </section>
 
+      {/* 3.5 · Your visit — a scannable 3-step process (snippet-eligible) */}
+      <section className="bg-cream-50/60 py-12 sm:py-16">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="How It Works"
+            title={<>Your visit, <span className="font-extrabold">start to finish</span></>}
+            description="Walking in with gold for the first time? Here's exactly what happens — no appointment, no pressure, no fee if you walk away."
+          />
+          <ol className="mt-10 grid gap-6 sm:grid-cols-3">
+            {[
+              {
+                icon: MapPin,
+                title: "Walk in — no appointment",
+                body: "Bring your items and a government-issued photo ID (Virginia requires it). Come by any nearest store during business hours; there's never a wait or a booking.",
+              },
+              {
+                icon: Eye,
+                title: "Watch us test & weigh",
+                body: "We test every piece and weigh it on a calibrated scale right in front of you, then walk you through the offer against the live spot price — nothing happens in a back room.",
+              },
+              {
+                icon: HandCoins,
+                title: "Take the cash — or take it home",
+                body: "Happy with the number? Leave with cash the same visit. Not for you? Keep your jewelry and walk out. There's never a fee or any pressure either way.",
+              },
+            ].map(({ icon: Icon, title, body }, i) => (
+              <Reveal key={title} delay={i * 0.06}>
+                <li className="flex h-full flex-col gap-3 rounded-2xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)]">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-50 text-gold-700 ring-1 ring-gold-200/70">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span className="font-display text-3xl font-extrabold text-gold-500/40">{i + 1}</span>
+                  </div>
+                  <h3 className="font-display text-lg font-extrabold text-foreground">{title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{body}</p>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* 4 · Why sell locally */}
       <section className="py-12 sm:py-16">
         <div className="container-page">
           <SectionHeading
             eyebrow="Why Sell Locally"
-            title={landing.whyLocalTitle}
+            title={boldPhrase(landing.whyLocalTitle, landing.city)}
           />
           <div className="mx-auto mt-8 max-w-3xl">
             <Prose>
@@ -385,7 +466,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                     <MapPin className="h-4 w-4" />
                   </span>
                   <div>
-                    <h3 className="font-display font-semibold text-foreground">{n.name}</h3>
+                    <h3 className="font-display font-extrabold text-foreground">{n.name}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-muted">{n.note}</p>
                   </div>
                 </div>
@@ -417,7 +498,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
         <div className="container-page">
           <SectionHeading eyebrow="FAQ" title={<>Selling gold in <span className="font-extrabold">{landing.city}</span> — answered</>} />
           <div className="mx-auto mt-12 max-w-3xl space-y-3">
-            {landing.faqs.map((f, i) => (
+            {faqs.map((f, i) => (
               <Reveal key={f.q} delay={(i % 3) * 0.05}>
                 <details className="group rounded-xl border border-hairline bg-white p-5 shadow-[var(--shadow-card)]">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-medium text-foreground">

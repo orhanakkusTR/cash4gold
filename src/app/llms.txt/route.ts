@@ -1,5 +1,6 @@
 import { SITE, LOCATIONS, CATEGORIES } from "@/data/business";
 import { POSTS_BY_DATE } from "@/data/blog";
+import { CITY_LANDINGS } from "@/data/city-landings";
 
 // /llms.txt — a curated, machine-readable summary of the site for AI assistants
 // (llmstxt.org convention). Generated from the single source of truth in
@@ -29,6 +30,14 @@ function llmsTxt(): string {
     );
   }
   lines.push("");
+
+  if (CITY_LANDINGS.length > 0) {
+    lines.push("## Areas we serve (nearby cities without a store)");
+    for (const c of CITY_LANDINGS) {
+      lines.push(`- [Cash for Gold in ${c.city}, ${c.region}](${base}/${c.slug}): ${c.metaDescription}`);
+    }
+    lines.push("");
+  }
 
   lines.push("## What we buy");
   for (const c of CATEGORIES) {
