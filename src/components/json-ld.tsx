@@ -1,5 +1,13 @@
 import { SITE, type Location } from "@/data/business";
 
+// Shared image Google may use as the SERP result thumbnail for city landing
+// pages. Referenced in each page's WebPage schema (image + primaryImageOfPage) —
+// the strongest signal we can give Google about which image to show. It cannot
+// be forced, but a valid, prominent, square image here is the best lever.
+// Prepare a bright, high-quality ~1200×1200 gold/jewelry photo (minimal text)
+// and save it at public/og/serp-card.jpg.
+export const SERP_IMAGE = { url: "/og/serp-card.jpg", width: 1200, height: 1200 };
+
 function JsonLd({ data }: { data: object }) {
   return (
     <script
@@ -193,6 +201,13 @@ export function CityWebPageJsonLd({
         url: `${SITE.domain}/${slug}`,
         name: title,
         description,
+        image: `${SITE.domain}${SERP_IMAGE.url}`,
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${SITE.domain}${SERP_IMAGE.url}`,
+          width: SERP_IMAGE.width,
+          height: SERP_IMAGE.height,
+        },
         about: {
           "@type": "Place",
           name: `${city}, ${region}`,

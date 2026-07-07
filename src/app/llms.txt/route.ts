@@ -32,7 +32,7 @@ function llmsTxt(): string {
   lines.push("");
 
   if (CITY_LANDINGS.length > 0) {
-    lines.push("## Areas we serve (nearby cities without a store)");
+    lines.push("## Areas we serve across Northern Virginia");
     for (const c of CITY_LANDINGS) {
       lines.push(`- [Cash for Gold in ${c.city}, ${c.region}](${base}/${c.slug}): ${c.metaDescription}`);
     }

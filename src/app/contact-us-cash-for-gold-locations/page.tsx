@@ -136,8 +136,9 @@ export default function ContactPage() {
         <section className="border-t border-hairline py-14 sm:py-16">
           <div className="container-page">
             <h2 className="font-display text-2xl font-extrabold text-foreground">Areas we also serve</h2>
-            <p className="mt-2 max-w-2xl text-muted">
-              No Cash for Gold VA store in your city yet? These pages show your closest location and drive time, so you still know exactly where to sell.
+            <p className="mt-2 max-w-3xl text-muted">
+              No Cash for Gold VA store in your city yet?<br />
+              These pages show your closest location and drive time, so you still know exactly where to sell.
             </p>
             <div className="mt-5">
               <CityChips items={CITY_LANDINGS} />

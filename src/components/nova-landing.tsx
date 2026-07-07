@@ -1,0 +1,532 @@
+import Image from "next/image";
+import Link from "next/link";
+import {
+  MapPin,
+  Phone,
+  Navigation,
+  ArrowRight,
+  ChevronRight,
+  Star,
+  BadgeCheck,
+  Banknote,
+  PackageOpen,
+  Eye,
+  HandCoins,
+  Mailbox,
+  Coins,
+  Gem,
+} from "lucide-react";
+import { LOCATIONS, PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
+import { getPost } from "@/data/blog";
+import type { CityLanding as CityLandingData } from "@/data/city-landings";
+import { CITY_LANDINGS } from "@/data/city-landings";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
+import { TrustStats } from "@/components/trust-stats";
+import { WhatWeBuyGrid } from "@/components/what-we-buy-grid";
+import { TestimonialsMarquee } from "@/components/testimonials-marquee";
+import { GoogleRatingSummary } from "@/components/google-rating";
+import { CredentialsStrip } from "@/components/credentials-strip";
+import { OpenStatus } from "@/components/open-status";
+import { CtaBand, Prose } from "@/components/page-parts";
+import { ButtonLink } from "@/components/ui/button";
+import { BlogCard } from "@/components/blog-card";
+import { CityChips } from "@/components/city-chips";
+import { HeroVideoBg } from "@/components/hero-video-bg";
+import { BreadcrumbJsonLd, FaqJsonLd, CityWebPageJsonLd } from "@/components/json-ld";
+
+const paras = (text: string) => text.split("\n\n").filter(Boolean);
+
+// See city-landing.tsx — same universal Virginia-ID FAQ, appended everywhere.
+const ID_FAQ = {
+  q: "Do I need ID to sell gold in Virginia?",
+  a: "Yes. Virginia law requires precious-metals buyers to record a valid government-issued photo ID for every purchase, so bring your driver's license or passport along with the items you want to sell. You must also be 18 or older.",
+};
+
+// Render inline **bold** markers as <strong>. `light` picks a cream tone for use
+// over the dark hero; the default is the dark body tone used inside <Prose>.
+function withBold(text: string, light = false) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((seg, i) =>
+    seg.startsWith("**") && seg.endsWith("**") ? (
+      <strong key={i} className={light ? "font-semibold text-cream-50" : "font-semibold text-foreground"}>
+        {seg.slice(2, -2)}
+      </strong>
+    ) : (
+      seg
+    ),
+  );
+}
+
+// Bold a single plain phrase inside a light-tone string (hero subtitle).
+function boldPhraseLight(text: string, phrase?: string) {
+  if (!phrase) return text;
+  return text.split(new RegExp(`(${phrase})`, "g")).map((seg, i) =>
+    seg === phrase ? <strong key={i} className="font-semibold text-cream-50">{seg}</strong> : seg,
+  );
+}
+
+const VALUE_PROPS = [
+  { icon: BadgeCheck, label: "Best value, tied to the live price" },
+  { icon: Banknote, label: "Instant payout, paid the same visit" },
+  { icon: PackageOpen, label: "We buy gold, silver, diamonds, watches & coins" },
+  { icon: Star, label: "4.9★ across 500+ Google reviews" },
+];
+
+const WHY_LOCAL = [
+  { icon: Eye, title: "You watch every step", body: "Your items are tested and weighed in front of you on a calibrated scale — never in a back room." },
+  { icon: HandCoins, title: "Keep it until you agree", body: "You hold your gold until you accept a number, then walk out with cash the same visit. No obligation." },
+  { icon: Mailbox, title: "No mailing valuables away", body: "Mail-in buyers quote you only after your gold has shipped. In person, nothing leaves your sight." },
+];
+
+const SILVER_LINKS = [
+  { label: "Sterling silver sets", href: "/precious-metals/sell-sterling-silver-sets" },
+  { label: "Silver bullion & coins", href: "/precious-metals/sell-silver" },
+  { label: "Silver jewelry", href: "/jewelry/sell-silver-jewelry" },
+];
+
+export function NovaLanding({ landing }: { landing: CityLandingData }) {
+  // All four stores (nearest[] lists them; `drive` is the coverage blurb).
+  const stores = landing.nearest
+    .map((n) => {
+      const store = LOCATIONS.find((l) => l.slug === n.slug);
+      return store ? { ...n, store } : null;
+    })
+    .filter(Boolean) as { slug: string; drive: string; store: (typeof LOCATIONS)[number] }[];
+
+  const relatedPosts = landing.relatedPosts.map(getPost).filter(Boolean);
+  const faqs = [...landing.faqs, ID_FAQ];
+  // Sub-city landing pages this hub links out to (everything but the region itself).
+  const cityChips = CITY_LANDINGS.filter((c) => c.variant !== "region");
+
+  const crumbs = [
+    { name: "Home", href: "/" },
+    { name: "Locations", href: "/locations" },
+    { name: "Northern Virginia", href: `/${landing.slug}` },
+  ];
+
+  return (
+    <>
+      <BreadcrumbJsonLd items={crumbs.map((c) => ({ name: c.name, url: c.href }))} />
+      <FaqJsonLd faqs={faqs} />
+      <CityWebPageJsonLd
+        slug={landing.slug}
+        city={landing.city}
+        region={landing.region}
+        title={landing.seoTitle}
+        description={landing.metaDescription}
+      />
+
+      {/* 1 · Hero — cinematic video background (LCP = poster, video enhances) */}
+      <section className="relative isolate overflow-hidden bg-ink-950 pt-40 pb-20 sm:pt-48 sm:pb-28">
+        <HeroVideoBg
+          src="/videos/gold-to-cash.mp4"
+          poster="/videos/gold-to-cash-poster.jpg"
+          alt="Gold and silver jewelry appraised for cash at Cash for Gold VA in Northern Virginia"
+        />
+        {/* Left-weighted scrim so the copy stays readable over the footage */}
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/40" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink-950/70 via-transparent to-ink-950/30" />
+
+        <div className="container-page relative">
+          <nav aria-label="Breadcrumb" className="mb-6">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-cream-100/60">
+              {crumbs.map((c, i) => (
+                <li key={c.href} className="flex items-center gap-1.5">
+                  {i > 0 && <ChevronRight className="h-3.5 w-3.5" />}
+                  {i < crumbs.length - 1 ? (
+                    <Link href={c.href} className="transition-colors hover:text-gold-200">{c.name}</Link>
+                  ) : (
+                    <span className="text-cream-100/85">{c.name}</span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
+
+          <Reveal className="max-w-2xl">
+            <span className="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
+              <span className="h-px w-6 bg-gold-400" /> Serving all of Northern Virginia (NoVA)
+            </span>
+            <h1 className="max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.08] text-cream-50 sm:text-5xl md:text-[3.4rem]">
+              {landing.heroTitle}
+            </h1>
+            <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-cream-100/80">
+              {boldPhraseLight(landing.heroSubtitle, landing.heroSubtitleBold)}
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={`tel:${PRIMARY_PHONE_HREF}`}
+                className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-8 font-semibold text-ink-950 shadow-[var(--shadow-gold)] transition-transform hover:-translate-y-0.5"
+              >
+                <Phone className="h-5 w-5" /> Call {PRIMARY_PHONE}
+              </a>
+              <a
+                href="#stores"
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-cream-50/25 px-8 font-semibold text-cream-50 backdrop-blur-sm transition-colors hover:border-gold-400/60 hover:bg-white/5"
+              >
+                <MapPin className="h-4 w-4" /> Find your store
+              </a>
+            </div>
+
+            <ul className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-cream-100/75">
+              <li className="inline-flex items-center gap-1.5">
+                <Star className="h-4 w-4 fill-gold-400 text-gold-400" /> 4.9★ · 500+ reviews
+              </li>
+              <li className="inline-flex items-center gap-1.5">
+                <MapPin className="h-4 w-4 text-gold-400" /> 4 stores across NoVA
+              </li>
+              <li className="inline-flex items-center gap-1.5">
+                <Banknote className="h-4 w-4 text-gold-400" /> Instant payout
+              </li>
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 2 · Intro + value props, then TrustStats */}
+      <section className="pt-12 pb-6 sm:pt-14">
+        <div className="container-page">
+          <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+            <Reveal>
+              <Prose>
+                {paras(landing.intro).map((p, i) => (
+                  <p key={i}>{withBold(p)}</p>
+                ))}
+              </Prose>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div className="flex flex-col gap-4 rounded-2xl border border-hairline bg-cream-50 p-6 shadow-[var(--shadow-card)]">
+                {VALUE_PROPS.map(({ icon: Icon, label }) => (
+                  <div key={label} className="flex items-start gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gold-50 text-gold-700 ring-1 ring-gold-200/70">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span className="pt-1 text-sm font-medium text-foreground">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+        <div className="mt-10">
+          <TrustStats />
+        </div>
+      </section>
+
+      {/* 3 · All four stores — the regional centerpiece */}
+      <section id="stores" className="scroll-mt-24 bg-cream-100 py-12 sm:py-16">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Our Locations"
+            title={<>Four stores across <span className="font-extrabold">Northern Virginia</span></>}
+            description={landing.nearestIntro}
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {stores.map(({ store, drive }, i) => (
+              <Reveal key={store.slug} delay={(i % 2) * 0.06}>
+                <div className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-[var(--shadow-card)] ring-1 ring-hairline sm:flex-row">
+                  <Link
+                    href={`/locations/${store.slug}`}
+                    className="relative block aspect-[4/3] shrink-0 overflow-hidden sm:aspect-auto sm:w-2/5"
+                    aria-label={`${store.city} location`}
+                  >
+                    <Image
+                      src={store.image}
+                      alt={`Cash for Gold VA storefront in ${store.city}, VA`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 40vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
+                  </Link>
+                  <div className="flex flex-1 flex-col gap-3 p-6">
+                    <div>
+                      <h3 className="font-display text-xl font-extrabold">
+                        <Link href={`/locations/${store.slug}`} className="text-foreground transition-colors hover:text-gold-700">
+                          {store.city}
+                        </Link>
+                      </h3>
+                      <a
+                        href={store.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 inline-block text-sm text-muted underline-offset-2 transition-colors hover:text-gold-700 hover:underline"
+                      >
+                        {store.street}, {store.city}, {store.region} {store.postalCode}
+                      </a>
+                      <p className="mt-2 text-sm leading-relaxed text-muted">{drive}.</p>
+                    </div>
+                    <OpenStatus hours={store.hours} tone="dark" compact />
+                    <div className="mt-auto flex flex-col gap-2.5 pt-2 sm:flex-row">
+                      <a
+                        href={`tel:${store.phoneHref}`}
+                        className="inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-4 py-2.5 text-sm font-semibold text-ink-950 shadow-[var(--shadow-gold)] transition-transform hover:-translate-y-0.5"
+                      >
+                        <Phone className="h-4 w-4" strokeWidth={2.5} /> {store.phone}
+                      </a>
+                      <a
+                        href={store.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-full border-2 border-gold-500/50 px-4 py-2.5 text-sm font-semibold text-gold-700 transition-all hover:-translate-y-0.5 hover:bg-gold-50"
+                      >
+                        <Navigation className="h-4 w-4" /> Directions
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4 · Silver & sterling sets — dedicated section */}
+      <section className="py-12 sm:py-16">
+        <div className="container-page">
+          <div className="grid items-start gap-10 lg:grid-cols-[1.4fr_1fr]">
+            <Reveal>
+              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-gold-600">
+                <Coins className="h-4 w-4" /> Silver & Sterling
+              </span>
+              <h2 className="mt-3 font-display text-2xl font-extrabold text-foreground sm:text-3xl">
+                {landing.silverTitle}
+              </h2>
+              <div className="mt-5">
+                <Prose>
+                  {paras(landing.silver ?? "").map((p, i) => (
+                    <p key={i}>{withBold(p)}</p>
+                  ))}
+                </Prose>
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div className="rounded-3xl border border-hairline bg-cream-50 p-7 shadow-[var(--shadow-card)]">
+                <h3 className="font-display text-lg font-extrabold text-foreground">What silver we buy</h3>
+                <ul className="mt-4 space-y-3 text-sm text-muted">
+                  {[
+                    "Sterling flatware & tea sets",
+                    "Serving pieces & hollowware",
+                    "Sterling silver jewelry",
+                    "Silver bars, rounds & .999 bullion",
+                    "Pre-1965 US 90% junk silver coins",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <Gem className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {SILVER_LINKS.map((l) => (
+                    <Link
+                      key={l.href}
+                      href={l.href}
+                      className="inline-flex items-center gap-1 rounded-full bg-gold-100 px-3 py-1.5 text-xs font-semibold text-gold-800 ring-1 ring-gold-500/30 transition-colors hover:bg-gold-200"
+                    >
+                      {l.label} <ArrowRight className="h-3 w-3" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 5 · What we buy */}
+      <section className="bg-cream-100 py-12 sm:py-16">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="What We Buy"
+            title={<>Brought in across <span className="font-extrabold">Northern Virginia</span> every week</>}
+            description="From a single gold ring to an entire estate collection, bring it to any of our four stores for a free, no-obligation appraisal."
+          />
+          <div className="mt-14">
+            <WhatWeBuyGrid />
+          </div>
+          <div className="mt-10 text-center">
+            <ButtonLink href="/what-we-buy" variant="outline" size="lg">
+              See everything we buy <ArrowRight className="h-4 w-4" />
+            </ButtonLink>
+          </div>
+        </div>
+      </section>
+
+      {/* 6 · Why sell locally */}
+      <section className="py-12 sm:py-16">
+        <div className="container-page">
+          <SectionHeading eyebrow="Why Sell Locally" title={landing.whyLocalTitle} />
+          <div className="mx-auto mt-8 max-w-3xl">
+            <Prose>
+              {paras(landing.whyLocal).map((p, i) => (
+                <p key={i}>{withBold(p)}</p>
+              ))}
+            </Prose>
+          </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {WHY_LOCAL.map(({ icon: Icon, title, body }, i) => (
+              <Reveal key={title} delay={i * 0.06}>
+                <div className="flex h-full flex-col gap-3 rounded-2xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)]">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-50 text-gold-700 ring-1 ring-gold-200/70">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="font-display text-lg font-extrabold text-foreground">{title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7 · Your visit — 3-step process */}
+      <section className="bg-cream-50/60 py-12 sm:py-16">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="How It Works"
+            title={<>Your visit, <span className="font-extrabold">start to finish</span></>}
+            description="Walking in with gold or silver for the first time? Here's exactly what happens — no appointment, no pressure, no fee if you walk away."
+          />
+          <ol className="mt-10 grid gap-6 sm:grid-cols-3">
+            {[
+              {
+                icon: MapPin,
+                title: "Walk in — no appointment",
+                body: "Bring your items and a government-issued photo ID (Virginia requires it). Come by any of our four stores during business hours; there's never a wait or a booking.",
+              },
+              {
+                icon: Eye,
+                title: "Watch us test & weigh",
+                body: "We test every piece and weigh it on a calibrated scale right in front of you, then walk you through the offer against the live spot price — nothing happens in a back room.",
+              },
+              {
+                icon: HandCoins,
+                title: "Take the cash — or take it home",
+                body: "Happy with the number? Leave with cash the same visit. Not for you? Keep your items and walk out. There's never a fee or any pressure either way.",
+              },
+            ].map(({ icon: Icon, title, body }, i) => (
+              <Reveal key={title} delay={i * 0.06}>
+                <li className="flex h-full flex-col gap-3 rounded-2xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)]">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-50 text-gold-700 ring-1 ring-gold-200/70">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span className="font-display text-3xl font-extrabold text-gold-500/40">{i + 1}</span>
+                  </div>
+                  <h3 className="font-display text-lg font-extrabold text-foreground">{title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{body}</p>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* 8 · Regions we serve */}
+      <section className="py-12 sm:py-16">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Areas We Cover"
+            title={<>Every corner of <span className="font-extrabold">Northern Virginia</span></>}
+            description="Find the region you're in and the store that's closest — the appraisal is identical at all four."
+          />
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {landing.neighborhoods.map((n, i) => (
+              <Reveal key={n.name} delay={(i % 3) * 0.06}>
+                <div className="flex h-full flex-col gap-2 rounded-2xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5 hover:ring-1 hover:ring-gold-400/50">
+                  <div className="flex items-center gap-2.5">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gold-50 text-gold-700 ring-1 ring-gold-200/70">
+                      <MapPin className="h-4 w-4" />
+                    </span>
+                    <h3 className="font-display font-extrabold text-foreground">{n.name}</h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-muted">{n.note}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9 · Sub-city hub — internal linking to every city landing page */}
+      {cityChips.length > 0 && (
+        <section className="border-y border-hairline bg-cream-50/60 py-12 sm:py-14">
+          <div className="container-page">
+            <h2 className="font-display text-xl font-extrabold text-foreground sm:text-2xl">
+              Cities we serve across Northern Virginia
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm text-muted">
+              No store in your city yet? These pages show your closest location and drive time, so you still know exactly where to sell.
+            </p>
+            <div className="mt-5">
+              <CityChips items={cityChips} initial={cityChips.length} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 10 · Reviews */}
+      <section className="py-12 sm:py-16">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Reviews"
+            title={<span className="font-extrabold">Trusted by thousands of neighbors</span>}
+            description="Real reviews from real customers across Northern Virginia, rated 4.9 out of 5 on Google."
+          />
+          <Reveal className="mt-12">
+            <GoogleRatingSummary />
+          </Reveal>
+        </div>
+        <Reveal className="mt-14">
+          <TestimonialsMarquee />
+        </Reveal>
+      </section>
+
+      {/* 11 · FAQ */}
+      <section className="bg-cream-100 py-12 sm:py-16">
+        <div className="container-page">
+          <SectionHeading eyebrow="FAQ" title={<>Selling gold in <span className="font-extrabold">Northern Virginia</span> — answered</>} />
+          <div className="mx-auto mt-12 max-w-3xl space-y-3">
+            {faqs.map((f, i) => (
+              <Reveal key={f.q} delay={(i % 3) * 0.05}>
+                <details className="group rounded-xl border border-hairline bg-white p-5 shadow-[var(--shadow-card)]">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-medium text-foreground">
+                    {f.q}
+                    <span className="text-gold-500 transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-3 leading-relaxed text-muted">{f.a}</p>
+                </details>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 12 · Related blog */}
+      {relatedPosts.length > 0 && (
+        <section className="py-12 sm:py-16">
+          <div className="container-page">
+            <SectionHeading eyebrow="Learn Before You Sell" title={<span className="font-extrabold">Guides from our buyers</span>} />
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedPosts.map((p, i) => (
+                <BlogCard key={p!.slug} post={p!} delay={i * 0.05} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 13 · Closing CTA */}
+      <section className="py-4">
+        <CredentialsStrip />
+      </section>
+      <CtaBand
+        title={<>Your nearest gold &amp; silver buyer is across Northern Virginia</>}
+        description={landing.closingCta}
+        phone={PRIMARY_PHONE}
+        phoneHref={PRIMARY_PHONE_HREF}
+      />
+    </>
+  );
+}

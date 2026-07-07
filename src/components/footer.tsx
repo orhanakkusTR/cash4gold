@@ -90,21 +90,24 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          {CITY_LANDINGS.length > 0 && (
-            <p className="mt-4 text-sm text-cream-100/60">
-              <span className="font-bold text-cream-50">Also serving:</span>{" "}
-              {CITY_LANDINGS.map((c, i) => (
-                <span key={c.slug}>
-                  {i > 0 && ", "}
-                  <Link href={`/${c.slug}`} className="text-cream-100/80 transition-colors hover:text-gold-200">
-                    {c.city}
-                  </Link>
-                </span>
-              ))}
-            </p>
-          )}
         </div>
       </div>
+
+      {CITY_LANDINGS.length > 0 && (
+        <div className="container-page pb-10">
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1.5 text-sm leading-relaxed text-cream-100/60">
+            <span className="font-bold text-cream-50">Also serving:</span>
+            {CITY_LANDINGS.map((c, i) => (
+              <span key={c.slug} className="flex items-center gap-x-2">
+                {i > 0 && <span className="text-gold-500/40" aria-hidden="true">·</span>}
+                <Link href={`/${c.slug}`} className="text-cream-100/80 transition-colors hover:text-gold-200">
+                  {c.city}
+                </Link>
+              </span>
+            ))}
+          </p>
+        </div>
+      )}
 
       <div className="rule-gold opacity-30" />
       <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-cream-100/50 sm:flex-row">

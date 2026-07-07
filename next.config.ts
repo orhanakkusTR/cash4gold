@@ -105,7 +105,7 @@ const nextConfig: NextConfig = {
       { source: "/category/haymarket-va/feed", destination: "/locations", permanent: true },
       { source: "/category/nokesville-va", destination: "/locations", permanent: true },
       { source: "/category/nokesville-va/feed", destination: "/locations", permanent: true },
-      { source: "/category/northern-va", destination: "/locations", permanent: true },
+      { source: "/category/northern-va", destination: "/cash-for-gold-northern-virginia", permanent: true },
       { source: "/category/sterling-va", destination: "/locations", permanent: true },
       { source: "/category/uncategorized/page/2", destination: "/locations", permanent: true },
       { source: "/category/uncategorized/page/3", destination: "/locations", permanent: true },
@@ -194,6 +194,9 @@ const nextConfig: NextConfig = {
       // Falls Church city blog (same intent as the new landing) consolidated into
       // /cash-for-gold-falls-church; the regional NoVA guide stays separate.
       { source: "/cash-for-gold-falls-church-va", destination: "/cash-for-gold-falls-church", permanent: true },
+      // Regional NoVA hub page. Canonical slug is the full keyword; the "nova"
+      // slang slug redirects into it so both typed URLs land on the same page.
+      { source: "/cash-for-gold-nova", destination: "/cash-for-gold-northern-virginia", permanent: true },
     ];
   },
 };

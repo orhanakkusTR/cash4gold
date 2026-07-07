@@ -29,9 +29,107 @@ export type CityLanding = {
   faqs: { q: string; a: string }[];
   relatedPosts: string[]; // 3 blog slugs for the "keep reading" cards
   closingCta: string;
+  // --- Regional-hub variant (NoVA umbrella page) -----------------------------
+  // When set, the [category] dispatcher renders the bespoke <NovaLanding> flagship
+  // layout instead of the standard nearest-store city page: video hero, ALL four
+  // stores (not just the two nearest), and a dedicated silver / sterling-sets
+  // section. `nearest` here lists all four stores (its `drive` string is reused
+  // as each store's coverage-corridor blurb). `neighborhoods` become NoVA regions.
+  variant?: "region";
+  heroSubtitleBold?: string; // a phrase inside heroSubtitle to render as <strong>
+  silverTitle?: string; // H2 for the silver / sterling-sets section
+  silver?: string; // paragraphs separated by \n\n (uses **bold** markers)
 };
 
 export const CITY_LANDINGS: CityLanding[] = [
+  {
+    slug: "cash-for-gold-northern-virginia",
+    city: "Northern Virginia",
+    region: "VA",
+    variant: "region",
+    seoTitle: "Cash for Gold in Northern Virginia (NoVA) | 4 Stores",
+    metaDescription:
+      "Sell gold, silver & jewelry at 4 Cash for Gold VA stores across Northern Virginia (NoVA). Free appraisal, instant payout, 4.9★ from 500+ reviews.",
+    heroTitle: "Cash for Gold Across Northern Virginia",
+    heroSubtitle:
+      "Four real storefronts across NoVA — Annandale, Chantilly, Manassas, and Vienna/Tysons. Walk in with your items, watch the appraisal happen, and get paid the same visit.",
+    heroSubtitleBold: "paid the same visit",
+    intro:
+      "Northern Virginia is not one place. It stretches from the apartment towers of Alexandria and Arlington inside the Beltway, out along I-66 through Fairfax and into Prince William County, and up Route 7 through Tysons toward Loudoun. A single gold-buying shop can't realistically serve all of that — and mailing your jewelry to a stranger in an envelope shouldn't be the alternative. That's why **Cash for Gold VA operates four physical stores across Northern Virginia (NoVA)**: Annandale on Columbia Pike, Chantilly on Route 50, Manassas on Centreville Road, and Vienna in the Tysons area on Tyco Road. Wherever you are in NoVA, there's a real counter a short drive away.\n\nEvery appraisal works the same way at all four locations, and it happens **in front of you, not in a back room**. We test your gold, silver, and platinum for purity, weigh it on a **calibrated scale you can see**, and price it against the **live spot price** at that moment. Then we explain the number. There's no fee for any of this, and no obligation attached to it — the appraisal is free whether you sell or not.\n\nYour items **stay in your hands until you agree to a price**. If the offer works for you, you get an **instant payout** — cash the same visit, before you leave the store. If it doesn't, you walk out with everything you walked in with, plus a real number to compare anywhere else. That transparency is a big part of why we hold a **4.9★ Google rating across 500+ reviews**, making us one of the region's most-reviewed precious-metals buyers.",
+    silverTitle: "Selling silver and sterling sets in Northern Virginia",
+    silver:
+      "Gold gets the attention, but some of the most valuable things people bring us are silver — and most of it has been sitting in a dining-room cabinet for decades. **Inherited sterling flatware sets, tea services, serving trays, and hollowware** are exactly the items families underestimate. A full sterling flatware service can run to several pounds of .925 silver, and **quantity is where silver adds up**: individually modest pieces become a meaningful payout when the whole set goes on the scale. We check the hallmarks, **test each piece to confirm .925 sterling** (and separate out any silverplate, honestly, so you're not guessing), weigh everything on a **calibrated scale in front of you**, and price it against the **live silver spot price** that day.\n\nWe buy the full range of silver, not just sets: **sterling silver jewelry, silver bars and rounds, .999 bullion**, and **pre-1965 US 90% \"junk silver\" coins** — dimes, quarters, and half dollars whose value is in their silver content, not their face value. If you've inherited a box of coins or a felt-lined chest of flatware and have no idea what it's worth, bring it to any of our four Northern Virginia stores. The appraisal is free, there's no obligation, and if you sell, it's an **instant payout the same visit**.",
+    whyLocalTitle: "Why sell locally in Northern Virginia instead of mailing it away",
+    whyLocal:
+      "Mail-in gold buyers ask you to seal your jewelry — often the most valuable small objects you own — into an envelope, send it to an address you've never visited, and wait for a number decided out of your sight. If you decline, you wait again for the items to come back. At a real counter, none of that applies. You **watch the testing and the weighing yourself**, you hear how the offer was calculated against the live spot price, and your items **never leave your sight** until you've said yes.\n\nThe usual downside of selling locally is that \"local\" means one shop across town in Beltway traffic. Our four stores remove that problem: **Annandale covers the inner Beltway**, **Chantilly covers the Route 50 and Dulles corridor**, **Manassas covers Prince William County and I-66 west**, and **Vienna/Tysons covers the Route 7 corridor**. From almost anywhere in Northern Virginia, one of them is a short drive. And when you sell, you're **paid before you leave** — an instant payout in cash the same visit, not a check that clears in a week or a bank transfer you have to chase.",
+    neighborhoods: [
+      {
+        name: "Arlington & Alexandria",
+        note: "Inside the Beltway, our Annandale store at 7262 Columbia Pike is the closest counter — straight out Route 236 or Columbia Pike from Alexandria, Bailey's Crossroads, and South Arlington. Most trips are 15–20 minutes, far quicker than mailing valuables away and waiting a week.",
+      },
+      {
+        name: "Fairfax County",
+        note: "Central Fairfax County sits between two of our stores. Springfield, Lincolnia, and Falls Church are minutes from Annandale on Columbia Pike; Fairfax City and points west along Route 50 are closer to Chantilly. Either way, the appraisal is identical — tested and weighed in front of you, priced on the live spot.",
+      },
+      {
+        name: "Prince William County",
+        note: "Our Manassas store at 9013 Centreville Rd anchors the western end of the region. Bristow, Gainesville, and Haymarket reach it easily off I-66 or Route 28, and Woodbridge and Dale City can avoid the trek up I-95 entirely. Prince William sellers don't need to drive into Fairfax to get a fair number.",
+      },
+      {
+        name: "Loudoun County",
+        note: "Loudoun residents are closest to Chantilly at 14025 Lee Jackson Memorial Hwy, just south of the county line off Route 28 or Route 50. South Riding is practically next door, and Ashburn and Sterling are a quick run down the Loudoun County Parkway or Route 28 — no Toll Road required.",
+      },
+      {
+        name: "Tysons & McLean",
+        note: "Our Vienna store at 8453 Tyco Rd #C sits right in the Tysons area, just off Route 7 and Spring Hill. It's the natural stop for McLean, Great Falls, Oakton, and Vienna — and a fitting one for the corridor's fine jewelry, designer pieces, and luxury watches, all appraised the same transparent way as a gold chain.",
+      },
+      {
+        name: "Reston & Herndon",
+        note: "The Dulles corridor splits neatly between two stores: Herndon and western Reston are a short hop down Route 28 to Chantilly, while eastern Reston can follow the Toll Road or Route 7 to Vienna/Tysons. Pick whichever direction your day is already headed — the offer is built the same way at both.",
+      },
+    ],
+    nearestIntro:
+      "Four real storefronts, one consistent appraisal. Find the Northern Virginia location closest to you — each one buys gold, silver, diamonds, watches, and coins with the same free, in-person appraisal and instant payout.",
+    nearest: [
+      { slug: "annandale", drive: "Inner-Beltway hub — closest to Alexandria, Arlington, Falls Church & Springfield" },
+      { slug: "vienna", drive: "Tysons-area store — serving McLean, Tysons, Oakton, Vienna & Great Falls" },
+      { slug: "chantilly", drive: "Route 50 / Dulles corridor — serving Fairfax, Herndon, South Riding, Reston & Loudoun" },
+      { slug: "manassas", drive: "Prince William County — serving Manassas, Bristow, Gainesville & Woodbridge" },
+    ],
+    faqs: [
+      {
+        q: "Is there cash for gold in NoVA (Northern Virginia)?",
+        a: "Yes. Cash for Gold VA is a NoVA-based buyer with four stores across Northern Virginia — Annandale, Chantilly, Manassas, and Vienna/Tysons — so there's a real counter near you whether you're inside the Beltway, out in Prince William, or up in Loudoun. Every location gives a free, in-person appraisal against the live spot price and pays an instant payout the same visit.",
+      },
+      {
+        q: "Where can I sell gold in Northern Virginia?",
+        a: "Cash for Gold VA has four stores across Northern Virginia: Annandale (7262 Columbia Pike), Chantilly (14025 Lee Jackson Memorial Hwy), Manassas (9013 Centreville Rd), and Vienna/Tysons (8453 Tyco Rd #C). Walk into any of them for a free, no-obligation appraisal — your items are tested and weighed in front of you and priced against the live spot price.",
+      },
+      {
+        q: "Do you buy silver and sterling silver sets?",
+        a: "Yes — silver is a core part of what we buy, not an afterthought. That includes sterling silver jewelry, silver bars and bullion, pre-1965 US 90% junk silver coins, and especially inherited sterling sets: flatware services, tea sets, serving pieces, and hollowware. We test each piece to confirm .925, weigh everything on a calibrated scale in front of you, and price it against the live silver spot. Full sets add up quickly by weight.",
+      },
+      {
+        q: "How do you decide what my gold or silver is worth?",
+        a: "Every offer is built the same way at all four stores: we test the item's purity, weigh it on a calibrated scale you can watch, and price it against the live spot price for that metal at that moment. Then we explain the number before you decide anything. Your items stay in your hands until you agree, and the appraisal is free either way.",
+      },
+      {
+        q: "Which Cash for Gold VA location is closest to me?",
+        a: "Roughly: Arlington, Alexandria, Falls Church, and Springfield are closest to Annandale. Western Fairfax, Herndon, South Riding, and Loudoun are closest to Chantilly. Prince William County — Manassas, Bristow, Gainesville, Woodbridge — is served by our Manassas store. McLean, Tysons, Vienna, and Oakton are closest to our Vienna store on Tyco Rd, right in the Tysons area.",
+      },
+      {
+        q: "Do you pay cash on the spot?",
+        a: "Yes. If you accept our offer, you get an instant payout — you're paid in cash the same visit, before you leave the store. There's no check to wait on and no transfer to chase. If you decline the offer, you simply take your items home; the appraisal costs nothing and carries no obligation.",
+      },
+      {
+        q: "What else do you buy besides gold and silver?",
+        a: "Across all four Northern Virginia stores we buy platinum and palladium, diamonds and precious stones, fine and designer jewelry (Tiffany, Cartier, David Yurman, and similar), luxury watches including Rolex, coins from junk silver to collectible and bullion, and electronics. If you're unsure whether something qualifies, bring it in — the appraisal is free.",
+      },
+    ],
+    relatedPosts: ["cash-for-gold-nova-falls-church-va", "we-buy-estate-gold-jewelry", "we-pay-90-percent-for-gold-coins"],
+    closingCta:
+      "Wherever you are in Northern Virginia, one of our four stores is a short drive away. Call the location nearest you or just walk in — the appraisal is free, the testing happens in front of you, and if you sell, it's an instant payout the same visit.",
+  },
   {
     slug: "cash-for-gold-alexandria",
     city: "Alexandria",

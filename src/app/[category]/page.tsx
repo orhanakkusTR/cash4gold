@@ -16,6 +16,7 @@ import { POSTS, getPost } from "@/data/blog";
 import { BlogArticle } from "@/components/blog-article";
 import { CITY_LANDINGS, getCityLanding } from "@/data/city-landings";
 import { CityLanding } from "@/components/city-landing";
+import { NovaLanding } from "@/components/nova-landing";
 
 // This single top-level dynamic segment serves BOTH categories and the legacy
 // root-level blog permalinks (e.g. /selling-gold-jewelry). When the slug is not
@@ -76,7 +77,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const cat = getCategory(category);
   if (!cat) {
     const city = getCityLanding(category);
-    if (city) return <CityLanding landing={city} />;
+    if (city) return city.variant === "region" ? <NovaLanding landing={city} /> : <CityLanding landing={city} />;
     const post = getPost(category);
     if (post) return <BlogArticle post={post} />;
     notFound();
