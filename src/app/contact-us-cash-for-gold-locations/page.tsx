@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
 import { LOCATIONS } from "@/data/business";
+import { CITY_LANDINGS } from "@/data/city-landings";
 import { groupHours } from "@/lib/utils";
 import { PageHero } from "@/components/page-parts";
 import { Reveal } from "@/components/reveal";
@@ -10,6 +12,29 @@ import { CredentialsStrip } from "@/components/credentials-strip";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 const CONTACT_PATH = "/contact-us-cash-for-gold-locations";
+
+// Turn any city name that has its own landing page into a link, in place, inside
+// a plain-text sentence. Data-driven: as CITY_LANDINGS grows, the matching city
+// names in the "Areas we serve" copy start linking automatically.
+function linkifyLandings(text: string) {
+  if (CITY_LANDINGS.length === 0) return text;
+  const names = CITY_LANDINGS.map((c) => c.city.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const parts = text.split(new RegExp(`\\b(${names.join("|")})\\b`, "g"));
+  return parts.map((part, i) => {
+    const landing = CITY_LANDINGS.find((c) => c.city === part);
+    return landing ? (
+      <Link
+        key={i}
+        href={`/${landing.slug}`}
+        className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-800"
+      >
+        {part}
+      </Link>
+    ) : (
+      part
+    );
+  });
+}
 
 export const metadata: Metadata = {
   title: "Contact Us, Cash for Gold in Northern Virginia",
@@ -153,11 +178,13 @@ export default function ContactPage() {
               <div>
                 <h2 className="font-display text-2xl font-extrabold text-foreground">Areas we serve</h2>
                 <p className="mt-4 text-muted">
-                  Our four stores in Annandale, Manassas, Chantilly, and Vienna/McLean welcome sellers
-                  from across Northern Virginia, including Fairfax, Centreville, Falls Church,
-                  Arlington, Alexandria, Burke, Springfield, Reston, Herndon, and the surrounding
-                  Fairfax, Prince William, and Loudoun County communities. Wherever you are in the
-                  region, there is a Cash for Gold VA location nearby.
+                  {linkifyLandings(
+                    "Our four stores in Annandale, Manassas, Chantilly, and Vienna/McLean welcome sellers " +
+                      "from across Northern Virginia, including Fairfax, Centreville, Falls Church, " +
+                      "Arlington, Alexandria, Burke, Springfield, Reston, Herndon, and the surrounding " +
+                      "Fairfax, Prince William, and Loudoun County communities. Wherever you are in the " +
+                      "region, there is a Cash for Gold VA location nearby.",
+                  )}
                 </p>
               </div>
             </Reveal>

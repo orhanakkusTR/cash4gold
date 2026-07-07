@@ -166,6 +166,9 @@ const nextConfig: NextConfig = {
       // (…coins / …cash / etc.).
       { source: "/we-pay-90-for-gold-:slug", destination: "/precious-metals/sell-gold", permanent: true },
       { source: "/home", destination: "/", permanent: true },
+      // Legacy WordPress homepage dupe — clearly maps to the new homepage, so
+      // consolidate its equity with a 301 instead of leaving it a 404.
+      { source: "/home-2", destination: "/", permanent: true },
       // Old duplicate ("-2") of the live blog post — consolidate to canonical.
       // (The other "discovered, not indexed" junk — /13974-2, /14001-2,
       // /14002-2, /create-an-article-about-gold-price-today — stays 404.)

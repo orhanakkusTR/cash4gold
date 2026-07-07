@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
         title: { absolute: city.seoTitle },
         description: city.metaDescription,
         alternates: { canonical: `/${city.slug}` },
-        openGraph: { title: city.heroTitle, description: city.metaDescription, images: ["/og/og-image.jpg"] },
+        openGraph: { title: city.heroTitle, description: city.metaDescription, url: `/${city.slug}`, images: ["/og/og-image.jpg"] },
       };
     }
     const post = getPost(category);
