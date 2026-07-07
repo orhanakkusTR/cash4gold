@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { StoreFinder } from "@/components/store-finder";
+import { RotatingWord } from "@/components/rotating-word";
 
 // TEST PAGE — a location-search concept. Kept out of the sitemap (not listed in
 // sitemap.ts) and noindex'd so it doesn't get discovered/indexed while we trial
@@ -24,8 +25,14 @@ export default function FindYourStorePage() {
           <span className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
             <span className="h-px w-6 bg-gold-400" /> 4 stores across Northern Virginia
           </span>
-          <h1 className="text-balance font-display text-4xl font-semibold leading-[1.1] text-cream-50 sm:text-5xl">
-            Find your nearest <span className="text-gold-shimmer">gold buyer</span>
+          <h1 className="font-display text-4xl font-semibold leading-[1.18] text-cream-50 sm:text-5xl">
+            Find your nearest
+            <br />
+            {/* pb-[0.2em] extends the gradient's padding-box below the baseline so
+                text-gold-shimmer (background-clip: text) paints descenders like the
+                tail of "g" instead of clipping them. */}
+            <RotatingWord className="text-gold-shimmer pb-[0.2em]" words={["Gold", "Silver", "Diamond", "Watch", "Coin"]} />{" "}
+            <span className="inline-block pb-[0.2em] text-gold-shimmer">buyer</span>
           </h1>
           <p className="mx-auto mt-5 max-w-lg text-pretty text-lg leading-relaxed text-cream-100/75">
             Type where you are and we&apos;ll point you to the closest Cash for Gold VA store — free appraisal, instant payout, same visit.
