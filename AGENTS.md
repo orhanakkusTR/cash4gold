@@ -47,13 +47,15 @@ A from-scratch rebuild of **cashforgoldva.com** — a local precious-metals buyi
 
 ## Agent playbook — which agent for which job
 
-Agents live in `.claude/agents/` (version-controlled). Invoke via the Agent tool. Use them proactively:
+Agents live in `.claude/agents/` (version-controlled, **23-agent Fable 5 set** — all `model: fable`; see `.claude/agents/README.md`). Invoke via the Agent tool. Use them proactively. Sharp pairs disambiguate via "NOT for X" in their descriptions: look → `ui-designer`, works → `frontend-developer`; write tests → `test-engineer`, judge code → `code-reviewer`; in-app measurement → `analytics-tracking-specialist`, external data collection → `data-integration-engineer`; quality → `seo-content-auditor`, freshness → `seo-content-refresher`.
 
 **Build / UI**
-- `frontend-developer` — Next.js routes, React components, data fetching, perf
-- `ui-designer` — visual design, layout systems, mockups
+- `frontend-developer` — how the app WORKS: Next.js routes, React components, data/state, forms, perf/CWV
+- `backend-developer` — server side: APIs, DB schema/migrations, auth, webhooks, jobs (this repo is static-first, so rarely needed)
+- `ui-designer` — how the UI LOOKS: visual design, layout systems, mockups
 - `design-system-architect` — tokens, theming, component library
-- `accessibility-expert` — WCAG audits, a11y remediation
+- `accessibility-expert` — WCAG 2.2 audits, a11y remediation
+- `test-engineer` — Playwright e2e / Vitest tests, deploy-gate smoke suites
 
 **SEO — technical**
 - `seo-structure-architect` — header hierarchy, schema markup, internal linking
@@ -69,16 +71,18 @@ Agents live in `.claude/agents/` (version-controlled). Invoke via the Agent tool
 - `seo-cannibalization-detector` — overlap between location/service pages
 - `seo-content-refresher` — keep published pages fresh
 
-**Content / research**
+**Content / research / measurement**
 - `content-marketer` — campaigns, distribution
 - `search-specialist` — competitor research, fact-checking
+- `analytics-tracking-specialist` — measurement plans, GA4/consent, Search Console data interpretation
+- `data-integration-engineer` — third-party API pipelines, scheduled data collection, ETL
 
 **Quality / ship**
 - `architect-review` — architecture integrity on structural changes
 - `code-reviewer` — review before commit
 - `deployment-engineer` — Vercel deploy, CI/CD
 
-Session-level Vercel skills (`vercel:*`) and UI/SEO plugin skills are also available — prefer those for platform tasks.
+Session-level Vercel skills (`vercel:*`) and other harness/plugin skills are also available — prefer those for platform tasks. (Repo-local `.claude/skills/` was removed; skills now come from the harness.)
 
 ## Deployment flow
 
@@ -90,4 +94,4 @@ Session-level Vercel skills (`vercel:*`) and UI/SEO plugin skills are also avail
 
 - Dev: `npm run dev` · Build: `npm run build` · Lint: `npm run lint`
 - Business data: `src/data/business.ts`
-- Agents: `.claude/agents/` · Skills: `.claude/skills/`
+- Agents: `.claude/agents/` (23-agent Fable 5 set + `README.md`) · Skills: harness/plugin only (repo-local skills removed)
