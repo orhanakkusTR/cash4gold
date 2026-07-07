@@ -4,6 +4,7 @@ import Image from "next/image";
 import { MapPin, Phone, Navigation, ArrowRight } from "lucide-react";
 import { LOCATIONS, SITE } from "@/data/business";
 import { CITY_LANDINGS } from "@/data/city-landings";
+import { CityChips } from "@/components/city-chips";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { Reveal } from "@/components/reveal";
 import { OpenStatus } from "@/components/open-status";
@@ -131,22 +132,14 @@ export default function LocationsPage() {
       </section>
 
       {CITY_LANDINGS.length > 0 && (
-        <section className="border-t border-ink-900/8 bg-cream-50/60 py-14 md:py-16">
+        <section className="border-t border-ink-900/8 bg-cream-50/60 pt-14 pb-6 md:pt-16 md:pb-8">
           <div className="container-page">
             <h2 className="font-display text-xl font-extrabold text-foreground sm:text-2xl">Areas we also serve</h2>
             <p className="mt-2 max-w-2xl text-sm text-muted">
               No Cash for Gold VA store in your city yet? These pages show your closest location and drive time, so you still know exactly where to sell.
             </p>
-            <div className="mt-5 flex flex-wrap gap-2.5">
-              {CITY_LANDINGS.map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/${c.slug}`}
-                  className="rounded-full border border-gold-500/40 px-4 py-2 text-sm font-medium text-gold-700 transition-colors hover:bg-gold-50"
-                >
-                  Cash for gold in {c.city}, {c.region}
-                </Link>
-              ))}
+            <div className="mt-5">
+              <CityChips items={CITY_LANDINGS} />
             </div>
           </div>
         </section>

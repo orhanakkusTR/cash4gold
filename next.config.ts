@@ -191,6 +191,9 @@ const nextConfig: NextConfig = {
       // landing page at /cash-for-gold-centreville (same intent → avoid
       // cannibalization); its local content was absorbed there, so it 301s.
       { source: "/top-places-to-sell-gold-in-centreville", destination: "/cash-for-gold-centreville", permanent: true },
+      // Falls Church city blog (same intent as the new landing) consolidated into
+      // /cash-for-gold-falls-church; the regional NoVA guide stays separate.
+      { source: "/cash-for-gold-falls-church-va", destination: "/cash-for-gold-falls-church", permanent: true },
     ];
   },
 };

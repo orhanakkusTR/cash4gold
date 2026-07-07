@@ -92,7 +92,7 @@ export function Footer() {
           </ul>
           {CITY_LANDINGS.length > 0 && (
             <p className="mt-4 text-sm text-cream-100/60">
-              Also serving:{" "}
+              <span className="font-bold text-cream-50">Also serving:</span>{" "}
               {CITY_LANDINGS.map((c, i) => (
                 <span key={c.slug}>
                   {i > 0 && ", "}

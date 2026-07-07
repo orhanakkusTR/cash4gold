@@ -175,7 +175,7 @@ Whatever the item, the principle is the same across the region: a fair offer sta
 
 Cash for Gold VA has four Northern Virginia stores, so one is usually close by:
 
-- **Annandale**: 7262 Columbia Pike (closest to [Falls Church](/cash-for-gold-falls-church-va), Bailey's Crossroads, and Springfield)
+- **Annandale**: 7262 Columbia Pike (closest to [Falls Church](/cash-for-gold-falls-church), Bailey's Crossroads, and Springfield)
 - **Vienna / McLean**: 8453 Tyco Rd #C (closest to Tysons, McLean, and Oakton)
 - **Chantilly**: 14025 Lee Jackson Memorial Hwy (closest to Centreville, Fairfax, Herndon, and [Loudoun County](/cash-for-gold-loudoun-county-va))
 - **Manassas**: 9013 Centreville Rd (closest to Gainesville, Bristow, and Prince William County)
@@ -685,76 +685,6 @@ Yes. Our [calculator](/gold-calculator) gives a realistic range from the live pr
 Yes. Along with gold, silver, and platinum, we buy designer jewelry, luxury watches, diamonds, and bullion coins — items common in Loudoun estates that are often worth well above their metal value.
 
 Find out what your gold is worth in Loudoun County. [Estimate it now](/gold-calculator) or [visit our Chantilly store](/contact-us-cash-for-gold-locations) for a free appraisal.`,
-  },
-  {
-    slug: "cash-for-gold-falls-church-va",
-    title: "Cash for Gold in Falls Church, VA: Where to Sell and What to Expect",
-    seoTitle: "Cash for Gold in Falls Church, VA | Sell Gold for Cash",
-    date: "2025-06-08",
-    category: "Locations",
-    excerpt:
-      "Looking to sell gold in Falls Church, VA? Here is how local appraisals work, what affects your payout, and the two Cash for Gold VA stores closest to Falls Church for a free, same-day offer.",
-    body: `If you live in Falls Church and have gold sitting in a drawer, you have more options than the national mail-in services advertising online. Selling locally means you watch your gold get tested and weighed, hear the offer explained out loud, and walk out with cash the same day. This guide covers how that works in Falls Church, what drives your payout, and where to go.
-
-We have appraised gold for Falls Church residents for years, and the pattern is always the same: people are surprised both by how simple [the process](/understanding-the-cash-for-gold-process) is and by how much a small pile of broken chains can be worth at today's prices.
-
-## Why sell gold in Falls Church locally
-
-Falls Church sits in the heart of [Northern Virginia](/cash-for-gold-nova-falls-church-va), minutes from several established storefront buyers. Selling in person has real advantages over mailing your gold away:
-
-- **You keep control of your items** until you accept an offer. Nothing leaves your sight.
-- **You get paid on the spot**, in cash, the same visit.
-- **You can ask questions** and watch the purity test and weighing happen in front of you.
-- **Local reputation matters.** A buyer with a physical store and hundreds of reviews has every reason to treat you fairly.
-
-## What your gold is actually worth
-
-Every fair offer is built from three numbers: the live spot price of gold, your item's purity (karat), and its weight in grams. A buyer divides the per-ounce spot price by 31.1 to get the price per gram of pure gold, multiplies by the karat fraction (14k is 58.3% gold, 18k is 75%, 10k is 41.7%), then multiplies by the weight.
-
-Two quick truths that save Falls Church sellers from disappointment:
-
-1. **Karat stamps matter.** A heavy 10k bracelet can be worth less than a lighter 18k chain.
-2. **Gemstones and brand can add value.** Designer pieces and certified diamonds are often worth more than their metal alone, so do not sell those purely by weight.
-
-You can estimate your own pieces before you leave the house using our [gold value calculator](/gold-calculator), which runs the live price through that exact formula.
-
-## Selling gold around the "Little City" and beyond
-
-The City of Falls Church — the "Little City" — and the surrounding communities of Seven Corners, Bailey's Crossroads, Pimmit Hills, and Idylwood sit right between two of our stores, so you are never more than a short drive from a fair, same-day offer. The gold we see from this area is a real mix: inherited pieces from long-established Falls Church families, everyday karat jewelry, and designer items from the neighborhoods near Tysons. Our Annandale store is a straight run south on Route 50 or the Beltway, and Vienna/McLean is a quick trip west — both usually under 15 minutes from central Falls Church.
-
-## The two stores closest to Falls Church
-
-Cash for Gold VA operates four Northern Virginia locations. The two nearest to Falls Church are:
-
-- **Annandale**: 7262 Columbia Pike, a short drive south on Route 50 or the Beltway.
-- **Vienna / McLean**: 8453 Tyco Rd #C, just west toward Tysons.
-
-Both offer free, no-obligation appraisals, instant payout, and the same transparent, live-price method. We buy gold, silver, platinum, diamonds, designer jewelry, luxury watches, and coins.
-
-## What to bring and what to expect
-
-Bring the items you are considering selling, plus a photo ID. You do not need to clean or sort anything. When you arrive:
-
-1. We sort items by metal and karat.
-2. We test purity in front of you and weigh each piece on a calibrated scale.
-3. We pull the live market price and calculate a transparent offer, shown as a fair range.
-4. You decide. If you accept, you are paid in cash before you leave. If not, there is no pressure and no fee.
-
-## Frequently asked questions
-
-**Where can I sell gold in Falls Church, VA?**
-The closest Cash for Gold VA stores are our Annandale location on Columbia Pike and our Vienna/McLean location on Tyco Rd, both a short drive from Falls Church. Both give free, same-day appraisals.
-
-**Do I need an appointment?**
-No. Walk-ins are welcome at every location, and appraisals are free whether or not you decide to sell.
-
-**How much will I get for my gold?**
-Your payout depends on the live spot price, the karat, and the weight. Use our [calculator](/gold-calculator) for a realistic range, then bring your items in for an exact offer.
-
-**Is it better to sell locally or mail my gold in?**
-Selling locally lets you keep your items until you accept an offer and get paid the same day. Mail-in services quote you only after your gold has already left your hands.
-
-Ready to find out what your gold is worth in Falls Church? [Get an instant estimate](/gold-calculator) or [visit your nearest location](/contact-us-cash-for-gold-locations) for a free appraisal.`,
   },
   {
     slug: "understanding-the-cash-for-gold-process",
@@ -1417,7 +1347,6 @@ export const getPost = (slug: string) => POSTS.find((p) => p.slug === slug);
 // All images are local landscape JPGs that render well full-bleed.
 const BLOG_COVERS: Record<string, string> = {
   "gold-price-today": "/categories/gold-bars.jpg",
-  "cash-for-gold-falls-church-va": "/photos/storefront-annandale.jpg",
   "cash-for-gold-nova-falls-church-va": "/photos/storefront-vienna.jpg",
   "cash-for-gold-loudoun-county-va": "/photos/storefront-chantilly.jpg",
   "how-to-sell-used-gold-in-chantilly-va": "/photos/storefront-chantilly.jpg",

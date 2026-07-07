@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
 import { LOCATIONS } from "@/data/business";
 import { CITY_LANDINGS } from "@/data/city-landings";
+import { CityChips } from "@/components/city-chips";
 import { groupHours } from "@/lib/utils";
 import { PageHero } from "@/components/page-parts";
 import { Reveal } from "@/components/reveal";
@@ -138,16 +139,8 @@ export default function ContactPage() {
             <p className="mt-2 max-w-2xl text-muted">
               No Cash for Gold VA store in your city yet? These pages show your closest location and drive time, so you still know exactly where to sell.
             </p>
-            <div className="mt-5 flex flex-wrap gap-2.5">
-              {CITY_LANDINGS.map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/${c.slug}`}
-                  className="rounded-full border border-gold-500/40 px-4 py-2 text-sm font-medium text-gold-700 transition-colors hover:bg-gold-50"
-                >
-                  Cash for gold in {c.city}, {c.region}
-                </Link>
-              ))}
+            <div className="mt-5">
+              <CityChips items={CITY_LANDINGS} />
             </div>
           </div>
         </section>

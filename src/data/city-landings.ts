@@ -584,6 +584,282 @@ export const CITY_LANDINGS: CityLanding[] = [
     closingCta:
       "Take the Prince William Parkway west — our Manassas store is 20–25 minutes from Woodbridge, and your gold gets tested, quoted, and paid with an instant payout in a single trip.",
   },
+  {
+    slug: "cash-for-gold-mclean",
+    city: "McLean",
+    region: "VA",
+    seoTitle: "Sell Gold in McLean, VA | Discreet Appraisal, Instant Payout",
+    metaDescription:
+      "Sell gold in McLean, VA — our Vienna/McLean store on Tyco Rd is 5–10 minutes away. Discreet expert appraisal of jewelry, watches & diamonds. 4.9★, 500+ reviews.",
+    heroTitle: "Cash for Gold in McLean, VA",
+    heroSubtitle:
+      "Our Vienna/McLean store is practically next door — 5–10 minutes from most of McLean, on Tyco Rd in the Tysons area. Bring your gold, jewelry, or watch in for a discreet appraisal and walk out with cash the same visit.",
+    intro:
+      "If you're searching for cash for gold in McLean, the good news is short: **our Vienna/McLean store is only about 5–10 minutes away**, on Tyco Rd just off Route 123 in the Tysons area — close enough that it carries McLean's name. There's no envelope, no waiting, no shipping your valuables anywhere: your items are tested and weighed on a calibrated scale in front of you, quoted against the **live spot price**, and paid the same visit.\n\nWhat crosses our counter from McLean is unlike anywhere else we serve. As one of the wealthiest communities in the United States, McLean sends us the **high end of the market — estate and fine jewelry, luxury watches, certified diamonds, and signed designer pieces from houses like Tiffany, Cartier, and Van Cleef & Arpels**. That's precisely why choosing your **gold buyers in McLean** carefully matters: pieces like these are routinely worth far more than their melt weight, and they deserve an appraiser who evaluates the maker, the stone, and the papers — not just the scale reading. That individual, discreet appraisal is exactly how our counter works.",
+    whyLocalTitle: "Why McLean's high-value pieces should never go in a mail-in envelope",
+    whyLocal:
+      "For a broken 14k chain, a mail-in envelope is merely a bad deal. For the kind of pieces McLean households hold — **a Rolex, a signed Cartier bracelet, a GIA-certified two-carat diamond** — it's an unacceptable one. Mail-in buyers grade your valuables in a facility you'll never see, quote one number you can't watch being reached, and shipping insurance rarely reflects what a signed or certified piece is actually worth. Selling in person keeps every step where you can see it: **your items stay in your possession until you've agreed to a price**, you watch the testing yourself, and a piece worth more than its metal gets appraised as what it is, not weighed as what it contains.\n\nAnd from McLean, going in person costs you almost nothing — **the Vienna/McLean counter is about 5–10 minutes away**, a shorter run than most Tysons errands. The appraisal is unhurried and private: one seller, one appraiser, no audience. If the number works, you're **paid before you're back on Route 123**; if it doesn't, everything goes home with you exactly as it came in.",
+    neighborhoods: [
+      {
+        name: "Downtown McLean",
+        note: "The established homes around McLean Central and Old Dominion Drive hold decades of fine jewelry — anniversary diamonds, inherited settings, and pieces from the area's own jewelers — and our counter is close enough that an appraisal fits between two downtown errands.",
+      },
+      {
+        name: "Langley",
+        note: "Some of the most established wealth in Northern Virginia sits in Langley, and the estates here send us serious pieces: signed designer jewelry, important diamonds, and watch collections. Every one of those is appraised individually and discreetly — maker, papers, and condition first, melt weight last.",
+      },
+      {
+        name: "Chesterbrook",
+        note: "These family neighborhoods toward the Arlington line bring in the generational side of McLean's gold — estate boxes from a parent's home, wedding sets from decades back, and heirloom pieces where age and craftsmanship can beat the scale, so we check both before quoting.",
+      },
+      {
+        name: "Salona Village & the Tysons edge",
+        note: "The closest corner of McLean to our store — a few minutes down Route 123 — and the source of its most modern pieces: luxury watches, branded jewelry from the Tysons boutiques, and upgraded diamonds, all of which are appraised on brand, model, and condition rather than weight alone.",
+      },
+    ],
+    nearestIntro:
+      "McLean doesn't need a long drive to sell gold — our Vienna/McLean store carries the name for a reason. It's minutes from most of town, with Annandale as a second option to the south.",
+    nearest: [
+      { slug: "vienna", drive: "about 5–10 minutes from most of McLean — on Tyco Rd in the Tysons area, just off Route 123" },
+      { slug: "annandale", drive: "about 15 minutes south via Route 123 or the Beltway, a handy second option if your day heads that way" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold in McLean, VA?",
+        a: "The closest counter is our Vienna/McLean store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — in the Tysons area just off Route 123, about 5–10 minutes from most of McLean. Our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — is roughly 15 minutes south via Route 123 or the Beltway. Both test your items in front of you and pay the same visit.",
+      },
+      {
+        q: "Do you buy luxury watches, certified diamonds, and designer jewelry from McLean sellers?",
+        a: "Yes — they're the heart of what McLean brings us. Rolex, Patek Philippe, and Cartier watches are appraised on model, condition, and completeness; certified diamonds are evaluated against their grading report; and signed pieces from Tiffany, Cartier, or Van Cleef & Arpels carry brand value far beyond their metal. None of these are quoted by weight. Bring the box, papers, GIA certificate, or extra links if you have them — original documentation meaningfully raises the offer.",
+      },
+      {
+        q: "How is my payout calculated?",
+        a: "For gold, we start with the live spot price per troy ounce, divide by 31.1 for a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted for melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Watches, certified diamonds, designer pieces, and collectible coins are appraised individually, since they're often worth far more than their metal content.",
+      },
+      {
+        q: "Is the appraisal private? I'd rather not discuss what I'm selling in a crowded shop.",
+        a: "Yes. High-value sales are handled one-on-one at the counter — your pieces, your appraiser, no audience — and we're happy to walk through each item's testing and valuation quietly and without hurry. Nothing obligates you to sell: many McLean sellers come in simply to learn what an inherited watch or an estate piece is worth, and either decision is fine with us.",
+      },
+      {
+        q: "Should I sell an inherited estate piece as gold, or is it worth more intact?",
+        a: "Bring it in before anyone melts anything. Estate jewelry from McLean homes — older signed pieces, handmade settings, important stones — is frequently worth more intact than as scrap, and we quote the higher of the two values. We check hallmarks, maker's marks, and stone quality first, and only price by weight if the piece genuinely carries no premium. Don't clean or polish it beforehand, and bring any paperwork or provenance you have.",
+      },
+    ],
+    relatedPosts: [
+      "list-of-top-20-name-brand-in-gold-jewelry",
+      "we-buy-diamonds-more-than-1-carat-with-gia",
+      "we-buy-estate-gold-jewelry",
+    ],
+    closingCta:
+      "Our Vienna/McLean store is 5–10 minutes away on Tyco Rd — bring the watch, the ring, or the whole estate box for a discreet appraisal and an instant payout the same visit.",
+  },
+  {
+    slug: "cash-for-gold-tysons",
+    city: "Tysons",
+    region: "VA",
+    seoTitle: "Sell Gold in Tysons, VA | Store on Tyco Rd, Instant Payout",
+    metaDescription:
+      "Sell gold in Tysons, VA at our store right on Tyco Rd, off Route 7 near Tysons Corner. Free appraisal, instant payout. 4.9★ from 500+ reviews.",
+    heroTitle: "Cash for Gold in Tysons, VA",
+    heroSubtitle:
+      "No drive across the county for this one — our Vienna/McLean store sits right in the Tysons area at 8453 Tyco Rd #C, just off Route 7, minutes from Tysons Corner Center and the Galleria. Walk in, watch your gold get tested, and walk out with cash the same visit.",
+    intro:
+      "If you want to sell gold in Tysons, you're in the one part of Northern Virginia where we can skip the directions: **our store is right here**. The Vienna/McLean location at **8453 Tyco Rd #C sits just off Route 7 (Leesburg Pike)**, minutes from Tysons Corner Center, the Galleria, and the office towers along the Silver Line. Your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid in cash before you're back on Route 7 — a genuine errand-sized trip, not a cross-county drive.\n\nThat matters in Tysons more than almost anywhere else we serve, because of what people here are selling. This is the region's luxury-retail hub — **jewelry bought at Cartier, Tiffany, and the Galleria's designer boutiques, watches from the mall's flagship stores** — and those pieces deserve a buyer who appraises brand, model, and condition, not one who tosses a signed piece on the melt pile. We evaluate designer and watch pieces individually, test everyday karat gold at its true purity, and quote both against real market numbers. Tens of thousands of people work in Tysons every day; for most of them, our counter is closer than their usual lunch spot.",
+    whyLocalTitle: "Why selling gold in Tysons in person beats any mail-in envelope",
+    whyLocal:
+      "The mail-in pitch is convenience — but it asks you to seal your jewelry into a prepaid envelope, ship it to a facility you'll never see, and wait days for an offer made out of your sight. In Tysons, that trade makes no sense at all, because the in-person option is already more convenient: **our counter is physically in the neighborhood**. Your gold stays in your hands until you've heard a number you like, you watch the karat test and the scale reading yourself, and if the offer doesn't work, everything goes back in your bag and you're back at your desk.\n\nThe convenience math is lopsided. From the malls, The Boro, or any of the Silver Line offices, **Tyco Rd is a few minutes off Route 7** — closer than the post office run a mail-in envelope would require, and a typical appraisal takes 10–20 minutes at the counter. That's short enough to fit inside a lunch break, and it ends with an **instant payout in cash**, not a week of tracking numbers and a check that clears whenever it clears.",
+    neighborhoods: [
+      {
+        name: "Tysons Corner Center",
+        note: "One of the largest malls on the East Coast is where a lot of local jewelry was bought in the first place — everyday 14k and 18k chains, diamond studs, upgrade rings — and our counter is just across Route 7, so trading yesterday's pieces for cash takes less time than finding parking at the mall.",
+      },
+      {
+        name: "Tysons Galleria",
+        note: "The Galleria's luxury row — Cartier, Tiffany, Louis Vuitton, and the designer boutiques around them — means we see more signed jewelry and luxury watches from Tysons than anywhere else we serve. Those are appraised on maker, model, and condition, never melted-metal weight, so bring boxes, papers, and extra links if you have them.",
+      },
+      {
+        name: "The Boro",
+        note: "The new high-rise district around Whole Foods and the Greensboro station is full of residents who just downsized into condo living — and downsizing surfaces jewelry: pieces that don't fit the new chapter, inherited items in moving boxes, watches worn twice. We test and quote each one individually, with zero obligation.",
+      },
+      {
+        name: "Silver Line corridor",
+        note: "From Spring Hill to McLean station, the office towers hold tens of thousands of professionals — and our Tyco Rd counter sits right in that corridor, which is why the lunch-break appraisal is practically a Tysons specialty: in the door, tested, quoted, and paid, usually inside 20 minutes.",
+      },
+    ],
+    nearestIntro:
+      "This is the easy one: our Vienna/McLean store is right in the Tysons area, so the primary option isn't a drive at all — and Annandale backs it up if you're coming from the far side of the Beltway.",
+    nearest: [
+      { slug: "vienna", drive: "right here in Tysons — 8453 Tyco Rd #C, just off Route 7 (Leesburg Pike), minutes from Tysons Corner Center, the Galleria, and the Silver Line stations" },
+      { slug: "annandale", drive: "about 12 minutes south via Gallows Road or the Beltway — a second option if you're headed that direction anyway" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold in Tysons, VA?",
+        a: "Right here in the neighborhood: our Vienna/McLean store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — sits in the Tysons area just off Route 7, minutes from Tysons Corner Center and the Galleria. Walk in, your gold is tested and weighed in front of you, and you're paid in cash the same visit. If you're on the far side of the Beltway, our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — is about 12 minutes south.",
+      },
+      {
+        q: "Do you buy luxury watches and designer jewelry from the Galleria brands?",
+        a: "Yes — signed pieces are a specialty at our Tysons-area counter, because so much of the local jewelry was bought at Cartier, Tiffany, and the Galleria's other boutiques. Designer jewelry and luxury watches are appraised individually on brand, model, and condition, since a recognized maker's piece is usually worth well more than its gold weight. Bring the box, papers, receipts, or extra links if you still have them — original documentation and accessories raise the offer.",
+      },
+      {
+        q: "How much will I get for my gold in Tysons?",
+        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 for a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, gemstone jewelry, and watches are appraised separately, since they're often worth more than their metal content.",
+      },
+      {
+        q: "Can I really sell gold on a lunch break in Tysons?",
+        a: "Yes — it's one of the most common ways people use our Tyco Rd counter. A typical appraisal takes 10–20 minutes with no appointment needed: we test and weigh each piece in front of you, quote against the live spot price, and if you accept, you're paid in cash on the spot. From the Silver Line offices, the malls, or The Boro, the store is a few minutes off Route 7, so the whole errand fits comfortably inside an hour.",
+      },
+      {
+        q: "Do you buy diamond engagement rings in Tysons?",
+        a: "Yes. Diamond rings are never quoted on gold weight alone — the stone is evaluated separately from the setting, and center stones frequently carry more value than the band itself. Larger and certified diamonds are appraised individually, so bring your GIA certificate or any appraisal paperwork if you have it. You hear one clear combined number at the counter, and there's zero obligation if you'd rather think it over.",
+      },
+    ],
+    relatedPosts: [
+      "list-of-top-20-name-brand-in-gold-jewelry",
+      "we-buy-diamonds-more-than-1-carat-with-gia",
+      "selling-gold-jewelry",
+    ],
+    closingCta:
+      "No drive required — walk into our Tysons store at 8453 Tyco Rd #C (Vienna/McLean), just off Route 7, and turn that drawer of gold, watches, or designer pieces into an instant payout before your lunch break ends.",
+  },
+  {
+    slug: "cash-for-gold-oakton",
+    city: "Oakton",
+    region: "VA",
+    seoTitle: "Sell Gold Near Oakton, VA | Instant Payout in Vienna",
+    metaDescription:
+      "Sell gold near Oakton, VA — our Vienna store is just 8–12 minutes east on Route 123. Free heirloom-friendly appraisal, instant payout. 4.9★, 500+ reviews.",
+    heroTitle: "Cash for Gold in Oakton, VA",
+    heroSubtitle:
+      "We don't have a storefront in Oakton itself, but our Vienna/McLean location is only about 8–12 minutes east on Route 123 toward Tysons — bring your jewelry in, watch it tested at the counter, and drive back home with cash the same errand.",
+    intro:
+      "If you're looking to sell gold in Oakton, here's the plain answer: **our nearest counter is in Vienna, about 8–12 minutes east on Route 123 (Chain Bridge Road) toward Tysons** — close enough that it barely counts as leaving the neighborhood. Our Chantilly store is a second option, roughly 15 minutes west via I-66 and Route 50, if your day points toward the Route 28 side. At either counter, every piece is tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid before you're back on 123.\n\nOakton's gold has a character of its own, and we appraise it that way. In a community where families have often held the same wooded-lot homes for decades, what comes out of the jewelry box is rarely last year's purchase — it's **a parent's wedding set, a grandmother's brooch, rings and chains that have quietly passed down two or three generations**, alongside well-kept everyday 14k that simply stopped being worn. That kind of collection deserves an unhurried look, not a rushed weigh-in: anything with age, maker's marks, or real craftsmanship gets appraised on its own merits before melt weight is ever discussed, which is exactly what a careful visit to a nearby counter — rather than a mail-in envelope — makes possible.",
+    whyLocalTitle: "Why Oakton sellers keep heirlooms out of the mail",
+    whyLocal:
+      "Inherited and estate jewelry is precisely the wrong thing to seal into a prepaid envelope. A mail-in buyer receives your grandmother's ring as anonymous metal, grades it out of your sight, and sends back one number you can't question — and if a piece had craftsmanship or age worth more than its weight, you'll never know. Selling in person keeps every judgment where you can see it: **the karat test happens in front of you, the scale reading happens in front of you, and each piece can be discussed individually** before you decide anything. If the number doesn't feel right, the jewelry goes home with you, exactly as it arrived.\n\nAnd from Oakton, 'in person' asks almost nothing of your day. **Route 123 runs from Oakton's center straight to our Vienna counter in about 8–12 minutes** — a shorter trip than most school runs down Hunter Mill Road, with easy parking off Tyco Road when you arrive. There's no appointment needed and no obligation to sell: many Oakton households come in first just to learn what a collection is worth, then take their time deciding. Either way, when you do sell, it's an **instant payout in cash the same visit** — not a check chasing an envelope through the mail.",
+    neighborhoods: [
+      {
+        name: "Hunter Mill Road corridor",
+        note: "The wooded lots and longtime households along Hunter Mill hold some of Oakton's deepest jewelry boxes — estate pieces, older wedding sets, and gold that's been in the same family since the houses were built. Collections like these get appraised piece by piece, with anything showing real age or craftsmanship valued beyond its melt weight.",
+      },
+      {
+        name: "Oakton center & Route 123",
+        note: "The neighborhoods around Oakton's crossroads sit closest of all to our Vienna counter — Chain Bridge Road runs there almost door to door in about ten minutes, which makes a free appraisal an easy add-on to any errand toward Vienna or Tysons.",
+      },
+      {
+        name: "Waples Mill & the Fox Mill edge",
+        note: "The quieter western side of Oakton leans toward established families and practical selling — retired wedding bands, everyday 14k that changed with the times, single earrings and broken chains — all of it worth the same per gram on the scale as anything showier once it's tested at true karat.",
+      },
+      {
+        name: "Blake Lane & the Vienna line",
+        note: "Where Oakton blends into Vienna, the townhomes and older single-family streets bring in a steady mix of generational and modern pieces, and residents here have the shortest trip of anyone — the Vienna store is essentially a straight shot up 123 past the Beltway side of Tysons.",
+      },
+    ],
+    nearestIntro:
+      "Oakton doesn't have a Cash for Gold VA storefront of its own, but it hardly needs one — our Vienna/McLean counter is one short run up Route 123, with Chantilly as a second option toward the west.",
+    nearest: [
+      { slug: "vienna", drive: "about 8–12 minutes east on Route 123 (Chain Bridge Road) toward Tysons — the closest store to Oakton by a comfortable margin" },
+      { slug: "chantilly", drive: "about 15 minutes west via I-66 and Route 50, a good alternative if your day heads toward the Route 28 corridor" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold in Oakton, VA?",
+        a: "There's no Cash for Gold VA store inside Oakton itself. The closest is our Vienna/McLean location at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — about 8–12 minutes east via Route 123 toward Tysons. Our Chantilly store at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — is roughly 15 minutes west via I-66 and Route 50. Both are real counters where your gold is tested in front of you and paid the same visit.",
+      },
+      {
+        q: "I have jewelry that's been in my family for generations — how do you handle heirloom pieces?",
+        a: "Slowly and individually, which is the whole point of coming in person. Generational pieces from Oakton households often carry value beyond their gold weight — older craftsmanship, maker's marks, original gemstones, settings from eras jewelers no longer produce. We examine each piece before anything is weighed, flag whatever deserves appraisal above melt value, and walk you through how every number was reached. There's no obligation to sell anything, and many families come in first simply to understand what a collection is worth before making decisions.",
+      },
+      {
+        q: "How is my payout calculated?",
+        a: "We start with the live spot price per troy ounce, divide by 31.1 to get a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+      },
+      {
+        q: "Which store is closer to Oakton — Vienna or Chantilly?",
+        a: "Vienna, and it isn't close: our Vienna/McLean counter on Tyco Road is about 8–12 minutes east via Route 123, essentially one road from Oakton's center. Chantilly is around 15 minutes west via I-66 and Route 50, which can suit you better if you live near the Waples Mill side or you're already headed toward the Dulles corridor. No appointment is needed at either — walk in during business hours.",
+      },
+      {
+        q: "Do you buy silver, coins, and watches from Oakton sellers, or only gold?",
+        a: "All of it. Beyond gold jewelry, we buy sterling silver and silver flatware, platinum, diamonds, designer jewelry, luxury watches, and coins — the full range of what tends to surface when an Oakton household sorts through decades of accumulation. Bullion gold coins pay 90% of live spot, potentially collectible coins are appraised individually for dates and mint marks, and watches are evaluated on brand, model, and condition, so bring boxes and paperwork if you still have them.",
+      },
+    ],
+    relatedPosts: [
+      "we-buy-estate-gold-jewelry",
+      "selling-gold-jewelry",
+      "is-cash-for-gold-worth-it",
+    ],
+    closingCta:
+      "Take Route 123 east and you're at our Vienna store in about 8–12 minutes — bring the pieces that have waited in the drawer for years and leave with an instant payout the same quiet errand.",
+  },
+  {
+    slug: "cash-for-gold-falls-church",
+    city: "Falls Church",
+    region: "VA",
+    seoTitle: "Sell Gold in Falls Church, VA | Instant Payout Nearby",
+    metaDescription:
+      "Sell gold in Falls Church, VA — the Little City sits between our Annandale and Vienna stores, both under 15 minutes away. Instant payout. 4.9★, 500+ reviews.",
+    heroTitle: "Cash for Gold in Falls Church, VA",
+    heroSubtitle:
+      "We don't have a storefront in Falls Church itself — but the Little City sits almost exactly between two of ours. Annandale is a straight 10–12 minute run south on Route 50 or the Beltway, and your gold is tested in front of you and paid the same visit.",
+    intro:
+      "Looking to sell gold in Falls Church? Honest answer first: **we don't have a counter inside the Little City**, but Falls Church may be the best-positioned place in Northern Virginia to sell anyway — it sits **almost exactly between two of our stores**, usually **under 15 minutes from either**. Our **Annandale store is the closest**, a straight run south on Route 50 or the Beltway, and our Vienna/McLean store is a quick trip west toward Tysons. At either counter, your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid before you're back through Seven Corners.\n\nThe gold that comes out of Falls Church is a genuine mix, and it deserves a buyer who treats it that way. This is a small, established independent city — long-tenured families in the walkable historic core, newer households filling in around them — so the same afternoon can bring us **an inherited ring from a family that's been in Falls Church for three generations, an everyday 14k chain from Pimmit Hills, and a designer piece bought up the road near Tysons**. Each of those is worth money for a different reason, which is exactly why every piece gets tested for its true karat and appraised on its own merits instead of tossed on one melt pile.",
+    whyLocalTitle: "Why Falls Church sellers do better in person than with a mail-in envelope",
+    whyLocal:
+      "A mail-in gold buyer asks you to seal your jewelry into a prepaid envelope, ship it to a facility you'll never see, and wait days for a take-it-or-leave-it offer with your gold already out of your hands. Selling in person keeps every step where you can see it: **the karat test and the scale reading happen in front of you, and your jewelry stays yours until you agree to a number**. If the offer falls short, it goes back in your pocket and you're home in a quarter hour.\n\nAnd from Falls Church, 'in person' is about as easy as it gets anywhere in Northern Virginia, because **two counters bracket the city in opposite directions**. Head **south on Route 50 or the Beltway and you're at our Annandale store in about 10–12 minutes**; head west toward Tysons and Vienna/McLean is the same short trip. Either drive is shorter than a post-office round trip with a padded envelope — and it ends with an **instant payout in cash**, not a check that arrives whenever the mail decides.",
+    neighborhoods: [
+      {
+        name: "The Little City & historic Falls Church",
+        note: "The walkable core of the independent city is home to families who've been here for generations, and their jewelry boxes show it — inherited rings, older settings, and estate pieces passed down since long before the region boomed. Anything with real age or craftsmanship gets appraised on its own merits before melt weight ever enters the conversation.",
+      },
+      {
+        name: "Seven Corners & Bailey's Crossroads",
+        note: "One of the most diverse corridors in Northern Virginia brings us gold from every tradition — high-karat chains and bangles alongside everyday American 14k — and every piece is tested electronically and paid at its actual purity, never rounded down to a convenient karat.",
+      },
+      {
+        name: "Pimmit Hills",
+        note: "This postwar neighborhood between Falls Church and Tysons sends us the practical side of the business: wedding bands, broken chains, single earrings, and 14k that hasn't been worn in years. Condition doesn't matter for melt value, and Pimmit Hills also sits closest of all to our Vienna/McLean counter.",
+      },
+      {
+        name: "Idylwood",
+        note: "Tucked between Route 7 and I-66 near the West Falls Church Metro, Idylwood skews toward a mix of longtime homeowners and newer arrivals — so we see both generational gold and modern designer pieces from here, and the branded items are appraised on maker and condition rather than weighed as scrap.",
+      },
+    ],
+    nearestIntro:
+      "Falls Church doesn't have a Cash for Gold VA storefront yet, but the Little City sits squarely between two of them — one south, one west — so pick the direction that matches your day.",
+    nearest: [
+      { slug: "annandale", drive: "the closest store — about 10–12 minutes straight south on Route 50 or the Beltway" },
+      { slug: "vienna", drive: "about 10–12 minutes west toward Tysons, an easy run from Pimmit Hills and Idylwood" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold in Falls Church, VA?",
+        a: "There's no Cash for Gold VA store inside Falls Church itself, but two are within roughly 15 minutes. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 10–12 minutes south via Route 50 or the Beltway. Our Vienna/McLean store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is about 10–12 minutes west toward Tysons and often quicker from Pimmit Hills or Idylwood.",
+      },
+      {
+        q: "Which store is closer to Falls Church — Annandale or Vienna?",
+        a: "Annandale, for most of the city: it's a straight 10–12 minute run south on Route 50 or the Beltway, and it's clearly the shorter trip from Seven Corners and Bailey's Crossroads. If you're on the north side — Pimmit Hills, Idylwood, or anywhere near the West Falls Church Metro — Vienna/McLean is about the same 10–12 minutes west toward Tysons. Both counters test in front of you and pay the same visit, so just pick the direction you're already headed.",
+      },
+      {
+        q: "How much will I get for my gold in Falls Church?",
+        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 to get a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+      },
+      {
+        q: "Does the karat stamp really change what my jewelry is worth?",
+        a: "More than almost anything else. Karat is the percentage of actual gold in the piece — 10k is 41.7% pure, 18k is 75% — so a heavy 10k bracelet can be worth less than a lighter 18k ring, even though it feels more substantial in your hand. That's why we test every piece for its true purity rather than pricing by heft or trusting a worn stamp, and why sorting a mixed jewelry box at a real counter usually beats guessing at home.",
+      },
+      {
+        q: "I have inherited jewelry with gemstones — is it worth more than the gold weight?",
+        a: "Often, yes. Diamonds and quality gemstones are evaluated separately from the metal, and a recognizable maker or designer name can add value on top of both — so an inherited piece from a longtime Falls Church family may be worth well more than its weight on the scale. We quote the higher of collectible value or melt value, so don't pull stones or clean older pieces before coming in, and bring any paperwork you have.",
+      },
+    ],
+    relatedPosts: [
+      "cash-for-gold-nova-falls-church-va",
+      "we-buy-estate-gold-jewelry",
+      "is-cash-for-gold-worth-it",
+    ],
+    closingCta:
+      "Point the car south on Route 50 — our Annandale store is 10–12 minutes from the Little City, and your gold is tested, quoted, and paid with an instant payout in a single trip.",
+  },
 ];
 
 export const getCityLanding = (slug: string): CityLanding | undefined =>

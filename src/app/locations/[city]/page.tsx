@@ -84,7 +84,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         <Reveal direction="left" delay={0.1}>
           <div className="flex h-full flex-col rounded-3xl border border-ink-900/8 bg-cream-50 p-8 shadow-[var(--shadow-card)]">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <h2 className="font-display text-2xl font-semibold text-foreground">Store information</h2>
+              <h2 className="font-display text-2xl font-extrabold text-foreground">Store information</h2>
               <OpenStatus hours={loc.hours} />
             </div>
             <dl className="mt-6 space-y-4">
