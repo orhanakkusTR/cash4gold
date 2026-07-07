@@ -187,6 +187,10 @@ const nextConfig: NextConfig = {
       // into a full local landing page at /cash-for-gold-alexandria; its content
       // was absorbed there, so the blog URL 301s to the landing page.
       { source: "/sell-gold-alexandria-va", destination: "/cash-for-gold-alexandria", permanent: true },
+      // Centreville's gold-intent blog post was consolidated into the full local
+      // landing page at /cash-for-gold-centreville (same intent → avoid
+      // cannibalization); its local content was absorbed there, so it 301s.
+      { source: "/top-places-to-sell-gold-in-centreville", destination: "/cash-for-gold-centreville", permanent: true },
     ];
   },
 };

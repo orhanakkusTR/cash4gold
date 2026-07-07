@@ -66,7 +66,7 @@ function boldPhrase(text: string, phrase: string) {
 
 const VALUE_PROPS = [
   { icon: BadgeCheck, label: "Best value, tied to the live price" },
-  { icon: Banknote, label: "Instant cash, paid the same visit" },
+  { icon: Banknote, label: "Instant payout, paid the same visit" },
   { icon: PackageOpen, label: "We buy gold, silver, diamonds, watches & coins" },
   { icon: Star, label: "4.9★ across 500+ Google reviews" },
 ];
@@ -177,10 +177,19 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                   <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-gold-300">
                     <MapPin className="h-4 w-4" /> Nearest store
                   </span>
-                  <p className="mt-3 font-display text-2xl font-semibold text-cream-50">{primary.store.city}</p>
-                  <p className="mt-1 text-sm text-cream-100/70">
-                    {primary.store.street}, {primary.store.city}, {primary.store.region} {primary.store.postalCode}
+                  <p className="mt-3 font-display text-2xl font-semibold">
+                    <Link href={`/locations/${primary.store.slug}`} className="text-cream-50 transition-colors hover:text-gold-300">
+                      {primary.store.city}
+                    </Link>
                   </p>
+                  <a
+                    href={primary.store.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block text-sm text-cream-100/70 underline-offset-2 transition-colors hover:text-gold-200 hover:underline"
+                  >
+                    {primary.store.street}, {primary.store.city}, {primary.store.region} {primary.store.postalCode}
+                  </a>
                   <div className="mt-4">
                     <OpenStatus hours={primary.store.hours} tone="light" />
                   </div>
@@ -254,7 +263,11 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                   </div>
                   <div className="flex flex-1 flex-col gap-4 p-6 sm:p-8">
                     <div>
-                      <h3 className="font-display text-2xl font-extrabold text-foreground">{primary.store.city}</h3>
+                      <h3 className="font-display text-2xl font-extrabold">
+                        <Link href={`/locations/${primary.store.slug}`} className="text-foreground transition-colors hover:text-gold-700">
+                          {primary.store.city}
+                        </Link>
+                      </h3>
                       <a
                         href={primary.store.mapUrl}
                         target="_blank"
@@ -314,7 +327,11 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                   <div className="flex flex-1 flex-col gap-3 p-6">
                     <div>
                       <span className="text-xs font-semibold uppercase tracking-wide text-gold-600">Also nearby</span>
-                      <h3 className="mt-1 font-display text-xl font-extrabold text-foreground">{secondary.store.city}</h3>
+                      <h3 className="mt-1 font-display text-xl font-extrabold">
+                        <Link href={`/locations/${secondary.store.slug}`} className="text-foreground transition-colors hover:text-gold-700">
+                          {secondary.store.city}
+                        </Link>
+                      </h3>
                       <a
                         href={secondary.store.mapUrl}
                         target="_blank"

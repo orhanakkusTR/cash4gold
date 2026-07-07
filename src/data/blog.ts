@@ -757,66 +757,6 @@ Selling locally lets you keep your items until you accept an offer and get paid 
 Ready to find out what your gold is worth in Falls Church? [Get an instant estimate](/gold-calculator) or [visit your nearest location](/contact-us-cash-for-gold-locations) for a free appraisal.`,
   },
   {
-    slug: "top-places-to-sell-gold-in-centreville",
-    title: "Top Places to Sell Gold in Centreville, VA",
-    seoTitle: "Sell Gold in Centreville, VA | Best Local Buyers",
-    date: "2025-06-08",
-    category: "Locations",
-    excerpt:
-      "Selling gold in Centreville, VA? Here is how to choose a trustworthy buyer, what sets a fair offer apart from a lowball, and where to get a free, same-day appraisal near Centreville.",
-    body: `Centreville sits in one of the most competitive corners of the Northern Virginia gold market, which works in your favor as a seller. With several buyers within a short drive, the ones that survive are the ones that pay fairly and treat people well. The trick is knowing how to tell them apart before you hand anything over.
-
-We buy gold from Centreville residents regularly, and the most valuable thing we can offer first-time sellers is not just a good price, but a clear explanation of how that price is reached. Here is what to look for and where to start.
-
-## What makes a buyer worth your time
-
-Before you sell a single gram, run any buyer through this checklist:
-
-- **A permanent storefront** you can walk back into, not a traveling buy-event or kiosk.
-- **Purity testing and weighing in the open**, in front of you, on a calibrated scale.
-- **Offers tied to the live spot price**, presented as a fair range instead of one flat number.
-- **Free appraisals with no obligation.** Finding out what your gold is worth should never cost you anything.
-- **A track record** of genuine local reviews.
-
-## How a fair offer is built
-
-There is no mystery to a legitimate gold offer. It rests on three numbers: the live spot price, your item's karat purity, and its weight in grams. The buyer converts the per-ounce spot price into a per-gram price (spot divided by 31.1), multiplies by your karat fraction (14k is 58.3% gold, 18k is 75%, 10k is 41.7%), and multiplies by the weight, minus a small refining margin.
-
-Because karat drives so much of the value, it pays to know your stamps before you go. You can estimate any piece with our [gold value calculator](/gold-calculator), which runs the live price through this formula in seconds.
-
-## Get the best offer in Centreville
-
-A few habits consistently lead to better outcomes:
-
-1. **Separate the keepers.** Designer-signed and gem-set pieces are often worth more than their melt value. Have those appraised individually rather than sold by weight.
-2. **Do not pre-clean or alter anything.** Buyers test and weigh as-is; you risk damaging value by trying to fix pieces.
-3. **Get a baseline estimate first** so you can recognize a fair offer when you see one.
-4. **Compare on transparency, not just the headline percentage.** A buyer who explains the math is usually the one paying fairly.
-
-## Selling gold in Centreville: the local picture
-
-Centreville sits right where Route 28, Route 29, and I-66 meet, which puts several established buyers within a short drive and keeps the local market genuinely competitive. For most Centreville neighborhoods — from Virginia Run and Little Rocky Run to the townhomes near Old Centreville Road — our Chantilly store is only about ten minutes up Route 28 and Route 50. That short distance matters: selling locally means you never lose sight of your gold, you can ask questions face to face, and you walk out the same day with cash rather than waiting on a mailed check.
-
-What do Centreville sellers typically bring? A steady mix of everyday karat jewelry, inherited pieces, gold and silver coins, and the occasional luxury watch or designer item. Because so much of it is inherited or unworn, people are often surprised how much a small pile is worth once it is properly tested and weighed at today's prices.
-
-## Where to sell near Centreville
-
-The Cash for Gold VA store closest to Centreville is our **Chantilly** location at 14025 Lee Jackson Memorial Hwy, just up Route 50. We also have stores in Manassas, Vienna/McLean, and Annandale. Every location offers free, no-obligation appraisals, instant payout, and the same transparent method, and we buy gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
-
-## Frequently asked questions
-
-**Where is the best place to sell gold in Centreville, VA?**
-The best buyer is a local storefront that tests in front of you and ties offers to the live spot price. The nearest Cash for Gold VA store is our Chantilly location on Lee Jackson Memorial Hwy.
-
-**How do I get the best price for my gold?**
-Know your karat and weight, estimate your pieces with our [calculator](/gold-calculator), and sell to a buyer who explains the offer openly. Have designer and gem-set pieces appraised separately.
-
-**Are appraisals free?**
-Yes. Appraisals are always free and carry no obligation to sell.
-
-Ready to see what your gold is worth in Centreville? [Estimate it now](/gold-calculator) or [visit our Chantilly store](/contact-us-cash-for-gold-locations) for a free appraisal.`,
-  },
-  {
     slug: "understanding-the-cash-for-gold-process",
     title: "The Cash for Gold Process, Step by Step",
     seoTitle: "How Cash for Gold Works, Step by Step | Cash for Gold VA",
@@ -1480,7 +1420,6 @@ const BLOG_COVERS: Record<string, string> = {
   "cash-for-gold-falls-church-va": "/photos/storefront-annandale.jpg",
   "cash-for-gold-nova-falls-church-va": "/photos/storefront-vienna.jpg",
   "cash-for-gold-loudoun-county-va": "/photos/storefront-chantilly.jpg",
-  "top-places-to-sell-gold-in-centreville": "/photos/storefront-manassas.jpg",
   "how-to-sell-used-gold-in-chantilly-va": "/photos/storefront-chantilly.jpg",
   "cash-for-gold-close-to-me": "/photos/storefront-annandale.jpg",
   "top-places-to-sell-coins-in-fairfax": "/products/coins/collection.jpg",
