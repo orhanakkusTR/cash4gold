@@ -13,19 +13,24 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 const CONTACT_PATH = "/contact-us-cash-for-gold-locations";
 
-// Turn any city name that has its own landing page into a link, in place, inside
-// a plain-text sentence. Data-driven: as CITY_LANDINGS grows, the matching city
-// names in the "Areas we serve" copy start linking automatically.
-function linkifyLandings(text: string) {
-  if (CITY_LANDINGS.length === 0) return text;
-  const names = CITY_LANDINGS.map((c) => c.city.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+// Turn any place name that has its own page — a store location or a city landing
+// — into a bold link, in place, inside a plain-text sentence. Data-driven: as we
+// add stores or city landings, matching names in prose start linking automatically.
+const PLACE_LINKS: { name: string; href: string }[] = [
+  ...LOCATIONS.map((l) => ({ name: l.city, href: `/locations/${l.slug}` })),
+  ...CITY_LANDINGS.map((c) => ({ name: c.city, href: `/${c.slug}` })),
+];
+
+function linkifyPlaces(text: string) {
+  if (PLACE_LINKS.length === 0) return text;
+  const names = PLACE_LINKS.map((p) => p.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   const parts = text.split(new RegExp(`\\b(${names.join("|")})\\b`, "g"));
   return parts.map((part, i) => {
-    const landing = CITY_LANDINGS.find((c) => c.city === part);
-    return landing ? (
+    const link = PLACE_LINKS.find((p) => p.name === part);
+    return link ? (
       <Link
         key={i}
-        href={`/${landing.slug}`}
+        href={link.href}
         className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-800"
       >
         {part}
@@ -69,9 +74,13 @@ export default function ContactPage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/20 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5">
-                    <h3 className="font-display text-2xl font-extrabold text-cream-50">{l.city}</h3>
-                    <OpenStatus hours={l.hours} tone="light" />
+                  <div className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-1.5 p-5 lg:flex-row lg:items-end lg:justify-between lg:gap-3">
+                    <h3 className="font-display text-2xl font-extrabold">
+                      <Link href={`/locations/${l.slug}`} className="text-cream-50 transition-colors hover:text-gold-300">
+                        {l.city}
+                      </Link>
+                    </h3>
+                    <OpenStatus hours={l.hours} tone="light" className="whitespace-nowrap" />
                   </div>
                 </div>
 
@@ -121,6 +130,28 @@ export default function ContactPage() {
           ))}
         </div>
       </section>
+
+      {CITY_LANDINGS.length > 0 && (
+        <section className="border-t border-hairline py-14 sm:py-16">
+          <div className="container-page">
+            <h2 className="font-display text-2xl font-extrabold text-foreground">Areas we also serve</h2>
+            <p className="mt-2 max-w-2xl text-muted">
+              No Cash for Gold VA store in your city yet? These pages show your closest location and drive time, so you still know exactly where to sell.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2.5">
+              {CITY_LANDINGS.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/${c.slug}`}
+                  className="rounded-full border border-gold-500/40 px-4 py-2 text-sm font-medium text-gold-700 transition-colors hover:bg-gold-50"
+                >
+                  Cash for gold in {c.city}, {c.region}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Helpful guidance — what to bring, what to expect, areas served */}
       <section className="bg-cream-100 py-16 sm:py-20">
@@ -178,7 +209,7 @@ export default function ContactPage() {
               <div>
                 <h2 className="font-display text-2xl font-extrabold text-foreground">Areas we serve</h2>
                 <p className="mt-4 text-muted">
-                  {linkifyLandings(
+                  {linkifyPlaces(
                     "Our four stores in Annandale, Manassas, Chantilly, and Vienna/McLean welcome sellers " +
                       "from across Northern Virginia, including Fairfax, Centreville, Falls Church, " +
                       "Arlington, Alexandria, Burke, Springfield, Reston, Herndon, and the surrounding " +
