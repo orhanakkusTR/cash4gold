@@ -377,6 +377,213 @@ export const CITY_LANDINGS: CityLanding[] = [
     closingCta:
       "Head 8–12 minutes north on Route 28 to our Chantilly store and find out what that Centreville jewelry box is really worth — cash in hand before you're back on I-66.",
   },
+  {
+    slug: "cash-for-gold-bristow",
+    city: "Bristow",
+    region: "VA",
+    seoTitle: "Sell Gold Near Bristow, VA | Instant Payout, 10 Min Away",
+    metaDescription:
+      "Sell gold near Bristow, VA — our Manassas store is 10–12 minutes via Linton Hall Rd and Route 28. Free appraisal, instant payout. 4.9★, 500+ reviews.",
+    heroTitle: "Cash for Gold in Bristow, VA",
+    heroSubtitle:
+      "There's no gold buyer inside Bristow itself, but our Manassas store is only 10–12 minutes away via Linton Hall Road and Route 28 — your jewelry gets tested in front of you and you drive home with cash the same trip.",
+    intro:
+      "Searching for cash for gold in Bristow? Honest answer first: **we don't have a counter in Bristow itself**, but of every community we serve without its own storefront, Bristow has the shortest drive to one. Our **Manassas store sits on Centreville Road (Route 28), about 10–12 minutes away** — Linton Hall Road to Nokesville Road and you're there, roughly the same run as a trip to the commuter lot. Your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid before you head back down Linton Hall.\n\nBristow grew up fast — most of it was built in the 2000s as Prince William County's planned communities filled in around Braemar and Victory Lakes — and the gold that comes from here reflects that. We see **wedding and engagement sets from the years these neighborhoods were new, everyday 14k chains and bracelets, kids' baptism and birthday jewelry, and gifts that never quite matched**. None of it needs to be old to be worth real money: for families comparing **gold buyers near Bristow**, what matters is karat and weight on an honest scale, and a fifteen-year-old wedding band prices off the same live spot as any heirloom.",
+    whyLocalTitle: "Why Bristow sellers should make the short drive instead of mailing gold in",
+    whyLocal:
+      "A mail-in gold buyer asks you to seal your ring into a prepaid envelope, send it to a facility you'll never see, and wait days for a take-it-or-leave-it offer with your gold already out of your hands. Selling in person keeps every step where you can see it: **the karat test happens in front of you, the scale reading happens in front of you, and your jewelry stays yours until you say yes to a number**. If the offer falls short, it goes back in your pocket and you're home before school pickup.\n\nAnd from Bristow, 'in person' is barely a trip at all. **Linton Hall Road to Route 28 puts our Manassas counter about 10–12 minutes from Braemar or Victory Lakes** — closer than most of the errands you already run toward Gainesville or the Promenade. Compare that with packaging your jewelry, driving to drop it off, and tracking an envelope for a week, and the local option wins on both speed and certainty: an **instant payout the same visit**, not a check that arrives whenever the mail does.",
+    neighborhoods: [
+      {
+        name: "Braemar",
+        note: "One of Prince William's signature planned communities from the early 2000s — households here are now one or two decades past their wedding years, which means upgraded rings, retired first wedding sets, and anniversary gold that's been replaced but never sold, all of it worth a real quote at today's spot.",
+      },
+      {
+        name: "Victory Lakes",
+        note: "The families who filled Victory Lakes as it was built tend to bring in milestone jewelry — push presents, sweet-sixteen pieces, outgrown kids' bracelets and earrings — small items individually, but tested piece by piece they add up faster than most sellers expect.",
+      },
+      {
+        name: "Sheffield Manor",
+        note: "This established townhome and single-family neighborhood off Linton Hall sends us the practical side of the business: broken chains, single earrings, and everyday 14k that's no longer worn — condition doesn't matter for melt value, so damaged pieces pay the same per gram as intact ones.",
+      },
+      {
+        name: "Linton Hall Road corridor",
+        note: "The retail stretch between Bristow and Gainesville is where much of this jewelry was bought in the first place, and it skews modern — branded pieces, diamond settings, and the occasional luxury watch, which we appraise on maker and condition rather than weighing as scrap.",
+      },
+    ],
+    nearestIntro:
+      "Bristow doesn't have a Cash for Gold VA storefront yet, but Route 28 connects it almost directly to two of our stores — Manassas just up the road, and Chantilly a straight run farther north.",
+    nearest: [
+      { slug: "manassas", drive: "about 10–12 minutes via Linton Hall Road and Route 28 (Nokesville Road) — the closest store to Bristow by a wide margin" },
+      { slug: "chantilly", drive: "about 18–20 minutes north up Route 28, a good second option if your day is headed toward the Route 50 side" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold in Bristow, VA?",
+        a: "There's no gold-buying storefront inside Bristow itself. The closest is our Manassas store at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — about 10–12 minutes away via Linton Hall Road and Route 28. Our Chantilly store at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — is roughly 18–20 minutes north up Route 28 if that direction suits your day better.",
+      },
+      {
+        q: "My jewelry was all bought in the last 10–20 years — is it worth selling?",
+        a: "Yes — age has nothing to do with melt value. A 14k wedding band from a 2008 Braemar wedding is priced off the same live spot price, karat, and weight as gold twice its age. Newer jewelry is often the easiest to quote, too: clear karat stamps and good condition mean fewer unknowns and a faster offer. If a piece hasn't been worn since the kids outgrew it or the style changed, it's a candidate.",
+      },
+      {
+        q: "How is my payout calculated?",
+        a: "We start with the live spot price per troy ounce, divide by 31.1 to get a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+      },
+      {
+        q: "How long does it take to sell gold near Bristow?",
+        a: "Plan on 10–20 minutes at the counter for a typical batch, plus the 10–12 minute drive from Bristow to our Manassas store — no appointment needed. We test and weigh each piece in front of you, quote against the live spot price, and if you accept, you're paid on the spot. The whole errand fits between drop-off and pickup, or before a show out at Jiffy Lube Live.",
+      },
+      {
+        q: "Do you buy diamond rings and designer jewelry from Bristow sellers?",
+        a: "Yes. Engagement rings, diamond earrings, and branded jewelry come across our Manassas counter from Bristow regularly, and they're never quoted on gold weight alone — the diamond is evaluated separately from the setting, and designer pieces are appraised on maker, model, and condition. Bring the box, certificate, or appraisal paperwork if you have it; documentation can raise the offer.",
+      },
+    ],
+    relatedPosts: [
+      "selling-gold-jewelry",
+      "is-cash-for-gold-worth-it",
+      "cash-for-gold-close-to-me",
+    ],
+    closingCta:
+      "Take Linton Hall Road to Route 28 and you're at our Manassas store in 10–12 minutes — walk in with the jewelry Bristow outgrew and walk out with an instant payout.",
+  },
+  {
+    slug: "cash-for-gold-gainesville",
+    city: "Gainesville",
+    region: "VA",
+    seoTitle: "Sell Gold in Gainesville, VA | Estate Buyers, Instant Payout",
+    metaDescription:
+      "Sell gold in Gainesville, VA — our Manassas store is 12–15 min away via Route 29. Free appraisal, estate collections welcome, instant payout. 4.9★, 500+ reviews.",
+    heroTitle: "Cash for Gold in Gainesville, VA",
+    heroSubtitle:
+      "We don't have a storefront in Gainesville itself, but our Manassas location is only 12–15 minutes southeast via Route 29 or Linton Hall Road — your gold is tested in front of you and you walk out with cash the same visit.",
+    intro:
+      "Searching for cash for gold in Gainesville? Honest answer first: **we don't have a counter in Gainesville itself**, but our **Manassas store is about 12–15 minutes southeast** — an easy run down Route 29 or Linton Hall Road from anywhere near the I-66 interchange. Our Chantilly store is a second option, roughly 18–20 minutes northeast via I-66 and Route 28. At either counter, your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid before you head back up the road.\n\nGainesville has grown fast around Virginia Gateway and the Route 29 corridor, but a lot of what comes to us from here isn't new at all. Between **Heritage Hunt and the area's other established communities, whole-collection and downsizing appraisals are a genuine specialty** for us — a lifetime of wedding sets, anniversary pieces, and gifted jewelry that suddenly needs sorting when a household simplifies. That's the kind of job worth doing across a real counter with patient **gold buyers in Gainesville's corner of Prince William County**, where every piece gets tested individually instead of guessed at, and nothing real gets waved off as not worth weighing.",
+    whyLocalTitle: "Why Gainesville sellers do better in person than mailing gold away",
+    whyLocal:
+      "Mail-in gold buyers are a particularly bad fit for the kind of selling Gainesville sends us. A single broken chain might survive an envelope fine — but a **downsizing household with thirty or forty pieces has no business shipping a collection to a facility they'll never see**, accepting one lump-sum offer with no way to know which pieces were graded as what. Across our counter, each item is tested and weighed separately in front of you, you hear how every number was reached, and **your jewelry stays in your hands until you agree to a price**. If the offer falls short, everything goes back in the box and you drive home.\n\nAnd from Gainesville, driving is barely a cost at all. The **Manassas counter is about 12–15 minutes southeast** — straight down Route 29, or via Linton Hall Road if you're on the Piedmont or Braemar side — which is shorter than most trips you already make to Virginia Gateway. You're **paid the same visit**, not waiting a week to learn what a stranger decided your grandmother's rings were worth.",
+    neighborhoods: [
+      {
+        name: "Heritage Hunt",
+        note: "One of the area's best-known 55+ active-adult communities is the heart of our Gainesville business: downsizing and estate gold. When decades of wedding sets, anniversary jewelry, and inherited pieces need to become something simpler, we appraise the whole collection patiently — piece by piece, no obligation — and buy everything from fine settings to plain scrap in one visit.",
+      },
+      {
+        name: "Piedmont",
+        note: "The gated golf-course community tends toward well-kept fine jewelry and luxury watches alongside everyday 14k and 18k pieces. Brand-name and gemstone items from here get appraised individually on maker and condition, since they're frequently worth more than their gold weight alone.",
+      },
+      {
+        name: "Somerset Crossing",
+        note: "This newer family neighborhood near the Route 29 interchange brings us the modern side of the ledger — upgraded engagement rings, mismatched earrings, chains that broke and never got fixed — clearly stamped pieces that quote quickly and add up faster than most sellers expect.",
+      },
+      {
+        name: "Virginia Gateway & the Route 29 corridor",
+        note: "Gainesville's retail hub is where much of this jewelry was bought in the first place, and it's also your on-ramp to selling it: Route 29 runs from Gateway straight down to our Manassas counter, so an appraisal fits into the same loop as a normal shopping errand.",
+      },
+    ],
+    nearestIntro:
+      "Gainesville doesn't have a Cash for Gold VA storefront yet, but sitting on the I-66/Route 29 interchange means both of our nearest stores are one familiar road away — Route 29 southeast or I-66 northeast.",
+    nearest: [
+      { slug: "manassas", drive: "the closest store — about 12–15 minutes southeast via Route 29, or Linton Hall Road from the Piedmont side of Gainesville" },
+      { slug: "chantilly", drive: "about 18–20 minutes northeast via I-66 and Route 28, handy if your day already points toward the Dulles corridor" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold in Gainesville, VA?",
+        a: "There's no Cash for Gold VA store inside Gainesville itself. The closest is our Manassas location at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — about 12–15 minutes southeast via Route 29 or Linton Hall Road. Our Chantilly store at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — is roughly 18–20 minutes northeast via I-66 and Route 28.",
+      },
+      {
+        q: "I'm downsizing and have a whole collection of inherited gold — how does selling an estate work?",
+        a: "Bring everything, unsorted, exactly as it is — this is one of the most common appointments we handle from the Gainesville area, especially from Heritage Hunt households simplifying into a smaller home. We go through the collection with you at the counter, test each piece for its true karat, separate real gold from plated, and flag anything with age, maker's marks, or gemstones for individual appraisal instead of scrap pricing. You get one clear itemized offer, we take as much time as the collection needs, and there's zero obligation — if you'd rather sell part now and think about the rest, that's fine too.",
+      },
+      {
+        q: "How much will I get for my gold from Gainesville?",
+        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 for a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+      },
+      {
+        q: "Which store is closer to Gainesville — Manassas or Chantilly?",
+        a: "Manassas, clearly: about 12–15 minutes southeast, straight down Route 29 from the Virginia Gateway area or via Linton Hall Road from Piedmont and the neighborhoods south of I-66. Chantilly is about 18–20 minutes northeast via I-66 and Route 28 — a solid choice if you're already commuting that direction. Both counters test in front of you and pay the same visit, so pick whichever road matches your day.",
+      },
+      {
+        q: "Do you buy gold coins and silver from Gainesville sellers?",
+        a: "Yes — and coins show up often in the estate lots we see from Gainesville, sometimes tucked in the same box as the jewelry. Standard bullion gold coins pay 90% of the live spot price, silver is tested and bought at its own spot-based rate, and anything potentially collectible — old dates, mint marks, graded slabs — is appraised individually rather than priced as melt. Don't clean coins before coming in, and bring any paperwork or albums as-is.",
+      },
+    ],
+    relatedPosts: [
+      "we-buy-estate-gold-jewelry",
+      "understanding-the-cash-for-gold-process",
+      "maximizing-your-profit-with-cash-for-gold",
+    ],
+    closingCta:
+      "Point the car down Route 29 or Linton Hall Road — our Manassas store is 12–15 minutes from Gainesville, and whether it's one ring or a whole downsizing collection, it's tested, quoted, and paid the same visit.",
+  },
+  {
+    slug: "cash-for-gold-woodbridge",
+    city: "Woodbridge",
+    region: "VA",
+    seoTitle: "Sell Gold in Woodbridge, VA | Instant Payout, 4.9★ Rated",
+    metaDescription:
+      "Sell gold in Woodbridge, VA — our Manassas store is 20–25 minutes west via Prince William Parkway. Free appraisal, instant payout. 4.9★, 500+ reviews.",
+    heroTitle: "Cash for Gold in Woodbridge, VA",
+    heroSubtitle:
+      "We don't have a storefront in Woodbridge yet — our closest counter is in Manassas, about 20–25 minutes west on the Prince William Parkway. It's one highway, one trip, and you drive home with cash instead of waiting on a mail-in check.",
+    intro:
+      "Searching for cash for gold in Woodbridge? Honest answer first: **our nearest store is in Manassas, not Woodbridge** — about **20–25 minutes west on the Prince William Parkway**, one road across the county from Lake Ridge or Dale City. That's a longer run than some of the towns we serve, and we won't pretend otherwise. What you get for the drive is the part a mail-in envelope can never offer: your items tested and weighed on a calibrated scale while you watch, a quote tied to the **live spot price**, and an **instant payout** in cash before you head back east. If you're on the northern side of town, our Annandale store — roughly 25 minutes up I-95 toward the Beltway — is a solid second option.\n\nWoodbridge is one of Prince William County's **oldest and most diverse communities**, and the gold that comes out of it shows both sides of that. From the **antique and craft shops of Historic Occoquan** come genuinely old pieces — estate settings, early pocket watches, odd lots of old coins — that deserve an appraisal for age and maker, not a trip to the melt pile. From Dale City and the Route 1 corridor comes jewelry from every tradition you can name, in every karat from 10k to 24k. Careful **gold buyers in Woodbridge** searches should end with someone who tests each piece at its true purity and knows when a piece is worth more than its weight — that's exactly how our Manassas counter works.",
+    whyLocalTitle: "Why Woodbridge sellers still come out ahead selling in person",
+    whyLocal:
+      "Let's do the honest math. A mail-in buyer saves you a 20-minute drive — and in exchange, your jewelry leaves in a prepaid envelope, gets graded by someone you'll never meet, and the offer lands days later with your gold already in their facility. Decline it and you're waiting on return shipping, hoping everything comes back as it left. Selling in person flips every one of those terms: **your gold never leaves your sight until you've agreed to a number**, you watch the karat test and the scale reading yourself, and if the offer falls short, it all goes back in your bag and you're back on the Parkway.\n\nFrom Woodbridge, that trade is still clearly worth it. The **Prince William Parkway runs straight from the Route 1 corridor to our Manassas counter** — no Beltway, no toll lanes, about 20–25 minutes door to door — and the visit itself usually takes 10–20 minutes. Compare that to a week of tracking an envelope, and the drive stops looking long: you leave after lunch and you're **home the same afternoon with an instant payout in hand**, not a check that clears whenever it clears.",
+    neighborhoods: [
+      {
+        name: "Historic Occoquan",
+        note: "The riverfront town's antique shops and craft district mean this corner of Woodbridge sends us genuinely old gold — estate rings, antique watch cases, pre-war settings, and coin lots from longtime collections. Anything with real age gets examined for maker's marks, era, and collectibility before melt weight is even mentioned, because on antique pieces the craftsmanship is often worth more than the metal.",
+      },
+      {
+        name: "Lake Ridge",
+        note: "These established family neighborhoods above the Occoquan Reservoir have had decades to accumulate gold — wedding sets, anniversary pieces, jewelry inherited from parents who bought here in the '70s and '80s. Lake Ridge also sits closest to the I-95 on-ramp, which makes our Annandale store a realistic alternative if your day already points north.",
+      },
+      {
+        name: "Dale City",
+        note: "One of the largest and most diverse communities in Prince William County, Dale City brings us jewelry from every tradition — high-karat chains and bangles alongside everyday American 14k — and every piece is tested electronically and paid at its actual purity, never rounded down to a convenient karat.",
+      },
+      {
+        name: "Potomac Mills & Marumsco",
+        note: "The neighborhoods around the outlet mall and the older Route 1 corridor skew practical: broken chains, outgrown pieces, single earrings, and jewelry being sold to fund something better. None of it is too small to bring — real gold is real gold on the scale, and small batches add up faster than most sellers expect.",
+      },
+    ],
+    nearestIntro:
+      "Woodbridge doesn't have a Cash for Gold VA storefront yet, and we'd rather tell you the real drive times than pretend we're around the corner — both of our nearest stores are a single-highway trip from most of town.",
+    nearest: [
+      { slug: "manassas", drive: "about 20–25 minutes west on the Prince William Parkway — one road from the Route 1 corridor, and the closest store to Woodbridge" },
+      { slug: "annandale", drive: "about 25 minutes north up I-95 toward the Beltway, often the easier run from Lake Ridge and the northern side of town" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold in Woodbridge, VA?",
+        a: "There's no Cash for Gold VA store inside Woodbridge itself. The closest is our Manassas location at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — about 20–25 minutes west via the Prince William Parkway. Our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — is roughly 25 minutes north up I-95 and can be quicker from Lake Ridge or anywhere near the Occoquan bridge. Both are real counters where your gold is tested in front of you and paid the same visit.",
+      },
+      {
+        q: "I found antique jewelry in Occoquan — is it worth more than its gold weight?",
+        a: "Quite possibly, and that's exactly why it shouldn't go to a buyer who only weighs. Pieces from the Occoquan antique circuit — Victorian and estate settings, old watch cases, early coins — can carry value in their age, maker, and collectibility that beats their melt price. We appraise those individually: we check hallmarks and maker's marks, consider the era and condition, and quote the higher of collectible value or metal value. Don't clean or polish antique pieces first, and bring any provenance you have.",
+      },
+      {
+        q: "How much will I get paid for my gold from Woodbridge?",
+        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 for a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+      },
+      {
+        q: "Is the drive from Woodbridge to Manassas really worth it to sell gold?",
+        a: "For most sellers, yes — and we'd rather you decide with the real numbers. It's about 20–25 minutes each way on the Prince William Parkway, and the appraisal itself usually takes 10–20 minutes, so the whole errand fits in an afternoon. In exchange, you keep your gold in hand until you accept a price, watch every test yourself, and leave with an instant payout instead of shipping your jewelry to a stranger and waiting days for an offer you can't watch being made.",
+      },
+      {
+        q: "Do you buy gold and silver coins from Woodbridge collectors?",
+        a: "Yes. Standard bullion gold coins — American Eagles, Krugerrands, Maple Leafs, and similar — pay 90% of the live spot price. Collectible and older coins, including the kind that surface from Occoquan-area collections, are appraised individually because dates, mint marks, and condition can put their value well above the metal content. Leave them uncleaned and bring any grading slabs, albums, or paperwork you have.",
+      },
+    ],
+    relatedPosts: [
+      "we-buy-estate-gold-jewelry",
+      "selling-gold-jewelry",
+      "is-cash-for-gold-worth-it",
+    ],
+    closingCta:
+      "Take the Prince William Parkway west — our Manassas store is 20–25 minutes from Woodbridge, and your gold gets tested, quoted, and paid with an instant payout in a single trip.",
+  },
 ];
 
 export const getCityLanding = (slug: string): CityLanding | undefined =>
