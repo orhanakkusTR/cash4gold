@@ -1153,6 +1153,331 @@ export const CITY_LANDINGS: CityLanding[] = [
     closingCta:
       "You're practically already here — our Annandale store is 5–8 minutes from Lincolnia straight up Route 236. Call (571) 290-8020 or just walk in, and that drawer of old gold can be tested, quoted, and paid in cash before you're back home.",
   },
+  {
+    slug: "cash-for-gold-reston",
+    city: "Reston",
+    region: "VA",
+    seoTitle: "Sell Gold Near Reston, VA | Free Appraisal, Payout",
+    metaDescription:
+      "Sell gold near Reston, VA at our Chantilly store, ~15 min via Route 28. Free no-obligation appraisal vs the live spot price, instant payout. 4.9★, 500+ reviews.",
+    heroTitle: "Cash for Gold in Reston, VA",
+    heroSubtitle:
+      "We don't have a storefront in Reston itself — but our Chantilly store is about 15 minutes southwest via Route 28, and everything happens in one visit: your gold is tested and weighed in front of you and you're paid the same visit.",
+    intro:
+      "Reston isn't an accidental suburb — it's a planned community, named for founder Robert E. Simon (the \"RES\" in RESton), that grew into the heart of Fairfax County's Dulles tech corridor. That history shows in what people here own: **diamond engagement rings and designer jewelry** from Reston Town Center's professional crowd, luxury watches earned over tech-industry careers, and **estate pieces** from families who've been here since the Lake Anne days in the 1960s. When it's time to turn some of that into cash, most Reston sellers face a choice between a mail-in envelope and a real counter — and we'd argue the counter wins every time.\n\nHere's how it works at our nearby Chantilly store. You bring your items in for a **free, no-obligation appraisal** — no appointment needed. Each piece is tested for karat and **weighed on a calibrated scale in front of you**, then priced against the **live spot price** of gold, silver, platinum, or palladium that day. You keep your items in hand until you decide to accept, and if you do, it's an **instant payout** — you walk out with cash the same visit. If the number isn't right for you, you walk out with your jewelry and a free education on what it's worth.",
+    whyLocalTitle: "Why Reston sellers should skip the mail-in kit",
+    whyLocal:
+      "Mail-in gold buyers ask you to seal your jewelry in an envelope, ship it across the country, and trust a stranger's quote on items you can no longer see. If the offer disappoints, you wait again for the return shipment — and hope everything comes back. At a **real counter**, none of that applies: you watch the testing, you see the scale, you hear the offer explained against the **live spot price**, and **your items never leave your sight** until you've said yes.\n\nFrom Reston, that counter is closer than most people's commute. Our Chantilly store sits on Route 50 about **15 minutes southwest via Route 28** — an easy run from Herndon-side and western Reston especially — and our Vienna/Tysons store is roughly 15–20 minutes east via the Dulles Toll Road or Route 7 if you're on the eastern side near Wiehle-Reston East. Either way, the whole trip fits inside a lunch hour: appraised, decided, and **paid before you leave the store**.",
+    neighborhoods: [
+      {
+        name: "Reston Town Center",
+        note: "The high-rises, offices, and upscale retail around Town Center — now with its own Silver Line Metro station — concentrate Reston's professional crowd. From here we regularly see diamond engagement rings, designer pieces from names like Tiffany, Cartier, and David Yurman, and luxury watches including Rolex. Branded and signed jewelry is appraised on brand, model, and condition — often worth well above its melt value — so it's never just weighed as scrap.",
+      },
+      {
+        name: "Lake Anne",
+        note: "Lake Anne Plaza was Reston's original village center, and some residents have been here since Robert E. Simon opened it in the 1960s. That means genuine estate and inherited jewelry: mid-century settings, old wedding sets, sterling flatware and tea services passed down through families. We evaluate age and workmanship on pieces like these before weight ever enters the conversation.",
+      },
+      {
+        name: "South Lakes",
+        note: "The established neighborhoods around South Lakes Drive and the Hunters Woods side bring in the everyday backbone of the business — 14k wedding bands, broken chains, single earrings, and small scrap gold accumulated over decades of family life. Small pieces add up faster than people expect once each one is tested at its true karat and priced against the live spot price.",
+      },
+      {
+        name: "North Point",
+        note: "Reston's newer northern village near Route 7 skews toward families and commuters, and the sell pile reflects it: modern diamond jewelry, newer designer pieces, gold coins and small bullion bought as gifts or investments. North Point is also well placed for the trip — Route 7 east runs toward our Vienna/Tysons store, while Fairfax County Parkway to Route 28 drops you at Chantilly.",
+      },
+    ],
+    nearestIntro:
+      "There's no Cash for Gold VA storefront inside Reston yet, but the town sits between two of our stores — Chantilly down Route 28 and Vienna/Tysons out the Dulles Toll Road — so wherever you are in Reston, one of them is a short drive.",
+    nearest: [
+      { slug: "chantilly", drive: "about 15 minutes southwest via Route 28 — quickest from Herndon-side and western Reston" },
+      { slug: "vienna", drive: "about 15–20 minutes east via the Dulles Toll Road or Route 7, handy from eastern Reston near Wiehle-Reston East" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold near Reston, VA?",
+        a: "The closest Cash for Gold VA store to Reston is our Chantilly location at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — about 15 minutes southwest via Route 28, especially quick from western Reston and the Herndon side. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15–20 minutes east via the Dulles Toll Road or Route 7, and often easier from eastern Reston near Wiehle-Reston East.",
+      },
+      {
+        q: "Do you buy diamonds and designer jewelry from Reston sellers?",
+        a: "Yes — and given Reston's professional, tech-corridor population, they're some of the most common items we see from town. Diamond engagement rings, designer jewelry from Tiffany, Cartier, and David Yurman, and luxury watches including Rolex are all appraised individually: brand, model, stone quality, and condition frequently put the value well above the metal weight alone. If you still have the box, papers, or receipts, bring them — original accessories can raise the offer.",
+      },
+      {
+        q: "Do you buy silver and coins near Reston?",
+        a: "Yes. We buy sterling silver jewelry, flatware and tea sets, silver bars and rounds, and pre-1965 \"junk silver\" US coins, plus gold coins and bullion. Collectible coins are evaluated for numismatic value — rarity, date, and condition — not just melted weight, so a collectible coin is never automatically priced as scrap metal.",
+      },
+      {
+        q: "How do you figure out what my gold is worth?",
+        a: "Every piece is tested for karat and weighed on a calibrated scale in front of you — you watch the whole process. We then price the tested purity and weight against the live spot price of gold, silver, platinum, or palladium at that moment and explain exactly how we got to the number. The appraisal is free with no obligation, and you keep your items in hand until you decide to accept.",
+      },
+      {
+        q: "Will I get paid on the spot if I sell?",
+        a: "Yes — accept the offer and it's an instant payout, paid in cash the same visit. There's no check to wait on and no processing period: the drive from Reston, the appraisal, and the payout all fit in a single trip. Note that Virginia law requires sellers to be 18 or older.",
+      },
+    ],
+    relatedPosts: ["we-buy-diamonds-more-than-1-carat-with-gia", "list-of-top-20-name-brand-in-gold-jewelry", "cash-for-gold-close-to-me"],
+    closingCta:
+      "Take Route 28 south about 15 minutes from Reston to our Chantilly store — free appraisal against the live spot price, tested in front of you, and an instant payout before you head back up the corridor.",
+  },
+  {
+    slug: "cash-for-gold-sterling",
+    city: "Sterling",
+    region: "VA",
+    seoTitle: "Sell Gold Near Sterling, VA | 15 Min Down Route 28",
+    metaDescription:
+      "Sell gold near Sterling, VA: our Chantilly store is 15–18 minutes down Route 28 — free in-person appraisal, instant payout. 4.9★ from 500+ Google reviews.",
+    heroTitle: "Cash for Gold in Sterling, VA",
+    heroSubtitle:
+      "We don't have a storefront in Sterling — or anywhere in eastern Loudoun — but our Chantilly store is a straight 15–18 minute run south down Route 28, no Toll Road required, and you're paid the same visit you walk in.",
+    intro:
+      "Searching for cash for gold in Sterling? Honest answer first: **there's no Cash for Gold VA counter in Sterling itself**, and no storefront anywhere in eastern Loudoun County. But Sterling sits right on Route 28, and that road runs almost door to door to our **Chantilly store on Lee Jackson Memorial Highway — about 15–18 minutes south**, past the Dulles airport frontage, with **no Dulles Toll Road and no tolls at all**. If Route 7 fits your day better, our Vienna store in the Tysons area is roughly 20–22 minutes east on Leesburg Pike. Sterling has been an established community since long before the data centers arrived — from the 1960s streets of Sterling Park to the Potomac-side neighborhoods of Cascades and Lowes Island — and the jewelry boxes here reflect those decades: family estate pieces, everyday karat gold, coins tucked away since the '70s, and, from Sterling's large international community, **high-karat 22k and 24k jewelry** that deserves to be paid at its true purity.\n\nWhichever store you choose, the appraisal works the same way and it happens **entirely in front of you**. We test each piece for purity, weigh it on a **calibrated scale you can watch**, and build the offer from the **live spot price** at that moment — then we explain the number before you decide anything. The appraisal is **free with no obligation**, and your items **stay in your hands until you accept**. If you like the offer, it's an **instant payout** — you're paid in cash the same visit. If you don't, you drive back up 28 with everything you brought and a real number to compare. That process is why we hold a **4.9★ Google rating across 500+ reviews**.",
+    whyLocalTitle: "Why Sterling sellers do better at a real counter than in a mail-in envelope",
+    whyLocal:
+      "The mail-in alternative asks a lot: seal your jewelry — possibly a parent's estate pieces or a 22k wedding set — into a prepaid envelope, ship it to a building you'll never see, and wait for an offer calculated out of your sight. If you decline, you wait again for the return shipment and hope everything comes back. At a real counter, none of that risk exists. **You watch the purity test, you watch the scale, and your gold never leaves your possession until you've agreed to a price.** For high-karat pieces especially, that visibility matters: you can see for yourself that a 22k bangle is being tested and paid as 22k, not quietly graded like ordinary 14k.\n\nAnd from Sterling, going in person is a genuinely small errand. The **Chantilly counter is one road away — Route 28 south, about 15–18 minutes** from most of town, whether you're starting near Dulles Town Center, Sugarland Run, or Sterling Park. There's no Toll Road involved and no Beltway to fight; it's a shorter trip than plenty of people's daily run down the tech corridor. Best of all, the transaction actually finishes that day: if you accept the offer, you're **paid before you leave the store** — an instant payout in cash, not a check riding back through the mail.",
+    neighborhoods: [
+      {
+        name: "Sterling Park",
+        note: "Sterling's original planned community, built out from the early 1960s, is where many of eastern Loudoun's longtime families still live — often in the same houses for decades. That longevity shows in what comes to our counter: estate jewelry from a parent's dresser, wedding bands from the '60s and '70s, and coin jars started generations ago. Older pieces get looked at for age and workmanship before anyone talks melt weight.",
+      },
+      {
+        name: "Sugarland Run",
+        note: "This 1970s planned community along the Sugarland Run stream valley mixes longtime homeowners with newer international families, so the jewelry runs the full range — everyday 14k chains and bands alongside high-karat 22k and 24k pieces. We test every item for its actual purity and pay at that tested karat, which matters most on exactly this kind of mixed box.",
+      },
+      {
+        name: "Cascades & Lowes Island",
+        note: "The newer Potomac-side communities on Sterling's north end skew modern: designer jewelry, diamond engagement upgrades, and luxury watches bought in good career years. Those are appraised individually on brand, model, and condition — which can put the offer well beyond what the metal alone would weigh out to — so bring boxes and papers if you still have them.",
+      },
+      {
+        name: "Countryside & the Route 7 corridor",
+        note: "The established neighborhoods near Algonkian Parkway and the Dulles Town Center stretch of Route 7 send us the practical middle of the business: downsizing boxes, sterling silver flatware sets, broken chains, and single earrings. Damaged gold pays the same per gram as intact gold, and full silver sets add up quickly by weight — and from this side of Sterling, the Route 7 run east to our Vienna/Tysons store can be the easier drive.",
+      },
+    ],
+    nearestIntro:
+      "Sterling doesn't have a Cash for Gold VA storefront yet, but the town's two main roads each lead almost directly to one of our stores — Route 28 south to Chantilly, or Route 7 east to Vienna/Tysons.",
+    nearest: [
+      { slug: "chantilly", drive: "about 15–18 minutes south down Route 28, no tolls" },
+      { slug: "vienna", drive: "about 20–22 minutes east via Route 7 (Leesburg Pike) toward Tysons" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold near Sterling, VA?",
+        a: "There's no Cash for Gold VA store inside Sterling or anywhere in eastern Loudoun County. The closest is our Chantilly location at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — about 15–18 minutes south on Route 28, with no tolls. Our Vienna store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 20–22 minutes east via Route 7 (Leesburg Pike) in the Tysons area.",
+      },
+      {
+        q: "How far is the nearest gold buyer from Sterling?",
+        a: "About 15–18 minutes. From most of Sterling — Sterling Park, Sugarland Run, or the Dulles Town Center area — you take Route 28 south past the airport to Route 50, and our Chantilly store is right there on Lee Jackson Memorial Highway. It's one road nearly the whole way, and the Dulles Toll Road never enters into it. From Cascades, Lowes Island, or Countryside, Route 7 east to our Vienna/Tysons store is a comparable 20–22 minute option.",
+      },
+      {
+        q: "Do you buy silver, coins, and things besides gold from Sterling sellers?",
+        a: "Yes. Beyond gold in all karats — scrap, jewelry, coins, and bullion — we buy sterling silver jewelry, flatware and tea sets, silver bars and rounds, and pre-1965 US 90% junk silver coins, plus platinum and palladium, diamonds and precious stones, fine and designer jewelry, luxury watches, and electronics. Collectible coins are appraised individually, since dates and condition can beat the metal value — so don't clean them, and bring any paperwork you have.",
+      },
+      {
+        q: "How do you decide what my gold is worth?",
+        a: "Every offer is built the same way: we test each piece for its actual purity — including verifying 22k and 24k jewelry at its true high karat rather than rounding it down — weigh it on a calibrated scale in front of you, and price it against the live spot price at that moment. Then we explain the number before you decide. The appraisal is free, there's no obligation, and your items stay in your hands until you agree.",
+      },
+      {
+        q: "Do I get paid on the spot, or do I wait for a check?",
+        a: "You're paid the same visit. If you accept the offer, it's an instant payout — cash in hand before you leave the Chantilly or Vienna store, not a check to deposit or a transfer to chase. If you'd rather think it over, you simply take your items home; the appraisal costs nothing either way, and the number is yours to compare anywhere else.",
+      },
+    ],
+    relatedPosts: ["cash-for-gold-loudoun-county-va", "we-buy-estate-gold-jewelry", "is-cash-for-gold-worth-it"],
+    closingCta:
+      "Point the car south on Route 28 — our Chantilly store is 15–18 minutes from Sterling, no tolls, and your gold can be tested, quoted, and paid out in a single visit. Call (571) 224-5279 or just walk in.",
+  },
+  {
+    slug: "cash-for-gold-ashburn",
+    city: "Ashburn",
+    region: "VA",
+    seoTitle: "Sell Gold Near Ashburn, VA | Free Appraisal, Payout",
+    metaDescription:
+      "Selling gold near Ashburn, VA? Cash for Gold VA in Chantilly is ~18–20 min down Route 28 — free in-person appraisal, instant payout, 4.9★ from 500+ reviews.",
+    heroTitle: "Cash for Gold in Ashburn, VA",
+    heroSubtitle:
+      "We don't have a store in Ashburn itself — our Chantilly location is about 18–20 minutes south via Route 28 or Loudoun County Parkway. Get a free, no-obligation appraisal and walk out paid the same visit.",
+    intro:
+      "Ashburn has changed fast. What used to be Loudoun County farmland is now the heart of **Data Center Alley**, ringed by neighborhoods like Brambleton, Broadlands, and Ashburn Farm and anchored by One Loudoun and two Silver Line Metro stations. With that growth comes a steady flow of people relocating in and out of the region — and moving is exactly when jewelry boxes get opened. Modern **diamond engagement rings**, designer pieces from Tiffany, Cartier, and David Yurman, luxury watches, and inherited estate jewelry are the items we see most often from Ashburn sellers.\n\nHere's the honest part: we don't have a storefront in Ashburn or anywhere in Loudoun County. Our nearest store is in **Chantilly, about 18–20 minutes south via Route 28**. When you arrive, everything happens in front of you: your items are **tested and weighed on a calibrated scale** while you watch, we quote you against the **live spot price** for gold, silver, platinum, or palladium, and you keep possession of your items until you accept an offer. If you do, it's an **instant payout** — you're paid in cash the same visit.",
+    whyLocalTitle: "Why Ashburn sellers make the drive instead of mailing it in",
+    whyLocal:
+      "Mail-in gold buyers ask you to seal your jewelry in an envelope, ship it off, and wait for a number you can't watch being calculated. If you decline the offer, you wait again for your items to come back — and hope they do. Across a counter, none of that ambiguity exists. At our Chantilly store you see the **calibrated scale**, you see the karat testing, and you see the **live spot price** we're quoting against. Your items never leave your sight until you've agreed to sell.\n\nFrom most of Ashburn — Brambleton, Broadlands, Ashburn Village, One Loudoun — it's a straightforward run down **Route 28 or Loudoun County Parkway**, roughly 18 to 20 minutes. The appraisal is **free and no-obligation**, so the worst case is you drive home knowing exactly what your gold is worth. The best case: you accept the offer and leave with an **instant payout**, paid before you're back on Route 28. Our Google rating stands at **4.9★ across 500+ reviews**.",
+    neighborhoods: [
+      {
+        name: "Brambleton",
+        note: "One of Loudoun's newest large communities, full of young professional families who bought or received modern jewelry in the last decade. We regularly appraise contemporary diamond engagement rings and designer pieces from households like these. Newer jewelry often comes with receipts or certificates — bring them if you have them, though they're not required.",
+      },
+      {
+        name: "Broadlands & Ashburn Farm",
+        note: "These established neighborhoods have been home to families for twenty-plus years, which means more inherited and estate jewelry: sterling flatware and tea sets, older gold chains, class rings, and coin collections. We buy silver in all its forms — junk silver coins, bars, rounds, and sterling — alongside gold of every karat.",
+      },
+      {
+        name: "Ashburn Village",
+        note: "One of Ashburn's original communities, with a mix of long-time residents and newcomers near the Ashburn Metro station. Downsizing and estate cleanouts here often surface broken or single-earring gold, dated jewelry, and old coins — all of it sellable. Condition doesn't matter for scrap gold; it's valued by karat and weight.",
+      },
+      {
+        name: "One Loudoun",
+        note: "Ashburn's mixed-use town center draws a crowd that skews toward luxury watches and designer jewelry — Rolex, Cartier, Tiffany, David Yurman. These pieces are worth more than their melt value, and we appraise them as complete items, not scrap. Boxes and papers help the offer but aren't mandatory.",
+      },
+    ],
+    nearestIntro:
+      "Both of our closest stores sit along the same Route 28 corridor you already use — Chantilly first, then Manassas a few minutes further south.",
+    nearest: [
+      { slug: "chantilly", drive: "about 18–20 minutes south via Route 28 or Loudoun County Parkway" },
+      { slug: "manassas", drive: "roughly 25 minutes south down Route 28" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold near Ashburn, VA?",
+        a: "The nearest Cash for Gold VA store to Ashburn is in Chantilly at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — about 18–20 minutes south via Route 28 or Loudoun County Parkway. No appointment is needed: your items are tested and weighed in front of you, the appraisal is free and no-obligation, and if you accept the offer you receive an instant payout the same visit.",
+      },
+      {
+        q: "Do you buy diamond engagement rings from Ashburn sellers?",
+        a: "Yes — diamond engagement rings are one of the most common items we see from Ashburn, given how many households here bought modern rings in recent years. We evaluate the diamond and the gold or platinum setting separately, so you're paid for both. Designer rings from Tiffany, Cartier, and similar houses are appraised as complete pieces, which typically means a stronger offer than melt value alone.",
+      },
+      {
+        q: "Can I sell silver, coins, or bullion, not just gold?",
+        a: "Yes. We buy sterling silver jewelry, flatware and tea sets, silver bars and rounds, and junk silver coins, plus gold coins and bullion, platinum, and palladium. Coin collections are welcome — collectible coins can carry numismatic value beyond their metal content, and we assess that in person.",
+      },
+      {
+        q: "How do you decide what my gold is worth?",
+        a: "Three things: karat, weight, and the live spot price. Your items are tested for purity and weighed on a calibrated scale in front of you, then we quote against the current market price of gold — not a number fixed days ago. You keep your items in hand until you decide to accept, and the appraisal costs nothing either way.",
+      },
+      {
+        q: "Will I really be paid on the spot?",
+        a: "Yes. If you accept our offer, it's an instant payout — you're paid in cash the same visit, before you leave the store. There's no check to wait on, no bank transfer delay, and no obligation to sell if the number doesn't work for you.",
+      },
+    ],
+    relatedPosts: ["cash-for-gold-loudoun-county-va", "we-buy-diamonds-more-than-1-carat-with-gia", "list-of-top-20-name-brand-in-gold-jewelry"],
+    closingCta:
+      "Ready to find out what your gold, diamonds, or watch are actually worth? Call our Chantilly store at (571) 224-5279 or drive down Route 28 to 14025 Lee Jackson Memorial Hwy — free appraisal, no obligation, and an instant payout if you sell.",
+  },
+  {
+    slug: "cash-for-gold-burke",
+    city: "Burke",
+    region: "VA",
+    seoTitle: "Sell Gold Near Burke, VA | Instant Payout, 15 Min Away",
+    metaDescription:
+      "Sell gold near Burke, VA — our Annandale store is about 15 minutes up Braddock Road. Free in-person appraisal, instant payout. 4.9★ from 500+ reviews.",
+    heroTitle: "Cash for Gold in Burke, VA",
+    heroSubtitle:
+      "We don't have a storefront in Burke itself, but our Annandale store is about 15 minutes northeast up Braddock Road — your gold is tested in front of you and you're paid the same visit.",
+    intro:
+      "Searching for cash for gold in Burke? Honest answer first: **we don't have a counter in Burke itself** — but our **Annandale store is about 15 minutes northeast via Braddock Road**, a drive most Burke residents already make on autopilot. Burke is one of Fairfax County's most settled communities: Burke Centre's villages date to the late 1970s, and many families around Lake Braddock and Burke Lake have been in the same house for decades. That kind of tenure produces a very particular kind of gold — **inherited rings, class rings, old karat jewelry sitting in a dresser drawer since the '80s, sterling flatware in the dining-room hutch** — and it's exactly what we appraise every day.\n\nThe appraisal itself is simple and happens **entirely in front of you**. We test each piece for purity, weigh it on a **calibrated scale you can watch**, and quote a price against the **live spot price** at that moment — then we explain the number. The appraisal is **free with no obligation**, and your items **stay in your hands until you accept**. If you take the offer, it's an **instant payout** — you're paid in cash the same visit. If not, everything goes home with you, along with a real number to compare anywhere else.",
+    whyLocalTitle: "Why Burke sellers do better at a real counter than with a mail-in envelope",
+    whyLocal:
+      "Mail-in gold buyers ask you to seal your grandmother's ring into a prepaid envelope, ship it to a facility you'll never see, and wait for an offer calculated out of your sight — with your gold already in someone else's building. At a real counter, none of that applies: **you watch the purity test, you watch the scale, and your jewelry never leaves your possession until you've agreed to a price**. If the number falls short, it goes back in your pocket and you drive home.\n\nFrom Burke, that in-person option costs almost nothing in time. **Braddock Road runs straight up to our Annandale store — about 15 minutes** from Burke Centre or Lake Braddock, shorter than a round trip to the post office with a padded envelope. And there's a second option if your day points the other way: our **Chantilly store, roughly 18–20 minutes northwest via the Fairfax County Parkway**. Either way, if you sell, you're **paid before you leave** — cash the same visit, not a check that arrives whenever the mail does.",
+    neighborhoods: [
+      {
+        name: "Burke Centre",
+        note: "The heart of Burke — a large planned community from the late 1970s, organized into its own named villages around pools, paths, and the Burke Centre VRE station. Households that bought in when the villages were new have had four decades to accumulate gold: original wedding sets, anniversary jewelry, and pieces inherited from the generation before. Much of it hasn't been worn in years, and it prices off the same live spot as anything bought yesterday.",
+      },
+      {
+        name: "Lake Braddock",
+        note: "The established neighborhoods around the lake — and around Lake Braddock Secondary, one of the biggest schools in Virginia — send us the everyday side of the business: class rings, 14k chains, wedding bands, and single earrings whose partners vanished years ago. Each piece is tested at its true karat, so a real 10k class ring gets separated from a plated lookalike on the spot.",
+      },
+      {
+        name: "Burke Lake & Fairfax Station",
+        note: "South of Burke Lake Park, the larger lots toward Fairfax Station hold some of the area's longest-tenured households — and that's where estate boxes come from. Sterling flatware services, tea sets, coin collections, and jewelry passed down through two or three generations all get appraised piece by piece, with anything carrying real age or craftsmanship valued on its own merits rather than quoted as scrap.",
+      },
+      {
+        name: "Cherry Run & Signal Hill",
+        note: "These single-family neighborhoods on Burke's southern side are where a lot of downsizing happens — parents whose kids went through Cherry Run or White Oaks decades ago, now clearing out drawers before a move. Mixed bags are welcome: we test everything in front of you, sort the real gold and sterling from the costume pieces honestly, and quote only what's actually worth selling.",
+      },
+    ],
+    nearestIntro:
+      "Burke doesn't have a Cash for Gold VA storefront yet, but two of our stores bracket it — Annandale a straight run up Braddock Road, and Chantilly an easy trip up the Fairfax County Parkway.",
+    nearest: [
+      { slug: "annandale", drive: "about 15 minutes northeast via Braddock Road" },
+      { slug: "chantilly", drive: "roughly 18–20 minutes northwest via the Fairfax County Parkway" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold near Burke, VA?",
+        a: "There's no Cash for Gold VA store inside Burke itself. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 15 minutes northeast via Braddock Road. Our Chantilly store at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — is roughly 18–20 minutes northwest via the Fairfax County Parkway if that direction suits your day better.",
+      },
+      {
+        q: "How far is the nearest gold buyer from Burke?",
+        a: "About 15 minutes. From Burke Centre or Lake Braddock, Braddock Road runs almost directly to our Annandale counter — no highway required. Chantilly is the second option at roughly 18–20 minutes up the Fairfax County Parkway to Route 50. Both stores run the identical appraisal: tested and weighed in front of you, priced against the live spot, paid the same visit.",
+      },
+      {
+        q: "Do you buy sterling silver flatware and estate jewelry from Burke families?",
+        a: "Yes — and Burke is exactly the kind of community it comes from. Inherited sterling flatware sets, tea services, and estate jewelry boxes are welcome as-is: don't polish or sort anything first. We check hallmarks, test each piece to confirm .925 sterling (separating out silverplate honestly so you're not guessing), weigh it all on a calibrated scale in front of you, and price it against the live silver spot. Full flatware services add up quickly by weight.",
+      },
+      {
+        q: "How do you decide what my gold is worth?",
+        a: "Every offer is built the same way: we test the item's actual purity — not just the stamp — weigh it on a calibrated scale you can watch, and price it against the live spot price at that moment. Then we explain the number before you decide anything. Antique, designer, and gemstone pieces are appraised individually, since they can be worth more than their metal content. The appraisal is free and your items stay in your hands until you agree.",
+      },
+      {
+        q: "Do you pay on the spot, or do I wait for a check?",
+        a: "You're paid on the spot. If you accept the offer, it's an instant payout — cash in hand the same visit, before you leave the Annandale or Chantilly store. There's no check to wait on and no transfer to chase. If you decline, you simply take your items home; the appraisal costs nothing either way.",
+      },
+    ],
+    relatedPosts: ["we-buy-estate-gold-jewelry", "is-cash-for-gold-worth-it", "cash-for-gold-close-to-me"],
+    closingCta:
+      "Point the car up Braddock Road — our Annandale store is about 15 minutes from Burke, or call (571) 290-8020 first to ask what your pieces might be worth.",
+  },
+  {
+    slug: "cash-for-gold-arlington",
+    city: "Arlington",
+    region: "VA",
+    seoTitle: "Sell Gold in Arlington, VA | Free Appraisal, 4.9★",
+    metaDescription:
+      "Selling gold near Arlington, VA? Free appraisal at our Annandale store, 15–20 min via Rt 50 or I-395 — instant payout, paid same visit. 4.9★, 500+ reviews.",
+    heroTitle: "Cash for Gold in Arlington, VA",
+    heroSubtitle:
+      "We don't have a storefront in Arlington itself, but our Annandale store is about 15–20 minutes west via Route 50 or I-395 — your gold is tested in front of you and you're paid the same visit.",
+    intro:
+      "Looking for cash for gold in Arlington? Honest answer first: **we don't have a store inside Arlington County** — and in a county this dense and this expensive per square foot, most gold buyers don't. Our **Annandale store is about 15–20 minutes west, via Route 50 (Arlington Boulevard) or I-395** depending on which side of the county you're on, and our Vienna store in the Tysons area is a similar run out I-66 for North Arlington. Both are real counters where you watch every step and drive home paid.\n\nArlington's gold is unusually varied for one county. The **Rosslyn–Ballston corridor and National Landing** skew young and professional, so from Clarendon, Courthouse, and Crystal City we see **modern designer jewelry, diamond engagement rings, and luxury watches** — pieces where brand and stones matter more than melt weight. From **North Arlington's established neighborhoods like Lyon Village and Country Club Hills**, it's the opposite: estate boxes, inherited wedding sets, and heirloom gold that's been in a family since long before the Metro arrived. Either way, the appraisal works the same: we **test and weigh your items on a calibrated scale in front of you**, price them against the **live spot price** at that moment, and explain the number. The appraisal is **free and carries no obligation** — your items stay in your hands until you accept, and if you do, it's an **instant payout the same visit**.",
+    whyLocalTitle: "Why Arlington sellers do better at a real counter than with a mail-in envelope",
+    whyLocal:
+      "Mail-in gold buyers ask you to seal an engagement ring or a parent's estate jewelry into a prepaid envelope, send it to a facility you'll never see, and wait for an offer calculated out of your sight — with your gold already in someone else's building. At a real counter, the leverage stays with you: **you watch the purity test, you watch the scale reading, and your items never leave your possession until you've agreed to a price**. If the number falls short, everything goes back in your bag and you're back across the county line with a real figure to compare anywhere else.\n\nFrom Arlington, that in-person option costs you one short drive against the flow of traffic. **South Arlington — Shirlington, Columbia Pike, Crystal City — reaches our Annandale counter in about 15–20 minutes via I-395 or Route 50**, heading out of the county while everyone else fights their way in. **North Arlington can take I-66 to our Vienna store near Tysons** in about the same time. Either trip is shorter than a round trip to the post office, and it ends differently: you're **paid before you leave the store**, an instant payout in cash the same visit, not a check that arrives whenever the envelope does.",
+    neighborhoods: [
+      {
+        name: "Clarendon, Ballston & the R-B corridor",
+        note: "The high-rises along the Orange and Silver lines are full of young professionals, and the jewelry that comes from here reflects it: modern engagement rings, designer pieces from Tiffany, Cartier, and David Yurman, and luxury watches including Rolex. Those are appraised on brand, model, stones, and condition — often worth well beyond what the metal alone would weigh out to — so bring boxes and papers if you still have them.",
+      },
+      {
+        name: "Crystal City, Pentagon City & National Landing",
+        note: "The Amazon HQ2 side of the county turns over fast — new arrivals, relocations, and upgrades — which means rings from a previous chapter, barely-worn gifts, and modern diamond settings. Diamonds are evaluated separately from their gold settings, since a center stone frequently carries more value than the band itself. From here, I-395 makes Annandale the quickest counter.",
+      },
+      {
+        name: "Lyon Village & Country Club Hills",
+        note: "North Arlington's established single-family neighborhoods hold decades of accumulation: inherited wedding sets, estate jewelry, sterling flatware services, and coin collections passed down through families who bought in generations ago. Anything with real age, maker's marks, or craftsmanship gets appraised on its own merits before melt weight ever enters the conversation. I-66 to our Vienna store is often the easier run from this side.",
+      },
+      {
+        name: "Shirlington & Columbia Pike",
+        note: "South Arlington brings the steady, everyday side of the business — 14k chains, broken bracelets, single earrings, and old gold that's been sitting in a drawer through a couple of moves. Condition doesn't matter for melt value, and small piles add up quickly once each piece is tested at its true karat. Columbia Pike itself runs almost straight to our Annandale counter.",
+      },
+    ],
+    nearestIntro:
+      "Arlington doesn't have a Cash for Gold VA storefront yet, but two of our stores bracket the county — Annandale to the southwest and Vienna/Tysons to the northwest — so pick whichever matches your side of Route 50.",
+    nearest: [
+      { slug: "annandale", drive: "about 15–20 minutes west via Route 50 (Arlington Boulevard) or I-395 — closest for South Arlington and Columbia Pike" },
+      { slug: "vienna", drive: "about 15–20 minutes out I-66 toward Tysons — often the quicker run from North Arlington" },
+    ],
+    faqs: [
+      {
+        q: "Where can I sell gold near Arlington, VA?",
+        a: "There's no Cash for Gold VA store inside Arlington County itself. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 15–20 minutes west via Route 50 (Arlington Boulevard) or I-395, whichever is closer to your side of the county. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15–20 minutes out I-66 and often quicker from North Arlington.",
+      },
+      {
+        q: "Do you buy designer jewelry, diamonds, and luxury watches from Arlington sellers?",
+        a: "Yes — with the R-B corridor and National Landing next door, they're a big share of what Arlington brings us. Designer jewelry from makers like Tiffany, Cartier, and David Yurman, diamond engagement rings, and luxury watches including Rolex are all appraised individually on brand, model, stones, and condition rather than weighed as scrap, since those factors often put the value well above the gold content. Original boxes, papers, and extra links raise the offer, so bring them if you have them.",
+      },
+      {
+        q: "I inherited estate jewelry, silver, or coins from a North Arlington home — how do you handle that?",
+        a: "Bring the whole box as-is — don't clean or sort anything, since cleaning can damage antique finishes and reduce collector value. We test each piece separately: real gold gets separated from plated on the spot, sterling flatware and hollowware are confirmed as .925 and weighed as a set, and coins with collectible dates or mint marks are appraised individually rather than priced as bullion. Anything with genuine age or craftsmanship is valued on its own merits before melt weight enters the conversation.",
+      },
+      {
+        q: "How do you decide what my gold is worth?",
+        a: "Every offer is built the same way: we test the item's actual purity, weigh it on a calibrated scale you can watch, and price it against the live spot price at that moment. Then we explain the number before you decide anything. Your items stay in your hands until you agree, and the appraisal is free and no-obligation either way — if the offer doesn't work, you take everything home along with a real figure to compare.",
+      },
+      {
+        q: "Do you pay on the spot, or do I wait for a check?",
+        a: "You're paid the same visit. If you accept the offer, it's an instant payout — cash in hand before you leave the store, not a check to deposit or a transfer to chase. For most Arlington sellers the whole trip, including the drive from Clarendon or Crystal City, fits inside a long lunch break.",
+      },
+    ],
+    relatedPosts: ["we-buy-estate-gold-jewelry", "selling-gold-jewelry", "is-cash-for-gold-worth-it"],
+    closingCta:
+      "Point the car west — our Annandale store at 7262 Columbia Pike is 15–20 minutes from most of Arlington via Route 50 or I-395. Call (571) 290-8020 or just walk in: the appraisal is free, the testing happens in front of you, and if you sell, it's an instant payout the same visit.",
+  },
 ];
 
 export const getCityLanding = (slug: string): CityLanding | undefined =>
