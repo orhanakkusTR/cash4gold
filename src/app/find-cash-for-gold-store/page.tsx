@@ -7,7 +7,7 @@ import { StoreFinder } from "@/components/store-finder";
 export const metadata: Metadata = {
   title: "Find Your Nearest Store",
   robots: { index: false, follow: false },
-  alternates: { canonical: "/find-your-store" },
+  alternates: { canonical: "/find-cash-for-gold-store" },
 };
 
 export default function FindYourStorePage() {

@@ -76,7 +76,7 @@ function findMatch(places: Place[], query: string): Place | null {
 export function StoreFinder() {
   const places = useMemo(() => buildPlaces(), []);
   const [query, setQuery] = useState("");
-  // Allow prefilling via URL hash for testing/sharing, e.g. /find-your-store#q=Reston.
+  // Allow prefilling via URL hash for testing/sharing, e.g. /find-cash-for-gold-store#q=Reston.
   // Deferred a frame so it doesn't run setState synchronously inside the effect.
   useEffect(() => {
     const h = window.location.hash;
