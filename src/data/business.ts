@@ -532,17 +532,16 @@ export const CATEGORIES: Category[] = [
         longDescription:
           "Gold coins are among the easiest items to sell at a fair price, because the popular ones are standardized, recognized, and quick to verify. We buy American Gold Eagles and Buffalos, South African Krugerrands, Canadian Maple Leafs, British Britannias, pre-1933 US gold, and foreign gold coins, valuing each on its gold content at the live spot price plus any collectible premium. Standard bullion coins are paid close to their melt value because they resell easily, while proof, graded, or key-date coins can be worth more, so mention or bring any certificates and original packaging. Every coin is verified and the offer explained in front of you, with no fee and no obligation to sell. You can estimate the metal value of a one-ounce coin in our gold calculator before you visit. As a local buyer with four Northern Virginia storefronts, we pay instant payout the same day and let you keep your coins until you accept. For the simplest way to sell gold coins, visit our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
         gallery: [
+          { name: "All Gold Coins", image: "/coins/all-gold-coins.jpg", note: "Every gold coin we buy", href: "/coins/sell-gold-coins/all-gold-coins", count: 920 },
           { name: "American Gold Eagle", image: "/coins/age/age-001.jpg", note: "US Mint · 22K", href: "/coins/sell-gold-coins/american-gold-eagle", count: 362 },
           { name: "American Gold Buffalo", image: "/coins/buffalo/buf-005.jpg", note: "US Mint · .9999", href: "/coins/sell-gold-coins/american-gold-buffalo", count: 57 },
           { name: "Canadian Gold Coins", image: "/coins/canadian/cad-033.jpg", note: "Maple Leafs & more · RCM", href: "/coins/sell-gold-coins/canadian-gold-coins", count: 96 },
           { name: "British Gold Coins", image: "/coins/british/brit-010.jpg", note: "Britannias & Sovereigns · Royal Mint", href: "/coins/sell-gold-coins/british-gold-coins", count: 79 },
           { name: "Gold Krugerrands", image: "/coins/krugerrand/krug-007.jpg", note: "South African Mint · 22K", href: "/coins/sell-gold-coins/gold-krugerrands", count: 42 },
           { name: "Pre-33 US Gold Coins", image: "/coins/pre33/pre33-012.jpg", note: "Liberty, Indian & Saint-Gaudens", href: "/coins/sell-gold-coins/pre-33-us-gold-coins", count: 200 },
-          { name: "Australian Kangaroo", image: "/products/gold/kangaroo.jpg", note: "Perth Mint · .9999" },
-          { name: "Chinese Gold Panda", image: "/products/gold/panda.jpg", note: ".999 fine" },
-          { name: "Mexican Gold Libertad", image: "/products/gold/libertad.jpg", note: ".999 fine" },
-          { name: "European Gold Coins", image: "/products/gold/sovereign.jpg", note: "Sovereigns, Coronas & Ducats" },
-          { name: "Pre-1933 US Gold", image: "/products/gold/pre33.jpg", note: "Liberty & Saint-Gaudens" },
+          { name: "Chinese Gold Panda", image: "/coins/panda/panda-041.jpg", note: "People's Bank of China · .999", href: "/coins/sell-gold-coins/chinese-gold-pandas", count: 46 },
+          { name: "Mexican Gold Coins", image: "/coins/mexican/mex-001.jpg", note: "Libertads & Pesos · Mexican Mint", href: "/coins/sell-gold-coins/mexican-gold-coins", count: 31 },
+          { name: "European Gold Coins", image: "/coins/european/euro-012.jpg", note: "Sovereigns, Francs, Coronas & Ducats", href: "/coins/sell-gold-coins/european-gold-coins", count: 36 },
         ],
       },
       {

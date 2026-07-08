@@ -9,6 +9,10 @@ import { CANADIAN_GOLD_COINS } from "@/data/canadian-gold-coins";
 import { BRITISH_GOLD_COINS } from "@/data/british-gold-coins";
 import { GOLD_KRUGERRANDS } from "@/data/gold-krugerrands";
 import { PRE33_US_GOLD_COINS } from "@/data/pre33-us-gold-coins";
+import { CHINESE_GOLD_PANDAS } from "@/data/chinese-gold-pandas";
+import { MEXICAN_GOLD_COINS } from "@/data/mexican-gold-coins";
+import { EUROPEAN_GOLD_COINS } from "@/data/european-gold-coins";
+import { ALL_GOLD_COINS } from "@/data/all-gold-coins";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 // Third-level "item" pages: a specific coin type under a subcategory, e.g.
@@ -26,6 +30,22 @@ type ItemPage = {
 };
 
 const ITEM_PAGES: Record<string, ItemPage> = {
+  "coins/sell-gold-coins/all-gold-coins": {
+    crumb: "All Gold Coins",
+    eyebrow: "Gold Coins · All Gold Coins",
+    label: "gold coin",
+    title: (
+      <>
+        Sell your <span className="text-gold-shimmer">gold coins</span>
+      </>
+    ),
+    description:
+      "Every gold coin we buy in one place — American Eagles and Buffalos, Canadian Maple Leafs, British Britannias and Sovereigns, Krugerrands, pre-1933 US gold, Pandas, Mexican and European coins. Bring yours to any of our 4 Northern Virginia locations for a free appraisal and instant payout.",
+    metaTitle: "Sell Gold Coins in Northern VA | Every Coin We Buy",
+    metaDescription:
+      "We buy every gold coin — Eagles, Buffalos, Maple Leafs, Britannias, Krugerrands, pre-1933 US gold, Pandas and more. Free appraisal and instant payout at 4 Northern Virginia locations.",
+    coins: ALL_GOLD_COINS,
+  },
   "coins/sell-gold-coins/american-gold-eagle": {
     crumb: "American Gold Eagle",
     eyebrow: "Gold Coins · American Gold Eagle",
@@ -121,6 +141,54 @@ const ITEM_PAGES: Record<string, ItemPage> = {
     metaDescription:
       "We buy pre-1933 US gold coins — $2.50 to $20 Liberty, Indian and Saint-Gaudens, circulated and graded, for gold value plus numismatic premium. Free appraisal, instant payout.",
     coins: PRE33_US_GOLD_COINS,
+  },
+  "coins/sell-gold-coins/chinese-gold-pandas": {
+    crumb: "Chinese Gold Pandas",
+    eyebrow: "Gold Coins · Chinese Gold Pandas",
+    label: "Chinese Gold Panda",
+    title: (
+      <>
+        Sell your <span className="text-gold-shimmer">Chinese Gold Pandas</span>
+      </>
+    ),
+    description:
+      "The People's Bank of China's .999 fine gold coin with its ever-changing panda design — every size and year, bullion and sealed. Bring yours to any of our 4 Northern Virginia locations for a free appraisal and instant payout.",
+    metaTitle: "Sell Chinese Gold Pandas in Northern VA | All Years & Sizes",
+    metaDescription:
+      "We buy Chinese Gold Pandas — .999 fine, every size and year, bullion and sealed. Free appraisal and instant payout at 4 Northern Virginia locations.",
+    coins: CHINESE_GOLD_PANDAS,
+  },
+  "coins/sell-gold-coins/mexican-gold-coins": {
+    crumb: "Mexican Gold Coins",
+    eyebrow: "Gold Coins · Mexican Gold Coins",
+    label: "Mexican Gold Coin",
+    title: (
+      <>
+        Sell your <span className="text-gold-shimmer">Mexican gold coins</span>
+      </>
+    ),
+    description:
+      "Gold Libertads and the classic Mexican Peso series — 2, 2.5, 5, 10, 20 and 50 Pesos, plus fractional Libertads. We value both gold content and collector premium. Bring yours to any of our 4 Northern Virginia locations for a free appraisal and instant payout.",
+    metaTitle: "Sell Mexican Gold Coins in Northern VA | Libertads & Pesos",
+    metaDescription:
+      "We buy Mexican gold coins — Libertads and the 2 to 50 Peso series, every year. Free appraisal and instant payout at 4 Northern Virginia locations.",
+    coins: MEXICAN_GOLD_COINS,
+  },
+  "coins/sell-gold-coins/european-gold-coins": {
+    crumb: "European Gold Coins",
+    eyebrow: "Gold Coins · European Gold Coins",
+    label: "European Gold Coin",
+    title: (
+      <>
+        Sell your <span className="text-gold-shimmer">European gold coins</span>
+      </>
+    ),
+    description:
+      "Old-world gold — British Sovereigns, Swiss and French 20 Francs, Austrian Coronas and Ducats, and more, circulated to graded. We value both the gold content and any collector premium. Bring yours to any of our 4 Northern Virginia locations for a free appraisal and instant payout.",
+    metaTitle: "Sell European Gold Coins in Northern VA | Sovereigns, Francs & Coronas",
+    metaDescription:
+      "We buy European gold coins — British Sovereigns, Swiss/French Francs, Austrian Coronas and Ducats. Gold value plus collector premium. Free appraisal, instant payout.",
+    coins: EUROPEAN_GOLD_COINS,
   },
 };
 

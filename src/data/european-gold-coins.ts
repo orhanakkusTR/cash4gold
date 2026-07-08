@@ -1,0 +1,43 @@
+// Auto-generated: European gold coin products (name + square photo).
+// Sourced from the jmbullion European Gold listing for the first visual
+// pass; swap images for our own/licensed photography before production.
+export type EuropeanCoin = { name: string; image: string };
+
+export const EUROPEAN_GOLD_COINS: EuropeanCoin[] = [
+  { name: "1 Ducat Austrian/Dutch Gold Coin (Random Year, Varied Condition)", image: "/coins/european/euro-001.jpg" },
+  { name: "Great Britain Gold Sovereign Coin - Queen Victoria (Young Head)", image: "/coins/european/euro-002.jpg" },
+  { name: "50 Francs Gold Coin (Random Year/Country, VG+)", image: "/coins/european/euro-003.jpg" },
+  { name: "Great Britain Gold 1/4 Sovereign Coin", image: "/coins/european/euro-004.jpg" },
+  { name: "10 Corona Austrian Gold Coin (AU+, Random Year)", image: "/coins/european/euro-005.jpg" },
+  { name: "10 Francs Gold Coin (Random Year, Varied Condition)", image: "/coins/european/euro-006.jpg" },
+  { name: "1912 10 Corona Austrian Gold Coin (Restrike)", image: "/coins/european/euro-007.jpg" },
+  { name: "1915 1 Ducat Austrian/Dutch Gold Coin (AU+, Restrikes)", image: "/coins/european/euro-008.jpg" },
+  { name: "10 Mark German Gold Coin (Random Year, Circulated)", image: "/coins/european/euro-009.jpg" },
+  { name: "10 Kroner Gold Danish Coin (Circulated)", image: "/coins/european/euro-010.jpg" },
+  { name: "5 Rouble Gold Coin (Russian, Circulated)", image: "/coins/european/euro-011.jpg" },
+  { name: "20 Francs Swiss Gold Coin - Helvetia", image: "/coins/european/euro-012.jpg" },
+  { name: "20 Lire Italian Gold Coin (Circulated)", image: "/coins/european/euro-013.jpg" },
+  { name: "20 Francs Gold Coin (Random Year/Country, VG+)", image: "/coins/european/euro-014.jpg" },
+  { name: "20 Francs / 8 Florin Austrian Gold Coin (Avg. Circulated)", image: "/coins/european/euro-015.jpg" },
+  { name: "1892 20 Francs / 8 Florin Austrian Gold Coin (Avg. Circulated)", image: "/coins/european/euro-016.jpg" },
+  { name: "20 Francs France Gold Coin - Rooster (BU)", image: "/coins/european/euro-017.jpg" },
+  { name: "20 Corona Austrian Gold Coin (AU+, Random Year)", image: "/coins/european/euro-018.jpg" },
+  { name: "1915 20 Corona Austrian Gold Coin (AU+, Restrike)", image: "/coins/european/euro-019.jpg" },
+  { name: "10 Guilders Gold Coin (Circulated)", image: "/coins/european/euro-020.jpg" },
+  { name: "20 Francs Belgium Gold Coin (XF)", image: "/coins/european/euro-021.jpg" },
+  { name: "20 Francs France Gold Coin - Lucky Angel (AU)", image: "/coins/european/euro-022.jpg" },
+  { name: "20 Francs Belgium Gold Coin (AU)", image: "/coins/european/euro-023.jpg" },
+  { name: "1892 20 Francs / 8 Florin Austrian Gold Coin (BU, Restrike)", image: "/coins/european/euro-024.jpg" },
+  { name: "20 Mark German Gold Coin (Random Year, Circulated)", image: "/coins/european/euro-025.jpg" },
+  { name: "1930 5 Peso Uruguay Gold Coin (XF+)", image: "/coins/european/euro-026.jpg" },
+  { name: "20 Kroner Gold Danish Coin (Circulated)", image: "/coins/european/euro-027.jpg" },
+  { name: "20 Kronor Sweden Gold Coin (XF+)", image: "/coins/european/euro-028.jpg" },
+  { name: "2021 1/4 oz Proof French Olympic Wheelchair Tennis Gold Coin (Box + CoA)", image: "/coins/european/euro-029.jpg" },
+  { name: "2021 1/4 oz Proof French Olympic Judo Gold Coin (Box + CoA)", image: "/coins/european/euro-030.jpg" },
+  { name: "1000 Schilling Austrian Gold Coin (AU)", image: "/coins/european/euro-031.jpg" },
+  { name: "4 Ducat Austrian/Dutch Gold Coin (Random Year, AU/BU)", image: "/coins/european/euro-032.jpg" },
+  { name: "100 Francs France Gold Coin – Angel (Varied Condition)", image: "/coins/european/euro-033.jpg" },
+  { name: "1915 100 Corona Austrian Gold Coin (AU+, Restrike)", image: "/coins/european/euro-034.jpg" },
+  { name: "100 Corona Austrian Gold Coin (1908-1914, AU+)", image: "/coins/european/euro-035.jpg" },
+  { name: "1908 Hungary 100 Korona Gold Coin (AU)", image: "/coins/european/euro-036.jpg" },
+];
