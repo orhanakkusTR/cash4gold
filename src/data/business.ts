@@ -165,7 +165,7 @@ export const PRIMARY_PHONE_HREF = PRIMARY_LOCATION.phoneHref;
 
 // --- Category taxonomy (mirrors original site URLs) -------------------------
 
-export type GalleryItem = { name: string; image: string; note: string; group?: string };
+export type GalleryItem = { name: string; image: string; note: string; group?: string; href?: string; count?: number };
 
 export type SubCategory = {
   slug: string;     // e.g. "sell-gold" → /precious-metals/sell-gold
@@ -532,9 +532,9 @@ export const CATEGORIES: Category[] = [
         longDescription:
           "Gold coins are among the easiest items to sell at a fair price, because the popular ones are standardized, recognized, and quick to verify. We buy American Gold Eagles and Buffalos, South African Krugerrands, Canadian Maple Leafs, British Britannias, pre-1933 US gold, and foreign gold coins, valuing each on its gold content at the live spot price plus any collectible premium. Standard bullion coins are paid close to their melt value because they resell easily, while proof, graded, or key-date coins can be worth more, so mention or bring any certificates and original packaging. Every coin is verified and the offer explained in front of you, with no fee and no obligation to sell. You can estimate the metal value of a one-ounce coin in our gold calculator before you visit. As a local buyer with four Northern Virginia storefronts, we pay instant payout the same day and let you keep your coins until you accept. For the simplest way to sell gold coins, visit our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
         gallery: [
-          { name: "American Gold Eagle", image: "/products/gold/eagle.jpg", note: "US Mint · 22K" },
-          { name: "American Gold Buffalo", image: "/products/gold/buffalo.jpg", note: "US Mint · .9999" },
-          { name: "Canadian Maple Leaf", image: "/products/gold/maple.jpg", note: "RCM · .9999" },
+          { name: "American Gold Eagle", image: "/coins/age/age-001.jpg", note: "US Mint · 22K", href: "/coins/sell-gold-coins/american-gold-eagle", count: 362 },
+          { name: "American Gold Buffalo", image: "/coins/buffalo/buf-005.jpg", note: "US Mint · .9999", href: "/coins/sell-gold-coins/american-gold-buffalo", count: 57 },
+          { name: "Canadian Gold Coins", image: "/coins/canadian/cad-033.jpg", note: "Maple Leafs & more · RCM", href: "/coins/sell-gold-coins/canadian-gold-coins", count: 96 },
           { name: "South African Krugerrand", image: "/products/gold/krugerrand.jpg", note: "22K" },
           { name: "British Britannia", image: "/products/gold/britannia.jpg", note: "Royal Mint · .9999" },
           { name: "Austrian Philharmonic", image: "/products/gold/philharmonic.jpg", note: ".9999 fine" },
