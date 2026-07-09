@@ -30,6 +30,14 @@ export default function LocationsPage() {
         crumbs={[{ name: "Home", href: "/" }, { name: "Locations", href: "/locations" }]}
         title={<>Four locations across <span className="text-gold-shimmer">Northern Virginia</span></>}
         description="There's a Cash for Gold VA near you. Walk in during business hours, no appointment needed, for a free appraisal and instant payout."
+        actions={
+          <a
+            href={`tel:${(LOCATIONS.find((l) => l.slug === "chantilly") ?? LOCATIONS[0]).phoneHref}`}
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-ink-950 shadow-[var(--shadow-gold)] transition-all hover:-translate-y-0.5 hover:bg-gold-400"
+          >
+            <Phone className="h-4 w-4" strokeWidth={2.5} /> Ask Us a Question
+          </a>
+        }
       />
 
       <section className="container-page space-y-10 py-16 md:py-20">

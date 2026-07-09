@@ -58,6 +58,14 @@ export default function ContactPage() {
         crumbs={[{ name: "Home", href: "/" }, { name: "Contact", href: CONTACT_PATH }]}
         title={<>Visit or call your <span className="text-gold-shimmer">nearest location</span></>}
         description="Walk into any of our four Northern Virginia stores for a free, no-obligation appraisal and instant payout, no appointment needed. Or call ahead for a quick answer."
+        actions={
+          <a
+            href={`tel:${(LOCATIONS.find((l) => l.slug === "chantilly") ?? LOCATIONS[0]).phoneHref}`}
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-ink-950 shadow-[var(--shadow-gold)] transition-all hover:-translate-y-0.5 hover:bg-gold-400"
+          >
+            <Phone className="h-4 w-4" strokeWidth={2.5} /> Ask Us a Question
+          </a>
+        }
       />
 
       <section className="container-page py-16 sm:py-20">
