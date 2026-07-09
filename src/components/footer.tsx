@@ -36,6 +36,9 @@ export function Footer() {
               <span className="mt-0.5 block text-xs text-ink-900/60">{SITE.rating.count}+ Google reviews</span>
             </span>
           </a>
+          <Link href="/find-cash-for-gold-store" className="mt-4 block max-w-64 transition-transform hover:-translate-y-0.5">
+            <Image src="/brand/find-store.png" alt="Find a Cash for Gold store near you" width={800} height={249} sizes="256px" className="h-auto w-full max-w-full rounded-2xl" />
+          </Link>
         </div>
 
         {/* What we buy */}

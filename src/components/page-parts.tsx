@@ -9,6 +9,7 @@ export function PageHero({
   title,
   headline,
   description,
+  actions,
   crumbs,
   glowClass = "bg-gold-500/12",
 }: {
@@ -17,6 +18,8 @@ export function PageHero({
   /** Optional punchy line shown directly below the H1 (business brief headline). */
   headline?: string;
   description?: string;
+  /** Optional CTA(s) rendered below the description. */
+  actions?: React.ReactNode;
   crumbs: { name: string; href: string }[];
   /** Tailwind bg color for the ambient hero glow, e.g. metalTone(...).glow. */
   glowClass?: string;
@@ -56,6 +59,7 @@ export function PageHero({
           {description && (
             <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-cream-100/75">{description}</p>
           )}
+          {actions && <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">{actions}</div>}
         </Reveal>
       </div>
     </section>

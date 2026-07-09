@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, ArrowRight } from "lucide-react";
+import { Phone, Navigation, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
 import type { GalleryItem } from "@/data/business";
@@ -13,7 +13,7 @@ import type { GalleryItem } from "@/data/business";
  * `count` also surface a "N products" badge as a listing cue. Items without
  * `href` keep a full-width call-to-sell action.
  */
-function Tile({ p, i, cover }: { p: GalleryItem; i: number; cover?: boolean }) {
+function Tile({ p, i, cover, dualCta }: { p: GalleryItem; i: number; cover?: boolean; dualCta?: boolean }) {
   const isListing = Boolean(p.href && p.count);
 
   const imageEl = (
@@ -58,7 +58,7 @@ function Tile({ p, i, cover }: { p: GalleryItem; i: number; cover?: boolean }) {
         {/* Body — roomy title + note */}
         <div className="flex flex-1 flex-col gap-3 border-t border-hairline p-3.5 sm:p-4">
           <div className="flex-1">
-            <h3 className="font-display text-[15px] font-bold leading-snug text-foreground sm:text-base">
+            <h3 className="font-display text-[15px] font-extrabold leading-snug text-foreground sm:text-base">
               {p.href ? (
                 <Link href={p.href} className="transition-colors hover:text-gold-700">
                   {p.name}
@@ -80,6 +80,28 @@ function Tile({ p, i, cover }: { p: GalleryItem; i: number; cover?: boolean }) {
               <span>{isListing ? `View ${p.count} Coins` : "View all"}</span>
               <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={2.25} />
             </Link>
+          ) : dualCta ? (
+            // Two buttons — Call & Directions — that both route to our on-site
+            // locations page (keeps traffic internal). Stack on mobile, side by
+            // side once the tile is wide enough.
+            <div className="flex flex-col gap-2 sm:flex-row">
+              <Link
+                href="/locations"
+                aria-label={`Call about ${p.name}`}
+                className="flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-xl bg-gold-500 px-2.5 text-sm font-semibold text-ink-950 shadow-[var(--shadow-gold)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-400"
+              >
+                <Phone className="h-4 w-4 shrink-0" strokeWidth={2.25} />
+                <span>Call</span>
+              </Link>
+              <Link
+                href="/locations"
+                aria-label={`Get directions for ${p.name}`}
+                className="flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-xl bg-gold-50 px-2.5 text-sm font-semibold text-gold-700 ring-1 ring-gold-200/70 transition-all duration-300 hover:bg-gold-100 hover:ring-gold-300"
+              >
+                <Navigation className="h-4 w-4 shrink-0" strokeWidth={2.25} />
+                <span>Directions</span>
+              </Link>
+            </div>
           ) : (
             <a
               href={`tel:${PRIMARY_PHONE_HREF}`}
@@ -96,7 +118,7 @@ function Tile({ p, i, cover }: { p: GalleryItem; i: number; cover?: boolean }) {
   );
 }
 
-export function ProductGallery({ items, cover }: { items: GalleryItem[]; cover?: boolean }) {
+export function ProductGallery({ items, cover, dualCta }: { items: GalleryItem[]; cover?: boolean; dualCta?: boolean }) {
   // Preserve first-seen group order.
   const groups: string[] = [];
   for (const it of items) {
@@ -108,7 +130,7 @@ export function ProductGallery({ items, cover }: { items: GalleryItem[]; cover?:
   if (!grouped) {
     return (
       <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 sm:gap-5 lg:grid-cols-3">
-        {items.map((p, i) => <Tile key={p.name} p={p} i={i} cover={cover} />)}
+        {items.map((p, i) => <Tile key={p.name} p={p} i={i} cover={cover} dualCta={dualCta} />)}
       </div>
     );
   }
@@ -122,7 +144,7 @@ export function ProductGallery({ items, cover }: { items: GalleryItem[]; cover?:
             <span className="h-px flex-1 bg-gradient-to-r from-gold-400/40 to-transparent" />
           </div>
           <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 sm:gap-5 lg:grid-cols-3">
-            {items.filter((p) => (p.group ?? "") === g).map((p, i) => <Tile key={p.name} p={p} i={i} cover={cover} />)}
+            {items.filter((p) => (p.group ?? "") === g).map((p, i) => <Tile key={p.name} p={p} i={i} cover={cover} dualCta={dualCta} />)}
           </div>
         </div>
       ))}

@@ -482,7 +482,7 @@ export const CATEGORIES: Category[] = [
       "We buy certified diamonds that meet our standards, and we pay serious prices for them. If you have a loose diamond of 1.5 carats or above with a GIA, IGI, AGS, HRD, or equivalent internationally recognized certificate, bring it in for a fair, no-pressure evaluation. Not sure whether your stone qualifies? Call us first and we will tell you in 60 seconds.",
     keywords: ["sell certified diamonds", "diamond buyer northern virginia", "sell GIA diamond", "sell loose diamonds"],
     longDescription:
-      "Selling a diamond rewards a careful, knowledgeable appraisal, and we focus on the stones where we can pay you the most: loose certified diamonds of 1.5 carats and above. If your diamond carries a GIA, IGI, AGS, HRD, or equivalent internationally recognized grading report, our buyers evaluate it on the 4Cs exactly as the certificate states, cut, color, clarity, and carat, then cross-reference current market pricing to make a serious, transparent offer. The certificate removes the guesswork, which is how we pay competitively rather than the lowball numbers common on uncertified stones. To be clear about what we buy, we do not purchase diamonds under 1.5 carats, uncertified stones, lab-grown diamonds, or stones with certificates from unrecognized labs. If you are unsure whether your diamond qualifies, call us before you visit and we will tell you in about a minute. Every evaluation is free, explained in plain terms, and carries no obligation, and selling locally means your diamond stays with you until you accept, with payment before you leave rather than mailing a valuable stone away. Bring your certified diamond to any of our four Northern Virginia locations for a fair, expert offer.",
+      "Selling a diamond rewards a careful, certificate-based appraisal, and as a diamond buyer serving Northern Virginia we focus on the stones where we can pay you the most: loose certified diamonds of 1.5 carats and above. If your stone carries a GIA, IGI, AGS, HRD, or equivalent internationally recognized grading report, our buyers evaluate it on the 4Cs exactly as the certificate states, cut, color, clarity, and carat, then cross-reference the current diamond market to make a serious, transparent offer. That certificate is what lets us pay competitively rather than the cautious numbers uncertified stones force. To be clear about what we buy, we do not purchase diamonds under 1.5 carats, uncertified stones, or lab-grown diamonds. If your diamond is still in its setting we can help there too, since we also buy diamond and gemstone jewelry along with the gold or platinum mounting at its live metal value. Not sure whether your stone qualifies? Get in touch before you visit and we will tell you in about a minute. Every evaluation is free, explained in plain terms, and carries no obligation, and because we buy in person you keep your diamond until you accept, with instant payout before you leave rather than mailing a valuable stone away. Prefer to sell other valuables the same day? We also buy gold and precious metals, coins, and luxury watches at transparent, live-market prices. Bring your certified diamond to any of our four Northern Virginia locations, or find your nearest store, for a fair, expert offer.",
     subcategories: [
       {
         slug: "sell-diamonds",
@@ -494,7 +494,7 @@ export const CATEGORIES: Category[] = [
         items: ["Loose certified diamonds 1.5ct+", "GIA, IGI, AGS or HRD graded", "Round, princess & oval cuts", "Emerald, cushion & fancy cuts", "Bring the original certificate"],
         keywords: ["sell certified diamonds", "sell GIA diamond", "diamond buyer northern virginia", "sell loose diamonds"],
         longDescription:
-          "A diamond's value comes down to the 4Cs, cut, color, clarity, and carat, and the cleanest way for us to pay you a serious price is to start from an independent grading report. We buy loose certified diamonds of 1.5 carats and above graded by GIA, IGI, AGS, HRD, or an equivalent internationally recognized lab, evaluating the stone exactly as the certificate states and cross-referencing current market pricing before we make an offer. The certificate is what lets us pay competitively instead of the cautious, lower numbers uncertified stones force. So there is no wasted trip, here is what we do not buy: diamonds under 1.5 carats, uncertified stones, lab-grown diamonds, and stones with certificates from labs we do not recognize. If you are unsure whether your diamond meets these standards, call us before you come in and we will tell you in about a minute. Every evaluation is free, explained in plain terms, and carries no obligation, and because we buy in person across four Northern Virginia stores, your diamond stays with you until you accept, with payment before you leave. Bring your certified diamond and its report to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a fair, expert offer.",
+          "A diamond's value comes down to the 4Cs, cut, color, clarity, and carat, and the cleanest way for us to pay you a serious price is to start from an independent grading report. As a certified diamond buyer in Northern Virginia, we buy loose diamonds of 1.5 carats and above graded by GIA, IGI, AGS, HRD, or an equivalent internationally recognized lab, evaluating the stone exactly as the certificate states and cross-referencing the live diamond market before we make an offer. That report is what lets us pay competitively instead of the cautious, lower numbers uncertified stones force. So there is no wasted trip, here is what we do not buy: diamonds under 1.5 carats, uncertified stones, lab-grown diamonds, and stones with certificates from labs we do not recognize. If your diamond is still mounted, we also buy diamond engagement rings and fine jewelry, paying for the center stone plus the gold or platinum setting at its live metal value. Not sure whether your stone qualifies? Get in touch before you come in and we will tell you in about a minute. Every evaluation is free, explained in plain terms, and carries no obligation, and because we buy in person you keep your diamond until you accept, with instant payout before you leave rather than mailing a valuable stone away. Bring your certified diamond and its report to any of our four Northern Virginia locations, or find your nearest store, for a fair, expert offer, and if you also have coins or luxury watches to sell, we will appraise those the same visit.",
         gallery: [
           { name: "Round Brilliant", image: "/products/diamonds/round.webp", note: "Certified 1.5ct & above" },
           { name: "Princess Cut", image: "/products/diamonds/princess.webp", note: "Certified 1.5ct & above" },
@@ -523,7 +523,7 @@ export const CATEGORIES: Category[] = [
         slug: "sell-gold-coins",
         name: "Gold Coins",
         action: "Sell Gold Coins",
-        cardImage: "/products/gold/eagle.jpg",
+        cardImage: "/coins/age/age-001.jpg",
         short: "90% of spot for standard bullion coins, plus numismatic premium on rare dates.",
         intro:
           "We pay 90% of the live gold spot price for standard bullion gold coins, American Gold Eagles and Buffalos, Krugerrands, Maple Leafs, and more, and we show you exactly how we got there. Have a rare or key-date coin? We know numismatics too, and collector demand can push your offer above melt value.",
@@ -548,7 +548,7 @@ export const CATEGORIES: Category[] = [
         slug: "sell-silver-coins",
         name: "Silver Coins",
         action: "Sell Silver Coins",
-        cardImage: "/products/silver/ase.jpg",
+        cardImage: "/coins/british-silver/british-silver-007.jpg",
         short: "Morgan & Peace dollars, Silver Eagles & pre-1965 US silver.",
         intro:
           "From Morgan and Peace dollars to American Silver Eagles and pre-1965 90% silver coins, we buy silver coins by the piece or the bag, paying for both their silver content and any numismatic value.",
@@ -574,7 +574,7 @@ export const CATEGORIES: Category[] = [
         slug: "sell-collectible-coins",
         name: "Collectible Coins",
         action: "Sell Collectible Coins",
-        cardImage: "/products/coins/morgan.jpg",
+        cardImage: "/coins/silver-dollar/silver-dollar-019.jpg",
         short: "Numismatic & graded coins valued for rarity, grade & demand.",
         intro:
           "Collectible coins are worth far more than their metal when rarity and condition align. We evaluate key dates, mint marks, and graded slabs (PCGS/NGC) to pay a fair numismatic price for individual coins or whole collections.",
@@ -594,7 +594,7 @@ export const CATEGORIES: Category[] = [
         slug: "sell-antique-coins",
         name: "Antique Coins",
         action: "Sell Antique Coins",
-        cardImage: "/products/coins/pre33.jpg",
+        cardImage: "/coins/mexican/mex-024.jpg",
         short: "Ancient, colonial & early world coins appraised by an expert eye.",
         intro:
           "Antique coins, ancient, colonial, and early world issues, require an expert eye. We appraise their age, origin, metal, and condition to make you an honest offer on pieces that often carry significant historical value.",

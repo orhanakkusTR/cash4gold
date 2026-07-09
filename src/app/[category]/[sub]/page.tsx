@@ -11,7 +11,7 @@ import { placeholderDescription, metalTone } from "@/lib/utils";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { SectionHeading } from "@/components/section-heading";
 import { Reveal } from "@/components/reveal";
-import { CategoryDescription } from "@/components/category-description";
+import { CategoryDescription, type RichLink } from "@/components/category-description";
 import { ProductGallery } from "@/components/product-gallery";
 import { JewelryValueProps, JewelryHowWeValue } from "@/components/jewelry-trust";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
@@ -26,6 +26,21 @@ const RELATED: Record<string, { label: string; href: string; image: string }[]> 
   "sell-silver": [
     { label: "Silver Coins", href: "/coins/sell-silver-coins", image: "/products/silver/ase.jpg" },
     { label: "Jewelry", href: "/jewelry", image: "/products/jewelry/necklace.jpg" },
+  ],
+};
+
+// Internal links woven into a subcategory's long description for SEO. Phrases
+// must appear verbatim in that page's longDescription (business.ts); the first
+// occurrence is linked and any phrase not present is skipped.
+const DESCRIPTION_LINKS: Record<string, RichLink[]> = {
+  "precious-stones/sell-diamonds": [
+    { text: "diamond engagement rings and fine jewelry", href: "/jewelry" },
+    { text: "gold or platinum setting", href: "/precious-metals" },
+    { text: "Get in touch", href: "/contact-us-cash-for-gold-locations" },
+    { text: "coins", href: "/coins" },
+    { text: "luxury watches", href: "/watches" },
+    { text: "four Northern Virginia locations", href: "/locations" },
+    { text: "find your nearest store", href: "/find-cash-for-gold-store" },
   ],
 };
 
@@ -160,7 +175,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
             description={brief?.whatWeBuy ?? `Coins, bullion bars and more, here are the kinds of ${s.name.toLowerCase()} we buy every day. Stop by for a fair, transparent price and instant payout.`}
           />
           <div className="mt-12">
-            <ProductGallery items={s.gallery} cover={cat.slug === "precious-stones" || cat.slug === "jewelry" || cat.slug === "watches" || s.slug === "sell-collectible-coins" || s.slug === "sell-antique-coins" || s.slug === "sell-sterling-silver-sets" || s.slug === "sell-dental-gold" || s.slug === "sell-gold-filled-plated"} />
+            <ProductGallery items={s.gallery} cover={cat.slug === "precious-stones" || cat.slug === "jewelry" || cat.slug === "watches" || s.slug === "sell-collectible-coins" || s.slug === "sell-antique-coins" || s.slug === "sell-sterling-silver-sets" || s.slug === "sell-dental-gold" || s.slug === "sell-gold-filled-plated"} dualCta={cat.slug === "precious-stones"} />
           </div>
           {RELATED[s.slug] && (
             <div className="mt-14">
@@ -252,7 +267,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
       {/* Category description (expandable) */}
       <section className="bg-cream-100 py-12 sm:py-14">
         <div className="container-page">
-          <CategoryDescription title={`Buying ${s.name}`} text={s.longDescription ?? placeholderDescription(s.name)} keywords={s.keywords} />
+          <CategoryDescription title={`Buying ${s.name}`} text={s.longDescription ?? placeholderDescription(s.name)} keywords={s.keywords} links={DESCRIPTION_LINKS[`${cat.slug}/${s.slug}`]} />
         </div>
       </section>
 

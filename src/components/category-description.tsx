@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
+import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+export type RichLink = { text: string; href: string };
 
 /**
  * Important phrases bolded across every description in addition to each page's
@@ -18,28 +21,78 @@ const EMPHASIS_TERMS = [
   "Annandale", "Manassas", "Chantilly", "Vienna/McLean",
 ];
 
+type Range = { start: number; end: number; node: React.ReactNode };
+
 /**
- * Bolds the first verbatim occurrence of each target phrase in the copy. Phrases
- * that don't appear in the text are skipped (we never inject them), and longer
- * phrases are matched first so they win over overlapping shorter ones.
+ * Splits one long description into readable paragraphs. Honors explicit blank
+ * lines when present; otherwise groups whole sentences into ~2–3-sentence
+ * blocks so a wall of text becomes scannable. Sentence splitting keys on a
+ * period followed by whitespace, so decimals like "1.5 carats" stay intact.
  */
-function emphasizeKeywords(text: string, keywords: string[] = []) {
-  const ranges: { start: number; end: number }[] = [];
-  const phrases = [...new Set([...keywords, ...EMPHASIS_TERMS])];
-  for (const kw of phrases.sort((a, b) => b.length - a.length)) {
+function toParagraphs(text: string): string[] {
+  const trimmed = text.trim();
+  if (/\n\s*\n/.test(trimmed)) return trimmed.split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean);
+  const sentences = trimmed.split(/(?<=\.)\s+/);
+  const paras: string[] = [];
+  let cur = "";
+  for (const s of sentences) {
+    cur = cur ? `${cur} ${s}` : s;
+    if (cur.length >= 260) { paras.push(cur); cur = ""; }
+  }
+  if (cur) {
+    // Fold a short trailing remainder into the previous paragraph.
+    if (paras.length && cur.length < 130) paras[paras.length - 1] += ` ${cur}`;
+    else paras.push(cur);
+  }
+  return paras.length ? paras : [trimmed];
+}
+
+/**
+ * Renders one paragraph with two overlays: internal links (SEO) and bolded
+ * emphasis phrases. Links win any overlap. A shared `used` set makes each phrase
+ * link/bold only its FIRST occurrence across the whole description, even though
+ * paragraphs are rendered independently. Phrases absent from the text are
+ * skipped (we never inject words that aren't written).
+ */
+function renderRichText(text: string, keywords: string[], links: RichLink[], used: Set<string>) {
+  const ranges: Range[] = [];
+  const claim = (start: number, end: number, node: React.ReactNode) => {
+    if (start === -1) return;
+    if (ranges.some((r) => start < r.end && end > r.start)) return; // skip overlaps
+    ranges.push({ start, end, node });
+  };
+
+  // Internal links take priority.
+  for (const l of links) {
+    if (used.has(`l:${l.text.toLowerCase()}`)) continue;
+    const idx = text.toLowerCase().indexOf(l.text.toLowerCase());
+    if (idx === -1) continue;
+    used.add(`l:${l.text.toLowerCase()}`);
+    const end = idx + l.text.length;
+    claim(idx, end, (
+      <Link href={l.href} className="font-semibold text-gold-700 underline decoration-gold-300 underline-offset-2 transition-colors hover:text-gold-600">
+        {text.slice(idx, end)}
+      </Link>
+    ));
+  }
+
+  // Then bold the emphasis/keyword phrases in whatever text is left.
+  const phrases = [...new Set([...keywords, ...EMPHASIS_TERMS])].sort((a, b) => b.length - a.length);
+  for (const kw of phrases) {
+    if (used.has(`k:${kw.toLowerCase()}`)) continue;
     const idx = text.toLowerCase().indexOf(kw.toLowerCase());
     if (idx === -1) continue;
-    const end = idx + kw.length;
-    if (ranges.some((r) => idx < r.end && end > r.start)) continue; // skip overlaps
-    ranges.push({ start: idx, end });
+    used.add(`k:${kw.toLowerCase()}`);
+    claim(idx, idx + kw.length, <strong className="font-semibold text-foreground">{text.slice(idx, idx + kw.length)}</strong>);
   }
+
   if (!ranges.length) return text;
   ranges.sort((a, b) => a.start - b.start);
   const nodes: React.ReactNode[] = [];
   let cursor = 0;
   ranges.forEach((r, i) => {
     if (r.start > cursor) nodes.push(text.slice(cursor, r.start));
-    nodes.push(<strong key={i} className="font-semibold text-foreground">{text.slice(r.start, r.end)}</strong>);
+    nodes.push(<Fragment key={i}>{r.node}</Fragment>);
     cursor = r.end;
   });
   if (cursor < text.length) nodes.push(text.slice(cursor));
@@ -51,14 +104,18 @@ function emphasizeKeywords(text: string, keywords: string[] = []) {
  * clamps to a few lines with a fade; expanded it shows the full ~1000-char copy.
  * The fade matches the cream-100 section background it sits in.
  */
-export function CategoryDescription({ title, text, keywords }: { title: string; text: string; keywords?: string[] }) {
+export function CategoryDescription({ title, text, keywords, links }: { title: string; text: string; keywords?: string[]; links?: RichLink[] }) {
   const [open, setOpen] = useState(false);
+  const used = new Set<string>();
+  const paragraphs = toParagraphs(text);
   return (
     <div className="mx-auto max-w-3xl">
-      <h2 className="font-display text-2xl font-semibold text-foreground sm:text-3xl">{title}</h2>
+      <h2 className="font-display text-2xl font-extrabold text-foreground sm:text-3xl">{title}</h2>
       <div className="relative mt-4">
-        <div className={cn("text-base leading-relaxed text-muted transition-[max-height] duration-500", open ? "max-h-[60rem]" : "max-h-[6.5rem] overflow-hidden")}>
-          <p>{emphasizeKeywords(text, keywords)}</p>
+        <div className={cn("space-y-4 text-base leading-relaxed text-muted transition-[max-height] duration-500", open ? "max-h-[80rem]" : "max-h-[6.5rem] overflow-hidden")}>
+          {paragraphs.map((para, i) => (
+            <p key={i}>{renderRichText(para, keywords ?? [], links ?? [], used)}</p>
+          ))}
         </div>
         {!open && (
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-cream-100 to-transparent" />
