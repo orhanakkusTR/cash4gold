@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, CalendarDays } from "lucide-react";
+import { ArrowUpRight, CalendarDays, MessageCircle, Phone } from "lucide-react";
 import { POSTS_BY_DATE, BLOG_CATEGORIES, coverImage } from "@/data/blog";
-import { SITE } from "@/data/business";
+import { SITE, PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { BlogCard } from "@/components/blog-card";
 import { Reveal } from "@/components/reveal";
@@ -28,6 +28,22 @@ export default function BlogIndexPage() {
         crumbs={[{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }]}
         title={<>Gold, Coins &amp; Jewelry <span className="text-gold-shimmer">Insights</span></>}
         description="Guides, market notes, and local know-how on buying and selling precious metals, diamonds, coins, and jewelry across Northern Virginia."
+        actions={
+          <>
+            <Link
+              href="/contact-us-cash-for-gold-locations"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-ink-950 shadow-[var(--shadow-gold)] transition-all hover:-translate-y-0.5 hover:bg-gold-400"
+            >
+              <MessageCircle className="h-4 w-4" strokeWidth={2.5} /> Ask Us a Question
+            </Link>
+            <a
+              href={`tel:${PRIMARY_PHONE_HREF}`}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-cream-100/25 px-6 py-3 text-sm font-semibold text-cream-50 transition-all hover:-translate-y-0.5 hover:border-gold-300/60 hover:text-gold-200"
+            >
+              <Phone className="h-4 w-4" strokeWidth={2.5} /> {PRIMARY_PHONE}
+            </a>
+          </>
+        }
       />
 
       {/* Category legend */}
