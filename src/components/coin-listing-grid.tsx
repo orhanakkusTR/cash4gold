@@ -113,12 +113,15 @@ function PillRow({
 }) {
   if (options.length < 2) return null;
   const base =
-    "rounded-full px-2.5 py-1 text-xs font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400";
+    "shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400";
   const active = "bg-gold-500 text-ink-950 shadow-[var(--shadow-gold)]";
   const idle = "text-muted hover:bg-gold-50 hover:text-gold-700";
   return (
-    <div className="flex items-center gap-0.5 rounded-full border border-hairline bg-white p-0.5">
-      <span className="pl-2.5 pr-1.5 text-[0.65rem] font-bold uppercase tracking-wide text-muted/80">
+    // Full width on mobile (scrolls internally), auto on desktop — so a long
+    // option set (e.g. many weights on the All-Silver page) never overflows the
+    // screen. Horizontal scroll keeps the segmented look without wrapping.
+    <div className="flex w-full min-w-0 flex-nowrap items-center gap-0.5 overflow-x-auto rounded-full border border-hairline bg-white p-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:w-auto sm:max-w-full">
+      <span className="shrink-0 pl-2.5 pr-1.5 text-[0.65rem] font-bold uppercase tracking-wide text-muted/80">
         {label}
       </span>
       <button type="button" onClick={() => onChange(null)} className={`${base} ${value === null ? active : idle}`}>
@@ -194,7 +197,7 @@ export function CoinListingGrid({ coins, label }: { coins: CoinItem[]; label: st
         </div>
         <PillRow label="Weight" options={weightOptions} value={weight} onChange={setWeight} />
         <PillRow label="Finish" options={finishOptions} value={finish} onChange={setFinish} />
-        <div className="ml-auto flex items-center gap-3 whitespace-nowrap">
+        <div className="flex w-full items-center justify-between gap-3 whitespace-nowrap pt-1 sm:ml-auto sm:w-auto sm:justify-end sm:pt-0">
           {hasFilter && (
             <button
               type="button"
