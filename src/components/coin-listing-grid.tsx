@@ -15,11 +15,13 @@ import { PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
 export type CoinItem = { name: string; image: string };
 
 const BATCH = 48;
-const WEIGHT_ORDER = ["1 oz", "1/2 oz", "1/4 oz", "1/10 oz", "1/20 oz"];
+const WEIGHT_ORDER = ["1/20 oz", "1/10 oz", "1/4 oz", "1/2 oz", "1 oz", "2 oz", "5 oz", "10 oz"];
 
 // Derive a weight label from a product name, or null when it doesn't parse.
+// Fractions and longer numbers are matched first so "1/10 oz" and "10 oz" don't
+// collide with a bare "1".
 function coinWeight(name: string): string | null {
-  const m = name.match(/\b(1\/2|1\/4|1\/10|1\/20|1)\s?oz\b/i);
+  const m = name.match(/\b(1\/20|1\/10|1\/4|1\/2|10|5|2|1)\s?oz\b/i);
   return m ? `${m[1]} oz` : null;
 }
 
