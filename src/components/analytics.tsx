@@ -59,6 +59,10 @@ export function Analytics() {
   useEffect(() => {
     if (!pathname || pathname.startsWith("/admin-adam")) return;
     send({ type: "pageview", path: pathname });
+    // OpenAI Pixel page-view conversion — matches the "page_viewed" event
+    // configured in the OpenAI Ads panel. Fires on client navigations too, so
+    // SPA route changes are counted, not just hard page loads.
+    window.oaiq?.("measure", "page_viewed", { type: "contents" });
   }, [pathname]);
 
   // Delegated click tracking for phone + directions links.
@@ -95,12 +99,11 @@ export function Analytics() {
         path: window.location.pathname,
       });
 
-      // OpenAI Pixel conversion: a phone-call click is our lead action.
+      // OpenAI Pixel conversion: a phone-call click. Matches the custom
+      // "phone" conversion event configured in the OpenAI Ads panel.
       if (type === "phone") {
-        window.oaiq?.("measure", "lead", {
-          type: "customer_action",
-          amount: 0,
-          currency: "USD",
+        window.oaiq?.("measure", "custom", { type: "custom" }, {
+          custom_event_name: "phone",
         });
       }
     }
