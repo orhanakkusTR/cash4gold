@@ -5,6 +5,14 @@ import { usePathname } from "next/navigation";
 import { LOCATIONS } from "@/data/business";
 import type { TrackPayload } from "@/lib/analytics-events";
 
+// OpenAI Pixel queue (installed in the root layout, production only). Undefined
+// in dev — the optional call below is a no-op there.
+declare global {
+  interface Window {
+    oaiq?: (...args: unknown[]) => void;
+  }
+}
+
 // One global, low-overhead tracker mounted in the root layout. It does two jobs:
 //   1. Page views — fires whenever the pathname changes.
 //   2. Click delegation — a single capture-phase listener on the document that
@@ -86,6 +94,15 @@ export function Analytics() {
         source,
         path: window.location.pathname,
       });
+
+      // OpenAI Pixel conversion: a phone-call click is our lead action.
+      if (type === "phone") {
+        window.oaiq?.("measure", "lead", {
+          type: "customer_action",
+          amount: 0,
+          currency: "USD",
+        });
+      }
     }
 
     document.addEventListener("click", onClick, { capture: true });

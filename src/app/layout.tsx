@@ -99,6 +99,12 @@ gtag('config','${GA_ID}',{send_page_view:false});
 (function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';var f=document.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);})();
 `;
 
+// OpenAI Pixel (conversion tracking). One site-wide init; the conversion
+// event itself fires only where the action happens — a phone-call click,
+// handled in <Analytics>. Production only, so dev traffic never pollutes it.
+const OPENAI_PIXEL_ID = "QKKK9ZDBRzcFmBM6Ac45Yn";
+const OPENAI_PIXEL_JS = `!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"${OPENAI_PIXEL_ID}"});`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -114,6 +120,10 @@ export default function RootLayout({
             Production only — GA never loads in dev. */}
         {process.env.NODE_ENV === "production" && (
           <script dangerouslySetInnerHTML={{ __html: GA_BOOTSTRAP_JS }} />
+        )}
+        {/* OpenAI Pixel init — one per page, near the top of <head>. */}
+        {process.env.NODE_ENV === "production" && (
+          <script dangerouslySetInnerHTML={{ __html: OPENAI_PIXEL_JS }} />
         )}
         {/* Warm up the live-price API connection early (saves ~300ms on the ticker). */}
         <link rel="preconnect" href="https://api.gold-api.com" />
