@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE, CATEGORIES, ALL_SUBCATEGORIES, LOCATIONS, SHOW_CALCULATOR } from "@/data/business";
 import { POSTS } from "@/data/blog";
 import { CITY_LANDINGS } from "@/data/city-landings";
+import { COIN_ITEM_SLUGS } from "@/app/[category]/[sub]/[item]/page";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.domain;
@@ -58,5 +59,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticPages, ...categoryPages, ...subcategoryPages, ...locationPages, ...cityLandingPages, ...blogPages];
+  // Coin item pages (e.g. /coins/sell-gold-coins/american-gold-eagle). These are
+  // indexable, self-canonical money pages, so they belong in the sitemap; slugs
+  // come from the item route itself (single source of truth).
+  const coinItemPages = COIN_ITEM_SLUGS.map((slug) => ({
+    url: `${base}/${slug}`,
+    lastModified: lastUpdated,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...categoryPages, ...subcategoryPages, ...locationPages, ...cityLandingPages, ...coinItemPages, ...blogPages];
 }

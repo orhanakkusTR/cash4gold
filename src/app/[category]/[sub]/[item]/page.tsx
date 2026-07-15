@@ -381,6 +381,11 @@ const ITEM_PAGES: Record<string, ItemPage> = {
   },
 };
 
+// Single source of truth for which coin item pages exist. Consumed by
+// generateStaticParams below AND by sitemap.ts, so the sitemap can never drift
+// out of sync with the pages actually generated.
+export const COIN_ITEM_SLUGS = Object.keys(ITEM_PAGES);
+
 const key = (category: string, sub: string, item: string) => `${category}/${sub}/${item}`;
 
 export function generateStaticParams() {
