@@ -34,15 +34,11 @@
     --shadow-gold:0 10px 40px -12px rgba(163,120,31,.35);
   }
 
-  @page{
-    size:A4;
-    margin:16mm 15mm 18mm;
-    @bottom-right{
-      content:"Page " counter(page);
-      font:8.5px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
-      color:#6a675f;
-    }
-  }
+  /* Page size only. Margins + the running footer are supplied by the build
+     script's Chromium print options (displayHeaderFooter + footerTemplate +
+     margin) — the reliable way to reserve footer space so it never collides
+     with body content. Keep these margins in sync with build-client-report.mjs. */
+  @page{ size:A4; }
 
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{
@@ -72,7 +68,10 @@
     margin:4px 0 4px;
     break-after:avoid;
   }
-  .section-head{margin:34px 0 14px;break-after:avoid}
+  .section-head{margin:34px 0 14px;break-after:avoid;break-inside:avoid}
+  /* Keep a section heading welded to the first block that follows it, so a
+     heading never orphans at the foot of a page. */
+  .section-head + *{break-before:avoid}
   .section-head .rule{
     height:2px;width:44px;margin-top:8px;border-radius:2px;
     background:linear-gradient(90deg,var(--gold-600),var(--gold-200));
@@ -181,6 +180,7 @@
     border:1px solid var(--hairline);border-radius:12px;
     background:var(--paper-warm);padding:12px 18px;
   }
+  .deltas:empty{display:none}          /* baseline run: no deltas → no empty box */
   .delta-row{
     display:flex;align-items:center;justify-content:space-between;gap:10px;
     padding:5px 0;font-size:12px;break-inside:avoid;
@@ -294,24 +294,6 @@
   .closing .kicker{color:var(--gold-400)}
   .closing p{font-size:12.5px;color:#f3ede0;margin-top:6px;max-width:64ch}
 
-  /* ------ running footer (repeats on every printed page) --------------- */
-  .run-footer{
-    display:flex;align-items:center;gap:7px;
-    font-size:8.5px;color:var(--muted);
-    border-top:1px solid var(--hairline);
-    padding-top:6px;
-  }
-  .run-footer img{height:11px;width:auto;display:block;opacity:.9}
-  .run-footer .sep{color:var(--gold-400);font-size:7px}
-  @media print{
-    .run-footer{
-      position:fixed;bottom:-13mm;left:0;width:100%;
-      background:transparent;
-    }
-  }
-  @media screen{
-    .run-footer{margin-top:56px}
-  }
 </style>
 </head>
 <body>
@@ -505,14 +487,6 @@
     </p>
   </div>
 </section>
-
-<!-- ============ Running footer (repeats on every printed page) ========= -->
-<div class="run-footer">
-  <img src="{{LOGO_DATA_URI}}" alt="">
-  <span>Confidential — prepared for Cash for Gold VA</span>
-  <span class="sep">◆</span>
-  <span>{{REPORT_DATE}}</span>
-</div>
 
 </body>
 </html>

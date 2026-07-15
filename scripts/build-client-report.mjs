@@ -20,9 +20,10 @@
  *   strengths: string[]
  *   nextSteps: string[]
  */
-import { readFileSync, writeFileSync, existsSync, mkdirSync, statSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, statSync, readdirSync, rmSync } from "node:fs";
 import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { execFileSync } from "node:child_process";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(__dirname, "..");
@@ -79,7 +80,11 @@ expandInline(
 );
 
 const baseline = data.progress?.baseline ?? data.meta?.baseline ?? false;
-expandInline("DELTA_ROW", baseline ? [] : data.progress?.deltas ?? []);
+const deltas = baseline ? [] : data.progress?.deltas ?? [];
+expandInline("DELTA_ROW", deltas);
+// No deltas (baseline / none supplied) → drop the now whitespace-only container
+// so no empty box prints (`:empty` won't match a div holding stray whitespace).
+if (!deltas.length) html = html.replace(/<div class="deltas">\s*<\/div>/, "");
 expandInline("STRENGTH", data.strengths ?? []);
 expandInline("NEXT_STEP", data.nextSteps ?? []);
 
@@ -150,6 +155,25 @@ for (let v = 2; existsSync(outPath); v++) {
   outPath = join(OUT_DIR, `Cash-For-Gold-Audit-Raporu-${date}-v${v}.pdf`);
 }
 
+// Page margins — MUST stay in sync with the template's @page note. The bottom
+// margin reserves space for the running footer (below), so it never collides
+// with body content; the top margin gives the body breathing room (no header).
+const MARGIN = { top: "16mm", bottom: "18mm", left: "15mm", right: "15mm" };
+
+// Running footer via Chromium's native mechanism (reliable, reserves space) —
+// NOT a position:fixed element (that one printed over the content). Chromium
+// zeroes footer font-size by default, so every style is inline.
+const footerTemplate = `
+  <div style="width:100%;box-sizing:border-box;padding:0 15mm;font-size:8px;
+              font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Arial,sans-serif;
+              color:#6a675f;display:flex;align-items:center;justify-content:space-between;">
+    <span style="display:flex;align-items:center;gap:5px;">
+      <img src="${logoDataUri}" style="height:9px;width:auto;opacity:.9;">
+      <span>Confidential &mdash; prepared for Cash for Gold VA</span>
+    </span>
+    <span>${esc(single.REPORT_DATE)} &nbsp;&#9670;&nbsp; Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
+  </div>`;
+
 const { chromium } = await import("playwright");
 const browser = await chromium.launch();
 try {
@@ -158,8 +182,12 @@ try {
   await page.emulateMedia({ media: "print" });
   await page.pdf({
     path: outPath,
+    format: "A4",
     printBackground: true,
-    preferCSSPageSize: true, // honor the template's @page size + margins
+    margin: MARGIN,
+    displayHeaderFooter: true,
+    headerTemplate: "<div></div>", // empty header; top margin above reserves space
+    footerTemplate,
   });
 } finally {
   await browser.close();
@@ -171,3 +199,28 @@ if (statSync(outPath).size < 5000) {
   process.exit(1);
 }
 console.log(`✓ Client report → ${outPath} (${kb} KB)`);
+
+// ---------------------------------------------------------------- visual QA (mandatory)
+// Rasterize EVERY page to PNG so the operator can visually inspect each one.
+// The PDF is NOT "done" until every page passes: no header/footer collisions,
+// no orphaned headings, no overflow, no near-empty pages, no broken cards.
+const qaDir = join(OUT_DIR, `.qa-${date}`);
+rmSync(qaDir, { recursive: true, force: true });
+mkdirSync(qaDir, { recursive: true });
+try {
+  execFileSync("pdftoppm", ["-png", "-r", "110", outPath, join(qaDir, "page")], { stdio: "pipe" });
+  const imgs = readdirSync(qaDir).filter((f) => f.endsWith(".png")).sort();
+  console.log(`\n· QA — rasterized ${imgs.length} page(s) for inspection → ${qaDir}`);
+  for (const f of imgs) console.log(`    ${join(qaDir, f)}`);
+  console.log(
+    "\n  ⚠ MANDATORY: open and visually inspect EVERY page image above before delivering.\n" +
+    "    Check each for: header/footer collisions, orphaned headings, overflowing text,\n" +
+    "    near-empty pages, and broken/split cards. Do NOT hand over an uninspected PDF."
+  );
+} catch {
+  console.warn(
+    "\n  ⚠ QA rasterization skipped — `pdftoppm` (poppler) not found.\n" +
+    "    Install it (`brew install poppler`) or screenshot each page with Playwright.\n" +
+    "    Do NOT deliver the PDF without inspecting every page."
+  );
+}

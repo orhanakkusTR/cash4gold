@@ -232,8 +232,17 @@ deliverable in **business language only** (see client-facing rule in Guardrails)
       findings per group; the exhaustive list stays in the internal MD report.
    2. **Render the PDF** — `node scripts/build-client-report.mjs <path-to-json>`.
       The script fills `references/client-report-template.html`, embeds the logo as
-      a data URI, and prints to A4 via Playwright Chromium.
-   3. **Confirm it landed** — verify the PDF exists in `Raporlar/` (non-zero size)
+      a data URI, prints to A4 via Playwright Chromium, and then rasterizes every
+      page to PNG under `Raporlar/.qa-<date>/` for inspection.
+   3. **Visual QA — MANDATORY, never skip.** Open and **look at every page image**
+      the script emitted (`Raporlar/.qa-<date>/page-*.png`). Inspect each page for:
+      running-footer/header collisions with body text, orphaned headings (a heading
+      alone at a page foot), overflowing or clipped text, near-empty pages, and
+      broken/split finding cards. **The PDF is NOT done until every page passes.**
+      If any page fails, fix the template/data and rebuild — do NOT hand over an
+      uninspected or failing PDF. (If `pdftoppm` is unavailable, screenshot each
+      page with Playwright instead — but inspect either way.)
+   4. **Confirm it landed** — verify the PDF exists in `Raporlar/` (non-zero size)
       and report its path. If a same-day file exists the script suffixes `-v2` etc.
       (never silently overwrites).
    `references/client-report.md` is the design spec behind the template (branding,
