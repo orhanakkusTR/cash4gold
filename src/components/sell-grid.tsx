@@ -4,9 +4,11 @@ import { ArrowUpRight } from "lucide-react";
 
 // "What can you sell?" catalog grid. Each card is a full-bleed square photo
 // with a short title + qualifier body underneath — same card language as
-// ProductGallery (image on top, hairline-divided body). The whole card links
-// to /locations. A few cards carry a "NEW" tag; the final card is a disabled
-// "coming soon" placeholder that keeps the grid rhythm.
+// ProductGallery (image on top, hairline-divided body). Each card links to its
+// matching service/category page (`href`), so a "Sell yours" click lands on the
+// relevant page instead of the generic /locations. A few cards carry a "NEW"
+// tag; the final card is a disabled "coming soon" placeholder that keeps the
+// grid rhythm.
 //
 // IMAGES: drop square images into /public/sell/ and set `image` on each item
 // (e.g. image: "/sell/gold-jewelry.webp"). While `image` is unset we render the
@@ -15,27 +17,28 @@ type SellItem = {
   title: string;
   desc: string;
   emoji: string;
+  href?: string; // matching deep page; omitted only for the coming-soon card
   image?: string;
   tag?: string;
   comingSoon?: boolean;
 };
 
 const ITEMS: SellItem[] = [
-  { title: "Gold Jewelry", desc: "All karats, any condition", emoji: "💍", image: "/sell/gold-jewelry.webp" },
-  { title: "Scrap Gold", desc: "Broken, bent, tangled", emoji: "🔧", image: "/sell/scrap-gold.webp" },
-  { title: "Silver Jewelry", desc: "Sterling .925 & above", emoji: "✨", image: "/sell/silver-jewelry.webp" },
-  { title: "Gold Coins", desc: "90% of spot", emoji: "🪙", image: "/sell/gold-coins.webp" },
-  { title: "Silver Coins", desc: "Junk silver & collectibles", emoji: "🥇", image: "/sell/silver-coins.webp" },
-  { title: "Bullion Bars", desc: "Gold 90% · Silver 85%", emoji: "🟨", image: "/sell/bullion-bars.webp" },
-  { title: "Diamonds", desc: "Certified, 1.5ct & above", emoji: "💎", image: "/sell/diamonds.webp" },
-  { title: "Rolex & Watches", desc: "Rolex, Omega, Cartier…", emoji: "⌚", image: "/sell/watches.webp" },
-  { title: "Platinum Jewelry", desc: "PT950, PT900 & above", emoji: "⬡", image: "/sell/platinum-jewelry.webp" },
-  { title: "Sterling Silver Sets", desc: "Flatware, tea sets & more", emoji: "🍴", image: "/sell/sterling-silver-sets.webp" },
-  { title: "Name Brand Jewelry", desc: "Tiffany, Cartier, Yurman…", emoji: "🏷️", image: "/sell/name-brand-jewelry.webp" },
-  { title: "Palladium", desc: "Rare metal, real value", emoji: "⚛️", tag: "NEW", image: "/sell/palladium.webp" },
-  { title: "Estate & Antique", desc: "Inherited & vintage pieces", emoji: "⏳", image: "/sell/estate-antique.webp" },
-  { title: "Dental Gold", desc: "Crowns, bridges, fillings", emoji: "🦷", tag: "NEW", image: "/sell/dental-gold.webp" },
-  { title: "Gold Filled / Plated", desc: "Know the difference", emoji: "🔍", tag: "NEW", image: "/sell/gold-filled-plated.webp" },
+  { title: "Gold Jewelry", desc: "All karats, any condition", emoji: "💍", href: "/jewelry/sell-gold-jewelry", image: "/sell/gold-jewelry.webp" },
+  { title: "Scrap Gold", desc: "Broken, bent, tangled", emoji: "🔧", href: "/jewelry/sell-your-scrap-gold-jewelry", image: "/sell/scrap-gold.webp" },
+  { title: "Silver Jewelry", desc: "Sterling .925 & above", emoji: "✨", href: "/jewelry/sell-silver-jewelry", image: "/sell/silver-jewelry.webp" },
+  { title: "Gold Coins", desc: "90% of spot", emoji: "🪙", href: "/coins/sell-gold-coins", image: "/sell/gold-coins.webp" },
+  { title: "Silver Coins", desc: "Junk silver & collectibles", emoji: "🥇", href: "/coins/sell-silver-coins", image: "/sell/silver-coins.webp" },
+  { title: "Bullion Bars", desc: "Gold 90% · Silver 85%", emoji: "🟨", href: "/precious-metals", image: "/sell/bullion-bars.webp" },
+  { title: "Diamonds", desc: "Certified, 1.5ct & above", emoji: "💎", href: "/precious-stones/sell-diamonds", image: "/sell/diamonds.webp" },
+  { title: "Rolex & Watches", desc: "Rolex, Omega, Cartier…", emoji: "⌚", href: "/watches/sell-rolex", image: "/sell/watches.webp" },
+  { title: "Platinum Jewelry", desc: "PT950, PT900 & above", emoji: "⬡", href: "/precious-metals/sell-platinum", image: "/sell/platinum-jewelry.webp" },
+  { title: "Sterling Silver Sets", desc: "Flatware, tea sets & more", emoji: "🍴", href: "/precious-metals/sell-sterling-silver-sets", image: "/sell/sterling-silver-sets.webp" },
+  { title: "Name Brand Jewelry", desc: "Tiffany, Cartier, Yurman…", emoji: "🏷️", href: "/jewelry/sell-designer-jewelry", image: "/sell/name-brand-jewelry.webp" },
+  { title: "Palladium", desc: "Rare metal, real value", emoji: "⚛️", tag: "NEW", href: "/precious-metals/sell-your-palladium", image: "/sell/palladium.webp" },
+  { title: "Estate & Antique", desc: "Inherited & vintage pieces", emoji: "⏳", href: "/jewelry/sell-your-estate-jewelry", image: "/sell/estate-antique.webp" },
+  { title: "Dental Gold", desc: "Crowns, bridges, fillings", emoji: "🦷", tag: "NEW", href: "/precious-metals/sell-dental-gold", image: "/sell/dental-gold.webp" },
+  { title: "Gold Filled / Plated", desc: "Know the difference", emoji: "🔍", tag: "NEW", href: "/precious-metals/sell-gold-filled-plated", image: "/sell/gold-filled-plated.webp" },
   { title: "Sell Online", desc: "Ship from home, get paid fast", emoji: "📦", image: "/sell/sell-online.webp", comingSoon: true },
 ];
 
@@ -108,8 +111,8 @@ function SellCard({ item }: { item: SellItem }) {
   }
   return (
     <Link
-      href="/locations"
-      aria-label={`Sell ${item.title} — find a location`}
+      href={item.href ?? "/locations"}
+      aria-label={`Sell ${item.title}`}
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-hairline bg-white shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:border-gold-300 hover:shadow-[var(--shadow-gold)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2"
     >
       <Thumb item={item} />
