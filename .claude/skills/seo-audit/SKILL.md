@@ -88,10 +88,17 @@ work-list:
    business" to Google. Fetch the raw HTML for at least: the **homepage**, one
    **coin item** page (`[category]/[sub]/[item]`), one **location** page, and one
    **city landing** page — via `next build && next start` + `curl`, or the
-   production URL. Against the rendered HTML (not the source) confirm: `<title>`,
-   canonical, JSON-LD blocks, and key visible text (counts, prices, NAP) render
-   correctly. Tag every finding's evidence as either `code-inspection` or
-   `rendered-output` so the two are never conflated.
+   production URL. **Fetch with a plain HTTP GET that does NOT execute JavaScript
+   (`curl`/`wget` — never a headless browser).** The goal is to validate the
+   *pre-hydration* HTML exactly as a crawler first sees it; a headless browser
+   runs the client JS and would mask SSR defects (the count-up would animate to
+   its final value on screen, hiding the `0` that shipped in the HTML). For that
+   same reason, **specifically verify the SSR initial values of every client-side
+   counter/animation/prop-driven component** — these are the classic source of
+   shipped-`0` (and shipped-placeholder) bugs. Against the rendered HTML (not the
+   source) confirm: `<title>`, canonical, JSON-LD blocks, and key visible text
+   (counts, prices, NAP) render correctly. Tag every finding's evidence as either
+   `code-inspection` or `rendered-output` so the two are never conflated.
    - **Don't eyeball it — diff it.** Eye-scanning rendered HTML for a stray `0`
      fails (a hardcoded "15 years" elsewhere on the page will fool you). Instead:
      `grep -rn "NumberTicker\|useSpring\|count-up\|animate" src/components` to
@@ -227,6 +234,11 @@ deliverable in **business language only** (see client-facing rule in Guardrails)
 ## Guardrails
 
 - **Read-only.** Never edit code mid-audit. Findings → approval → separate fix pass.
+- **Scope: security is OUT of scope.** This is an SEO + content/quality/architecture
+  audit — it does NOT cover security (TLS/HTTPS config, secrets management, auth,
+  dependency CVEs, security headers). State this exclusion explicitly in the
+  report's **Method & caveats** section so the absence of security findings is
+  never read as a clean security bill of health.
 - **No fabricated metrics.** If you can't measure CWV/traffic locally, say the
   finding is a *risk from code inspection*, not a measured number. (Honesty rule.)
 - **Client-facing rule (STRICT — applies to the `Raporlar/` PDF and anything

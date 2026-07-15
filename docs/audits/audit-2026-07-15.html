@@ -95,7 +95,7 @@
     </div>
     <div>
       <p><b>Well-built foundation, three concentrated problem areas.</b> Clean canonicals, a disciplined redirect map, honest noindexing and strong SSG performance — undercut by one conversion-breaking bug, a thin/scraped coin surface, and weak E-E-A-T &amp; measurement trust.</p>
-      <p><span class="pill p0">2 Critical</span> <span class="pill p1">14 High-impact</span> <span class="pill p2">25 Enhancements</span> <span class="pill base">Baseline — no prior run</span></p>
+      <p><span class="pill p0">2 Critical</span> <span class="pill p1">14 High-impact</span> <span class="pill p2">26 Enhancements</span> <span class="pill base">Baseline — no prior run</span></p>
       <p class="note">Highest-leverage next action: fix the one-line <code>tel:</code> bug — it restores the primary call action on every coin page.</p>
     </div>
   </section>
@@ -133,7 +133,7 @@
   <h2 class="sec">P1 — High-impact (14)</h2>
   <div id="p1"></div>
 
-  <h2 class="sec">P2 — Enhancements (25)</h2>
+  <h2 class="sec">P2 — Enhancements (26)</h2>
   <details class="p2list">
     <summary>Show all 25 enhancements</summary>
     <table>
@@ -226,7 +226,8 @@ const p2=[
  ["CWV","Homepage Hero all “use client” for one decorative seal","hero.tsx:1,6"],
  ["CWV","Unused 7.2 MB video shipped; 4.8 MB MP4 heavy","public/videos/"],
  ["E-E-A-T","No outbound citations in blog; founding date inconsistent","blog.ts; about/page.tsx:17,150"],
- ["Technical","/contact uses 307 not 301; no ItemList schema on coin pages","contact/page.tsx:5; [item]/page.tsx:420"]];
+ ["Technical","/contact uses 307 not 301; no ItemList schema on coin pages","contact/page.tsx:5; [item]/page.tsx:420"],
+ ["Technical (off-page)","GSC index still shows 2017-dated legacy WordPress content — submit manual GSC re-indexing requests for critical old URLs","GSC: old /home/…, /category/… entries"]];
 document.getElementById("p2body").innerHTML=p2.map(([d,t,w])=>
  `<tr><td>${d}</td><td>${t}</td><td><code>${w}</code></td></tr>`).join("");
 </script>
