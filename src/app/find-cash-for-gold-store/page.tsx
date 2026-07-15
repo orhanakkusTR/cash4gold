@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { StoreFinder } from "@/components/store-finder";
 import { RotatingWord } from "@/components/rotating-word";
 
-// TEST PAGE — a location-search concept. Kept out of the sitemap (not listed in
-// sitemap.ts) and noindex'd so it doesn't get discovered/indexed while we trial
-// the idea. Not linked from nav. Delete or promote once the concept is decided.
+// Store-finder: enter a city/neighborhood/ZIP to get the nearest of our 4
+// Northern Virginia stores. Indexable (promoted from its test phase) and listed
+// in sitemap.ts — targets "cash for gold store near me" intent.
 export const metadata: Metadata = {
-  title: "Find Your Nearest Store",
-  robots: { index: false, follow: false },
+  title: "Find a Cash for Gold Store Near You in Northern Virginia",
+  description:
+    "Find your nearest Cash for Gold VA store — enter your city, neighborhood, or ZIP to get directions, hours, and the phone number for the closest of our 4 Northern Virginia locations.",
   alternates: { canonical: "/find-cash-for-gold-store" },
 };
 

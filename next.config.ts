@@ -162,6 +162,10 @@ const nextConfig: NextConfig = {
       // are intentionally left to 404.
       { source: "/home/sell-my-gold-and-silver-bullion-bank-chantilly-va-2", destination: "/locations/chantilly", permanent: true },
       { source: "/home/sell-my-gold-and-silver-bullion-bank-chantilly-va-2/feed", destination: "/locations/chantilly", permanent: true },
+      // More genuine legacy content pages from the 404 report → closest live page.
+      { source: "/we-buy-1-oz-american-gold-eagle-coins/1oz-american-gold-eagle-front", destination: "/coins/sell-gold-coins/american-gold-eagle", permanent: true },
+      { source: "/home/sell-used-rolex-luxury-watches-near-me-2", destination: "/watches/sell-rolex", permanent: true },
+      { source: "/home/sell-silver-coins-jewelry-near-me", destination: "/coins/sell-silver-coins", permanent: true },
       // GSC truncates the slug at "…-gold-c"; wildcard covers the full slug
       // (…coins / …cash / etc.).
       { source: "/we-pay-90-for-gold-:slug", destination: "/precious-metals/sell-gold", permanent: true },

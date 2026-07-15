@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     "", "/what-we-buy", ...(SHOW_CALCULATOR ? ["/gold-calculator"] : []), "/locations", "/about",
-    "/contact-us-cash-for-gold-locations", "/blog",
+    "/contact-us-cash-for-gold-locations", "/blog", "/find-cash-for-gold-store",
   ].map((p) => ({
     url: `${base}${p}`,
     lastModified: lastUpdated,
