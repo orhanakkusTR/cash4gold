@@ -59,6 +59,17 @@ export function NumberTicker({
     [springValue, decimalPlaces]
   )
 
+  // Server-render the FINAL resting value (not startValue), so crawlers and
+  // no-JS users see the real number instead of "0" — e.g. "0 Years in business"
+  // shipped to Google. On hydration the spring resets to startValue and animates
+  // up; the change handler above overwrites textContent, so the count-up still
+  // plays for JS users.
+  const restingValue = direction === "down" ? startValue : value
+  const formatted = Intl.NumberFormat("en-US", {
+    minimumFractionDigits: decimalPlaces,
+    maximumFractionDigits: decimalPlaces,
+  }).format(restingValue)
+
   return (
     <span
       ref={ref}
@@ -68,7 +79,7 @@ export function NumberTicker({
       )}
       {...props}
     >
-      {startValue}
+      {formatted}
     </span>
   )
 }
