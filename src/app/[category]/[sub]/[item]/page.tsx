@@ -25,6 +25,7 @@ import { MEXICAN_SILVER_LIBERTADS } from "@/data/mexican-silver-libertads";
 import { SILVER_KRUGERRANDS } from "@/data/silver-krugerrands";
 import { ATB_SILVER_COINS } from "@/data/atb-silver-coins";
 import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { getSubcategory } from "@/data/business";
 
 // Third-level "item" pages: a specific coin type under a subcategory, e.g.
 // /coins/sell-gold-coins/american-gold-eagle. Only the keys registered below
@@ -422,12 +423,16 @@ export default async function ItemPage({
   const page = ITEM_PAGES[key(category, sub, item)];
   if (!page) notFound();
 
+  // Parent crumb label from data — "Gold Coins" was hardcoded, mislabeling the
+  // 11 silver pages (visible breadcrumb AND BreadcrumbList schema).
+  const parentCrumb = getSubcategory(category, sub)?.name ?? "Coins";
+
   return (
     <>
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "/" },
-          { name: "Gold Coins", url: `/${category}/${sub}` },
+          { name: parentCrumb, url: `/${category}/${sub}` },
           { name: page.crumb, url: `/${category}/${sub}/${item}` },
         ]}
       />
@@ -435,7 +440,7 @@ export default async function ItemPage({
         eyebrow={page.eyebrow}
         crumbs={[
           { name: "Home", href: "/" },
-          { name: "Gold Coins", href: `/${category}/${sub}` },
+          { name: parentCrumb, href: `/${category}/${sub}` },
           { name: page.crumb, href: `/${category}/${sub}/${item}` },
         ]}
         title={page.title}
