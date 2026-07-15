@@ -43,3 +43,7 @@ next-env.d.ts
 # iCloud/Dropbox sync duplicates ("… 2.ext", "… 3.ext") — never our files
 * [0-9].*
 * [0-9]
+
+# client-facing audit deliverables (PDFs + logo) — local-only, shared directly
+# with the client, never version-controlled
+/Raporlar/

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cash for Gold VA — Site &amp; System Audit · 2026-07-15</title>
+<style>
+  :root{
+    --gold:#c99a1f; --gold-bright:#e8b93e; --ink:#141414; --ink-2:#1f1f1f;
+    --paper:#faf8f4; --card:#ffffff; --line:#e7e1d5; --muted:#6b6b6b;
+    --p0:#c0392b; --p1:#d98324; --p2:#7a8a3a; --ok:#2e7d55;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#131211; --card:#1c1a17; --line:#302c25; --ink:#f3ede0; --ink-2:#f3ede0; --muted:#a49d8e; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:var(--paper);color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:32px 20px 80px}
+  header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:2px solid var(--gold);padding-bottom:20px;margin-bottom:28px}
+  .brand{font-weight:800;letter-spacing:.06em;font-size:13px;color:var(--gold);text-transform:uppercase}
+  h1{font-size:26px;margin:6px 0 2px;font-weight:800}
+  .sub{color:var(--muted);font-size:14px}
+  .meta{font-size:13px;color:var(--muted);text-align:right;line-height:1.7}
+  .meta b{color:var(--ink)}
+  /* score hero */
+  .hero{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:28px}
+  .gauge{position:relative;width:180px;height:180px;margin:auto}
+  .gauge svg{transform:rotate(-90deg)}
+  .gauge .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .gauge .num b{font-size:44px;font-weight:800;line-height:1}
+  .gauge .num span{font-size:12px;color:var(--muted)}
+  .hero p{margin:0 0 10px}
+  .pill{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;margin-right:6px}
+  .pill.p0{background:color-mix(in srgb,var(--p0) 16%,transparent);color:var(--p0)}
+  .pill.p1{background:color-mix(in srgb,var(--p1) 18%,transparent);color:var(--p1)}
+  .pill.p2{background:color-mix(in srgb,var(--p2) 20%,transparent);color:var(--p2)}
+  .pill.base{background:color-mix(in srgb,var(--muted) 18%,transparent);color:var(--muted)}
+  h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin:34px 0 14px;font-weight:800}
+  /* snapshot cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .stat b{font-size:24px;font-weight:800;display:block}
+  .stat small{color:var(--muted);font-size:12px}
+  .stat.warn{border-color:color-mix(in srgb,var(--p1) 50%,var(--line))}
+  /* scorecard bars */
+  .bars{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .bar{display:grid;grid-template-columns:150px 1fr 40px;align-items:center;gap:12px;margin:9px 0}
+  .bar .lbl{font-size:13px}
+  .track{height:9px;border-radius:99px;background:color-mix(in srgb,var(--muted) 18%,transparent);overflow:hidden}
+  .fill{height:100%;border-radius:99px}
+  .bar .val{font-size:13px;font-weight:700;text-align:right}
+  /* findings */
+  .find{background:var(--card);border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:14px 16px;margin:10px 0}
+  .find.p0{border-left-color:var(--p0)} .find.p1{border-left-color:var(--p1)} .find.p2{border-left-color:var(--p2)}
+  .find h3{margin:0 0 6px;font-size:15px}
+  .find .tag{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+  .find code{background:color-mix(in srgb,var(--muted) 14%,transparent);padding:1px 5px;border-radius:4px;font-size:12px}
+  .find .row{font-size:13.5px;margin:4px 0;color:var(--ink)}
+  .find .row b{color:var(--muted);font-weight:700}
+  details.p2list{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 18px}
+  details.p2list summary{cursor:pointer;font-weight:700;padding:10px 0}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+  .healthy{background:color-mix(in srgb,var(--ok) 8%,var(--card));border:1px solid color-mix(in srgb,var(--ok) 30%,var(--line));border-radius:12px;padding:16px 20px;font-size:14px}
+  .healthy li{margin:5px 0}
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+  .note{font-size:12px;color:var(--muted);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div>
+      <div class="brand">Cash for Gold VA</div>
+      <h1>Site &amp; System Audit</h1>
+      <div class="sub">Full SEO + System · Baseline run</div>
+    </div>
+    <div class="meta">
+      <div><b>Date</b> 2026-07-15</div>
+      <div><b>Commit</b> 34f7377</div>
+      <div><b>Pages</b> 99 indexable</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="gauge">
+      <svg width="180" height="180" viewBox="0 0 180 180">
+        <circle cx="90" cy="90" r="76" fill="none" stroke="color-mix(in srgb,var(--muted) 18%,transparent)" stroke-width="14"/>
+        <circle cx="90" cy="90" r="76" fill="none" stroke="var(--gold)" stroke-width="14" stroke-linecap="round"
+          stroke-dasharray="477.5" stroke-dashoffset="176.7"/>
+      </svg>
+      <div class="num"><b>63</b><span>/ 100</span></div>
+    </div>
+    <div>
+      <p><b>Well-built foundation, three concentrated problem areas.</b> Clean canonicals, a disciplined redirect map, honest noindexing and strong SSG performance — undercut by one conversion-breaking bug, a thin/scraped coin surface, and weak E-E-A-T &amp; measurement trust.</p>
+      <p><span class="pill p0">2 Critical</span> <span class="pill p1">14 High-impact</span> <span class="pill p2">25 Enhancements</span> <span class="pill base">Baseline — no prior run</span></p>
+      <p class="note">Highest-leverage next action: fix the one-line <code>tel:</code> bug — it restores the primary call action on every coin page.</p>
+    </div>
+  </section>
+
+  <h2 class="sec">Site Health Snapshot</h2>
+  <div class="grid">
+    <div class="stat"><b>99</b><small>Indexable pages</small></div>
+    <div class="stat warn"><b>78 / 99</b><small>In sitemap — 21 coin pages missing</small></div>
+    <div class="stat"><b>100%</b><small>Metadata &amp; canonical coverage</small></div>
+    <div class="stat"><b>110</b><small>Redirect rules (all resolve)</small></div>
+    <div class="stat"><b>21</b><small>City landings (rich, unique)</small></div>
+    <div class="stat"><b>Next 16.2.9</b><small>React 19 · Tailwind v4 · SSG</small></div>
+  </div>
+  <p class="note">Rendered-output spot-checks (Googlebot UA): /locations/annandale &amp; /cash-for-gold-alexandria clean; homepage ⚠️ ships "0 Locations" / "0+ Years in business" via NumberTicker (see P0-2). Build bundle sizes not measured this run.</p>
+
+  <h2 class="sec">Scorecard — by dimension</h2>
+  <div class="bars" id="bars"></div>
+
+  <h2 class="sec">P0 — Fix now (2)</h2>
+  <div class="find p0">
+    <div class="tag">Technical · Code health · Analytics · VERIFIED</div>
+    <h3>Phone CTA on all coin listing pages is a broken relative link (404 + untracked)</h3>
+    <div class="row"><b>Evidence:</b> <code>coin-listing-grid.tsx:83</code> — <code>href={PRIMARY_PHONE_HREF}</code> where the value is bare <code>"+15712245279"</code> (no <code>tel:</code>). Every other component wraps it.</div>
+    <div class="row"><b>Impact:</b> Browser resolves it as a relative URL → <code>/coins/…/+15712245279</code> → 404. Primary call action dead on the coin matrix, re-pollutes the GSC 404 report, and no phone conversion ever fires (tracking only counts <code>tel:</code> hrefs).</div>
+    <div class="row"><b>Fix:</b> <code>href={`tel:${PRIMARY_PHONE_HREF}`}</code> · <b>Effort:</b> S</div>
+  </div>
+  <div class="find p0">
+    <div class="tag">E-E-A-T · Core Web Vitals · Content · VERIFIED (rendered-output)</div>
+    <h3>Homepage ships “0 Locations” and “0+ Years in business” to crawlers</h3>
+    <div class="row"><b>Evidence:</b> <code>ui/number-ticker.tsx:71</code> SSRs <code>{startValue}</code> (=0); real value written client-side only after hydration. Used at <code>trust-stats.tsx:51</code> (values 4 &amp; 15). Live Googlebot-UA HTML shows <code>&lt;span…&gt;0&lt;/span&gt;</code> for both stats.</div>
+    <div class="row"><b>Impact:</b> Google / AI crawlers / no-JS see “0 Years in business” &amp; “0 Locations” on the most important page of a trust-driven business — the opposite of the intended signal, a direct E-E-A-T hit. (Hero’s hardcoded “15 years” &amp; “500+/4.9★” text render fine — only the animated stat block.)</div>
+    <div class="row"><b>Fix:</b> SSR the real <code>value</code> in number-ticker (spring still animates on hydration); add a rendered-HTML deploy assertion · <b>Effort:</b> S</div>
+  </div>
+
+  <h2 class="sec">P1 — High-impact (14)</h2>
+  <div id="p1"></div>
+
+  <h2 class="sec">P2 — Enhancements (25)</h2>
+  <details class="p2list">
+    <summary>Show all 25 enhancements</summary>
+    <table>
+      <thead><tr><th>Dimension</th><th>Finding</th><th>Where</th></tr></thead>
+      <tbody id="p2body"></tbody>
+    </table>
+  </details>
+
+  <h2 class="sec">What's healthy — don't re-discover</h2>
+  <div class="healthy">
+    <ul>
+      <li><b>Canonicals</b> 100% correct &amp; self-referencing · <b>robots.ts</b> clean · <b>110 redirects</b> all resolve, no chains</li>
+      <li><b>Rendered output</b> — correct titles/canonicals/JSON-LD, no fire-on-render conversions, no PII in tracking/URLs <i>(exception: NumberTicker SSRs 0 — P0-2)</i></li>
+      <li><b>21 city landings</b> genuinely rich &amp; unique — the differentiation model working</li>
+      <li><b>CWV foundation</b> static-first, next/image everywhere, heavy UI tree-shaken, deliberate LCP engineering</li>
+      <li><b>Consent Mode v2</b> correct ordering + EEA defaults · <b>Motion a11y</b> reduced-motion respected</li>
+      <li><b>NAP in components</b> sourced from business.ts, consistent across all 4 stores</li>
+    </ul>
+  </div>
+
+  <h2 class="sec">Recommended fix order</h2>
+  <div class="bars">
+    <div class="row" style="font-size:14px;margin:6px 0"><b style="color:var(--gold)">1 · Ship today</b> — tel: fix (P0-1), NumberTicker SSR fix (P0-2), item pages → sitemap, breadcrumb from data, drop Organization aggregateRating, electronics/calculator copy. All small, high impact.</div>
+    <div class="row" style="font-size:14px;margin:6px 0"><b style="color:var(--gold)">2 · Trust &amp; measurement</b> — rewrite privacy policy (legal review), harden /api/track, fix analytics attribution + GA4 events, add appraiser bios + permits.</div>
+    <div class="row" style="font-size:14px;margin:6px 0"><b style="color:var(--gold)">3 · Content depth</b> — coin-page unique blocks + own imagery, location-page sections, de-duplicate FAQ from briefs.</div>
+    <div class="row" style="font-size:14px;margin:6px 0"><b style="color:var(--gold)">4 · Cannibalization</b> — NoVA 301 + retitles, Vienna / coin-hub family.</div>
+    <div class="row" style="font-size:14px;margin:6px 0"><b style="color:var(--gold)">5 · Accessibility gate</b> — 4 AA blockers before further launch push.</div>
+    <div class="row" style="font-size:14px;margin:6px 0"><b style="color:var(--gold)">6 · Performance</b> — landing hero CSS-only reveal, ticker deferral, asset cleanup.</div>
+  </div>
+
+  <footer>
+    Read-only audit · 11 dimensions, full mode · all findings code-inspection unless tagged rendered-output/SERP.
+    Field Core Web Vitals and build bundle sizes not measured (build not run). Internal companion: <code>docs/audits/audit-2026-07-15.md</code>.
+    Client PDF skipped — corporate template pending.
+  </footer>
+
+</div>
+
+<script>
+const scores=[
+ ["Technical SEO",68],["Metadata",72],["Keywords/Semantic",68],["Cannibalization",58],
+ ["Local SEO / NAP",70],["E-E-A-T",50],["Content quality",55],["Accessibility",62],
+ ["Core Web Vitals",74],["Analytics",55],["Code health",72]];
+const col=s=> s>=70?"var(--ok)": s>=55?"var(--p1)":"var(--p0)";
+document.getElementById("bars").innerHTML=scores.map(([n,s])=>
+ `<div class="bar"><div class="lbl">${n}</div><div class="track"><div class="fill" style="width:${s}%;background:${col(s)}"></div></div><div class="val">${s}</div></div>`).join("");
+
+const p1=[
+ ["Technical · Code health","21 indexable coin item pages missing from sitemap.xml","sitemap.ts:61","Move ITEM_PAGES keys to a shared data module; append to sitemap.","VERIFIED"],
+ ["Technical · Metadata · Content","Breadcrumb hardcodes “Gold Coins” — wrong on 11 silver pages (visible + JSON-LD)","[item]/page.tsx:425,433","Derive crumb from getSubcategory(category,sub).name.","VERIFIED · 4 lanes"],
+ ["E-E-A-T · Local","Self-serving, duplicated AggregateRating across 5 entities","json-ld.tsx:33-36, 82-87","Remove from Organization; per-store real numbers only. Keep visible badges.","VERIFIED"],
+ ["E-E-A-T (Trust)","Privacy policy misdescribes data collection (VCDPA)","privacy/page.tsx:24-26","Disclose pixels/analytics/embeds/retention. Legal review.",""],
+ ["Content · E-E-A-T","21 coin pages: thin content + scraped JMBullion imagery/branding","[item]/page.tsx:429-444; american-gold-eagle.ts:1-3","Unique “How we price” block + own photos; strip competitor tokens.",""],
+ ["Cannibalization","Flagship NoVA landing invisible for its own head term","blog.ts:369; city-landings.ts:46","301 blog → landing; retitle hubs by intent.","SERP"],
+ ["Keywords/Semantic","The 4 store pages are the thinnest in the local cluster","locations/[city]/page.tsx:60","Add per-store unique 150–300-word section from data.","SERP"],
+ ["E-E-A-T","No named appraisers / credentials anywhere (biggest E-E-A-T gap)","blog.ts:22; json-ld.tsx:147","Add “Meet your appraisers” + Person bylines.",""],
+ ["E-E-A-T","“Licensed &amp; Insured” unverifiable; badges unlinked; GIA miscategorized","about/page.tsx:27; credentials-strip.tsx:10-16","Publish permit specifics; link/reword badges.",""],
+ ["Analytics","/api/track is an open write endpoint (no bot filter/dedupe/rate limit)","api/track/route.ts:23-49","Bot UA filter, same-origin, rate limit, store hashed IP/UA.",""],
+ ["Analytics","Misattribution + gaps: review clicks→“directions”; GA4 gets only page_view; phantom quote conversion","analytics.tsx:83; google-analytics.tsx:21","Exclude review URLs; mirror events to gtag; ship or drop quote form.",""],
+ ["Accessibility","4 AA blockers: eyebrow 2.78:1, focus ring 1.78:1, nav mouse-only, mobile drawer not a dialog","section-heading.tsx:22; ui/button.tsx:9; header.tsx:92,188","gold-700 tokens; APG disclosure nav; real dialog semantics.",""],
+ ["Core Web Vitals","Landing hero H1 SSR’d opacity:0 (LCP gated on JS); ticker 4 fetches + 1Hz re-render every page","city-landing.tsx:134; live-price-ticker.tsx:36-78","CSS-only hero-rise above fold; defer ticker to idle, 15–30s.","risk"],
+ ["Keywords · Content","Templated FAQ block duplicated across ~25 pages (with FAQPage schema)","[category]/page.tsx:86; [sub]/page.tsx:68","Generate answers from unique category-briefs; add specific Qs.",""]];
+document.getElementById("p1").innerHTML=p1.map(([tag,t,ev,fix,src])=>
+ `<div class="find p1"><div class="tag">${tag}${src?` · ${src}`:""}</div><h3>${t}</h3>`+
+ `<div class="row"><b>Where:</b> <code>${ev}</code></div>`+
+ `<div class="row"><b>Fix:</b> ${fix}</div></div>`).join("");
+
+const p2=[
+ ["Metadata","Subcategory descriptions 185–210 chars (truncate)","[sub]/page.tsx:62"],
+ ["Metadata","Location titles 67–70 chars, “Cash | Cash” + double-comma","locations/[city]/page.tsx:24"],
+ ["Metadata","Location pages inherit homepage OG (og:url=home)","locations/[city]/page.tsx:25-29"],
+ ["Metadata","Root title 69 chars; 5 coin titles 68–76","layout.tsx:32; [item]/page.tsx:329"],
+ ["Keywords","“we buy electronics” on 4 landings + 1 blog (discontinued)","city-landings.ts:126,1080,1141,1271"],
+ ["Keywords","Copy references gold calculator that’s flagged off","business.ts:262,343,356"],
+ ["Content","“All coins” pages are unions with no unique content","all-gold-coins.ts"],
+ ["Content","Coin data cross-contamination + literal &amp;quot;","american-gold-eagle.ts:297,339"],
+ ["Content","Hardcoded “Coins are just the start” on non-coin pages","[category]/page.tsx:339"],
+ ["Local/NAP","Full NAP hardcoded ~30× in landing/blog copy (drift risk)","city-landings.ts; blog.ts"],
+ ["Code health","Coin count values hand-maintained (drift after scrape)","business.ts:537-572"],
+ ["Code health","Dead components (google-reviews, review-source-logo)","0 imports"],
+ ["Code health","Rating “4.9/500+” hardcoded in ~7 places vs SITE.rating","nova-landing.tsx:72 etc."],
+ ["Code health","[category] triple-dispatcher has no slug-collision guard","[category]/page.tsx:42-48"],
+ ["Code health","/privacy, /terms indexable but not in sitemap","sitemap.ts:14-17"],
+ ["Analytics","OpenAI pixel not consent-gated; no GPC","layout.tsx:125-127"],
+ ["Analytics","No dedupe → repeat tel: taps double-count","analytics.tsx:69-113"],
+ ["Analytics","GA4 tracks /admin-adam pageviews","google-analytics.tsx:19"],
+ ["a11y","Marquee repeats not aria-hidden; no keyboard pause","ui/marquee.tsx:57-71"],
+ ["a11y","No skip link; dynamic results not announced","layout.tsx:132; store-finder.tsx"],
+ ["a11y","Link hover gold-600 drops below AA","blog-article.tsx:91 etc."],
+ ["CWV","Homepage Hero all “use client” for one decorative seal","hero.tsx:1,6"],
+ ["CWV","Unused 7.2 MB video shipped; 4.8 MB MP4 heavy","public/videos/"],
+ ["E-E-A-T","No outbound citations in blog; founding date inconsistent","blog.ts; about/page.tsx:17,150"],
+ ["Technical","/contact uses 307 not 301; no ItemList schema on coin pages","contact/page.tsx:5; [item]/page.tsx:420"]];
+document.getElementById("p2body").innerHTML=p2.map(([d,t,w])=>
+ `<tr><td>${d}</td><td>${t}</td><td><code>${w}</code></td></tr>`).join("");
+</script>
+</body>
+</html>
