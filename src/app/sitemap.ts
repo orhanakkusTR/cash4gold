@@ -69,5 +69,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...subcategoryPages, ...locationPages, ...cityLandingPages, ...coinItemPages, ...blogPages];
+  // Legal pages — indexable but low priority. /privacy is counsel-approved and
+  // indexable; /terms stays noindex, so it is intentionally omitted.
+  const legalPages = [
+    { url: `${base}/privacy`, lastModified: lastUpdated, changeFrequency: "yearly" as const, priority: 0.3 },
+  ];
+
+  return [...staticPages, ...categoryPages, ...subcategoryPages, ...locationPages, ...cityLandingPages, ...coinItemPages, ...blogPages, ...legalPages];
 }

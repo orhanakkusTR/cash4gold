@@ -6,16 +6,12 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Cash for Gold VA collects, uses, shares, and protects your information, and your privacy rights.",
   alternates: { canonical: "/privacy" },
-  robots: { index: false, follow: true },
 };
 
-// DRAFT — pending legal review. This rewrite describes the site's ACTUAL data
-// practices (Google Analytics/Ads with Consent Mode, OpenAI advertising pixel,
-// first-party click analytics in our own database, Google Maps embeds, cookies).
-// Owner decisions have been filled in per direction (effective date = deploy day,
-// 24-month retention, info@ data-request contact with email/phone verification).
-// TODO: after counsel approves the wording, remove `robots.index:false` below so
-// the policy is indexable.
+// Approved by counsel 2026-07-15 and now indexable (noindex removed). Describes
+// the site's actual data practices: Google Analytics/Ads with Consent Mode, the
+// OpenAI advertising pixel, first-party click analytics in our own database,
+// Google Maps embeds, and cookies.
 export default function PrivacyPage() {
   return (
     <>
