@@ -79,11 +79,11 @@ export function OrganizationJsonLd() {
         url: SITE.domain,
         logo: `${SITE.domain}/brand/logo.png`,
         sameAs: Object.values(SITE.social),
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: SITE.rating.value,
-          reviewCount: SITE.rating.count,
-        },
+        // No aggregateRating here: Google's review-snippet policy disallows
+        // self-serving Organization-level ratings, and these are Google/GBP
+        // numbers (not first-party), so the markup is ineligible and risks a
+        // structured-data flag. The visible 4.9★ badge (linking to Google)
+        // stays — that's legitimate display, not markup.
       }}
     />
   );
