@@ -123,7 +123,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "What else do you buy besides gold and silver?",
-        a: "Across all four Northern Virginia stores we buy platinum and palladium, diamonds and precious stones, fine and designer jewelry (Tiffany, Cartier, David Yurman, and similar), luxury watches including Rolex, coins from junk silver to collectible and bullion, and electronics. If you're unsure whether something qualifies, bring it in — the appraisal is free.",
+        a: "Across all four Northern Virginia stores we buy platinum and palladium, diamonds and precious stones, fine and designer jewelry (Tiffany, Cartier, David Yurman, and similar), luxury watches including Rolex, coins from junk silver to collectible and bullion. If you're unsure whether something qualifies, bring it in — the appraisal is free.",
       },
     ],
     relatedPosts: ["cash-for-gold-nova-falls-church-va", "we-buy-estate-gold-jewelry", "we-pay-90-percent-for-gold-coins"],
@@ -1077,7 +1077,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Do you buy silver, coins, and things besides gold?",
-        a: "Yes. Beyond gold in all karats, we buy sterling silver jewelry, flatware and tea sets, silver bars and rounds, pre-1965 US 90% junk silver coins, platinum and palladium, diamonds and precious stones, fine and designer jewelry, luxury watches, coins from bullion to collectible, and electronics. If you're not sure whether something qualifies, bring it along — the appraisal costs nothing.",
+        a: "Yes. Beyond gold in all karats, we buy sterling silver jewelry, flatware and tea sets, silver bars and rounds, pre-1965 US 90% junk silver coins, platinum and palladium, diamonds and precious stones, fine and designer jewelry, luxury watches, coins from bullion to collectible. If you're not sure whether something qualifies, bring it along — the appraisal costs nothing.",
       },
       {
         q: "Do I get paid on the spot?",
@@ -1138,7 +1138,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Do you buy silver, coins, and estate jewelry from Lincolnia sellers?",
-        a: "Yes — estate items are a big part of what Lincolnia brings us. We buy gold in all karats (scrap, jewelry, coins, bullion), sterling silver jewelry and flatware or tea sets, silver bars, rounds, and pre-1965 junk silver coins, plus platinum, palladium, diamonds and precious stones, fine and designer jewelry, luxury watches, and electronics. Bring the whole box as-is — we test and quote each piece separately, so real gold gets separated from plated on the spot.",
+        a: "Yes — estate items are a big part of what Lincolnia brings us. We buy gold in all karats (scrap, jewelry, coins, bullion), sterling silver jewelry and flatware or tea sets, silver bars, rounds, and pre-1965 junk silver coins, plus platinum, palladium, diamonds and precious stones, fine and designer jewelry, luxury watches. Bring the whole box as-is — we test and quote each piece separately, so real gold gets separated from plated on the spot.",
       },
       {
         q: "How is my gold valued?",
@@ -1268,7 +1268,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Do you buy silver, coins, and things besides gold from Sterling sellers?",
-        a: "Yes. Beyond gold in all karats — scrap, jewelry, coins, and bullion — we buy sterling silver jewelry, flatware and tea sets, silver bars and rounds, and pre-1965 US 90% junk silver coins, plus platinum and palladium, diamonds and precious stones, fine and designer jewelry, luxury watches, and electronics. Collectible coins are appraised individually, since dates and condition can beat the metal value — so don't clean them, and bring any paperwork you have.",
+        a: "Yes. Beyond gold in all karats — scrap, jewelry, coins, and bullion — we buy sterling silver jewelry, flatware and tea sets, silver bars and rounds, and pre-1965 US 90% junk silver coins, plus platinum and palladium, diamonds and precious stones, fine and designer jewelry, luxury watches. Collectible coins are appraised individually, since dates and condition can beat the metal value — so don't clean them, and bring any paperwork you have.",
       },
       {
         q: "How do you decide what my gold is worth?",
