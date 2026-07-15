@@ -1,6 +1,7 @@
-import { Star } from "lucide-react";
+import Image from "next/image";
+import { Star, BadgeCheck } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
-import { ReviewSourceLogo } from "@/components/review-source-logo";
+import { GoogleG } from "@/components/google-rating";
 import { TESTIMONIALS, type Testimonial } from "@/data/business";
 
 function ReviewCard({ t }: { t: Testimonial }) {
@@ -12,12 +13,26 @@ function ReviewCard({ t }: { t: Testimonial }) {
         ))}
       </div>
       <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-foreground/90">“{t.text}”</blockquote>
-      <figcaption className="mt-4 flex items-center gap-3 border-t border-hairline pt-3">
-        <ReviewSourceLogo source={t.source} className="h-7 w-7 shrink-0" />
+      <figcaption className="mt-4 flex items-center justify-between gap-3 border-t border-hairline pt-3">
         <span className="min-w-0">
-          <span className="block font-semibold text-foreground">{t.name}</span>
-          <span className="block text-xs text-muted">
-            {t.location} · via {t.source === "google" ? "Google" : t.source === "yelp" ? "Yelp" : "Facebook"}
+          <span className="block truncate font-semibold text-foreground">{t.name}</span>
+          <span className="mt-0.5 inline-flex items-center gap-1 text-xs text-muted">
+            <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-green-600" strokeWidth={2.5} />
+            Verified Google review
+          </span>
+        </span>
+        {/* Reviewer's Google profile photo, with a small Google badge */}
+        <span className="relative shrink-0">
+          <Image
+            src={t.avatar}
+            alt={t.name}
+            width={40}
+            height={40}
+            quality={75}
+            className="h-10 w-10 rounded-full object-cover ring-1 ring-hairline"
+          />
+          <span className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-white ring-1 ring-hairline">
+            <GoogleG className="h-3 w-3" />
           </span>
         </span>
       </figcaption>

@@ -139,7 +139,13 @@ export default function AdLandingPage() {
             {/* Compact Google-branded rating pill — the credibility anchor */}
             <Reveal delay={0.2}>
               <div className="mt-8 flex justify-center">
-                <div className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
+                <a
+                  href={SITE.reviewsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${SITE.rating.value} stars from ${SITE.rating.count}+ Google reviews — read them on Google`}
+                  className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm transition-colors hover:border-white/30 hover:bg-white/15"
+                >
                   <GoogleG className="h-5 w-5 shrink-0" />
                   <span className="font-display text-base font-bold leading-none text-cream-50">
                     {SITE.rating.value}
@@ -150,7 +156,7 @@ export default function AdLandingPage() {
                     ))}
                   </span>
                   <span className="text-sm text-cream-100/70">{SITE.rating.count}+ reviews</span>
-                </div>
+                </a>
               </div>
             </Reveal>
 

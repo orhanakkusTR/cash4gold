@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Star, MapPin, Phone, ArrowUpRight, Clock,
+  Star, MapPin, Phone, ArrowUpRight, Clock, BadgeCheck,
   BadgeDollarSign, PackageOpen, Banknote, ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
 import type { Location, Testimonial } from "@/data/business";
+import { GoogleG } from "@/components/google-rating";
 import { formatHours } from "@/lib/utils";
 
 const ICONS: Record<string, LucideIcon> = {
@@ -121,9 +122,27 @@ export function TestimonialCard({ t }: { t: Testimonial }) {
       <blockquote className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-foreground/90">
         “{t.text}”
       </blockquote>
-      <figcaption className="mt-5 border-t border-ink-900/8 pt-4">
-        <span className="font-semibold text-foreground">{t.name}</span>
-        <span className="block text-xs text-muted">{t.location}</span>
+      <figcaption className="mt-5 flex items-center justify-between gap-3 border-t border-ink-900/8 pt-4">
+        <span className="min-w-0">
+          <span className="block truncate font-semibold text-foreground">{t.name}</span>
+          <span className="mt-0.5 inline-flex items-center gap-1 text-xs text-muted">
+            <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-green-600" strokeWidth={2.5} />
+            Verified Google review
+          </span>
+        </span>
+        <span className="relative shrink-0">
+          <Image
+            src={t.avatar}
+            alt={t.name}
+            width={40}
+            height={40}
+            quality={75}
+            className="h-10 w-10 rounded-full object-cover ring-1 ring-hairline"
+          />
+          <span className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-white ring-1 ring-hairline">
+            <GoogleG className="h-3 w-3" />
+          </span>
+        </span>
       </figcaption>
     </figure>
   );

@@ -17,10 +17,10 @@ export function Footer() {
           </Link>
           <p className="mt-4 text-sm leading-relaxed">{SITE.tagline}</p>
           <a
-            href={(LOCATIONS.find((l) => l.slug === "chantilly") ?? LOCATIONS[0]).mapUrl}
+            href={SITE.reviewsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${SITE.rating.value} stars from ${SITE.rating.count}+ Google reviews`}
+            aria-label={`${SITE.rating.value} stars from ${SITE.rating.count}+ Google reviews — read them on Google`}
             className="mt-4 inline-flex items-center gap-3 rounded-2xl bg-cream-50 px-4 py-2.5 shadow-sm transition-transform hover:-translate-y-0.5"
           >
             <GoogleG className="h-7 w-7 shrink-0" />

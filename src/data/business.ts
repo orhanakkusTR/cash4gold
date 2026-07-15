@@ -25,6 +25,8 @@ export const SITE = {
   email: "info@cashforgoldva.com",
   rating: { value: 4.9, count: 500 },
   priceRange: "$$",
+  // Opens the Chantilly (14025 US-50) Google Maps place — reviews shown on the panel.
+  reviewsUrl: "https://www.google.com/maps/place/?q=place_id:ChIJ__8afoRGtokR1ebhblLGOkk",
   // Elfsight Google Reviews widget id (renders live Google reviews client-side)
   elfsightReviewsAppId: "elfsight-app-c6841a77-1f47-4a9f-9259-0109f0f6fbdd",
   social: {
@@ -689,17 +691,22 @@ export const PROCESS_STEPS = [
 ] as const;
 
 export type ReviewSource = "google" | "yelp" | "facebook";
-export type Testimonial = { name: string; location: string; rating: number; text: string; source: ReviewSource };
+export type Testimonial = { name: string; avatar: string; rating: number; text: string; source: ReviewSource };
 
+// Real 5-star Google reviews for the Chantilly store (14025 US-50). Pulled
+// verbatim from the live Google Business Profile — do NOT edit the wording.
+// `avatar` = the reviewer's Google profile photo, vendored under /public/reviews/.
 export const TESTIMONIALS: Testimonial[] = [
-  { name: "Maria S.", location: "Annandale, VA", rating: 5, source: "google", text: "Got way more for my old gold jewelry than the mall place offered. They tested everything in front of me and explained the price. Cash in hand in 15 minutes." },
-  { name: "James R.", location: "Vienna, VA", rating: 5, source: "yelp", text: "Sold a gold bracelet and some diamond earrings I inherited. Fair offer, no pressure, and they knew exactly what they were looking at. Highly recommend over the online buyers." },
-  { name: "Priya K.", location: "Chantilly, VA", rating: 5, source: "google", text: "Professional and honest. Brought in a mix of silver coins and broken jewelry and left happy. Will definitely come back." },
-  { name: "Daniel M.", location: "Manassas, VA", rating: 5, source: "facebook", text: "Quick, easy, and transparent. They paid spot price on my gold and silver coins. Great local business." },
-  { name: "Aisha T.", location: "McLean, VA", rating: 5, source: "google", text: "I shopped around three places before coming here, best offer by far on my diamond ring. Friendly and not pushy at all." },
-  { name: "Robert L.", location: "Fairfax, VA", rating: 5, source: "yelp", text: "Brought in my late father's coin collection. They took the time to go through every piece and paid more than I expected." },
-  { name: "Elena V.", location: "Centreville, VA", rating: 5, source: "google", text: "Sold a few gold chains and an old class ring. Clean store, professional staff, and instant payout. Couldn't be easier." },
-  { name: "Marcus B.", location: "Herndon, VA", rating: 5, source: "facebook", text: "Honest appraisal and fair pricing on my silver bullion. They explained the spot price and how they calculated the offer." },
+  { name: "Greg Forbes", avatar: "/reviews/greg-forbes.webp", rating: 5, source: "google", text: "I got almost 50% more here than offered by a jeweler in Herndon (they know who they are; there's only 1 in downtown Herndon). Ethan was courteous, prompt, and efficient. 5 stars for the shop and 5 stars for the service." },
+  { name: "Mike Schlesiger", avatar: "/reviews/mike-schlesiger.webp", rating: 5, source: "google", text: "The first place to go if you have old jewelry and want to sell gold or silver. Absolutely knowledgeable advice, very, very friendly. Fair prices and very straightforward. Highly recommended without reservation." },
+  { name: "Alex Wilkinson", avatar: "/reviews/alex-wilkinson.webp", rating: 5, source: "google", text: "I had a great experience here. I met with Sam. He was super helpful. They buy gold and silver, including Morgan Silver Dollars. I will definitely visit again. 10/10." },
+  { name: "Jamal Reed", avatar: "/reviews/jamal-reed.webp", rating: 5, source: "google", text: "This place blows all the other places out of the water. Fair prices and buy Tiffany sets! Sam was extremely helpful and knowledgeable! This is the 2nd time I have been here and it keeps getting better." },
+  { name: "Jeanette Snook", avatar: "/reviews/jeanette-snook.webp", rating: 5, source: "google", text: "Mr. Sam provided excellent customer service with my transaction, honest, removed stones for me before selling rings for the weight of the gold. Would definitely come back!" },
+  { name: "Suzanne Eways", avatar: "/reviews/suzanne-eways.webp", rating: 5, source: "google", text: "Great experience. Mr. Sam was very patient, reliable and accommodating. We were given an extremely fair price and educated us about the process. We are repeat customers and would come back anytime. We recommend this establishment to anyone." },
+  { name: "Sean Donovan", avatar: "/reviews/sean-donovan.webp", rating: 5, source: "google", text: "I had a great experience working with Sam selling my gold from Thailand and received a great offer well over my first quote." },
+  { name: "Bejan Djavadi", avatar: "/reviews/bejan-djavadi.webp", rating: 5, source: "google", text: "Sam was amazingly helpful and the transaction was painless. They buy silver bullion coins." },
+  { name: "Renee Vitale", avatar: "/reviews/renee-vitale.webp", rating: 5, source: "google", text: "From start to finish our experience with Ethan at Cash For Gold in Chantilly was exceptional. Ethan's kind, calm and patient demeanor will make us repeat customers." },
+  { name: "Tammy Johnson", avatar: "/reviews/tammy-johnson.webp", rating: 5, source: "google", text: "It was a flawless and easy transaction. Ethan was personable, polite and professional. I would recommend this business to anyone!" },
 ];
 
 // Helpers --------------------------------------------------------------------

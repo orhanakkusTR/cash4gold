@@ -12,10 +12,17 @@ export function GoogleG({ className }: { className?: string }) {
   );
 }
 
-/** Compact Google rating summary card, the credibility anchor for the reviews section. */
+/** Compact Google rating summary card, the credibility anchor for the reviews section.
+ *  Links out to the Chantilly Google reviews panel. */
 export function GoogleRatingSummary() {
   return (
-    <div className="mx-auto flex w-full max-w-md items-center justify-center gap-5 rounded-3xl border border-hairline bg-white px-8 py-6 shadow-[var(--shadow-card)]">
+    <a
+      href={SITE.reviewsUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${SITE.rating.value} stars from ${SITE.rating.count}+ Google reviews — read them on Google`}
+      className="group mx-auto flex w-full max-w-md items-center justify-center gap-5 rounded-3xl border border-hairline bg-white px-8 py-6 shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5 hover:border-gold-300 hover:shadow-[var(--shadow-card-hover,var(--shadow-card))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2"
+    >
       <GoogleG className="h-10 w-10 shrink-0" />
       <div className="text-left">
         <div className="flex items-center gap-2.5">
@@ -26,8 +33,13 @@ export function GoogleRatingSummary() {
             ))}
           </span>
         </div>
-        <p className="mt-1.5 text-sm text-muted">{SITE.rating.count}+ verified Google reviews</p>
+        <p className="mt-1.5 text-sm text-muted">
+          {SITE.rating.count}+ verified Google reviews
+          <span className="ml-1 whitespace-nowrap font-medium text-gold-600 opacity-0 transition-opacity group-hover:opacity-100">
+            Read on Google →
+          </span>
+        </p>
       </div>
-    </div>
+    </a>
   );
 }
