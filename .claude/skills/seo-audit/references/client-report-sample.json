@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "reportTitle": "SEO & Site Health Report",
+    "clientName": "Cash for Gold VA",
+    "reportDate": "2026-07-15",
+    "preparedBy": "Prepared by your Website & SEO team",
+    "baseline": true
+  },
+  "overallScore": 63,
+  "scoreInterpretation": "A well-built foundation with a handful of high-value fixes that will lift trust, visibility, and phone calls.",
+  "takeaways": [
+    "Your site's technical foundation is strong — clean setup, fast pages, and genuinely rich local content for the areas you serve.",
+    "The single most important fix: the “call now” button on your coin pages currently leads to an error instead of dialing — so calls from your busiest pages are being lost.",
+    "Your homepage briefly shows “0 years in business” and “0 locations” to search engines before it finishes loading, which quietly undercuts trust.",
+    "The biggest growth opportunity is trust and credibility: naming your appraisers, tightening your policies, and backing up claims will help both rankings and conversions.",
+    "Several coin pages are thin and lean on competitor-sourced photos — adding your own descriptions and imagery will strengthen rankings and remove a legal risk."
+  ],
+  "progress": {
+    "baseline": true,
+    "resolved": 0,
+    "inProgress": 0,
+    "new": 42,
+    "baselineNote": "Baseline established — this is your first audit. Future reports will track progress against these results, showing what's been resolved and how each area's score has moved.",
+    "deltas": []
+  },
+  "scorecard": [
+    { "dimension": "Search Engine Foundations", "score": 68, "note": "Clean, correct setup; a few pages weren't being submitted for indexing." },
+    { "dimension": "Page Titles & Descriptions", "score": 72, "note": "Mostly solid; some titles run long or repeat across similar pages." },
+    { "dimension": "Keyword & Topic Coverage", "score": 68, "note": "Good local coverage; product pages need more depth." },
+    { "dimension": "Content Overlap & Focus", "score": 58, "note": "A few pages compete for the same search, so none rank at their best." },
+    { "dimension": "Local Search & Store Listings", "score": 70, "note": "Consistent store info; store pages could carry more local detail." },
+    { "dimension": "Trust & Credibility", "score": 50, "note": "The biggest opportunity — no named experts, and some claims need support." },
+    { "dimension": "Content Depth & Quality", "score": 55, "note": "Local pages are strong; many product pages are thin." },
+    { "dimension": "Accessibility", "score": 62, "note": "A few barriers (contrast, keyboard) could exclude some visitors." },
+    { "dimension": "Website Speed & Experience", "score": 74, "note": "Fast and image-optimized; minor media cleanup available." },
+    { "dimension": "Tracking & Measurement", "score": 55, "note": "Working, but numbers can be skewed and some events double-count." },
+    { "dimension": "Technical Health", "score": 72, "note": "Well-structured; a few values are hand-maintained and can drift." }
+  ],
+  "findings": {
+    "critical": [
+      {
+        "title": "The “call now” button on your coin pages doesn't work",
+        "meaning": "On every coin product page, tapping the phone button leads to an error page instead of starting a call — so calls from some of your highest-traffic pages are being lost, and those attempts never show up in your reporting.",
+        "action": "We identified the broken link and will restore a working one-tap call button across all coin pages, so every visitor can reach you instantly."
+      },
+      {
+        "title": "Search engines briefly see “0 years in business” and “0 locations” on your homepage",
+        "meaning": "A homepage counter starts at zero before it animates, so search engines — and any visitor whose page hasn't finished loading — see “0” where your years of experience and store count should be, weakening trust at first impression.",
+        "action": "We'll make those numbers display correctly from the very first moment the page loads."
+      }
+    ],
+    "high": [
+      {
+        "title": "Your privacy policy doesn't match how the website actually works",
+        "meaning": "The stated policy describes data practices that don't reflect the live site, which is a compliance risk under Virginia's consumer data law and can erode trust.",
+        "action": "We'll rewrite the privacy policy to accurately describe what's collected, with a legal review before it goes live."
+      },
+      {
+        "title": "Your coin pages are thin and rely on competitor-sourced photos",
+        "meaning": "Many product pages carry little unique text and use images and wording pulled from another company — which limits how well they rank and creates a copyright risk.",
+        "action": "We'll add original, useful descriptions to each page and replace the borrowed imagery with your own."
+      },
+      {
+        "title": "No named experts or credentials appear anywhere on the site",
+        "meaning": "For a business handling valuables, showing who does the appraising — with real experience and credentials — is one of the strongest drivers of both search rankings and customer confidence.",
+        "action": "We'll add appraiser bios and verifiable credentials/licensing so visitors and search engines see the expertise behind the business."
+      },
+      {
+        "title": "Two pages compete for the same search, so neither ranks at its best",
+        "meaning": "Your Northern Virginia landing page and a related page target the same query, splitting their strength instead of combining it.",
+        "action": "We'll consolidate them into one strong page and adjust titles so each page targets a distinct search."
+      },
+      {
+        "title": "Your visitor tracking can be skewed and under-counts real calls",
+        "meaning": "The measurement setup lets automated traffic in and misses or double-counts some actions, so the numbers you're basing decisions on aren't fully reliable.",
+        "action": "We'll add safeguards and fix the event tracking so your reporting reflects real customer activity."
+      },
+      {
+        "title": "A few accessibility barriers could exclude some visitors",
+        "meaning": "Low-contrast text and some keyboard-navigation gaps make parts of the site harder to use for people with disabilities — both a usability and a legal-exposure issue.",
+        "action": "We'll fix the contrast and keyboard issues to meet accessibility standards."
+      }
+    ],
+    "polish": [
+      {
+        "title": "Remove mentions of services you no longer offer",
+        "meaning": "Some pages still reference electronics buying and a gold calculator that isn't active, which can confuse visitors and set wrong expectations.",
+        "action": "We'll clean up the copy so it reflects only what you offer today."
+      },
+      {
+        "title": "Give each store page more local detail",
+        "meaning": "The four store pages are currently the thinnest in your local set, missing an opportunity to rank for neighborhood searches.",
+        "action": "We'll add unique, location-specific content to each store page."
+      },
+      {
+        "title": "Standardize your founding year across the site",
+        "meaning": "Different pages state different founding years, which reads as careless and can weaken trust.",
+        "action": "We'll confirm the correct year with you and make it consistent everywhere."
+      },
+      {
+        "title": "Back up blog claims with trusted sources",
+        "meaning": "Your guides make claims about gold and value without linking to authoritative references, which limits their credibility with readers and search engines.",
+        "action": "We'll add reputable citations to the key articles."
+      },
+      {
+        "title": "Refresh a few outdated legacy pages still showing in search",
+        "meaning": "Search engines still surface some old pages from years ago that have since been replaced, which can send visitors to the wrong place.",
+        "action": "We'll request a refresh from the search engines so the current pages take their place."
+      }
+    ]
+  },
+  "strengths": [
+    "A clean, correct search-engine setup — canonical URLs and a disciplined redirect map with no broken chains.",
+    "21 genuinely rich, unique local pages for the cities and neighborhoods you serve.",
+    "A fast, image-optimized site built for performance from the ground up.",
+    "Consistent store name, address, and phone details across the entire site.",
+    "Privacy consent handling already in place for visitors in regulated regions."
+  ],
+  "nextSteps": [
+    "Fix the coin-page call button and the homepage counters — quick changes with immediate impact.",
+    "Strengthen trust: rewrite the privacy policy, add named appraisers and credentials, and make tracking reliable.",
+    "Deepen content: original coin descriptions with your own imagery, plus richer store pages.",
+    "Resolve overlapping pages so each one targets a distinct search.",
+    "Clear the accessibility barriers to meet current standards.",
+    "Polish performance and refresh the outdated legacy pages still appearing in search."
+  ]
+}

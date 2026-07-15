@@ -38,13 +38,16 @@ actionable audit** the owner can work top-to-bottom.
 
 ## Preconditions (check before anything)
 
-This skill depends on three reference files:
+This skill depends on these files:
 `references/dimensions.md`, `references/report-template.md`,
-`references/client-report.md`. **Before starting, verify all three exist.** If any
-is missing, **STOP** and tell the user exactly which one(s) — do NOT improvise
-their contents. The dimension checklists and scorecard rubric must stay identical
-across quarterly runs; reconstructing them from memory silently breaks trend
-comparison.
+`references/client-report.md`, the client-PDF template
+`references/client-report-template.html`, and the build script
+`scripts/build-client-report.mjs`. **Before starting, verify all of them exist.**
+If any is missing, **STOP** and tell the user exactly which one(s) — do NOT
+improvise their contents. The dimension checklists and scorecard rubric must stay
+identical across quarterly runs; reconstructing them from memory silently breaks
+trend comparison. (Playwright is the PDF renderer — a `node_modules/playwright`
+must be installed; if absent, run `npm install` first.)
 
 ## Site surface (what "the whole site" means here)
 
@@ -216,18 +219,26 @@ deliverable in **business language only** (see client-facing rule in Guardrails)
    chat Artifacts. **If** the environment does support Artifacts, you may publish
    one *in addition* (never instead) — load `artifact-design` first.
 3. **Client corporate PDF** → `Raporlar/Cash-For-Gold-Audit-Raporu-YYYY-MM-DD.pdf`.
-   The formal, logo'd, shareable-with-the-client deliverable. **The PDF must be
-   produced from the corporate HTML template at
-   `references/client-report-template.html` via the build script — never improvise
-   the PDF design.** `references/client-report.md` is the design spec that governs
-   the template (branding, logo, structure, business-language translation of
-   findings). Normally this step is mandatory whenever the user asks to "audit
-   çıkar ve raporla" / produce a report — always land the PDF in `Raporlar/`.
-
-   > **TODO (temporary):** The template and build script do not exist yet. Until
-   > they do, SKIP the PDF deliverable with a clear note in the chat summary
-   > ("client PDF skipped — template pending"), and do NOT block the rest of the
-   > audit. Remove this TODO once the template lands.
+   The formal, logo'd, shareable-with-the-client deliverable. Build it, don't
+   improvise it:
+   1. **Author the report JSON** — translate the audit findings into the
+      client-report data schema (see `references/client-report-sample.json` for the
+      exact shape: `meta`, `overallScore`, `scoreInterpretation`, `takeaways[]`,
+      `progress` {baseline flag, resolved/inProgress/new counts, `deltas[]`},
+      `scorecard[]` (11 dimensions, client-friendly names), `findings`
+      {`critical[]`, `high[]`, `polish[]`}, `strengths[]`, `nextSteps[]`). Every
+      string is **business language only** — no file paths, tool names, tech stack,
+      or `P0/P1/P2` jargon (use the Critical/High/Enhancement labels). Curate 3–8
+      findings per group; the exhaustive list stays in the internal MD report.
+   2. **Render the PDF** — `node scripts/build-client-report.mjs <path-to-json>`.
+      The script fills `references/client-report-template.html`, embeds the logo as
+      a data URI, and prints to A4 via Playwright Chromium.
+   3. **Confirm it landed** — verify the PDF exists in `Raporlar/` (non-zero size)
+      and report its path. If a same-day file exists the script suffixes `-v2` etc.
+      (never silently overwrites).
+   `references/client-report.md` is the design spec behind the template (branding,
+   structure, business-language translation). This step is mandatory whenever the
+   user asks to "audit çıkar ve raporla" / produce a client report.
 4. In chat, give a **tight executive summary**: overall score, top 3–5 priorities
    (business terms), the single highest-leverage next action. Link all outputs.
 

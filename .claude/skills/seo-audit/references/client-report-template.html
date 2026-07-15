@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SEO &amp; Site Health Report — Cash for Gold VA</title>
+<style>
+  /* =====================================================================
+     Cash for Gold VA — Client Audit Report (A4 print template)
+     Rendered via headless Chromium print-to-PDF, printBackground: true.
+     White + gold brand system; ink accents. Single self-contained file.
+     ===================================================================== */
+
+  :root{
+    /* Brand tokens (mirrors src/app/globals.css) */
+    --gold-50:#fdf7e6;
+    --gold-100:#faecc4;
+    --gold-200:#f3d889;
+    --gold-400:#e9bd3c;
+    --gold-600:#c2941d;
+    --gold-700:#856316;
+    --ink:#14100b;
+    --ink-950:#0a0807;
+    --fg:#17140d;
+    --muted:#6a675f;
+    --hairline:#efece4;
+    --paper:#ffffff;
+    --paper-warm:#fcfbf9;
+    --panel:#f7f4ec;
+    /* Severity roles */
+    --sev-critical:#c0392b;
+    --sev-high:#d98324;
+    --sev-polish:#7a8a3a;
+    --ok:#2e7d55;
+    --shadow-gold:0 10px 40px -12px rgba(163,120,31,.35);
+  }
+
+  @page{
+    size:A4;
+    margin:16mm 15mm 18mm;
+    @bottom-right{
+      content:"Page " counter(page);
+      font:8.5px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+      color:#6a675f;
+    }
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    font-size:12.5px;
+    line-height:1.55;
+    color:var(--fg);
+    background:var(--paper);
+  }
+
+  /* Screen preview niceties (print is unaffected) */
+  @media screen{
+    body{max-width:794px;margin:0 auto;padding:56px 48px 80px;background:var(--paper)}
+  }
+
+  /* ------ shared type ------------------------------------------------ */
+  .kicker{
+    font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold-700);
+  }
+  h2.section-title{
+    font-size:21px;font-weight:800;letter-spacing:-0.02em;color:var(--ink);
+    margin:4px 0 4px;
+    break-after:avoid;
+  }
+  .section-head{margin:34px 0 14px;break-after:avoid}
+  .section-head .rule{
+    height:2px;width:44px;margin-top:8px;border-radius:2px;
+    background:linear-gradient(90deg,var(--gold-600),var(--gold-200));
+  }
+  .section-intro{color:var(--muted);font-size:12.5px;max-width:60ch}
+  section{break-inside:auto}
+
+  /* ------ cover ------------------------------------------------------ */
+  .cover{
+    height:258mm;
+    display:flex;flex-direction:column;
+    break-after:page;
+    position:relative;
+    background:
+      radial-gradient(120mm 90mm at 92% -4%, var(--gold-50) 0%, rgba(253,247,230,0) 70%),
+      var(--paper);
+  }
+  .cover-band{
+    height:3mm;border-radius:2px;
+    background:linear-gradient(90deg,var(--gold-700),var(--gold-400) 45%,var(--gold-200));
+  }
+  .cover-logo{margin-top:15mm}
+  .cover-logo img{width:200px;height:auto;display:block}
+  .cover-main{margin-top:auto;margin-bottom:auto;padding:18mm 0}
+  .cover-kicker{
+    font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold-700);margin-bottom:12px;
+  }
+  .cover-title{
+    font-size:46px;font-weight:800;letter-spacing:-0.03em;line-height:1.06;
+    color:var(--ink);max-width:12ch;
+  }
+  .cover-sub{
+    margin-top:16px;font-size:14.5px;line-height:1.6;color:var(--muted);max-width:52ch;
+  }
+  .cover-rule{
+    height:1px;width:64mm;margin-top:22px;
+    background:linear-gradient(90deg,var(--gold-400),rgba(233,189,60,0));
+  }
+  .cover-meta{
+    border-top:1px solid var(--hairline);
+    padding-top:8mm;margin-bottom:4mm;
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:10mm;
+  }
+  .cover-meta .lbl{
+    font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:4px;
+  }
+  .cover-meta .val{font-size:14px;font-weight:700;color:var(--ink);letter-spacing:-0.01em}
+
+  /* ------ executive summary ------------------------------------------ */
+  .exec{
+    display:grid;grid-template-columns:158px 1fr;gap:26px;align-items:center;
+    background:var(--paper-warm);
+    border:1px solid var(--hairline);border-radius:16px;
+    padding:22px 26px;
+    break-inside:avoid;
+  }
+  .ring{position:relative;width:150px;height:150px}
+  .ring svg{transform:rotate(-90deg);display:block}
+  .ring .num{
+    position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+  }
+  .ring .num b{font-size:40px;font-weight:800;letter-spacing:-0.03em;line-height:1;color:var(--ink)}
+  .ring .num span{font-size:11px;font-weight:600;color:var(--muted);margin-top:3px}
+  .exec-interp{font-size:15.5px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);line-height:1.45}
+  .exec-lbl{
+    font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gold-700);margin:14px 0 6px;
+  }
+  .takeaways{list-style:none}
+  .takeaways .takeaway{
+    position:relative;padding:4px 0 4px 20px;font-size:12.5px;color:var(--fg);
+    break-inside:avoid;
+  }
+  .takeaways .takeaway::before{
+    content:"◆";position:absolute;left:2px;top:4px;
+    font-size:9px;color:var(--gold-600);
+  }
+
+  /* ------ progress since last audit ----------------------------------- */
+  .progress-note{
+    background:var(--gold-50);
+    border-left:3px solid var(--gold-400);
+    border-radius:0 10px 10px 0;
+    padding:12px 16px;margin-bottom:14px;
+    font-size:12.5px;color:var(--fg);
+    break-inside:avoid;
+  }
+  .progress-note:empty{display:none}
+  .progress-stats{
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px;
+  }
+  .pstat{
+    background:var(--paper);border:1px solid var(--hairline);border-radius:12px;
+    padding:14px 16px;break-inside:avoid;
+  }
+  .pstat b{display:block;font-size:28px;font-weight:800;letter-spacing:-0.02em;line-height:1.1}
+  .pstat small{display:block;margin-top:3px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .pstat.resolved b{color:var(--ok)}
+  .pstat.inprogress b{color:var(--sev-high)}
+  .pstat.new b{color:var(--ink)}
+  .deltas{
+    columns:2;column-gap:22px;
+    border:1px solid var(--hairline);border-radius:12px;
+    background:var(--paper-warm);padding:12px 18px;
+  }
+  .delta-row{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:5px 0;font-size:12px;break-inside:avoid;
+  }
+  .delta-row .dim{color:var(--fg)}
+  .delta-row .delta{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .delta-row .delta::before{margin-right:4px;font-size:9px}
+  .delta-up .delta{color:var(--ok)}
+  .delta-up .delta::before{content:"▲"}
+  .delta-down .delta{color:var(--sev-critical)}
+  .delta-down .delta::before{content:"▼"}
+  .delta-flat .delta{color:var(--muted)}
+  .delta-flat .delta::before{content:"▬";font-size:8px}
+
+  /* ------ scorecard ---------------------------------------------------- */
+  .scorecard{
+    border:1px solid var(--hairline);border-radius:14px;
+    background:var(--paper);padding:8px 20px;
+  }
+  .score-row{
+    display:grid;grid-template-columns:44mm 1fr 11mm;gap:14px;align-items:center;
+    padding:9px 0;border-bottom:1px solid var(--hairline);
+    break-inside:avoid;
+  }
+  .score-row:last-child{border-bottom:none}
+  .score-row .name{font-size:12.5px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;line-height:1.3}
+  .score-row .note{display:block;font-size:10.5px;font-weight:400;color:var(--muted);margin-top:2px;letter-spacing:0}
+  .score-row .track{
+    height:8px;border-radius:99px;background:var(--hairline);overflow:hidden;
+  }
+  .score-row .fill{
+    height:100%;border-radius:99px;
+    background:linear-gradient(90deg,var(--gold-600),var(--gold-400));
+  }
+  .score-row .val{
+    font-size:13px;font-weight:800;text-align:right;color:var(--ink);
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* ------ findings ----------------------------------------------------- */
+  .group{margin:18px 0 24px}
+  .group-title{
+    display:flex;align-items:center;gap:8px;
+    font-size:14px;font-weight:800;letter-spacing:-0.01em;color:var(--ink);
+    margin-bottom:10px;break-after:avoid;
+  }
+  .group-title .dot{width:9px;height:9px;border-radius:99px;flex:none}
+  .group-critical .group-title .dot{background:var(--sev-critical)}
+  .group-high .group-title .dot{background:var(--sev-high)}
+  .group-polish .group-title .dot{background:var(--sev-polish)}
+  .card{
+    background:var(--paper);
+    border:1px solid var(--hairline);
+    border-left:3px solid var(--gold-400);
+    border-radius:10px;
+    padding:13px 16px;margin:10px 0;
+    break-inside:avoid;
+  }
+  .group-critical .card{border-left-color:var(--sev-critical)}
+  .group-high .card{border-left-color:var(--sev-high)}
+  .group-polish .card{border-left-color:var(--sev-polish)}
+  .card-title{font-size:13.5px;font-weight:800;letter-spacing:-0.01em;color:var(--ink);margin-bottom:6px}
+  .card-line{font-size:12px;color:var(--fg);margin:4px 0;line-height:1.5}
+  .card-line .lbl{
+    display:block;font-size:9.5px;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--gold-700);margin-bottom:1px;
+  }
+
+  /* ------ strengths ----------------------------------------------------- */
+  .strengths{
+    background:var(--panel);
+    border:1px solid var(--hairline);border-radius:14px;
+    padding:16px 22px;break-inside:avoid;
+  }
+  .strengths ul{list-style:none}
+  .strengths .strength{
+    position:relative;padding:4px 0 4px 22px;font-size:12.5px;break-inside:avoid;
+  }
+  .strengths .strength::before{
+    content:"✓";position:absolute;left:0;top:4px;
+    font-size:11px;font-weight:800;color:var(--ok);
+  }
+
+  /* ------ next steps ----------------------------------------------------- */
+  .next-steps{list-style:none;counter-reset:step}
+  .next-steps .next-step{
+    counter-increment:step;
+    position:relative;padding:7px 0 7px 34px;font-size:12.5px;
+    border-bottom:1px solid var(--hairline);
+    break-inside:avoid;
+  }
+  .next-steps .next-step:last-child{border-bottom:none}
+  .next-steps .next-step::before{
+    content:counter(step);
+    position:absolute;left:0;top:7px;
+    width:20px;height:20px;border-radius:99px;
+    background:var(--gold-50);border:1px solid var(--gold-200);
+    color:var(--gold-700);font-size:10.5px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ------ closing ----------------------------------------------------- */
+  .closing{
+    margin-top:30px;
+    background:var(--ink);
+    border-radius:14px;
+    padding:18px 24px;
+    color:var(--gold-100);
+    break-inside:avoid;
+  }
+  .closing .kicker{color:var(--gold-400)}
+  .closing p{font-size:12.5px;color:#f3ede0;margin-top:6px;max-width:64ch}
+
+  /* ------ running footer (repeats on every printed page) --------------- */
+  .run-footer{
+    display:flex;align-items:center;gap:7px;
+    font-size:8.5px;color:var(--muted);
+    border-top:1px solid var(--hairline);
+    padding-top:6px;
+  }
+  .run-footer img{height:11px;width:auto;display:block;opacity:.9}
+  .run-footer .sep{color:var(--gold-400);font-size:7px}
+  @media print{
+    .run-footer{
+      position:fixed;bottom:-13mm;left:0;width:100%;
+      background:transparent;
+    }
+  }
+  @media screen{
+    .run-footer{margin-top:56px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======================= 1 · COVER (full page) ======================= -->
+<div class="cover">
+  <div class="cover-band"></div>
+
+  <div class="cover-logo">
+    <img src="{{LOGO_DATA_URI}}" alt="Cash for Gold VA" width="200">
+  </div>
+
+  <div class="cover-main">
+    <div class="cover-kicker">Confidential · Executive Report</div>
+    <h1 class="cover-title">{{REPORT_TITLE}}</h1>
+    <p class="cover-sub">
+      A plain-language review of your website&rsquo;s health, search visibility, and
+      customer experience &mdash; what&rsquo;s working, what we&rsquo;re improving, and
+      what it means for bringing more customers through your doors.
+    </p>
+    <div class="cover-rule"></div>
+  </div>
+
+  <div class="cover-meta">
+    <div>
+      <div class="lbl">Prepared for</div>
+      <div class="val">{{CLIENT_NAME}}</div>
+    </div>
+    <div>
+      <div class="lbl">Report date</div>
+      <div class="val">{{REPORT_DATE}}</div>
+    </div>
+    <div>
+      <div class="lbl">Prepared by</div>
+      <div class="val">{{PREPARED_BY}}</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= 2 · EXECUTIVE SUMMARY ======================= -->
+<section>
+  <div class="section-head">
+    <div class="kicker">Executive Summary</div>
+    <h2 class="section-title">Where your website stands today</h2>
+    <div class="rule"></div>
+  </div>
+
+  <div class="exec">
+    <div class="ring">
+      <svg width="150" height="150" viewBox="0 0 150 150" aria-hidden="true">
+        <circle cx="75" cy="75" r="64" fill="none" stroke="#efece4" stroke-width="11"/>
+        <circle cx="75" cy="75" r="64" fill="none" stroke="#e9bd3c" stroke-width="11"
+          stroke-linecap="round" stroke-dasharray="402.12"
+          stroke-dashoffset="{{OVERALL_RING_OFFSET}}"/>
+      </svg>
+      <div class="num"><b>{{OVERALL_SCORE}}</b><span>/ 100 overall</span></div>
+    </div>
+    <div>
+      <p class="exec-interp">{{SCORE_INTERPRETATION}}</p>
+      <div class="exec-lbl">Headline takeaways</div>
+      <ul class="takeaways">
+        <!-- @@BEGIN TAKEAWAY -->
+        <li class="takeaway">{{text}}</li>
+        <!-- @@END TAKEAWAY -->
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================== 3 · PROGRESS SINCE LAST AUDIT ==================== -->
+<section>
+  <div class="section-head">
+    <div class="kicker">Progress</div>
+    <h2 class="section-title">Progress since the last review</h2>
+    <div class="rule"></div>
+  </div>
+
+  <div class="progress-note">{{PROGRESS_BODY}}</div>
+
+  <div class="progress-stats">
+    <div class="pstat resolved"><b>{{RESOLVED_COUNT}}</b><small>Items resolved</small></div>
+    <div class="pstat inprogress"><b>{{INPROGRESS_COUNT}}</b><small>In progress</small></div>
+    <div class="pstat new"><b>{{NEW_COUNT}}</b><small>Newly identified</small></div>
+  </div>
+
+  <div class="deltas">
+    <!-- @@BEGIN DELTA_ROW -->
+    <div class="delta-row delta-{{dir}}">
+      <span class="dim">{{dimension}}</span>
+      <span class="delta">{{delta}}</span>
+    </div>
+    <!-- @@END DELTA_ROW -->
+  </div>
+</section>
+
+<!-- ========================= 4 · SCORECARD ============================= -->
+<section>
+  <div class="section-head">
+    <div class="kicker">Scorecard</div>
+    <h2 class="section-title">Health by area</h2>
+    <div class="rule"></div>
+    <p class="section-intro">Each area of your online presence, scored out of 100.</p>
+  </div>
+
+  <div class="scorecard">
+    <!-- @@BEGIN SCORECARD_ROW -->
+    <div class="score-row">
+      <div class="name">{{dimension}}<span class="note">{{note}}</span></div>
+      <div class="track"><div class="fill" style="width:{{barWidth}}%"></div></div>
+      <div class="val">{{score}}</div>
+    </div>
+    <!-- @@END SCORECARD_ROW -->
+  </div>
+</section>
+
+<!-- ========================== 5 · FINDINGS ============================= -->
+<section>
+  <div class="section-head">
+    <div class="kicker">Findings &amp; Recommendations</div>
+    <h2 class="section-title">What we found, in plain language</h2>
+    <div class="rule"></div>
+    <p class="section-intro">
+      Every finding below is written in business terms: what it means for your
+      customers and revenue, and what is being done about it.
+    </p>
+  </div>
+
+  <!-- Sample finding card (extracted by the build script, then this marker
+       region is removed; filled cards are injected into the group slots below). -->
+  <!-- @@BEGIN FINDING_CARD -->
+  <div class="card">
+    <h4 class="card-title">{{title}}</h4>
+    <p class="card-line"><span class="lbl">What it means for your business</span>{{meaning}}</p>
+    <p class="card-line"><span class="lbl">What we did / will do</span>{{action}}</p>
+  </div>
+  <!-- @@END FINDING_CARD -->
+
+  <div class="group group-critical">
+    <h3 class="group-title"><span class="dot"></span>Critical — address now ({{CRITICAL_COUNT}})</h3>
+    <div class="cards">{{CRITICAL_CARDS}}</div>
+  </div>
+
+  <div class="group group-high">
+    <h3 class="group-title"><span class="dot"></span>High impact — recommended ({{HIGH_COUNT}})</h3>
+    <div class="cards">{{HIGH_CARDS}}</div>
+  </div>
+
+  <div class="group group-polish">
+    <h3 class="group-title"><span class="dot"></span>Enhancements ({{POLISH_COUNT}})</h3>
+    <div class="cards">{{POLISH_CARDS}}</div>
+  </div>
+</section>
+
+<!-- ==================== 6 · WHAT'S ALREADY WORKING ===================== -->
+<section>
+  <div class="section-head">
+    <div class="kicker">Strengths</div>
+    <h2 class="section-title">What&rsquo;s already working</h2>
+    <div class="rule"></div>
+  </div>
+
+  <div class="strengths">
+    <ul>
+      <!-- @@BEGIN STRENGTH -->
+      <li class="strength">{{text}}</li>
+      <!-- @@END STRENGTH -->
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 7 · RECOMMENDED NEXT STEPS ==================== -->
+<section>
+  <div class="section-head">
+    <div class="kicker">Next Steps</div>
+    <h2 class="section-title">Recommended next steps</h2>
+    <div class="rule"></div>
+  </div>
+
+  <ol class="next-steps">
+    <!-- @@BEGIN NEXT_STEP -->
+    <li class="next-step">{{text}}</li>
+    <!-- @@END NEXT_STEP -->
+  </ol>
+
+  <div class="closing">
+    <div class="kicker">Our commitment</div>
+    <p>
+      This report is part of an ongoing program: we monitor, improve, and measure
+      your online presence continuously, and each future report will show progress
+      against this one. Questions are always welcome.
+    </p>
+  </div>
+</section>
+
+<!-- ============ Running footer (repeats on every printed page) ========= -->
+<div class="run-footer">
+  <img src="{{LOGO_DATA_URI}}" alt="">
+  <span>Confidential — prepared for Cash for Gold VA</span>
+  <span class="sep">◆</span>
+  <span>{{REPORT_DATE}}</span>
+</div>
+
+</body>
+</html>
