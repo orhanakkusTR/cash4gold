@@ -27,7 +27,7 @@ A from-scratch rebuild of **cashforgoldva.com** — a local precious-metals buyi
 - **motion** (framer-motion) for scroll animations; **next-themes** (required by MagicCard; no provider — defaults to light)
 - **Vercel** hosting + analytics
 - Structured data: `LocalBusiness` / `JewelryStore` JSON-LD per location
-- Forms: react-hook-form + zod → Resend email (`/api/quote`, honeypot-protected)
+- Forms: **not built yet.** There is no quote form or `/api/quote` route today, and no "quote submit" conversion — don't reference one. Building the quote form (react-hook-form + zod → email) is a separate, later task; wire its conversion event when it ships.
 
 ## Repo conventions
 

@@ -2,16 +2,27 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { LOCATIONS } from "@/data/business";
+import { LOCATIONS, SITE } from "@/data/business";
 import type { TrackPayload } from "@/lib/analytics-events";
 
-// OpenAI Pixel queue (installed in the root layout, production only). Undefined
-// in dev — the optional call below is a no-op there.
+// Globals set by scripts in the root layout (production only). Both are optional
+// so the calls below no-op in dev.
 declare global {
   interface Window {
-    oaiq?: (...args: unknown[]) => void;
+    oaiq?: (...args: unknown[]) => void; // OpenAI Pixel queue
+    gtag?: (...args: unknown[]) => void; // Google Analytics / Ads
   }
 }
+
+// GA4 event name per internal conversion type. Mirroring these to GA4 (in
+// addition to our own /api/track + the OpenAI pixel) is what lets GA4 and
+// Google Ads actually see conversions. Consent Mode governs whether they're
+// sent with cookies or as cookieless pings — we don't gate here.
+const GA_EVENT: Partial<Record<TrackPayload["type"], string>> = {
+  phone: "phone_call",
+  directions: "get_directions",
+  review_click: "review_click",
+};
 
 // One global, low-overhead tracker mounted in the root layout. It does two jobs:
 //   1. Page views — fires whenever the pathname changes.
@@ -33,6 +44,10 @@ for (const l of LOCATIONS) {
   if (digits) phoneToSlug.set(digits, l.slug);
   if (l.mapUrl) mapUrlToSlug.set(l.mapUrl, l.slug);
 }
+// The Google review link is a maps.google URL too, so it must be recognised
+// BEFORE the directions match — otherwise review-badge clicks inflate the
+// "directions" conversion (and pollute it with null locations).
+const REVIEW_URLS = new Set<string>([SITE.reviewsUrl]);
 
 // 5-second suppression window: a visitor who taps the same call/directions link
 // twice (impatience, a mis-tap) shouldn't be counted as two conversions.
@@ -92,6 +107,8 @@ export function Analytics() {
         type = "phone";
         const digits = href.replace(/\D/g, "").slice(-10);
         location = phoneToSlug.get(digits) ?? null;
+      } else if (REVIEW_URLS.has(href)) {
+        type = "review_click";
       } else if (/maps\.app\.goo\.gl|google\.[^/]+\/maps/.test(href)) {
         type = "directions";
         location = mapUrlToSlug.get(href) ?? null;
@@ -113,6 +130,24 @@ export function Analytics() {
         source,
         path: window.location.pathname,
       });
+
+      // Mirror the conversion to GA4 (so GA4 + Google Ads can see it), with an
+      // event_id for cross-destination dedupe. Consent Mode decides cookie vs
+      // cookieless — we don't gate it here.
+      const gaName = GA_EVENT[type];
+      if (gaName) {
+        const eventId =
+          typeof crypto !== "undefined" && crypto.randomUUID
+            ? crypto.randomUUID()
+            : `${type}-${Date.now()}`;
+        window.gtag?.("event", gaName, {
+          event_category: "engagement",
+          store: location ?? undefined,
+          source,
+          page_path: window.location.pathname,
+          event_id: eventId,
+        });
+      }
 
       // OpenAI Pixel conversion: a phone-call click. Matches the custom
       // "phone" conversion event configured in the OpenAI Ads panel.

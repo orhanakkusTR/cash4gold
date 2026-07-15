@@ -2,7 +2,7 @@
 // both the client tracker and the /api/track validator so the whitelist stays
 // in one place.
 
-export const EVENT_TYPES = ["phone", "directions", "pageview"] as const;
+export const EVENT_TYPES = ["phone", "directions", "review_click", "pageview"] as const;
 export type EventType = (typeof EVENT_TYPES)[number];
 
 export const EVENT_SOURCES = ["header", "footer", "page", "banner", "fab"] as const;

@@ -18,6 +18,8 @@ export function GaPageview() {
 
   useEffect(() => {
     if (typeof window.gtag !== "function") return;
+    // Don't record our own admin dashboard in GA4.
+    if (pathname?.startsWith("/admin-adam")) return;
     window.gtag("event", "page_view", {
       page_path: pathname,
       page_location: window.location.href,
