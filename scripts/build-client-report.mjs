@@ -20,7 +20,7 @@
  *   strengths: string[]
  *   nextSteps: string[]
  */
-import { readFileSync, writeFileSync, existsSync, mkdirSync, statSync, readdirSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, statSync, readdirSync, rmSync, copyFileSync } from "node:fs";
 import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
@@ -88,19 +88,30 @@ if (!deltas.length) html = html.replace(/<div class="deltas">\s*<\/div>/, "");
 expandInline("STRENGTH", data.strengths ?? []);
 expandInline("NEXT_STEP", data.nextSteps ?? []);
 
-// Findings: extract the shared card template, drop its sample region, fill 3 groups.
+// Findings: extract the shared card template, drop its sample region, fill groups.
+// Empty groups (e.g. no Critical items left on a follow-up) are removed whole so
+// no "(0)" heading prints.
 {
   const { re, inner } = block("FINDING_CARD");
   const cardTpl = inner;
   html = html.replace(re, "");
   const groups = {
+    RESOLVED: data.findings?.resolved ?? [],
     CRITICAL: data.findings?.critical ?? [],
     HIGH: data.findings?.high ?? [],
     POLISH: data.findings?.polish ?? [],
   };
+  const countToken = { RESOLVED: "RESOLVED_N", CRITICAL: "CRITICAL_COUNT", HIGH: "HIGH_COUNT", POLISH: "POLISH_COUNT" };
+  const groupClass = { RESOLVED: "group-resolved", CRITICAL: "group-critical", HIGH: "group-high", POLISH: "group-polish" };
   for (const [key, arr] of Object.entries(groups)) {
-    html = html.replaceAll(`{{${key}_CARDS}}`, arr.map((f) => fillItem(cardTpl, f)).join(""));
-    html = html.replaceAll(`{{${key}_COUNT}}`, String(arr.length));
+    if (arr.length) {
+      html = html.replaceAll(`{{${key}_CARDS}}`, arr.map((f) => fillItem(cardTpl, f)).join(""));
+      html = html.replaceAll(`{{${countToken[key]}}}`, String(arr.length));
+    } else {
+      // Drop the whole empty group block (heading + cards wrapper).
+      const gre = new RegExp(`\\s*<div class="group ${groupClass[key]}">[\\s\\S]*?<\\/div>\\s*<\\/div>`);
+      html = html.replace(gre, "");
+    }
   }
 }
 
@@ -126,9 +137,21 @@ const single = {
 };
 for (const [k, v] of Object.entries(single)) html = html.replaceAll(`{{${k}}}`, esc(v));
 
-// Logo data URI — appears on cover AND footer, so replace globally, raw (no escaping).
-const logoDataUri = `data:image/png;base64,${readFileSync(LOGO).toString("base64")}`;
-html = html.replaceAll("{{LOGO_DATA_URI}}", logoDataUri);
+// Logo data URIs. The cover uses a crisp (but bounded) logo; the footer repeats
+// on every inner page, so it uses a tiny downscaled logo — otherwise pdfunite
+// re-embeds the full logo per page and the PDF balloons. Falls back to the raw
+// file if sharp isn't available.
+let coverLogoUri, footerLogoUri;
+try {
+  const sharp = (await import("sharp")).default;
+  const toUri = async (b) => `data:image/png;base64,${b.toString("base64")}`;
+  coverLogoUri = await toUri(await sharp(LOGO).resize({ width: 700, withoutEnlargement: true }).png({ compressionLevel: 9 }).toBuffer());
+  footerLogoUri = await toUri(await sharp(LOGO).resize({ height: 48 }).png({ compressionLevel: 9 }).toBuffer());
+} catch {
+  const raw = `data:image/png;base64,${readFileSync(LOGO).toString("base64")}`;
+  coverLogoUri = footerLogoUri = raw;
+}
+html = html.replaceAll("{{LOGO_DATA_URI}}", coverLogoUri);
 
 // Fail loud if any placeholder survived (a schema/template drift).
 const leftover = [...html.matchAll(/\{\{(\w+)\}\}/g)].map((m) => m[1]);
@@ -168,29 +191,50 @@ const footerTemplate = `
               font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Arial,sans-serif;
               color:#6a675f;display:flex;align-items:center;justify-content:space-between;">
     <span style="display:flex;align-items:center;gap:5px;">
-      <img src="${logoDataUri}" style="height:9px;width:auto;opacity:.9;">
+      <img src="${footerLogoUri}" style="height:9px;width:auto;opacity:.9;">
       <span>Confidential &mdash; prepared for Cash for Gold VA</span>
     </span>
     <span>${esc(single.REPORT_DATE)} &nbsp;&#9670;&nbsp; Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
   </div>`;
 
+const tmp = join(OUT_DIR, ".tmp-build");
 const { chromium } = await import("playwright");
 const browser = await chromium.launch();
 try {
   const page = await browser.newPage();
   await page.setContent(html, { waitUntil: "networkidle" });
   await page.emulateMedia({ media: "print" });
+  const base = { format: "A4", printBackground: true, margin: MARGIN };
+
+  mkdirSync(tmp, { recursive: true });
+  // Full doc: running footer on every page, correct "Page N of M".
+  const fullPdf = join(tmp, "full.pdf");
   await page.pdf({
-    path: outPath,
-    format: "A4",
-    printBackground: true,
-    margin: MARGIN,
-    displayHeaderFooter: true,
-    headerTemplate: "<div></div>", // empty header; top margin above reserves space
-    footerTemplate,
+    ...base, path: fullPdf,
+    displayHeaderFooter: true, headerTemplate: "<div></div>", footerTemplate,
   });
-} finally {
+  // Cover only: no footer, so page 1 stays clean.
+  const coverPdf = join(tmp, "cover.pdf");
+  await page.pdf({ ...base, path: coverPdf, displayHeaderFooter: false, pageRanges: "1" });
   await browser.close();
+
+  // Swap page 1 of the full doc with the footerless cover, preserving the inner
+  // pages' "Page 2..N of N" numbering (poppler). Fall back to the full doc if
+  // poppler's pdfseparate/pdfunite aren't available.
+  try {
+    execFileSync("pdfseparate", ["-f", "2", fullPdf, join(tmp, "p-%d.pdf")], { stdio: "pipe" });
+    const inner = readdirSync(tmp)
+      .filter((f) => /^p-\d+\.pdf$/.test(f))
+      .sort((a, b) => (+a.match(/\d+/)[0]) - (+b.match(/\d+/)[0]))
+      .map((f) => join(tmp, f));
+    execFileSync("pdfunite", [coverPdf, ...inner, outPath], { stdio: "pipe" });
+  } catch {
+    console.warn("· cover-footer removal skipped (poppler pdfseparate/pdfunite missing) — footer left on cover.");
+    copyFileSync(fullPdf, outPath);
+  }
+} finally {
+  try { await browser.close(); } catch {}
+  rmSync(tmp, { recursive: true, force: true });
 }
 
 const kb = (statSync(outPath).size / 1024).toFixed(0);
