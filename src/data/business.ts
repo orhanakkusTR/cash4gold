@@ -161,7 +161,7 @@ export const LOCATIONS: Location[] = [
 
 // Chantilly is the primary contact line shown in generic CTAs sitewide
 // (hero, banners, CTA bands, header). Per-location pages use their own number.
-const PRIMARY_LOCATION = LOCATIONS.find((l) => l.slug === "chantilly") ?? LOCATIONS[0];
+export const PRIMARY_LOCATION = LOCATIONS.find((l) => l.slug === "chantilly") ?? LOCATIONS[0];
 export const PRIMARY_PHONE = PRIMARY_LOCATION.phone;
 export const PRIMARY_PHONE_HREF = PRIMARY_LOCATION.phoneHref;
 
