@@ -252,7 +252,8 @@ export default function PrivacyPage() {
             <h2 id="contact" className="scroll-mt-28 !font-bold">Contact Us</h2>
             <p>
               Questions about this policy? Email{" "}
-              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, or see our{" "}
+              <Link href="/terms">Terms of Service</Link>.
             </p>
           </Prose>
 
