@@ -2,6 +2,8 @@
 // Usage: DATABASE_URL=postgres://... node scripts/init-db.mjs
 import pg from "pg";
 
+// ip_hash + ua_class added 2026-07 (P1-10). The ALTER lines migrate an existing
+// table in place; the whole script is idempotent, so re-running is safe.
 const SCHEMA_SQL = `
 CREATE TABLE IF NOT EXISTS events (
   id         BIGSERIAL PRIMARY KEY,
@@ -9,10 +11,15 @@ CREATE TABLE IF NOT EXISTS events (
   location   TEXT,
   source     TEXT,
   path       TEXT,
+  ip_hash    TEXT,
+  ua_class   TEXT,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+ALTER TABLE events ADD COLUMN IF NOT EXISTS ip_hash  TEXT;
+ALTER TABLE events ADD COLUMN IF NOT EXISTS ua_class TEXT;
 CREATE INDEX IF NOT EXISTS events_created_at_idx ON events (created_at);
 CREATE INDEX IF NOT EXISTS events_type_idx       ON events (type);
+CREATE INDEX IF NOT EXISTS events_ip_hash_idx    ON events (ip_hash);
 `;
 
 const url = process.env.DATABASE_URL;

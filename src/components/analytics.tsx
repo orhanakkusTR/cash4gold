@@ -34,6 +34,18 @@ for (const l of LOCATIONS) {
   if (l.mapUrl) mapUrlToSlug.set(l.mapUrl, l.slug);
 }
 
+// 5-second suppression window: a visitor who taps the same call/directions link
+// twice (impatience, a mis-tap) shouldn't be counted as two conversions.
+const DEDUPE_MS = 5000;
+const lastSent = new Map<string, number>();
+function recentlySent(key: string): boolean {
+  const now = Date.now();
+  const prev = lastSent.get(key);
+  if (prev && now - prev < DEDUPE_MS) return true;
+  lastSent.set(key, now);
+  return false;
+}
+
 function send(payload: TrackPayload) {
   const body = JSON.stringify(payload);
   try {
@@ -91,6 +103,9 @@ export function Analytics() {
         : a.closest("footer")
           ? "footer"
           : "page";
+
+      // Suppress a repeat of the same interaction within 5s (double-tap guard).
+      if (recentlySent(`${type}|${location ?? ""}`)) return;
 
       send({
         type,

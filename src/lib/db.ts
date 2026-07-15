@@ -48,10 +48,15 @@ export async function query<T = Record<string, unknown>>(
 }
 
 // The single events table. One row per tracked interaction.
-//   type      — 'phone' | 'directions' | 'pageview'
+//   type      — 'phone' | 'directions' | 'review_click' | 'pageview'
 //   location  — store slug (chantilly/annandale/manassas/vienna) or null
 //   source    — where on the site ('header' | 'footer' | 'page' | 'banner' | 'fab')
 //   path      — the page the event fired on
+//   ip_hash   — salted, non-reversible hash of the client IP (never the raw IP)
+//   ua_class  — coarse device class ('bot' | 'mobile' | 'desktop')
+// ip_hash + ua_class exist so a contaminating source can be identified and
+// cleaned retroactively without ever storing PII. The ALTER lines migrate an
+// existing table in place; re-running is a no-op.
 export const SCHEMA_SQL = `
 CREATE TABLE IF NOT EXISTS events (
   id         BIGSERIAL PRIMARY KEY,
@@ -59,8 +64,13 @@ CREATE TABLE IF NOT EXISTS events (
   location   TEXT,
   source     TEXT,
   path       TEXT,
+  ip_hash    TEXT,
+  ua_class   TEXT,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+ALTER TABLE events ADD COLUMN IF NOT EXISTS ip_hash  TEXT;
+ALTER TABLE events ADD COLUMN IF NOT EXISTS ua_class TEXT;
 CREATE INDEX IF NOT EXISTS events_created_at_idx ON events (created_at);
 CREATE INDEX IF NOT EXISTS events_type_idx       ON events (type);
+CREATE INDEX IF NOT EXISTS events_ip_hash_idx    ON events (ip_hash);
 `;
