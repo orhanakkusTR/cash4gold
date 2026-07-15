@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { Phone, Navigation, Eye, Database } from "lucide-react";
+import { Phone, Navigation, Eye, Star, Database } from "lucide-react";
 import { getAdminUser } from "@/lib/admin-auth";
 import { query, hasDb } from "@/lib/db";
 import { LOCATIONS } from "@/data/business";
@@ -231,6 +231,17 @@ export default async function AdminDashboard({
     );
   }
 
+  // Retention (privacy policy: 24 months). We have no app-level scheduler on the
+  // hosting platform, so we purge opportunistically whenever the owner opens the
+  // dashboard. The DELETE is idempotent and cheap (created_at is indexed) — after
+  // the first run it removes only the trickle of newly-aged rows. If the panel
+  // isn't opened for a long stretch, the next open catches up. (Alternative if we
+  // ever need guaranteed cadence: run `node scripts/init-db.mjs`-style purge on a
+  // monthly cron.)
+  await query(
+    `DELETE FROM events WHERE created_at < now() - interval '24 months'`,
+  ).catch(() => {});
+
   const range = resolveRange(await searchParams);
   const { cond, params } = rangeClause(range);
 
@@ -262,6 +273,7 @@ export default async function AdminDashboard({
 
   const totalPhone = sum(byType, (r) => r.type === "phone");
   const totalDir = sum(byType, (r) => r.type === "directions");
+  const totalReviews = sum(byType, (r) => r.type === "review_click");
   const totalViews = sum(byType, (r) => r.type === "pageview");
 
   // Build the contiguous day series for the chart.
@@ -308,9 +320,10 @@ export default async function AdminDashboard({
       </div>
 
       {/* Stat cards */}
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-5">
         <StatCard icon={<Phone className="h-4 w-4" />} label="Phone clicks" value={totalPhone} />
         <StatCard icon={<Navigation className="h-4 w-4" />} label="Directions" value={totalDir} />
+        <StatCard icon={<Star className="h-4 w-4" />} label="Review clicks" value={totalReviews} />
         <StatCard icon={<Eye className="h-4 w-4" />} label="Page views" value={totalViews} />
         <StatCard
           icon={<Phone className="h-4 w-4" />}
