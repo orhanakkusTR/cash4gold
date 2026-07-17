@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { PageHero, CtaBand } from "@/components/page-parts";
+import { SectionHeading } from "@/components/section-heading";
+import { Reveal } from "@/components/reveal";
 import { CoinListingGrid, type CoinItem } from "@/components/coin-listing-grid";
 import { AMERICAN_GOLD_EAGLES } from "@/data/american-gold-eagle";
 import { AMERICAN_GOLD_BUFFALOS } from "@/data/american-gold-buffalo";
@@ -24,7 +28,7 @@ import { JUNK_SILVER } from "@/data/junk-silver";
 import { MEXICAN_SILVER_LIBERTADS } from "@/data/mexican-silver-libertads";
 import { SILVER_KRUGERRANDS } from "@/data/silver-krugerrands";
 import { ATB_SILVER_COINS } from "@/data/atb-silver-coins";
-import { BreadcrumbJsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { getSubcategory } from "@/data/business";
 
 // Third-level "item" pages: a specific coin type under a subcategory, e.g.
@@ -39,6 +43,10 @@ type ItemPage = {
   metaTitle: string;
   metaDescription: string;
   coins: CoinItem[];
+  // Optional coin-specific depth (Wave 3). Pages without these render as before.
+  sections?: { heading: string; paras: string[] }[]; // prose blocks below the grid
+  faqs?: { q: string; a: string }[]; // coin-specific FAQs (visible + FAQPage JSON-LD)
+  related?: { href: string; label: string }[]; // internal links (hub, sibling coin, locations)
 };
 
 const ITEM_PAGES: Record<string, ItemPage> = {
@@ -72,8 +80,36 @@ const ITEM_PAGES: Record<string, ItemPage> = {
       "The most popular silver bullion coin in the world — 1 oz .999 fine, from 1986 to today, bullion, proof and graded. Bring yours to any of our 4 Northern Virginia locations for a free appraisal and instant payout.",
     metaTitle: "Sell American Silver Eagles in Northern VA | All Years & Grades",
     metaDescription:
-      "We buy American Silver Eagles — 1 oz .999 fine, every year, bullion, proof and graded. Free appraisal and instant payout at 4 Northern Virginia locations.",
+      "How we price American Silver Eagles: live silver spot on 1 oz .999 fine content, on-site testing, and premiums for proof and certified coins — paid the same visit in Northern Virginia.",
     coins: AMERICAN_SILVER_EAGLES,
+    sections: [
+      {
+        heading: "How we price your American Silver Eagle",
+        paras: [
+          "An American Silver Eagle holds one troy ounce of .999 fine silver, so its worth on any given day comes straight from the current silver spot price. Because silver costs a fraction of what gold does per ounce, the dollar amounts stay modest — yet the approach never changes: every figure is open, anchored to the live market, and talked through with you at the counter.",
+          "Each coin is authenticated and weighed while you watch. A plain bullion Eagle sells for roughly its silver content, while proof, burnished, and slab-graded pieces — plus a handful of scarce dates — can be worth more, and any premium like that is built into the offer whenever the market allows.",
+          "You collect payment on the same trip, before you head out the door; nothing is mailed and no check has to clear. Since the quote rides the live silver market, it stands the moment we give it and shifts only as spot moves.",
+        ],
+      },
+      {
+        heading: "What to bring and what to expect",
+        paras: [
+          "Bring your Eagles in whatever form they are in — loose, stacked in tubes or a monster box, in capsules, or still sealed in Mint packaging — and include any grading slabs or paperwork if the coins are certified. You will also need a current government-issued photo ID; we ask every seller for one at all of our stores.",
+          "There is no need to book ahead. Stop by any of our four Northern Virginia stores for a free, unhurried appraisal, and take the number only if it works for you: say yes and payment is in your hand right then; say no and your Eagles go home with you, no fee either way.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "How much is an American Silver Eagle worth?", a: "That comes down to the live silver spot price, since the coin is a full ounce of .999 fine silver. An everyday bullion Eagle sits near its silver value, while proof, burnished, or graded examples can fetch more. Either way, you see the exact number before deciding." },
+      { q: "Do you buy tubes and monster boxes of Silver Eagles?", a: "Absolutely — a single coin, several full tubes, or a factory-sealed monster box are all welcome, and we value them against the live silver price. Bring whatever you have and we will count and appraise it at no charge." },
+      { q: "Are proof or graded Silver Eagles worth more?", a: "Often, yes. Proof and burnished issues, coins sealed in PCGS or NGC holders, and certain hard-to-find dates can trade above their metal value; we reflect that in the offer whenever the market rewards it." },
+      { q: "Do I need the original box or certificate?", a: "For ordinary bullion, no — the silver content is what we pay on. When a coin is proof or graded, keeping its packaging, paperwork, or sealed holder lets us confirm the grade and can lift what we pay." },
+    ],
+    related: [
+      { href: "/coins/sell-silver-coins", label: "All silver coins we buy" },
+      { href: "/coins/sell-silver-coins/silver-dollars", label: "Sell silver dollars" },
+      { href: "/locations", label: "Our 4 Northern Virginia locations" },
+    ],
   },
   "coins/sell-silver-coins/canadian-silver-coins": {
     crumb: "Canadian Silver Coins",
@@ -249,8 +285,36 @@ const ITEM_PAGES: Record<string, ItemPage> = {
       "Every size and finish, from 1986 to today — 1 oz, 1/2 oz, 1/4 oz and 1/10 oz, bullion, proof, burnished and certified. Bring yours to any of our 4 Northern Virginia locations for a free appraisal and instant payout.",
     metaTitle: "Sell American Gold Eagles in Northern VA | All Years, Sizes & Proofs",
     metaDescription:
-      "We buy every American Gold Eagle — 1 oz, 1/2 oz, 1/4 oz, 1/10 oz, bullion, proof, burnished and graded. Free appraisal and instant payout at 4 Northern Virginia locations.",
+      "How we price American Gold Eagles: live gold spot on 22-karat content, on-site testing, and premiums for proof and certified coins — paid the same visit at 4 Northern Virginia locations.",
     coins: AMERICAN_GOLD_EAGLES,
+    sections: [
+      {
+        heading: "How we price your American Gold Eagle",
+        paras: [
+          "Every American Gold Eagle is priced off the live gold spot price at the moment you sell. The coin is 22-karat (91.67% fine) gold, and each one holds a full troy ounce — or the marked fraction: 1/2, 1/4 or 1/10 oz — of pure gold, so its metal value is straightforward to calculate transparently in front of you.",
+          "We test and weigh every coin on-site with professional equipment, confirm it is genuine, and show you the numbers. Bullion Eagles trade close to their gold content; proof, burnished, and certified (graded) Eagles can carry a collector premium above melt, and we account for that when the market supports it.",
+          "You are paid the same visit, before you leave — no mail-in wait. Because the offer follows the live market, it is firm at the time we make it and can move with the spot price.",
+        ],
+      },
+      {
+        heading: "What to bring and what to expect",
+        paras: [
+          "Bring the coins themselves — loose, in tubes, capsules, or their original Mint packaging — plus any certificates or grading slabs (PCGS, NGC) if your Eagles are certified. A valid, unexpired government photo ID is required to sell; that is our policy at all four of our stores.",
+          "No appointment is needed. Walk into any of our four Northern Virginia locations, watch the free appraisal, and decide with no pressure: like the offer and you are paid on the spot; if not, you keep your coins.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Do you buy fractional American Gold Eagles?", a: "Yes — we buy 1 oz, 1/2 oz, 1/4 oz and 1/10 oz Gold Eagles. Each is priced on its actual gold content at the live spot price, plus any premium for proof or certified pieces." },
+      { q: "Are older Gold Eagles worth more than newer ones?", a: "For bullion coins the year usually matters little — value tracks the gold content. Certain proof, burnished, or key-date certified Eagles can carry a collector premium, which we factor in when the market supports it." },
+      { q: "Do I need the box and certificate to sell?", a: "Not for bullion coins — we can value those on gold content alone. For proof or graded Eagles, original Mint packaging and certificates (or an intact PCGS/NGC slab) help confirm condition and can support a higher offer." },
+      { q: "How is my Gold Eagle offer calculated?", a: "We weigh and test the coin, take its pure-gold content, and apply the live spot price, then add any collector premium for proof or certified pieces. Every step is shown to you before you decide." },
+    ],
+    related: [
+      { href: "/coins/sell-gold-coins", label: "All gold coins we buy" },
+      { href: "/coins/sell-gold-coins/american-gold-buffalo", label: "Sell American Gold Buffalos" },
+      { href: "/locations", label: "Our 4 Northern Virginia locations" },
+    ],
   },
   "coins/sell-gold-coins/american-gold-buffalo": {
     crumb: "American Gold Buffalo",
@@ -436,6 +500,7 @@ export default async function ItemPage({
           { name: page.crumb, url: `/${category}/${sub}/${item}` },
         ]}
       />
+      {page.faqs && page.faqs.length > 0 && <FaqJsonLd faqs={page.faqs} />}
       <PageHero
         eyebrow={page.eyebrow}
         crumbs={[
@@ -447,9 +512,58 @@ export default async function ItemPage({
         description={page.description}
       />
 
-      <section className="container-page py-20">
+      <section className="container-page pt-20 pb-10">
         <CoinListingGrid coins={page.coins} label={page.label} />
       </section>
+
+      {/* Coin-specific depth (Wave 3): pricing/process, related links, FAQs. */}
+      {page.sections?.map((sec) => (
+        <section key={sec.heading} className="container-page py-6">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="font-display text-2xl font-bold text-foreground">{sec.heading}</h2>
+            {sec.paras.map((p, i) => (
+              <p key={i} className="mt-4 text-base leading-relaxed text-muted">{p}</p>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      {page.related && page.related.length > 0 && (
+        <section className="container-page pt-4 pb-2">
+          <div className="mx-auto max-w-3xl flex flex-wrap gap-2.5">
+            {page.related.map((r) => (
+              <Link
+                key={r.href}
+                href={r.href}
+                className="inline-flex items-center gap-1 rounded-full border border-gold-500/40 px-4 py-2 text-sm font-medium text-gold-700 transition-colors hover:bg-gold-50"
+              >
+                {r.label} <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {page.faqs && page.faqs.length > 0 && (
+        <section className="mt-14 bg-cream-100 py-12 sm:py-16">
+          <div className="container-page">
+            <SectionHeading eyebrow="FAQ" title={<><span className="font-extrabold">{page.crumb}:</span> common questions</>} />
+            <div className="mx-auto mt-10 max-w-3xl divide-y divide-hairline">
+              {page.faqs.map((f, i) => (
+                <Reveal key={f.q} delay={i * 0.05}>
+                  <details className="group py-5">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-medium text-foreground">
+                      {f.q}
+                      <span className="text-gold-500 transition-transform group-open:rotate-45">+</span>
+                    </summary>
+                    <p className="mt-3 text-muted">{f.a}</p>
+                  </details>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <CtaBand />
     </>
