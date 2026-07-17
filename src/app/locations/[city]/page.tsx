@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { MapPin, Phone, Clock, ArrowRight, Check, Navigation } from "lucide-react";
 import { LOCATIONS, CATEGORIES, ALL_SUBCATEGORIES, getLocation, SITE } from "@/data/business";
 import { CITY_LANDINGS } from "@/data/city-landings";
+import { LOCATION_LOCAL } from "@/data/location-local";
 import { formatHours } from "@/lib/utils";
 import { PageHero, CtaBand } from "@/components/page-parts";
 import { Reveal } from "@/components/reveal";
@@ -39,6 +40,8 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
   const nearbyCityLandings = CITY_LANDINGS.filter((c) =>
     c.nearest.some((n) => n.slug === loc.slug),
   );
+
+  const local = LOCATION_LOCAL[loc.slug];
 
   return (
     <>
@@ -161,6 +164,22 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           </div>
         </Reveal>
       </section>
+
+      {/* Local orientation — unique per store (verified road/transit facts) */}
+      {local && (
+        <section className="container-page py-16">
+          <Reveal>
+            <div className="mx-auto max-w-3xl">
+              <h2 className="font-display text-2xl font-extrabold text-foreground">{local.heading}</h2>
+              <div className="mt-5 space-y-4 text-lg leading-relaxed text-muted">
+                {local.paras.map((p) => (
+                  <p key={p.slice(0, 32)}>{p}</p>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </section>
+      )}
 
       {/* Neighborhoods */}
       <section className="bg-cream-100 py-14">
