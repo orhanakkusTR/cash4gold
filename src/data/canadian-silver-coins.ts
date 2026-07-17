@@ -32,7 +32,7 @@ export const CANADIAN_SILVER_COINS: CadSilverCoin[] = [
   { name: "2026 1 oz Canadian Silver Treasured Maple Leaf Celebration Privy Coin (New w Assay)", image: "/coins/canadian-silver/canadian-silver-027.jpg" },
   { name: "2026 1 oz Canadian Silver Maple Leaf Tube (25 Coins, BU)", image: "/coins/canadian-silver/canadian-silver-028.jpg" },
   { name: "2026 1 oz Canadian Silver Maple Leaf Tube (MintSealed, 25 Coins, BU)", image: "/coins/canadian-silver/canadian-silver-029.jpg" },
-  { name: "2026 1 oz Silver Maple Leaf Mini Monster Box (100 Coins, JM Bullion Pelican Case, BU)", image: "/coins/canadian-silver/canadian-silver-030.jpg" },
+  { name: "2026 1 oz Silver Maple Leaf Mini Monster Box (100 Coins, Sealed Case, BU)", image: "/coins/canadian-silver/canadian-silver-030.jpg" },
   { name: "2026 1 oz Canadian Silver Maple Leaf Monster Box (500 Coins, BU)", image: "/coins/canadian-silver/canadian-silver-031.jpg" },
   { name: "2010 1 oz Canadian Silver Maple Leaf Monster Box (500 Coins, BU)", image: "/coins/canadian-silver/canadian-silver-032.jpg" },
   { name: "1958-1967 Canada Silver Dollar (AU+)", image: "/coins/canadian-silver/canadian-silver-033.jpg" },
