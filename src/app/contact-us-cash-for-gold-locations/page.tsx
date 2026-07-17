@@ -204,7 +204,7 @@ export default function ContactPage() {
                 <p className="mt-4 text-muted">
                   Your appraisal is free, friendly, and carries no obligation. We test and weigh every
                   item in front of you, explain how we reach each number, and base offers on current
-                  market spot prices, never a lowball flat rate. If you accept, you are paid in cash
+                  market spot prices, never a lowball flat rate. If you accept, you are paid the same visit
                   immediately. If you would rather think it over, that is completely fine, there is
                   never any pressure to sell.
                 </p>

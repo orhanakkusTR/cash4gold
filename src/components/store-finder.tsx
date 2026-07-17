@@ -59,7 +59,7 @@ function buildPlaces(): Place[] {
 const VALUE_PROPS = [
   { icon: BadgeCheck, label: "Free, no-obligation appraisal against the live spot price" },
   { icon: Eye, label: "Tested & weighed on a calibrated scale in front of you" },
-  { icon: Banknote, label: "Instant payout — paid in cash the same visit" },
+  { icon: Banknote, label: "Instant payout — paid the same visit" },
 ];
 
 function findMatch(places: Place[], query: string): Place | null {

@@ -73,7 +73,7 @@ const VALUE_PROPS = [
 
 const WHY_LOCAL = [
   { icon: Eye, title: "You watch every step", body: "Your items are tested and weighed in front of you on a calibrated scale — never in a back room." },
-  { icon: HandCoins, title: "Keep it until you agree", body: "You hold your gold until you accept a number, then walk out with cash the same visit. No obligation." },
+  { icon: HandCoins, title: "Keep it until you agree", body: "You hold your gold until you accept a number, then walk out paid the same visit. No obligation." },
   { icon: Mailbox, title: "No mailing valuables away", body: "Mail-in buyers quote you only after your gold has shipped. In person, nothing leaves your sight." },
 ];
 
@@ -398,8 +398,8 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
               },
               {
                 icon: HandCoins,
-                title: "Take the cash — or take it home",
-                body: "Happy with the number? Leave with cash the same visit. Not for you? Keep your jewelry and walk out. There's never a fee or any pressure either way.",
+                title: "Take the payout — or take it home",
+                body: "Happy with the number? Leave paid the same visit. Not for you? Keep your jewelry and walk out. There's never a fee or any pressure either way.",
               },
             ].map(({ icon: Icon, title, body }, i) => (
               <Reveal key={title} delay={i * 0.06}>

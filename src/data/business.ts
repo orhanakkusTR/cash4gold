@@ -340,7 +340,7 @@ export const CATEGORIES: Category[] = [
       "We buy all four precious metals, gold, silver, platinum, and palladium, in every form: jewelry, bullion, bars, rounds, scrap, and industrial. Every item is tested for purity and weighed in front of you, then paid against the current market spot price.",
     keywords: ["sell precious metals", "gold buyer near me", "sell bullion northern virginia", "precious metals buyer"],
     longDescription:
-      "When you sell precious metals, the only number that should matter is the live market price, and that is the foundation of every offer we make. We buy gold, silver, platinum, and palladium in every form, jewelry, bars, rounds, bullion, scrap, coins, and industrial, testing each item for purity and weighing it on a calibrated scale right in front of you. Your payout is then calculated against the current spot price for that metal, with the math shown openly and no lowball gimmicks. There is no minimum quantity, no fee to get an appraisal, and no obligation to sell. Because we operate four storefronts across Northern Virginia rather than a mail-in service, you keep your metal until you accept the offer and walk out with cash the same day. Whether you are selling a single gold ring, a box of sterling flatware, or a stack of bullion bars, you get a fast, transparent, market-based offer. Bring your gold, silver, platinum, or palladium to any of our Annandale, Manassas, Chantilly, or Vienna/McLean locations.",
+      "When you sell precious metals, the only number that should matter is the live market price, and that is the foundation of every offer we make. We buy gold, silver, platinum, and palladium in every form, jewelry, bars, rounds, bullion, scrap, coins, and industrial, testing each item for purity and weighing it on a calibrated scale right in front of you. Your payout is then calculated against the current spot price for that metal, with the math shown openly and no lowball gimmicks. There is no minimum quantity, no fee to get an appraisal, and no obligation to sell. Because we operate four storefronts across Northern Virginia rather than a mail-in service, you keep your metal until you accept the offer and walk out paid the same day. Whether you are selling a single gold ring, a box of sterling flatware, or a stack of bullion bars, you get a fast, transparent, market-based offer. Bring your gold, silver, platinum, or palladium to any of our Annandale, Manassas, Chantilly, or Vienna/McLean locations.",
     subcategories: [
       {
         slug: "sell-gold",
@@ -677,7 +677,7 @@ export const CATEGORIES: Category[] = [
 export const VALUE_PROPS = [
   { icon: "BadgeDollarSign", title: "Best Value", desc: "Live spot-price offers tested in front of you, consistently higher than mall kiosks and mail-in services." },
   { icon: "PackageOpen", title: "We Accept Many Items", desc: "Gold, silver, platinum, diamonds, designer jewelry, and collectible coins, all under one roof." },
-  { icon: "Banknote", title: "Instant Payout", desc: "Walk out with cash in hand the same visit. No waiting, no checks in the mail, no surprises." },
+  { icon: "Banknote", title: "Instant Payout", desc: "Walk out paid the same visit. No waiting, no checks in the mail, no surprises." },
   { icon: "ShieldCheck", title: "Professional & Simple", desc: "A transparent, no-pressure appraisal from trained buyers. Honest pricing without gimmicks." },
 ] as const;
 

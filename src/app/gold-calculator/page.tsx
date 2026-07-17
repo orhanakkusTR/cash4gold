@@ -37,7 +37,7 @@ export default function WhatIsItWorthPage() {
         eyebrow="Free Instant Estimate"
         crumbs={[{ name: "Home", href: "/" }, { name: "What's It Worth?", href: PATH }]}
         title={<>What&apos;s it worth? <span className="text-gold-shimmer">Get an instant estimate.</span></>}
-        description="Enter your item and we'll estimate a cash range based on today's live market price. Free, instant, and no obligation. Your final offer is set in store after a free, no-pressure appraisal."
+        description="Enter your item and we'll estimate a payout range based on today's live market price. Free, instant, and no obligation. Your final offer is set in store after a free, no-pressure appraisal."
       />
 
       {/* Estimator + supporting copy */}

@@ -188,7 +188,7 @@ export function PayoutEstimator() {
             <p className="py-3 text-sm text-red-400">{result.error}</p>
           ) : (
             <>
-              <p className="text-xs uppercase tracking-[0.15em] text-cream-100/50">Estimated cash range</p>
+              <p className="text-xs uppercase tracking-[0.15em] text-cream-100/50">Estimated payout range</p>
               <p className="mt-1.5 font-display text-4xl font-extrabold text-gold-300 sm:text-5xl">
                 {fmt(result.low)} <span className="text-cream-100/40">–</span> {fmt(result.high)}
               </p>
@@ -214,7 +214,7 @@ export function PayoutEstimator() {
       {/* CTA card */}
       <div className="rounded-3xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)] sm:p-8">
         <h3 className="font-display text-xl font-semibold text-foreground">Get your real offer, free &amp; on the spot</h3>
-        <p className="mt-1 text-sm text-muted">Pick your nearest location for an exact, no-obligation appraisal. Walk out with cash the same day.</p>
+        <p className="mt-1 text-sm text-muted">Pick your nearest location for an exact, no-obligation appraisal. Walk out paid the same day.</p>
         <select value={locSlug} onChange={(e) => setLocSlug(e.target.value)} className={cn(fieldCls, "mt-4")} aria-label="Choose a location">
           {LOCATIONS.map((l) => (
             <option key={l.slug} value={l.slug}>{l.city} · {l.phone}</option>

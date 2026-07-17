@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const WHY = [
   { icon: ThumbsUp, title: "Best Value", text: "We track live gold, silver, platinum, and diamond prices all day, so your offer reflects the real market, never a lowball guess." },
   { icon: LayoutGrid, title: "Accept Many Items", text: "Far more than gold: we buy silver, diamonds, fine jewelry, luxury watches, coins, and more, all under one roof." },
-  { icon: Zap, title: "Instant Payout", text: "You leave with cash in hand the same visit. No mail-in delays, no waiting on a check, we pay on the spot once you accept." },
+  { icon: Zap, title: "Instant Payout", text: "You leave paid the same visit. No mail-in delays, no waiting on a check, we pay on the spot once you accept." },
   { icon: Sparkles, title: "Professional yet Simple", text: "Expert appraisals without the runaround: every item is tested, weighed, and explained in plain terms before you decide." },
   { icon: ShieldCheck, title: "Honest Company Values", text: "Integrity comes first, transparent offers, zero pressure, and a fair price explained out loud on every single deal." },
   { icon: Landmark, title: "Licensed & Insured", text: "Every Northern Virginia store is fully licensed and insured under Virginia state law, so you sell with total peace of mind." },
@@ -35,7 +35,7 @@ export default function AboutPage() {
         eyebrow="About Us"
         crumbs={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]}
         title={<>Honest valuations from a team that <span className="text-gold-shimmer">knows precious metals</span></>}
-        description="We built Cash for Gold VA on a simple idea: people deserve a fair, transparent price for their valuables, explained in plain terms, paid in cash, on the spot."
+        description="We built Cash for Gold VA on a simple idea: people deserve a fair, transparent price for their valuables, explained in plain terms, paid the same visit, on the spot."
         actions={
           <>
             <Link

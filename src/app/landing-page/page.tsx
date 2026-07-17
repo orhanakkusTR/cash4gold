@@ -90,7 +90,7 @@ export default function AdLandingPage() {
         <HeroVideoBg
           src="/videos/gold-to-cash.mp4"
           poster="/videos/gold-to-cash-poster.jpg"
-          alt="Gold jewelry and coins being appraised and turned into cash"
+          alt="Gold jewelry and coins being appraised and paid out"
         />
         {/* darkening + gold glow over the video for text legibility */}
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink-950/85 via-ink-950/70 to-ink-950/92" />
@@ -224,7 +224,7 @@ export default function AdLandingPage() {
               <span className="h-px w-6 bg-gold-400" /> No appointment needed
             </span>
             <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-foreground sm:text-4xl">
-              Cash in 3 simple steps
+              Paid in 3 simple steps
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-pretty text-muted">
               No mailing valuables away, no waiting for a check. Everything

@@ -17,7 +17,7 @@ function llmsTxt(): string {
   lines.push("");
   lines.push(
     `${SITE.name} buys gold, silver, platinum, palladium, diamonds, fine and designer jewelry, ` +
-      `luxury watches, and coins for instant cash across four Northern Virginia locations. ` +
+      `luxury watches, and coins for instant payout across four Northern Virginia locations. ` +
       `Every item is appraised for free, in person, and priced against live market rates with no ` +
       `obligation to sell. Google rated ${SITE.rating.value} stars from ${SITE.rating.count}+ reviews.`,
   );
