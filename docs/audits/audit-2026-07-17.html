@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cash for Gold VA — Audit 2026-07-17 (QUICK re-audit)</title>
+<style>
+  :root{
+    --bg:#0f0d0a;--panel:#181410;--panel2:#201a12;--line:#2c2418;--ink:#f4efe6;--muted:#a99f8d;
+    --gold:#e0b02f;--gold2:#856316;--green:#4caf72;--amber:#e0a52f;--red:#e0603f;--blue:#5b8fd6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:32px 20px}
+  .wrap{max-width:1080px;margin:0 auto}
+  h1{font-size:26px;margin:0 0 4px}
+  .sub{color:var(--muted);margin:0 0 24px}
+  .grid{display:grid;gap:16px}
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  .cols-2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:720px){.cols-3,.cols-2{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .big{font-size:44px;font-weight:800;line-height:1}
+  .big.gold{background:linear-gradient(100deg,#c2941d,#edc555,#e0b02f);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .delta{font-size:15px;font-weight:700}
+  .up{color:var(--green)} .flat{color:var(--muted)} .down{color:var(--red)}
+  .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin:34px 0 12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+  td.n{text-align:right;font-variant-numeric:tabular-nums}
+  .bar{height:8px;border-radius:6px;background:var(--panel2);overflow:hidden;margin-top:6px}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,#856316,#e0b02f)}
+  .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;font-weight:700}
+  .pill.res{background:rgba(76,175,114,.16);color:#7fd39a}
+  .pill.part{background:rgba(224,165,47,.16);color:#e6c46a}
+  .pill.open{background:rgba(224,96,63,.16);color:#f0a58f}
+  .pill.new{background:rgba(91,143,214,.16);color:#9dc0ec}
+  .tag{font-size:11px;padding:1px 7px;border-radius:5px;font-weight:700;color:#0f0d0a}
+  .t-re{background:#7fd39a}.t-part{background:#e6c46a}.t-open{background:#f0a58f}
+  .muted{color:var(--muted)} .mono{font-variant-numeric:tabular-nums}
+  .note{background:var(--panel2);border-left:3px solid var(--gold2);padding:12px 14px;border-radius:8px;color:var(--muted);font-size:13.5px;margin-top:12px}
+  .foot{color:var(--muted);font-size:12px;margin-top:34px;border-top:1px solid var(--line);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Cash for Gold VA — Site &amp; System Audit</h1>
+  <p class="sub">QUICK re-audit · 2026-07-17 · baseline 2026-07-15 · live at cashforgoldva.com</p>
+
+  <div class="grid cols-3">
+    <div class="card">
+      <div class="label">Overall score</div>
+      <div class="big gold">81<span style="font-size:20px;color:var(--muted)">/100</span></div>
+      <div class="delta up">▲ +18 vs baseline (63)</div>
+    </div>
+    <div class="card">
+      <div class="label">Baseline findings closed</div>
+      <div class="big">32</div>
+      <div class="delta"><span class="up">32 resolved</span> · <span class="flat">2 partial · 5 open</span></div>
+    </div>
+    <div class="card">
+      <div class="label">New defects introduced</div>
+      <div class="big">0</div>
+      <div class="delta flat">build + lint clean · rendered checks pass</div>
+    </div>
+  </div>
+
+  <div class="grid cols-2" style="margin-top:16px">
+    <div class="card">
+      <div class="label">P0 blockers</div>
+      <div class="big" style="color:var(--green)">0 <span style="font-size:16px;color:var(--muted)">(was 2)</span></div>
+      <div class="delta up">tel: CTA fixed · "0 Years" SSR fixed</div>
+    </div>
+    <div class="card">
+      <div class="label">Still open (mostly owner-input)</div>
+      <div class="big" style="color:var(--amber)">5</div>
+      <div class="delta flat">1 code (NoVA 301) · 4 owner/deferred</div>
+    </div>
+  </div>
+
+  <h2>Scorecard delta by dimension</h2>
+  <table>
+    <thead><tr><th>Dimension</th><th class="n">Base</th><th class="n">Now</th><th class="n">Δ</th><th>Trend</th><th>Re-run?</th></tr></thead>
+    <tbody>
+      <tr><td>Technical SEO</td><td class="n">68</td><td class="n">90</td><td class="n up">+22</td><td><div class="bar"><i style="width:90%"></i></div></td><td class="muted">✅</td></tr>
+      <tr><td>Metadata</td><td class="n">72</td><td class="n">86</td><td class="n up">+14</td><td><div class="bar"><i style="width:86%"></i></div></td><td class="muted">✅</td></tr>
+      <tr><td>Keywords / Semantic</td><td class="n">68</td><td class="n">80</td><td class="n up">+12</td><td><div class="bar"><i style="width:80%"></i></div></td><td class="muted">provisional</td></tr>
+      <tr><td>Cannibalization</td><td class="n">58</td><td class="n">63</td><td class="n up">+5</td><td><div class="bar"><i style="width:63%"></i></div></td><td class="muted">✅</td></tr>
+      <tr><td>Local SEO / NAP</td><td class="n">70</td><td class="n">84</td><td class="n up">+14</td><td><div class="bar"><i style="width:84%"></i></div></td><td class="muted">✅</td></tr>
+      <tr><td>E-E-A-T</td><td class="n">50</td><td class="n">68</td><td class="n up">+18</td><td><div class="bar"><i style="width:68%"></i></div></td><td class="muted">provisional</td></tr>
+      <tr><td>Content quality</td><td class="n">55</td><td class="n">82</td><td class="n up">+27</td><td><div class="bar"><i style="width:82%"></i></div></td><td class="muted">provisional</td></tr>
+      <tr><td>Accessibility</td><td class="n">62</td><td class="n">88</td><td class="n up">+26</td><td><div class="bar"><i style="width:88%"></i></div></td><td class="muted">provisional</td></tr>
+      <tr><td>Core Web Vitals</td><td class="n">74</td><td class="n">86</td><td class="n up">+12</td><td><div class="bar"><i style="width:86%"></i></div></td><td class="muted">provisional</td></tr>
+      <tr><td>Analytics</td><td class="n">55</td><td class="n">82</td><td class="n up">+27</td><td><div class="bar"><i style="width:82%"></i></div></td><td class="muted">provisional</td></tr>
+      <tr><td>Code health</td><td class="n">72</td><td class="n">86</td><td class="n up">+14</td><td><div class="bar"><i style="width:86%"></i></div></td><td class="muted">provisional</td></tr>
+    </tbody>
+  </table>
+  <div class="note"><b>Omitted-coverage note:</b> QUICK mode independently re-audited only Technical SEO, Metadata, Cannibalization, and Local/NAP (✅). The seven “provisional” rows were <b>not</b> given a fresh specialist pass — their deltas are classified from confirmed RESOLVED findings (verified this session by code-inspection or rendered HTML), not a re-scoring. Confirm with a full-mode re-audit.</div>
+
+  <h2>Baseline findings — status</h2>
+  <table>
+    <thead><tr><th>ID</th><th>Finding</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">P0-1</td><td>Coin phone CTA broken relative link (404 + untracked)</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P0-2</td><td>Homepage SSR'd "0 Locations / 0 Years"</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-1</td><td>21 coin pages missing from sitemap</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-2</td><td>Breadcrumb hardcoded "Gold Coins" on silver pages</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-3</td><td>Self-serving duplicated AggregateRating schema</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-4</td><td>Privacy policy misdescribes data collection</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-5</td><td>Coin pages thin + scraped competitor imagery</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-6</td><td>NoVA head-term cannibalization (landing vs blog)</td><td><span class="tag t-open">STILL OPEN</span></td></tr>
+      <tr><td class="mono">P1-7</td><td>4 store pages thinnest in local cluster</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-8</td><td>No named appraisers / credentials</td><td><span class="tag t-open">OPEN · owner</span></td></tr>
+      <tr><td class="mono">P1-9</td><td>Licensed/insured unverifiable; permits</td><td><span class="tag t-part">PARTIAL 3/4</span></td></tr>
+      <tr><td class="mono">P1-10</td><td>/api/track open write endpoint</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-11</td><td>Analytics misattribution + GA4 gaps</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-12</td><td>4 accessibility AA blockers</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-13</td><td>LCP + ticker CWV risks</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P1-14</td><td>Templated FAQ duplicated across 25 pages</td><td><span class="tag t-re">RESOLVED</span></td></tr>
+      <tr><td class="mono">P2-1…3,5…9,11…23,25</td><td>Metadata / copy / code-health / a11y / perf polish</td><td><span class="tag t-re">RESOLVED (20)</span></td></tr>
+      <tr><td class="mono">P2-4</td><td>Root title trimmed; 21 coin titles still 68–73 chars</td><td><span class="tag t-part">PARTIAL</span></td></tr>
+      <tr><td class="mono">P2-10</td><td>NAP hardcoded in blog/lab copy (drift risk)</td><td><span class="tag t-open">OPEN · deferred</span></td></tr>
+      <tr><td class="mono">P2-24</td><td>Founding year inconsistent</td><td><span class="tag t-open">OPEN · owner</span></td></tr>
+      <tr><td class="mono">P2-26</td><td>GSC legacy-URL manual re-index</td><td><span class="tag t-open">OPEN · owner</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Site health snapshot</h2>
+  <div class="grid cols-3">
+    <div class="card"><div class="label">Sitemap URLs</div><div class="big">101</div><div class="delta up">▲ from 78 (coin pages + legal added)</div></div>
+    <div class="card"><div class="label">Canonical coverage</div><div class="big">100%</div><div class="delta flat">home · coin · location · landing verified</div></div>
+    <div class="card"><div class="label">Redirect rules</div><div class="big">111</div><div class="delta flat">all destinations resolve</div></div>
+  </div>
+  <div class="note">Rendered no-JS spot-checks (homepage, coin item, location, city landing) all pass the anomaly rule — no shipped <span class="mono">0</span>, placeholder, <span class="mono">&amp;quot;</span>, <span class="mono">undefined</span>, or <span class="mono">NaN</span>. New same-origin <span class="mono">/api/prices</span> route feeds the ticker (60s cache). Uniqueness scripts (21 coin + 25 FAQ pages) PASS.</div>
+
+  <div class="foot">
+    Internal technical report: <span class="mono">docs/audits/audit-2026-07-17.md</span> · Baseline: <span class="mono">audit-2026-07-15</span> ·
+    Security is out of scope · CWV deltas are risk-from-code, not measured field data · QUICK mode: 4 of 11 dimensions independently re-run.
+  </div>
+</div>
+</body>
+</html>
