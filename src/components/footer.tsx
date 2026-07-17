@@ -119,7 +119,10 @@ export function Footer() {
       )}
 
       <div className="rule-gold opacity-30" />
-      <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-cream-100/50 sm:flex-row">
+      <p className="container-page pt-6 text-center text-xs text-cream-100/45">
+        Licensed Virginia Precious Metals Dealer &mdash; all four locations.
+      </p>
+      <div className="container-page flex flex-col items-center justify-between gap-3 pb-6 pt-3 text-xs text-cream-100/50 sm:flex-row">
         <p>© {2026} {SITE.legalName}. All rights reserved.</p>
         <div className="flex flex-wrap justify-center gap-5">
           {SHOW_CALCULATOR && <Link href="/gold-calculator" className="hover:text-gold-200">What&apos;s It Worth?</Link>}

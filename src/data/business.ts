@@ -145,6 +145,9 @@ export const LOCATIONS: Location[] = [
     hours: MANASSAS_HOURS,
     neighborhoods: ["Bristow", "Gainesville", "Centreville", "Woodbridge"],
     image: "/photos/storefront-manassas.jpg",
+    // Manassas is a separate jurisdiction with its own permit numbering
+    // (differs from the Fairfax stores' PMG26-0XX) — stored verbatim, never reformatted.
+    permit: { number: "2025-072225001CG" },
   },
   {
     slug: "vienna",
