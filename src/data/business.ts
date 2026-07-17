@@ -27,8 +27,6 @@ export const SITE = {
   priceRange: "$$",
   // Opens the Chantilly (14025 US-50) Google Maps place — reviews shown on the panel.
   reviewsUrl: "https://www.google.com/maps/place/?q=place_id:ChIJ__8afoRGtokR1ebhblLGOkk",
-  // Elfsight Google Reviews widget id (renders live Google reviews client-side)
-  elfsightReviewsAppId: "elfsight-app-c6841a77-1f47-4a9f-9259-0109f0f6fbdd",
   social: {
     facebook: "https://facebook.com/cashforgoldva",
     youtube: "https://youtube.com/@cashforgoldva",
@@ -94,6 +92,10 @@ export type Location = {
   hours: Hours[];
   neighborhoods: string[];
   image: string;
+  // Virginia Precious Metals Dealer Permit. Omit for stores whose number
+  // hasn't been provided — render nothing permit-related when absent.
+  // `issuer` intentionally omitted until confirmed; never invent one.
+  permit?: { number: string; issuer?: string };
 };
 
 export const LOCATIONS: Location[] = [
@@ -111,6 +113,7 @@ export const LOCATIONS: Location[] = [
     hours: CHANTILLY_HOURS,
     neighborhoods: ["Fairfax", "Herndon", "South Riding", "Centreville"],
     image: "/photos/storefront-chantilly.jpg",
+    permit: { number: "PMG26-037" },
   },
   {
     slug: "annandale",
@@ -126,6 +129,7 @@ export const LOCATIONS: Location[] = [
     hours: ANNANDALE_HOURS,
     neighborhoods: ["Alexandria", "Falls Church", "Springfield", "Bailey's Crossroads", "Lincolnia"],
     image: "/photos/storefront-annandale.jpg",
+    permit: { number: "PMG26-038" },
   },
   {
     slug: "manassas",
@@ -156,6 +160,7 @@ export const LOCATIONS: Location[] = [
     hours: VIENNA_HOURS,
     neighborhoods: ["McLean", "Tysons", "Oakton", "Falls Church"],
     image: "/photos/storefront-vienna.jpg",
+    permit: { number: "PMG26-036" },
   },
 ];
 
@@ -535,7 +540,7 @@ export const CATEGORIES: Category[] = [
           "Gold coins are among the easiest items to sell at a fair price, because the popular ones are standardized, recognized, and quick to verify. We buy American Gold Eagles and Buffalos, South African Krugerrands, Canadian Maple Leafs, British Britannias, pre-1933 US gold, and foreign gold coins, valuing each on its gold content at the live spot price plus any collectible premium. Standard bullion coins are paid close to their melt value because they resell easily, while proof, graded, or key-date coins can be worth more, so mention or bring any certificates and original packaging. Every coin is verified and the offer explained in front of you, with no fee and no obligation to sell. As a local buyer with four Northern Virginia storefronts, we pay instant payout the same day and let you keep your coins until you accept. For the simplest way to sell gold coins, visit our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
         gallery: [
           { name: "All Gold Coins", image: "/coins/all-gold-coins.jpg", note: "Every gold coin we buy", href: "/coins/sell-gold-coins/all-gold-coins", count: 920 },
-          { name: "American Gold Eagle", image: "/coins/age/age-001.jpg", note: "US Mint · 22K", href: "/coins/sell-gold-coins/american-gold-eagle", count: 362 },
+          { name: "American Gold Eagle", image: "/coins/age/age-001.jpg", note: "US Mint · 22K", href: "/coins/sell-gold-coins/american-gold-eagle", count: 328 },
           { name: "American Gold Buffalo", image: "/coins/buffalo/buf-005.jpg", note: "US Mint · .9999", href: "/coins/sell-gold-coins/american-gold-buffalo", count: 57 },
           { name: "Canadian Gold Coins", image: "/coins/canadian/cad-033.jpg", note: "Maple Leafs & more · RCM", href: "/coins/sell-gold-coins/canadian-gold-coins", count: 96 },
           { name: "British Gold Coins", image: "/coins/british/brit-010.jpg", note: "Britannias & Sovereigns · Royal Mint", href: "/coins/sell-gold-coins/british-gold-coins", count: 79 },
@@ -560,7 +565,7 @@ export const CATEGORIES: Category[] = [
           "Silver coins range from modern bullion to 19th-century classics, and we buy across the whole spectrum, by the single coin or the full bag. American Silver Eagles, Morgan and Peace dollars, pre-1965 US 90% silver, half dollars, quarters, and foreign silver are all valued for their silver content at the live spot price and for any numismatic premium their date, mint mark, or condition carries. Junk silver bags are weighed and paid on their silver content, while key dates and better-grade pieces are evaluated individually so collectible value is not overlooked. Do not clean your coins before selling, since cleaning can reduce numismatic worth, and leave any graded coins in their holders. Every appraisal is free, transparent, and without obligation. Because silver is priced per ounce well below gold, quantity matters, and we welcome large lots as readily as a single dollar. Whether you sell silver coins by the piece or the bag, visit any of our four Northern Virginia locations for a fair evaluation and instant payout the same visit.",
         gallery: [
           { name: "All Silver Coins", image: "/coins/all-silver-coins.jpg", note: "Every silver coin we buy", href: "/coins/sell-silver-coins/all-silver-coins", count: 832 },
-          { name: "American Silver Eagle", image: "/coins/silver-eagle/silver-eagle-002.jpg", note: "US Mint · .999", href: "/coins/sell-silver-coins/american-silver-eagle", count: 192 },
+          { name: "American Silver Eagle", image: "/coins/silver-eagle/silver-eagle-002.jpg", note: "US Mint · .999", href: "/coins/sell-silver-coins/american-silver-eagle", count: 191 },
           { name: "Silver Dollars", image: "/coins/silver-dollar/silver-dollar-019.jpg", note: "Morgan & Peace · 90% silver", href: "/coins/sell-silver-coins/silver-dollars", count: 159 },
           { name: "Canadian Silver Coins", image: "/coins/canadian-silver/canadian-silver-007.jpg", note: "Maple Leafs & more · RCM", href: "/coins/sell-silver-coins/canadian-silver-coins", count: 80 },
           { name: "British Silver Coins", image: "/coins/british-silver/british-silver-011.jpg", note: "Britannias & Royal Arms · Royal Mint", href: "/coins/sell-silver-coins/british-silver-coins", count: 38 },

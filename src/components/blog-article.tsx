@@ -88,7 +88,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
 
           {/* Back link */}
           <div className="mt-12 border-t border-hairline pt-6">
-            <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700 transition-colors hover:text-gold-600">
+            <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700 underline-offset-4 transition-colors hover:text-gold-800 hover:underline">
               <ArrowLeft className="h-4 w-4" /> Back to all articles
             </Link>
           </div>
@@ -104,7 +104,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
           <div className="container-page">
             <div className="flex items-end justify-between gap-4">
               <h2 className="font-display text-2xl font-semibold text-foreground sm:text-3xl">Related articles</h2>
-              <Link href="/blog" className="inline-flex items-center gap-1 text-sm font-semibold text-gold-700 hover:text-gold-600">
+              <Link href="/blog" className="inline-flex items-center gap-1 text-sm font-semibold text-gold-700 hover:text-gold-800">
                 All articles <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>

@@ -69,10 +69,10 @@ export default function AboutPage() {
                 For over a decade, Cash for Gold VA has helped thousands of Northern Virginia
                 neighbors turn gold, silver, diamonds, jewelry, and coins into instant payout.
                 What started as a single storefront has grown into four trusted locations across{" "}
-                <Link href="/locations/annandale" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-600">Annandale</Link>,{" "}
-                <Link href="/locations/manassas" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-600">Manassas</Link>,{" "}
-                <Link href="/locations/chantilly" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-600">Chantilly</Link>, and{" "}
-                <Link href="/locations/vienna" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-600">Vienna/McLean</Link>.
+                <Link href="/locations/annandale" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-800">Annandale</Link>,{" "}
+                <Link href="/locations/manassas" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-800">Manassas</Link>,{" "}
+                <Link href="/locations/chantilly" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-800">Chantilly</Link>, and{" "}
+                <Link href="/locations/vienna" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-800">Vienna/McLean</Link>.
               </p>
               <p>
                 Unlike mail-in services and mall kiosks, we test and weigh every item in front of

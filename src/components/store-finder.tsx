@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, MapPin, Phone, Navigation, Star, BadgeCheck, Banknote, Eye, ArrowUpRight } from "lucide-react";
-import { LOCATIONS } from "@/data/business";
+import { LOCATIONS, SITE } from "@/data/business";
 import { CITY_LANDINGS } from "@/data/city-landings";
 import { STORE_ROUTES } from "@/data/store-finder-map";
 import { OpenStatus } from "@/components/open-status";
@@ -111,8 +111,8 @@ export function StoreFinder() {
         </p>
       </div>
 
-      {/* Results */}
-      <div className="mx-auto mt-10 max-w-2xl">
+      {/* Results — announced to screen readers as they change */}
+      <div className="mx-auto mt-10 max-w-2xl" role="status" aria-live="polite" aria-atomic="true">
         {searching && match && (
           <div>
             <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-gold-300">
@@ -157,14 +157,14 @@ export function StoreFinder() {
           </span>
           <div className="pt-0.5">
             <div className="flex items-center gap-1.5">
-              <span className="font-display text-sm font-bold text-cream-50">4.9</span>
+              <span className="font-display text-sm font-bold text-cream-50">{SITE.rating.value}</span>
               <span className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-3.5 w-3.5 fill-gold-400 text-gold-400" />
                 ))}
               </span>
             </div>
-            <span className="text-sm font-medium text-cream-100/70">500+ Google reviews</span>
+            <span className="text-sm font-medium text-cream-100/70">{SITE.rating.count}+ Google reviews</span>
           </div>
         </div>
       </div>

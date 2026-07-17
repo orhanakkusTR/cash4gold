@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { MapPin, Phone, Clock, ArrowRight, Check, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock, ArrowRight, Check, Navigation, ShieldCheck } from "lucide-react";
 import { LOCATIONS, CATEGORIES, ALL_SUBCATEGORIES, getLocation, SITE } from "@/data/business";
 import { CITY_LANDINGS } from "@/data/city-landings";
 import { LOCATION_LOCAL } from "@/data/location-local";
@@ -22,11 +22,18 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city } = await params;
   const loc = getLocation(city);
   if (!loc) return {};
-  const title = `${loc.city}, VA, Sell Gold, Diamonds & Coins for Cash`;
+  const title = `Sell Gold, Diamonds & Coins in ${loc.city}, VA`;
+  const description = `Sell gold, silver, diamonds, jewelry & coins in ${loc.city}, VA for instant payout. Visit ${loc.street} or call ${loc.phone}. ${SITE.rating.value}★ rated.`;
   return {
-    title,
-    description: `Cash for Gold VA in ${loc.city}: sell gold, silver, diamonds, jewelry & coins for instant payout. ${loc.street}. Call ${loc.phone}. ${SITE.rating.value}★ rated.`,
+    title: { absolute: `${title} | ${SITE.name}` },
+    description,
     alternates: { canonical: `/locations/${loc.slug}` },
+    openGraph: {
+      title: `${title} | ${SITE.name}`,
+      description,
+      url: `/locations/${loc.slug}`,
+      images: ["/og/og-image.jpg"],
+    },
   };
 }
 
@@ -111,7 +118,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
                 <Phone className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
                 <div>
                   <dt className="text-sm font-semibold text-foreground">Phone</dt>
-                  <dd><a href={`tel:${loc.phoneHref}`} className="text-gold-700 hover:text-gold-600">{loc.phone}</a></dd>
+                  <dd><a href={`tel:${loc.phoneHref}`} className="text-gold-700 hover:text-gold-800">{loc.phone}</a></dd>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -133,6 +140,21 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
                 </div>
               </div>
             </dl>
+            {loc.permit && (
+              <div className="mt-6 rounded-2xl border border-gold-500/25 bg-gold-50/60 p-4">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="h-5 w-5 shrink-0 text-gold-600" />
+                  <p className="text-sm font-semibold text-foreground">Licensed &amp; Regulated</p>
+                </div>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                  Virginia Precious Metals Dealer Permit{" "}
+                  <span className="font-semibold text-foreground">{loc.permit.number}</span>. Our purchases are
+                  reported to local law enforcement and regulated under Virginia&rsquo;s precious metals dealer laws
+                  (Va. Code &sect; 54.1-4100 et seq.) &mdash; safeguards that help keep every sale transparent and
+                  protected for you.
+                </p>
+              </div>
+            )}
             <div className="mt-auto flex flex-col gap-3 pt-7 sm:flex-row">
               <a href={`tel:${loc.phoneHref}`} className="flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 px-6 py-3.5 font-semibold text-ink-950 transition-transform hover:-translate-y-0.5">
                 <Phone className="h-5 w-5" /> Call {loc.city}

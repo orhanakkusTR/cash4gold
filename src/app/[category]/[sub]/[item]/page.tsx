@@ -28,7 +28,7 @@ import { JUNK_SILVER } from "@/data/junk-silver";
 import { MEXICAN_SILVER_LIBERTADS } from "@/data/mexican-silver-libertads";
 import { SILVER_KRUGERRANDS } from "@/data/silver-krugerrands";
 import { ATB_SILVER_COINS } from "@/data/atb-silver-coins";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd, FaqJsonLd, ItemListJsonLd } from "@/components/json-ld";
 import { getSubcategory } from "@/data/business";
 
 // Third-level "item" pages: a specific coin type under a subcategory, e.g.
@@ -1014,6 +1014,7 @@ export default async function ItemPage({
         ]}
       />
       {page.faqs && page.faqs.length > 0 && <FaqJsonLd faqs={page.faqs} />}
+      {page.coins.length > 0 && <ItemListJsonLd items={page.coins} />}
       <PageHero
         eyebrow={page.eyebrow}
         crumbs={[

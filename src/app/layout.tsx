@@ -29,7 +29,7 @@ const sans = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.domain),
   title: {
-    default: `${SITE.name} | Sell Gold, Silver, Diamonds & Coins in Northern VA`,
+    default: `${SITE.name} | Sell Gold, Diamonds & Coins in Northern VA`,
     template: `%s | ${SITE.name}`,
   },
   description:
@@ -103,7 +103,11 @@ gtag('config','${GA_ID}',{send_page_view:false});
 // event itself fires only where the action happens — a phone-call click,
 // handled in <Analytics>. Production only, so dev traffic never pollutes it.
 const OPENAI_PIXEL_ID = "QKKK9ZDBRzcFmBM6Ac45Yn";
-const OPENAI_PIXEL_JS = `!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"${OPENAI_PIXEL_ID}"});`;
+// Consent-gated: skip the advertising pixel entirely for visitors who have
+// explicitly opted out (saved 'denied'). Matches the site's opt-out model for
+// US visitors; the pixel still loads by default where consent isn't denied,
+// and the cookie banner writes 'granted'/'denied' to this key.
+const OPENAI_PIXEL_JS = `try{if(localStorage.getItem('c4g-cookie-consent')==='denied'){}else{!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"${OPENAI_PIXEL_ID}"});}}catch(e){}`;
 
 export default function RootLayout({
   children,
@@ -125,18 +129,21 @@ export default function RootLayout({
         {process.env.NODE_ENV === "production" && (
           <script dangerouslySetInnerHTML={{ __html: OPENAI_PIXEL_JS }} />
         )}
-        {/* Warm up the live-price API connection early (saves ~300ms on the ticker). */}
-        <link rel="preconnect" href="https://api.gold-api.com" />
-        <link rel="dns-prefetch" href="https://api.gold-api.com" />
       </head>
       <body className="min-h-full flex flex-col bg-cream-50 text-foreground">
+        <a
+          href="#main-content"
+          className="sr-only rounded-full focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-ink-900 focus:px-5 focus:py-2.5 focus:font-semibold focus:text-cream-50 focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-gold-700 focus:ring-offset-2"
+        >
+          Skip to main content
+        </a>
         <OrganizationJsonLd />
         <Analytics />
         <ChromeGate>
           <LivePriceTicker />
           <Header />
         </ChromeGate>
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <ChromeGate>
           <Footer />
           <LocationsFab />

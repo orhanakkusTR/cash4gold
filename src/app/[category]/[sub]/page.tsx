@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     // "Austrian Platinum Philharmonic") otherwise push the title past 70 chars,
     // and the brand suffix was being truncated in SERPs anyway.
     title: { absolute: title },
-    description: `Looking to sell your ${s.name.toLowerCase()}? ${s.short} Free appraisals, instant payout, and a fair price at 4 Northern Virginia locations, ${SITE.rating.value}★ rated.`,
+    description: `Sell your ${s.name.toLowerCase()}? ${s.short} Free appraisals, instant payout, ${SITE.rating.value}★ rated across Northern VA.`,
     alternates: { canonical: `/${cat.slug}/${s.slug}` },
     openGraph: { title, description: s.short, images: ["/og/og-image.jpg"] },
   };

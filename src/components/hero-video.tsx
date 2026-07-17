@@ -17,20 +17,3 @@ export function HeroVideoPlaylist() {
     />
   );
 }
-
-/* Previous video background (kept for easy revert):
-"use client";
-import { useReducedMotion } from "motion/react";
-
-export function HeroVideoPlaylist() {
-  const reduce = useReducedMotion();
-  if (reduce) {
-    return <img src="/videos/hero-sequence-v2-poster.jpg" alt="" className="h-full w-full object-cover" />;
-  }
-  return (
-    <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" poster="/videos/hero-sequence-v2-poster.jpg">
-      <source src="/videos/hero-sequence-v2.mp4" type="video/mp4" />
-    </video>
-  );
-}
-*/

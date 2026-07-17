@@ -155,6 +155,27 @@ export function BlogPostingJsonLd({
   );
 }
 
+// ItemList for the coin listing pages — tells search engines the page is a
+// curated list of specific products. Name-only ListItems keep the payload lean;
+// `numberOfItems` reflects the true total even when the emitted list is capped.
+export function ItemListJsonLd({ items }: { items: { name: string }[] }) {
+  const MAX = 100;
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        numberOfItems: items.length,
+        itemListElement: items.slice(0, MAX).map((it, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: it.name,
+        })),
+      }}
+    />
+  );
+}
+
 export function FaqJsonLd({ faqs }: { faqs: { q: string; a: string }[] }) {
   return (
     <JsonLd

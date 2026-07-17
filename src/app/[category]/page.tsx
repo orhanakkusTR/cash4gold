@@ -40,6 +40,22 @@ const DESCRIPTION_LINKS: Record<string, RichLink[]> = {
 // root-level blog permalinks (e.g. /selling-gold-jewelry). When the slug is not
 // a category, we dispatch to the blog article so the old URLs are preserved.
 
+// Build-time guard (P2-14): this route triple-dispatches by slug — category hub
+// → city landing → blog post. A slug shared across two of those namespaces would
+// silently shadow one (the first match wins). Fail the build loudly instead of
+// shipping an unreachable page.
+{
+  const all = [
+    ...CATEGORIES.map((c) => c.slug),
+    ...CITY_LANDINGS.map((c) => c.slug),
+    ...POSTS.map((p) => p.slug),
+  ];
+  const dupes = [...new Set(all.filter((s, i) => all.indexOf(s) !== i))];
+  if (dupes.length) {
+    throw new Error(`[/[category]] slug collision across category/landing/blog namespaces: ${dupes.join(", ")}`);
+  }
+}
+
 export function generateStaticParams() {
   return [
     ...CATEGORIES.map((c) => ({ category: c.slug })),
@@ -337,7 +353,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       {/* Other categories */}
       <section className="container-page py-16">
         <h2 className="font-display text-2xl font-extrabold text-foreground">We also buy</h2>
-        <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">Coins are just the start — we make instant-payout offers across every category below.</p>
+        <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">That&apos;s just the start — we make instant-payout offers across every category below.</p>
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {others.map((c) => (
             <Link

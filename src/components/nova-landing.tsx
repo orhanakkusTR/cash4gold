@@ -16,7 +16,7 @@ import {
   Coins,
   Gem,
 } from "lucide-react";
-import { LOCATIONS, PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
+import { LOCATIONS, PRIMARY_PHONE, PRIMARY_PHONE_HREF, SITE } from "@/data/business";
 import { getPost } from "@/data/blog";
 import type { CityLanding as CityLandingData } from "@/data/city-landings";
 import { CITY_LANDINGS } from "@/data/city-landings";
@@ -69,7 +69,7 @@ const VALUE_PROPS = [
   { icon: BadgeCheck, label: "Best value, tied to the live price" },
   { icon: Banknote, label: "Instant payout, paid the same visit" },
   { icon: PackageOpen, label: "We buy gold, silver, diamonds, watches & coins" },
-  { icon: Star, label: "4.9★ across 500+ Google reviews" },
+  { icon: Star, label: `${SITE.rating.value}★ across ${SITE.rating.count}+ Google reviews` },
 ];
 
 const WHY_LOCAL = [
@@ -143,7 +143,8 @@ export function NovaLanding({ landing }: { landing: CityLandingData }) {
             </ol>
           </nav>
 
-          <Reveal className="max-w-2xl">
+          {/* CSS-only entrance (`hero-rise`) so the LCP heading paints without JS. */}
+          <div className="hero-rise max-w-2xl">
             <span className="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
               <span className="h-px w-6 bg-gold-400" /> Serving all of Northern Virginia (NoVA)
             </span>
@@ -180,7 +181,7 @@ export function NovaLanding({ landing }: { landing: CityLandingData }) {
                 <Banknote className="h-4 w-4 text-gold-400" /> Instant payout
               </li>
             </ul>
-          </Reveal>
+          </div>
         </div>
       </section>
 
@@ -472,7 +473,7 @@ export function NovaLanding({ landing }: { landing: CityLandingData }) {
           <SectionHeading
             eyebrow="Reviews"
             title={<span className="font-extrabold">Trusted by thousands of neighbors</span>}
-            description="Real reviews from real customers across Northern Virginia, rated 4.9 out of 5 on Google."
+            description={`Real reviews from real customers across Northern Virginia, rated ${SITE.rating.value} out of 5 on Google.`}
           />
           <Reveal className="mt-12">
             <GoogleRatingSummary />

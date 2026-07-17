@@ -81,7 +81,7 @@ function CoinCard({ coin }: { coin: CoinItem }) {
         <div className="mt-3 flex items-center justify-between gap-3">
           <a
             href={`tel:${PRIMARY_PHONE_HREF}`}
-            className="inline-flex min-h-[2.75rem] items-center gap-1.5 text-sm font-semibold text-gold-700 transition-colors hover:text-gold-600"
+            className="inline-flex min-h-[2.75rem] items-center gap-1.5 text-sm font-semibold text-gold-700 transition-colors hover:text-gold-800"
           >
             <Phone className="h-3.5 w-3.5" strokeWidth={2.25} />
             {PRIMARY_PHONE}
@@ -206,7 +206,7 @@ export function CoinListingGrid({ coins, label }: { coins: CoinItem[]; label: st
                 setWeight(null);
                 setFinish(null);
               }}
-              className="inline-flex items-center gap-1 text-xs font-semibold text-gold-700 transition-colors hover:text-gold-600"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-gold-700 transition-colors hover:text-gold-800"
             >
               <X className="h-3 w-3" strokeWidth={2.5} /> Clear
             </button>

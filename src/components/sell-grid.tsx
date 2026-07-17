@@ -88,7 +88,7 @@ function CardBody({ item }: { item: SellItem }) {
         <p className="mt-1 text-xs leading-relaxed text-muted sm:text-sm">{item.desc}</p>
       </div>
       {!item.comingSoon && (
-        <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-gold-700 transition-colors duration-300 group-hover:text-gold-600 sm:text-sm">
+        <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-gold-700 transition-colors duration-300 group-hover:text-gold-800 sm:text-sm">
           Sell yours
           <ArrowUpRight
             className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

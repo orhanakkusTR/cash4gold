@@ -24,7 +24,7 @@ export function LinkifyCities({ text }: { text: string }) {
           <Link
             key={i}
             href={`/locations/${city.slug}`}
-            className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-600"
+            className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-800"
           >
             {part}
           </Link>

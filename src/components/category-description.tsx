@@ -70,7 +70,7 @@ function renderRichText(text: string, keywords: string[], links: RichLink[], use
     used.add(`l:${l.text.toLowerCase()}`);
     const end = idx + l.text.length;
     claim(idx, end, (
-      <Link href={l.href} className="font-semibold text-gold-700 underline decoration-gold-300 underline-offset-2 transition-colors hover:text-gold-600">
+      <Link href={l.href} className="font-semibold text-gold-700 underline decoration-gold-300 underline-offset-2 transition-colors hover:text-gold-800">
         {text.slice(idx, end)}
       </Link>
     ));
@@ -123,7 +123,7 @@ export function CategoryDescription({ title, text, keywords, links }: { title: s
       </div>
       <button
         onClick={() => setOpen((v) => !v)}
-        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700 transition-colors hover:text-gold-600"
+        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700 transition-colors hover:text-gold-800"
         aria-expanded={open}
       >
         {open ? "Read less" : "Read more"}

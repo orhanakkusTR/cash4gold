@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Phone, Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -39,10 +39,18 @@ const NAV: NavItem[] = [
 // Header CTA shows the Chantilly store number.
 const HEADER_PHONE = LOCATIONS.find((l) => l.slug === "chantilly") ?? LOCATIONS[0];
 
+// Stable DOM id for a submenu, derived from the nav label.
+const menuId = (label: string) => `nav-submenu-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  // Refs so Escape can return focus to the control that opened a menu (APG).
+  const triggerRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const hamburgerRef = useRef<HTMLButtonElement | null>(null);
+  const drawerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -54,6 +62,60 @@ export function Header() {
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
+
+  // Escape closes an open desktop dropdown and restores focus to its toggle.
+  useEffect(() => {
+    if (!openMenu) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        const label = openMenu;
+        setOpenMenu(null);
+        triggerRefs.current[label]?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [openMenu]);
+
+  const closeDrawer = useCallback(() => {
+    setOpen(false);
+    hamburgerRef.current?.focus();
+  }, []);
+
+  // Mobile drawer: focus the panel on open, trap Tab, Escape to close (dialog).
+  useEffect(() => {
+    if (!open) return;
+    const panel = drawerRef.current;
+    const focusables = () =>
+      Array.from(
+        panel?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])',
+        ) ?? [],
+      );
+    // move focus into the dialog
+    focusables()[0]?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeDrawer();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const items = focusables();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open, closeDrawer]);
 
   return (
     <>
@@ -84,32 +146,51 @@ export function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-0.5 lg:flex">
+          <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
             {NAV.map((item) => (
               <div
                 key={item.href}
                 className="relative"
-                onMouseEnter={() => setOpenMenu(item.label)}
-                onMouseLeave={() => setOpenMenu(null)}
+                onMouseEnter={() => item.children && setOpenMenu(item.label)}
+                onMouseLeave={() => item.children && setOpenMenu(null)}
+                onBlur={(e) => {
+                  // close when keyboard focus leaves the whole item
+                  if (item.children && !e.currentTarget.contains(e.relatedTarget as Node)) {
+                    setOpenMenu((cur) => (cur === item.label ? null : cur));
+                  }
+                }}
               >
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "group flex items-center gap-1 rounded-full px-4 py-2.5 text-[0.95rem] font-bold transition-colors",
-                    openMenu === item.label ? "text-gold-700" : "text-foreground hover:text-gold-700",
-                  )}
-                >
-                  {item.label}
+                <div className="flex items-center">
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "group flex items-center gap-1 rounded-full px-4 py-2.5 text-[0.95rem] font-bold transition-colors",
+                      openMenu === item.label ? "text-gold-700" : "text-foreground hover:text-gold-700",
+                    )}
+                  >
+                    {item.label}
+                    {/* animated underline */}
+                    <span className={cn("absolute inset-x-4 -bottom-0.5 h-0.5 origin-left rounded-full bg-gold-500 transition-transform duration-300", openMenu === item.label ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} />
+                  </Link>
                   {item.children && (
-                    <ChevronDown className={cn("h-3.5 w-3.5 opacity-60 transition-transform duration-300", openMenu === item.label && "rotate-180")} />
+                    <button
+                      type="button"
+                      ref={(el) => { triggerRefs.current[item.label] = el; }}
+                      aria-expanded={openMenu === item.label}
+                      aria-controls={menuId(item.label)}
+                      aria-label={`${item.label} menu`}
+                      onClick={() => setOpenMenu((cur) => (cur === item.label ? null : item.label))}
+                      className="-ml-2 rounded-full p-1.5 text-foreground/70 transition-colors hover:text-gold-700"
+                    >
+                      <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-300", openMenu === item.label && "rotate-180")} />
+                    </button>
                   )}
-                  {/* animated underline */}
-                  <span className={cn("absolute inset-x-4 -bottom-0.5 h-0.5 origin-left rounded-full bg-gold-500 transition-transform duration-300", openMenu === item.label ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} />
-                </Link>
+                </div>
 
                 <AnimatePresence>
                   {item.children && openMenu === item.label && (
                     <motion.div
+                      id={menuId(item.label)}
                       initial={{ opacity: 0, y: 10, scale: 0.97 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 8, scale: 0.98 }}
@@ -127,7 +208,8 @@ export function Header() {
                             >
                               <Link
                                 href={c.href}
-                                className="group/item flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-gold-50 hover:text-gold-700"
+                                onClick={() => setOpenMenu(null)}
+                                className="group/item flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-gold-50 hover:text-gold-700 focus-visible:bg-gold-50 focus-visible:text-gold-700 focus-visible:outline-none"
                               >
                                 {c.label}
                                 <ChevronRight className="h-4 w-4 -translate-x-1 opacity-0 transition-all duration-200 group-hover/item:translate-x-0 group-hover/item:opacity-100" />
@@ -174,9 +256,12 @@ export function Header() {
               <Phone className="relative h-5 w-5" strokeWidth={2.5} />
             </a>
             <button
+              ref={hamburgerRef}
               onClick={() => setOpen(true)}
-              className="rounded-full p-2.5 text-foreground transition-colors hover:bg-gold-50 lg:hidden"
+              className="rounded-full p-2.5 text-foreground transition-colors hover:bg-gold-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-700 focus-visible:ring-offset-2 lg:hidden"
               aria-label="Open menu"
+              aria-expanded={open}
+              aria-haspopup="dialog"
             >
               <Menu className="h-7 w-7" />
             </button>
@@ -190,25 +275,29 @@ export function Header() {
           <div className="fixed inset-0 z-[70] lg:hidden">
             <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-ink-950/50 backdrop-blur-sm" onClick={() => setOpen(false)}
+              className="absolute inset-0 bg-ink-950/50 backdrop-blur-sm" onClick={closeDrawer}
             />
             <motion.div
+              ref={drawerRef}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Site menu"
               initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 320, damping: 34 }}
               className="absolute right-0 top-0 h-full w-[88%] max-w-sm overflow-y-auto bg-white p-6 shadow-2xl"
             >
               <div className="flex items-center justify-between">
                 <Image src="/brand/c4g-logo.png" alt="Cash for Gold VA" width={1993} height={395} className="h-14 w-auto" />
-                <button onClick={() => setOpen(false)} aria-label="Close menu" className="rounded-full p-2 text-foreground hover:bg-gold-50">
+                <button onClick={closeDrawer} aria-label="Close menu" className="rounded-full p-2 text-foreground hover:bg-gold-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-700 focus-visible:ring-offset-2">
                   <X className="h-6 w-6" />
                 </button>
               </div>
-              <nav className="mt-6 flex flex-col gap-1">
+              <nav className="mt-6 flex flex-col gap-1" aria-label="Mobile">
                 {NAV.map((item) => (
                   <div key={item.href} className="border-b border-hairline py-1">
                     <Link
                       href={item.href}
-                      onClick={() => setOpen(false)}
+                      onClick={closeDrawer}
                       className="block py-3 text-base font-semibold text-foreground"
                     >
                       {item.label}
@@ -217,7 +306,7 @@ export function Header() {
                       <ul className="mb-2 ml-3 flex flex-col gap-0.5">
                         {item.children.map((c) => (
                           <li key={c.href}>
-                            <Link href={c.href} onClick={() => setOpen(false)} className="block py-2 text-sm text-muted hover:text-gold-700">
+                            <Link href={c.href} onClick={closeDrawer} className="block py-2 text-sm text-muted hover:text-gold-700">
                               {c.label}
                             </Link>
                           </li>
@@ -230,7 +319,7 @@ export function Header() {
               {SHOW_CALCULATOR && (
                 <Link
                   href="/gold-calculator"
-                  onClick={() => setOpen(false)}
+                  onClick={closeDrawer}
                   className="mt-6 flex w-full items-center justify-center rounded-full border-2 border-gold-500/50 px-5 py-3 font-semibold text-gold-700"
                 >
                   What&apos;s It Worth?

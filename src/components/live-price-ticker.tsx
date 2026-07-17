@@ -5,19 +5,26 @@ import { ArrowUp, ArrowDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const METALS = [
-  { key: "gold", sym: "XAU", nm: "Gold", fallback: 4180 },
-  { key: "silver", sym: "XAG", nm: "Silver", fallback: 66 },
-  { key: "platinum", sym: "XPT", nm: "Platinum", fallback: 1730 },
-  { key: "palladium", sym: "XPD", nm: "Palladium", fallback: 1310 },
+  { key: "gold", nm: "Gold", fallback: 4180 },
+  { key: "silver", nm: "Silver", fallback: 66 },
+  { key: "platinum", nm: "Platinum", fallback: 1730 },
+  { key: "palladium", nm: "Palladium", fallback: 1310 },
 ] as const;
 
 const TROY_OZ_G = 31.1035;
 const REFRESH_MS = 60000;
+// First fetch is deferred to browser idle so it never competes with LCP.
+const IDLE_FALLBACK_MS = 2500;
 
 const money = (n: number) =>
   n.toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 type Prices = Record<string, number>;
+
+type PricesResponse = {
+  prices?: Prices;
+  live?: boolean;
+};
 
 export function LivePriceTicker() {
   const [unit, setUnit] = useState<"ozt" | "g">("ozt");
@@ -26,56 +33,62 @@ export function LivePriceTicker() {
     prev: {},
   }));
   const [live, setLive] = useState(false);
-  const [updatedAt, setUpdatedAt] = useState<number | null>(null);
-  const [ago, setAgo] = useState("");
 
   useEffect(() => {
     let active = true;
+    let intervalId: ReturnType<typeof setInterval> | undefined;
+
+    // One same-origin call to our cached /api/prices route — not 4
+    // cross-origin fetches per visitor (audit P1-13b).
     async function load() {
       try {
-        const res = await Promise.all(
-          METALS.map((m) =>
-            fetch(`https://api.gold-api.com/price/${m.sym}`).then((r) => {
-              if (!r.ok) throw new Error("bad");
-              return r.json();
-            }),
-          ),
-        );
+        const res = await fetch("/api/prices");
+        if (!res.ok) throw new Error("bad");
+        const json = (await res.json()) as PricesResponse;
         if (!active) return;
-        setData((d) => {
-          const prices = { ...d.prices };
-          const prev: Prices = {};
-          METALS.forEach((m, i) => {
-            const px = res[i]?.price;
-            if (px > 0) {
-              prev[m.key] = d.prices[m.key];
-              prices[m.key] = px;
-            }
+        const next = json.prices;
+        if (next) {
+          setData((d) => {
+            const prices = { ...d.prices };
+            const prev: Prices = {};
+            METALS.forEach((m) => {
+              const px = next[m.key];
+              if (typeof px === "number" && px > 0) {
+                prev[m.key] = d.prices[m.key];
+                prices[m.key] = px;
+              }
+            });
+            return { prices, prev };
           });
-          return { prices, prev };
-        });
-        setLive(true);
+        }
+        setLive(json.live === true);
       } catch {
         if (active) setLive(false);
       }
-      if (active) setUpdatedAt(Date.now());
     }
-    load();
-    const id = setInterval(load, REFRESH_MS);
+
+    function start() {
+      if (!active) return;
+      load();
+      intervalId = setInterval(load, REFRESH_MS);
+    }
+
+    // Defer the first fetch to idle time (fallback timer for Safari).
+    let idleId: number | undefined;
+    let timerId: ReturnType<typeof setTimeout> | undefined;
+    if (typeof window.requestIdleCallback === "function") {
+      idleId = window.requestIdleCallback(start, { timeout: IDLE_FALLBACK_MS });
+    } else {
+      timerId = setTimeout(start, IDLE_FALLBACK_MS);
+    }
+
     return () => {
       active = false;
-      clearInterval(id);
+      if (intervalId) clearInterval(intervalId);
+      if (idleId !== undefined) window.cancelIdleCallback?.(idleId);
+      if (timerId) clearTimeout(timerId);
     };
   }, []);
-
-  useEffect(() => {
-    if (!updatedAt) return;
-    const t = setInterval(() => {
-      const s = Math.round((Date.now() - updatedAt) / 1000);
-      setAgo(live ? (s < 5 ? "updated just now" : `updated ${s}s ago`) : "reference (feed offline)");
-    }, 1000);
-    return () => clearInterval(t);
-  }, [updatedAt, live]);
 
   const quotes = METALS.map((m) => {
     const px = data.prices[m.key];
@@ -121,7 +134,9 @@ export function LivePriceTicker() {
         <div className="group relative flex-1 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_4%,#000_96%,transparent)]">
           <div className="flex w-max items-center gap-8 animate-[pxticker_38s_linear_infinite] group-hover:[animation-play-state:paused]">
             {renderQuotes("a")}
-            {renderQuotes("b")}
+            {/* Visual duplicate for the seamless marquee loop — hidden from AT
+                so screen readers don't hear every price twice. */}
+            <span aria-hidden className="contents">{renderQuotes("b")}</span>
           </div>
         </div>
 
@@ -138,7 +153,11 @@ export function LivePriceTicker() {
               </button>
             ))}
           </div>
-          <span className="hidden whitespace-nowrap text-[11px] text-cream-100/35 lg:inline">{ago || "spot · in-store offer varies"}</span>
+          {/* Static label — the old per-second "updated Ns ago" interval forced
+              a full re-render every second forever (audit P1-13b). */}
+          <span className="hidden whitespace-nowrap text-[11px] text-cream-100/35 lg:inline">
+            {live ? "live spot · in-store offer varies" : "reference · in-store offer varies"}
+          </span>
         </div>
       </div>
     </div>

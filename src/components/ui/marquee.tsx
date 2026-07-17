@@ -59,10 +59,15 @@ export function Marquee({
         .map((_, i) => (
           <div
             key={i}
+            // Only the first copy is exposed to assistive tech; the duplicated
+            // copies exist purely for the seamless scroll and would otherwise be
+            // read out repeatedly by a screen reader.
+            aria-hidden={i > 0 ? true : undefined}
             className={cn("flex shrink-0 justify-around gap-(--gap)", {
               "animate-marquee flex-row": !vertical,
               "animate-marquee-vertical flex-col": vertical,
-              "group-hover:[animation-play-state:paused]": pauseOnHover,
+              // pause on hover AND on keyboard focus within the track
+              "group-hover:[animation-play-state:paused] group-focus-within:[animation-play-state:paused]": pauseOnHover,
               "[animation-direction:reverse]": reverse,
             })}
           >

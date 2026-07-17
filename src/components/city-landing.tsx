@@ -15,7 +15,7 @@ import {
   HandCoins,
   Mailbox,
 } from "lucide-react";
-import { LOCATIONS } from "@/data/business";
+import { LOCATIONS, SITE } from "@/data/business";
 import { getPost } from "@/data/blog";
 import type { CityLanding as CityLandingData } from "@/data/city-landings";
 import { Reveal } from "@/components/reveal";
@@ -68,7 +68,7 @@ const VALUE_PROPS = [
   { icon: BadgeCheck, label: "Best value, tied to the live price" },
   { icon: Banknote, label: "Instant payout, paid the same visit" },
   { icon: PackageOpen, label: "We buy gold, silver, diamonds, watches & coins" },
-  { icon: Star, label: "4.9★ across 500+ Google reviews" },
+  { icon: Star, label: `${SITE.rating.value}★ across ${SITE.rating.count}+ Google reviews` },
 ];
 
 const WHY_LOCAL = [
@@ -130,8 +130,9 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
           </nav>
 
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-            {/* Left: headline + primary CTA */}
-            <Reveal>
+            {/* Left: headline + primary CTA — CSS-only entrance (`hero-rise`) so
+                the LCP heading paints immediately instead of waiting on JS. */}
+            <div className="hero-rise">
               <span className="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
                 <span className="h-px w-6 bg-gold-400" /> Serving {landing.city}, {landing.region}
               </span>
@@ -167,7 +168,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                   </p>
                 </>
               )}
-            </Reveal>
+            </div>
 
             {/* Right: nearest-store teaser card */}
             {primary && (
@@ -499,7 +500,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
           <SectionHeading
             eyebrow="Reviews"
             title={<span className="font-extrabold">Trusted by thousands of neighbors</span>}
-            description="Real reviews from real customers across Northern Virginia, rated 4.9 out of 5 on Google."
+            description={`Real reviews from real customers across Northern Virginia, rated ${SITE.rating.value} out of 5 on Google.`}
           />
           <Reveal className="mt-12">
             <GoogleRatingSummary />
