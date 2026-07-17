@@ -21,12 +21,24 @@ export const COIN_REP_IMAGE: Record<string, string> = {
   "coins/sell-gold-coins/chinese-gold-pandas": "/coins/panda/panda-041.jpg", // TODO(images): replace with owner photo
   "coins/sell-gold-coins/mexican-gold-coins": "/coins/mexican/mex-001.jpg", // TODO(images): replace with owner photo
   "coins/sell-gold-coins/european-gold-coins": "/coins/european/euro-012.jpg", // TODO(images): replace with owner photo
+
+  "coins/sell-silver-coins/american-silver-eagle": "/coins/silver-eagle/silver-eagle-001.jpg", // TODO(images): replace with owner photo
+  "coins/sell-silver-coins/silver-dollars": "/coins/silver-dollar/silver-dollar-019.jpg", // TODO(images): replace with owner photo
+  "coins/sell-silver-coins/canadian-silver-coins": "/coins/canadian-silver/canadian-silver-007.jpg", // TODO(images): replace with owner photo
+  "coins/sell-silver-coins/british-silver-coins": "/coins/british-silver/british-silver-011.jpg", // TODO(images): replace with owner photo
+  "coins/sell-silver-coins/junk-silver": "/coins/junk-silver/junk-silver-027.jpg", // TODO(images): replace with owner photo
+  "coins/sell-silver-coins/mexican-silver-libertads": "/coins/mexican-silver-libertad/mexican-silver-libertad-005.jpg", // TODO(images): replace with owner photo
+  "coins/sell-silver-coins/australian-silver-coins": "/coins/australian-silver/australian-silver-007.jpg", // TODO(images): replace with owner photo
+  "coins/sell-silver-coins/chinese-silver-pandas": "/coins/chinese-silver-panda/chinese-silver-panda-001.jpg", // TODO(images): replace with owner photo
+  "coins/sell-silver-coins/silver-krugerrands": "/coins/silver-krugerrand/silver-krugerrand-005.jpg", // TODO(images): replace with owner photo
+  "coins/sell-silver-coins/america-the-beautiful": "/coins/atb-silver/atb-silver-021.jpg", // TODO(images): replace with owner photo
 };
 
-// For the union hub (all-gold-coins), coins from all 9 types are mixed, so we
-// map each row to a representative by the image-path FOLDER its type uses —
-// reusing the exact same 9 approved images above (no new selections).
-export const GOLD_REP_BY_FOLDER: Record<string, string> = {
+// For the union hubs (all-gold-coins / all-silver-coins), coins from every type
+// are mixed, so we map each row to a representative by the image-path FOLDER its
+// type uses — reusing the exact same approved images above (no new selections).
+export const REP_BY_FOLDER: Record<string, string> = {
+  // gold
   "/coins/age/": "/coins/age/age-001.jpg",
   "/coins/buffalo/": "/coins/buffalo/buf-005.jpg",
   "/coins/canadian/": "/coins/canadian/cad-033.jpg",
@@ -36,14 +48,28 @@ export const GOLD_REP_BY_FOLDER: Record<string, string> = {
   "/coins/panda/": "/coins/panda/panda-041.jpg",
   "/coins/mexican/": "/coins/mexican/mex-001.jpg",
   "/coins/european/": "/coins/european/euro-012.jpg",
+  // silver
+  "/coins/silver-eagle/": "/coins/silver-eagle/silver-eagle-001.jpg",
+  "/coins/silver-dollar/": "/coins/silver-dollar/silver-dollar-019.jpg",
+  "/coins/canadian-silver/": "/coins/canadian-silver/canadian-silver-007.jpg",
+  "/coins/british-silver/": "/coins/british-silver/british-silver-011.jpg",
+  "/coins/junk-silver/": "/coins/junk-silver/junk-silver-027.jpg",
+  "/coins/mexican-silver-libertad/": "/coins/mexican-silver-libertad/mexican-silver-libertad-005.jpg",
+  "/coins/australian-silver/": "/coins/australian-silver/australian-silver-007.jpg",
+  "/coins/chinese-silver-panda/": "/coins/chinese-silver-panda/chinese-silver-panda-001.jpg",
+  "/coins/silver-krugerrand/": "/coins/silver-krugerrand/silver-krugerrand-005.jpg",
+  "/coins/atb-silver/": "/coins/atb-silver/atb-silver-021.jpg",
 };
 
 // Resolve a hub coin's image to its representative. Returns null for any type
-// NOT in the recognized 9 — the caller must then render that row imageless
-// rather than ship a branded (JMBullion) shot. (Today every hub coin maps; the
-// null path is a guard for future data.)
+// NOT recognized — the caller must then render that row imageless rather than
+// ship a branded (JMBullion) shot. (Today every hub coin maps; the null path is
+// a guard for future data.) Order the silver folders before the gold ones would
+// only matter if prefixes overlapped — they don't (e.g. "/coins/canadian/" vs
+// "/coins/canadian-silver/" both need an exact folder-boundary match, which the
+// trailing slash in each key guarantees).
 export function hubRepImage(image: string): string | null {
-  for (const [folder, rep] of Object.entries(GOLD_REP_BY_FOLDER)) {
+  for (const [folder, rep] of Object.entries(REP_BY_FOLDER)) {
     if (image.startsWith(folder)) return rep;
   }
   return null;

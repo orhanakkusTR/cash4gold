@@ -1013,7 +1013,10 @@ export default async function ItemPage({
   let coins = page.coins;
   if (repImage) {
     coins = page.coins.map((c) => ({ ...c, image: repImage }));
-  } else if (pageKey === "coins/sell-gold-coins/all-gold-coins") {
+  } else if (
+    pageKey === "coins/sell-gold-coins/all-gold-coins" ||
+    pageKey === "coins/sell-silver-coins/all-silver-coins"
+  ) {
     coins = page.coins
       .map((c) => ({ ...c, image: hubRepImage(c.image) ?? "" }))
       .filter((c) => c.image !== "");
