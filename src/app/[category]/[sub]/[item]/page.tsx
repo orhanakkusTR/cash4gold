@@ -29,6 +29,7 @@ import { MEXICAN_SILVER_LIBERTADS } from "@/data/mexican-silver-libertads";
 import { SILVER_KRUGERRANDS } from "@/data/silver-krugerrands";
 import { ATB_SILVER_COINS } from "@/data/atb-silver-coins";
 import { BreadcrumbJsonLd, FaqJsonLd, ItemListJsonLd } from "@/components/json-ld";
+import { COIN_REP_IMAGE, hubRepImage } from "@/data/coin-rep-images";
 import { getSubcategory } from "@/data/business";
 
 // Third-level "item" pages: a specific coin type under a subcategory, e.g.
@@ -1000,6 +1001,24 @@ export default async function ItemPage({
   const page = ITEM_PAGES[key(category, sub, item)];
   if (!page) notFound();
 
+  // TEMPORARY image-risk bridge: on the gold coin pages in COIN_REP_IMAGE, every
+  // variant row shows one clean representative image (no JMBullion branding)
+  // instead of its scraped variant shot. The union hub (all-gold-coins) maps each
+  // row to its type's representative by image folder. Variant TEXT/data is
+  // untouched — only the image is overridden at render. Any hub row whose type
+  // isn't recognized is dropped rather than shown with a branded image (today
+  // none are dropped). Swap to owner photos via coin-rep-images.ts.
+  const pageKey = key(category, sub, item);
+  const repImage = COIN_REP_IMAGE[pageKey];
+  let coins = page.coins;
+  if (repImage) {
+    coins = page.coins.map((c) => ({ ...c, image: repImage }));
+  } else if (pageKey === "coins/sell-gold-coins/all-gold-coins") {
+    coins = page.coins
+      .map((c) => ({ ...c, image: hubRepImage(c.image) ?? "" }))
+      .filter((c) => c.image !== "");
+  }
+
   // Parent crumb label from data — "Gold Coins" was hardcoded, mislabeling the
   // 11 silver pages (visible breadcrumb AND BreadcrumbList schema).
   const parentCrumb = getSubcategory(category, sub)?.name ?? "Coins";
@@ -1027,7 +1046,7 @@ export default async function ItemPage({
       />
 
       <section className="container-page pt-20 pb-10">
-        <CoinListingGrid coins={page.coins} label={page.label} />
+        <CoinListingGrid coins={coins} label={page.label} />
       </section>
 
       {/* Coin-specific depth (Wave 3): pricing/process, related links, FAQs. */}
