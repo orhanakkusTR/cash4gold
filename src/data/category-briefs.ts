@@ -180,3 +180,159 @@ export const CATEGORY_BRIEFS: Record<string, CategoryBrief> = {
 };
 
 export const getBrief = (path: string): CategoryBrief | undefined => CATEGORY_BRIEFS[path];
+
+// -----------------------------------------------------------------------------
+// Per-page FAQs (Wave 3 / P1-14). Replaces the old boilerplate catFaqs/subFaqs
+// templates that basted the same three questions onto every category and
+// subcategory page. Keyed by route path: top-level category slug ("coins") and
+// full subcategory path ("coins/sell-gold-coins"). Each page's visible FAQ
+// accordion AND its FAQPage JSON-LD both read from the SAME array here, so the
+// structured data always matches the questions on the page.
+//
+// Honesty (YMYL): every answer restates only facts the business already
+// publishes on that page (purity, the 90%-of-spot gold-bullion figure, what we
+// do/don't buy). No invented mintages, no fabricated pricing, no store
+// anecdotes. Uniqueness: no two pages share an 8-word run — enforced by
+// scripts/faq-uniqueness.mjs.
+export type FaqItem = { q: string; a: string };
+
+export const PAGE_FAQS: Record<string, FaqItem[]> = {
+  // ===== Category pages (5) =====
+  jewelry: [
+    { q: "What kinds of jewelry do you buy?", a: "Gold, silver, and platinum jewelry in any condition, plus recognized designer names and diamond pieces — rings, chains, bracelets, earrings, pendants, and broken or single items alike." },
+    { q: "Does my jewelry have to be in good condition?", a: "Not at all. Broken chains, bent rings, and unmatched earrings are valued on their metal content and any stones, so damaged pieces are worth just as much as wearable ones." },
+    { q: "How do you decide what a piece is worth?", a: "We identify the metal and karat with an XRF analyzer, weigh it, and price it against the live market; designer or gem-set pieces are then assessed for brand and stone value on top." },
+  ],
+  "precious-metals": [
+    { q: "Which metals do you buy?", a: "All four precious metals — gold, silver, platinum, and palladium — in every form, from jewelry and coins to bars, rounds, and industrial scrap." },
+    { q: "How is a precious-metal offer calculated?", a: "Each item is tested for purity and weighed on a calibrated scale, then priced against that metal's live spot figure the day you visit, with the math shown openly." },
+    { q: "Is there a minimum amount I can sell?", a: "No minimum and no appraisal fee. A single ring is as welcome as a box of bullion, and you owe nothing if you decline the offer." },
+  ],
+  "precious-stones": [
+    { q: "What diamonds do you buy?", a: "Loose certified diamonds of 1.5 carats and above carrying a report from GIA, IGI, AGS, HRD, or another internationally recognized lab." },
+    { q: "What don't you buy?", a: "We do not purchase diamonds under one and a half carats, uncertified stones, lab-grown diamonds, or stones graded by labs we do not recognize." },
+    { q: "Can I sell a diamond that is still in its ring?", a: "Yes — we buy the mounted center stone along with the gold or platinum setting at its live metal value, so the whole piece sells at once." },
+  ],
+  coins: [
+    { q: "What types of coins do you buy?", a: "US and foreign gold and silver coins, Morgan and Peace dollars, American Eagles, pre-1933 US gold, graded slabs, and entire inherited collections." },
+    { q: "Do you pay only melt value?", a: "No. Every coin is checked for both its metal content and its numismatic worth from date, mint mark, and grade, and you are paid on whichever is higher." },
+    { q: "Should I clean my coins first?", a: "Please don't. Cleaning can strip a coin's surface and wipe out collector value, and graded coins should stay sealed in their holders." },
+  ],
+  watches: [
+    { q: "Which watch brands do you buy?", a: "Rolex, Omega, Cartier, Breitling, TAG Heuer, Patek Philippe, Audemars Piguet, and other recognized luxury names." },
+    { q: "How do you price a luxury watch?", a: "Value comes from the exact brand, model, and reference plus condition and service history, so we research the current secondary-market price rather than weighing the watch." },
+    { q: "Do the box and papers matter?", a: "Yes. The original box, papers, and any service records lift what a timepiece is worth, so bring whatever you still have." },
+  ],
+
+  // ===== Jewelry subcategories (6) =====
+  "jewelry/sell-gold-jewelry": [
+    { q: "What karats of gold jewelry do you accept?", a: "Everything from 8K and 9K through 10K, 14K, 18K, 21K, 22K, and 24K, whether the piece is wearable or broken." },
+    { q: "How do you confirm the karat?", a: "An XRF analyzer, the same instrument refineries rely on, reads the exact purity on the spot, so the offer rests on a measured number rather than a guess." },
+    { q: "Will you buy a single earring or a tangled chain?", a: "Yes. Odd, broken, and mismatched gold is priced purely on its gold content, so it pays the same per gram as an intact piece." },
+  ],
+  "jewelry/sell-silver-jewelry": [
+    { q: "How do you know my jewelry is real silver?", a: "We look for a .925 or sterling stamp and test the piece on site, so plated or non-silver items are caught before any offer is made." },
+    { q: "What is silver jewelry worth?", a: "Sterling is priced by weight against the silver market, which moves daily; you see the purity, the weight, and the current figure before deciding." },
+    { q: "What silver jewelry do you take?", a: "Sterling rings, necklaces, bracelets, earrings, pendants, and chains, either marked .925 or confirmed by our test." },
+  ],
+  "jewelry/sell-your-scrap-gold-jewelry": [
+    { q: "Does broken gold still have value?", a: "Yes. Condition is irrelevant to scrap; only the gold content matters, and we measure it precisely with an XRF analyzer." },
+    { q: "What counts as scrap gold?", a: "Broken chains, bent rings, unmatched earrings, gold nuggets and flakes, gold wire, and dental gold, in any karat." },
+    { q: "How is scrap gold priced?", a: "By weight against the day's spot figure once the purity is tested, so a dented or tangled item still pays exactly what its gold is worth." },
+  ],
+  "jewelry/sell-designer-jewelry": [
+    { q: "Which designer brands do you buy?", a: "Tiffany & Co., Cartier, David Yurman, Bulgari, Van Cleef & Arpels, Pandora, and other recognized jewelry houses." },
+    { q: "Do you pay more than melt for designer pieces?", a: "Often, yes. A signed piece is valued for its brand, craftsmanship, and collector demand, which can run well above the metal alone." },
+    { q: "What if the piece is not signed or I lost the box?", a: "Bring it anyway; we assess the metal and stones regardless, and any brand premium is added where the piece can be authenticated." },
+  ],
+  "jewelry/sell-your-estate-jewelry": [
+    { q: "What is estate jewelry?", a: "Previously owned and often older pieces — Victorian, Edwardian, Art Deco, Art Nouveau, and mid-century rings, brooches, lockets, and cameos." },
+    { q: "Is old jewelry worth more than its gold?", a: "It can be. Age, maker, condition, and collector demand may lift a piece above melt, and signed or rare items in particular carry a premium." },
+    { q: "Should I have inherited pieces cleaned first?", a: "There is no need, and polishing an older piece is best avoided, since original surfaces matter a great deal to collectors." },
+  ],
+  "jewelry/sell-your-antique-jewelry": [
+    { q: "What makes a piece “antique”?", a: "Jewelry from historical periods such as the Victorian, Edwardian, Art Nouveau, and Art Deco eras, prized for craftsmanship and age rather than metal alone." },
+    { q: "How do you value an antique piece?", a: "We weigh its metal and assess any gemstones, then factor in the era, the maker, and how sought-after the style is among today's collectors." },
+    { q: "Can cleaning hurt an antique's value?", a: "Yes. A worn patina is often part of the appeal, so leave it untouched and let our buyer judge the piece exactly as found." },
+  ],
+
+  // ===== Precious-metals subcategories (7) =====
+  "precious-metals/sell-gold": [
+    { q: "How do you figure out what my gold is worth?", a: "The live gold price is converted to a per-gram rate, then multiplied by your item's tested karat purity and its weight on our scale." },
+    { q: "What forms of gold do you buy?", a: "Jewelry from 10K to 24K, scrap and broken pieces, dental gold, coins, and bars; on recognized gold bars and rounds we pay 90% of spot." },
+    { q: "Can I estimate my payout before visiting?", a: "Knowing your item's karat and weight lets you ballpark the range, and we confirm both by testing right in front of you when you arrive." },
+  ],
+  "precious-metals/sell-silver": [
+    { q: "What silver do you buy?", a: "Sterling jewelry and flatware, silver bullion bars and rounds, and pre-1965 US 90% silver coins." },
+    { q: "How do you price silver bullion?", a: "On .999 silver bars and rounds the offer is set against the live silver spot price, with the weight and purity verified in front of you." },
+    { q: "Is it worth selling a large lot of silver?", a: "Very much so. Because silver trades far below gold per ounce, quantity adds up quickly, and big lots are as welcome as single pieces." },
+  ],
+  "precious-metals/sell-platinum": [
+    { q: "How do I know if my ring is platinum?", a: "Platinum is usually stamped 950 or PLAT, and we test white-metal pieces to separate platinum from white gold, since the two are easily confused." },
+    { q: "Why is platinum valued differently from gold?", a: "It is rarer and denser, so even a modest band can hold meaningful value; the offer is set against the live platinum spot figure." },
+    { q: "What platinum items do you take?", a: "Platinum jewelry, wedding bands, settings, bars, bullion, and coins." },
+  ],
+  "precious-metals/sell-your-palladium": [
+    { q: "What is palladium, and do you buy it?", a: "Palladium is a rare platinum-group metal that many buyers overlook; we purchase palladium bullion, bars, rounds, coins, and jewelry." },
+    { q: "How is palladium priced?", a: "On its tested purity and weight against the current palladium market, which can move sharply, so the offer reflects the spot figure the day you visit." },
+    { q: "Could my palladium be mistaken for something else?", a: "Easily. It is often confused with platinum or white gold, so we test each piece to be sure you are paid for the right metal." },
+  ],
+  "precious-metals/sell-sterling-silver-sets": [
+    { q: "How is a silver flatware set valued?", a: "Every piece is weighed on a calibrated scale and priced on its actual silver content against the market, not on its resale as tableware." },
+    { q: "What about weighted or hollow pieces?", a: "Candlesticks and some handles hold non-silver filler for stability; we account for that honestly so you are paid only for the real silver." },
+    { q: "Do I need to polish the set first?", a: "No. Polishing changes nothing, since value rests on silver weight, and a full service often adds up to more than owners expect." },
+  ],
+  "precious-metals/sell-dental-gold": [
+    { q: "Is dental gold actually worth money?", a: "Yes. Crowns, bridges, and fillings are made from genuine gold alloys, and we test them for their real gold content instead of writing them off." },
+    { q: "Do I need to remove tooth material from a crown?", a: "No; attached tooth is fine, and it is accounted for when the offer is calculated on the gold alone." },
+    { q: "How is dental gold priced?", a: "It is tested with an XRF analyzer and weighed, then valued at the live gold price, with the alloy's purity reflected in the figure." },
+  ],
+  "precious-metals/sell-gold-filled-plated": [
+    { q: "What is the difference between gold filled and gold plated?", a: "Gold filled carries a real, legally specified layer of gold bonded to a base metal; gold plated has only a microscopic coating that is usually too thin to buy." },
+    { q: "Can you buy my gold plated items?", a: "Generally no, because the coating holds too little gold to carry value, but we test them for free and tell you plainly what you have." },
+    { q: "How do I know which one I own?", a: "Marks like GF, 1/20 14K, or 1/10 10K point to gold filled; if you are unsure, bring it in and we identify it at no charge." },
+  ],
+
+  // ===== Precious-stones subcategory (1) =====
+  "precious-stones/sell-diamonds": [
+    { q: "What diamonds do you buy?", a: "We take loose diamonds of one and a half carats or more that carry a GIA, IGI, AGS, or HRD grading report." },
+    { q: "How is my diamond's price determined?", a: "We read the 4Cs — cut, color, clarity, and carat — exactly as your certificate states, then cross-reference the current diamond market." },
+    { q: "What kinds of diamonds do you turn away?", a: "Stones below the 1.5-carat threshold, any uncertified or lab-grown diamond, and certificates from labs outside the recognized list." },
+  ],
+
+  // ===== Coins subcategories (4) =====
+  "coins/sell-gold-coins": [
+    { q: "How much do you pay for bullion gold coins?", a: "Standard bullion coins such as Gold Eagles, Buffalos, Krugerrands, and Maple Leafs are paid at 90% of the live gold spot price." },
+    { q: "Can a gold coin be worth more than its metal?", a: "Yes. Proof, graded, and key-date coins can carry a collector premium, so bring any certificates or original packaging you have kept." },
+    { q: "Which gold coins do you buy?", a: "American Gold Eagles and Buffalos, Krugerrands, Maple Leafs, Britannias, pre-1933 US gold, and foreign gold coins." },
+  ],
+  "coins/sell-silver-coins": [
+    { q: "What silver coins do you buy?", a: "American Silver Eagles, Morgan and Peace dollars, pre-1965 US 90% silver, half dollars, quarters, and foreign silver, by the coin or the bag." },
+    { q: "How is junk silver priced?", a: "Pre-1965 90% silver is weighed and paid on its silver content at the live spot price, while key dates are pulled out and valued individually." },
+    { q: "Do you pay extra for rare silver coins?", a: "Yes. A coin's date, mint mark, or condition can add numismatic value above melt, so better-grade pieces are assessed one at a time." },
+  ],
+  "coins/sell-collectible-coins": [
+    { q: "What makes a coin collectible?", a: "Rarity and condition. Key dates, mint-mark varieties, error coins, proof and mint sets, and PCGS or NGC graded slabs are valued for what collectors pay." },
+    { q: "How do you price a graded coin?", a: "On the factors collectors actually reward — date, mintage, grade, and demand — rather than metal weight, and we explain how each piece is judged." },
+    { q: "Should slabbed coins stay in their holders?", a: "Yes. Leave graded coins sealed and avoid cleaning raw ones, since a cleaned surface can sharply reduce a collectible coin's value." },
+  ],
+  "coins/sell-antique-coins": [
+    { q: "What counts as an antique coin?", a: "Ancient Greek, Roman, and Byzantine issues, colonial and early US coppers and silver, gold sovereigns, and early world coinage." },
+    { q: "Are antique coins valued only on their metal?", a: "No. Age, origin, rarity, and condition often carry historical and collector worth well beyond the gold or silver they contain." },
+    { q: "Can I clean an old coin before selling?", a: "Please leave it be; cleaning an antique coin can destroy much of its value, so keep the patina and any holders intact." },
+  ],
+
+  // ===== Watches subcategories (2) =====
+  "watches/sell-rolex": [
+    { q: "Which Rolex models do you buy?", a: "Every reference — Submariner, Datejust, Daytona, GMT-Master, Day-Date, Oyster Perpetual, Explorer, and vintage or discontinued pieces." },
+    { q: "How do you price a Rolex?", a: "On its exact reference number, condition, and current secondary-market demand; steel sports models and the Daytona in particular can command strong premiums." },
+    { q: "Do I need the box and papers?", a: "They are not required, but keeping the box, papers, and service history raises the offer, so bring anything that came with the watch." },
+  ],
+  "watches/sell-luxury-watches": [
+    { q: "Which luxury brands besides Rolex do you buy?", a: "Omega, Cartier, Patek Philippe, Audemars Piguet, Breitling, and TAG Heuer, among other recognized makers." },
+    { q: "How is my watch's value determined?", a: "We assess the brand, model, reference, condition, and service history, then check current secondary-market prices so the offer reflects real demand." },
+    { q: "Does paperwork affect the offer?", a: "Yes. Documentation like the original box, papers, and service records adds real value, so bring whatever you have held onto." },
+  ],
+};
+
+export const getFaqs = (path: string): FaqItem[] | undefined => PAGE_FAQS[path];

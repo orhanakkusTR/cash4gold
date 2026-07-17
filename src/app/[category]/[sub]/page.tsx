@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Check, MapPin, ArrowRight, ArrowUpRight, Phone, Navigation, AlertTriangle } from "lucide-react";
 import { ALL_SUBCATEGORIES, LOCATIONS, getCategory, getSubcategory, SITE, PRIMARY_PHONE, PRIMARY_PHONE_HREF } from "@/data/business";
-import { getBrief } from "@/data/category-briefs";
+import { getBrief, getFaqs } from "@/data/category-briefs";
 import { BrushUnderline } from "@/components/brush-underline";
 import { LinkifyCities } from "@/components/linkify-cities";
 import { placeholderDescription, metalTone } from "@/lib/utils";
@@ -77,7 +77,7 @@ export default async function SubcategoryPage({ params }: { params: Promise<{ ca
   const s = getSubcategory(category, sub);
   if (!cat || !s) notFound();
 
-  const faqs = subFaqs(s.name);
+  const faqs = getFaqs(`${cat.slug}/${s.slug}`) ?? subFaqs(s.name);
   const siblings = cat.subcategories.filter((x) => x.slug !== s.slug);
   const isJewelry = cat.slug === "jewelry";
   const tone = metalTone(s.name);

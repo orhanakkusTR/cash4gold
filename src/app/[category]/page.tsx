@@ -16,6 +16,7 @@ import { LinkifyCities } from "@/components/linkify-cities";
 import { POSTS, getPost } from "@/data/blog";
 import { BlogArticle } from "@/components/blog-article";
 import { CITY_LANDINGS, getCityLanding } from "@/data/city-landings";
+import { getFaqs } from "@/data/category-briefs";
 import { CityLanding } from "@/components/city-landing";
 import { NovaLanding } from "@/components/nova-landing";
 
@@ -100,7 +101,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     notFound();
   }
 
-  const faqs = catFaqs(cat);
+  const faqs = getFaqs(cat.slug) ?? catFaqs(cat);
   const others = CATEGORIES.filter((c) => c.slug !== cat.slug);
   const isJewelry = cat.slug === "jewelry";
   const tone = metalTone(cat.name);
