@@ -56,6 +56,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Head-term consolidation (audit P1-6): the "Cash for Gold in Northern
+      // Virginia" regional blog post competed with the money landing for the
+      // same query. Its unique FAQ was folded into the landing; the post now
+      // 301s to the landing, which owns the head-term intent. (Owner confirmed
+      // no backlinks to the post.)
+      { source: "/cash-for-gold-nova-falls-church-va", destination: "/cash-for-gold-northern-virginia", permanent: true },
+
       // Old flat service slugs → new taxonomy (safety net for any stray links).
       { source: "/sell-gold", destination: "/precious-metals/sell-gold", permanent: true },
       { source: "/sell-silver", destination: "/precious-metals/sell-silver", permanent: true },

@@ -366,82 +366,6 @@ Yes. Because every offer is built from the live spot price, a higher market pric
 Want to know what your specific pieces are worth at today's price? [Run the numbers in our calculator](/gold-calculator) or [stop by any location](/contact-us-cash-for-gold-locations) for a free, no-obligation appraisal.`,
   },
   {
-    slug: "cash-for-gold-nova-falls-church-va",
-    title: "Cash for Gold in Northern Virginia: A Regional Seller's Guide",
-    seoTitle: "Cash for Gold in Northern Virginia | Where to Sell for Cash",
-    date: "2025-12-02",
-    category: "Locations",
-    excerpt:
-      "From Falls Church to Manassas, Northern Virginia has plenty of places to sell gold for cash. This regional guide explains how local prices are set, how to spot a fair buyer, and which Cash for Gold VA location is nearest you.",
-    body: `Northern Virginia is one of the better places in the country to sell gold. The region is dense with established storefront buyers, demand is steady, and competition keeps offers honest. Whether you are in Falls Church, Annandale, Tysons, or out toward Manassas and Chantilly, you are rarely far from a fair, same-day offer.
-
-This guide takes the regional view: how the local market works, what separates a trustworthy buyer from a tourist trap, and how to choose the right Cash for Gold VA location for where you live.
-
-## The Northern Virginia gold market at a glance
-
-Because so many buyers operate in NoVA, sellers here have leverage that people in rural areas do not. A few things to know about the regional market:
-
-- **Offers track the global spot price.** No matter which city you sell in, a fair offer starts from the same live market price for gold.
-- **Storefronts beat mail-in services.** Local buyers compete on reputation, so the better ones pay a transparent share of spot and explain it openly.
-- **Reviews are the great equalizer.** A buyer with hundreds of genuine Google reviews has earned trust the hard way. Ours sits at 4.9 stars.
-
-## How a fair offer is calculated, anywhere in NoVA
-
-The math does not change from city to city. An honest buyer takes the live spot price per troy ounce, converts it to a per-gram price (spot divided by 31.1), adjusts for your item's karat purity, and multiplies by the weight. A small refining margin is subtracted because scrap gold has to be melted and re-assayed.
-
-That is the entire formula. If a buyer cannot or will not explain it, that is your signal to walk. You can run the same calculation yourself on any item with our [gold value calculator](/gold-calculator).
-
-## How to spot a trustworthy buyer
-
-Wherever you sell in Northern Virginia, look for these signs:
-
-1. **A physical storefront** you can return to, not a pop-up or kiosk.
-2. **Testing and weighing in front of you**, never in a back room.
-3. **An offer expressed as a range** tied to the live price, not a single lowball figure.
-4. **No pressure and no fee** to get an appraisal.
-5. **Verifiable reviews** from real local customers.
-
-## More than gold: what NoVA sellers bring in
-
-Northern Virginia's affluence means the region's sellers bring far more than scrap chains, and a good buyer values all of it on the same transparent basis:
-
-- **Silver** — flatware, coins, bars, and sterling sets, valued on the live silver price.
-- **Platinum and palladium** — often found in wedding bands and settings, valued on their own live markets.
-- **Diamonds and colored stones** — especially [GIA-certified diamonds over a carat](/we-buy-diamonds-more-than-1-carat-with-gia), appraised separately from the metal.
-- **Luxury watches** — Rolex, Omega, and similar brands, valued on model and condition.
-- **Designer jewelry and coins** — from Cartier and Tiffany pieces to American Gold Eagles and estate collections.
-
-Whatever the item, the principle is the same across the region: a fair offer starts from the live market and is explained to you in the open.
-
-## Find your nearest location
-
-Cash for Gold VA has four Northern Virginia stores, so one is usually close by:
-
-- **Annandale**: 7262 Columbia Pike (closest to [Falls Church](/cash-for-gold-falls-church), Bailey's Crossroads, and Springfield)
-- **Vienna / McLean**: 8453 Tyco Rd #C (closest to Tysons, McLean, and Oakton)
-- **Chantilly**: 14025 Lee Jackson Memorial Hwy (closest to Centreville, Fairfax, Herndon, and [Loudoun County](/cash-for-gold-loudoun-county-va))
-- **Manassas**: 9013 Centreville Rd (closest to Gainesville, Bristow, and Prince William County)
-
-Every location buys gold, silver, platinum, diamonds, designer jewelry, luxury watches, and coins, with free appraisals and instant payout.
-
-## What to bring
-
-Bring whatever you are thinking of selling, broken or whole, plus a photo ID. There is no need to sort, clean, or polish anything. We handle the sorting, testing, and weighing, and you decide whether to accept once you see the number.
-
-## Frequently asked questions
-
-**Where is the best place to sell gold in Northern Virginia?**
-The best buyer is a local storefront that tests in front of you, pays a transparent share of the live spot price, and has strong reviews. Cash for Gold VA operates four such locations across the region.
-
-**Does the city I sell in change my offer?**
-No. A fair offer is built from the global spot price, your karat, and your weight, not your zip code. What changes between buyers is how much of that value they actually pay.
-
-**Can I get an estimate before driving over?**
-Yes. Our [calculator](/gold-calculator) gives you a realistic range using the live price, so you know roughly what to expect before you visit.
-
-Find your closest store and [get a free, no-obligation appraisal](/contact-us-cash-for-gold-locations), or [estimate your items now](/gold-calculator).`,
-  },
-  {
     slug: "finding-the-best-cash-for-gold-options",
     title: "How to Choose a Trustworthy Cash for Gold Buyer",
     seoTitle: "How to Choose a Cash for Gold Buyer | Cash for Gold VA",
@@ -1592,7 +1516,6 @@ const BLOG_COVERS: Record<string, string> = {
   "selling-silver-in-northern-virginia": "/blog/selling-silver-nova.jpg",
   "what-to-watch-out-for-when-selling-gold": "/blog/red-flags-selling-gold.jpg",
   "gold-price-today": "/categories/gold-bars.jpg",
-  "cash-for-gold-nova-falls-church-va": "/photos/storefront-vienna.jpg",
   "cash-for-gold-loudoun-county-va": "/photos/storefront-chantilly.jpg",
   "how-to-sell-used-gold-in-chantilly-va": "/photos/storefront-chantilly.jpg",
   "cash-for-gold-close-to-me": "/photos/storefront-annandale.jpg",

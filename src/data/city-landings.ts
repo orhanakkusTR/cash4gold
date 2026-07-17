@@ -114,6 +114,10 @@ export const CITY_LANDINGS: CityLanding[] = [
         a: "Every offer is built the same way at all four stores: we test the item's purity, weigh it on a calibrated scale you can watch, and price it against the live spot price for that metal at that moment. Then we explain the number before you decide anything. Your items stay in your hands until you agree, and the appraisal is free either way.",
       },
       {
+        q: "Does the city I sell in change my offer?",
+        a: "No. A fair offer is built from the live global spot price, your item's karat purity, and its weight — not your zip code — so it's the same at all four of our Northern Virginia stores. What actually varies between buyers is how much of that value they pay and whether they show you the math; we test and weigh in front of you and explain every number before you decide.",
+      },
+      {
         q: "Which Cash for Gold VA location is closest to me?",
         a: "Roughly: Arlington, Alexandria, Falls Church, and Springfield are closest to Annandale. Western Fairfax, Herndon, South Riding, and Loudoun are closest to Chantilly. Prince William County — Manassas, Bristow, Gainesville, Woodbridge — is served by our Manassas store. McLean, Tysons, Vienna, and Oakton are closest to our Vienna store on Tyco Rd, right in the Tysons area.",
       },
@@ -126,7 +130,7 @@ export const CITY_LANDINGS: CityLanding[] = [
         a: "Across all four Northern Virginia stores we buy platinum and palladium, diamonds and precious stones, fine and designer jewelry (Tiffany, Cartier, David Yurman, and similar), luxury watches including Rolex, coins from junk silver to collectible and bullion. If you're unsure whether something qualifies, bring it in — the appraisal is free.",
       },
     ],
-    relatedPosts: ["cash-for-gold-nova-falls-church-va", "we-buy-estate-gold-jewelry", "we-pay-90-percent-for-gold-coins"],
+    relatedPosts: ["selling-gold-in-northern-virginia", "we-buy-estate-gold-jewelry", "we-pay-90-percent-for-gold-coins"],
     closingCta:
       "Wherever you are in Northern Virginia, one of our four stores is a short drive away. Call the location nearest you or just walk in — the appraisal is free, the testing happens in front of you, and if you sell, it's an instant payout the same visit.",
   },
@@ -951,7 +955,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
     ],
     relatedPosts: [
-      "cash-for-gold-nova-falls-church-va",
+      "selling-gold-in-northern-virginia",
       "we-buy-estate-gold-jewelry",
       "is-cash-for-gold-worth-it",
     ],
