@@ -42,13 +42,13 @@ export const CATEGORY_BRIEFS: Record<string, CategoryBrief> = {
   },
 
   "coins/sell-gold-coins": {
-    headline: "We Pay 90% of Spot for Gold Coins — No Haggling, No Games",
+    headline: "Standard Gold Bullion Coins Pay 85-90% of Spot — No Haggling, No Games",
     description:
-      "We pay 90% of the current gold spot price for standard bullion gold coins — and we'll tell you exactly how we got there. Every calculation is done in front of you, on camera, in a secure setting. The evaluation is free.\n\nHave a rare coin? We know numismatics too. Key dates, mint marks, and collector demand can push your offer above melt value. Bring it in and find out what you actually have.",
+      "We typically pay 85-90% of the current gold spot price for standard bullion gold coins — and we'll tell you exactly how we got there. Every calculation is done in front of you, on camera, in a secure setting. The evaluation is free.\n\nHave a rare coin? We know numismatics too. Key dates, mint marks, and collector demand can push your offer above melt value. Bring it in and find out what you actually have.",
     whatWeBuy:
       "American Gold Eagles, Canadian Maple Leafs, South African Krugerrands, Mexican Gold Pesos, pre-1933 US gold coins, and any gold bullion coins.",
     pricing:
-      "Standard bullion coins: 90% of live spot price. Rare or numismatic coins: evaluated for collector premium above melt value. All calculations shown to you on the spot.",
+      "Standard bullion coins: typically 85-90% of live spot price. Rare or numismatic coins: evaluated for collector premium above melt value. All calculations shown to you on the spot.",
   },
 
   "coins/sell-silver-coins": {
@@ -61,14 +61,15 @@ export const CATEGORY_BRIEFS: Record<string, CategoryBrief> = {
       "Priced competitively based on silver content and current spot price. Rare or key-date coins evaluated for numismatic premium. All shown to you before you decide.",
   },
 
+  // orphan — not rendered, kept for future bullion-bars page
   "precious-metals/sell-bullion-bars": {
-    headline: "We Pay 90% of Spot for Gold, 85% for Silver Bullion — Every Time",
+    headline: "Bullion Bars & Rounds Paid at 85-90% of Live Spot — Every Time",
     description:
-      "No surprises, no lowball offers. We pay 90% of spot for gold bullion and 85% for .999 silver bullion — and we show you the math before you decide. Every bar is verified for authenticity, weighed on calibrated scales, and evaluated on camera in a fully secured environment. The check is free.",
+      "No surprises, no lowball offers. Standard gold and silver bullion typically brings 85-90% of the live spot price — and we show you the math before you decide. Every bar is verified for authenticity, weighed on calibrated scales, and evaluated on camera in a fully secured environment. The check is free.",
     whatWeBuy:
       "Gold and silver bars and rounds of all sizes — PAMP, Credit Suisse, Engelhard, Johnson Matthey, and other recognized mints. .999 fine silver bars and rounds. Ingots and privately minted rounds also considered.",
     pricing:
-      "Gold bullion: 90% of live spot price. .999 silver bullion: 85% of live spot price. Weight and purity verified on site. All calculations shown to you before you decide.",
+      "Standard gold and silver bullion: typically 85-90% of live spot price. Weight and purity verified on site. All calculations shown to you before you decide.",
   },
 
   "precious-stones/sell-diamonds": {

@@ -349,7 +349,7 @@ export const CATEGORIES: Category[] = [
         cardImage: "/products/gold/pamp.jpg",
         short: "10K–24K jewelry, scrap, bullion & coins paid by live spot price.",
         intro:
-          "We buy gold in every form, 10K to 24K jewelry, scrap and broken pieces, dental gold, bars, and bullion. Every item is tested in front of you and paid against the live gold spot price, with no lowball gimmicks. On recognized gold bullion bars and rounds we pay 90% of spot.",
+          "We buy gold in every form, 10K to 24K jewelry, scrap and broken pieces, dental gold, bars, and bullion. Every item is tested in front of you and paid against the live gold spot price, with no lowball gimmicks. On recognized gold bullion bars and rounds we typically pay 85-90% of the live spot price.",
         items: ["Gold jewelry (10K–24K)", "Scrap & broken gold", "Gold bullion & bars", "Dental gold", "Gold coins", "Class rings & chains"],
         keywords: ["sell gold near me", "cash for gold", "sell gold jewelry", "gold buyer northern virginia"],
         longDescription:
@@ -370,7 +370,7 @@ export const CATEGORIES: Category[] = [
         cardImage: "/products/silver/bar1oz.jpg",
         short: "Sterling, flatware, bars, rounds & pre-1965 coins at competitive rates.",
         intro:
-          "From sterling flatware and jewelry to silver bullion, rounds, and pre-1965 US coins, we pay fair, transparent prices based on weight, purity, and the current silver spot price. On .999 silver bullion bars and rounds we pay 85% of spot.",
+          "From sterling flatware and jewelry to silver bullion, rounds, and pre-1965 US coins, we pay fair, transparent prices based on weight, purity, and the current silver spot price. On .999 silver bullion bars and rounds the offer typically runs 85-90% of the live spot price.",
         items: ["Sterling silver jewelry", "Silver bullion & bars", "Silver rounds", "Silverware & flatware", "Pre-1965 US coins"],
         keywords: ["sell silver near me", "silver buyer", "sell sterling silver", "cash for silver"],
         longDescription:
@@ -526,9 +526,9 @@ export const CATEGORIES: Category[] = [
         name: "Gold Coins",
         action: "Sell Gold Coins",
         cardImage: "/coins/age/age-001.jpg",
-        short: "90% of spot for standard bullion coins, plus numismatic premium on rare dates.",
+        short: "Typically 85-90% of spot for standard bullion coins, plus numismatic premium on rare dates.",
         intro:
-          "We pay 90% of the live gold spot price for standard bullion gold coins, American Gold Eagles and Buffalos, Krugerrands, Maple Leafs, and more, and we show you exactly how we got there. Have a rare or key-date coin? We know numismatics too, and collector demand can push your offer above melt value.",
+          "We typically pay 85-90% of the live gold spot price for standard bullion gold coins, American Gold Eagles and Buffalos, Krugerrands, Maple Leafs, and more, and we show you exactly how we got there. Have a rare or key-date coin? We know numismatics too, and collector demand can push your offer above melt value.",
         items: ["American Gold Eagles & Buffalos", "Krugerrands & Maple Leafs", "Pre-1933 US gold coins", "Foreign gold coins", "Graded gold slabs"],
         keywords: ["sell gold coins", "gold coin buyer", "sell gold eagles", "where to sell gold coins"],
         longDescription:

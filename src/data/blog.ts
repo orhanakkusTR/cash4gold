@@ -116,7 +116,7 @@ Every visit works the same way: free, no-obligation appraisal against the live s
 | Sterling jewelry | Chains, rings, bracelets, Southwestern and Mexican silver | Tested to confirm .925, then weighed against the live spot price |
 | Sterling sets & hollowware | Flatware services, tea and coffee services, trays, bowls, candlesticks | Per-piece testing, total silver weight — weighted/reinforced pieces adjusted |
 | Silver coins | Pre-1965 US 90% dimes, quarters, halves; silver dollars | By silver content per face value |
-| Bullion | .999 fine bars and rounds | 85% of the live spot price — our published rate |
+| Bullion | .999 fine bars and rounds | Typically 85-90% of the live spot price |
 
 If it's genuinely silver, we'll make an offer on it — from a single ring at our [sterling silver jewelry counter](/jewelry/sell-silver-jewelry) to a full estate's worth of hollowware.
 
@@ -186,7 +186,7 @@ The process at all four stores is the same, and it's built to be watched:
 - **Instant payout** — accepted offers are paid the same visit.
 - Virginia law requires a government-issued photo ID, and sellers must be 18 or older.
 
-On .999 fine bullion bars and rounds, our rate is published: 85% of spot. No guessing before you come in.
+On .999 fine bullion bars and rounds, we typically pay 85-90% of spot. No guessing before you come in.
 
 > **Key takeaway:** Sterling is solid 92.5% silver and is bought by weight against the live spot price; silverplate is a thin coating with no melt value. Check the marks at home, expect knives and weighted pieces to count for less than their heft, and remember that with silver, full sets — not single spoons — are where the money is.
 
@@ -1384,7 +1384,7 @@ In other words, the higher percentage on coins is not generosity, it is economic
 
 Start with the melt value: the coin's pure gold content multiplied by the live spot price per gram (spot per ounce divided by 31.1). A fair buyer then pays a transparent percentage of that value, adding a premium for proof or collectible coins where it applies. You can estimate the melt value of any coin yourself with our [gold value calculator](/gold-calculator).
 
-A worked example: a 1 oz gold coin at a $2,400 spot price has roughly $2,400 in melt value. At 90%, that is about $2,160 before any collectible premium. Because the coin is recognized and easy to resell, that high share is realistic in a way it would not be for an equal weight of mixed scrap.
+A worked example: a 1 oz gold coin at a $2,400 spot price has roughly $2,400 in melt value. At 85-90%, that is roughly $2,040-$2,160 before any collectible premium. Because the coin is recognized and easy to resell, that high share is realistic in a way it would not be for an equal weight of mixed scrap.
 
 ## What can change the number
 

@@ -184,7 +184,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How is my payout calculated?",
-        a: "We start with the live spot price per troy ounce, divide by 31.1 to get a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight. For plain scrap gold a small refining margin is deducted to cover melting and assaying; standard bullion gold coins pay 90% of the live spot price. Designer or gemstone pieces are appraised separately, since they're often worth more than their metal content.",
+        a: "We start with the live spot price per troy ounce, divide by 31.1 to get a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight. For plain scrap gold a small refining margin is deducted to cover melting and assaying; standard bullion gold coins typically pay 85-90% of the live spot price. Designer or gemstone pieces are appraised separately, since they're often worth more than their metal content.",
       },
       {
         q: "Is it better to sell locally than mail my gold in?",
@@ -253,7 +253,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Do you buy gold coins from Fairfax sellers?",
-        a: "Yes. Standard bullion gold coins — American Eagles, Krugerrands, Maple Leafs, and similar — pay 90% of the live spot price. Collectible, rare, or graded coins are appraised individually, because dates, mint marks, and condition can put their value well above the gold content, so don't clean them and bring any grading slabs or paperwork you have.",
+        a: "Yes. Standard bullion gold coins — American Eagles, Krugerrands, Maple Leafs, and similar — typically pay 85-90% of the live spot price. Collectible, rare, or graded coins are appraised individually, because dates, mint marks, and condition can put their value well above the gold content, so don't clean them and bring any grading slabs or paperwork you have.",
       },
       {
         q: "I inherited jewelry from a Fairfax estate — should I sort or clean it before coming in?",
@@ -318,7 +318,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How much will I get paid for my gold from Herndon?",
-        a: "We take the live spot price per troy ounce, divide by 31.1 for a per-gram rate, then multiply by your item's purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k, roughly 91.7% for 22k, and 99.9% for 24k — and its weight on our scale. Plain scrap gold carries a small refining margin for melting and assaying, standard bullion gold coins pay 90% of live spot, and coins, designer pieces, and gemstone jewelry are appraised separately since they can be worth more than the metal alone.",
+        a: "We take the live spot price per troy ounce, divide by 31.1 for a per-gram rate, then multiply by your item's purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k, roughly 91.7% for 22k, and 99.9% for 24k — and its weight on our scale. Plain scrap gold carries a small refining margin for melting and assaying, standard bullion gold coins typically pay 85-90% of live spot, and coins, designer pieces, and gemstone jewelry are appraised separately since they can be worth more than the metal alone.",
       },
       {
         q: "Which store is closer to Herndon — Chantilly or Vienna?",
@@ -391,7 +391,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How is my payout calculated?",
-        a: "We start with the live spot price per troy ounce, divide by 31.1 for a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+        a: "We start with the live spot price per troy ounce, divide by 31.1 for a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins typically pay 85-90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
       },
       {
         q: "Do you buy designer jewelry and luxury watches near South Riding?",
@@ -456,7 +456,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How much will I get for my gold in Centreville?",
-        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 to get a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, standard bullion gold coins pay 90% of the live spot price, and coins, designer pieces, and gemstone jewelry are appraised separately since they can be worth more than their metal content.",
+        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 to get a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, standard bullion gold coins typically pay 85-90% of the live spot price, and coins, designer pieces, and gemstone jewelry are appraised separately since they can be worth more than their metal content.",
       },
       {
         q: "Is a small amount of inherited gold even worth bringing in?",
@@ -525,7 +525,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How is my payout calculated?",
-        a: "We start with the live spot price per troy ounce, divide by 31.1 to get a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+        a: "We start with the live spot price per troy ounce, divide by 31.1 to get a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins typically pay 85-90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
       },
       {
         q: "How long does it take to sell gold near Bristow?",
@@ -594,7 +594,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How much will I get for my gold from Gainesville?",
-        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 for a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 for a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins typically pay 85-90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
       },
       {
         q: "Which store is closer to Gainesville — Manassas or Chantilly?",
@@ -602,7 +602,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Do you buy gold coins and silver from Gainesville sellers?",
-        a: "Yes — and coins show up often in the estate lots we see from Gainesville, sometimes tucked in the same box as the jewelry. Standard bullion gold coins pay 90% of the live spot price, silver is tested and bought at its own spot-based rate, and anything potentially collectible — old dates, mint marks, graded slabs — is appraised individually rather than priced as melt. Don't clean coins before coming in, and bring any paperwork or albums as-is.",
+        a: "Yes — and coins show up often in the estate lots we see from Gainesville, sometimes tucked in the same box as the jewelry. Standard bullion gold coins typically pay 85-90% of the live spot price, silver is tested and bought at its own spot-based rate, and anything potentially collectible — old dates, mint marks, graded slabs — is appraised individually rather than priced as melt. Don't clean coins before coming in, and bring any paperwork or albums as-is.",
       },
     ],
     relatedPosts: [
@@ -663,7 +663,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How much will I get paid for my gold from Woodbridge?",
-        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 for a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 for a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins typically pay 85-90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
       },
       {
         q: "Is the drive from Woodbridge to Manassas really worth it to sell gold?",
@@ -671,7 +671,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Do you buy gold and silver coins from Woodbridge collectors?",
-        a: "Yes. Standard bullion gold coins — American Eagles, Krugerrands, Maple Leafs, and similar — pay 90% of the live spot price. Collectible and older coins, including the kind that surface from Occoquan-area collections, are appraised individually because dates, mint marks, and condition can put their value well above the metal content. Leave them uncleaned and bring any grading slabs, albums, or paperwork you have.",
+        a: "Yes. Standard bullion gold coins — American Eagles, Krugerrands, Maple Leafs, and similar — typically pay 85-90% of the live spot price. Collectible and older coins, including the kind that surface from Occoquan-area collections, are appraised individually because dates, mint marks, and condition can put their value well above the metal content. Leave them uncleaned and bring any grading slabs, albums, or paperwork you have.",
       },
     ],
     relatedPosts: [
@@ -732,7 +732,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How is my payout calculated?",
-        a: "For gold, we start with the live spot price per troy ounce, divide by 31.1 for a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted for melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Watches, certified diamonds, designer pieces, and collectible coins are appraised individually, since they're often worth far more than their metal content.",
+        a: "For gold, we start with the live spot price per troy ounce, divide by 31.1 for a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted for melting and assaying, and standard bullion gold coins typically pay 85-90% of the live spot price. Watches, certified diamonds, designer pieces, and collectible coins are appraised individually, since they're often worth far more than their metal content.",
       },
       {
         q: "Is the appraisal private? I'd rather not discuss what I'm selling in a crowded shop.",
@@ -801,7 +801,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How much will I get for my gold in Tysons?",
-        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 for a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, gemstone jewelry, and watches are appraised separately, since they're often worth more than their metal content.",
+        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 for a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins typically pay 85-90% of the live spot price. Coins, designer pieces, gemstone jewelry, and watches are appraised separately, since they're often worth more than their metal content.",
       },
       {
         q: "Can I really sell gold on a lunch break in Tysons?",
@@ -870,7 +870,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How is my payout calculated?",
-        a: "We start with the live spot price per troy ounce, divide by 31.1 to get a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+        a: "We start with the live spot price per troy ounce, divide by 31.1 to get a per-gram price, then multiply by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins typically pay 85-90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
       },
       {
         q: "Which store is closer to Oakton — Vienna or Chantilly?",
@@ -878,7 +878,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Do you buy silver, coins, and watches from Oakton sellers, or only gold?",
-        a: "All of it. Beyond gold jewelry, we buy sterling silver and silver flatware, platinum, diamonds, designer jewelry, luxury watches, and coins — the full range of what tends to surface when an Oakton household sorts through decades of accumulation. Bullion gold coins pay 90% of live spot, potentially collectible coins are appraised individually for dates and mint marks, and watches are evaluated on brand, model, and condition, so bring boxes and paperwork if you still have them.",
+        a: "All of it. Beyond gold jewelry, we buy sterling silver and silver flatware, platinum, diamonds, designer jewelry, luxury watches, and coins — the full range of what tends to surface when an Oakton household sorts through decades of accumulation. Bullion gold coins typically pay 85-90% of live spot, potentially collectible coins are appraised individually for dates and mint marks, and watches are evaluated on brand, model, and condition, so bring boxes and paperwork if you still have them.",
       },
     ],
     relatedPosts: [
@@ -939,7 +939,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "How much will I get for my gold in Falls Church?",
-        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 to get a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins pay 90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
+        a: "Your quote starts with the live spot price per troy ounce, divided by 31.1 to get a per-gram price, then multiplied by your item's karat purity — 41.7% for 10k, 58.3% for 14k, 75% for 18k — and its weight on our scale. Plain scrap gold has a small refining margin deducted to cover melting and assaying, and standard bullion gold coins typically pay 85-90% of the live spot price. Coins, designer pieces, and gemstone jewelry are appraised separately, since they're often worth more than their metal content.",
       },
       {
         q: "Does the karat stamp really change what my jewelry is worth?",
