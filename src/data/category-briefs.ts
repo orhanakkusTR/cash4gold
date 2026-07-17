@@ -190,7 +190,7 @@ export const getBrief = (path: string): CategoryBrief | undefined => CATEGORY_BR
 // structured data always matches the questions on the page.
 //
 // Honesty (YMYL): every answer restates only facts the business already
-// publishes on that page (purity, the 90%-of-spot gold-bullion figure, what we
+// publishes on that page (purity, the 85-90%-of-spot bullion range, what we
 // do/don't buy). No invented mintages, no fabricated pricing, no store
 // anecdotes. Uniqueness: no two pages share an 8-word run — enforced by
 // scripts/faq-uniqueness.mjs.
@@ -259,12 +259,12 @@ export const PAGE_FAQS: Record<string, FaqItem[]> = {
   // ===== Precious-metals subcategories (7) =====
   "precious-metals/sell-gold": [
     { q: "How do you figure out what my gold is worth?", a: "The live gold price is converted to a per-gram rate, then multiplied by your item's tested karat purity and its weight on our scale." },
-    { q: "What forms of gold do you buy?", a: "Jewelry from 10K to 24K, scrap and broken pieces, dental gold, coins, and bars; on recognized gold bars and rounds we pay 90% of spot." },
+    { q: "What forms of gold do you buy?", a: "Jewelry from 10K to 24K, scrap and broken pieces, dental gold, coins, and bars; recognized gold bars and rounds typically bring 85-90% of the live gold spot price." },
     { q: "Can I estimate my payout before visiting?", a: "Knowing your item's karat and weight lets you ballpark the range, and we confirm both by testing right in front of you when you arrive." },
   ],
   "precious-metals/sell-silver": [
     { q: "What silver do you buy?", a: "Sterling jewelry and flatware, silver bullion bars and rounds, and pre-1965 US 90% silver coins." },
-    { q: "How do you price silver bullion?", a: "On .999 silver bars and rounds the offer is set against the live silver spot price, with the weight and purity verified in front of you." },
+    { q: "How do you price silver bullion?", a: "On .999 silver bars and rounds the offer typically runs 85-90% of the live silver spot price, with the weight and purity verified in front of you." },
     { q: "Is it worth selling a large lot of silver?", a: "Very much so. Because silver trades far below gold per ounce, quantity adds up quickly, and big lots are as welcome as single pieces." },
   ],
   "precious-metals/sell-platinum": [
@@ -302,7 +302,7 @@ export const PAGE_FAQS: Record<string, FaqItem[]> = {
 
   // ===== Coins subcategories (4) =====
   "coins/sell-gold-coins": [
-    { q: "How much do you pay for bullion gold coins?", a: "Standard bullion coins such as Gold Eagles, Buffalos, Krugerrands, and Maple Leafs are paid at 90% of the live gold spot price." },
+    { q: "How much do you pay for bullion gold coins?", a: "Standard bullion coins such as Gold Eagles, Buffalos, Krugerrands, and Maple Leafs typically pay 85-90% of gold's live spot price." },
     { q: "Can a gold coin be worth more than its metal?", a: "Yes. Proof, graded, and key-date coins can carry a collector premium, so bring any certificates or original packaging you have kept." },
     { q: "Which gold coins do you buy?", a: "American Gold Eagles and Buffalos, Krugerrands, Maple Leafs, Britannias, pre-1933 US gold, and foreign gold coins." },
   ],
