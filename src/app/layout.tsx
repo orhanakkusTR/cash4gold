@@ -72,6 +72,14 @@ export const viewport: Viewport = {
 // traffic never pollutes the GA reports.
 const GA_ID = "G-4R23R72MB0";
 
+// Google Ads conversion tag. Runs through the SAME gtag.js instance + dataLayer
+// as GA4 (one extra gtag('config',…) below — no second googletagmanager script),
+// and is governed by the exact same Consent Mode v2 defaults set before any
+// config (ad_storage/ad_personalization denied by default in EEA/UK). Individual
+// conversion events (gtag('event','conversion',{send_to:'AW-…/<label>'})) get
+// wired in <Analytics> when the owner provides a conversion label.
+const ADS_ID = "AW-972294963";
+
 // EEA + UK + EFTA country codes. These visitors default to DENIED consent
 // (GDPR opt-in); everyone else defaults to GRANTED (CCPA-style opt-out).
 const EEA_UK =
@@ -82,8 +90,10 @@ const EEA_UK =
 
 // One deterministic inline bootstrap, run at parse time as the FIRST script in
 // <head>, so the order is guaranteed: Consent Mode v2 defaults → restore the
-// returning visitor's saved choice → gtag config (with auto page_view OFF; we
-// send those per route change in <GaPageview>) → inject the gtag.js loader.
+// returning visitor's saved choice → gtag config for BOTH products, GA4 (auto
+// page_view OFF; we send those per route change in <GaPageview>) and the Google
+// Ads tag → inject the single gtag.js loader. Because consent defaults are set
+// before any config, the Ads tag inherits the same consent gating as GA4.
 // When consent is denied, GA still sends anonymous cookieless pings (modeled
 // data) — refusing never blanks our analytics. The cookie banner flips consent.
 const GA_BOOTSTRAP_JS = `
@@ -96,6 +106,7 @@ gtag('set','ads_data_redaction',true);
 try{var c=localStorage.getItem('c4g-cookie-consent');if(c==='granted'||c==='denied'){gtag('consent','update',{ad_storage:c,ad_user_data:c,ad_personalization:c,analytics_storage:c});}}catch(e){}
 gtag('js', new Date());
 gtag('config','${GA_ID}',{send_page_view:false});
+gtag('config','${ADS_ID}');
 (function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';var f=document.getElementsByTagName('script')[0];f.parentNode.insertBefore(s,f);})();
 `;
 

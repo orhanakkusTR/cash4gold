@@ -24,6 +24,22 @@ const GA_EVENT: Partial<Record<TrackPayload["type"], string>> = {
   review_click: "review_click",
 };
 
+// Google Ads conversions — fired on the SAME phone/directions clicks as the
+// GA4 + /api/track events below (inside the same 5s dedupe guard, so no
+// double-count), through the shared gtag instance loaded in layout.tsx and
+// governed by the same Consent Mode. Only phone + directions convert (review
+// clicks don't). The tag does nothing until a label is filled in.
+//
+// ▶ TO ACTIVATE: in Google Ads → Tools → Conversions, create two conversion
+//   actions; for each, open Tag setup → "Use Google tag" and copy the value
+//   after the slash in send_to: 'AW-972294963/XXXXXXXX'. Paste just that
+//   XXXXXXXX label below. Phone label → phone, Directions label → directions.
+const ADS_CONVERSION_ID = "AW-972294963";
+const ADS_CONVERSION_LABEL: Partial<Record<TrackPayload["type"], string>> = {
+  phone: "VneWCLaMptMcELOW0M8D",
+  directions: "x_T6CI-YptMcELOW0M8D",
+};
+
 // One global, low-overhead tracker mounted in the root layout. It does two jobs:
 //   1. Page views — fires whenever the pathname changes.
 //   2. Click delegation — a single capture-phase listener on the document that
@@ -146,6 +162,18 @@ export function Analytics() {
           source,
           page_path: window.location.pathname,
           event_id: eventId,
+        });
+      }
+
+      // Google Ads conversion — phone + directions clicks only, on the SAME
+      // click (still inside the 5s dedupe guard above, so it can't double-fire),
+      // in ADDITION to /api/track + GA4, never instead of them. Uses the shared
+      // gtag instance from layout.tsx, so Consent Mode gates it like GA4. No-ops
+      // until the matching label is filled in ADS_CONVERSION_LABEL.
+      const adsLabel = ADS_CONVERSION_LABEL[type];
+      if (adsLabel) {
+        window.gtag?.("event", "conversion", {
+          send_to: `${ADS_CONVERSION_ID}/${adsLabel}`,
         });
       }
 
