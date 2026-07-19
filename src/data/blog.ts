@@ -346,7 +346,7 @@ That transparency is why we hold a 4.9-star rating across hundreds of Google rev
 
 - **Annandale**: 7262 Columbia Pike
 - **Manassas**: 9013 Centreville Rd
-- **Chantilly**: 14025 Lee Jackson Memorial Hwy
+- **Chantilly**: 14025 US-50
 - **Vienna / McLean**: 8453 Tyco Rd #C
 
 ## Frequently asked questions
@@ -479,7 +479,7 @@ Whatever form yours takes, the same principle applies: a fair offer starts from 
 
 Whether your gold is a treasured heirloom or a drawer of forgotten chains, its value rests on the same qualities that have always made the metal special. When you decide to sell, the goal is simply to capture that value fairly: by knowing your karat and weight, understanding the live price, and choosing a buyer who explains every number.
 
-Cash for Gold VA buys gold at our Chantilly store at 14025 Lee Jackson Memorial Hwy, along with three other Northern Virginia locations, with free appraisals and instant payout.
+Cash for Gold VA buys gold at our Chantilly store at 14025 US-50, along with three other Northern Virginia locations, with free appraisals and instant payout.
 
 ## Frequently asked questions
 
@@ -487,7 +487,7 @@ Cash for Gold VA buys gold at our Chantilly store at 14025 Lee Jackson Memorial 
 Because it is scarce, durable, universally recognized, and beautiful. Those qualities have made it a store of value and a material for fine jewelry across every era.
 
 **Where can I sell gold in Chantilly?**
-At our Chantilly store on Lee Jackson Memorial Hwy. See our [Chantilly selling guide](/how-to-sell-used-gold-in-chantilly-va) for the full process, and [estimate your gold here](/gold-calculator).
+At our Chantilly store on US-50. See our [Chantilly selling guide](/how-to-sell-used-gold-in-chantilly-va) for the full process, and [estimate your gold here](/gold-calculator).
 
 **Is old or antique gold worth more?**
 Sometimes. Antique and designer pieces can carry value beyond their metal. Have those appraised individually rather than sold by weight.
@@ -758,7 +758,7 @@ Cash for Gold VA has four Northern Virginia stores, so one is usually nearby:
 
 - **Annandale**: 7262 Columbia Pike
 - **Vienna / McLean**: 8453 Tyco Rd #C
-- **Chantilly**: 14025 Lee Jackson Memorial Hwy
+- **Chantilly**: 14025 US-50
 - **Manassas**: 9013 Centreville Rd
 
 Each offers free appraisals, instant payout, and the same transparent method. We buy gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
@@ -831,12 +831,12 @@ If you are downsizing, settling an estate, or simply cashing in pieces you no lo
 
 ## The nearest store to Loudoun County
 
-The Cash for Gold VA location closest to Loudoun County is our **Chantilly** store at 14025 Lee Jackson Memorial Hwy (Route 50), just over the county line. It is a straightforward drive for most of Loudoun: roughly 15 to 20 minutes from Ashburn and South Riding, 20 to 25 from Sterling and Leesburg via the Dulles Greenway or Route 7, and an easy hop from the Route 50 corridor through Aldie and Arcola. If Vienna/McLean, Annandale, or Manassas is more convenient, all four stores use the same transparent method. Every location offers free, no-obligation appraisals, instant payout, and buys gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
+The Cash for Gold VA location closest to Loudoun County is our **Chantilly** store at 14025 US-50, just over the county line. It is a straightforward drive for most of Loudoun: roughly 15 to 20 minutes from Ashburn and South Riding, 20 to 25 from Sterling and Leesburg via the Dulles Greenway or Route 7, and an easy hop from the Route 50 corridor through Aldie and Arcola. If Vienna/McLean, Annandale, or Manassas is more convenient, all four stores use the same transparent method. Every location offers free, no-obligation appraisals, instant payout, and buys gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
 
 ## Frequently asked questions
 
 **Where can I sell gold in Loudoun County, VA?**
-The most convenient Cash for Gold VA store is our Chantilly location on Lee Jackson Memorial Hwy, a short drive from Sterling, Ashburn, and Leesburg. Appraisals are free and same-day.
+The most convenient Cash for Gold VA store is our Chantilly location on US-50, a short drive from Sterling, Ashburn, and Leesburg. Appraisals are free and same-day.
 
 **How is my offer calculated?**
 From the live spot price, your item's karat, and its weight. A small refining margin is subtracted on scrap gold. Everything is shown and explained before you decide.
@@ -980,7 +980,7 @@ Sell to a buyer who tests and verifies the coin in front of you, ties the offer 
 
 ## Where to sell near you
 
-Cash for Gold VA buys American Gold Eagles and other bullion coins at all four Northern Virginia locations: Annandale (7262 Columbia Pike), Manassas (9013 Centreville Rd), Chantilly (14025 Lee Jackson Memorial Hwy), and Vienna/McLean (8453 Tyco Rd #C). Every store offers free, no-obligation appraisals and instant payout.
+Cash for Gold VA buys American Gold Eagles and other bullion coins at all four Northern Virginia locations: Annandale (7262 Columbia Pike), Manassas (9013 Centreville Rd), Chantilly (14025 US-50), and Vienna/McLean (8453 Tyco Rd #C). Every store offers free, no-obligation appraisals and instant payout.
 
 ## Frequently asked questions
 
@@ -1049,12 +1049,12 @@ For bullion coins, you can estimate the metal value yourself using our [gold val
 
 ## Where to sell coins near Fairfax
 
-The Cash for Gold VA store most convenient to Fairfax is our **Chantilly** location at 14025 Lee Jackson Memorial Hwy, with Annandale and Vienna/McLean also nearby. Every location offers free, no-obligation appraisals and instant payout. We buy gold and silver coins, bullion, and collectible pieces, along with gold, silver, platinum, diamonds, and designer jewelry.
+The Cash for Gold VA store most convenient to Fairfax is our **Chantilly** location at 14025 US-50, with Annandale and Vienna/McLean also nearby. Every location offers free, no-obligation appraisals and instant payout. We buy gold and silver coins, bullion, and collectible pieces, along with gold, silver, platinum, diamonds, and designer jewelry.
 
 ## Frequently asked questions
 
 **Where can I sell coins in Fairfax, VA?**
-Look for a storefront that values both metal content and collectible premium, and pays whichever is higher. The nearest Cash for Gold VA store is our Chantilly location on Lee Jackson Memorial Hwy.
+Look for a storefront that values both metal content and collectible premium, and pays whichever is higher. The nearest Cash for Gold VA store is our Chantilly location on US-50.
 
 **Should I clean my coins before selling?**
 No. Cleaning can destroy collectible value. Bring coins exactly as they are, in any holders or slabs they came in.
@@ -1202,7 +1202,7 @@ Used gold is easy to underestimate because the pieces feel small. A worked examp
 
 ## Where to sell used gold in Chantilly
 
-Our **Chantilly** store sits at 14025 Lee Jackson Memorial Hwy (Route 50), with easy parking and no appointment needed, convenient from Centreville, South Riding, Fair Oaks, Fairfax, and Herndon. We offer free, no-obligation appraisals, instant payout, and the same transparent, live-price method at all four of our Northern Virginia locations. We buy used gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
+Our **Chantilly** store sits at 14025 US-50, with easy parking and no appointment needed, convenient from Centreville, South Riding, Fair Oaks, Fairfax, and Herndon. We offer free, no-obligation appraisals, instant payout, and the same transparent, live-price method at all four of our Northern Virginia locations. We buy used gold, silver, platinum, diamonds, designer jewelry, watches, and coins.
 
 ## Frequently asked questions
 

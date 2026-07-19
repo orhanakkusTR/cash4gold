@@ -13,7 +13,7 @@ export const LOCATION_LOCAL: Record<string, LocationLocal> = {
   chantilly: {
     heading: "Finding our Chantilly store",
     paras: [
-      "Our Chantilly store sits on Route 50 — the highway many locals still call Lee Jackson Memorial Highway — right where it meets Route 28 (Sully Road). That interchange makes us easy to reach from Fairfax, Herndon, Centreville, and South Riding without leaving the main road, and there is no Beltway traffic to fight on the way in.",
+      "Our Chantilly store sits on US-50 (Route 50), right where it meets Route 28 (Sully Road). That interchange makes us easy to reach from Fairfax, Herndon, Centreville, and South Riding without leaving the main road, and there is no Beltway traffic to fight on the way in.",
       "This is a driving corridor rather than a Metro one: the nearest rail station is well outside walking distance, so nearly everyone arrives by car. If you orient by landmarks, we are just south of the Sully Historic Site, and the same Route 28 that passes our door runs north toward Dulles Airport and the Udvar-Hazy air and space museum. Bring your items to the counter and we appraise them while you wait, with payout the same visit.",
     ],
   },

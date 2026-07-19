@@ -105,7 +105,7 @@ export const LOCATIONS: Location[] = [
     name: "Cash for Gold VA, Chantilly",
     phone: "(571) 224-5279",
     phoneHref: "+15712245279",
-    street: "14025 Lee Jackson Memorial Hwy",
+    street: "14025 US-50",
     region: "VA",
     postalCode: "20151",
     geo: { lat: 38.8857, lng: -77.4214 },

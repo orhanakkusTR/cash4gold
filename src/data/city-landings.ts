@@ -77,7 +77,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         name: "Loudoun County",
-        note: "Loudoun residents are closest to Chantilly at 14025 Lee Jackson Memorial Hwy, just south of the county line off Route 28 or Route 50. South Riding is practically next door, and Ashburn and Sterling are a quick run down the Loudoun County Parkway or Route 28 — no Toll Road required.",
+        note: "Loudoun residents are closest to Chantilly at 14025 US-50, just south of the county line off Route 28 or Route 50. South Riding is practically next door, and Ashburn and Sterling are a quick run down the Loudoun County Parkway or Route 28 — no Toll Road required.",
       },
       {
         name: "Tysons & McLean",
@@ -103,7 +103,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Where can I sell gold in Northern Virginia?",
-        a: "Cash for Gold VA has four stores across Northern Virginia: Annandale (7262 Columbia Pike), Chantilly (14025 Lee Jackson Memorial Hwy), Manassas (9013 Centreville Rd), and Vienna/Tysons (8453 Tyco Rd #C). Walk into any of them for a free, no-obligation appraisal — your items are tested and weighed in front of you and priced against the live spot price.",
+        a: "Cash for Gold VA has four stores across Northern Virginia: Annandale (7262 Columbia Pike), Chantilly (14025 US-50), Manassas (9013 Centreville Rd), and Vienna/Tysons (8453 Tyco Rd #C). Walk into any of them for a free, no-obligation appraisal — your items are tested and weighed in front of you and priced against the live spot price.",
       },
       {
         q: "Do you buy silver and sterling silver sets?",
@@ -214,7 +214,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     heroSubtitle:
       "We don't have a store in Fairfax itself, but our Chantilly location is a straight shot west on Route 50 — about 12 to 15 minutes — where your gold is tested in front of you and paid out on the spot.",
     intro:
-      "Searching for cash for gold in Fairfax? Straight answer first: **we don't have a storefront inside Fairfax**, but we're closer than you might think. Our **Chantilly store sits right on Lee Jackson Memorial Highway (Route 50)**, roughly 8 miles and 12–15 minutes west of the city, and our Annandale store is about 15 minutes east on Little River Turnpike. At either counter, your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid before you leave.\n\nBecause Fairfax sits at the junction of I-66, US-50, Route 123, and the Fairfax County Parkway, almost anyone in the area is within a 15-minute drive of one of those two counters — which makes local **gold buyers in Fairfax** searches easy to act on the same afternoon. That matters more than convenience alone: a courthouse-era heirloom from an Old Town Fairfax family gets appraised for its age and workmanship, and a GMU class ring gets tested for its true karat, instead of both being tossed on the same melt pile the way a mail-in envelope would treat them.",
+      "Searching for cash for gold in Fairfax? Straight answer first: **we don't have a storefront inside Fairfax**, but we're closer than you might think. Our **Chantilly store sits right on US-50**, roughly 8 miles and 12–15 minutes west of the city, and our Annandale store is about 15 minutes east on Little River Turnpike. At either counter, your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid before you leave.\n\nBecause Fairfax sits at the junction of I-66, US-50, Route 123, and the Fairfax County Parkway, almost anyone in the area is within a 15-minute drive of one of those two counters — which makes local **gold buyers in Fairfax** searches easy to act on the same afternoon. That matters more than convenience alone: a courthouse-era heirloom from an Old Town Fairfax family gets appraised for its age and workmanship, and a GMU class ring gets tested for its true karat, instead of both being tossed on the same melt pile the way a mail-in envelope would treat them.",
     whyLocalTitle: "Why Fairfax sellers do better in person than with mail-in gold buyers",
     whyLocal:
       "A mail-in buyer asks you to seal your jewelry in an envelope, trust a prepaid label, and wait for a stranger's offer with your gold already out of your hands. Selling in person flips that: **your items never leave your sight until you've agreed on a price**. You see the karat test, you see the scale reading, and if the number doesn't work for you, you put your jewelry back in your pocket and drive home — no return shipping, no fine print.\n\nFrom Fairfax, that in-person option costs you almost nothing in time. The **Chantilly counter is one road the whole way** — west on Route 50 past Fair Oaks, about 12–15 minutes door to door — and Annandale is a comparable run east on Route 236. Either trip is shorter than standing in line at the post office, and it ends with **paid the same visit** instead of a payment that arrives whenever the envelope does.",
@@ -239,13 +239,13 @@ export const CITY_LANDINGS: CityLanding[] = [
     nearestIntro:
       "There's no Cash for Gold VA storefront in Fairfax yet, but both of our nearest stores bracket the city — one west on Route 50, one east on Route 236 — so pick whichever direction matches your day.",
     nearest: [
-      { slug: "chantilly", drive: "a straight shot west on Route 50 (Lee Jackson Memorial Highway), about 12–15 minutes from Fairfax" },
+      { slug: "chantilly", drive: "a straight shot west on US-50, about 12–15 minutes from Fairfax" },
       { slug: "annandale", drive: "about 15 minutes east on Little River Turnpike (Route 236), handy from Mantua and Kings Park West" },
     ],
     faqs: [
       {
         q: "Where can I sell gold in Fairfax, VA?",
-        a: "There's no Cash for Gold VA store inside Fairfax itself. The nearest is our Chantilly location at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — about 12–15 minutes west on Route 50. Our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — is roughly 15 minutes east on Little River Turnpike and often quicker from the eastern side of Fairfax.",
+        a: "There's no Cash for Gold VA store inside Fairfax itself. The nearest is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 12–15 minutes west on Route 50. Our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — is roughly 15 minutes east on Little River Turnpike and often quicker from the eastern side of Fairfax.",
       },
       {
         q: "Which store is closer to Fairfax — Chantilly or Annandale?",
@@ -283,7 +283,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     heroSubtitle:
       "We don't have a storefront in Herndon itself, but our Chantilly store is a quick 10-15 minute run south on Route 28 (Sully Road) — your gold is tested while you watch and paid out the same visit.",
     intro:
-      "Looking for cash for gold in Herndon? Honest answer up front: **our nearest store is in Chantilly, not Herndon** — but since Herndon sits right on Route 28, that's a **10-15 minute straight drive south** to our counter on Lee Jackson Memorial Highway. There's a second option too: our Vienna/McLean store, about 15-20 minutes east on the Dulles Toll Road, which is often the easier run from the Reston side of town. At either counter you watch your items get tested and weighed on a calibrated scale, hear a number tied to the live spot price, and take cash home the same trip.\n\nOne thing that sets Herndon apart from the rest of our coverage area: a lot of the gold we see from here is **high-karat 22k and 24k jewelry** — Indian and Middle Eastern wedding sets, bangles, and chains that carry far more gold per gram than the typical American 14k piece. That's exactly where choosing careful **gold buyers in Herndon's area** pays off, because a buyer who lazily quotes everything \"like 14k\" is underpaying a 22k bangle by more than a third. We test every piece for its actual purity and price it at that purity, whether it's a 24k temple necklace or a 10k class ring.",
+      "Looking for cash for gold in Herndon? Honest answer up front: **our nearest store is in Chantilly, not Herndon** — but since Herndon sits right on Route 28, that's a **10-15 minute straight drive south** to our counter on US-50. There's a second option too: our Vienna/McLean store, about 15-20 minutes east on the Dulles Toll Road, which is often the easier run from the Reston side of town. At either counter you watch your items get tested and weighed on a calibrated scale, hear a number tied to the live spot price, and take cash home the same trip.\n\nOne thing that sets Herndon apart from the rest of our coverage area: a lot of the gold we see from here is **high-karat 22k and 24k jewelry** — Indian and Middle Eastern wedding sets, bangles, and chains that carry far more gold per gram than the typical American 14k piece. That's exactly where choosing careful **gold buyers in Herndon's area** pays off, because a buyer who lazily quotes everything \"like 14k\" is underpaying a 22k bangle by more than a third. We test every piece for its actual purity and price it at that purity, whether it's a 24k temple necklace or a 10k class ring.",
     whyLocalTitle: "Why Herndon sellers should skip the mail-in envelope",
     whyLocal:
       "With a mail-in gold buyer, your jewelry rides off in a prepaid envelope and the offer arrives after your gold is already in someone else's building — and for high-karat pieces especially, you have no way to confirm they tested it as 22k instead of quietly grading it lower. Selling in person keeps the leverage with you: **the karat test and the scale reading happen in front of your eyes**, you can ask why a piece graded the way it did, and if the number falls short, your jewelry goes back in your bag and you drive home.\n\nFrom Herndon, that in-person trip barely costs you anything. Route 28 runs straight past the airport traffic down to Route 50, putting the **Chantilly counter about 10-15 minutes from almost anywhere in town** — a shorter errand than most Dulles-corridor commutes. If you're closer to the Toll Road on the Reston side, Vienna/McLean is an easy eastbound run instead. Either way you're **paid the same visit before you head back up the road**, not waiting on a check to survive the mail twice.",
@@ -314,7 +314,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold in Herndon, VA?",
-        a: "There's no Cash for Gold VA store inside Herndon itself. The closest is our Chantilly location at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — about 10-15 minutes south on Route 28. Our Vienna/McLean store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15-20 minutes east via the Dulles Toll Road and often easier from the Reston side of town.",
+        a: "There's no Cash for Gold VA store inside Herndon itself. The closest is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 10-15 minutes south on Route 28. Our Vienna/McLean store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15-20 minutes east via the Dulles Toll Road and often easier from the Reston side of town.",
       },
       {
         q: "Do you buy 22k and 24k Indian gold jewelry near Herndon?",
@@ -352,7 +352,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     heroSubtitle:
       "There's no gold buyer inside South Riding itself, but our Chantilly store is 10–15 minutes east on Route 50 — get your jewelry tested in front of you and drive home paid the same trip.",
     intro:
-      "Looking for cash for gold in South Riding? Here's the straight answer: **we don't have a counter inside the community**, but our **Chantilly store sits right on Route 50 (Lee Jackson Memorial Highway)**, about 10–15 minutes east of the Dulles South area — the same road you already take toward Fair Oaks. Your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid the same visit before you head back west.\n\nSouth Riding's gold looks different from what comes out of Northern Virginia's older towns, and we price it accordingly. Because most of the community was built from the late 1990s on, we see far more **modern pieces — 14k wedding sets, upgraded engagement rings, everyday chains, kids' jewelry, and gifts from good years** — than dusty estate boxes. That's exactly the kind of gold that's easy to underestimate: it's stamped, it's real, and it adds up quickly on the scale, which is why families searching for **gold buyers near South Riding** often walk out of Chantilly with more than they expected.",
+      "Looking for cash for gold in South Riding? Here's the straight answer: **we don't have a counter inside the community**, but our **Chantilly store sits right on US-50**, about 10–15 minutes east of the Dulles South area — the same road you already take toward Fair Oaks. Your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid the same visit before you head back west.\n\nSouth Riding's gold looks different from what comes out of Northern Virginia's older towns, and we price it accordingly. Because most of the community was built from the late 1990s on, we see far more **modern pieces — 14k wedding sets, upgraded engagement rings, everyday chains, kids' jewelry, and gifts from good years** — than dusty estate boxes. That's exactly the kind of gold that's easy to underestimate: it's stamped, it's real, and it adds up quickly on the scale, which is why families searching for **gold buyers near South Riding** often walk out of Chantilly with more than they expected.",
     whyLocalTitle: "Why South Riding sellers should skip the mail-in envelope",
     whyLocal:
       "Mail-in gold buyers ask you to seal your wedding set in a padded envelope, hand it to a carrier, and hope the offer that comes back days later is fair — with your jewelry already in someone else's facility. Selling in person reverses that entirely: **your gold stays in your hands until you've heard the number and agreed to it**. You watch the karat test, you watch the scale, and if the offer doesn't work, you drive home with everything you came with.\n\nFrom South Riding, that in-person option is unusually painless. The Chantilly counter is **one road the whole way — Route 50 east, about 10–15 minutes** from the town center, no highway merges and no parking garages. That's less time than boxing and shipping your jewelry would take, and instead of tracking an envelope for a week, you're **paid the same visit**.",
@@ -377,13 +377,13 @@ export const CITY_LANDINGS: CityLanding[] = [
     nearestIntro:
       "South Riding doesn't have a Cash for Gold VA storefront yet, but both of our nearest stores are a straight run along roads you already drive — Route 50 east or Route 28 south.",
     nearest: [
-      { slug: "chantilly", drive: "about 10–15 minutes east on Route 50 (Lee Jackson Memorial Highway) — one road the whole way from South Riding" },
+      { slug: "chantilly", drive: "about 10–15 minutes east on US-50 — one road the whole way from South Riding" },
       { slug: "manassas", drive: "about 15–20 minutes south via Loudoun County Parkway and Route 28, often the quicker run from the southern edge of the community" },
     ],
     faqs: [
       {
         q: "Where can I sell gold in South Riding, VA?",
-        a: "There's no gold-buying storefront inside South Riding itself. The closest is our Chantilly store at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — about 10–15 minutes east on Route 50. Our Manassas store at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — is roughly 15–20 minutes south via Loudoun County Parkway and Route 28.",
+        a: "There's no gold-buying storefront inside South Riding itself. The closest is our Chantilly store at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 10–15 minutes east on Route 50. Our Manassas store at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — is roughly 15–20 minutes south via Loudoun County Parkway and Route 28.",
       },
       {
         q: "My jewelry is all modern — is newer gold worth selling?",
@@ -446,13 +446,13 @@ export const CITY_LANDINGS: CityLanding[] = [
     nearestIntro:
       "There's no Cash for Gold VA storefront in Centreville yet, but the Route 28 corridor puts two of our stores within about 15 minutes — one north, one south — so choose the direction that fits your errands.",
     nearest: [
-      { slug: "chantilly", drive: "the closest store — about 8–12 minutes north up Route 28 to Route 50 (Lee Jackson Memorial Highway)" },
+      { slug: "chantilly", drive: "the closest store — about 8–12 minutes north up Route 28 to US-50" },
       { slug: "manassas", drive: "about 12–15 minutes south down Centreville Road (Route 28), often the quicker trip from Centreville's southern neighborhoods" },
     ],
     faqs: [
       {
         q: "Where can I sell gold in Centreville, VA?",
-        a: "There's no Cash for Gold VA store inside Centreville itself, but two are within about 15 minutes. The nearest is our Chantilly location at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — about 8–12 minutes north via Route 28 and Route 50. Our Manassas store at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — is roughly 12–15 minutes south straight down Centreville Road.",
+        a: "There's no Cash for Gold VA store inside Centreville itself, but two are within about 15 minutes. The nearest is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 8–12 minutes north via Route 28 and Route 50. Our Manassas store at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — is roughly 12–15 minutes south straight down Centreville Road.",
       },
       {
         q: "Which store is closer to Centreville — Chantilly or Manassas?",
@@ -521,7 +521,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold in Bristow, VA?",
-        a: "There's no gold-buying storefront inside Bristow itself. The closest is our Manassas store at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — about 10–12 minutes away via Linton Hall Road and Route 28. Our Chantilly store at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — is roughly 18–20 minutes north up Route 28 if that direction suits your day better.",
+        a: "There's no gold-buying storefront inside Bristow itself. The closest is our Manassas store at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — about 10–12 minutes away via Linton Hall Road and Route 28. Our Chantilly store at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — is roughly 18–20 minutes north up Route 28 if that direction suits your day better.",
       },
       {
         q: "My jewelry was all bought in the last 10–20 years — is it worth selling?",
@@ -590,7 +590,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold in Gainesville, VA?",
-        a: "There's no Cash for Gold VA store inside Gainesville itself. The closest is our Manassas location at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — about 12–15 minutes southeast via Route 29 or Linton Hall Road. Our Chantilly store at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — is roughly 18–20 minutes northeast via I-66 and Route 28.",
+        a: "There's no Cash for Gold VA store inside Gainesville itself. The closest is our Manassas location at 9013 Centreville Rd, Manassas, VA 20110 — (571) 359-0146 — about 12–15 minutes southeast via Route 29 or Linton Hall Road. Our Chantilly store at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — is roughly 18–20 minutes northeast via I-66 and Route 28.",
       },
       {
         q: "I'm downsizing and have a whole collection of inherited gold — how does selling an estate work?",
@@ -866,7 +866,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold in Oakton, VA?",
-        a: "There's no Cash for Gold VA store inside Oakton itself. The closest is our Vienna/McLean location at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — about 8–12 minutes east via Route 123 toward Tysons. Our Chantilly store at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — is roughly 15 minutes west via I-66 and Route 50. Both are real counters where your gold is tested in front of you and paid the same visit.",
+        a: "There's no Cash for Gold VA store inside Oakton itself. The closest is our Vienna/McLean location at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — about 8–12 minutes east via Route 123 toward Tysons. Our Chantilly store at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — is roughly 15 minutes west via I-66 and Route 50. Both are real counters where your gold is tested in front of you and paid the same visit.",
       },
       {
         q: "I have jewelry that's been in my family for generations — how do you handle heirloom pieces?",
@@ -1199,7 +1199,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold near Reston, VA?",
-        a: "The closest Cash for Gold VA store to Reston is our Chantilly location at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — about 15 minutes southwest via Route 28, especially quick from western Reston and the Herndon side. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15–20 minutes east via the Dulles Toll Road or Route 7, and often easier from eastern Reston near Wiehle-Reston East.",
+        a: "The closest Cash for Gold VA store to Reston is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 15 minutes southwest via Route 28, especially quick from western Reston and the Herndon side. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15–20 minutes east via the Dulles Toll Road or Route 7, and often easier from eastern Reston near Wiehle-Reston East.",
       },
       {
         q: "Do you buy diamonds and designer jewelry from Reston sellers?",
@@ -1233,7 +1233,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     heroSubtitle:
       "We don't have a storefront in Sterling — or anywhere in eastern Loudoun — but our Chantilly store is a straight 15–18 minute run south down Route 28, no Toll Road required, and you're paid the same visit you walk in.",
     intro:
-      "Searching for cash for gold in Sterling? Honest answer first: **there's no Cash for Gold VA counter in Sterling itself**, and no storefront anywhere in eastern Loudoun County. But Sterling sits right on Route 28, and that road runs almost door to door to our **Chantilly store on Lee Jackson Memorial Highway — about 15–18 minutes south**, past the Dulles airport frontage, with **no Dulles Toll Road and no tolls at all**. If Route 7 fits your day better, our Vienna store in the Tysons area is roughly 20–22 minutes east on Leesburg Pike. Sterling has been an established community since long before the data centers arrived — from the 1960s streets of Sterling Park to the Potomac-side neighborhoods of Cascades and Lowes Island — and the jewelry boxes here reflect those decades: family estate pieces, everyday karat gold, coins tucked away since the '70s, and, from Sterling's large international community, **high-karat 22k and 24k jewelry** that deserves to be paid at its true purity.\n\nWhichever store you choose, the appraisal works the same way and it happens **entirely in front of you**. We test each piece for purity, weigh it on a **calibrated scale you can watch**, and build the offer from the **live spot price** at that moment — then we explain the number before you decide anything. The appraisal is **free with no obligation**, and your items **stay in your hands until you accept**. If you like the offer, it's an **instant payout** — you're paid the same visit. If you don't, you drive back up 28 with everything you brought and a real number to compare. That process is why we hold a **4.9★ Google rating across 500+ reviews**.",
+      "Searching for cash for gold in Sterling? Honest answer first: **there's no Cash for Gold VA counter in Sterling itself**, and no storefront anywhere in eastern Loudoun County. But Sterling sits right on Route 28, and that road runs almost door to door to our **Chantilly store on US-50 — about 15–18 minutes south**, past the Dulles airport frontage, with **no Dulles Toll Road and no tolls at all**. If Route 7 fits your day better, our Vienna store in the Tysons area is roughly 20–22 minutes east on Leesburg Pike. Sterling has been an established community since long before the data centers arrived — from the 1960s streets of Sterling Park to the Potomac-side neighborhoods of Cascades and Lowes Island — and the jewelry boxes here reflect those decades: family estate pieces, everyday karat gold, coins tucked away since the '70s, and, from Sterling's large international community, **high-karat 22k and 24k jewelry** that deserves to be paid at its true purity.\n\nWhichever store you choose, the appraisal works the same way and it happens **entirely in front of you**. We test each piece for purity, weigh it on a **calibrated scale you can watch**, and build the offer from the **live spot price** at that moment — then we explain the number before you decide anything. The appraisal is **free with no obligation**, and your items **stay in your hands until you accept**. If you like the offer, it's an **instant payout** — you're paid the same visit. If you don't, you drive back up 28 with everything you brought and a real number to compare. That process is why we hold a **4.9★ Google rating across 500+ reviews**.",
     whyLocalTitle: "Why Sterling sellers do better at a real counter than in a mail-in envelope",
     whyLocal:
       "The mail-in alternative asks a lot: seal your jewelry — possibly a parent's estate pieces or a 22k wedding set — into a prepaid envelope, ship it to a building you'll never see, and wait for an offer calculated out of your sight. If you decline, you wait again for the return shipment and hope everything comes back. At a real counter, none of that risk exists. **You watch the purity test, you watch the scale, and your gold never leaves your possession until you've agreed to a price.** For high-karat pieces especially, that visibility matters: you can see for yourself that a 22k bangle is being tested and paid as 22k, not quietly graded like ordinary 14k.\n\nAnd from Sterling, going in person is a genuinely small errand. The **Chantilly counter is one road away — Route 28 south, about 15–18 minutes** from most of town, whether you're starting near Dulles Town Center, Sugarland Run, or Sterling Park. There's no Toll Road involved and no Beltway to fight; it's a shorter trip than plenty of people's daily run down the tech corridor. Best of all, the transaction actually finishes that day: if you accept the offer, you're **paid before you leave the store** — an instant payout, not a check riding back through the mail.",
@@ -1264,11 +1264,11 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold near Sterling, VA?",
-        a: "There's no Cash for Gold VA store inside Sterling or anywhere in eastern Loudoun County. The closest is our Chantilly location at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — about 15–18 minutes south on Route 28, with no tolls. Our Vienna store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 20–22 minutes east via Route 7 (Leesburg Pike) in the Tysons area.",
+        a: "There's no Cash for Gold VA store inside Sterling or anywhere in eastern Loudoun County. The closest is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 15–18 minutes south on Route 28, with no tolls. Our Vienna store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 20–22 minutes east via Route 7 (Leesburg Pike) in the Tysons area.",
       },
       {
         q: "How far is the nearest gold buyer from Sterling?",
-        a: "About 15–18 minutes. From most of Sterling — Sterling Park, Sugarland Run, or the Dulles Town Center area — you take Route 28 south past the airport to Route 50, and our Chantilly store is right there on Lee Jackson Memorial Highway. It's one road nearly the whole way, and the Dulles Toll Road never enters into it. From Cascades, Lowes Island, or Countryside, Route 7 east to our Vienna/Tysons store is a comparable 20–22 minute option.",
+        a: "About 15–18 minutes. From most of Sterling — Sterling Park, Sugarland Run, or the Dulles Town Center area — you take Route 28 south past the airport to Route 50, and our Chantilly store is right there on US-50. It's one road nearly the whole way, and the Dulles Toll Road never enters into it. From Cascades, Lowes Island, or Countryside, Route 7 east to our Vienna/Tysons store is a comparable 20–22 minute option.",
       },
       {
         q: "Do you buy silver, coins, and things besides gold from Sterling sellers?",
@@ -1329,7 +1329,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold near Ashburn, VA?",
-        a: "The nearest Cash for Gold VA store to Ashburn is in Chantilly at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — about 18–20 minutes south via Route 28 or Loudoun County Parkway. No appointment is needed: your items are tested and weighed in front of you, the appraisal is free and no-obligation, and if you accept the offer you receive an instant payout the same visit.",
+        a: "The nearest Cash for Gold VA store to Ashburn is in Chantilly at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 18–20 minutes south via Route 28 or Loudoun County Parkway. No appointment is needed: your items are tested and weighed in front of you, the appraisal is free and no-obligation, and if you accept the offer you receive an instant payout the same visit.",
       },
       {
         q: "Do you buy diamond engagement rings from Ashburn sellers?",
@@ -1350,7 +1350,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     ],
     relatedPosts: ["cash-for-gold-loudoun-county-va", "we-buy-diamonds-more-than-1-carat-with-gia", "list-of-top-20-name-brand-in-gold-jewelry"],
     closingCta:
-      "Ready to find out what your gold, diamonds, or watch are actually worth? Call our Chantilly store at (571) 224-5279 or drive down Route 28 to 14025 Lee Jackson Memorial Hwy — free appraisal, no obligation, and an instant payout if you sell.",
+      "Ready to find out what your gold, diamonds, or watch are actually worth? Call our Chantilly store at (571) 224-5279 or drive down Route 28 to 14025 US-50 — free appraisal, no obligation, and an instant payout if you sell.",
   },
   {
     slug: "cash-for-gold-burke",
@@ -1394,7 +1394,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold near Burke, VA?",
-        a: "There's no Cash for Gold VA store inside Burke itself. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 15 minutes northeast via Braddock Road. Our Chantilly store at 14025 Lee Jackson Memorial Hwy, Chantilly, VA 20151 — (571) 224-5279 — is roughly 18–20 minutes northwest via the Fairfax County Parkway if that direction suits your day better.",
+        a: "There's no Cash for Gold VA store inside Burke itself. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 15 minutes northeast via Braddock Road. Our Chantilly store at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — is roughly 18–20 minutes northwest via the Fairfax County Parkway if that direction suits your day better.",
       },
       {
         q: "How far is the nearest gold buyer from Burke?",
