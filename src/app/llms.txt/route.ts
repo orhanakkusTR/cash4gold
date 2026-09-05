@@ -26,7 +26,7 @@ function llmsTxt(): string {
   lines.push("## Locations");
   for (const l of LOCATIONS) {
     lines.push(
-      `- [${l.city}, VA](${base}/locations/${l.slug}): ${l.street}, ${l.city}, ${l.region} ${l.postalCode} — ${l.phone}`,
+      `- [${l.city}, VA](${base}/locations/${l.slug}): ${l.street}, ${l.addressCity}, ${l.region} ${l.postalCode} — ${l.phone}`,
     );
   }
   lines.push("");

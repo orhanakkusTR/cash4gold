@@ -90,7 +90,7 @@ export default function ContactPage() {
                         {l.city}
                       </Link>
                     </h3>
-                    <OpenStatus hours={l.hours} tone="light" className="whitespace-nowrap" />
+                    <OpenStatus location={l} tone="light" className="whitespace-nowrap" />
                   </div>
                 </div>
 
@@ -100,21 +100,31 @@ export default function ContactPage() {
                     href={l.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start gap-2 text-sm text-muted transition-colors hover:text-gold-700"
+                    className="flex items-start gap-2 text-sm font-semibold text-foreground transition-colors hover:text-gold-700"
                   >
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
-                    {l.street}, {l.city}, {l.region} {l.postalCode}
+                    {l.street}, {l.addressCity}, {l.region} {l.postalCode}
                   </a>
 
                   <div className="mt-3 flex items-start gap-2 text-sm text-muted">
                     <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
                     <div className="w-full space-y-0.5">
-                      {groupHours(l.hours).map((g) => (
-                        <div key={g.label} className="flex justify-between gap-4">
-                          <span className="font-medium text-foreground/70">{g.label}</span>
-                          <span>{g.value}</span>
-                        </div>
-                      ))}
+                      {l.appointmentOnly ? (
+                        <a
+                          href={`tel:${l.phoneHref}`}
+                          aria-label={`Appointment only. Call ${l.phone} to book your visit`}
+                          className="font-extrabold text-gold-700 transition-colors hover:text-gold-800"
+                        >
+                          Appointment Only
+                        </a>
+                      ) : (
+                        groupHours(l.hours).map((g) => (
+                          <div key={g.label} className="flex justify-between gap-4">
+                            <span className="font-medium text-foreground/70">{g.label}</span>
+                            <span>{g.value}</span>
+                          </div>
+                        ))
+                      )}
                     </div>
                   </div>
 
@@ -216,7 +226,7 @@ export default function ContactPage() {
                 <h2 className="font-display text-2xl font-extrabold text-foreground">Areas we serve</h2>
                 <p className="mt-4 text-muted">
                   {linkifyPlaces(
-                    "Our four stores in Annandale, Manassas, Chantilly, and Vienna/McLean welcome sellers " +
+                    "Our four stores in Annandale, Manassas, Chantilly, and Vienna/Tysons welcome sellers " +
                       "from across Northern Virginia, including Fairfax, Centreville, Falls Church, " +
                       "Arlington, Alexandria, Burke, Springfield, Reston, Herndon, and the surrounding " +
                       "Fairfax, Prince William, and Loudoun County communities. Wherever you are in the " +

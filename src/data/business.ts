@@ -68,19 +68,14 @@ const MANASSAS_HOURS: Hours[] = [
   { day: "Sunday", open: "11:00", close: "16:00" },
 ];
 
-const VIENNA_HOURS: Hours[] = [
-  { day: "Monday", open: "10:00", close: "18:00" },
-  { day: "Tuesday", open: "10:00", close: "18:00" },
-  { day: "Wednesday", open: "10:00", close: "18:00" },
-  { day: "Thursday", open: "10:00", close: "18:00" },
-  { day: "Friday", open: "10:00", close: "18:00" },
-  { day: "Saturday", open: "10:00", close: "18:00" },
-  { day: "Sunday", open: "", close: null }, // Closed
-];
-
 export type Location = {
   slug: string;
+  // Store's display name ("Vienna" → /locations/vienna, nav, headings).
   city: string;
+  // Postal city for the ADDRESS line + schema addressLocality. Usually equals
+  // `city`, but must match Google Business Profile exactly for NAP consistency
+  // (e.g. the Vienna store's mailing city is "Tysons").
+  addressCity: string;
   name: string;
   phone: string;
   phoneHref: string;
@@ -89,7 +84,12 @@ export type Location = {
   postalCode: string;
   geo: { lat: number; lng: number };
   mapUrl: string;
+  // Weekly hours. Empty when `appointmentOnly` — nothing is published then.
   hours: Hours[];
+  // Appointment-only store: every hours surface renders a bold "Appointment
+  // Only" tel: link to the store instead of open/closed + hours, and no
+  // openingHoursSpecification is emitted in schema.
+  appointmentOnly?: boolean;
   neighborhoods: string[];
   image: string;
   // Virginia Precious Metals Dealer Permit. Omit for stores whose number
@@ -102,6 +102,7 @@ export const LOCATIONS: Location[] = [
   {
     slug: "chantilly",
     city: "Chantilly",
+    addressCity: "Chantilly",
     name: "Cash for Gold VA, Chantilly",
     phone: "(571) 224-5279",
     phoneHref: "+15712245279",
@@ -118,6 +119,7 @@ export const LOCATIONS: Location[] = [
   {
     slug: "annandale",
     city: "Annandale",
+    addressCity: "Annandale",
     name: "Cash for Gold VA, Annandale",
     phone: "(571) 290-8020",
     phoneHref: "+15712908020",
@@ -134,6 +136,7 @@ export const LOCATIONS: Location[] = [
   {
     slug: "manassas",
     city: "Manassas",
+    addressCity: "Manassas",
     name: "Cash for Gold VA, Manassas",
     phone: "(571) 359-0146",
     phoneHref: "+15713590146",
@@ -152,15 +155,24 @@ export const LOCATIONS: Location[] = [
   {
     slug: "vienna",
     city: "Vienna",
-    name: "Cash for Gold VA, Vienna / McLean",
+    // Moved (Sept 2026) from 8453 Tyco Rd #C to Westwood Center Dr. Google
+    // lists the address city as "Tysons"; renamed "Vienna / Tysons" (was Vienna / Tysons).
+    addressCity: "Tysons",
+    name: "Cash for Gold VA, Vienna / Tysons",
     phone: "(703) 889-0532",
     phoneHref: "+17038890532",
-    street: "8453 Tyco Rd #C",
+    street: "8605 Westwood Center Dr #120",
     region: "VA",
     postalCode: "22182",
-    geo: { lat: 38.9187, lng: -77.2311 },
+    geo: { lat: 38.9312, lng: -77.2374 },
     mapUrl: "https://maps.app.goo.gl/E85G9QrAJLDVpsK29",
-    hours: VIENNA_HOURS,
+    // TEMPORARY (owner, Sept 2026): appointment only while the new store settles
+    // in — no published weekly hours; visitors call to book. Site-wide "no
+    // appointment needed" copy intentionally stays as-is (owner decision).
+    // To revert: delete `appointmentOnly`, restore the hours below.
+    //   Mon–Sat 10:00–18:00, Sun closed  (the pre-move schedule)
+    hours: [],
+    appointmentOnly: true,
     neighborhoods: ["McLean", "Tysons", "Oakton", "Falls Church"],
     image: "/photos/storefront-vienna.jpg",
     permit: { number: "PMG26-036" },
@@ -223,7 +235,7 @@ export const CATEGORIES: Category[] = [
       "We buy fine and designer jewelry of every kind, from signed pieces by Tiffany, Cartier, and Van Cleef & Arpels to estate collections and broken scrap gold. Each item is valued for its precious metal, its stones, and its maker, so you get full worth, not just melt value.",
     keywords: ["sell jewelry near me", "jewelry buyer northern virginia", "sell designer jewelry", "sell estate jewelry"],
     longDescription:
-      "When you sell jewelry in Northern Virginia, the piece in your hand is often worth far more than its gold weight alone, and that is exactly what we account for. We buy designer, estate, antique, and scrap jewelry across our four local stores, evaluating each piece on three things: its precious metal at the live spot price, any diamonds or gemstones, and the value of the maker or period. A signed Cartier or Tiffany piece, an inherited collection, or a drawer of broken chains each gets a careful, in-person appraisal from a trained buyer, with the offer explained out loud and tested in front of you. There is never any obligation to sell and never a fee to find out what your jewelry is worth. Whether you are downsizing, settling an estate, or simply clearing out unworn pieces, you get a fair, transparent, market-based offer and instant payout the same day. Bring a single ring or an entire jewelry box to any of our Annandale, Manassas, Chantilly, or Vienna/McLean locations and see why we are the jewelry buyer Northern Virginia families trust.",
+      "When you sell jewelry in Northern Virginia, the piece in your hand is often worth far more than its gold weight alone, and that is exactly what we account for. We buy designer, estate, antique, and scrap jewelry across our four local stores, evaluating each piece on three things: its precious metal at the live spot price, any diamonds or gemstones, and the value of the maker or period. A signed Cartier or Tiffany piece, an inherited collection, or a drawer of broken chains each gets a careful, in-person appraisal from a trained buyer, with the offer explained out loud and tested in front of you. There is never any obligation to sell and never a fee to find out what your jewelry is worth. Whether you are downsizing, settling an estate, or simply clearing out unworn pieces, you get a fair, transparent, market-based offer and instant payout the same day. Bring a single ring or an entire jewelry box to any of our Annandale, Manassas, Chantilly, or Vienna/Tysons locations and see why we are the jewelry buyer Northern Virginia families trust.",
     subcategories: [
       {
         slug: "sell-gold-jewelry",
@@ -235,7 +247,7 @@ export const CATEGORIES: Category[] = [
         items: ["Rings", "Necklaces & chains", "Bracelets", "Earrings", "Pendants & charms", "Wearable or broken"],
         keywords: ["sell gold jewelry", "gold jewelry buyer northern virginia", "sell gold rings", "cash for gold jewelry"],
         longDescription:
-          "Gold jewelry is what we are best known for, and valuing it should be simple, fast, and completely transparent. We buy gold jewelry in every karat, 8K, 9K, 10K, 14K, 18K, 21K, 22K, and 24K, from every country, in any condition. Rings, necklaces, chains, bracelets, earrings, pendants, and charms are each tested with an XRF analyzer, the same technology refineries use, to confirm exact karat and purity, then weighed on a calibrated scale and priced against the live gold spot price. Every reading and every number is shown to you, explained out loud, with no pressure and no obligation. As a local business with four Northern Virginia stores, you keep your jewelry until you accept the offer and walk out paid the same visit. Bring your gold jewelry to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, transparent appraisal.",
+          "Gold jewelry is what we are best known for, and valuing it should be simple, fast, and completely transparent. We buy gold jewelry in every karat, 8K, 9K, 10K, 14K, 18K, 21K, 22K, and 24K, from every country, in any condition. Rings, necklaces, chains, bracelets, earrings, pendants, and charms are each tested with an XRF analyzer, the same technology refineries use, to confirm exact karat and purity, then weighed on a calibrated scale and priced against the live gold spot price. Every reading and every number is shown to you, explained out loud, with no pressure and no obligation. As a local business with four Northern Virginia stores, you keep your jewelry until you accept the offer and walk out paid the same visit. Bring your gold jewelry to our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free, transparent appraisal.",
         cardImage: "/products/jewelry/necklace.jpg",
         gallery: [
           { name: "Gold Rings", image: "/products/jewelry/ring.jpg", note: "All karats, fine & designer" },
@@ -254,7 +266,7 @@ export const CATEGORIES: Category[] = [
         items: ["Sterling rings", "Necklaces & chains", "Bracelets", "Earrings", "Pendants", "Marked .925 or tested"],
         keywords: ["sell silver jewelry", "silver jewelry buyer", "sell sterling silver jewelry", "cash for silver jewelry"],
         longDescription:
-          "Silver jewelry is one of the most commonly undervalued things people own, because sterling moves with the market every day and few buyers price it honestly. We do. We buy sterling silver rings, necklaces, chains, bracelets, earrings, and pendants marked .925 or sterling, or we test them on site to confirm purity. Each piece is weighed on a calibrated scale and priced against the live silver spot price, with every step explained before you decide. There is no minimum, no fee to find out what you have, and no obligation to sell. Because we buy locally across four Northern Virginia stores, you keep your pieces until you accept and walk out paid the same visit. Bring your silver jewelry to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, transparent appraisal.",
+          "Silver jewelry is one of the most commonly undervalued things people own, because sterling moves with the market every day and few buyers price it honestly. We do. We buy sterling silver rings, necklaces, chains, bracelets, earrings, and pendants marked .925 or sterling, or we test them on site to confirm purity. Each piece is weighed on a calibrated scale and priced against the live silver spot price, with every step explained before you decide. There is no minimum, no fee to find out what you have, and no obligation to sell. Because we buy locally across four Northern Virginia stores, you keep your pieces until you accept and walk out paid the same visit. Bring your silver jewelry to our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free, transparent appraisal.",
         cardImage: "/sell/silver-jewelry.webp",
       },
       {
@@ -286,7 +298,7 @@ export const CATEGORIES: Category[] = [
         items: ["Inherited fine jewelry", "Diamond & gemstone pieces", "Gold & platinum settings", "Designer & signed pieces", "Full estate collections"],
         keywords: ["sell estate jewelry", "estate jewelry buyer", "sell inherited jewelry", "where to sell estate jewelry"],
         longDescription:
-          "Estate jewelry, inherited or pre-owned fine pieces, frequently holds value well beyond its metal, and selling it well means having every layer recognized. Our trained buyers appraise the gold or platinum at the live spot price, grade any diamonds and gemstones separately, and account for designer signatures and craftsmanship that the resale market rewards. Whether you are settling a loved one's estate, parting with pieces you no longer wear, or selling a full collection, you get an honest, no-pressure offer on single items or the whole lot. We encourage you to bring any original boxes, receipts, or certificates, since provenance can meaningfully raise the value. Nothing is tested out of your sight, and there is never a fee or obligation to sell. Selling estate jewelry locally also means you keep your pieces until you accept the offer, with instant payout the same visit, rather than mailing irreplaceable items away. Visit any of our Annandale, Manassas, Chantilly, or Vienna/McLean locations to meet an estate jewelry buyer who values every layer of your pieces.",
+          "Estate jewelry, inherited or pre-owned fine pieces, frequently holds value well beyond its metal, and selling it well means having every layer recognized. Our trained buyers appraise the gold or platinum at the live spot price, grade any diamonds and gemstones separately, and account for designer signatures and craftsmanship that the resale market rewards. Whether you are settling a loved one's estate, parting with pieces you no longer wear, or selling a full collection, you get an honest, no-pressure offer on single items or the whole lot. We encourage you to bring any original boxes, receipts, or certificates, since provenance can meaningfully raise the value. Nothing is tested out of your sight, and there is never a fee or obligation to sell. Selling estate jewelry locally also means you keep your pieces until you accept the offer, with instant payout the same visit, rather than mailing irreplaceable items away. Visit any of our Annandale, Manassas, Chantilly, or Vienna/Tysons locations to meet an estate jewelry buyer who values every layer of your pieces.",
         cardImage: "/products/jewelry/ring.jpg",
         gallery: [
           { name: "Gold Rings", image: "/products/jewelry/ring.jpg", note: "Fine & designer rings" },
@@ -325,7 +337,7 @@ export const CATEGORIES: Category[] = [
         items: ["Tiffany & Co.", "Cartier & Bulgari", "David Yurman", "Van Cleef & Arpels", "Other recognized brands", "Signed & hallmarked pieces"],
         keywords: ["sell designer jewelry", "sell tiffany jewelry", "sell cartier jewelry", "sell david yurman"],
         longDescription:
-          "Designer jewelry is one of the most commonly undervalued things people sell, because the typical buyer weighs it like scrap and ignores the name on the piece. We do not. A signed Tiffany & Co., Cartier, David Yurman, Bulgari, or Van Cleef & Arpels piece carries worth in its brand, design, and craftsmanship on top of its gold or platinum and any diamonds or gemstones, and we evaluate all of it. Our buyers verify the maker's marks and hallmarks, assess the metal at the live spot price, grade the stones separately, and then add the brand premium that the resale market genuinely pays, with the whole calculation explained in front of you, on camera, in a secure setting. There is no fee to find out what your designer jewelry is worth and no obligation to sell once you see the number. Original boxes, pouches, and receipts help and can raise the offer, so bring whatever you kept. Because we buy locally across four Northern Virginia stores, your piece stays with you until you accept, with payment before you leave. Bring your Tiffany, Cartier, or other signed jewelry to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, knowledgeable appraisal.",
+          "Designer jewelry is one of the most commonly undervalued things people sell, because the typical buyer weighs it like scrap and ignores the name on the piece. We do not. A signed Tiffany & Co., Cartier, David Yurman, Bulgari, or Van Cleef & Arpels piece carries worth in its brand, design, and craftsmanship on top of its gold or platinum and any diamonds or gemstones, and we evaluate all of it. Our buyers verify the maker's marks and hallmarks, assess the metal at the live spot price, grade the stones separately, and then add the brand premium that the resale market genuinely pays, with the whole calculation explained in front of you, on camera, in a secure setting. There is no fee to find out what your designer jewelry is worth and no obligation to sell once you see the number. Original boxes, pouches, and receipts help and can raise the offer, so bring whatever you kept. Because we buy locally across four Northern Virginia stores, your piece stays with you until you accept, with payment before you leave. Bring your Tiffany, Cartier, or other signed jewelry to our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free, knowledgeable appraisal.",
         gallery: [
           { name: "Tiffany & Co.", image: "/products/jewelry/tiffany.webp", note: "Signed sterling & gold" },
           { name: "Cartier", image: "/products/jewelry/cartier.webp", note: "Love, Trinity & more" },
@@ -348,7 +360,7 @@ export const CATEGORIES: Category[] = [
       "We buy all four precious metals, gold, silver, platinum, and palladium, in every form: jewelry, bullion, bars, rounds, scrap, and industrial. Every item is tested for purity and weighed in front of you, then paid against the current market spot price.",
     keywords: ["sell precious metals", "gold buyer near me", "sell bullion northern virginia", "precious metals buyer"],
     longDescription:
-      "When you sell precious metals, the only number that should matter is the live market price, and that is the foundation of every offer we make. We buy gold, silver, platinum, and palladium in every form, jewelry, bars, rounds, bullion, scrap, coins, and industrial, testing each item for purity and weighing it on a calibrated scale right in front of you. Your payout is then calculated against the current spot price for that metal, with the math shown openly and no lowball gimmicks. There is no minimum quantity, no fee to get an appraisal, and no obligation to sell. Because we operate four storefronts across Northern Virginia rather than a mail-in service, you keep your metal until you accept the offer and walk out paid the same day. Whether you are selling a single gold ring, a box of sterling flatware, or a stack of bullion bars, you get a fast, transparent, market-based offer. Bring your gold, silver, platinum, or palladium to any of our Annandale, Manassas, Chantilly, or Vienna/McLean locations.",
+      "When you sell precious metals, the only number that should matter is the live market price, and that is the foundation of every offer we make. We buy gold, silver, platinum, and palladium in every form, jewelry, bars, rounds, bullion, scrap, coins, and industrial, testing each item for purity and weighing it on a calibrated scale right in front of you. Your payout is then calculated against the current spot price for that metal, with the math shown openly and no lowball gimmicks. There is no minimum quantity, no fee to get an appraisal, and no obligation to sell. Because we operate four storefronts across Northern Virginia rather than a mail-in service, you keep your metal until you accept the offer and walk out paid the same day. Whether you are selling a single gold ring, a box of sterling flatware, or a stack of bullion bars, you get a fast, transparent, market-based offer. Bring your gold, silver, platinum, or palladium to any of our Annandale, Manassas, Chantilly, or Vienna/Tysons locations.",
     subcategories: [
       {
         slug: "sell-gold",
@@ -361,7 +373,7 @@ export const CATEGORIES: Category[] = [
         items: ["Gold jewelry (10K–24K)", "Scrap & broken gold", "Gold bullion & bars", "Dental gold", "Gold coins", "Class rings & chains"],
         keywords: ["sell gold near me", "cash for gold", "sell gold jewelry", "gold buyer northern virginia"],
         longDescription:
-          "Gold is what we are known for, and selling yours should be simple, fast, and completely transparent. We buy gold in every form, 10K to 24K jewelry, scrap and broken pieces, dental gold, bullion bars, and coins, and we value all of it the same honest way: the live gold spot price, converted to a per-gram figure, multiplied by your item's karat purity and weight. Each piece is tested and weighed in front of you, and the offer is explained out loud before you decide. There is no obligation, no fee, and no pressure, only a fair, market-based number and instant payout if you accept. Knowing your karat and weight helps you ballpark the range before you ever walk in. As a local business with four Northern Virginia storefronts, we let you keep your gold until you agree to the price, unlike mail-in buyers who quote you only after your gold is gone. For cash for gold you can trust, visit our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
+          "Gold is what we are known for, and selling yours should be simple, fast, and completely transparent. We buy gold in every form, 10K to 24K jewelry, scrap and broken pieces, dental gold, bullion bars, and coins, and we value all of it the same honest way: the live gold spot price, converted to a per-gram figure, multiplied by your item's karat purity and weight. Each piece is tested and weighed in front of you, and the offer is explained out loud before you decide. There is no obligation, no fee, and no pressure, only a fair, market-based number and instant payout if you accept. Knowing your karat and weight helps you ballpark the range before you ever walk in. As a local business with four Northern Virginia storefronts, we let you keep your gold until you agree to the price, unlike mail-in buyers who quote you only after your gold is gone. For cash for gold you can trust, visit our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free appraisal.",
         gallery: [
           { name: "PAMP Suisse Bar", image: "/products/gold/pamp.jpg", note: ".9999 fine" },
           { name: "Credit Suisse Bar", image: "/products/gold/creditsuisse.jpg", note: ".9999 fine" },
@@ -382,7 +394,7 @@ export const CATEGORIES: Category[] = [
         items: ["Sterling silver jewelry", "Silver bullion & bars", "Silver rounds", "Silverware & flatware", "Pre-1965 US coins"],
         keywords: ["sell silver near me", "silver buyer", "sell sterling silver", "cash for silver"],
         longDescription:
-          "Silver adds up faster than most people expect, and we make selling it straightforward. We buy sterling silver jewelry and flatware, silver bullion bars and rounds, and pre-1965 US 90% silver coins, paying a fair, transparent price based on weight, purity, and the live silver spot price. Sterling is stamped .925, and we test and weigh every item in front of you so you can see exactly how the offer is reached. There is no minimum, no appraisal fee, and no obligation to sell, whether you bring a single tea set, a drawer of flatware, or a box of bullion and junk silver. Because silver trades at a lower price per ounce than gold, quantity matters, and we welcome large lots as readily as single pieces. As a local silver buyer with four Northern Virginia stores, we pay instant payout the same visit and let you keep your silver until you accept. Bring your sterling, bullion, or coins to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, no-pressure appraisal.",
+          "Silver adds up faster than most people expect, and we make selling it straightforward. We buy sterling silver jewelry and flatware, silver bullion bars and rounds, and pre-1965 US 90% silver coins, paying a fair, transparent price based on weight, purity, and the live silver spot price. Sterling is stamped .925, and we test and weigh every item in front of you so you can see exactly how the offer is reached. There is no minimum, no appraisal fee, and no obligation to sell, whether you bring a single tea set, a drawer of flatware, or a box of bullion and junk silver. Because silver trades at a lower price per ounce than gold, quantity matters, and we welcome large lots as readily as single pieces. As a local silver buyer with four Northern Virginia stores, we pay instant payout the same visit and let you keep your silver until you accept. Bring your sterling, bullion, or coins to our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free, no-pressure appraisal.",
         gallery: [
           { name: "1 oz Silver Bar", image: "/products/silver/bar1oz.jpg", note: "Any mint or brand" },
           { name: "5 oz Silver Bar", image: "/products/silver/bar5oz.jpg", note: "Any mint or brand" },
@@ -402,7 +414,7 @@ export const CATEGORIES: Category[] = [
         items: ["Platinum jewelry", "Platinum wedding bands", "Platinum bullion & bars", "Platinum settings", "Industrial platinum"],
         keywords: ["sell platinum", "platinum buyer near me", "sell platinum jewelry", "cash for platinum"],
         longDescription:
-          "Platinum is rarer and denser than gold, and a fair buyer pays accordingly. We purchase platinum jewelry, wedding bands, settings, bars, bullion, and coins, verifying the purity, commonly stamped 950 or .9995, and weighing each piece in front of you before making a market-based offer. Because platinum is so dense, even a modest band can carry meaningful value, and your payout is calculated against the live platinum spot price with the math shown openly. There is no fee to find out what your platinum is worth and no obligation to sell once you see the number. Many people do not realize a white-metal ring is platinum rather than white gold, and the difference matters; we identify it correctly so you are paid for what you actually have. As a local business with four Northern Virginia storefronts, we pay instant payout the same day and let you keep your items until you accept. Whether you sell platinum jewelry or bullion, bring it to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, transparent appraisal.",
+          "Platinum is rarer and denser than gold, and a fair buyer pays accordingly. We purchase platinum jewelry, wedding bands, settings, bars, bullion, and coins, verifying the purity, commonly stamped 950 or .9995, and weighing each piece in front of you before making a market-based offer. Because platinum is so dense, even a modest band can carry meaningful value, and your payout is calculated against the live platinum spot price with the math shown openly. There is no fee to find out what your platinum is worth and no obligation to sell once you see the number. Many people do not realize a white-metal ring is platinum rather than white gold, and the difference matters; we identify it correctly so you are paid for what you actually have. As a local business with four Northern Virginia storefronts, we pay instant payout the same day and let you keep your items until you accept. Whether you sell platinum jewelry or bullion, bring it to our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free, transparent appraisal.",
         gallery: [
           { group: "Platinum Coins", name: "American Platinum Eagle", image: "/products/platinum/eagle.jpg", note: "US Mint · .9995" },
           { group: "Platinum Coins", name: "Canadian Platinum Maple Leaf", image: "/products/platinum/maple.jpg", note: "RCM · .9995" },
@@ -424,7 +436,7 @@ export const CATEGORIES: Category[] = [
         items: ["Palladium bullion & bars", "Palladium coins", "Palladium jewelry", "Industrial palladium"],
         keywords: ["sell palladium", "palladium buyer", "cash for palladium", "where to sell palladium"],
         longDescription:
-          "Palladium has quietly become one of the most valuable precious metals, and many sellers do not realize how much theirs is worth. We buy palladium bullion, bars, rounds, coins such as the American and Canadian Palladium Eagle and Maple Leaf, and the occasional piece of palladium jewelry, paying a transparent price based on weight, purity, and the live palladium market. Every item is verified and weighed in front of you, and the offer is explained before you decide, with no fee and no obligation. Palladium is often confused with platinum or white gold, so correct identification matters, and our buyers test to be sure you are paid for the right metal. Because palladium prices can move sharply, we base offers on the current spot price the day you visit. As a local palladium buyer with four Northern Virginia stores, we pay instant payout and let you keep your metal until you accept the offer. Bring your palladium to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
+          "Palladium has quietly become one of the most valuable precious metals, and many sellers do not realize how much theirs is worth. We buy palladium bullion, bars, rounds, coins such as the American and Canadian Palladium Eagle and Maple Leaf, and the occasional piece of palladium jewelry, paying a transparent price based on weight, purity, and the live palladium market. Every item is verified and weighed in front of you, and the offer is explained before you decide, with no fee and no obligation. Palladium is often confused with platinum or white gold, so correct identification matters, and our buyers test to be sure you are paid for the right metal. Because palladium prices can move sharply, we base offers on the current spot price the day you visit. As a local palladium buyer with four Northern Virginia stores, we pay instant payout and let you keep your metal until you accept the offer. Bring your palladium to our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free appraisal.",
         gallery: [
           { group: "Palladium Coins", name: "American Palladium Eagle", image: "/products/palladium/eagle.jpg", note: "US Mint · .9995" },
           { group: "Palladium Coins", name: "Canadian Palladium Maple Leaf", image: "/products/palladium/maple.jpg", note: "RCM · .9995" },
@@ -444,7 +456,7 @@ export const CATEGORIES: Category[] = [
         items: ["Sterling flatware sets", "Tea & coffee services", "Candlesticks & trays", "Serving pieces & hollowware", "Marked .925 or sterling", "Weighted & hollow pieces accepted"],
         keywords: ["sell sterling silver flatware", "sell silver tea set", "silverware buyer near me", "sell sterling silver set"],
         longDescription:
-          "Inherited silverware you never use, or a flatware set that has sat in the cabinet for years, is one of the most overlooked things people own, and sterling silver is priced by weight and silver content rather than sentiment. We buy sterling flatware sets, serving pieces, tea and coffee services, candlesticks, trays, and hollowware, all marked .925 or sterling, weighing every piece on a calibrated scale in front of you and paying against the live silver spot price. Some pieces are weighted or hollow, with non-silver material adding heft, and we account for that honestly so you are paid for the silver you actually have and never misled. There is no minimum, no need to polish anything, and no obligation to sell once you see the number. Because silver trades well below gold per ounce, a full set adds up faster than people expect, and large lots are welcome as readily as a single tray. As a local buyer with four Northern Virginia storefronts, we pay before you leave and let you keep your set until you accept. Bring your sterling flatware or tea service to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, transparent appraisal.",
+          "Inherited silverware you never use, or a flatware set that has sat in the cabinet for years, is one of the most overlooked things people own, and sterling silver is priced by weight and silver content rather than sentiment. We buy sterling flatware sets, serving pieces, tea and coffee services, candlesticks, trays, and hollowware, all marked .925 or sterling, weighing every piece on a calibrated scale in front of you and paying against the live silver spot price. Some pieces are weighted or hollow, with non-silver material adding heft, and we account for that honestly so you are paid for the silver you actually have and never misled. There is no minimum, no need to polish anything, and no obligation to sell once you see the number. Because silver trades well below gold per ounce, a full set adds up faster than people expect, and large lots are welcome as readily as a single tray. As a local buyer with four Northern Virginia storefronts, we pay before you leave and let you keep your set until you accept. Bring your sterling flatware or tea service to our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free, transparent appraisal.",
         gallery: [
           { name: "Sterling Flatware Sets", image: "/products/silver/flatware.webp", note: "Forks, spoons & knives" },
           { name: "Tea & Coffee Services", image: "/products/silver/teaset.webp", note: ".925 & sterling" },
@@ -463,7 +475,7 @@ export const CATEGORIES: Category[] = [
         items: ["Gold crowns & caps", "Gold bridges", "Gold fillings", "Inlays & onlays", "Mixed dental alloy scrap", "Attached to tooth is fine"],
         keywords: ["sell dental gold", "dental gold buyer", "sell gold crown", "cash for dental gold"],
         longDescription:
-          "Gold dental work is one of the most commonly discarded sources of real value, because few people realize a crown or bridge is made from a genuine gold alloy worth money. We test dental gold for its actual gold content with an XRF analyzer, weigh it on a calibrated scale, and pay against the live gold spot price, all in front of you and explained out loud. Crowns, caps, bridges, fillings, inlays, onlays, and mixed dental scrap are all welcome, and you do not need to remove any attached tooth material first, since we account for it when we calculate the offer. Dental alloys vary in purity, so composition affects the payout, and we show you exactly how we reach the number rather than quoting a vague flat rate. There is no minimum, no fee to find out what you have, and no obligation to sell. Because we buy locally across four Northern Virginia stores, you keep your items until you accept and walk out paid the same visit. Bring your dental gold to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, transparent test and appraisal.",
+          "Gold dental work is one of the most commonly discarded sources of real value, because few people realize a crown or bridge is made from a genuine gold alloy worth money. We test dental gold for its actual gold content with an XRF analyzer, weigh it on a calibrated scale, and pay against the live gold spot price, all in front of you and explained out loud. Crowns, caps, bridges, fillings, inlays, onlays, and mixed dental scrap are all welcome, and you do not need to remove any attached tooth material first, since we account for it when we calculate the offer. Dental alloys vary in purity, so composition affects the payout, and we show you exactly how we reach the number rather than quoting a vague flat rate. There is no minimum, no fee to find out what you have, and no obligation to sell. Because we buy locally across four Northern Virginia stores, you keep your items until you accept and walk out paid the same visit. Bring your dental gold to our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free, transparent test and appraisal.",
         cardImage: "/sell/dental-gold.webp",
       },
       {
@@ -476,7 +488,7 @@ export const CATEGORIES: Category[] = [
         items: ["Gold filled marked GF", "Marked 1/20 14K or 1/10 10K", "Gold filled chains & cases", "Plated items: usually cannot buy", "Free identification either way"],
         keywords: ["sell gold filled jewelry", "gold filled vs plated", "is gold plated worth money", "sell gold filled"],
         longDescription:
-          "Gold filled and gold plated are easy to confuse, and the difference decides whether an item is worth selling. Gold filled pieces have a real, legally specified layer of gold mechanically bonded to a base metal, often marked GF, 1/20 14K, or 1/10 10K, and that layer carries enough gold to be worth evaluating case by case. Gold plated items, by contrast, have only a microscopically thin electroplated coating, typically far too little gold to purchase, which is why most buyers, including us, generally cannot pay for them. Rather than leave you guessing, we test your items for free, on camera, in a secure setting, identify exactly what you have, and explain honestly what we can or cannot offer and why. When gold filled material is present in enough quantity, we assess it on its gold content and weight and make a fair offer; when an item is only plated, we tell you plainly so you do not waste a trip elsewhere. There is never a fee or any obligation. Bring anything marked GF or anything you are unsure about to our Annandale, Manassas, Chantilly, or Vienna/McLean location and we will tell you what it really is.",
+          "Gold filled and gold plated are easy to confuse, and the difference decides whether an item is worth selling. Gold filled pieces have a real, legally specified layer of gold mechanically bonded to a base metal, often marked GF, 1/20 14K, or 1/10 10K, and that layer carries enough gold to be worth evaluating case by case. Gold plated items, by contrast, have only a microscopically thin electroplated coating, typically far too little gold to purchase, which is why most buyers, including us, generally cannot pay for them. Rather than leave you guessing, we test your items for free, on camera, in a secure setting, identify exactly what you have, and explain honestly what we can or cannot offer and why. When gold filled material is present in enough quantity, we assess it on its gold content and weight and make a fair offer; when an item is only plated, we tell you plainly so you do not waste a trip elsewhere. There is never a fee or any obligation. Bring anything marked GF or anything you are unsure about to our Annandale, Manassas, Chantilly, or Vienna/Tysons location and we will tell you what it really is.",
         cardImage: "/sell/gold-filled-plated.webp",
       },
     ],
@@ -540,7 +552,7 @@ export const CATEGORIES: Category[] = [
         items: ["American Gold Eagles & Buffalos", "Krugerrands & Maple Leafs", "Pre-1933 US gold coins", "Foreign gold coins", "Graded gold slabs"],
         keywords: ["sell gold coins", "gold coin buyer", "sell gold eagles", "where to sell gold coins"],
         longDescription:
-          "Gold coins are among the easiest items to sell at a fair price, because the popular ones are standardized, recognized, and quick to verify. We buy American Gold Eagles and Buffalos, South African Krugerrands, Canadian Maple Leafs, British Britannias, pre-1933 US gold, and foreign gold coins, valuing each on its gold content at the live spot price plus any collectible premium. Standard bullion coins are paid close to their melt value because they resell easily, while proof, graded, or key-date coins can be worth more, so mention or bring any certificates and original packaging. Every coin is verified and the offer explained in front of you, with no fee and no obligation to sell. As a local buyer with four Northern Virginia storefronts, we pay instant payout the same day and let you keep your coins until you accept. For the simplest way to sell gold coins, visit our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
+          "Gold coins are among the easiest items to sell at a fair price, because the popular ones are standardized, recognized, and quick to verify. We buy American Gold Eagles and Buffalos, South African Krugerrands, Canadian Maple Leafs, British Britannias, pre-1933 US gold, and foreign gold coins, valuing each on its gold content at the live spot price plus any collectible premium. Standard bullion coins are paid close to their melt value because they resell easily, while proof, graded, or key-date coins can be worth more, so mention or bring any certificates and original packaging. Every coin is verified and the offer explained in front of you, with no fee and no obligation to sell. As a local buyer with four Northern Virginia storefronts, we pay instant payout the same day and let you keep your coins until you accept. For the simplest way to sell gold coins, visit our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free appraisal.",
         gallery: [
           { name: "All Gold Coins", image: "/coins/all-gold-coins.jpg", note: "Every gold coin we buy", href: "/coins/sell-gold-coins/all-gold-coins", count: 920 },
           { name: "American Gold Eagle", image: "/coins/age/age-001.jpg", note: "US Mint · 22K", href: "/coins/sell-gold-coins/american-gold-eagle", count: 327 },
@@ -634,7 +646,7 @@ export const CATEGORIES: Category[] = [
       "Luxury watches are not like gold, you cannot just weigh them. We know the watch market and research current secondary-market prices before we make an offer on your Rolex, Omega, Cartier, or other fine timepiece. The evaluation is free, done on camera, with no pressure.",
     keywords: ["sell luxury watch near me", "watch buyer northern virginia", "sell my rolex", "where to sell a watch"],
     longDescription:
-      "Selling a luxury watch is nothing like selling scrap metal, because its value has almost nothing to do with weight and everything to do with the market. A Rolex, Omega, Cartier, Breitling, Patek Philippe, or Audemars Piguet is worth what collectors and dealers are paying for that exact brand, model, and reference today, adjusted for condition, service history, and whether you still have the original box and papers. We do this every day, so we research the current secondary-market price before we make an offer rather than guessing or lowballing. Every watch is examined and discussed in front of you, on camera, in a secure environment, and the offer is explained in plain terms with no fee and no obligation to sell. Box, papers, and service records all add value, so bring whatever you have. Because we buy locally across four Northern Virginia storefronts, your watch stays with you until you accept, and you walk out paid the same visit rather than mailing a valuable timepiece away on faith. Bring your Rolex or other fine watch to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, knowledgeable appraisal.",
+      "Selling a luxury watch is nothing like selling scrap metal, because its value has almost nothing to do with weight and everything to do with the market. A Rolex, Omega, Cartier, Breitling, Patek Philippe, or Audemars Piguet is worth what collectors and dealers are paying for that exact brand, model, and reference today, adjusted for condition, service history, and whether you still have the original box and papers. We do this every day, so we research the current secondary-market price before we make an offer rather than guessing or lowballing. Every watch is examined and discussed in front of you, on camera, in a secure environment, and the offer is explained in plain terms with no fee and no obligation to sell. Box, papers, and service records all add value, so bring whatever you have. Because we buy locally across four Northern Virginia storefronts, your watch stays with you until you accept, and you walk out paid the same visit rather than mailing a valuable timepiece away on faith. Bring your Rolex or other fine watch to our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free, knowledgeable appraisal.",
     subcategories: [
       {
         slug: "sell-rolex",
@@ -647,7 +659,7 @@ export const CATEGORIES: Category[] = [
         keywords: ["sell my rolex", "rolex buyer near me", "sell rolex watch", "where to sell a rolex"],
         cardImage: "/categories/watches-rolex.webp",
         longDescription:
-          "Rolex holds its value better than almost any watch on the market, and a fair offer starts with knowing exactly what you have. We buy every Rolex model and reference, the Submariner, Datejust, Daytona, GMT-Master, Day-Date, Oyster Perpetual, Explorer, and vintage or discontinued pieces, and we price each one on its specific reference number, condition, and current secondary-market demand rather than a flat melt figure. The Daytona and steel sports models in particular can command strong premiums, so correct identification matters and we take the time to get it right in front of you. Original box, papers, and service records all raise the offer, so bring whatever you kept. Every evaluation is free, done on camera in a secure setting, and explained out loud with no obligation to sell. Because we are a local buyer with four Northern Virginia storefronts, your Rolex stays in your hands until you accept, and you are paid the same visit rather than shipping it off and waiting. To sell your Rolex to a buyer who knows the market, visit our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free appraisal.",
+          "Rolex holds its value better than almost any watch on the market, and a fair offer starts with knowing exactly what you have. We buy every Rolex model and reference, the Submariner, Datejust, Daytona, GMT-Master, Day-Date, Oyster Perpetual, Explorer, and vintage or discontinued pieces, and we price each one on its specific reference number, condition, and current secondary-market demand rather than a flat melt figure. The Daytona and steel sports models in particular can command strong premiums, so correct identification matters and we take the time to get it right in front of you. Original box, papers, and service records all raise the offer, so bring whatever you kept. Every evaluation is free, done on camera in a secure setting, and explained out loud with no obligation to sell. Because we are a local buyer with four Northern Virginia storefronts, your Rolex stays in your hands until you accept, and you are paid the same visit rather than shipping it off and waiting. To sell your Rolex to a buyer who knows the market, visit our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free appraisal.",
         gallery: [
           { name: "Submariner", image: "/products/watches/submariner.webp", note: "All references & dial variants" },
           { name: "Datejust", image: "/products/watches/datejust.webp", note: "Steel, two-tone & gold" },
@@ -668,7 +680,7 @@ export const CATEGORIES: Category[] = [
         keywords: ["sell luxury watch", "sell omega watch", "sell cartier watch", "watch buyer northern virginia"],
         cardImage: "/categories/watches-luxury.webp",
         longDescription:
-          "A luxury watch from Omega, Cartier, Patek Philippe, Audemars Piguet, Breitling, or TAG Heuer carries value that a scale can never capture, and selling it well means having someone who actually follows the market. We evaluate each watch on its brand, model, reference, condition, and service history, then check current secondary-market prices before making an offer, so the number reflects what your piece is genuinely worth today. An Omega Speedmaster, a Cartier Tank, or a Patek complication each trade on their own demand, and we price them individually rather than lumping everything together. Original box, papers, and service records add real value, so bring whatever you have kept over the years. Every appraisal is free, done on camera in a secure environment, and explained clearly with no pressure and no obligation. As a local buyer with four Northern Virginia storefronts, we let you keep your watch until you accept the offer and pay you the same visit, rather than asking you to mail a valuable timepiece away. Bring your Omega, Cartier, or other fine watch to our Annandale, Manassas, Chantilly, or Vienna/McLean location for a free, expert appraisal.",
+          "A luxury watch from Omega, Cartier, Patek Philippe, Audemars Piguet, Breitling, or TAG Heuer carries value that a scale can never capture, and selling it well means having someone who actually follows the market. We evaluate each watch on its brand, model, reference, condition, and service history, then check current secondary-market prices before making an offer, so the number reflects what your piece is genuinely worth today. An Omega Speedmaster, a Cartier Tank, or a Patek complication each trade on their own demand, and we price them individually rather than lumping everything together. Original box, papers, and service records add real value, so bring whatever you have kept over the years. Every appraisal is free, done on camera in a secure environment, and explained clearly with no pressure and no obligation. As a local buyer with four Northern Virginia storefronts, we let you keep your watch until you accept the offer and pay you the same visit, rather than asking you to mail a valuable timepiece away. Bring your Omega, Cartier, or other fine watch to our Annandale, Manassas, Chantilly, or Vienna/Tysons location for a free, expert appraisal.",
         gallery: [
           { name: "Omega Speedmaster", image: "/products/watches/speedmaster.webp", note: "Moonwatch & variants" },
           { name: "Omega Seamaster", image: "/products/watches/seamaster.webp", note: "Diver & Aqua Terra" },

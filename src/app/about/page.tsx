@@ -72,7 +72,7 @@ export default function AboutPage() {
                 <Link href="/locations/annandale" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-800">Annandale</Link>,{" "}
                 <Link href="/locations/manassas" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-800">Manassas</Link>,{" "}
                 <Link href="/locations/chantilly" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-800">Chantilly</Link>, and{" "}
-                <Link href="/locations/vienna" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-800">Vienna/McLean</Link>.
+                <Link href="/locations/vienna" className="font-bold text-gold-700 underline decoration-gold-400/40 underline-offset-2 transition-colors hover:text-gold-800">Vienna/Tysons</Link>.
               </p>
               <p>
                 Unlike mail-in services and mall kiosks, we test and weigh every item in front of

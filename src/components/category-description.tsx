@@ -18,7 +18,7 @@ const EMPHASIS_TERMS = [
   "gold spot price", "silver spot price", "platinum spot price", "palladium spot price",
   "live spot price", "current spot price", "spot price",
   "free appraisal", "instant payout", "no obligation",
-  "Annandale", "Manassas", "Chantilly", "Vienna/McLean",
+  "Annandale", "Manassas", "Chantilly", "Vienna/Tysons",
 ];
 
 type Range = { start: number; end: number; node: React.ReactNode };

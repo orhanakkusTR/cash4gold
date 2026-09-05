@@ -39,7 +39,7 @@ function localBusiness(loc: Location) {
     address: {
       "@type": "PostalAddress",
       streetAddress: loc.street,
-      addressLocality: loc.city,
+      addressLocality: loc.addressCity,
       addressRegion: loc.region,
       postalCode: loc.postalCode,
       addressCountry: "US",
@@ -49,7 +49,10 @@ function localBusiness(loc: Location) {
       latitude: loc.geo.lat,
       longitude: loc.geo.lng,
     },
-    openingHoursSpecification: openingHours(loc),
+    // Appointment-only stores publish no hours (schema would contradict GBP).
+    ...(loc.appointmentOnly || loc.hours.length === 0
+      ? {}
+      : { openingHoursSpecification: openingHours(loc) }),
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: SITE.rating.value,

@@ -55,7 +55,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       "Four real storefronts across NoVA — Annandale, Chantilly, Manassas, and Vienna/Tysons. Walk in with your items, watch the appraisal happen, and get paid the same visit.",
     heroSubtitleBold: "paid the same visit",
     intro:
-      "Northern Virginia is not one place. It stretches from the apartment towers of Alexandria and Arlington inside the Beltway, out along I-66 through Fairfax and into Prince William County, and up Route 7 through Tysons toward Loudoun. A single gold-buying shop can't realistically serve all of that — and mailing your jewelry to a stranger in an envelope shouldn't be the alternative. That's why **Cash for Gold VA operates four physical stores across Northern Virginia (NoVA)**: Annandale on Columbia Pike, Chantilly on Route 50, Manassas on Centreville Road, and Vienna in the Tysons area on Tyco Road. Wherever you are in NoVA, there's a real counter a short drive away.\n\nEvery appraisal works the same way at all four locations, and it happens **in front of you, not in a back room**. We test your gold, silver, and platinum for purity, weigh it on a **calibrated scale you can see**, and price it against the **live spot price** at that moment. Then we explain the number. There's no fee for any of this, and no obligation attached to it — the appraisal is free whether you sell or not.\n\nYour items **stay in your hands until you agree to a price**. If the offer works for you, you get an **instant payout** — paid the same visit, before you leave the store. If it doesn't, you walk out with everything you walked in with, plus a real number to compare anywhere else. That transparency is a big part of why we hold a **4.9★ Google rating across 500+ reviews**, making us one of the region's most-reviewed precious-metals buyers.",
+      "Northern Virginia is not one place. It stretches from the apartment towers of Alexandria and Arlington inside the Beltway, out along I-66 through Fairfax and into Prince William County, and up Route 7 through Tysons toward Loudoun. A single gold-buying shop can't realistically serve all of that — and mailing your jewelry to a stranger in an envelope shouldn't be the alternative. That's why **Cash for Gold VA operates four physical stores across Northern Virginia (NoVA)**: Annandale on Columbia Pike, Chantilly on Route 50, Manassas on Centreville Road, and Vienna in the Tysons area on Westwood Center Drive. Wherever you are in NoVA, there's a real counter a short drive away.\n\nEvery appraisal works the same way at all four locations, and it happens **in front of you, not in a back room**. We test your gold, silver, and platinum for purity, weigh it on a **calibrated scale you can see**, and price it against the **live spot price** at that moment. Then we explain the number. There's no fee for any of this, and no obligation attached to it — the appraisal is free whether you sell or not.\n\nYour items **stay in your hands until you agree to a price**. If the offer works for you, you get an **instant payout** — paid the same visit, before you leave the store. If it doesn't, you walk out with everything you walked in with, plus a real number to compare anywhere else. That transparency is a big part of why we hold a **4.9★ Google rating across 500+ reviews**, making us one of the region's most-reviewed precious-metals buyers.",
     silverTitle: "Selling silver and sterling sets in Northern Virginia",
     silver:
       "Gold gets the attention, but some of the most valuable things people bring us are silver — and most of it has been sitting in a dining-room cabinet for decades. **Inherited sterling flatware sets, tea services, serving trays, and hollowware** are exactly the items families underestimate. A full sterling flatware service can run to several pounds of .925 silver, and **quantity is where silver adds up**: individually modest pieces become a meaningful payout when the whole set goes on the scale. We check the hallmarks, **test each piece to confirm .925 sterling** (and separate out any silverplate, honestly, so you're not guessing), weigh everything on a **calibrated scale in front of you**, and price it against the **live silver spot price** that day.\n\nWe buy the full range of silver, not just sets: **sterling silver jewelry, silver bars and rounds, .999 bullion**, and **pre-1965 US 90% \"junk silver\" coins** — dimes, quarters, and half dollars whose value is in their silver content, not their face value. If you've inherited a box of coins or a felt-lined chest of flatware and have no idea what it's worth, bring it to any of our four Northern Virginia stores. The appraisal is free, there's no obligation, and if you sell, it's an **instant payout the same visit**.",
@@ -81,7 +81,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         name: "Tysons & McLean",
-        note: "Our Vienna store at 8453 Tyco Rd #C sits right in the Tysons area, just off Route 7 and Spring Hill. It's the natural stop for McLean, Great Falls, Oakton, and Vienna — and a fitting one for the corridor's fine jewelry, designer pieces, and luxury watches, all appraised the same transparent way as a gold chain.",
+        note: "Our Vienna store at 8605 Westwood Center Dr #120 sits right in the Tysons area, just off Route 7 and Spring Hill. It's the natural stop for McLean, Great Falls, Oakton, and Vienna — and a fitting one for the corridor's fine jewelry, designer pieces, and luxury watches, all appraised the same transparent way as a gold chain.",
       },
       {
         name: "Reston & Herndon",
@@ -103,7 +103,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Where can I sell gold in Northern Virginia?",
-        a: "Cash for Gold VA has four stores across Northern Virginia: Annandale (7262 Columbia Pike), Chantilly (14025 US-50), Manassas (9013 Centreville Rd), and Vienna/Tysons (8453 Tyco Rd #C). Walk into any of them for a free, no-obligation appraisal — your items are tested and weighed in front of you and priced against the live spot price.",
+        a: "Cash for Gold VA has four stores across Northern Virginia: Annandale (7262 Columbia Pike), Chantilly (14025 US-50), Manassas (9013 Centreville Rd), and Vienna/Tysons (8605 Westwood Center Dr #120). Walk into any of them for a free, no-obligation appraisal — your items are tested and weighed in front of you and priced against the live spot price.",
       },
       {
         q: "Do you buy silver and sterling silver sets?",
@@ -119,7 +119,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Which Cash for Gold VA location is closest to me?",
-        a: "Roughly: Arlington, Alexandria, Falls Church, and Springfield are closest to Annandale. Western Fairfax, Herndon, South Riding, and Loudoun are closest to Chantilly. Prince William County — Manassas, Bristow, Gainesville, Woodbridge — is served by our Manassas store. McLean, Tysons, Vienna, and Oakton are closest to our Vienna store on Tyco Rd, right in the Tysons area.",
+        a: "Roughly: Arlington, Alexandria, Falls Church, and Springfield are closest to Annandale. Western Fairfax, Herndon, South Riding, and Loudoun are closest to Chantilly. Prince William County — Manassas, Bristow, Gainesville, Woodbridge — is served by our Manassas store. McLean, Tysons, Vienna, and Oakton are closest to our Vienna store on Westwood Center Dr, right in the Tysons area.",
       },
       {
         q: "Do you pay on the spot?",
@@ -176,7 +176,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold in Alexandria, VA?",
-        a: "There's no Cash for Gold VA store inside Alexandria city limits. The closest option is our Annandale location at 7262 Columbia Pike, about 15 minutes away via Little River Turnpike or the Beltway. Vienna/McLean at 8453 Tyco Rd #C is a bit farther if that's more convenient for your commute.",
+        a: "There's no Cash for Gold VA store inside Alexandria city limits. The closest option is our Annandale location at 7262 Columbia Pike, about 15 minutes away via Little River Turnpike or the Beltway. Vienna/Tysons at 8605 Westwood Center Dr #120 is a bit farther if that's more convenient for your commute.",
       },
       {
         q: "I have antique jewelry from an Old Town estate — is it worth more than the gold weight?",
@@ -184,7 +184,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Do I need an appointment to sell gold near Alexandria?",
-        a: "No appointment is required at either the Annandale or Vienna location. Walk in during business hours, and we'll test, weigh, and quote your items on the spot.",
+        a: "No appointment is required at Annandale — walk in during business hours. Our Vienna/Tysons store is appointment only, so call (703) 889-0532 to set a time. Either way, we'll test, weigh, and quote your items on the spot.",
       },
       {
         q: "How is my payout calculated?",
@@ -283,10 +283,10 @@ export const CITY_LANDINGS: CityLanding[] = [
     heroSubtitle:
       "We don't have a storefront in Herndon itself, but our Chantilly store is a quick 10-15 minute run south on Route 28 (Sully Road) — your gold is tested while you watch and paid out the same visit.",
     intro:
-      "Looking for cash for gold in Herndon? Honest answer up front: **our nearest store is in Chantilly, not Herndon** — but since Herndon sits right on Route 28, that's a **10-15 minute straight drive south** to our counter on US-50. There's a second option too: our Vienna/McLean store, about 15-20 minutes east on the Dulles Toll Road, which is often the easier run from the Reston side of town. At either counter you watch your items get tested and weighed on a calibrated scale, hear a number tied to the live spot price, and take cash home the same trip.\n\nOne thing that sets Herndon apart from the rest of our coverage area: a lot of the gold we see from here is **high-karat 22k and 24k jewelry** — Indian and Middle Eastern wedding sets, bangles, and chains that carry far more gold per gram than the typical American 14k piece. That's exactly where choosing careful **gold buyers in Herndon's area** pays off, because a buyer who lazily quotes everything \"like 14k\" is underpaying a 22k bangle by more than a third. We test every piece for its actual purity and price it at that purity, whether it's a 24k temple necklace or a 10k class ring.",
+      "Looking for cash for gold in Herndon? Honest answer up front: **our nearest store is in Chantilly, not Herndon** — but since Herndon sits right on Route 28, that's a **10-15 minute straight drive south** to our counter on US-50. There's a second option too: our Vienna/Tysons store, about 15-20 minutes east on the Dulles Toll Road, which is often the easier run from the Reston side of town. At either counter you watch your items get tested and weighed on a calibrated scale, hear a number tied to the live spot price, and take cash home the same trip.\n\nOne thing that sets Herndon apart from the rest of our coverage area: a lot of the gold we see from here is **high-karat 22k and 24k jewelry** — Indian and Middle Eastern wedding sets, bangles, and chains that carry far more gold per gram than the typical American 14k piece. That's exactly where choosing careful **gold buyers in Herndon's area** pays off, because a buyer who lazily quotes everything \"like 14k\" is underpaying a 22k bangle by more than a third. We test every piece for its actual purity and price it at that purity, whether it's a 24k temple necklace or a 10k class ring.",
     whyLocalTitle: "Why Herndon sellers should skip the mail-in envelope",
     whyLocal:
-      "With a mail-in gold buyer, your jewelry rides off in a prepaid envelope and the offer arrives after your gold is already in someone else's building — and for high-karat pieces especially, you have no way to confirm they tested it as 22k instead of quietly grading it lower. Selling in person keeps the leverage with you: **the karat test and the scale reading happen in front of your eyes**, you can ask why a piece graded the way it did, and if the number falls short, your jewelry goes back in your bag and you drive home.\n\nFrom Herndon, that in-person trip barely costs you anything. Route 28 runs straight past the airport traffic down to Route 50, putting the **Chantilly counter about 10-15 minutes from almost anywhere in town** — a shorter errand than most Dulles-corridor commutes. If you're closer to the Toll Road on the Reston side, Vienna/McLean is an easy eastbound run instead. Either way you're **paid the same visit before you head back up the road**, not waiting on a check to survive the mail twice.",
+      "With a mail-in gold buyer, your jewelry rides off in a prepaid envelope and the offer arrives after your gold is already in someone else's building — and for high-karat pieces especially, you have no way to confirm they tested it as 22k instead of quietly grading it lower. Selling in person keeps the leverage with you: **the karat test and the scale reading happen in front of your eyes**, you can ask why a piece graded the way it did, and if the number falls short, your jewelry goes back in your bag and you drive home.\n\nFrom Herndon, that in-person trip barely costs you anything. Route 28 runs straight past the airport traffic down to Route 50, putting the **Chantilly counter about 10-15 minutes from almost anywhere in town** — a shorter errand than most Dulles-corridor commutes. If you're closer to the Toll Road on the Reston side, Vienna/Tysons is an easy eastbound run instead. Either way you're **paid the same visit before you head back up the road**, not waiting on a check to survive the mail twice.",
     neighborhoods: [
       {
         name: "Historic Downtown Herndon",
@@ -314,7 +314,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold in Herndon, VA?",
-        a: "There's no Cash for Gold VA store inside Herndon itself. The closest is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 10-15 minutes south on Route 28. Our Vienna/McLean store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15-20 minutes east via the Dulles Toll Road and often easier from the Reston side of town.",
+        a: "There's no Cash for Gold VA store inside Herndon itself. The closest is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 10-15 minutes south on Route 28. Our Vienna/Tysons store at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — is roughly 15-20 minutes east via the Dulles Toll Road and often easier from the Reston side of town.",
       },
       {
         q: "Do you buy 22k and 24k Indian gold jewelry near Herndon?",
@@ -326,7 +326,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Which store is closer to Herndon — Chantilly or Vienna?",
-        a: "Chantilly, for most of town: it's about 10-15 minutes straight down Route 28 to Route 50, one road nearly the whole way. Vienna/McLean is about 15-20 minutes east on the Dulles Toll Road, which can be the quicker choice if you live near the Reston line or already commute toward Tysons. Both pay the same way — tested in front of you, paid the same visit.",
+        a: "Chantilly, for most of town: it's about 10-15 minutes straight down Route 28 to Route 50, one road nearly the whole way. Vienna/Tysons is about 15-20 minutes east on the Dulles Toll Road, which can be the quicker choice if you live near the Reston line or already commute toward Tysons. Both pay the same way — tested in front of you, paid the same visit.",
       },
       {
         q: "Do you buy luxury watches and designer jewelry from Herndon sellers?",
@@ -692,15 +692,15 @@ export const CITY_LANDINGS: CityLanding[] = [
     region: "VA",
     seoTitle: "Sell Gold in McLean, VA | Discreet Appraisal, Instant Payout",
     metaDescription:
-      "Sell gold in McLean, VA — our Vienna/McLean store on Tyco Rd is 5–10 minutes away. Discreet expert appraisal of jewelry, watches & diamonds. 4.9★, 500+ reviews.",
+      "Sell gold in McLean, VA — our Vienna/Tysons store on Westwood Center Dr is 5–10 minutes away. Discreet expert appraisal of jewelry, watches & diamonds. 4.9★, 500+ reviews.",
     heroTitle: "Cash for Gold in McLean, VA",
     heroSubtitle:
-      "Our Vienna/McLean store is practically next door — 5–10 minutes from most of McLean, on Tyco Rd in the Tysons area. Bring your gold, jewelry, or watch in for a discreet appraisal and walk out paid the same visit.",
+      "Our Vienna/Tysons store is practically next door — 5–10 minutes from most of McLean, on Westwood Center Dr in the Tysons area. Bring your gold, jewelry, or watch in for a discreet appraisal and walk out paid the same visit.",
     intro:
-      "If you're searching for cash for gold in McLean, the good news is short: **our Vienna/McLean store is only about 5–10 minutes away**, on Tyco Rd just off Route 123 in the Tysons area — close enough that it carries McLean's name. There's no envelope, no waiting, no shipping your valuables anywhere: your items are tested and weighed on a calibrated scale in front of you, quoted against the **live spot price**, and paid the same visit.\n\nWhat crosses our counter from McLean is unlike anywhere else we serve. As one of the wealthiest communities in the United States, McLean sends us the **high end of the market — estate and fine jewelry, luxury watches, certified diamonds, and signed designer pieces from houses like Tiffany, Cartier, and Van Cleef & Arpels**. That's precisely why choosing your **gold buyers in McLean** carefully matters: pieces like these are routinely worth far more than their melt weight, and they deserve an appraiser who evaluates the maker, the stone, and the papers — not just the scale reading. That individual, discreet appraisal is exactly how our counter works.",
+      "If you're searching for cash for gold in McLean, the good news is short: **our Vienna/Tysons store is only about 5–10 minutes away**, on Westwood Center Dr just off Route 7 (Leesburg Pike) in the Tysons area — practically McLean's own counter. Visits are by appointment, so call ahead and we'll have the counter ready for you. There's no envelope, no waiting, no shipping your valuables anywhere: your items are tested and weighed on a calibrated scale in front of you, quoted against the **live spot price**, and paid the same visit.\n\nWhat crosses our counter from McLean is unlike anywhere else we serve. As one of the wealthiest communities in the United States, McLean sends us the **high end of the market — estate and fine jewelry, luxury watches, certified diamonds, and signed designer pieces from houses like Tiffany, Cartier, and Van Cleef & Arpels**. That's precisely why choosing your **gold buyers in McLean** carefully matters: pieces like these are routinely worth far more than their melt weight, and they deserve an appraiser who evaluates the maker, the stone, and the papers — not just the scale reading. That individual, discreet appraisal is exactly how our counter works.",
     whyLocalTitle: "Why McLean's high-value pieces should never go in a mail-in envelope",
     whyLocal:
-      "For a broken 14k chain, a mail-in envelope is merely a bad deal. For the kind of pieces McLean households hold — **a Rolex, a signed Cartier bracelet, a GIA-certified two-carat diamond** — it's an unacceptable one. Mail-in buyers grade your valuables in a facility you'll never see, quote one number you can't watch being reached, and shipping insurance rarely reflects what a signed or certified piece is actually worth. Selling in person keeps every step where you can see it: **your items stay in your possession until you've agreed to a price**, you watch the testing yourself, and a piece worth more than its metal gets appraised as what it is, not weighed as what it contains.\n\nAnd from McLean, going in person costs you almost nothing — **the Vienna/McLean counter is about 5–10 minutes away**, a shorter run than most Tysons errands. The appraisal is unhurried and private: one seller, one appraiser, no audience. If the number works, you're **paid before you're back on Route 123**; if it doesn't, everything goes home with you exactly as it came in.",
+      "For a broken 14k chain, a mail-in envelope is merely a bad deal. For the kind of pieces McLean households hold — **a Rolex, a signed Cartier bracelet, a GIA-certified two-carat diamond** — it's an unacceptable one. Mail-in buyers grade your valuables in a facility you'll never see, quote one number you can't watch being reached, and shipping insurance rarely reflects what a signed or certified piece is actually worth. Selling in person keeps every step where you can see it: **your items stay in your possession until you've agreed to a price**, you watch the testing yourself, and a piece worth more than its metal gets appraised as what it is, not weighed as what it contains.\n\nAnd from McLean, going in person costs you almost nothing — **the Vienna/Tysons counter is about 5–10 minutes away**, a shorter run than most Tysons errands. The appraisal is unhurried and private: one seller, one appraiser, no audience. If the number works, you're **paid before you're back on Route 123**; if it doesn't, everything goes home with you exactly as it came in.",
     neighborhoods: [
       {
         name: "Downtown McLean",
@@ -720,15 +720,15 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
     ],
     nearestIntro:
-      "McLean doesn't need a long drive to sell gold — our Vienna/McLean store carries the name for a reason. It's minutes from most of town, with Annandale as a second option to the south.",
+      "McLean doesn't need a long drive to sell gold — our Vienna/Tysons store is just up the road in Tysons, minutes from most of town, with Annandale as a second option to the south.",
     nearest: [
-      { slug: "vienna", drive: "about 5–10 minutes from most of McLean — on Tyco Rd in the Tysons area, just off Route 123" },
+      { slug: "vienna", drive: "about 5–10 minutes from most of McLean — on Westwood Center Dr in the Tysons area, just off Route 7 (Leesburg Pike)" },
       { slug: "annandale", drive: "about 15 minutes south via Route 123 or the Beltway, a handy second option if your day heads that way" },
     ],
     faqs: [
       {
         q: "Where can I sell gold in McLean, VA?",
-        a: "The closest counter is our Vienna/McLean store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — in the Tysons area just off Route 123, about 5–10 minutes from most of McLean. Our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — is roughly 15 minutes south via Route 123 or the Beltway. Both test your items in front of you and pay the same visit.",
+        a: "The closest counter is our Vienna/Tysons store at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — in the Tysons area just off Route 7 (Leesburg Pike), about 5–10 minutes from most of McLean. It sees customers by appointment, so call before you come. Our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — is roughly 15 minutes south via Route 123 or the Beltway. Both test your items in front of you and pay the same visit.",
       },
       {
         q: "Do you buy luxury watches, certified diamonds, and designer jewelry from McLean sellers?",
@@ -753,23 +753,23 @@ export const CITY_LANDINGS: CityLanding[] = [
       "we-buy-estate-gold-jewelry",
     ],
     closingCta:
-      "Our Vienna/McLean store is 5–10 minutes away on Tyco Rd — bring the watch, the ring, or the whole estate box for a discreet appraisal and an instant payout the same visit.",
+      "Our Vienna/Tysons store is 5–10 minutes away on Westwood Center Dr — bring the watch, the ring, or the whole estate box for a discreet appraisal and an instant payout the same visit.",
   },
   {
     slug: "cash-for-gold-tysons",
     city: "Tysons",
     region: "VA",
-    seoTitle: "Sell Gold in Tysons, VA | Store on Tyco Rd, Instant Payout",
+    seoTitle: "Sell Gold in Tysons, VA | Westwood Center Dr, Instant Payout",
     metaDescription:
-      "Sell gold in Tysons, VA at our store right on Tyco Rd, off Route 7 near Tysons Corner. Free appraisal, instant payout. 4.9★ from 500+ reviews.",
+      "Sell gold in Tysons, VA at our store right on Westwood Center Dr, off Route 7 near Tysons Corner. Free appraisal, instant payout. 4.9★ from 500+ reviews.",
     heroTitle: "Cash for Gold in Tysons, VA",
     heroSubtitle:
-      "No drive across the county for this one — our Vienna/McLean store sits right in the Tysons area at 8453 Tyco Rd #C, just off Route 7, minutes from Tysons Corner Center and the Galleria. Walk in, watch your gold get tested, and walk out paid the same visit.",
+      "No drive across the county for this one — our Vienna/Tysons store sits right in the Tysons area at 8605 Westwood Center Dr #120, just off Route 7, minutes from Tysons Corner Center and the Galleria. Call ahead to book a time, watch your gold get tested, and walk out paid the same visit.",
     intro:
-      "If you want to sell gold in Tysons, you're in the one part of Northern Virginia where we can skip the directions: **our store is right here**. The Vienna/McLean location at **8453 Tyco Rd #C sits just off Route 7 (Leesburg Pike)**, minutes from Tysons Corner Center, the Galleria, and the office towers along the Silver Line. Your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid the same visit before you're back on Route 7 — a genuine errand-sized trip, not a cross-county drive.\n\nThat matters in Tysons more than almost anywhere else we serve, because of what people here are selling. This is the region's luxury-retail hub — **jewelry bought at Cartier, Tiffany, and the Galleria's designer boutiques, watches from the mall's flagship stores** — and those pieces deserve a buyer who appraises brand, model, and condition, not one who tosses a signed piece on the melt pile. We evaluate designer and watch pieces individually, test everyday karat gold at its true purity, and quote both against real market numbers. Tens of thousands of people work in Tysons every day; for most of them, our counter is closer than their usual lunch spot.",
+      "If you want to sell gold in Tysons, you're in the one part of Northern Virginia where we can skip the directions: **our store is right here**. The Vienna/Tysons location at **8605 Westwood Center Dr #120 sits just off Route 7 (Leesburg Pike)**, minutes from Tysons Corner Center, the Galleria, and the office towers along the Silver Line. Your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid the same visit before you're back on Route 7 — a genuine errand-sized trip, not a cross-county drive.\n\nThat matters in Tysons more than almost anywhere else we serve, because of what people here are selling. This is the region's luxury-retail hub — **jewelry bought at Cartier, Tiffany, and the Galleria's designer boutiques, watches from the mall's flagship stores** — and those pieces deserve a buyer who appraises brand, model, and condition, not one who tosses a signed piece on the melt pile. We evaluate designer and watch pieces individually, test everyday karat gold at its true purity, and quote both against real market numbers. Tens of thousands of people work in Tysons every day; for most of them, our counter is closer than their usual lunch spot.",
     whyLocalTitle: "Why selling gold in Tysons in person beats any mail-in envelope",
     whyLocal:
-      "The mail-in pitch is convenience — but it asks you to seal your jewelry into a prepaid envelope, ship it to a facility you'll never see, and wait days for an offer made out of your sight. In Tysons, that trade makes no sense at all, because the in-person option is already more convenient: **our counter is physically in the neighborhood**. Your gold stays in your hands until you've heard a number you like, you watch the karat test and the scale reading yourself, and if the offer doesn't work, everything goes back in your bag and you're back at your desk.\n\nThe convenience math is lopsided. From the malls, The Boro, or any of the Silver Line offices, **Tyco Rd is a few minutes off Route 7** — closer than the post office run a mail-in envelope would require, and a typical appraisal takes 10–20 minutes at the counter. That's short enough to fit inside a lunch break, and it ends with an **instant payout**, not a week of tracking numbers and a check that clears whenever it clears.",
+      "The mail-in pitch is convenience — but it asks you to seal your jewelry into a prepaid envelope, ship it to a facility you'll never see, and wait days for an offer made out of your sight. In Tysons, that trade makes no sense at all, because the in-person option is already more convenient: **our counter is physically in the neighborhood**. Your gold stays in your hands until you've heard a number you like, you watch the karat test and the scale reading yourself, and if the offer doesn't work, everything goes back in your bag and you're back at your desk.\n\nThe convenience math is lopsided. From the malls, The Boro, or any of the Silver Line offices, **Westwood Center Dr is a few minutes off Route 7** — closer than the post office run a mail-in envelope would require, and a typical appraisal takes 10–20 minutes at the counter. That's short enough to fit inside a lunch break, and it ends with an **instant payout**, not a week of tracking numbers and a check that clears whenever it clears.",
     neighborhoods: [
       {
         name: "Tysons Corner Center",
@@ -785,19 +785,19 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         name: "Silver Line corridor",
-        note: "From Spring Hill to McLean station, the office towers hold tens of thousands of professionals — and our Tyco Rd counter sits right in that corridor, which is why the lunch-break appraisal is practically a Tysons specialty: in the door, tested, quoted, and paid, usually inside 20 minutes.",
+        note: "From Spring Hill to McLean station, the office towers hold tens of thousands of professionals — and our Westwood Center Dr counter sits right in that corridor, which is why the lunch-break appraisal is practically a Tysons specialty: in the door, tested, quoted, and paid, usually inside 20 minutes.",
       },
     ],
     nearestIntro:
-      "This is the easy one: our Vienna/McLean store is right in the Tysons area, so the primary option isn't a drive at all — and Annandale backs it up if you're coming from the far side of the Beltway.",
+      "This is the easy one: our Vienna/Tysons store is right in the Tysons area, so the primary option isn't a drive at all — and Annandale backs it up if you're coming from the far side of the Beltway.",
     nearest: [
-      { slug: "vienna", drive: "right here in Tysons — 8453 Tyco Rd #C, just off Route 7 (Leesburg Pike), minutes from Tysons Corner Center, the Galleria, and the Silver Line stations" },
+      { slug: "vienna", drive: "right here in Tysons — 8605 Westwood Center Dr #120, just off Route 7 (Leesburg Pike), minutes from Tysons Corner Center, the Galleria, and the Silver Line stations" },
       { slug: "annandale", drive: "about 12 minutes south via Gallows Road or the Beltway — a second option if you're headed that direction anyway" },
     ],
     faqs: [
       {
         q: "Where can I sell gold in Tysons, VA?",
-        a: "Right here in the neighborhood: our Vienna/McLean store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — sits in the Tysons area just off Route 7, minutes from Tysons Corner Center and the Galleria. Walk in, your gold is tested and weighed in front of you, and you're paid the same visit. If you're on the far side of the Beltway, our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — is about 12 minutes south.",
+        a: "Right here in the neighborhood: our Vienna/Tysons store at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — sits in the Tysons area just off Route 7, minutes from Tysons Corner Center and the Galleria. The store is appointment only — call to book, then your gold is tested and weighed in front of you and you're paid the same visit. If you're on the far side of the Beltway, our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — is about 12 minutes south.",
       },
       {
         q: "Do you buy luxury watches and designer jewelry from the Galleria brands?",
@@ -809,7 +809,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Can I really sell gold on a lunch break in Tysons?",
-        a: "Yes — it's one of the most common ways people use our Tyco Rd counter. A typical appraisal takes 10–20 minutes with no appointment needed: we test and weigh each piece in front of you, quote against the live spot price, and if you accept, you're paid the same visit on the spot. From the Silver Line offices, the malls, or The Boro, the store is a few minutes off Route 7, so the whole errand fits comfortably inside an hour.",
+        a: "Yes — it's one of the most common ways people use our Westwood Center Dr counter. Call (703) 889-0532 to book a slot (the store is appointment only), and a typical appraisal takes 10–20 minutes: we test and weigh each piece in front of you, quote against the live spot price, and if you accept, you're paid the same visit on the spot. From the Silver Line offices, the malls, or The Boro, the store is a few minutes off Route 7, so the whole errand fits comfortably inside an hour.",
       },
       {
         q: "Do you buy diamond engagement rings in Tysons?",
@@ -822,7 +822,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       "selling-gold-jewelry",
     ],
     closingCta:
-      "No drive required — walk into our Tysons store at 8453 Tyco Rd #C (Vienna/McLean), just off Route 7, and turn that drawer of gold, watches, or designer pieces into an instant payout before your lunch break ends.",
+      "No drive required — book a time at our Tysons store at 8605 Westwood Center Dr #120 (Vienna/Tysons), just off Route 7, and turn that drawer of gold, watches, or designer pieces into an instant payout before your lunch break ends.",
   },
   {
     slug: "cash-for-gold-oakton",
@@ -833,12 +833,12 @@ export const CITY_LANDINGS: CityLanding[] = [
       "Sell gold near Oakton, VA — our Vienna store is just 8–12 minutes east on Route 123. Free heirloom-friendly appraisal, instant payout. 4.9★, 500+ reviews.",
     heroTitle: "Cash for Gold in Oakton, VA",
     heroSubtitle:
-      "We don't have a storefront in Oakton itself, but our Vienna/McLean location is only about 8–12 minutes east on Route 123 toward Tysons — bring your jewelry in, watch it tested at the counter, and drive back home paid the same errand.",
+      "We don't have a storefront in Oakton itself, but our Vienna/Tysons location is only about 8–12 minutes east on Route 123 toward Tysons — bring your jewelry in, watch it tested at the counter, and drive back home paid the same errand.",
     intro:
       "If you're looking to sell gold in Oakton, here's the plain answer: **our nearest counter is in Vienna, about 8–12 minutes east on Route 123 (Chain Bridge Road) toward Tysons** — close enough that it barely counts as leaving the neighborhood. Our Chantilly store is a second option, roughly 15 minutes west via I-66 and Route 50, if your day points toward the Route 28 side. At either counter, every piece is tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid before you're back on 123.\n\nOakton's gold has a character of its own, and we appraise it that way. In a community where families have often held the same wooded-lot homes for decades, what comes out of the jewelry box is rarely last year's purchase — it's **a parent's wedding set, a grandmother's brooch, rings and chains that have quietly passed down two or three generations**, alongside well-kept everyday 14k that simply stopped being worn. That kind of collection deserves an unhurried look, not a rushed weigh-in: anything with age, maker's marks, or real craftsmanship gets appraised on its own merits before melt weight is ever discussed, which is exactly what a careful visit to a nearby counter — rather than a mail-in envelope — makes possible.",
     whyLocalTitle: "Why Oakton sellers keep heirlooms out of the mail",
     whyLocal:
-      "Inherited and estate jewelry is precisely the wrong thing to seal into a prepaid envelope. A mail-in buyer receives your grandmother's ring as anonymous metal, grades it out of your sight, and sends back one number you can't question — and if a piece had craftsmanship or age worth more than its weight, you'll never know. Selling in person keeps every judgment where you can see it: **the karat test happens in front of you, the scale reading happens in front of you, and each piece can be discussed individually** before you decide anything. If the number doesn't feel right, the jewelry goes home with you, exactly as it arrived.\n\nAnd from Oakton, 'in person' asks almost nothing of your day. **Route 123 runs from Oakton's center straight to our Vienna counter in about 8–12 minutes** — a shorter trip than most school runs down Hunter Mill Road, with easy parking off Tyco Road when you arrive. There's no appointment needed and no obligation to sell: many Oakton households come in first just to learn what a collection is worth, then take their time deciding. Either way, when you do sell, it's an **instant payout the same visit** — not a check chasing an envelope through the mail.",
+      "Inherited and estate jewelry is precisely the wrong thing to seal into a prepaid envelope. A mail-in buyer receives your grandmother's ring as anonymous metal, grades it out of your sight, and sends back one number you can't question — and if a piece had craftsmanship or age worth more than its weight, you'll never know. Selling in person keeps every judgment where you can see it: **the karat test happens in front of you, the scale reading happens in front of you, and each piece can be discussed individually** before you decide anything. If the number doesn't feel right, the jewelry goes home with you, exactly as it arrived.\n\nAnd from Oakton, 'in person' asks almost nothing of your day. **Route 123 runs from Oakton's center to Tysons, and our Vienna counter on Westwood Center Drive is just off Route 7 from there — about 8–12 minutes** — a shorter trip than most school runs down Hunter Mill Road, with easy parking when you arrive. Visits are by appointment (call (703) 889-0532 to set a time) and there's no obligation to sell: many Oakton households come in first just to learn what a collection is worth, then take their time deciding. Either way, when you do sell, it's an **instant payout the same visit** — not a check chasing an envelope through the mail.",
     neighborhoods: [
       {
         name: "Hunter Mill Road corridor",
@@ -858,7 +858,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
     ],
     nearestIntro:
-      "Oakton doesn't have a Cash for Gold VA storefront of its own, but it hardly needs one — our Vienna/McLean counter is one short run up Route 123, with Chantilly as a second option toward the west.",
+      "Oakton doesn't have a Cash for Gold VA storefront of its own, but it hardly needs one — our Vienna/Tysons counter is one short run up Route 123, with Chantilly as a second option toward the west.",
     nearest: [
       { slug: "vienna", drive: "about 8–12 minutes east on Route 123 (Chain Bridge Road) toward Tysons — the closest store to Oakton by a comfortable margin" },
       { slug: "chantilly", drive: "about 15 minutes west via I-66 and Route 50, a good alternative if your day heads toward the Route 28 corridor" },
@@ -866,7 +866,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold in Oakton, VA?",
-        a: "There's no Cash for Gold VA store inside Oakton itself. The closest is our Vienna/McLean location at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — about 8–12 minutes east via Route 123 toward Tysons. Our Chantilly store at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — is roughly 15 minutes west via I-66 and Route 50. Both are real counters where your gold is tested in front of you and paid the same visit.",
+        a: "There's no Cash for Gold VA store inside Oakton itself. The closest is our Vienna/Tysons location at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — about 8–12 minutes east via Route 123 toward Tysons. Our Chantilly store at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — is roughly 15 minutes west via I-66 and Route 50. Both are real counters where your gold is tested in front of you and paid the same visit.",
       },
       {
         q: "I have jewelry that's been in my family for generations — how do you handle heirloom pieces?",
@@ -878,7 +878,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         q: "Which store is closer to Oakton — Vienna or Chantilly?",
-        a: "Vienna, and it isn't close: our Vienna/McLean counter on Tyco Road is about 8–12 minutes east via Route 123, essentially one road from Oakton's center. Chantilly is around 15 minutes west via I-66 and Route 50, which can suit you better if you live near the Waples Mill side or you're already headed toward the Dulles corridor. No appointment is needed at either — walk in during business hours.",
+        a: "Vienna, and it isn't close: our Vienna/Tysons counter on Westwood Center Drive is about 8–12 minutes east via Route 123 and Route 7, essentially one road from Oakton's center. Chantilly is around 15 minutes west via I-66 and Route 50, which can suit you better if you live near the Waples Mill side or you're already headed toward the Dulles corridor. Chantilly is walk-in during business hours; the Vienna store sees customers by appointment, so call (703) 889-0532 before you head over.",
       },
       {
         q: "Do you buy silver, coins, and watches from Oakton sellers, or only gold?",
@@ -904,10 +904,10 @@ export const CITY_LANDINGS: CityLanding[] = [
     heroSubtitle:
       "We don't have a storefront in Falls Church itself — but the Little City sits almost exactly between two of ours. Annandale is a straight 10–12 minute run south on Route 50 or the Beltway, and your gold is tested in front of you and paid the same visit.",
     intro:
-      "Looking to sell gold in Falls Church? Honest answer first: **we don't have a counter inside the Little City**, but Falls Church may be the best-positioned place in Northern Virginia to sell anyway — it sits **almost exactly between two of our stores**, usually **under 15 minutes from either**. Our **Annandale store is the closest**, a straight run south on Route 50 or the Beltway, and our Vienna/McLean store is a quick trip west toward Tysons. At either counter, your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid before you're back through Seven Corners.\n\nThe gold that comes out of Falls Church is a genuine mix, and it deserves a buyer who treats it that way. This is a small, established independent city — long-tenured families in the walkable historic core, newer households filling in around them — so the same afternoon can bring us **an inherited ring from a family that's been in Falls Church for three generations, an everyday 14k chain from Pimmit Hills, and a designer piece bought up the road near Tysons**. Each of those is worth money for a different reason, which is exactly why every piece gets tested for its true karat and appraised on its own merits instead of tossed on one melt pile.",
+      "Looking to sell gold in Falls Church? Honest answer first: **we don't have a counter inside the Little City**, but Falls Church may be the best-positioned place in Northern Virginia to sell anyway — it sits **almost exactly between two of our stores**, usually **under 15 minutes from either**. Our **Annandale store is the closest**, a straight run south on Route 50 or the Beltway, and our Vienna/Tysons store is a quick trip west toward Tysons. At either counter, your items are tested and weighed on a calibrated scale while you watch, quoted against the **live spot price**, and paid before you're back through Seven Corners.\n\nThe gold that comes out of Falls Church is a genuine mix, and it deserves a buyer who treats it that way. This is a small, established independent city — long-tenured families in the walkable historic core, newer households filling in around them — so the same afternoon can bring us **an inherited ring from a family that's been in Falls Church for three generations, an everyday 14k chain from Pimmit Hills, and a designer piece bought up the road near Tysons**. Each of those is worth money for a different reason, which is exactly why every piece gets tested for its true karat and appraised on its own merits instead of tossed on one melt pile.",
     whyLocalTitle: "Why Falls Church sellers do better in person than with a mail-in envelope",
     whyLocal:
-      "A mail-in gold buyer asks you to seal your jewelry into a prepaid envelope, ship it to a facility you'll never see, and wait days for a take-it-or-leave-it offer with your gold already out of your hands. Selling in person keeps every step where you can see it: **the karat test and the scale reading happen in front of you, and your jewelry stays yours until you agree to a number**. If the offer falls short, it goes back in your pocket and you're home in a quarter hour.\n\nAnd from Falls Church, 'in person' is about as easy as it gets anywhere in Northern Virginia, because **two counters bracket the city in opposite directions**. Head **south on Route 50 or the Beltway and you're at our Annandale store in about 10–12 minutes**; head west toward Tysons and Vienna/McLean is the same short trip. Either drive is shorter than a post-office round trip with a padded envelope — and it ends with an **instant payout**, not a check that arrives whenever the mail decides.",
+      "A mail-in gold buyer asks you to seal your jewelry into a prepaid envelope, ship it to a facility you'll never see, and wait days for a take-it-or-leave-it offer with your gold already out of your hands. Selling in person keeps every step where you can see it: **the karat test and the scale reading happen in front of you, and your jewelry stays yours until you agree to a number**. If the offer falls short, it goes back in your pocket and you're home in a quarter hour.\n\nAnd from Falls Church, 'in person' is about as easy as it gets anywhere in Northern Virginia, because **two counters bracket the city in opposite directions**. Head **south on Route 50 or the Beltway and you're at our Annandale store in about 10–12 minutes**; head west toward Tysons and Vienna/Tysons is the same short trip. Either drive is shorter than a post-office round trip with a padded envelope — and it ends with an **instant payout**, not a check that arrives whenever the mail decides.",
     neighborhoods: [
       {
         name: "The Little City & historic Falls Church",
@@ -919,7 +919,7 @@ export const CITY_LANDINGS: CityLanding[] = [
       },
       {
         name: "Pimmit Hills",
-        note: "This postwar neighborhood between Falls Church and Tysons sends us the practical side of the business: wedding bands, broken chains, single earrings, and 14k that hasn't been worn in years. Condition doesn't matter for melt value, and Pimmit Hills also sits closest of all to our Vienna/McLean counter.",
+        note: "This postwar neighborhood between Falls Church and Tysons sends us the practical side of the business: wedding bands, broken chains, single earrings, and 14k that hasn't been worn in years. Condition doesn't matter for melt value, and Pimmit Hills also sits closest of all to our Vienna/Tysons counter.",
       },
       {
         name: "Idylwood",
@@ -935,11 +935,11 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold in Falls Church, VA?",
-        a: "There's no Cash for Gold VA store inside Falls Church itself, but two are within roughly 15 minutes. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 10–12 minutes south via Route 50 or the Beltway. Our Vienna/McLean store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is about 10–12 minutes west toward Tysons and often quicker from Pimmit Hills or Idylwood.",
+        a: "There's no Cash for Gold VA store inside Falls Church itself, but two are within roughly 15 minutes. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 10–12 minutes south via Route 50 or the Beltway. Our Vienna/Tysons store at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — is about 10–12 minutes west toward Tysons and often quicker from Pimmit Hills or Idylwood.",
       },
       {
         q: "Which store is closer to Falls Church — Annandale or Vienna?",
-        a: "Annandale, for most of the city: it's a straight 10–12 minute run south on Route 50 or the Beltway, and it's clearly the shorter trip from Seven Corners and Bailey's Crossroads. If you're on the north side — Pimmit Hills, Idylwood, or anywhere near the West Falls Church Metro — Vienna/McLean is about the same 10–12 minutes west toward Tysons. Both counters test in front of you and pay the same visit, so just pick the direction you're already headed.",
+        a: "Annandale, for most of the city: it's a straight 10–12 minute run south on Route 50 or the Beltway, and it's clearly the shorter trip from Seven Corners and Bailey's Crossroads. If you're on the north side — Pimmit Hills, Idylwood, or anywhere near the West Falls Church Metro — Vienna/Tysons is about the same 10–12 minutes west toward Tysons. Both counters test in front of you and pay the same visit, so just pick the direction you're already headed.",
       },
       {
         q: "How much will I get for my gold in Falls Church?",
@@ -1004,7 +1004,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold near Springfield, VA?",
-        a: "There's no Cash for Gold VA store inside Springfield itself. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 15 minutes northeast via Braddock Road and Backlick Road, or a quick run up I-395. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 20 minutes north if that direction suits your day better.",
+        a: "There's no Cash for Gold VA store inside Springfield itself. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 15 minutes northeast via Braddock Road and Backlick Road, or a quick run up I-395. Our Vienna/Tysons store at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — is roughly 20 minutes north if that direction suits your day better.",
       },
       {
         q: "How far is the nearest gold buyer from Springfield?",
@@ -1069,7 +1069,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold near Bailey's Crossroads, VA?",
-        a: "There's no Cash for Gold VA store at the crossroads itself, but our Annandale location is about 7–10 minutes west, straight out Columbia Pike: 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15 minutes north via Route 7 if that direction suits you better. Both give the same free, no-obligation appraisal.",
+        a: "There's no Cash for Gold VA store at the crossroads itself, but our Annandale location is about 7–10 minutes west, straight out Columbia Pike: 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020. Our Vienna/Tysons store at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — is roughly 15 minutes north via Route 7 if that direction suits you better. Both give the same free, no-obligation appraisal.",
       },
       {
         q: "Do you buy 22k and 24k gold jewelry from Bailey's Crossroads sellers?",
@@ -1134,7 +1134,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold near Lincolnia, VA?",
-        a: "The closest place is our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — a 5–8 minute drive west from Lincolnia via Little River Turnpike (Route 236) or Lincolnia Road. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is about 18 minutes north if that direction suits your day better.",
+        a: "The closest place is our Annandale store at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — a 5–8 minute drive west from Lincolnia via Little River Turnpike (Route 236) or Lincolnia Road. Our Vienna/Tysons store at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — is about 18 minutes north if that direction suits your day better.",
       },
       {
         q: "How close is the nearest gold buyer to Lincolnia?",
@@ -1199,7 +1199,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold near Reston, VA?",
-        a: "The closest Cash for Gold VA store to Reston is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 15 minutes southwest via Route 28, especially quick from western Reston and the Herndon side. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15–20 minutes east via the Dulles Toll Road or Route 7, and often easier from eastern Reston near Wiehle-Reston East.",
+        a: "The closest Cash for Gold VA store to Reston is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 15 minutes southwest via Route 28, especially quick from western Reston and the Herndon side. Our Vienna/Tysons store at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — is roughly 15–20 minutes east via the Dulles Toll Road or Route 7, and often easier from eastern Reston near Wiehle-Reston East.",
       },
       {
         q: "Do you buy diamonds and designer jewelry from Reston sellers?",
@@ -1264,7 +1264,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold near Sterling, VA?",
-        a: "There's no Cash for Gold VA store inside Sterling or anywhere in eastern Loudoun County. The closest is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 15–18 minutes south on Route 28, with no tolls. Our Vienna store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 20–22 minutes east via Route 7 (Leesburg Pike) in the Tysons area.",
+        a: "There's no Cash for Gold VA store inside Sterling or anywhere in eastern Loudoun County. The closest is our Chantilly location at 14025 US-50, Chantilly, VA 20151 — (571) 224-5279 — about 15–18 minutes south on Route 28, with no tolls. Our Vienna store at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — is roughly 20–22 minutes east via Route 7 (Leesburg Pike) in the Tysons area.",
       },
       {
         q: "How far is the nearest gold buyer from Sterling?",
@@ -1459,7 +1459,7 @@ export const CITY_LANDINGS: CityLanding[] = [
     faqs: [
       {
         q: "Where can I sell gold near Arlington, VA?",
-        a: "There's no Cash for Gold VA store inside Arlington County itself. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 15–20 minutes west via Route 50 (Arlington Boulevard) or I-395, whichever is closer to your side of the county. Our Vienna/Tysons store at 8453 Tyco Rd #C, Vienna, VA 22182 — (703) 889-0532 — is roughly 15–20 minutes out I-66 and often quicker from North Arlington.",
+        a: "There's no Cash for Gold VA store inside Arlington County itself. The closest is our Annandale location at 7262 Columbia Pike, Annandale, VA 22003 — (571) 290-8020 — about 15–20 minutes west via Route 50 (Arlington Boulevard) or I-395, whichever is closer to your side of the county. Our Vienna/Tysons store at 8605 Westwood Center Dr #120, Tysons, VA 22182 — (703) 889-0532 — is roughly 15–20 minutes out I-66 and often quicker from North Arlington.",
       },
       {
         q: "Do you buy designer jewelry, diamonds, and luxury watches from Arlington sellers?",

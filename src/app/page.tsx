@@ -149,9 +149,9 @@ export default function Home() {
                       </span>
                     </div>
                     <p className="mt-1.5 flex items-center gap-1.5 text-sm text-cream-100/80">
-                      <MapPin className="h-4 w-4 shrink-0 text-gold-400" /> {l.street}, {l.city}, {l.region}
+                      <MapPin className="h-4 w-4 shrink-0 text-gold-400" /> {l.street}, {l.addressCity}, {l.region}
                     </p>
-                    <OpenStatus hours={l.hours} tone="light" className="mt-3" />
+                    <OpenStatus location={l} tone="light" className="mt-3" />
                   </div>
                 </Link>
               </Reveal>

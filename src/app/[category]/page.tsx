@@ -101,7 +101,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 }
 
 const catFaqs = (cat: { name: string }) => [
-  { q: `How do I sell my ${cat.name.toLowerCase()} near me?`, a: `Visit any of our four Northern Virginia locations, Annandale, Manassas, Chantilly, or Vienna/McLean. We buy, appraise on the spot, and pay instant payout, no appointment needed.` },
+  { q: `How do I sell my ${cat.name.toLowerCase()} near me?`, a: `Visit any of our four Northern Virginia locations, Annandale, Manassas, Chantilly, or Vienna/Tysons. We buy, appraise on the spot, and pay instant payout, no appointment needed.` },
   { q: `How are my items valued?`, a: `Our trained buyers test and evaluate everything in front of you using professional equipment, and base offers on current market prices with a clear explanation.` },
   { q: `Do I need an appointment?`, a: `No, just walk in during business hours. To sell, bring your items and a valid photo ID.` },
 ];
@@ -237,7 +237,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                     </span>
                     <div className="absolute inset-x-0 bottom-0 p-5">
                       <h3 className="font-display text-2xl font-extrabold text-cream-50">{ch.city} Store</h3>
-                      <p className="mt-1 text-sm text-cream-100/80">{ch.street}, {ch.city}, {ch.region}</p>
+                      <p className="mt-1 text-sm text-cream-100/80">{ch.street}, {ch.addressCity}, {ch.region}</p>
                     </div>
                   </Link>
                   <div className="flex flex-1 flex-col p-6">

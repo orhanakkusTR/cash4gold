@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 }
 
 const subFaqs = (name: string) => [
-  { q: `Where can I sell my ${name.toLowerCase()} near me?`, a: `At any of our four Northern Virginia locations, Annandale, Manassas, Chantilly, and Vienna/McLean. We buy, appraise on the spot, and pay instant payout, no appointment required.` },
+  { q: `Where can I sell my ${name.toLowerCase()} near me?`, a: `At any of our four Northern Virginia locations, Annandale, Manassas, Chantilly, and Vienna/Tysons. We buy, appraise on the spot, and pay instant payout, no appointment required.` },
   { q: `How is my ${name.toLowerCase()} valued?`, a: `We test and evaluate everything in front of you using professional equipment, basing offers on current market prices with a clear, no-pressure explanation.` },
   { q: `What do I need to bring to sell?`, a: `Just your items and a valid government-issued photo ID.` },
 ];

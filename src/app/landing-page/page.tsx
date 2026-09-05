@@ -287,12 +287,12 @@ export default function AdLandingPage() {
                 <div className="flex h-full flex-col rounded-3xl border border-hairline bg-white p-6 shadow-[var(--shadow-card)]">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="font-display text-lg font-bold text-foreground">{l.city}</h3>
-                    <OpenStatus hours={l.hours} compact className="shrink-0" />
+                    <OpenStatus location={l} compact className="shrink-0" />
                   </div>
                   <p className="mt-2 flex items-start gap-1.5 text-sm text-muted">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
                     <span>
-                      {l.street}, {l.city}, {l.region} {l.postalCode}
+                      {l.street}, {l.addressCity}, {l.region} {l.postalCode}
                     </span>
                   </p>
 

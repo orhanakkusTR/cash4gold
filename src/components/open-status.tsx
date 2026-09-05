@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cn, formatHours } from "@/lib/utils";
-import type { Hours } from "@/data/business";
+import type { Hours, Location } from "@/data/business";
 
 // The stores are all in Northern Virginia → Eastern Time. Open/closed must be
 // judged against the STORE's clock, not the visitor's (a visitor abroad would
@@ -34,25 +34,28 @@ type Status = { open: boolean; today: Hours };
 // Color sets per surface: "dark" = on light/white backgrounds, "light" = over
 // dark photos/overlays.
 const TONES = {
-  dark: { open: "text-green-700", closed: "text-red-600", muted: "text-muted", sep: "text-foreground/30", idle: "bg-foreground/25" },
-  light: { open: "text-green-300", closed: "text-red-400", muted: "text-cream-100/70", sep: "text-cream-100/40", idle: "bg-cream-100/40" },
+  dark: { open: "text-green-700", closed: "text-red-600", appt: "text-gold-700 hover:text-gold-800", apptDot: "bg-gold-500", muted: "text-muted", sep: "text-foreground/30", idle: "bg-foreground/25" },
+  light: { open: "text-green-300", closed: "text-red-400", appt: "text-gold-300 hover:text-gold-200", apptDot: "bg-gold-400", muted: "text-cream-100/70", sep: "text-cream-100/40", idle: "bg-cream-100/40" },
 } as const;
 
 /**
  * Live "Open now / Closed" badge plus today's hours. Computed on the client
- * from the visitor's local time, so it stays accurate on a statically built page.
+ * from the store's Eastern-Time clock, so it stays accurate on a statically
+ * built page. Appointment-only stores render a bold "Appointment Only" link
+ * that dials the store instead (no hours are published for them).
  */
 export function OpenStatus({
-  hours,
+  location,
   className,
   tone = "dark",
   compact = false,
 }: {
-  hours: Hours[];
+  location: Pick<Location, "hours" | "appointmentOnly" | "phone" | "phoneHref">;
   className?: string;
   tone?: keyof typeof TONES;
   compact?: boolean;
 }) {
+  const { hours, appointmentOnly, phone, phoneHref } = location;
   const [status, setStatus] = useState<Status | null>(null);
   const c = TONES[tone];
 
@@ -71,6 +74,34 @@ export function OpenStatus({
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setStatus({ open, today });
   }, [hours]);
+
+  // Appointment-only: static (no clock involved), so it renders identically on
+  // the server and the client. The whole badge is a tel: link — tapping
+  // "Appointment Only" calls the store to book. Analytics picks it up as a
+  // phone-call conversion like any other tel: link.
+  if (appointmentOnly) {
+    return (
+      <a
+        href={`tel:${phoneHref}`}
+        aria-label={`Appointment only. Call ${phone} to book your visit`}
+        className={cn(
+          "inline-flex items-center gap-1.5 transition-colors",
+          compact ? "text-xs font-extrabold" : "text-sm font-medium",
+          c.appt,
+          className,
+        )}
+      >
+        <span className={cn("inline-flex h-2 w-2 shrink-0 rounded-full", c.apptDot)} />
+        <strong className="font-extrabold">Appointment Only</strong>
+        {!compact && (
+          <>
+            <span className={c.sep}>·</span>
+            <span className={c.muted}>Call to book</span>
+          </>
+        )}
+      </a>
+    );
+  }
 
   // Pre-mount fallback keeps layout stable without asserting open/closed.
   if (!status) {

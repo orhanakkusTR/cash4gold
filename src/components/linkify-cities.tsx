@@ -2,10 +2,10 @@ import Link from "next/link";
 
 // Renders body text with our store-city names turned into bold links to their
 // location pages. Keep the source strings plain (for FAQ JSON-LD); only the
-// visible copy is linkified here. "Vienna/McLean" must come first so it wins
+// visible copy is linkified here. "Vienna/Tysons" must come first so it wins
 // over a bare "Vienna".
 const CITY_LINKS = [
-  { name: "Vienna/McLean", slug: "vienna" },
+  { name: "Vienna/Tysons", slug: "vienna" },
   { name: "Annandale", slug: "annandale" },
   { name: "Manassas", slug: "manassas" },
   { name: "Chantilly", slug: "chantilly" },

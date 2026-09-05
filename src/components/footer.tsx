@@ -75,7 +75,7 @@ export function Footer() {
                   <Link href={`/locations/${l.slug}`} className="font-semibold text-cream-50 transition-colors hover:text-gold-200">
                     {l.city}
                   </Link>
-                  <OpenStatus hours={l.hours} tone="light" compact />
+                  <OpenStatus location={l} tone="light" compact />
                 </div>
                 <a
                   href={l.mapUrl}
@@ -84,7 +84,7 @@ export function Footer() {
                   className="mt-1 flex items-start gap-1.5 text-cream-100/60 transition-colors hover:text-gold-200"
                 >
                   <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold-400" />
-                  {l.street}, {l.city}, {l.region} {l.postalCode}
+                  {l.street}, {l.addressCity}, {l.region} {l.postalCode}
                 </a>
                 <a href={`tel:${l.phoneHref}`} className="mt-1 flex items-center gap-1.5 text-cream-100/80 transition-colors hover:text-gold-200">
                   <Phone className="h-3.5 w-3.5 text-gold-400" />

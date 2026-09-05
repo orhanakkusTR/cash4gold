@@ -162,7 +162,7 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                     </a>
                   </div>
                   <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-cream-100/60">
-                    <OpenStatus hours={primary.store.hours} tone="light" compact />
+                    <OpenStatus location={primary.store} tone="light" compact />
                     <span aria-hidden>·</span>
                     <span>{primary.store.city} — closest to {landing.city}</span>
                   </p>
@@ -189,10 +189,10 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                     rel="noopener noreferrer"
                     className="mt-1 inline-block text-sm text-cream-100/70 underline-offset-2 transition-colors hover:text-gold-200 hover:underline"
                   >
-                    {primary.store.street}, {primary.store.city}, {primary.store.region} {primary.store.postalCode}
+                    {primary.store.street}, {primary.store.addressCity}, {primary.store.region} {primary.store.postalCode}
                   </a>
                   <div className="mt-4">
-                    <OpenStatus hours={primary.store.hours} tone="light" />
+                    <OpenStatus location={primary.store} tone="light" />
                   </div>
                   <a
                     href="#nearest"
@@ -275,11 +275,11 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                         rel="noopener noreferrer"
                         className="mt-1 inline-block text-sm text-muted underline-offset-2 transition-colors hover:text-gold-700 hover:underline"
                       >
-                        {primary.store.street}, {primary.store.city}, {primary.store.region} {primary.store.postalCode}
+                        {primary.store.street}, {primary.store.addressCity}, {primary.store.region} {primary.store.postalCode}
                       </a>
                       <p className="mt-1 text-sm text-muted">Drive: {primary.drive}.</p>
                     </div>
-                    <OpenStatus hours={primary.store.hours} tone="dark" />
+                    <OpenStatus location={primary.store} tone="dark" />
                     <div className="flex flex-wrap gap-2">
                       <span className="inline-flex items-center gap-1.5 rounded-full bg-gold-50 px-3 py-1 text-xs font-semibold text-gold-700 ring-1 ring-gold-200/70">
                         <Star className="h-3.5 w-3.5 fill-gold-400 text-gold-400" /> 4.9 · 500+ reviews
@@ -339,11 +339,11 @@ export function CityLanding({ landing }: { landing: CityLandingData }) {
                         rel="noopener noreferrer"
                         className="mt-1 inline-block text-sm text-muted underline-offset-2 transition-colors hover:text-gold-700 hover:underline"
                       >
-                        {secondary.store.street}, {secondary.store.city}, {secondary.store.region} {secondary.store.postalCode}
+                        {secondary.store.street}, {secondary.store.addressCity}, {secondary.store.region} {secondary.store.postalCode}
                       </a>
                       <p className="mt-1 text-sm text-muted">Drive: {secondary.drive}.</p>
                     </div>
-                    <OpenStatus hours={secondary.store.hours} tone="dark" compact />
+                    <OpenStatus location={secondary.store} tone="dark" compact />
                     <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-gold-50 px-3 py-1 text-xs font-semibold text-gold-700 ring-1 ring-gold-200/70">
                       <Star className="h-3.5 w-3.5 fill-gold-400 text-gold-400" /> 4.9 · 500+ reviews
                     </span>

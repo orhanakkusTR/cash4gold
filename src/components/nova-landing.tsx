@@ -253,11 +253,11 @@ export function NovaLanding({ landing }: { landing: CityLandingData }) {
                         rel="noopener noreferrer"
                         className="mt-1 inline-block text-sm text-muted underline-offset-2 transition-colors hover:text-gold-700 hover:underline"
                       >
-                        {store.street}, {store.city}, {store.region} {store.postalCode}
+                        {store.street}, {store.addressCity}, {store.region} {store.postalCode}
                       </a>
                       <p className="mt-2 text-sm leading-relaxed text-muted">{drive}.</p>
                     </div>
-                    <OpenStatus hours={store.hours} tone="dark" compact />
+                    <OpenStatus location={store} tone="dark" compact />
                     <div className="mt-auto flex flex-col gap-2.5 pt-2 sm:flex-row">
                       <a
                         href={`tel:${store.phoneHref}`}

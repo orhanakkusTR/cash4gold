@@ -95,7 +95,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           <div className="flex h-full flex-col rounded-3xl border border-ink-900/8 bg-cream-50 p-8 shadow-[var(--shadow-card)]">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <h2 className="font-display text-2xl font-extrabold text-foreground">Store information</h2>
-              <OpenStatus hours={loc.hours} />
+              <OpenStatus location={loc} />
             </div>
             <dl className="mt-6 space-y-4">
               <div className="flex items-start gap-3">
@@ -109,7 +109,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
                       rel="noopener noreferrer"
                       className="text-muted transition-colors hover:text-gold-700"
                     >
-                      {loc.street}, {loc.city}, {loc.region} {loc.postalCode}
+                      {loc.street}, {loc.addressCity}, {loc.region} {loc.postalCode}
                     </a>
                   </dd>
                 </div>
@@ -126,16 +126,29 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
                 <div>
                   <dt className="text-sm font-semibold text-foreground">Hours</dt>
                   <dd className="text-muted">
-                    <table className="mt-1 text-sm">
-                      <tbody>
-                        {loc.hours.map((h) => (
-                          <tr key={h.day}>
-                            <td className="pr-6 font-extrabold text-foreground">{h.day}</td>
-                            <td>{formatHours(h.open || "10:00", h.close)}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                    {loc.appointmentOnly ? (
+                      <p className="mt-1 text-sm">
+                        <a
+                          href={`tel:${loc.phoneHref}`}
+                          aria-label={`Appointment only. Call ${loc.phone} to book your visit`}
+                          className="font-extrabold text-gold-700 transition-colors hover:text-gold-800"
+                        >
+                          Appointment Only
+                        </a>
+                        <span className="block mt-0.5">Call {loc.phone} to schedule your visit.</span>
+                      </p>
+                    ) : (
+                      <table className="mt-1 text-sm">
+                        <tbody>
+                          {loc.hours.map((h) => (
+                            <tr key={h.day}>
+                              <td className="pr-6 font-extrabold text-foreground">{h.day}</td>
+                              <td>{formatHours(h.open || "10:00", h.close)}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    )}
                   </dd>
                 </div>
               </div>
@@ -178,7 +191,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           <div className="h-[22rem] overflow-hidden rounded-3xl border border-ink-900/8 shadow-[var(--shadow-card)]">
             <iframe
               title={`Map of Cash for Gold VA ${loc.city}`}
-              src={`https://www.google.com/maps?q=${encodeURIComponent(`${loc.name}, ${loc.street}, ${loc.city}, ${loc.region} ${loc.postalCode}`)}&output=embed`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(`${loc.name}, ${loc.street}, ${loc.addressCity}, ${loc.region} ${loc.postalCode}`)}&output=embed`}
               className="h-full w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

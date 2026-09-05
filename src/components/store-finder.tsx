@@ -187,10 +187,10 @@ function StoreCard({ store }: { store: Store }) {
             <Link href={`/locations/${store.slug}`} className="text-foreground transition-colors hover:text-gold-700">{store.city}</Link>
           </h3>
           <a href={store.mapUrl} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block text-sm text-muted underline-offset-2 transition-colors hover:text-gold-700 hover:underline">
-            {store.street}, {store.city}, {store.region} {store.postalCode}
+            {store.street}, {store.addressCity}, {store.region} {store.postalCode}
           </a>
         </div>
-        <OpenStatus hours={store.hours} tone="dark" />
+        <OpenStatus location={store} tone="dark" />
         <div className="mt-auto grid gap-2.5 pt-1 sm:grid-cols-2">
           <a href={`tel:${store.phoneHref}`} className="inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-4 text-sm font-semibold text-ink-950 shadow-[var(--shadow-gold)] transition-transform hover:-translate-y-0.5">
             <Phone className="h-4 w-4" strokeWidth={2.5} /> {store.phone}

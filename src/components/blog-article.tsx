@@ -24,7 +24,7 @@ Our trained specialists evaluate every item in front of you, testing purity, con
 
 ## Why it matters locally
 
-With four convenient Northern Virginia locations in Annandale, Manassas, Chantilly, and Vienna/McLean, getting a professional, no-obligation appraisal has never been easier. Whether you are downsizing a collection, selling an inherited piece, or simply curious what your items are worth, our team is happy to help.
+With four convenient Northern Virginia locations in Annandale, Manassas, Chantilly, and Vienna/Tysons, getting a professional, no-obligation appraisal has never been easier. Whether you are downsizing a collection, selling an inherited piece, or simply curious what your items are worth, our team is happy to help.
 
 > This article is being updated with fresh, expanded content. The information above is a brief overview while the full guide is finalized.
 

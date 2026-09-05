@@ -32,10 +32,10 @@ export const LOCATION_LOCAL: Record<string, LocationLocal> = {
     ],
   },
   vienna: {
-    heading: "Finding our Vienna / McLean store",
+    heading: "Finding our Vienna / Tysons store",
     paras: [
-      "The Vienna store is on Tyco Road in the Tysons commercial district, just off Leesburg Pike (Route 7). It is the closest of our locations to the McLean and Tysons crowd, and its spot in the middle of Tysons puts it within easy reach of Oakton, Falls Church, and the rest of the inner-Beltway suburbs.",
-      "This is also our most transit-friendly store: the Spring Hill station on Metro's Silver Line is about a half-mile away — roughly a ten-minute walk — so you can genuinely reach us without a car. Drive or ride in, have your items appraised on the spot, and get your payout the same visit.",
+      "The Vienna store is on Westwood Center Drive in the Tysons commercial district, just off Leesburg Pike (Route 7). It is the closest of our locations to the McLean and Tysons crowd, and its spot in the middle of Tysons puts it within easy reach of Oakton, Falls Church, and the rest of the inner-Beltway suburbs.",
+      "This is also our most transit-friendly store: the Spring Hill station on Metro's Silver Line is about a half-mile away — roughly a ten-minute walk — so you can genuinely reach us without a car. This store works by appointment: call ahead to set a time, then drive or ride in, have your items appraised on the spot, and get your payout the same visit.",
     ],
   },
 };

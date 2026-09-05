@@ -87,11 +87,15 @@ export function LocationCard({ location }: { location: Location }) {
       <h3 className="font-display text-xl font-semibold text-foreground">{location.city}</h3>
       <p className="mt-3 flex items-start gap-2 text-sm text-muted">
         <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
-        {location.street}, {location.city}, {location.region} {location.postalCode}
+        {location.street}, {location.addressCity}, {location.region} {location.postalCode}
       </p>
       <p className="mt-2 flex items-center gap-2 text-sm text-muted">
         <Clock className="h-4 w-4 shrink-0 text-gold-500" />
-        Mon–Fri {formatHours(today.open || "10:00", "18:00")}
+        {location.appointmentOnly || !today ? (
+          <a href={`tel:${location.phoneHref}`} className="font-extrabold text-gold-700 hover:text-gold-800">Appointment Only</a>
+        ) : (
+          <>Mon–Fri {formatHours(today.open || "10:00", "18:00")}</>
+        )}
       </p>
       <div className="mt-5 flex flex-col gap-2 sm:flex-row">
         <a

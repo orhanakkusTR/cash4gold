@@ -276,7 +276,7 @@ export default function PrivacyPage() {
                   <p className="text-sm leading-relaxed text-cream-100/80">
                     {PRIMARY_LOCATION.street}
                     <br />
-                    {PRIMARY_LOCATION.city}, {PRIMARY_LOCATION.region} {PRIMARY_LOCATION.postalCode}
+                    {PRIMARY_LOCATION.addressCity}, {PRIMARY_LOCATION.region} {PRIMARY_LOCATION.postalCode}
                   </p>
                 </div>
                 <div className="space-y-3">

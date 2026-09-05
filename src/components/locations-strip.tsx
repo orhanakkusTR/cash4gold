@@ -41,10 +41,10 @@ export function LocationsStrip({
                   className="mt-1 flex items-start gap-1.5 text-sm text-muted transition-colors hover:text-gold-700"
                 >
                   <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold-500" />
-                  {l.street}, {l.city}, {l.region} {l.postalCode}
+                  {l.street}, {l.addressCity}, {l.region} {l.postalCode}
                 </a>
               </div>
-              <OpenStatus hours={l.hours} tone="dark" compact />
+              <OpenStatus location={l} tone="dark" compact />
               <div className="mt-auto flex flex-col gap-2 pt-1 sm:flex-row">
                 <a
                   href={`tel:${l.phoneHref}`}

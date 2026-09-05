@@ -13,7 +13,7 @@ import { BreadcrumbJsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Our Locations, Gold Buyers Across Northern Virginia",
-  description: "Four Cash for Gold VA locations: Annandale, Manassas, Chantilly, and Vienna/McLean. Find addresses, hours, and phone numbers. Free appraisals, instant payout.",
+  description: "Four Cash for Gold VA locations: Annandale, Manassas, Chantilly, and Vienna/Tysons. Find addresses, hours, and phone numbers. Free appraisals, instant payout.",
   alternates: { canonical: "/locations" },
 };
 
@@ -76,7 +76,7 @@ export default function LocationsPage() {
                         {l.city}
                       </Link>
                     </h2>
-                    <OpenStatus hours={l.hours} className="mt-2" />
+                    <OpenStatus location={l} className="mt-2" />
                   </div>
 
                   <a
@@ -86,7 +86,7 @@ export default function LocationsPage() {
                     className="flex items-start gap-2.5 text-muted transition-colors hover:text-gold-700"
                   >
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-gold-500" />
-                    {l.street}, {l.city}, {l.region} {l.postalCode}
+                    {l.street}, {l.addressCity}, {l.region} {l.postalCode}
                   </a>
 
                   <div>
